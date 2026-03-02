@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>LinkDrop - Design Preview</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; min-height: 100vh; }
+    .container { width: 100%; max-width: 390px; background: #ffffff; min-height: 100vh; padding: 56px 20px 24px; }
+    h1 { font-size: 24px; font-weight: 800; color: #0a0a0a; margin-bottom: 4px; }
+    .subtitle { font-size: 14px; color: #737373; margin-bottom: 24px; }
+    .screen-list { display: flex; flex-direction: column; gap: 12px; }
+    a { text-decoration: none; display: flex; align-items: center; justify-content: space-between; padding: 16px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; }
+    a:active { background: #f5f5f5; }
+    .screen-name { font-size: 16px; font-weight: 600; color: #0a0a0a; }
+    .screen-desc { font-size: 13px; color: #737373; margin-top: 2px; }
+    .arrow { font-size: 18px; color: #a3a3a3; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔗 LinkDrop</h1>
+    <div class="subtitle">링크 북마크 웹앱 — Design Preview</div>
+    <div class="screen-list">
+      <a href="home.html">
+        <div>
+          <div class="screen-name">🏠 홈</div>
+          <div class="screen-desc">링크 목록 + 검색 + 컬렉션 탭</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+      <a href="add-link.html">
+        <div>
+          <div class="screen-name">➕ 링크 추가</div>
+          <div class="screen-desc">URL 입력 → 메타데이터 추출 → 저장</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+      <a href="detail.html">
+        <div>
+          <div class="screen-name">📄 링크 상세</div>
+          <div class="screen-desc">썸네일, 제목, 태그, 수정/삭제</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
