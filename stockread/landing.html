@@ -24,24 +24,21 @@
       background: #09090b;
       overflow-x: hidden;
     }
-
-    /* Glow effects */
     .glow-green { text-shadow: 0 0 20px rgba(34,197,94,0.3); }
     .glow-red { text-shadow: 0 0 20px rgba(239,68,68,0.3); }
-
-    /* Tab styles */
     .tab-btn {
       border: none;
       background: transparent;
       color: #a3a3a3;
       font-family: Inter, system-ui, sans-serif;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
-      padding: 8px 16px;
+      padding: 7px 14px;
       border-radius: 9999px;
       cursor: pointer;
       transition: all 0.2s ease;
       white-space: nowrap;
+      flex-shrink: 0;
     }
     .tab-btn.active {
       background: #fafafa;
@@ -52,8 +49,6 @@
       background: #262626;
       color: #fafafa;
     }
-
-    /* Report card animation */
     .report-card {
       opacity: 0;
       transform: translateY(12px);
@@ -62,20 +57,14 @@
     @keyframes fadeInUp {
       to { opacity: 1; transform: translateY(0); }
     }
-
-    /* Pulse animation for live dot */
     @keyframes pulse {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.4; }
     }
-
-    /* Gradient line */
     .gradient-line {
       height: 1px;
       background: linear-gradient(90deg, transparent, #262626, transparent);
     }
-
-    /* CTA button hover */
     .cta-btn {
       transition: all 0.2s ease;
       cursor: pointer;
@@ -85,17 +74,8 @@
       transform: translateY(-1px);
       box-shadow: 0 8px 24px rgba(34,197,94,0.25);
     }
-
-    /* Feature card hover */
-    .feature-card {
-      transition: all 0.2s ease;
-    }
-    .feature-card:hover {
-      border-color: #404040;
-      background: #171717;
-    }
-
-    /* Hide scrollbar for tab container */
+    .feature-card { transition: all 0.2s ease; }
+    .feature-card:hover { border-color: #404040; background: #171717; }
     .tab-scroll::-webkit-scrollbar { display: none; }
     .tab-scroll { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
@@ -104,10 +84,10 @@
 
 <div class="mobile-frame">
 
-  <!-- ===== STATUS BAR SPACER ===== -->
+  <!-- STATUS BAR SPACER -->
   <div style="height: 48px;"></div>
 
-  <!-- ===== NAV ===== -->
+  <!-- NAV -->
   <div style="padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 48px;">
     <div style="display: flex; align-items: center; gap: 8px;">
       <div style="width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #22c55e, #16a34a); display: flex; align-items: center; justify-content: center; font-size: 14px;">📊</div>
@@ -116,15 +96,12 @@
     <a href="https://t.me/StockReadBot" class="cta-btn" style="font-size: 13px; font-weight: 600; color: #09090b; background: #22c55e; padding: 6px 14px; border-radius: 8px; text-decoration: none;">시작하기</a>
   </div>
 
-  <!-- ===== HERO ===== -->
+  <!-- HERO -->
   <div style="padding: 48px 24px 40px;">
-    <!-- Badge -->
     <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); border-radius: 9999px; padding: 5px 12px; margin-bottom: 20px;">
       <div style="width: 6px; height: 6px; border-radius: 50%; background: #22c55e; animation: pulse 2s infinite;"></div>
       <span style="font-size: 12px; font-weight: 500; color: #22c55e;">매일 아침 7시 리포트 발송 중</span>
     </div>
-
-    <!-- Headline -->
     <h1 style="font-size: 32px; line-height: 40px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px;">
       주식 뉴스,<br>
       <span style="color: #22c55e;" class="glow-green">읽어드립니다</span>
@@ -133,8 +110,6 @@
       AI가 매일 아침 당신의 종목을<br>
       초보 눈높이로 해석해 드려요.
     </p>
-
-    <!-- CTA -->
     <a href="https://t.me/StockReadBot" class="cta-btn" style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; height: 52px; background: #22c55e; color: #09090b; font-size: 16px; font-weight: 700; border-radius: 12px; text-decoration: none;">
       <span>텔레그램에서 무료로 시작</span>
       <span style="font-size: 18px;">→</span>
@@ -142,44 +117,28 @@
     <p style="text-align: center; font-size: 12px; color: #525252; margin-top: 10px;">가입 없이 바로 시작 · 완전 무료</p>
   </div>
 
-  <!-- ===== DIVIDER ===== -->
   <div class="gradient-line"></div>
 
-  <!-- ===== REPORT PREVIEW ===== -->
+  <!-- REPORT PREVIEW -->
   <div style="padding: 40px 24px;">
-    <!-- Section header -->
     <div style="margin-bottom: 20px;">
       <p style="font-size: 12px; font-weight: 600; color: #22c55e; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px;">LIVE PREVIEW</p>
       <h2 style="font-size: 22px; font-weight: 700; letter-spacing: -0.025em;">오늘의 리포트 미리보기</h2>
     </div>
-
-    <!-- Tabs -->
-    <div class="tab-scroll" style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 16px;">
-      <button class="tab-btn active" onclick="showReport('nvda')">NVDA</button>
-      <button class="tab-btn" onclick="showReport('tsla')">TSLA</button>
-      <button class="tab-btn" onclick="showReport('samsung')">삼성전자</button>
-      <button class="tab-btn" onclick="showReport('aapl')">AAPL</button>
-      <button class="tab-btn" onclick="showReport('hynix')">SK하이닉스</button>
-    </div>
-
-    <!-- Report Container -->
-    <div id="report-container">
-      <!-- Filled by JS -->
-    </div>
+    <div class="tab-scroll" id="tab-container" style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 16px;"></div>
+    <div id="report-container"></div>
   </div>
 
-  <!-- ===== DIVIDER ===== -->
   <div class="gradient-line"></div>
 
-  <!-- ===== FEATURES ===== -->
+  <!-- FEATURES -->
   <div style="padding: 40px 24px;">
     <p style="font-size: 12px; font-weight: 600; color: #22c55e; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px;">WHY 주읽이</p>
     <h2 style="font-size: 22px; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 24px;">이런 게 다릅니다</h2>
 
-    <!-- Feature 1 -->
     <div class="feature-card" style="background: #111113; border: 1px solid #262626; border-radius: 16px; padding: 24px; margin-bottom: 12px;">
       <div style="display: flex; align-items: flex-start; gap: 16px;">
-        <div style="width: 44px; height: 44px; min-width: 44px; border-radius: 12px; background: rgba(59,130,246,0.1); display: flex; align-items: center; justify-content: center; font-size: 22px;">🧠</div>
+        <div style="width: 44px; height: 44px; min-width: 44px; border-radius: 12px; background: rgba(59,130,246,0.15); display: flex; align-items: center; justify-content: center; font-size: 20px;">🧠</div>
         <div>
           <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">데이터가 아닌 해석</h3>
           <p style="font-size: 14px; line-height: 22px; color: #a3a3a3;">숫자 나열이 아니라, 지금 이 종목이 어떤 상황인지 쉬운 말로 알려드려요.</p>
@@ -187,10 +146,9 @@
       </div>
     </div>
 
-    <!-- Feature 2 -->
     <div class="feature-card" style="background: #111113; border: 1px solid #262626; border-radius: 16px; padding: 24px; margin-bottom: 12px;">
       <div style="display: flex; align-items: flex-start; gap: 16px;">
-        <div style="width: 44px; height: 44px; min-width: 44px; border-radius: 12px; background: rgba(168,85,247,0.1); display: flex; align-items: center; justify-content: center; font-size: 22px;">🎯</div>
+        <div style="width: 44px; height: 44px; min-width: 44px; border-radius: 12px; background: rgba(168,85,247,0.15); display: flex; align-items: center; justify-content: center; font-size: 20px;">🎯</div>
         <div>
           <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">투자 성향 맞춤</h3>
           <p style="font-size: 14px; line-height: 22px; color: #a3a3a3;">안정형·중립형·공격형 — 내 성향에 맞는 톤으로 해석해 드려요.</p>
@@ -198,10 +156,9 @@
       </div>
     </div>
 
-    <!-- Feature 3 -->
     <div class="feature-card" style="background: #111113; border: 1px solid #262626; border-radius: 16px; padding: 24px; margin-bottom: 12px;">
       <div style="display: flex; align-items: flex-start; gap: 16px;">
-        <div style="width: 44px; height: 44px; min-width: 44px; border-radius: 12px; background: rgba(34,197,94,0.1); display: flex; align-items: center; justify-content: center; font-size: 22px;">⏰</div>
+        <div style="width: 44px; height: 44px; min-width: 44px; border-radius: 12px; background: rgba(34,197,94,0.15); display: flex; align-items: center; justify-content: center; font-size: 20px;">⏰</div>
         <div>
           <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">매일 아침 자동 배달</h3>
           <p style="font-size: 14px; line-height: 22px; color: #a3a3a3;">매일 아침 7시, 텔레그램으로 자동 전송. 출근길에 1분이면 충분해요.</p>
@@ -210,15 +167,13 @@
     </div>
   </div>
 
-  <!-- ===== DIVIDER ===== -->
   <div class="gradient-line"></div>
 
-  <!-- ===== HOW IT WORKS ===== -->
+  <!-- HOW IT WORKS -->
   <div style="padding: 40px 24px;">
     <p style="font-size: 12px; font-weight: 600; color: #22c55e; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px;">HOW IT WORKS</p>
     <h2 style="font-size: 22px; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 24px;">30초면 시작</h2>
 
-    <!-- Step 1 -->
     <div style="display: flex; gap: 16px; margin-bottom: 24px;">
       <div style="display: flex; flex-direction: column; align-items: center;">
         <div style="width: 32px; height: 32px; border-radius: 50%; background: #22c55e; color: #09090b; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;">1</div>
@@ -230,7 +185,6 @@
       </div>
     </div>
 
-    <!-- Step 2 -->
     <div style="display: flex; gap: 16px; margin-bottom: 24px;">
       <div style="display: flex; flex-direction: column; align-items: center;">
         <div style="width: 32px; height: 32px; border-radius: 50%; background: #22c55e; color: #09090b; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;">2</div>
@@ -242,7 +196,6 @@
       </div>
     </div>
 
-    <!-- Step 3 -->
     <div style="display: flex; gap: 16px; margin-bottom: 8px;">
       <div style="display: flex; flex-direction: column; align-items: center;">
         <div style="width: 32px; height: 32px; border-radius: 50%; background: #22c55e; color: #09090b; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;">3</div>
@@ -254,10 +207,9 @@
     </div>
   </div>
 
-  <!-- ===== DIVIDER ===== -->
   <div class="gradient-line"></div>
 
-  <!-- ===== BOTTOM CTA ===== -->
+  <!-- BOTTOM CTA -->
   <div style="padding: 48px 24px 40px; text-align: center;">
     <h2 style="font-size: 24px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px;">
       내일 아침,<br><span style="color: #22c55e;">첫 리포트</span>를 받아보세요
@@ -269,7 +221,7 @@
     </a>
   </div>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <div style="padding: 24px; border-top: 1px solid #1a1a1a;">
     <div style="display: flex; align-items: center; justify-content: space-between;">
       <div style="display: flex; align-items: center; gap: 6px;">
@@ -289,140 +241,125 @@
 <script>
 const reports = {
   nvda: {
-    ticker: 'NVDA',
-    name: '엔비디아',
-    flag: '🇺🇸',
-    price: '$875.40',
-    change: '+2.3%',
-    positive: true,
-    high52: '91%',
+    ticker: 'NVDA', name: '엔비디아', flag: '🇺🇸',
+    price: '$875.40', change: '+2.3%', positive: true, high52: '91%',
     sections: [
-      { icon: '📍', title: '현재 위치', text: '종가 $875.40 (+2.3%). 52주 고점 대비 91% 수준. 사상 최고가 부근에서 강한 흐름 유지 중.' },
-      { icon: '📐', title: '기술적 상태', text: 'RSI 72 → 과열 구간 근접. 20일 이평선 위에서 단기 상승 추세 유지. 거래량은 평균 대비 +15%.' },
-      { icon: '📰', title: '최근 이슈', text: 'AI 서버 수요 급증 뉴스 (호재). GTC 컨퍼런스 기대감. 실적 발표 2주 전.' },
-      { icon: '💡', title: '해석 (⚖️ 중립형)', text: '단기 상승 이후 조정 가능성 존재. 분할 접근이 적절한 구간. 실적 발표 전 변동성 확대 가능.' }
+      { emoji: '📍', title: '현재 위치', text: '종가 $875.40 (+2.3%). 52주 고점 대비 91% 수준. 사상 최고가 부근에서 강한 흐름 유지 중.' },
+      { emoji: '📐', title: '기술적 상태', text: 'RSI 72 → 과열 구간 근접. 20일 이평선 위에서 단기 상승 추세 유지. 거래량 평균 대비 +15%.' },
+      { emoji: '📰', title: '최근 이슈', text: 'AI 서버 수요 급증 뉴스 (호재). GTC 컨퍼런스 기대감. 실적 발표 2주 전.' },
+      { emoji: '💡', title: '해석 (⚖️ 중립형)', text: '단기 상승 이후 조정 가능성 존재. 분할 접근이 적절한 구간. 실적 발표 전 변동성 확대 가능.' }
     ]
   },
   tsla: {
-    ticker: 'TSLA',
-    name: '테슬라',
-    flag: '🇺🇸',
-    price: '$248.50',
-    change: '-1.2%',
-    positive: false,
-    high52: '68%',
+    ticker: 'TSLA', name: '테슬라', flag: '🇺🇸',
+    price: '$248.50', change: '-1.2%', positive: false, high52: '68%',
     sections: [
-      { icon: '📍', title: '현재 위치', text: '종가 $248.50 (-1.2%). 52주 고점 대비 68% 수준. 고점에서 상당히 떨어진 위치.' },
-      { icon: '📐', title: '기술적 상태', text: 'RSI 45 → 중립 구간. 20일 이평선 아래로 내려옴. 거래량 감소 추세.' },
-      { icon: '📰', title: '최근 이슈', text: '자율주행 FSD 업데이트 기대. 중국 판매량 전월 대비 소폭 감소. 로보택시 이벤트 일정 미확정.' },
-      { icon: '💡', title: '해석 (⚖️ 중립형)', text: '기술적 반등 시도 구간이나, 추세 전환 확인 필요. 단기 트레이딩보다 중장기 관점 접근이 적절.' }
+      { emoji: '📍', title: '현재 위치', text: '종가 $248.50 (-1.2%). 52주 고점 대비 68% 수준. 고점에서 상당히 떨어진 위치.' },
+      { emoji: '📐', title: '기술적 상태', text: 'RSI 45 → 중립 구간. 20일 이평선 아래로 내려옴. 거래량 감소 추세.' },
+      { emoji: '📰', title: '최근 이슈', text: '자율주행 FSD 업데이트 기대. 중국 판매량 전월 대비 소폭 감소.' },
+      { emoji: '💡', title: '해석 (⚖️ 중립형)', text: '기술적 반등 시도 구간이나, 추세 전환 확인 필요. 중장기 관점 접근이 적절.' }
     ]
   },
   samsung: {
-    ticker: '005930',
-    name: '삼성전자',
-    flag: '🇰🇷',
-    price: '72,400원',
-    change: '-0.5%',
-    positive: false,
-    high52: '78%',
+    ticker: '005930', name: '삼성전자', flag: '🇰🇷',
+    price: '72,400원', change: '-0.5%', positive: false, high52: '78%',
     sections: [
-      { icon: '📍', title: '현재 위치', text: '종가 72,400원 (-0.5%). 52주 고점 대비 78% 수준. 7만원대 박스권 유지 중.' },
-      { icon: '📐', title: '기술적 상태', text: 'RSI 48 → 중립. 60일 이평선 부근에서 횡보. 외국인 순매도 3일 연속.' },
-      { icon: '📰', title: '최근 이슈', text: 'HBM3E 양산 본격화 기대. 파운드리 수율 개선 뉴스. 반도체 업황 바닥 논쟁 지속.' },
-      { icon: '💡', title: '해석 (⚖️ 중립형)', text: '외국인 매도세가 부담이나, HBM 모멘텀은 긍정적. 7만원 초반은 분할 매수 고려 구간.' }
+      { emoji: '📍', title: '현재 위치', text: '종가 72,400원 (-0.5%). 52주 고점 대비 78% 수준. 7만원대 박스권 유지 중.' },
+      { emoji: '📐', title: '기술적 상태', text: 'RSI 48 → 중립. 60일 이평선 부근에서 횡보. 외국인 순매도 3일 연속.' },
+      { emoji: '📰', title: '최근 이슈', text: 'HBM3E 양산 본격화 기대. 파운드리 수율 개선 뉴스. 반도체 업황 바닥 논쟁.' },
+      { emoji: '💡', title: '해석 (⚖️ 중립형)', text: '외국인 매도세가 부담이나, HBM 모멘텀은 긍정적. 7만원 초반은 분할 매수 고려 구간.' }
     ]
   },
   aapl: {
-    ticker: 'AAPL',
-    name: '애플',
-    flag: '🇺🇸',
-    price: '$178.20',
-    change: '+0.8%',
-    positive: true,
-    high52: '85%',
+    ticker: 'AAPL', name: '애플', flag: '🇺🇸',
+    price: '$178.20', change: '+0.8%', positive: true, high52: '85%',
     sections: [
-      { icon: '📍', title: '현재 위치', text: '종가 $178.20 (+0.8%). 52주 고점 대비 85% 수준. 안정적 흐름 유지.' },
-      { icon: '📐', title: '기술적 상태', text: 'RSI 55 → 중립 편안한 구간. 20일/60일 이평선 위. 거래량 평이.' },
-      { icon: '📰', title: '최근 이슈', text: 'WWDC AI 기능 발표 기대. 중국 시장 점유율 방어 성공. 서비스 매출 역대 최고 기록.' },
-      { icon: '💡', title: '해석 (⚖️ 중립형)', text: '안정적 우량주 역할 유지. AI 전략 구체화 시 추가 상승 여력. 급등보다는 꾸준한 흐름 기대.' }
+      { emoji: '📍', title: '현재 위치', text: '종가 $178.20 (+0.8%). 52주 고점 대비 85% 수준. 안정적 흐름 유지.' },
+      { emoji: '📐', title: '기술적 상태', text: 'RSI 55 → 중립 편안한 구간. 20일/60일 이평선 위. 거래량 평이.' },
+      { emoji: '📰', title: '최근 이슈', text: 'WWDC AI 기능 발표 기대. 서비스 매출 역대 최고 기록.' },
+      { emoji: '💡', title: '해석 (⚖️ 중립형)', text: '안정적 우량주 역할 유지. AI 전략 구체화 시 추가 상승 여력. 꾸준한 흐름 기대.' }
     ]
   },
   hynix: {
-    ticker: '000660',
-    name: 'SK하이닉스',
-    flag: '🇰🇷',
-    price: '185,500원',
-    change: '+1.8%',
-    positive: true,
-    high52: '88%',
+    ticker: '000660', name: 'SK하이닉스', flag: '🇰🇷',
+    price: '185,500원', change: '+1.8%', positive: true, high52: '88%',
     sections: [
-      { icon: '📍', title: '현재 위치', text: '종가 185,500원 (+1.8%). 52주 고점 대비 88% 수준. AI 반도체 수혜주로 강세.' },
-      { icon: '📐', title: '기술적 상태', text: 'RSI 65 → 강세 구간. 모든 이평선 위. 외국인 순매수 전환 (2일째).' },
-      { icon: '📰', title: '최근 이슈', text: 'HBM 글로벌 1위 지위 공고. 엔비디아향 HBM3E 공급 확대. 1분기 실적 기대감 상승.' },
-      { icon: '💡', title: '해석 (⚖️ 중립형)', text: 'AI 수혜 모멘텀 강력. 단기 과열 주의하며 분할 접근 유효. 실적 시즌 변동성 대비 필요.' }
+      { emoji: '📍', title: '현재 위치', text: '종가 185,500원 (+1.8%). 52주 고점 대비 88% 수준. AI 반도체 수혜주로 강세.' },
+      { emoji: '📐', title: '기술적 상태', text: 'RSI 65 → 강세 구간. 모든 이평선 위. 외국인 순매수 전환 2일째.' },
+      { emoji: '📰', title: '최근 이슈', text: 'HBM 글로벌 1위 지위 공고. 엔비디아향 HBM3E 공급 확대.' },
+      { emoji: '💡', title: '해석 (⚖️ 중립형)', text: 'AI 수혜 모멘텀 강력. 단기 과열 주의하며 분할 접근 유효.' }
     ]
   }
 };
 
-function showReport(key) {
-  // Update tabs
-  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+const tabLabels = {
+  nvda: 'NVDA', tsla: 'TSLA', samsung: '삼성전자', aapl: 'AAPL', hynix: 'SK하이닉스'
+};
 
-  const r = reports[key];
-  const changeColor = r.positive ? '#22c55e' : '#ef4444';
-  const changeGlow = r.positive ? 'glow-green' : 'glow-red';
-  const arrow = r.positive ? '▲' : '▼';
+let currentTab = 'nvda';
 
-  let sectionsHtml = r.sections.map(s => `
-    <div style="margin-bottom: 16px;">
-      <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
-        <span style="font-size: 14px;">${s.icon}</span>
-        <span style="font-size: 13px; font-weight: 600; color: #a3a3a3;">${s.title}</span>
-      </div>
-      <p style="font-size: 14px; line-height: 22px; color: #d4d4d4; padding-left: 22px;">${s.text}</p>
-    </div>
-  `).join('');
+function renderTabs() {
+  const container = document.getElementById('tab-container');
+  container.innerHTML = Object.keys(tabLabels).map(key =>
+    '<button class="tab-btn' + (key === currentTab ? ' active' : '') + '" data-key="' + key + '">' + tabLabels[key] + '</button>'
+  ).join('');
 
-  document.getElementById('report-container').innerHTML = `
-    <div class="report-card" style="background: #111113; border: 1px solid #262626; border-radius: 16px; overflow: hidden;">
-      <!-- Report Header -->
-      <div style="padding: 20px 20px 16px; border-bottom: 1px solid #1a1a1a;">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <span style="font-size: 16px;">${r.flag}</span>
-            <div>
-              <span style="font-size: 16px; font-weight: 700;">${r.ticker}</span>
-              <span style="font-size: 13px; color: #737373; margin-left: 6px;">${r.name}</span>
-            </div>
-          </div>
-          <div style="text-align: right;">
-            <div style="font-size: 16px; font-weight: 700;">${r.price}</div>
-            <div style="font-size: 13px; font-weight: 600; color: ${changeColor};" class="${changeGlow}">${arrow} ${r.change}</div>
-          </div>
-        </div>
-        <div style="display: flex; gap: 8px;">
-          <div style="background: #1a1a1a; border-radius: 6px; padding: 4px 10px; font-size: 11px; color: #a3a3a3;">52주 고점 대비 <span style="color: #fafafa; font-weight: 600;">${r.high52}</span></div>
-          <div style="background: #1a1a1a; border-radius: 6px; padding: 4px 10px; font-size: 11px; color: #a3a3a3;">⚖️ 중립형</div>
-        </div>
-      </div>
-
-      <!-- Report Body -->
-      <div style="padding: 20px;">
-        ${sectionsHtml}
-      </div>
-
-      <!-- Report Footer -->
-      <div style="padding: 12px 20px; background: #0d0d0f; border-top: 1px solid #1a1a1a;">
-        <p style="font-size: 11px; color: #525252;">⚠️ 투자 참고 정보이며 투자 판단의 책임은 본인에게 있습니다.</p>
-      </div>
-    </div>
-  `;
+  container.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      currentTab = this.dataset.key;
+      renderTabs();
+      renderReport();
+    });
+  });
 }
 
-// Show NVDA by default
-window.addEventListener('DOMContentLoaded', () => showReport('nvda'));
+function renderReport() {
+  const r = reports[currentTab];
+  const changeColor = r.positive ? '#22c55e' : '#ef4444';
+  const arrow = r.positive ? '▲' : '▼';
+
+  const sectionsHtml = r.sections.map(function(s) {
+    return '<div style="margin-bottom: 16px;">' +
+      '<div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">' +
+        '<span style="font-size: 14px;">' + s.emoji + '</span>' +
+        '<span style="font-size: 13px; font-weight: 600; color: #a3a3a3;">' + s.title + '</span>' +
+      '</div>' +
+      '<p style="font-size: 14px; line-height: 22px; color: #d4d4d4; padding-left: 22px;">' + s.text + '</p>' +
+    '</div>';
+  }).join('');
+
+  document.getElementById('report-container').innerHTML =
+    '<div class="report-card" style="background: #111113; border: 1px solid #262626; border-radius: 16px; overflow: hidden;">' +
+      '<div style="padding: 20px 20px 16px; border-bottom: 1px solid #1a1a1a;">' +
+        '<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">' +
+          '<div style="display: flex; align-items: center; gap: 10px;">' +
+            '<span style="font-size: 16px;">' + r.flag + '</span>' +
+            '<div>' +
+              '<span style="font-size: 16px; font-weight: 700;">' + r.ticker + '</span>' +
+              '<span style="font-size: 13px; color: #737373; margin-left: 6px;">' + r.name + '</span>' +
+            '</div>' +
+          '</div>' +
+          '<div style="text-align: right;">' +
+            '<div style="font-size: 16px; font-weight: 700;">' + r.price + '</div>' +
+            '<div style="font-size: 13px; font-weight: 600; color: ' + changeColor + ';">' + arrow + ' ' + r.change + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div style="display: flex; gap: 8px;">' +
+          '<div style="background: #1a1a1a; border-radius: 6px; padding: 4px 10px; font-size: 11px; color: #a3a3a3;">52주 고점 대비 <span style="color: #fafafa; font-weight: 600;">' + r.high52 + '</span></div>' +
+          '<div style="background: #1a1a1a; border-radius: 6px; padding: 4px 10px; font-size: 11px; color: #a3a3a3;">⚖️ 중립형</div>' +
+        '</div>' +
+      '</div>' +
+      '<div style="padding: 20px;">' + sectionsHtml + '</div>' +
+      '<div style="padding: 12px 20px; background: #0d0d0f; border-top: 1px solid #1a1a1a;">' +
+        '<p style="font-size: 11px; color: #525252;">⚠️ 투자 참고 정보이며 투자 판단의 책임은 본인에게 있습니다.</p>' +
+      '</div>' +
+    '</div>';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  renderTabs();
+  renderReport();
+});
 </script>
 
 </body>
