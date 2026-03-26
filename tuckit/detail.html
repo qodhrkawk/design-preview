@@ -3,119 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Tuckit - 링크 상세</title>
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <title>Tuckit — 링크 상세</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: #050507; display: flex; justify-content: center; min-height: 100vh; -webkit-font-smoothing: antialiased; }
-    .mobile-frame { width: 100%; max-width: 390px; min-height: 100vh; background: #09090b; position: relative; }
-
-    .glass { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 16px; }
-
-    .meta-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
-    .meta-label { font-size: 13px; color: rgba(255,255,255,0.35); font-weight: 500; display: flex; align-items: center; gap: 8px; }
-    .meta-value { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 500; }
-
-    .tag-pill { padding: 4px 10px; border-radius: 8px; font-size: 12px; color: #a78bfa; background: rgba(139,92,246,0.12); font-weight: 500; }
-
-    .divider { height: 1px; background: rgba(255,255,255,0.06); }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    .mobile-frame {
+      width: 100%;
+      max-width: 390px;
+      min-height: 100vh;
+      background: #ffffff;
+      position: relative;
+    }
   </style>
 </head>
 <body>
   <div class="mobile-frame">
+
+    <!-- Status Bar Spacer -->
     <div style="height: 48px;"></div>
 
-    <!-- Header (overlay on image) -->
-    <div style="position: relative;">
-      <!-- Hero Image -->
-      <div style="width: 100%; height: 240px; overflow: hidden; background: #1a1a2e; position: relative;">
-        <img src="https://repository-images.githubusercontent.com/535630065/0267c4c7-e9f4-4632-8e13-6d78e2270d9c" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.75;" onerror="this.style.display='none'">
-        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(9,9,11,0.6) 0%, transparent 30%, rgba(9,9,11,0.95) 100%);"></div>
+    <!-- Header -->
+    <div style="padding: 0 20px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg>
+        <span style="font-size: 15px; font-weight: 500; color: #0a0a0a;">뒤로</span>
       </div>
-
-      <!-- Top bar overlaid on image -->
-      <div style="position: absolute; top: 0; left: 0; right: 0; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between;">
-        <a href="home.html" style="text-decoration: none; width: 40px; height: 40px; border-radius: 12px; background: rgba(0,0,0,0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; transition: all 0.2s;">
-          <i data-lucide="arrow-left" style="width: 18px; height: 18px; color: #fff;"></i>
-        </a>
-        <div style="display: flex; gap: 8px;">
-          <div style="width: 40px; height: 40px; border-radius: 12px; background: rgba(0,0,0,0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; cursor: pointer;">
-            <i data-lucide="pencil" style="width: 16px; height: 16px; color: rgba(255,255,255,0.8);"></i>
-          </div>
-          <div style="width: 40px; height: 40px; border-radius: 12px; background: rgba(0,0,0,0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; cursor: pointer;">
-            <i data-lucide="share-2" style="width: 16px; height: 16px; color: rgba(255,255,255,0.8);"></i>
-          </div>
-        </div>
+      <div style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
       </div>
     </div>
 
-    <div style="padding: 0 20px; margin-top: -40px; position: relative; z-index: 1;">
-
-      <!-- Favicon + Domain -->
-      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-        <div style="width: 28px; height: 28px; border-radius: 8px; background: #000; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff;">s</div>
-        <span style="font-size: 13px; color: rgba(255,255,255,0.5); font-weight: 400;">ui.shadcn.com</span>
+    <!-- Thumbnail -->
+    <div style="padding: 0 20px; margin-bottom: 20px;">
+      <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #e5e5e5 0%, #d4d4d4 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="1.5" stroke-linecap="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
       </div>
-
-      <!-- Title -->
-      <div style="font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 800; color: #fafafa; line-height: 1.3; letter-spacing: -0.03em; margin-bottom: 12px;">shadcn/ui — Beautifully designed components built with Radix UI and Tailwind CSS</div>
-
-      <!-- Description -->
-      <div style="font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.6; margin-bottom: 20px;">Beautifully designed components built with Radix UI and Tailwind CSS. Copy and paste into your apps. Open Source.</div>
-
-      <!-- Tags -->
-      <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 24px;">
-        <span class="tag-pill">개발</span>
-        <span class="tag-pill">UI</span>
-        <span class="tag-pill">React</span>
-        <span class="tag-pill">Tailwind</span>
-      </div>
-
-      <!-- Meta Section -->
-      <div class="glass" style="padding: 4px 16px; margin-bottom: 16px;">
-        <div class="meta-row">
-          <div class="meta-label">
-            <i data-lucide="folder" style="width: 15px; height: 15px; color: rgba(255,255,255,0.25);"></i>
-            컬렉션
-          </div>
-          <div style="padding: 4px 12px; border-radius: 8px; background: rgba(255,255,255,0.06); font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7);">개발</div>
-        </div>
-        <div class="divider"></div>
-        <div class="meta-row">
-          <div class="meta-label">
-            <i data-lucide="calendar" style="width: 15px; height: 15px; color: rgba(255,255,255,0.25);"></i>
-            저장일
-          </div>
-          <div class="meta-value">2026년 3월 2일</div>
-        </div>
-        <div class="divider"></div>
-        <div class="meta-row">
-          <div class="meta-label">
-            <i data-lucide="clock" style="width: 15px; height: 15px; color: rgba(255,255,255,0.25);"></i>
-            마지막 방문
-          </div>
-          <div class="meta-value">3일 전</div>
-        </div>
-      </div>
-
-      <!-- Open Link Button -->
-      <a href="https://ui.shadcn.com" target="_blank" style="text-decoration: none; display: flex; width: 100%; padding: 16px; background: linear-gradient(135deg, #8b5cf6, #6366f1); color: #fff; border-radius: 14px; font-size: 16px; font-weight: 700; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 8px 32px rgba(99,102,241,0.3); transition: all 0.25s; margin-bottom: 12px;" onmouseover="this.style.boxShadow='0 12px 40px rgba(99,102,241,0.45)';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='0 8px 32px rgba(99,102,241,0.3)';this.style.transform='none'">
-        <i data-lucide="external-link" style="width: 18px; height: 18px;"></i>
-        링크 열기
-      </a>
-
-      <!-- Delete Button -->
-      <button style="width: 100%; padding: 14px; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.15); color: #f87171; border-radius: 14px; font-size: 14px; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 6px;" onmouseover="this.style.background='rgba(239,68,68,0.15)'" onmouseout="this.style.background='rgba(239,68,68,0.08)'">
-        <i data-lucide="trash-2" style="width: 16px; height: 16px;"></i>
-        링크 삭제
-      </button>
-
     </div>
 
-    <div style="height: 40px;"></div>
+    <!-- Title & URL -->
+    <div style="padding: 0 20px; margin-bottom: 16px;">
+      <div style="font-size: 20px; font-weight: 700; color: #0a0a0a; line-height: 1.4; margin-bottom: 8px;">React Native 성능 최적화 가이드</div>
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span style="font-size: 13px; color: #3b82f6;">medium.com/@dev/rn-performance-guide</span>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div style="padding: 0 20px; margin-bottom: 20px;">
+      <div style="font-size: 14px; color: #737373; line-height: 1.7;">React Native 앱의 성능을 극대화하는 10가지 팁과 실전 예제를 소개합니다. 렌더링 최적화부터 메모리 관리까지 전반적인 성능 개선 방법을 다룹니다.</div>
+    </div>
+
+    <!-- AI Tags -->
+    <div style="padding: 0 20px; margin-bottom: 20px;">
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <span style="padding: 5px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; background: #FFF3E0; color: #F57C00;">🤖 개발</span>
+        <span style="padding: 5px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; background: #f5f5f5; color: #737373;">React Native</span>
+        <span style="padding: 5px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; background: #f5f5f5; color: #737373;">성능</span>
+        <span style="padding: 5px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; background: #f5f5f5; color: #737373;">모바일</span>
+      </div>
+    </div>
+
+    <!-- Meta Info -->
+    <div style="padding: 0 20px; margin-bottom: 32px;">
+      <div style="display: flex; gap: 16px; font-size: 12px; color: #a3a3a3;">
+        <span>저장일: 2026.03.25</span>
+        <span>📁 개발 레퍼런스</span>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div style="padding: 0 20px; padding-bottom: 48px;">
+      <div style="display: flex; gap: 10px;">
+        <div style="flex: 2; background: #0a0a0a; color: #fafafa; border-radius: 10px; padding: 14px; text-align: center; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+          열기
+        </div>
+        <div style="flex: 1; background: #f5f5f5; color: #737373; border-radius: 10px; padding: 14px; text-align: center; font-size: 14px; font-weight: 600; cursor: pointer;">편집</div>
+        <div style="flex: 1; background: #FEF2F2; color: #ef4444; border-radius: 10px; padding: 14px; text-align: center; font-size: 14px; font-weight: 600; cursor: pointer;">삭제</div>
+      </div>
+    </div>
+
   </div>
-
-  <script>lucide.createIcons();</script>
 </body>
 </html>

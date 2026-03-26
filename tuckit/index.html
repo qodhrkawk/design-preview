@@ -2,60 +2,80 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Tuckit - Design Preview</title>
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuckit v2 — 디자인 프리뷰</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: #050507; display: flex; justify-content: center; min-height: 100vh; -webkit-font-smoothing: antialiased; }
-    .container { width: 100%; max-width: 390px; background: #09090b; min-height: 100vh; padding: 56px 20px 24px; }
-    h1 { font-family: 'Outfit', sans-serif; font-size: 30px; font-weight: 800; color: #fafafa; margin-bottom: 4px; letter-spacing: -0.03em; }
-    .subtitle { font-size: 14px; color: rgba(255,255,255,0.35); margin-bottom: 28px; }
-    .screen-list { display: flex; flex-direction: column; gap: 12px; }
-    a { text-decoration: none; display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; transition: all 0.25s cubic-bezier(0.4,0,0.2,1); }
-    a:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.10); transform: translateY(-1px); }
-    .screen-name { font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 600; color: #fafafa; display: flex; align-items: center; gap: 8px; }
-    .screen-desc { font-size: 13px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+    body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; min-height: 100vh; padding: 40px 20px; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 600px; width: 100%; }
+    h1 { font-size: 28px; font-weight: 800; color: #0a0a0a; margin-bottom: 4px; letter-spacing: -0.025em; }
+    .subtitle { font-size: 14px; color: #737373; margin-bottom: 32px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    a { text-decoration: none; }
+    .card { background: #ffffff; border: 1px solid #e5e5e5; border-radius: 14px; padding: 20px; transition: box-shadow 0.15s; }
+    .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .card-emoji { font-size: 28px; margin-bottom: 10px; }
+    .card-title { font-size: 15px; font-weight: 600; color: #0a0a0a; margin-bottom: 4px; }
+    .card-desc { font-size: 12px; color: #a3a3a3; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 10px; font-weight: 500; background: #FFF3E0; color: #F57C00; margin-top: 8px; }
+    .badge.p1 { background: #f5f5f5; color: #a3a3a3; }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Tuckit</h1>
-    <div class="subtitle">링크 북마크 웹앱 — Design Preview v2</div>
-    <div class="screen-list">
-      <a href="home.html">
-        <div>
-          <div class="screen-name">
-            <i data-lucide="home" style="width: 18px; height: 18px; color: #a78bfa;"></i>
-            홈
-          </div>
-          <div class="screen-desc">링크 목록 + 검색 + 컬렉션 탭</div>
+    <h1>Tuckit v2</h1>
+    <div class="subtitle">AI 북마크 앱 — 디자인 프리뷰 (6개 화면)</div>
+    <div class="grid">
+      <a href="onboarding.html">
+        <div class="card">
+          <div class="card-emoji">👋</div>
+          <div class="card-title">온보딩</div>
+          <div class="card-desc">소셜 로그인</div>
+          <div class="badge">P0</div>
         </div>
-        <i data-lucide="chevron-right" style="width: 18px; height: 18px; color: rgba(255,255,255,0.2);"></i>
+      </a>
+      <a href="home.html">
+        <div class="card">
+          <div class="card-emoji">🏠</div>
+          <div class="card-title">홈</div>
+          <div class="card-desc">링크 목록 + 검색 + 필터</div>
+          <div class="badge">P0</div>
+        </div>
       </a>
       <a href="add-link.html">
-        <div>
-          <div class="screen-name">
-            <i data-lucide="plus-circle" style="width: 18px; height: 18px; color: #a78bfa;"></i>
-            링크 추가
-          </div>
-          <div class="screen-desc">URL 입력 → 메타데이터 추출 → 저장</div>
+        <div class="card">
+          <div class="card-emoji">➕</div>
+          <div class="card-title">링크 추가</div>
+          <div class="card-desc">URL → AI 자동 분류 → 저장</div>
+          <div class="badge">P0</div>
         </div>
-        <i data-lucide="chevron-right" style="width: 18px; height: 18px; color: rgba(255,255,255,0.2);"></i>
       </a>
       <a href="detail.html">
-        <div>
-          <div class="screen-name">
-            <i data-lucide="file-text" style="width: 18px; height: 18px; color: #a78bfa;"></i>
-            링크 상세
-          </div>
-          <div class="screen-desc">썸네일, 제목, 태그, 수정/삭제</div>
+        <div class="card">
+          <div class="card-emoji">📄</div>
+          <div class="card-title">링크 상세</div>
+          <div class="card-desc">열기 / 편집 / 삭제</div>
+          <div class="badge">P0</div>
         </div>
-        <i data-lucide="chevron-right" style="width: 18px; height: 18px; color: rgba(255,255,255,0.2);"></i>
+      </a>
+      <a href="collections.html">
+        <div class="card">
+          <div class="card-emoji">📁</div>
+          <div class="card-title">컬렉션</div>
+          <div class="card-desc">AI 카테고리 + 내 컬렉션</div>
+          <div class="badge">P0</div>
+        </div>
+      </a>
+      <a href="settings.html">
+        <div class="card">
+          <div class="card-emoji">⚙️</div>
+          <div class="card-title">설정</div>
+          <div class="card-desc">계정 / 테마 / 내보내기</div>
+          <div class="badge p1">P1</div>
+        </div>
       </a>
     </div>
   </div>
-  <script>lucide.createIcons();</script>
 </body>
 </html>
