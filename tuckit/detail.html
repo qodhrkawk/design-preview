@@ -40,12 +40,18 @@
 
     <div style="height: 48px;"></div>
 
-    <!-- Header -->
-    <div style="padding: 0 20px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
-      <div style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+    <!-- Header (iOS nav style) -->
+    <div style="padding: 0 20px; margin-bottom: 20px; display: flex; align-items: center; position: relative; height: 44px;">
+      <!-- 뒤로가기 (좌) -->
+      <div style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1;">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
       </div>
-      <div style="position: relative;">
+      <!-- 제목 (가운데) -->
+      <div style="position: absolute; left: 0; right: 0; display: flex; justify-content: center; pointer-events: none;">
+        <span style="font-size: 16px; font-weight: 600; color: #0a0a0a; max-width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">링크 상세</span>
+      </div>
+      <!-- ⋯ 더보기 (우) -->
+      <div style="margin-left: auto; position: relative; z-index: 1;">
         <div style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg>
         </div>
@@ -63,7 +69,7 @@
       </div>
     </div>
 
-    <!-- Title (상단 배치) -->
+    <!-- Title -->
     <div style="padding: 0 20px; margin-bottom: 6px;">
       <div style="font-size: 20px; font-weight: 700; color: #0a0a0a; line-height: 1.4;">React Native 성능 최적화 가이드</div>
     </div>
