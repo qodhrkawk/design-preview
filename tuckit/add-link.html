@@ -23,30 +23,30 @@
       background: #ffffff;
       position: relative;
     }
-    .chip-category-selected {
+    .radio-selected {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      border-radius: 9999px;
-      font-size: 13px;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 14px;
       font-weight: 500;
-      background: #FFF3E0;
-      color: #F57C00;
-      border: 1.5px solid #F57C00;
+      border: 1.5px solid #0a0a0a;
+      background: #fafafa;
+      color: #0a0a0a;
       cursor: pointer;
     }
-    .chip-category-unselected {
+    .radio-unselected {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      border-radius: 9999px;
-      font-size: 13px;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 14px;
       font-weight: 500;
+      border: 1px solid #e5e5e5;
       background: #ffffff;
       color: #737373;
-      border: 1px solid #e5e5e5;
       cursor: pointer;
     }
     .chip-tag-active {
@@ -56,7 +56,6 @@
       border-radius: 9999px;
       font-size: 13px;
       font-weight: 500;
-      background: transparent;
       color: #0a0a0a;
       border: 1px solid #d4d4d4;
       cursor: pointer;
@@ -68,11 +67,22 @@
       border-radius: 9999px;
       font-size: 13px;
       font-weight: 500;
-      background: transparent;
       color: #d4d4d4;
       border: 1px solid #e5e5e5;
       cursor: pointer;
       text-decoration: line-through;
+    }
+    .chip-tag-add {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #a3a3a3;
+      border: 1px dashed #d4d4d4;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -89,7 +99,7 @@
       </div>
     </div>
 
-    <!-- URL Input (자동 크롤링 완료 상태) -->
+    <!-- URL Input -->
     <div style="padding: 0 20px; margin-bottom: 20px;">
       <div style="font-size: 13px; font-weight: 500; color: #737373; margin-bottom: 6px;">URL</div>
       <div style="display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 12px 14px;">
@@ -113,32 +123,45 @@
       </div>
     </div>
 
-    <!-- AI 카테고리 (3개 후보, 라디오 선택) -->
-    <div style="padding: 0 20px; margin-bottom: 20px;">
+    <!-- 컬렉션 추천 (라디오) -->
+    <div style="padding: 0 20px; margin-bottom: 24px;">
       <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 10px;">
-        <span style="font-size: 13px; font-weight: 600; color: #0a0a0a;">카테고리</span>
+        <span style="font-size: 13px; font-weight: 600; color: #0a0a0a;">컬렉션</span>
         <span style="font-size: 11px; color: #a3a3a3;">AI 추천 · 1개 선택</span>
       </div>
-      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-        <!-- 선택됨 -->
-        <span class="chip-category-selected">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F57C00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-          개발
-        </span>
-        <!-- 비선택 -->
-        <span class="chip-category-unselected">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d4d4d4" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/></svg>
-          테크
-        </span>
-        <span class="chip-category-unselected">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d4d4d4" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/></svg>
-          모바일
-        </span>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <!-- 기존 매칭 1: 개발 (blue) - 선택됨 -->
+        <div class="radio-selected">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4" fill="#0a0a0a"/></svg>
+          <span style="display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 500; background: #E3F2FD; color: #1E88E5;">개발</span>
+          <span style="font-size: 12px; color: #a3a3a3;">기존 컬렉션</span>
+        </div>
+        <!-- 기존 매칭 2: 디자인 (purple) -->
+        <div class="radio-unselected">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4d4d4" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/></svg>
+          <span style="display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 500; background: #F3E5F5; color: #8E24AA;">디자인</span>
+          <span style="font-size: 12px; color: #a3a3a3;">기존 컬렉션</span>
+        </div>
+        <!-- AI 신규 제안 -->
+        <div class="radio-unselected">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4d4d4" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/></svg>
+          <span style="font-size: 14px; font-weight: 500; color: #737373;">모바일 개발</span>
+          <span style="display: inline-flex; align-items: center; gap: 3px; font-size: 11px; color: #F57C00; font-weight: 500;">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#F57C00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            새로 만들기
+          </span>
+        </div>
+        <!-- 직접 입력 -->
+        <div class="radio-unselected">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4d4d4" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+          <span style="font-size: 14px; color: #a3a3a3;">직접 입력...</span>
+        </div>
       </div>
     </div>
 
-    <!-- AI 태그 (토글) -->
-    <div style="padding: 0 20px; margin-bottom: 24px;">
+    <!-- 태그 -->
+    <div style="padding: 0 20px; margin-bottom: 32px;">
       <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 10px;">
         <span style="font-size: 13px; font-weight: 600; color: #0a0a0a;">태그</span>
         <span style="font-size: 11px; color: #a3a3a3;">탭하여 제외</span>
@@ -148,18 +171,10 @@
         <span class="chip-tag-active">성능</span>
         <span class="chip-tag-active">최적화</span>
         <span class="chip-tag-inactive">JavaScript</span>
-      </div>
-    </div>
-
-    <!-- 컬렉션 선택 (풀스크린 전환) -->
-    <div style="padding: 0 20px; margin-bottom: 32px;">
-      <div style="font-size: 13px; font-weight: 600; color: #0a0a0a; margin-bottom: 6px;">컬렉션</div>
-      <div style="display: flex; align-items: center; justify-content: space-between; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 12px 14px; cursor: pointer;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-          <span style="font-size: 14px; color: #a3a3a3;">컬렉션에 추가...</span>
-        </div>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+        <span class="chip-tag-add">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          추가
+        </span>
       </div>
     </div>
 
