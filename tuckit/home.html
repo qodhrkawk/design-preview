@@ -24,15 +24,16 @@
       position: relative;
       overflow-x: hidden;
     }
-    .chip-category {
+    .chip-collection {
       display: inline-flex;
       align-items: center;
+      gap: 3px;
       padding: 2px 8px;
       border-radius: 6px;
       font-size: 11px;
       font-weight: 500;
-      background: #FFF3E0;
-      color: #F57C00;
+      background: #f5f5f5;
+      color: #0a0a0a;
     }
     .chip-tag {
       display: inline-flex;
@@ -41,7 +42,6 @@
       border-radius: 6px;
       font-size: 11px;
       font-weight: 500;
-      background: transparent;
       color: #737373;
       border: 1px solid #e5e5e5;
     }
@@ -73,7 +73,7 @@
       </div>
     </div>
 
-    <!-- Filter Tabs -->
+    <!-- Collection Filter Tabs -->
     <div style="padding: 0 20px; margin-bottom: 16px; overflow-x: auto; -webkit-overflow-scrolling: touch;">
       <div style="display: flex; gap: 8px; white-space: nowrap;">
         <div style="padding: 6px 14px; border-radius: 9999px; font-size: 13px; font-weight: 500; background: #0a0a0a; color: #fafafa;">전체</div>
@@ -81,7 +81,7 @@
         <div style="padding: 6px 14px; border-radius: 9999px; font-size: 13px; font-weight: 500; background: #f5f5f5; color: #737373;">디자인</div>
         <div style="padding: 6px 14px; border-radius: 9999px; font-size: 13px; font-weight: 500; background: #f5f5f5; color: #737373;">요리</div>
         <div style="padding: 6px 14px; border-radius: 9999px; font-size: 13px; font-weight: 500; background: #f5f5f5; color: #737373;">투자</div>
-        <div style="padding: 6px 14px; border-radius: 9999px; font-size: 13px; font-weight: 500; background: #f5f5f5; color: #737373;">즐겨찾기</div>
+        <div style="padding: 6px 14px; border-radius: 9999px; font-size: 13px; font-weight: 500; background: #f5f5f5; color: #737373;">여행</div>
       </div>
     </div>
 
@@ -97,7 +97,7 @@
           <div style="font-size: 14px; font-weight: 600; color: #0a0a0a; margin-bottom: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">React Native 성능 최적화 가이드</div>
           <div style="font-size: 12px; color: #a3a3a3; margin-bottom: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">medium.com/@dev</div>
           <div style="display: flex; flex-direction: column; gap: 4px;">
-            <div><span class="chip-category">개발</span></div>
+            <div><span class="chip-collection"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>개발</span></div>
             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
               <span class="chip-tag">React</span>
               <span class="chip-tag">성능</span>
@@ -115,7 +115,7 @@
           <div style="font-size: 14px; font-weight: 600; color: #0a0a0a; margin-bottom: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">집에서 만드는 크림파스타 레시피</div>
           <div style="font-size: 12px; color: #a3a3a3; margin-bottom: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">blog.naver.com/cook</div>
           <div style="display: flex; flex-direction: column; gap: 4px;">
-            <div><span class="chip-category">요리</span></div>
+            <div><span class="chip-collection"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>요리</span></div>
             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
               <span class="chip-tag">파스타</span>
               <span class="chip-tag">레시피</span>
@@ -133,7 +133,7 @@
           <div style="font-size: 14px; font-weight: 600; color: #0a0a0a; margin-bottom: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">2026 UI 디자인 트렌드 총정리</div>
           <div style="font-size: 12px; color: #a3a3a3; margin-bottom: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">designspectrum.io</div>
           <div style="display: flex; flex-direction: column; gap: 4px;">
-            <div><span class="chip-category">디자인</span></div>
+            <div><span class="chip-collection"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>디자인</span></div>
             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
               <span class="chip-tag">UI</span>
               <span class="chip-tag">트렌드</span>
@@ -151,7 +151,7 @@
           <div style="font-size: 14px; font-weight: 600; color: #0a0a0a; margin-bottom: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">초보자를 위한 ETF 투자 가이드</div>
           <div style="font-size: 12px; color: #a3a3a3; margin-bottom: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">toss.im/articles</div>
           <div style="display: flex; flex-direction: column; gap: 4px;">
-            <div><span class="chip-category">투자</span></div>
+            <div><span class="chip-collection"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>투자</span></div>
             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
               <span class="chip-tag">ETF</span>
               <span class="chip-tag">초보</span>
@@ -169,7 +169,7 @@
           <div style="font-size: 14px; font-weight: 600; color: #0a0a0a; margin-bottom: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">도쿄 3박4일 여행 코스 추천</div>
           <div style="font-size: 12px; color: #a3a3a3; margin-bottom: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">brunch.co.kr/@travel</div>
           <div style="display: flex; flex-direction: column; gap: 4px;">
-            <div><span class="chip-category">여행</span></div>
+            <div><span class="chip-collection"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>여행</span></div>
             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
               <span class="chip-tag">도쿄</span>
               <span class="chip-tag">일본</span>
