@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>뭐샀지 - 통계</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; position: relative; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <!-- Status Bar -->
+  <div style="padding: 12px 24px 8px; display: flex; justify-content: space-between; align-items: center;">
+    <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">9:41</span>
+    <div style="display: flex; gap: 6px; align-items: center;">
+      <span style="font-size: 12px;">📶</span>
+      <span style="font-size: 12px;">🔋</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div style="padding: 16px 24px 12px;">
+    <h1 style="font-size: 24px; font-weight: 800; color: #0a0a0a; letter-spacing: -0.025em;">통계</h1>
+  </div>
+
+  <!-- Period Selector -->
+  <div style="padding: 0 24px; margin-bottom: 20px;">
+    <div style="display: flex; background: #f5f5f5; border-radius: 10px; padding: 3px;">
+      <div style="flex: 1; text-align: center; padding: 8px; font-size: 13px; font-weight: 500; color: #737373;">일</div>
+      <div style="flex: 1; text-align: center; padding: 8px; font-size: 13px; font-weight: 500; color: #737373;">주</div>
+      <div style="flex: 1; text-align: center; padding: 8px; background: #0a0a0a; color: #fafafa; border-radius: 8px; font-size: 13px; font-weight: 600;">월</div>
+      <div style="flex: 1; text-align: center; padding: 8px; font-size: 13px; font-weight: 500; color: #737373;">년</div>
+    </div>
+  </div>
+
+  <!-- Bar Chart -->
+  <div style="padding: 0 24px; margin-bottom: 24px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; height: 160px; padding: 0 8px;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1;">
+        <span style="font-size: 11px; color: #737373;">₩12만</span>
+        <div style="width: 28px; height: 48px; background: #e5e5e5; border-radius: 6px 6px 0 0;"></div>
+        <span style="font-size: 11px; color: #737373;">1주</span>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1;">
+        <span style="font-size: 11px; color: #737373;">₩18만</span>
+        <div style="width: 28px; height: 72px; background: #e5e5e5; border-radius: 6px 6px 0 0;"></div>
+        <span style="font-size: 11px; color: #737373;">2주</span>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1;">
+        <span style="font-size: 11px; color: #737373;">₩15만</span>
+        <div style="width: 28px; height: 60px; background: #e5e5e5; border-radius: 6px 6px 0 0;"></div>
+        <span style="font-size: 11px; color: #737373;">3주</span>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1;">
+        <span style="font-size: 11px; font-weight: 600; color: #0a0a0a;">₩7만</span>
+        <div style="width: 28px; height: 28px; background: #0a0a0a; border-radius: 6px 6px 0 0;"></div>
+        <span style="font-size: 11px; font-weight: 600; color: #0a0a0a;">4주</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category Breakdown -->
+  <div style="padding: 0 24px;">
+    <p style="font-size: 16px; font-weight: 700; color: #0a0a0a; margin-bottom: 16px;">카테고리별</p>
+
+    <!-- Category 1 -->
+    <div style="margin-bottom: 16px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 36px; height: 36px; background: #fce7f3; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px;">🍽️</div>
+          <div>
+            <p style="font-size: 14px; font-weight: 600; color: #0a0a0a;">식비</p>
+            <p style="font-size: 12px; color: #737373;">42건</p>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <p style="font-size: 15px; font-weight: 700; color: #0a0a0a;">₩215,400</p>
+          <p style="font-size: 12px; color: #737373;">41%</p>
+        </div>
+      </div>
+      <div style="height: 6px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+        <div style="width: 41%; height: 100%; background: #f472b6; border-radius: 9999px;"></div>
+      </div>
+    </div>
+
+    <!-- Category 2 -->
+    <div style="margin-bottom: 16px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 36px; height: 36px; background: #fef3c7; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px;">☕</div>
+          <div>
+            <p style="font-size: 14px; font-weight: 600; color: #0a0a0a;">카페</p>
+            <p style="font-size: 12px; color: #737373;">18건</p>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <p style="font-size: 15px; font-weight: 700; color: #0a0a0a;">₩89,500</p>
+          <p style="font-size: 12px; color: #737373;">17%</p>
+        </div>
+      </div>
+      <div style="height: 6px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+        <div style="width: 17%; height: 100%; background: #fbbf24; border-radius: 9999px;"></div>
+      </div>
+    </div>
+
+    <!-- Category 3 -->
+    <div style="margin-bottom: 16px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 36px; height: 36px; background: #dbeafe; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px;">🚌</div>
+          <div>
+            <p style="font-size: 14px; font-weight: 600; color: #0a0a0a;">교통</p>
+            <p style="font-size: 12px; color: #737373;">28건</p>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <p style="font-size: 15px; font-weight: 700; color: #0a0a0a;">₩78,200</p>
+          <p style="font-size: 12px; color: #737373;">15%</p>
+        </div>
+      </div>
+      <div style="height: 6px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+        <div style="width: 15%; height: 100%; background: #60a5fa; border-radius: 9999px;"></div>
+      </div>
+    </div>
+
+    <!-- Category 4 -->
+    <div style="margin-bottom: 16px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 36px; height: 36px; background: #f3e8ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px;">🛒</div>
+          <div>
+            <p style="font-size: 14px; font-weight: 600; color: #0a0a0a;">쇼핑</p>
+            <p style="font-size: 12px; color: #737373;">8건</p>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <p style="font-size: 15px; font-weight: 700; color: #0a0a0a;">₩140,300</p>
+          <p style="font-size: 12px; color: #737373;">27%</p>
+        </div>
+      </div>
+      <div style="height: 6px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+        <div style="width: 27%; height: 100%; background: #a78bfa; border-radius: 9999px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Insight -->
+  <div style="margin: 24px; padding: 16px; background: linear-gradient(135deg, #f0fdf4, #ecfdf5); border: 1px solid #bbf7d0; border-radius: 16px;">
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+      <span style="font-size: 16px;">💡</span>
+      <p style="font-size: 14px; font-weight: 700; color: #0a0a0a;">AI 인사이트</p>
+    </div>
+    <p style="font-size: 13px; color: #374151; line-height: 1.6;">이번 달 카페 지출이 지난달 대비 <b>23% 증가</b>했어요. 주 3회 → 주 5회로 빈도가 늘었네요. 텀블러 챌린지 해볼까요? ☕️</p>
+  </div>
+
+  <!-- Bottom Nav -->
+  <div style="position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 390px; background: #ffffff; border-top: 1px solid #e5e5e5; padding: 10px 0 30px; display: flex; justify-content: space-around;">
+    <div style="text-align: center;">
+      <span style="font-size: 22px;">🏠</span>
+      <p style="font-size: 11px; color: #737373; margin-top: 2px;">홈</p>
+    </div>
+    <div style="text-align: center;">
+      <span style="font-size: 22px;">📊</span>
+      <p style="font-size: 11px; font-weight: 600; color: #0a0a0a; margin-top: 2px;">통계</p>
+    </div>
+    <div style="width: 64px;"></div>
+    <div style="text-align: center;">
+      <span style="font-size: 22px;">💰</span>
+      <p style="font-size: 11px; color: #737373; margin-top: 2px;">예산</p>
+    </div>
+    <div style="text-align: center;">
+      <span style="font-size: 22px;">👤</span>
+      <p style="font-size: 11px; color: #737373; margin-top: 2px;">설정</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
