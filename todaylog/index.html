@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘뭐했지 - 홈</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; position: relative; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <!-- Status Bar -->
+  <div style="padding: 12px 24px 8px; display: flex; justify-content: space-between; align-items: center;">
+    <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">21:30</span>
+    <div style="display: flex; gap: 6px; align-items: center;">
+      <span style="font-size: 12px;">📶</span>
+      <span style="font-size: 12px;">🔋</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div style="padding: 16px 24px 8px;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <p style="font-size: 14px; color: #737373; font-weight: 400;">3월 31일 월요일</p>
+        <h1 style="font-size: 28px; font-weight: 800; color: #0a0a0a; letter-spacing: -0.025em; margin-top: 2px;">오늘 뭐 했지? 🤔</h1>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <div style="width: 36px; height: 36px; background: #f5f5f5; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-size: 16px;">🔥</div>
+        <div style="width: 36px; height: 36px; background: #f5f5f5; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-size: 16px;">⚙️</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Streak Banner -->
+  <div style="margin: 12px 24px; padding: 12px 16px; background: linear-gradient(135deg, #fef3c7, #fde68a); border-radius: 12px; display: flex; align-items: center; gap: 10px;">
+    <span style="font-size: 24px;">🔥</span>
+    <div>
+      <p style="font-size: 14px; font-weight: 700; color: #92400e;">7일 연속 기록 중!</p>
+      <p style="font-size: 12px; color: #a16207;">꾸준히 하고 있네 👏</p>
+    </div>
+  </div>
+
+  <!-- AI Weekly Insight Card -->
+  <div style="margin: 8px 24px 16px; padding: 16px; background: #0a0a0a; border-radius: 16px; color: #fafafa;">
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+      <span style="font-size: 16px;">💡</span>
+      <p style="font-size: 13px; font-weight: 600; color: #a3a3a3;">이번 주 AI 인사이트</p>
+    </div>
+    <p style="font-size: 15px; font-weight: 500; line-height: 1.6; color: #e5e5e5;">"이번 주 <b style='color:#fafafa;'>개발</b>에 가장 많은 시간을 쓰고 있어. 근데 <b style='color:#fbbf24;'>운동</b>이 월요일 이후로 없네? 수요일에 한번 넣어보는 건 어때?"</p>
+  </div>
+
+  <!-- Today's Log -->
+  <div style="padding: 0 24px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+      <p style="font-size: 15px; font-weight: 700; color: #0a0a0a;">오늘의 기록</p>
+      <p style="font-size: 13px; color: #737373;">5개 활동</p>
+    </div>
+
+    <!-- Timeline -->
+    <div style="position: relative; padding-left: 28px;">
+      <!-- Timeline line -->
+      <div style="position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: #e5e5e5;"></div>
+
+      <!-- Item 1 -->
+      <div style="position: relative; margin-bottom: 20px;">
+        <div style="position: absolute; left: -28px; top: 4px; width: 16px; height: 16px; background: #dbeafe; border-radius: 9999px; border: 2px solid #ffffff; display: flex; align-items: center; justify-content: center;">
+          <div style="width: 6px; height: 6px; background: #3b82f6; border-radius: 9999px;"></div>
+        </div>
+        <div style="padding: 12px 16px; background: #f8fafc; border-radius: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="font-size: 14px;">💻</span>
+              <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">개발</span>
+            </div>
+            <span style="font-size: 12px; color: #737373;">오전 9시~12시</span>
+          </div>
+          <p style="font-size: 13px; color: #525252; line-height: 1.5;">채팅 뷰어 앱 버그 수정. 스크롤 성능 개선함</p>
+          <div style="margin-top: 6px; display: flex; gap: 6px;">
+            <span style="padding: 2px 8px; background: #dbeafe; border-radius: 9999px; font-size: 11px; color: #1e40af; font-weight: 500;">React Native</span>
+            <span style="padding: 2px 8px; background: #dbeafe; border-radius: 9999px; font-size: 11px; color: #1e40af; font-weight: 500;">버그픽스</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div style="position: relative; margin-bottom: 20px;">
+        <div style="position: absolute; left: -28px; top: 4px; width: 16px; height: 16px; background: #fce7f3; border-radius: 9999px; border: 2px solid #ffffff; display: flex; align-items: center; justify-content: center;">
+          <div style="width: 6px; height: 6px; background: #ec4899; border-radius: 9999px;"></div>
+        </div>
+        <div style="padding: 12px 16px; background: #f8fafc; border-radius: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="font-size: 14px;">🍽️</span>
+              <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">점심</span>
+            </div>
+            <span style="font-size: 12px; color: #737373;">12시 반</span>
+          </div>
+          <p style="font-size: 13px; color: #525252; line-height: 1.5;">동네 국밥집. 매운 갈비탕 먹음 🔥</p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div style="position: relative; margin-bottom: 20px;">
+        <div style="position: absolute; left: -28px; top: 4px; width: 16px; height: 16px; background: #dbeafe; border-radius: 9999px; border: 2px solid #ffffff; display: flex; align-items: center; justify-content: center;">
+          <div style="width: 6px; height: 6px; background: #3b82f6; border-radius: 9999px;"></div>
+        </div>
+        <div style="padding: 12px 16px; background: #f8fafc; border-radius: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="font-size: 14px;">📊</span>
+              <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">투자</span>
+            </div>
+            <span style="font-size: 12px; color: #737373;">오후 2시~3시</span>
+          </div>
+          <p style="font-size: 13px; color: #525252; line-height: 1.5;">주식 전략 백테스트. v5.1 파라미터 조정</p>
+          <div style="margin-top: 6px; display: flex; gap: 6px;">
+            <span style="padding: 2px 8px; background: #d1fae5; border-radius: 9999px; font-size: 11px; color: #065f46; font-weight: 500;">백테스트</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div style="position: relative; margin-bottom: 20px;">
+        <div style="position: absolute; left: -28px; top: 4px; width: 16px; height: 16px; background: #fef3c7; border-radius: 9999px; border: 2px solid #ffffff; display: flex; align-items: center; justify-content: center;">
+          <div style="width: 6px; height: 6px; background: #f59e0b; border-radius: 9999px;"></div>
+        </div>
+        <div style="padding: 12px 16px; background: #f8fafc; border-radius: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="font-size: 14px;">🏃</span>
+              <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">운동</span>
+            </div>
+            <span style="font-size: 12px; color: #737373;">오후 5시</span>
+          </div>
+          <p style="font-size: 13px; color: #525252; line-height: 1.5;">러닝 30분. 한강 공원</p>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div style="position: relative;">
+        <div style="position: absolute; left: -28px; top: 4px; width: 16px; height: 16px; background: #f3e8ff; border-radius: 9999px; border: 2px solid #ffffff; display: flex; align-items: center; justify-content: center;">
+          <div style="width: 6px; height: 6px; background: #a78bfa; border-radius: 9999px;"></div>
+        </div>
+        <div style="padding: 12px 16px; background: #f8fafc; border-radius: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="font-size: 14px;">📚</span>
+              <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">독서</span>
+            </div>
+            <span style="font-size: 12px; color: #737373;">오후 9시</span>
+          </div>
+          <p style="font-size: 13px; color: #525252; line-height: 1.5;">"사피엔스" 3장 읽음. 인지혁명 파트</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAB -->
+  <div style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%);">
+    <div style="height: 52px; padding: 0 24px; background: #0a0a0a; border-radius: 9999px; display: flex; align-items: center; gap: 8px; box-shadow: 0 10px 15px rgba(0,0,0,0.2);">
+      <span style="font-size: 20px;">✏️</span>
+      <span style="font-size: 15px; font-weight: 600; color: #fafafa;">기록하기</span>
+    </div>
+  </div>
+
+  <!-- Bottom Nav -->
+  <div style="position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 390px; background: #ffffff; border-top: 1px solid #e5e5e5; padding: 10px 0 30px; display: flex; justify-content: space-around;">
+    <div style="text-align: center;">
+      <span style="font-size: 22px;">📋</span>
+      <p style="font-size: 11px; font-weight: 600; color: #0a0a0a; margin-top: 2px;">오늘</p>
+    </div>
+    <div style="text-align: center;">
+      <span style="font-size: 22px;">📅</span>
+      <p style="font-size: 11px; color: #737373; margin-top: 2px;">캘린더</p>
+    </div>
+    <div style="text-align: center;">
+      <span style="font-size: 22px;">📊</span>
+      <p style="font-size: 11px; color: #737373; margin-top: 2px;">통계</p>
+    </div>
+    <div style="text-align: center;">
+      <span style="font-size: 22px;">👤</span>
+      <p style="font-size: 11px; color: #737373; margin-top: 2px;">설정</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
