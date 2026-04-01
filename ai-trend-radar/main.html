@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -75,8 +76,10 @@
     flex-shrink: 0;
   }
   .logo-icon {
-    font-size: 20px;
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fg);
   }
   .header-nav {
     display: flex;
@@ -125,6 +128,9 @@
     flex-shrink: 0;
   }
   .logout-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
     font-size: 13px;
     color: var(--muted-fg);
     padding: 5px 10px;
@@ -176,6 +182,9 @@
   }
   .filter-bar::-webkit-scrollbar { display: none; }
   .filter-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
     padding: 6px 14px;
     border-radius: 9999px;
     font-size: 13px;
@@ -238,15 +247,17 @@
     line-height: 1.35;
   }
   .star-btn {
-    font-size: 18px;
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
+    color: var(--muted-fg);
     opacity: 0.5;
     transition: all 0.15s;
     padding: 2px;
   }
   .star-btn:hover { opacity: 0.8; transform: scale(1.1); }
-  .star-btn.starred { opacity: 1; }
+  .star-btn.starred { opacity: 1; color: var(--star-active); }
 
   .card-summary {
     font-size: 13px;
@@ -264,6 +275,7 @@
   .badge {
     display: inline-flex;
     align-items: center;
+    gap: 4px;
     padding: 2px 8px;
     border-radius: 9999px;
     font-size: 11px;
@@ -306,7 +318,11 @@
     font-weight: 600;
     color: var(--fg);
   }
-  .score-fire { font-size: 14px; }
+  .score-fire {
+    display: flex;
+    align-items: center;
+    color: var(--fire);
+  }
   .link-btn {
     display: inline-flex;
     align-items: center;
@@ -332,7 +348,12 @@
     padding: 64px 24px;
     color: var(--muted-fg);
   }
-  .empty-icon { font-size: 40px; margin-bottom: 12px; }
+  .empty-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
   .empty-text { font-size: 15px; }
 </style>
 </head>
@@ -342,7 +363,7 @@
 <header class="header">
   <div class="header-inner">
     <a href="main.html" class="logo">
-      <span class="logo-icon">📡</span>
+      <span class="logo-icon"><i data-lucide="radio" style="width:20px;height:20px;"></i></span>
       <span>AI Trend Radar</span>
     </a>
     <nav class="header-nav">
@@ -352,7 +373,7 @@
     <div class="header-right">
       <span class="update-badge">매일 08:00 업데이트</span>
       <div class="avatar" title="Yunjae">Y</div>
-      <a href="login.html"><button class="logout-btn">로그아웃</button></a>
+      <a href="login.html"><button class="logout-btn"><i data-lucide="log-out" style="width:13px;height:13px;"></i>로그아웃</button></a>
     </div>
   </div>
 </header>
@@ -369,9 +390,9 @@
 <!-- Filter Bar -->
 <div class="filter-bar">
   <button class="filter-tab active" onclick="filterCards(this, 'all')">전체</button>
-  <button class="filter-tab" onclick="filterCards(this, 'skill')">🔧 스킬·플러그인</button>
-  <button class="filter-tab" onclick="filterCards(this, 'agent')">🤖 에이전트 서비스</button>
-  <button class="filter-tab" onclick="filterCards(this, 'api')">⚡ API·모델</button>
+  <button class="filter-tab" onclick="filterCards(this, 'skill')"><i data-lucide="puzzle" style="width:13px;height:13px;"></i> 스킬·플러그인</button>
+  <button class="filter-tab" onclick="filterCards(this, 'agent')"><i data-lucide="bot" style="width:13px;height:13px;"></i> 에이전트 서비스</button>
+  <button class="filter-tab" onclick="filterCards(this, 'api')"><i data-lucide="cpu" style="width:13px;height:13px;"></i> API·모델</button>
 </div>
 
 <!-- Card Grid -->
@@ -381,17 +402,17 @@
   <div class="card" data-category="api">
     <div class="card-top">
       <span class="card-name">Gemini 2.5 Pro Experimental</span>
-      <button class="star-btn" onclick="toggleStar(this)">⭐</button>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
     </div>
     <p class="card-summary">Google이 공개한 최신 멀티모달 모델. 1M 컨텍스트 윈도우와 향상된 코딩 능력으로 GPT-4o를 넘어서는 벤치마크 달성.</p>
     <div class="card-meta">
-      <span class="badge badge-category">⚡ API·모델</span>
-      <span class="badge badge-gh">GH</span>
-      <span class="badge badge-hn">HN</span>
+      <span class="badge badge-category"><i data-lucide="cpu" style="width:11px;height:11px;"></i> API·모델</span>
+      <span class="badge badge-gh"><i data-lucide="github" style="width:11px;height:11px;"></i> GH</span>
+      <span class="badge badge-hn"><i data-lucide="newspaper" style="width:11px;height:11px;"></i> HN</span>
     </div>
     <div class="card-footer">
-      <div class="score"><span class="score-fire">🔥</span><span>9,240</span></div>
-      <a href="#" class="link-btn">원본 보기 ↗</a>
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>9,240</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
     </div>
   </div>
 
@@ -399,17 +420,17 @@
   <div class="card" data-category="agent">
     <div class="card-top">
       <span class="card-name">Cursor Agent Mode 2.0</span>
-      <button class="star-btn starred" onclick="toggleStar(this)">⭐</button>
+      <button class="star-btn starred" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
     </div>
     <p class="card-summary">멀티파일 자율 편집 + 터미널 실행까지 지원하는 에이전트 모드 업데이트. 프로젝트 단위 리팩터링을 자동화.</p>
     <div class="card-meta">
-      <span class="badge badge-category">🤖 에이전트 서비스</span>
-      <span class="badge badge-ph">PH</span>
-      <span class="badge badge-hn">HN</span>
+      <span class="badge badge-category"><i data-lucide="bot" style="width:11px;height:11px;"></i> 에이전트 서비스</span>
+      <span class="badge badge-ph"><i data-lucide="rocket" style="width:11px;height:11px;"></i> PH</span>
+      <span class="badge badge-hn"><i data-lucide="newspaper" style="width:11px;height:11px;"></i> HN</span>
     </div>
     <div class="card-footer">
-      <div class="score"><span class="score-fire">🔥</span><span>7,810</span></div>
-      <a href="#" class="link-btn">원본 보기 ↗</a>
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>7,810</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
     </div>
   </div>
 
@@ -417,16 +438,16 @@
   <div class="card" data-category="skill">
     <div class="card-top">
       <span class="card-name">claude-mcp-toolkit</span>
-      <button class="star-btn starred" onclick="toggleStar(this)">⭐</button>
+      <button class="star-btn starred" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
     </div>
     <p class="card-summary">Claude MCP 서버를 손쉽게 구성하는 오픈소스 툴킷. 파일시스템·웹·DB 도구를 플러그인 방식으로 조합 가능.</p>
     <div class="card-meta">
-      <span class="badge badge-category">🔧 스킬·플러그인</span>
-      <span class="badge badge-gh">GH</span>
+      <span class="badge badge-category"><i data-lucide="puzzle" style="width:11px;height:11px;"></i> 스킬·플러그인</span>
+      <span class="badge badge-gh"><i data-lucide="github" style="width:11px;height:11px;"></i> GH</span>
     </div>
     <div class="card-footer">
-      <div class="score"><span class="score-fire">🔥</span><span>6,530</span></div>
-      <a href="#" class="link-btn">원본 보기 ↗</a>
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>6,530</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
     </div>
   </div>
 
@@ -434,17 +455,17 @@
   <div class="card" data-category="api">
     <div class="card-top">
       <span class="card-name">Mistral Small 3.1</span>
-      <button class="star-btn" onclick="toggleStar(this)">⭐</button>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
     </div>
     <p class="card-summary">22B 파라미터로 GPT-4o-mini 수준의 성능을 달성한 경량 모델. 무료 상업 라이선스로 자체 배포 가능.</p>
     <div class="card-meta">
-      <span class="badge badge-category">⚡ API·모델</span>
-      <span class="badge badge-gh">GH</span>
-      <span class="badge badge-hn">HN</span>
+      <span class="badge badge-category"><i data-lucide="cpu" style="width:11px;height:11px;"></i> API·모델</span>
+      <span class="badge badge-gh"><i data-lucide="github" style="width:11px;height:11px;"></i> GH</span>
+      <span class="badge badge-hn"><i data-lucide="newspaper" style="width:11px;height:11px;"></i> HN</span>
     </div>
     <div class="card-footer">
-      <div class="score"><span class="score-fire">🔥</span><span>5,920</span></div>
-      <a href="#" class="link-btn">원본 보기 ↗</a>
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>5,920</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
     </div>
   </div>
 
@@ -452,16 +473,16 @@
   <div class="card" data-category="agent">
     <div class="card-top">
       <span class="card-name">Devin 2.0 — Solo Engineer</span>
-      <button class="star-btn" onclick="toggleStar(this)">⭐</button>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
     </div>
     <p class="card-summary">Cognition이 공개한 Devin 2.0. GitHub 이슈 자동 처리율 85%를 달성, SWE-bench 리더보드 1위 기록.</p>
     <div class="card-meta">
-      <span class="badge badge-category">🤖 에이전트 서비스</span>
-      <span class="badge badge-ph">PH</span>
+      <span class="badge badge-category"><i data-lucide="bot" style="width:11px;height:11px;"></i> 에이전트 서비스</span>
+      <span class="badge badge-ph"><i data-lucide="rocket" style="width:11px;height:11px;"></i> PH</span>
     </div>
     <div class="card-footer">
-      <div class="score"><span class="score-fire">🔥</span><span>5,410</span></div>
-      <a href="#" class="link-btn">원본 보기 ↗</a>
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>5,410</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
     </div>
   </div>
 
@@ -469,16 +490,16 @@
   <div class="card" data-category="skill">
     <div class="card-top">
       <span class="card-name">LangGraph v0.3</span>
-      <button class="star-btn" onclick="toggleStar(this)">⭐</button>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
     </div>
     <p class="card-summary">멀티에이전트 워크플로우를 그래프로 정의하는 LangChain의 새 프레임워크. 체크포인트·스트리밍·인간 개입 지원.</p>
     <div class="card-meta">
-      <span class="badge badge-category">🔧 스킬·플러그인</span>
-      <span class="badge badge-gh">GH</span>
+      <span class="badge badge-category"><i data-lucide="puzzle" style="width:11px;height:11px;"></i> 스킬·플러그인</span>
+      <span class="badge badge-gh"><i data-lucide="github" style="width:11px;height:11px;"></i> GH</span>
     </div>
     <div class="card-footer">
-      <div class="score"><span class="score-fire">🔥</span><span>4,870</span></div>
-      <a href="#" class="link-btn">원본 보기 ↗</a>
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>4,870</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
     </div>
   </div>
 
@@ -486,17 +507,17 @@
   <div class="card" data-category="api">
     <div class="card-top">
       <span class="card-name">OpenAI Realtime API GA</span>
-      <button class="star-btn" onclick="toggleStar(this)">⭐</button>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
     </div>
     <p class="card-summary">음성 대화 API 정식 출시. WebSocket 기반으로 200ms 미만 레이턴시의 양방향 음성·텍스트 스트리밍 지원.</p>
     <div class="card-meta">
-      <span class="badge badge-category">⚡ API·모델</span>
-      <span class="badge badge-gh">GH</span>
-      <span class="badge badge-hn">HN</span>
+      <span class="badge badge-category"><i data-lucide="cpu" style="width:11px;height:11px;"></i> API·모델</span>
+      <span class="badge badge-gh"><i data-lucide="github" style="width:11px;height:11px;"></i> GH</span>
+      <span class="badge badge-hn"><i data-lucide="newspaper" style="width:11px;height:11px;"></i> HN</span>
     </div>
     <div class="card-footer">
-      <div class="score"><span class="score-fire">🔥</span><span>4,320</span></div>
-      <a href="#" class="link-btn">원본 보기 ↗</a>
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>4,320</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
     </div>
   </div>
 
@@ -504,16 +525,16 @@
   <div class="card" data-category="agent">
     <div class="card-top">
       <span class="card-name">Stitch — AI Product Builder</span>
-      <button class="star-btn" onclick="toggleStar(this)">⭐</button>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
     </div>
     <p class="card-summary">디자인·코드·배포를 한 번에 처리하는 올인원 AI 프로덕트 빌더. Figma 임포트 후 풀스택 앱 자동 생성.</p>
     <div class="card-meta">
-      <span class="badge badge-category">🤖 에이전트 서비스</span>
-      <span class="badge badge-ph">PH</span>
+      <span class="badge badge-category"><i data-lucide="bot" style="width:11px;height:11px;"></i> 에이전트 서비스</span>
+      <span class="badge badge-ph"><i data-lucide="rocket" style="width:11px;height:11px;"></i> PH</span>
     </div>
     <div class="card-footer">
-      <div class="score"><span class="score-fire">🔥</span><span>3,980</span></div>
-      <a href="#" class="link-btn">원본 보기 ↗</a>
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>3,980</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
     </div>
   </div>
 
@@ -521,16 +542,16 @@
   <div class="card" data-category="skill">
     <div class="card-top">
       <span class="card-name">browser-use v2</span>
-      <button class="star-btn" onclick="toggleStar(this)">⭐</button>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
     </div>
     <p class="card-summary">LLM이 브라우저를 직접 조작하는 에이전트 라이브러리. Playwright 기반, 시각적 UI 이해 능력 대폭 향상.</p>
     <div class="card-meta">
-      <span class="badge badge-category">🔧 스킬·플러그인</span>
-      <span class="badge badge-gh">GH</span>
+      <span class="badge badge-category"><i data-lucide="puzzle" style="width:11px;height:11px;"></i> 스킬·플러그인</span>
+      <span class="badge badge-gh"><i data-lucide="github" style="width:11px;height:11px;"></i> GH</span>
     </div>
     <div class="card-footer">
-      <div class="score"><span class="score-fire">🔥</span><span>3,640</span></div>
-      <a href="#" class="link-btn">원본 보기 ↗</a>
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>3,640</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
     </div>
   </div>
 
@@ -538,17 +559,17 @@
   <div class="card" data-category="api">
     <div class="card-top">
       <span class="card-name">Perplexity Sonar API</span>
-      <button class="star-btn" onclick="toggleStar(this)">⭐</button>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
     </div>
     <p class="card-summary">실시간 웹 검색이 내장된 Perplexity의 Sonar 모델 API 공개. 인용 출처 포함 응답으로 RAG 구성 없이 최신 정보 활용.</p>
     <div class="card-meta">
-      <span class="badge badge-category">⚡ API·모델</span>
-      <span class="badge badge-hn">HN</span>
-      <span class="badge badge-ph">PH</span>
+      <span class="badge badge-category"><i data-lucide="cpu" style="width:11px;height:11px;"></i> API·모델</span>
+      <span class="badge badge-hn"><i data-lucide="newspaper" style="width:11px;height:11px;"></i> HN</span>
+      <span class="badge badge-ph"><i data-lucide="rocket" style="width:11px;height:11px;"></i> PH</span>
     </div>
     <div class="card-footer">
-      <div class="score"><span class="score-fire">🔥</span><span>3,210</span></div>
-      <a href="#" class="link-btn">원본 보기 ↗</a>
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>3,210</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
     </div>
   </div>
 
@@ -573,5 +594,6 @@
     });
   }
 </script>
+<script>lucide.createIcons();</script>
 </body>
 </html>

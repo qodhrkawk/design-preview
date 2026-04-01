@@ -362,6 +362,7 @@
   }
   .empty-link:hover { border-color: #444; background: var(--accent); }
 </style>
+<script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
@@ -369,7 +370,7 @@
 <header class="header">
   <div class="header-inner">
     <a href="main.html" class="logo">
-      <span class="logo-icon">📡</span>
+      <span class="logo-icon"><i data-lucide="radar" style="width:20px;height:20px;color:#8b5cf6;"></i></span>
       <span>AI Trend Radar</span>
     </a>
     <nav class="header-nav">
@@ -387,7 +388,7 @@
 <div class="page-header">
   <div class="page-title-row">
     <h1 class="page-title">내 스타</h1>
-    <span class="star-count">⭐ 5개</span>
+    <span class="star-count"><i data-lucide="star" style="width:12px;height:12px;fill:#f59e0b;color:#f59e0b;display:inline;vertical-align:middle;"></i> 5개</span>
   </div>
   <p class="page-meta">스타한 AI 트렌드를 모아보세요. 언제든 다시 찾을 수 있습니다.</p>
 </div>
@@ -395,9 +396,9 @@
 <!-- Filter Bar -->
 <div class="filter-bar">
   <button class="filter-tab active" onclick="filterCards(this, 'all')">전체</button>
-  <button class="filter-tab" onclick="filterCards(this, 'skill')">🔧 스킬·플러그인</button>
-  <button class="filter-tab" onclick="filterCards(this, 'agent')">🤖 에이전트 서비스</button>
-  <button class="filter-tab" onclick="filterCards(this, 'api')">⚡ API·모델</button>
+  <button class="filter-tab" onclick="filterCards(this, 'skill')"><i data-lucide="puzzle" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>스킬·플러그인</button>
+  <button class="filter-tab" onclick="filterCards(this, 'agent')"><i data-lucide="bot" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>에이전트 서비스</button>
+  <button class="filter-tab" onclick="filterCards(this, 'api')"><i data-lucide="cpu" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>API·모델</button>
 </div>
 
 <!-- Card Grid -->
@@ -407,18 +408,18 @@
   <div class="card" id="card1" data-category="api">
     <div class="card-top">
       <span class="card-name">Gemini 2.5 Pro Experimental</span>
-      <span class="star-btn">⭐</span>
+      <span class="star-btn"><i data-lucide="star" style="width:18px;height:18px;fill:#f59e0b;color:#f59e0b;"></i></span>
     </div>
     <p class="card-summary">Google이 공개한 최신 멀티모달 모델. 1M 컨텍스트 윈도우와 향상된 코딩 능력으로 GPT-4o를 넘어서는 벤치마크 달성.</p>
     <div class="card-meta">
-      <span class="badge badge-category">⚡ API·모델</span>
+      <span class="badge badge-category"><i data-lucide="cpu" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>API·모델</span>
       <span class="badge badge-gh">GH</span>
       <span class="badge badge-hn">HN</span>
     </div>
     <div class="card-footer">
       <div>
-        <div class="score"><span class="score-fire">🔥</span><span>9,240</span></div>
-        <div class="starred-at" style="margin-top:4px;">⭐ 2026.04.01 저장</div>
+        <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;color:#ef4444;"></i></span><span>9,240</span></div>
+        <div class="starred-at" style="margin-top:4px;"><i data-lucide="star" style="width:11px;height:11px;fill:#f59e0b;color:#f59e0b;display:inline;vertical-align:middle;margin-right:2px;"></i>2026.04.01 저장</div>
       </div>
       <div class="card-actions">
         <a href="#" class="link-btn">원본 ↗</a>
@@ -431,18 +432,18 @@
   <div class="card" id="card2" data-category="agent">
     <div class="card-top">
       <span class="card-name">Cursor Agent Mode 2.0</span>
-      <span class="star-btn">⭐</span>
+      <span class="star-btn"><i data-lucide="star" style="width:18px;height:18px;fill:#f59e0b;color:#f59e0b;"></i></span>
     </div>
     <p class="card-summary">멀티파일 자율 편집 + 터미널 실행까지 지원하는 에이전트 모드 업데이트. 프로젝트 단위 리팩터링을 자동화.</p>
     <div class="card-meta">
-      <span class="badge badge-category">🤖 에이전트 서비스</span>
+      <span class="badge badge-category"><i data-lucide="bot" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>에이전트 서비스</span>
       <span class="badge badge-ph">PH</span>
       <span class="badge badge-hn">HN</span>
     </div>
     <div class="card-footer">
       <div>
-        <div class="score"><span class="score-fire">🔥</span><span>7,810</span></div>
-        <div class="starred-at" style="margin-top:4px;">⭐ 2026.04.01 저장</div>
+        <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;color:#ef4444;"></i></span><span>7,810</span></div>
+        <div class="starred-at" style="margin-top:4px;"><i data-lucide="star" style="width:11px;height:11px;fill:#f59e0b;color:#f59e0b;display:inline;vertical-align:middle;margin-right:2px;"></i>2026.04.01 저장</div>
       </div>
       <div class="card-actions">
         <a href="#" class="link-btn">원본 ↗</a>
@@ -455,17 +456,17 @@
   <div class="card" id="card3" data-category="skill">
     <div class="card-top">
       <span class="card-name">claude-mcp-toolkit</span>
-      <span class="star-btn">⭐</span>
+      <span class="star-btn"><i data-lucide="star" style="width:18px;height:18px;fill:#f59e0b;color:#f59e0b;"></i></span>
     </div>
     <p class="card-summary">Claude MCP 서버를 손쉽게 구성하는 오픈소스 툴킷. 파일시스템·웹·DB 도구를 플러그인 방식으로 조합 가능.</p>
     <div class="card-meta">
-      <span class="badge badge-category">🔧 스킬·플러그인</span>
+      <span class="badge badge-category"><i data-lucide="puzzle" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>스킬·플러그인</span>
       <span class="badge badge-gh">GH</span>
     </div>
     <div class="card-footer">
       <div>
-        <div class="score"><span class="score-fire">🔥</span><span>6,530</span></div>
-        <div class="starred-at" style="margin-top:4px;">⭐ 2026.03.30 저장</div>
+        <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;color:#ef4444;"></i></span><span>6,530</span></div>
+        <div class="starred-at" style="margin-top:4px;"><i data-lucide="star" style="width:11px;height:11px;fill:#f59e0b;color:#f59e0b;display:inline;vertical-align:middle;margin-right:2px;"></i>2026.03.30 저장</div>
       </div>
       <div class="card-actions">
         <a href="#" class="link-btn">원본 ↗</a>
@@ -478,17 +479,17 @@
   <div class="card" id="card4" data-category="skill">
     <div class="card-top">
       <span class="card-name">LangGraph v0.3</span>
-      <span class="star-btn">⭐</span>
+      <span class="star-btn"><i data-lucide="star" style="width:18px;height:18px;fill:#f59e0b;color:#f59e0b;"></i></span>
     </div>
     <p class="card-summary">멀티에이전트 워크플로우를 그래프로 정의하는 LangChain의 새 프레임워크. 체크포인트·스트리밍·인간 개입 지원.</p>
     <div class="card-meta">
-      <span class="badge badge-category">🔧 스킬·플러그인</span>
+      <span class="badge badge-category"><i data-lucide="puzzle" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>스킬·플러그인</span>
       <span class="badge badge-gh">GH</span>
     </div>
     <div class="card-footer">
       <div>
-        <div class="score"><span class="score-fire">🔥</span><span>4,870</span></div>
-        <div class="starred-at" style="margin-top:4px;">⭐ 2026.03.29 저장</div>
+        <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;color:#ef4444;"></i></span><span>4,870</span></div>
+        <div class="starred-at" style="margin-top:4px;"><i data-lucide="star" style="width:11px;height:11px;fill:#f59e0b;color:#f59e0b;display:inline;vertical-align:middle;margin-right:2px;"></i>2026.03.29 저장</div>
       </div>
       <div class="card-actions">
         <a href="#" class="link-btn">원본 ↗</a>
@@ -501,17 +502,17 @@
   <div class="card" id="card5" data-category="agent">
     <div class="card-top">
       <span class="card-name">Devin 2.0 — Solo Engineer</span>
-      <span class="star-btn">⭐</span>
+      <span class="star-btn"><i data-lucide="star" style="width:18px;height:18px;fill:#f59e0b;color:#f59e0b;"></i></span>
     </div>
     <p class="card-summary">Cognition이 공개한 Devin 2.0. GitHub 이슈 자동 처리율 85%를 달성, SWE-bench 리더보드 1위 기록.</p>
     <div class="card-meta">
-      <span class="badge badge-category">🤖 에이전트 서비스</span>
+      <span class="badge badge-category"><i data-lucide="bot" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>에이전트 서비스</span>
       <span class="badge badge-ph">PH</span>
     </div>
     <div class="card-footer">
       <div>
-        <div class="score"><span class="score-fire">🔥</span><span>5,410</span></div>
-        <div class="starred-at" style="margin-top:4px;">⭐ 2026.03.28 저장</div>
+        <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;color:#ef4444;"></i></span><span>5,410</span></div>
+        <div class="starred-at" style="margin-top:4px;"><i data-lucide="star" style="width:11px;height:11px;fill:#f59e0b;color:#f59e0b;display:inline;vertical-align:middle;margin-right:2px;"></i>2026.03.28 저장</div>
       </div>
       <div class="card-actions">
         <a href="#" class="link-btn">원본 ↗</a>
@@ -535,7 +536,7 @@
 
   function updateCount() {
     const remaining = document.querySelectorAll('#cardGrid .card').length;
-    document.querySelector('.star-count').textContent = '⭐ ' + remaining + '개';
+    document.querySelector('.star-count').textContent = remaining + '개';
   }
 
   function checkEmpty() {
@@ -544,9 +545,9 @@
       const grid = document.getElementById('cardGrid');
       grid.innerHTML = `
         <div class="empty-state">
-          <div class="empty-icon">⭐</div>
+          <div class="empty-icon"><i data-lucide="star" style="width:44px;height:44px;color:#f59e0b;"></i></div>
           <div class="empty-title">스타한 항목이 없어요</div>
-          <p class="empty-text">오늘의 트렌드에서 관심 항목에 ⭐를 눌러보세요.</p>
+          <p class="empty-text">오늘의 트렌드에서 관심 항목에 스타를 눌러보세요.</p>
           <a href="main.html" class="empty-link">오늘의 트렌드 보기 →</a>
         </div>`;
     }
@@ -560,5 +561,6 @@
     });
   }
 </script>
+<script>lucide.createIcons();</script>
 </body>
 </html>

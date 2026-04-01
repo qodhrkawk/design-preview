@@ -195,6 +195,7 @@
     border: 1px solid var(--border);
   }
 </style>
+<script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
@@ -202,15 +203,15 @@
 
 <div class="login-card">
   <div class="logo-wrap">
-    <div class="logo-icon">📡</div>
+    <div class="logo-icon"><i data-lucide="radar" style="width:26px;height:26px;color:#8b5cf6;"></i></div>
     <div class="logo-name">AI Trend Radar</div>
     <div class="logo-tagline">매일 오전 8시, AI 트렌드를<br>한눈에 모아드립니다.</div>
   </div>
 
   <div class="features">
-    <span class="feature-chip">🔧 스킬·플러그인</span>
-    <span class="feature-chip">🤖 에이전트 서비스</span>
-    <span class="feature-chip">⚡ API·모델</span>
+    <span class="feature-chip"><i data-lucide="puzzle" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i> 스킬·플러그인</span>
+    <span class="feature-chip"><i data-lucide="bot" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i> 에이전트 서비스</span>
+    <span class="feature-chip"><i data-lucide="cpu" style="width:12px;height:12px;display:inline;vertical-align:middle;"></i> API·모델</span>
   </div>
 
   <div class="divider"></div>
@@ -238,5 +239,6 @@
   AI Trend Radar · 매일 08:00 KST 업데이트
 </div>
 
+<script>lucide.createIcons();</script>
 </body>
 </html>
