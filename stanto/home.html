@@ -1,138 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Stanto — 홈</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Inter',system-ui,sans-serif;background:#e5e5e5;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 16px;gap:48px}
-    .lbl{font-size:11px;font-weight:600;letter-spacing:.08em;color:#737373;text-transform:uppercase;text-align:center;margin-bottom:12px}
-    .frame{width:390px;min-height:844px;background:#fff;border-radius:44px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);position:relative;padding-bottom:90px}
-    .tb-blue{background:#eff6ff;color:#1d4ed8}
-    .tb-green{background:#f0fdf4;color:#15803d}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Stanto — 홈</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; min-height: 100vh; }
+.mobile-frame { width: 100%; max-width: 390px; min-height: 100vh; background: #ffffff; padding-bottom: 96px; position: relative; }
+</style>
 </head>
 <body>
-<!-- STATE A: 스탠드업 전 -->
-<div>
-<div class="lbl">State A — 스탠드업 전 (CTA)</div>
-<div class="frame">
-  <div style="height:52px;padding:16px 28px 0;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:600;"><span>9:41</span><span>●●● 🔋</span></div>
-  <div style="padding:16px 24px 8px;display:flex;justify-content:space-between;align-items:center;">
-    <div>
-      <p style="font-size:12px;color:#737373;font-weight:500;margin-bottom:4px;">4월 10일 금요일</p>
-      <h1 style="font-size:26px;font-weight:800;letter-spacing:-.025em;color:#0a0a0a;">안녕, 윤재 👋</h1>
-    </div>
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div style="display:flex;align-items:center;gap:5px;background:#fff7ed;border:1px solid #fed7aa;border-radius:9999px;padding:6px 12px;font-size:12px;font-weight:600;color:#c2410c;">🔥 12</div>
-      <span style="color:#737373;font-size:20px;">⚙</span>
-    </div>
-  </div>
-  <div style="margin:16px 24px 0;background:#0a0a0a;border-radius:20px;padding:24px;position:relative;overflow:hidden;">
-    <div style="position:absolute;top:-50px;right:-50px;width:180px;height:180px;background:rgba(255,255,255,.03);border-radius:9999px;"></div>
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
-      <div style="width:8px;height:8px;background:#f59e0b;border-radius:9999px;"></div>
-      <span style="font-size:11px;font-weight:600;color:#a3a3a3;letter-spacing:.05em;text-transform:uppercase;">TODAY</span>
-    </div>
-    <p style="font-size:22px;font-weight:700;color:#fafafa;line-height:30px;letter-spacing:-.02em;margin-bottom:8px;">☀️ 오늘 할 일을<br>5분 안에 정해요</p>
-    <p style="font-size:13px;color:#737373;margin-bottom:22px;line-height:20px;">어제 회고 → AI 제안 → 직접 추가 → 확정</p>
-    <button style="background:#fafafa;color:#0a0a0a;border:none;border-radius:12px;padding:14px 24px;font-size:14px;font-weight:700;cursor:pointer;width:100%;">시작하기 →</button>
-  </div>
-  <div style="margin:20px 24px 0;border:1.5px dashed #e5e5e5;border-radius:16px;padding:36px 24px;text-align:center;">
-    <p style="font-size:36px;margin-bottom:12px;">📋</p>
-    <p style="font-size:15px;font-weight:600;color:#0a0a0a;margin-bottom:6px;">아직 오늘 할 일이 없어요</p>
-    <p style="font-size:13px;color:#a3a3a3;line-height:20px;">스탠드업을 완료하면<br>할 일 목록이 여기에 나타나요</p>
-  </div>
-  <div style="position:absolute;bottom:0;left:0;right:0;height:90px;background:#fff;border-top:1px solid #e5e5e5;display:flex;align-items:flex-start;padding-top:12px;">
-    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="font-size:22px;">🌅</span><span style="font-size:10px;font-weight:700;color:#0a0a0a;">오늘</span></div>
-    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="font-size:22px;opacity:.35;">📁</span><span style="font-size:10px;font-weight:500;color:#a3a3a3;">프로젝트</span></div>
-    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="font-size:22px;opacity:.35;">📊</span><span style="font-size:10px;font-weight:500;color:#a3a3a3;">회고</span></div>
-  </div>
+<div class="mobile-frame">
+<div style="height:48px;"></div>
+<div style="padding:8px 16px 16px;display:flex;justify-content:space-between;align-items:center;"><div><p style="font-size:12px;line-height:16px;font-weight:400;color:#737373;margin-bottom:4px;">4월 11일 토요일</p><h1 style="font-size:30px;line-height:36px;font-weight:600;letter-spacing:-0.025em;color:#0a0a0a;">오늘</h1></div><div style="display:flex;align-items:center;gap:8px;"><div style="display:flex;align-items:center;gap:6px;background:#f5f5f5;border:1px solid #e5e5e5;border-radius:9999px;padding:6px 12px;"><span style="display:inline-flex;width:14px;height:14px;color:#f59e0b;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span><span style="font-size:12px;line-height:16px;font-weight:600;color:#0a0a0a;">13</span></div><button style="width:40px;height:40px;background:transparent;border:none;padding:8px;cursor:pointer;color:#0a0a0a;display:flex;align-items:center;justify-content:center;"><span style="display:inline-flex;width:24px;height:24px;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></span></button></div></div>
+<div style="margin:0 16px 16px;background:#f5f5f5;border:1px solid #e5e5e5;border-radius:12px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;"><div style="display:flex;align-items:center;gap:10px;"><span style="display:inline-flex;width:18px;height:18px;color:#737373;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16V9"/><path d="M12 16V5"/><path d="M17 16v-3"/></svg></span><span style="font-size:14px;line-height:20px;font-weight:500;color:#0a0a0a;">지난 주 회고가 생성됐어요</span></div><button style="background:transparent;border:none;font-size:14px;line-height:20px;font-weight:500;color:#0a0a0a;cursor:pointer;">보기</button></div>
+<div style="margin:0 16px 16px;display:flex;align-items:center;gap:12px;"><div style="flex:1;height:6px;background:#f5f5f5;border-radius:9999px;overflow:hidden;"><div style="width:40%;height:100%;background:#171717;border-radius:9999px;"></div></div><span style="font-size:12px;line-height:16px;font-weight:500;color:#737373;white-space:nowrap;">2 / 5 완료</span></div>
+<div style="padding:0 16px 16px;display:flex;gap:8px;overflow-x:auto;"><div style="background:#171717;color:#fafafa;border-radius:9999px;padding:6px 14px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap;flex-shrink:0;">전체</div><div style="background:#f5f5f5;border:1px solid #e5e5e5;color:#171717;border-radius:9999px;padding:6px 12px 6px 10px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap;flex-shrink:0;display:inline-flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:9999px;background:#3b82f6;"></span>사이드앱</div><div style="background:#f5f5f5;border:1px solid #e5e5e5;color:#171717;border-radius:9999px;padding:6px 12px 6px 10px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap;flex-shrink:0;display:inline-flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:9999px;background:#22c55e;"></span>본업</div><div style="background:#f5f5f5;border:1px solid #e5e5e5;color:#171717;border-radius:9999px;padding:6px 12px 6px 10px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap;flex-shrink:0;display:inline-flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:9999px;background:#8b5cf6;"></span>블로그</div><div style="background:#ffffff;border:1px dashed #e5e5e5;color:#737373;border-radius:9999px;padding:6px 12px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap;flex-shrink:0;display:flex;align-items:center;gap:4px;"><span style="display:inline-flex;width:12px;height:12px;color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg></span></div></div>
+<div style="padding:0 16px 8px;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><div style="width:8px;height:8px;background:#3b82f6;border-radius:9999px;"></div><span style="font-size:14px;line-height:20px;font-weight:600;color:#0a0a0a;">사이드앱</span><span style="font-size:12px;line-height:16px;font-weight:400;color:#737373;">기획</span></div><div style="background:#ffffff;border:1px solid #e5e5e5;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:20px;height:20px;border-radius:9999px;background:#171717;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fafafa;"><span style="display:inline-flex;width:14px;height:14px;color:#fafafa;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></div><span style="font-size:14px;line-height:20px;font-weight:400;color:#737373;text-decoration:line-through;">PRD 초안 작성</span></div><div style="background:#ffffff;border:1px solid #e5e5e5;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:20px;height:20px;border-radius:9999px;background:#171717;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fafafa;"><span style="display:inline-flex;width:14px;height:14px;color:#fafafa;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></div><span style="font-size:14px;line-height:20px;font-weight:400;color:#737373;text-decoration:line-through;">홈 화면 와이어 정리</span></div><div style="background:#ffffff;border:1px solid #e5e5e5;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:20px;height:20px;border-radius:9999px;background:#ffffff;border:1.5px solid #e5e5e5;flex-shrink:0;"></div><span style="font-size:14px;line-height:20px;font-weight:500;color:#0a0a0a;">스탠드업 4단계 디자인 다시 쓰기</span></div></div>
+<div style="padding:8px 16px 8px;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><div style="width:8px;height:8px;background:#22c55e;border-radius:9999px;"></div><span style="font-size:14px;line-height:20px;font-weight:600;color:#0a0a0a;">본업</span><span style="font-size:12px;line-height:16px;font-weight:400;color:#737373;">개발</span></div><div style="background:#ffffff;border:1px solid #e5e5e5;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:20px;height:20px;border-radius:9999px;background:#ffffff;border:1.5px solid #e5e5e5;flex-shrink:0;"></div><span style="font-size:14px;line-height:20px;font-weight:500;color:#0a0a0a;">스프린트 회고 노트 정리</span></div><div style="background:#ffffff;border:1px solid #e5e5e5;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:20px;height:20px;border-radius:9999px;background:#ffffff;border:1.5px solid #e5e5e5;flex-shrink:0;"></div><span style="font-size:14px;line-height:20px;font-weight:500;color:#0a0a0a;">PR 리뷰 2건</span></div></div>
+<div style="padding:8px 16px 24px;"><button style="width:100%;background:#ffffff;border:1px dashed #e5e5e5;border-radius:12px;padding:14px 16px;display:flex;align-items:center;justify-content:center;gap:8px;color:#737373;font-size:14px;line-height:20px;font-weight:500;cursor:pointer;"><span style="display:inline-flex;width:16px;height:16px;color:#737373;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg></span>할 일 추가</button></div>
+<div style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:390px;height:72px;background:#ffffff;border-top:1px solid #e5e5e5;display:flex;align-items:center;padding:0 16px;"><div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#0a0a0a;"><span style="display:inline-flex;width:24px;height:24px;color:#0a0a0a;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 6 4-4 4 4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg></span><span style="font-size:11px;line-height:14px;font-weight:600;">오늘</span></div><div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#a3a3a3;"><span style="display:inline-flex;width:24px;height:24px;color:#a3a3a3;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg></span><span style="font-size:11px;line-height:14px;font-weight:500;">프로젝트</span></div><div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#a3a3a3;"><span style="display:inline-flex;width:24px;height:24px;color:#a3a3a3;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16V9"/><path d="M12 16V5"/><path d="M17 16v-3"/></svg></span><span style="font-size:11px;line-height:14px;font-weight:500;">회고</span></div></div>
 </div>
-</div>
-<!-- STATE B: 스탠드업 완료 -->
-<div>
-<div class="lbl">State B — 스탠드업 완료 (체크리스트)</div>
-<div class="frame">
-  <div style="height:52px;padding:16px 28px 0;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:600;"><span>9:41</span><span>●●● 🔋</span></div>
-  <div style="padding:16px 24px 8px;display:flex;justify-content:space-between;align-items:center;">
-    <div>
-      <p style="font-size:12px;color:#737373;font-weight:500;margin-bottom:4px;">4월 10일 금요일</p>
-      <h1 style="font-size:26px;font-weight:800;letter-spacing:-.025em;color:#0a0a0a;">오늘</h1>
-    </div>
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div style="display:flex;align-items:center;gap:5px;background:#fff7ed;border:1px solid #fed7aa;border-radius:9999px;padding:6px 12px;font-size:12px;font-weight:600;color:#c2410c;">🔥 13</div>
-      <span style="color:#737373;font-size:20px;">⚙</span>
-    </div>
-  </div>
-  <div style="margin:8px 24px 0;background:#f5f3ff;border:1px solid #ddd6fe;border-radius:12px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;">
-    <div style="display:flex;align-items:center;gap:8px;"><span>📊</span><span style="font-size:13px;font-weight:500;color:#6d28d9;">지난 주 회고가 생성됐어요</span></div>
-    <button style="background:none;border:none;color:#8b5cf6;font-size:13px;font-weight:600;cursor:pointer;">보기</button>
-  </div>
-  <div style="margin:14px 24px 0;display:flex;align-items:center;gap:10px;">
-    <div style="flex:1;height:4px;background:#e5e5e5;border-radius:9999px;overflow:hidden;"><div style="width:40%;height:100%;background:#0a0a0a;border-radius:9999px;"></div></div>
-    <span style="font-size:12px;font-weight:600;color:#737373;white-space:nowrap;">2 / 5 완료</span>
-  </div>
-  <div style="padding:14px 24px 0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;">
-    <div style="background:#0a0a0a;color:#fafafa;border-radius:9999px;padding:6px 14px;font-size:12px;font-weight:600;white-space:nowrap;flex-shrink:0;">전체</div>
-    <div style="background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8;border-radius:9999px;padding:6px 14px;font-size:12px;font-weight:600;white-space:nowrap;flex-shrink:0;">🛠 사이드앱</div>
-    <div style="background:#f5f5f5;border:1px solid #e5e5e5;color:#737373;border-radius:9999px;padding:6px 14px;font-size:12px;font-weight:500;white-space:nowrap;flex-shrink:0;">💼 본업</div>
-    <div style="background:#f5f5f5;border:1px solid #e5e5e5;color:#737373;border-radius:9999px;padding:6px 14px;font-size:12px;font-weight:500;white-space:nowrap;flex-shrink:0;">✍️ 블로그</div>
-    <div style="background:#f5f5f5;border:1px solid #e5e5e5;color:#737373;border-radius:9999px;padding:6px 14px;font-size:12px;font-weight:500;white-space:nowrap;flex-shrink:0;">+</div>
-  </div>
-  <div style="padding:18px 24px 0;">
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
-      <div style="width:8px;height:8px;border-radius:9999px;background:#3b82f6;"></div>
-      <span style="font-size:12px;font-weight:700;color:#0a0a0a;">사이드앱</span>
-      <span style="font-size:11px;color:#a3a3a3;font-weight:500;">빌드 단계</span>
-    </div>
-    <div style="border:1px solid #e5e5e5;border-radius:14px;overflow:hidden;">
-      <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #f5f5f5;">
-        <div style="width:22px;height:22px;border-radius:9999px;background:#0a0a0a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;">✓</div>
-        <span style="font-size:14px;color:#a3a3a3;text-decoration:line-through;flex:1;">OAuth 리팩터링 1/3</span>
-        <span style="font-size:11px;padding:2px 8px;border-radius:9999px;font-weight:500;" class="tb-blue">사이드앱</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #f5f5f5;">
-        <div style="width:22px;height:22px;border-radius:9999px;background:#0a0a0a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;">✓</div>
-        <span style="font-size:14px;color:#a3a3a3;text-decoration:line-through;flex:1;">API 에러 핸들링 정리</span>
-        <span style="font-size:11px;padding:2px 8px;border-radius:9999px;font-weight:500;" class="tb-blue">사이드앱</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;">
-        <div style="width:22px;height:22px;border-radius:9999px;border:2px solid #e5e5e5;flex-shrink:0;"></div>
-        <span style="font-size:14px;color:#0a0a0a;flex:1;">프로필 화면 UI 연결</span>
-        <span style="font-size:11px;padding:2px 8px;border-radius:9999px;font-weight:500;" class="tb-blue">사이드앱</span>
-      </div>
-    </div>
-  </div>
-  <div style="padding:16px 24px 0;">
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
-      <div style="width:8px;height:8px;border-radius:9999px;background:#10b981;"></div>
-      <span style="font-size:12px;font-weight:700;color:#0a0a0a;">본업</span>
-      <span style="font-size:11px;color:#a3a3a3;font-weight:500;">런칭 단계</span>
-    </div>
-    <div style="border:1px solid #e5e5e5;border-radius:14px;overflow:hidden;">
-      <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #f5f5f5;">
-        <div style="width:22px;height:22px;border-radius:9999px;border:2px solid #e5e5e5;flex-shrink:0;"></div>
-        <span style="font-size:14px;color:#0a0a0a;flex:1;">스프린트 플래닝 준비</span>
-        <span style="font-size:11px;padding:2px 8px;border-radius:9999px;font-weight:500;" class="tb-green">본업</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;">
-        <div style="width:22px;height:22px;border-radius:9999px;border:2px solid #e5e5e5;flex-shrink:0;"></div>
-        <span style="font-size:14px;color:#0a0a0a;flex:1;">코드 리뷰 2건</span>
-        <span style="font-size:11px;padding:2px 8px;border-radius:9999px;font-weight:500;" class="tb-green">본업</span>
-      </div>
-    </div>
-  </div>
-  <div style="margin:14px 24px 0;">
-    <button style="width:100%;background:none;border:1.5px dashed #e5e5e5;border-radius:12px;padding:13px;font-size:13px;color:#a3a3a3;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">+ 할 일 추가</button>
-  </div>
-  <div style="position:absolute;bottom:0;left:0;right:0;height:90px;background:#fff;border-top:1px solid #e5e5e5;display:flex;align-items:flex-start;padding-top:12px;">
-    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="font-size:22px;">🌅</span><span style="font-size:10px;font-weight:700;color:#0a0a0a;">오늘</span></div>
-    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="font-size:22px;opacity:.35;">📁</span><span style="font-size:10px;font-weight:500;color:#a3a3a3;">프로젝트</span></div>
-    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="font-size:22px;opacity:.35;">📊</span><span style="font-size:10px;font-weight:500;color:#a3a3a3;">회고</span></div>
-  </div>
-</div>
-</div>
-</body></html>
+</body>
+</html>
