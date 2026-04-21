@@ -70,11 +70,6 @@ const traits: Trait[] = [
   { id: 'travel', label: '여행', icon: <Plane className="h-4 w-4" /> },
 ]
 
-const traitOptions = [
-  { id: 'all', label: '전체' },
-  ...traits.map((t) => ({ id: t.id, label: t.label })),
-]
-
 const perHitInstructions: Record<string, string> = {
   age: `임무: 아래 대화에서 "{targetUser}"의 나이를 파악하세요.
 
@@ -652,9 +647,35 @@ function PromptsTab() {
 
 function AnalyzeTab({ onGoToResults }: { onGoToResults: () => void }) {
   const [dataFile, setDataFile] = useState('alltraits_summary_0421.json')
-  const [selectedTrait, setSelectedTrait] = useState('age')
+  const [selectedTraits, setSelectedTraits] = useState<Set<string>>(
+    new Set(['age', 'gender'])
+  )
   const [targetUser, setTargetUser] = useState('')
   const [model, setModel] = useState('gemma4:e4b')
+
+  const allTraitIds = traits.map((t) => t.id)
+  const allSelected = allTraitIds.every((id) => selectedTraits.has(id))
+  const noneSelected = selectedTraits.size === 0
+
+  const handleToggleTrait = (traitId: string) => {
+    setSelectedTraits((prev) => {
+      const next = new Set(prev)
+      if (next.has(traitId)) {
+        next.delete(traitId)
+      } else {
+        next.add(traitId)
+      }
+      return next
+    })
+  }
+
+  const handleToggleAll = () => {
+    if (allSelected) {
+      setSelectedTraits(new Set())
+    } else {
+      setSelectedTraits(new Set(allTraitIds))
+    }
+  }
 
   const completedCount = analyzeHits.filter((h) => h.status === 'completed').length
   const totalHits = 20
@@ -681,27 +702,6 @@ function AnalyzeTab({ onGoToResults }: { onGoToResults: () => void }) {
                 {sampleFiles.map((f) => (
                   <option key={f.name} value={f.name}>
                     {f.name}
-                  </option>
-                ))}
-              </select>
-              <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-500 pointer-events-none" />
-            </div>
-          </div>
-
-          {/* Trait */}
-          <div className="flex flex-col gap-1.5 min-w-[140px]">
-            <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
-              Trait
-            </label>
-            <div className="relative">
-              <select
-                value={selectedTrait}
-                onChange={(e) => setSelectedTrait(e.target.value)}
-                className="w-full appearance-none bg-[#111827] border border-white/[0.1] rounded-lg px-3 py-2 text-sm text-slate-300 focus:border-[#6366f1]/50 focus:outline-none focus:ring-1 focus:ring-[#6366f1]/30 pr-8"
-              >
-                {traitOptions.map((t) => (
-                  <option key={t.id} value={t.id}>
-                    {t.label}
                   </option>
                 ))}
               </select>
@@ -741,10 +741,45 @@ function AnalyzeTab({ onGoToResults }: { onGoToResults: () => void }) {
           </div>
 
           {/* Analyze Button */}
-          <Button className="bg-[#e94560] hover:bg-[#d13550] text-white text-sm h-[38px] px-6 font-semibold">
+          <Button
+            disabled={noneSelected}
+            className={`text-sm h-[38px] px-6 font-semibold transition-colors ${
+              noneSelected
+                ? 'bg-[#334155] text-[#64748b] cursor-not-allowed hover:bg-[#334155]'
+                : 'bg-[#e94560] hover:bg-[#d13550] text-white'
+            }`}
+          >
             <Zap className="h-4 w-4 mr-2" />
             Analyze
           </Button>
+        </div>
+
+        {/* Trait Toggle Buttons */}
+        <div className="flex flex-wrap items-center gap-2 mt-3 pt-3 border-t border-white/[0.06]">
+          <button
+            onClick={handleToggleAll}
+            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all border ${
+              allSelected
+                ? 'bg-[#6366f1] text-white border-[#6366f1]'
+                : 'bg-[#1a1a2e] text-[#94a3b8] border-[#334155] hover:border-[#475569]'
+            }`}
+          >
+            전체
+          </button>
+          <div className="w-px h-5 bg-white/[0.08]" />
+          {traits.map((trait) => (
+            <button
+              key={trait.id}
+              onClick={() => handleToggleTrait(trait.id)}
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all border ${
+                selectedTraits.has(trait.id)
+                  ? 'bg-[#6366f1] text-white border-[#6366f1]'
+                  : 'bg-[#1a1a2e] text-[#94a3b8] border-[#334155] hover:border-[#475569]'
+              }`}
+            >
+              {trait.label}
+            </button>
+          ))}
         </div>
       </div>
 
