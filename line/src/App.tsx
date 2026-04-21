@@ -15,6 +15,13 @@ interface PageEntry {
 
 const pages: PageEntry[] = [
   {
+    slug: '2026-04-21-prompt-lab',
+    title: 'Gemma Prompt Lab',
+    description: 'Prompt 관리 + LLM 분석 결과 라벨링 도구 (다크 테마)',
+    date: '2026-04-21',
+    viewport: 'desktop',
+  },
+  {
     slug: '2026-04-21-login',
     title: '로그인',
     description: '이메일/비밀번호 + 소셜 로그인 (Google, Apple, Kakao)',
@@ -24,10 +31,12 @@ const pages: PageEntry[] = [
 ]
 
 // -- LAZY IMPORTS (에이전트가 여기에 추가) --
+const PromptLabPage = lazy(() => import('./pages/2026-04-21-prompt-lab/Page'))
 const LoginPage = lazy(() => import('./pages/2026-04-21-login/Page'))
 
 // -- ROUTES (에이전트가 여기에 추가) --
 const pageRoutes: { path: string; element: React.ReactNode }[] = [
+  { path: '/2026-04-21-prompt-lab', element: <Suspense fallback={null}><PromptLabPage /></Suspense> },
   { path: '/2026-04-21-login', element: <Suspense fallback={null}><LoginPage /></Suspense> },
 ]
 
