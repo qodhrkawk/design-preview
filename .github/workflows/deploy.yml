@@ -1,0 +1,66 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: line/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd line
+          npm ci
+
+      - name: Build
+        run: |
+          cd line
+          npm run build
+
+      - name: Prepare site
+        run: |
+          mkdir -p _site
+          # Copy existing root files (exclude line/, _site/, .github/, .git/, node_modules)
+          rsync -av \
+            --exclude='line' \
+            --exclude='_site' \
+            --exclude='.github' \
+            --exclude='.git' \
+            --exclude='node_modules' \
+            . _site/
+          # Copy line build output
+          cp -r line/dist _site/line
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
