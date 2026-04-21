@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Input } from '@/components/ui/input'
 import {
   ArrowLeft,
   Save,
   Upload,
-  Play,
   ChevronDown,
   ChevronUp,
   FileJson,
@@ -19,12 +19,17 @@ import {
   Users,
   Check,
   BarChart3,
+  Loader2,
+  ArrowRight,
+  Search,
+  Timer,
+  Zap,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 // ── Types ──
 
-type TabType = 'prompts' | 'results'
+type TabType = 'prompts' | 'analyze' | 'results'
 
 interface Trait {
   id: string
@@ -42,6 +47,16 @@ interface HitRecord {
   transcript: { sender: string; text: string; isTarget: boolean }[]
 }
 
+interface AnalyzeHit {
+  rank: number
+  score: number
+  duration: number
+  hasSignal: boolean
+  transcript: string
+  response: string
+  status: 'completed' | 'analyzing' | 'pending'
+}
+
 // ── Data ──
 
 const traits: Trait[] = [
@@ -53,6 +68,11 @@ const traits: Trait[] = [
   { id: 'priceSensitivity', label: '가격민감도', icon: <Tag className="h-4 w-4" /> },
   { id: 'activityTime', label: '활동시간', icon: <Clock className="h-4 w-4" /> },
   { id: 'travel', label: '여행', icon: <Plane className="h-4 w-4" /> },
+]
+
+const traitOptions = [
+  { id: 'all', label: '전체' },
+  ...traits.map((t) => ({ id: t.id, label: t.label })),
 ]
 
 const perHitInstructions: Record<string, string> = {
@@ -402,6 +422,60 @@ const labelColors: Record<string, { bg: string; text: string; border: string }> 
   ERR: { bg: 'bg-purple-500/20', text: 'text-purple-400', border: 'border-purple-500/40' },
 }
 
+// ── Sample data for Analyze tab ──
+
+const analyzeHits: AnalyzeHit[] = [
+  {
+    rank: 1,
+    score: 0.8912,
+    duration: 1.8,
+    hasSignal: true,
+    transcript:
+      '[코니] 요즘 체력이 예전 같지 않아\n[브라운] 나 99년생인데 벌써 서른 가까워\n[코니] 진짜? 동갑인 줄 알았어',
+    response: '20대 후반으로 추정됩니다. 99년생이라고 직접 언급했습니다.',
+    status: 'completed',
+  },
+  {
+    rank: 2,
+    score: 0.8734,
+    duration: 2.3,
+    hasSignal: true,
+    transcript:
+      '[제임스] 대학 때가 그립다\n[브라운] 13학번이라 이제 졸업한 지 오래됐어\n[제임스] 벌써 10년 넘었네',
+    response: '30대 초반으로 추정됩니다. 13학번이라고 언급했습니다.',
+    status: 'completed',
+  },
+  {
+    rank: 3,
+    score: 0.8561,
+    duration: 1.2,
+    hasSignal: false,
+    transcript:
+      '[브라운] 점심 다녀옵니다\n[샐리] 맛있는 거 먹어!\n[브라운] ㅋㅋ 회사 근처 김밥이야',
+    response: '',
+    status: 'completed',
+  },
+  {
+    rank: 4,
+    score: 0.8423,
+    duration: 0,
+    hasSignal: false,
+    transcript:
+      '[레너드] 오후에 시간 돼?\n[브라운] 회의 끝나면 연락할게\n[레너드] 오키',
+    response: '',
+    status: 'analyzing',
+  },
+  {
+    rank: 5,
+    score: 0.8310,
+    duration: 0,
+    hasSignal: false,
+    transcript: '',
+    response: '',
+    status: 'pending',
+  },
+]
+
 // ── Components ──
 
 function LabelBadge({ label, small }: { label: string; small?: boolean }) {
@@ -574,6 +648,265 @@ function PromptsTab() {
   )
 }
 
+// ── Tab: Analyze ──
+
+function AnalyzeTab({ onGoToResults }: { onGoToResults: () => void }) {
+  const [dataFile, setDataFile] = useState('alltraits_summary_0421.json')
+  const [selectedTrait, setSelectedTrait] = useState('age')
+  const [targetUser, setTargetUser] = useState('')
+  const [model, setModel] = useState('gemma4:e4b')
+
+  const completedCount = analyzeHits.filter((h) => h.status === 'completed').length
+  const totalHits = 20
+  const signalCount = analyzeHits.filter(
+    (h) => h.status === 'completed' && h.hasSignal
+  ).length
+
+  return (
+    <div className="flex-1 flex flex-col overflow-hidden">
+      {/* Control Bar */}
+      <div className="flex-shrink-0 mx-4 mt-4 bg-[#16213e] rounded-xl border border-white/[0.06] p-4">
+        <div className="flex flex-wrap items-end gap-3">
+          {/* Data File */}
+          <div className="flex flex-col gap-1.5 min-w-[200px]">
+            <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+              Data File
+            </label>
+            <div className="relative">
+              <select
+                value={dataFile}
+                onChange={(e) => setDataFile(e.target.value)}
+                className="w-full appearance-none bg-[#111827] border border-white/[0.1] rounded-lg px-3 py-2 text-sm text-slate-300 font-mono focus:border-[#6366f1]/50 focus:outline-none focus:ring-1 focus:ring-[#6366f1]/30 pr-8"
+              >
+                {sampleFiles.map((f) => (
+                  <option key={f.name} value={f.name}>
+                    {f.name}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-500 pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Trait */}
+          <div className="flex flex-col gap-1.5 min-w-[140px]">
+            <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+              Trait
+            </label>
+            <div className="relative">
+              <select
+                value={selectedTrait}
+                onChange={(e) => setSelectedTrait(e.target.value)}
+                className="w-full appearance-none bg-[#111827] border border-white/[0.1] rounded-lg px-3 py-2 text-sm text-slate-300 focus:border-[#6366f1]/50 focus:outline-none focus:ring-1 focus:ring-[#6366f1]/30 pr-8"
+              >
+                {traitOptions.map((t) => (
+                  <option key={t.id} value={t.id}>
+                    {t.label}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-500 pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Target User */}
+          <div className="flex flex-col gap-1.5 min-w-[140px]">
+            <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+              Target User
+            </label>
+            <Input
+              value={targetUser}
+              onChange={(e) => setTargetUser(e.target.value)}
+              placeholder="브라운"
+              className="bg-[#111827] border-white/[0.1] text-slate-300 placeholder:text-slate-600 h-[38px] text-sm focus-visible:ring-[#6366f1]/30 focus-visible:border-[#6366f1]/50"
+            />
+          </div>
+
+          {/* Model */}
+          <div className="flex flex-col gap-1.5 min-w-[150px]">
+            <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+              Model
+            </label>
+            <div className="relative">
+              <select
+                value={model}
+                onChange={(e) => setModel(e.target.value)}
+                className="w-full appearance-none bg-[#111827] border border-white/[0.1] rounded-lg px-3 py-2 text-sm text-slate-300 font-mono focus:border-[#6366f1]/50 focus:outline-none focus:ring-1 focus:ring-[#6366f1]/30 pr-8"
+              >
+                <option value="gemma4:e4b">gemma4:e4b</option>
+                <option value="gemma4:e2b">gemma4:e2b</option>
+              </select>
+              <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-500 pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Analyze Button */}
+          <Button className="bg-[#e94560] hover:bg-[#d13550] text-white text-sm h-[38px] px-6 font-semibold">
+            <Zap className="h-4 w-4 mr-2" />
+            Analyze
+          </Button>
+        </div>
+      </div>
+
+      {/* Progress Bar */}
+      <div className="flex-shrink-0 mx-4 mt-3 flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <Search className="h-3.5 w-3.5 text-slate-500" />
+          <span className="text-sm text-slate-300 font-mono">
+            {completedCount}/{totalHits}
+            <span className="text-slate-500 ml-1">hits analyzed</span>
+          </span>
+        </div>
+        <div className="flex-1 h-1.5 bg-[#16213e] rounded-full overflow-hidden">
+          <div
+            className="h-full bg-[#6366f1] rounded-full transition-all duration-500"
+            style={{ width: `${(completedCount / totalHits) * 100}%` }}
+          />
+        </div>
+        <div className="flex items-center gap-2">
+          <Timer className="h-3.5 w-3.5 text-slate-500" />
+          <span className="text-sm text-slate-400 font-mono">00:42 elapsed</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <div className="h-2 w-2 rounded-full bg-emerald-400" />
+          <span className="text-xs text-emerald-400 font-mono">{signalCount} signals</span>
+        </div>
+      </div>
+
+      {/* Hit Cards */}
+      <div className="flex-1 overflow-y-auto mx-4 mt-3 mb-4 space-y-2">
+        {analyzeHits.map((hit) => (
+          <AnalyzeHitCard key={hit.rank} hit={hit} />
+        ))}
+
+        {/* Remaining pending placeholders */}
+        {Array.from({ length: 15 }, (_, i) => i + 6).map((rank) => (
+          <div
+            key={rank}
+            className="bg-[#16213e]/40 rounded-lg border border-white/[0.04] px-4 py-3 flex items-center gap-3"
+          >
+            <span className="text-xs font-mono text-slate-600">#{rank}</span>
+            <div className="h-1.5 w-16 bg-white/[0.04] rounded-full" />
+            <span className="text-[10px] text-slate-700">waiting...</span>
+          </div>
+        ))}
+
+        {/* Session A Result Panel */}
+        <div className="mt-4 bg-[#111827] rounded-xl border border-white/[0.08] overflow-hidden">
+          <div className="px-5 py-3 border-b border-white/[0.06] flex items-center gap-2">
+            <BarChart3 className="h-4 w-4 text-[#6366f1]" />
+            <span className="text-sm font-semibold text-white">Session A 종합 결과</span>
+            <Badge className="ml-auto bg-emerald-500/20 text-emerald-400 border-emerald-500/40 text-[10px]">
+              Completed
+            </Badge>
+          </div>
+          <div className="px-5 py-4 space-y-3">
+            <div>
+              <span className="text-[10px] text-slate-600 uppercase tracking-wider">
+                Trait
+              </span>
+              <p className="text-lg font-bold text-emerald-400 mt-0.5">20대 후반</p>
+            </div>
+            <div>
+              <span className="text-[10px] text-slate-600 uppercase tracking-wider">
+                Reason
+              </span>
+              <p className="text-sm text-[#94a3b8] mt-0.5 leading-relaxed">
+                유저가 99년생이라고 직접 언급했으며, 13학번이라는 간접 근거도 일치합니다. 또래 언급에서 비슷한 연령대의 친구 그룹에 속해 있음을 확인할 수 있습니다.
+              </p>
+            </div>
+            <div className="pt-2">
+              <Button
+                onClick={onGoToResults}
+                className="w-full bg-[#6366f1] hover:bg-[#5558e6] text-white h-10"
+              >
+                Results에서 보기
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function AnalyzeHitCard({ hit }: { hit: AnalyzeHit }) {
+  if (hit.status === 'analyzing') {
+    return (
+      <div className="bg-[#16213e] rounded-lg border-l-[3px] border-l-[#6366f1] border border-white/[0.06] px-4 py-3">
+        <div className="flex items-center gap-3">
+          <span className="text-sm font-bold text-[#e94560] font-mono">#{hit.rank}</span>
+          <span className="text-xs font-mono text-slate-500">
+            {hit.score.toFixed(4)}
+          </span>
+          <div className="ml-auto flex items-center gap-2">
+            <Loader2 className="h-3.5 w-3.5 text-[#6366f1] animate-spin" />
+            <span className="text-xs text-[#6366f1] font-medium">analyzing...</span>
+          </div>
+        </div>
+        <p className="text-xs text-[#94a3b8] mt-2 leading-relaxed line-clamp-2 font-mono whitespace-pre-line">
+          {hit.transcript}
+        </p>
+      </div>
+    )
+  }
+
+  if (hit.status === 'pending') {
+    return (
+      <div className="bg-[#16213e]/40 rounded-lg border border-white/[0.04] px-4 py-3 flex items-center gap-3">
+        <span className="text-xs font-mono text-slate-600">#{hit.rank}</span>
+        <span className="text-xs font-mono text-slate-700">
+          {hit.score.toFixed(4)}
+        </span>
+        <span className="text-[10px] text-slate-700">queued</span>
+      </div>
+    )
+  }
+
+  // completed
+  return (
+    <div
+      className={`bg-[#16213e] rounded-lg border border-white/[0.06] px-4 py-3 ${
+        hit.hasSignal
+          ? 'border-l-[3px] border-l-emerald-400'
+          : 'border-l-[3px] border-l-[#334155]'
+      }`}
+    >
+      <div className="flex items-center gap-3 flex-wrap">
+        <span className="text-sm font-bold text-[#e94560] font-mono">#{hit.rank}</span>
+        <span className="text-xs font-mono text-slate-500">
+          {hit.score.toFixed(4)}
+        </span>
+        <span className="text-xs font-mono text-slate-600">
+          {hit.duration.toFixed(1)}s
+        </span>
+        <div className="ml-auto">
+          {hit.hasSignal ? (
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              Signal
+            </span>
+          ) : (
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-500/20 text-slate-500 border border-slate-500/30">
+              <div className="h-1.5 w-1.5 rounded-full bg-slate-500" />
+              No Signal
+            </span>
+          )}
+        </div>
+      </div>
+      <p className="text-xs text-[#94a3b8] mt-2 leading-relaxed line-clamp-2 font-mono whitespace-pre-line">
+        {hit.transcript}
+      </p>
+      {hit.hasSignal && hit.response && (
+        <p className="text-xs text-emerald-400 mt-2 leading-relaxed pl-3 border-l-2 border-emerald-400/30">
+          {hit.response}
+        </p>
+      )}
+    </div>
+  )
+}
+
 // ── Tab: Results ──
 
 function ResultsTab() {
@@ -614,10 +947,6 @@ function ResultsTab() {
           <Button className="w-full bg-[#e94560] hover:bg-[#d13550] text-white text-sm h-9">
             <Upload className="h-3.5 w-3.5 mr-2" />
             Import JSON
-          </Button>
-          <Button className="w-full bg-[#6366f1] hover:bg-[#5558e6] text-white text-sm h-9">
-            <Play className="h-3.5 w-3.5 mr-2" />
-            Run Analysis
           </Button>
         </div>
         <div className="px-3 py-2">
@@ -908,32 +1237,29 @@ export default function Page() {
           </span>
         </div>
         <div className="flex items-center bg-white/[0.04] rounded-lg p-0.5">
-          <button
-            onClick={() => setActiveTab('prompts')}
-            className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all ${
-              activeTab === 'prompts'
-                ? 'bg-[#6366f1] text-white shadow-sm'
-                : 'text-slate-400 hover:text-slate-200'
-            }`}
-          >
-            Prompts
-          </button>
-          <button
-            onClick={() => setActiveTab('results')}
-            className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all ${
-              activeTab === 'results'
-                ? 'bg-[#6366f1] text-white shadow-sm'
-                : 'text-slate-400 hover:text-slate-200'
-            }`}
-          >
-            Results
-          </button>
+          {(['prompts', 'analyze', 'results'] as const).map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all ${
+                activeTab === tab
+                  ? 'bg-[#6366f1] text-white shadow-sm'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+            >
+              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+            </button>
+          ))}
         </div>
         <div className="w-[100px]" />
       </div>
 
       {/* Tab Content */}
-      {activeTab === 'prompts' ? <PromptsTab /> : <ResultsTab />}
+      {activeTab === 'prompts' && <PromptsTab />}
+      {activeTab === 'analyze' && (
+        <AnalyzeTab onGoToResults={() => setActiveTab('results')} />
+      )}
+      {activeTab === 'results' && <ResultsTab />}
     </div>
   )
 }
