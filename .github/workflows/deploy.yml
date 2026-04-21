@@ -23,23 +23,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: line/package-lock.json
+
+      - name: Upgrade npm
+        run: npm install -g npm@latest
 
       - name: Install dependencies
-        run: |
-          cd line
-          npm ci || npm ci
+        working-directory: line
+        run: npm ci
 
       - name: Build
-        run: |
-          cd line
-          npm run build
+        working-directory: line
+        run: npm run build
 
       - name: Prepare site
         run: |
           mkdir -p _site
-          # Copy existing root files (exclude line/, _site/, .github/, .git/, node_modules)
           rsync -av \
             --exclude='line' \
             --exclude='_site' \
@@ -47,7 +45,6 @@ jobs:
             --exclude='.git' \
             --exclude='node_modules' \
             . _site/
-          # Copy line build output
           cp -r line/dist _site/line
 
       - uses: actions/upload-pages-artifact@v3
