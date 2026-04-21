@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stanto — 화면 목록</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,system-ui,sans-serif;background:#fafafa;color:#0a0a0a;padding:48px 24px;max-width:960px;margin:0 auto}
+h1{font-size:30px;font-weight:800;letter-spacing:-.025em;margin-bottom:8px}
+p.sub{font-size:14px;color:#737373;margin-bottom:32px}
+h2{font-size:16px;font-weight:600;color:#171717;margin:28px 0 12px;display:flex;align-items:center;gap:8px}
+h2 .tag{font-size:11px;font-weight:600;color:#737373;background:#f5f5f5;border:1px solid #e5e5e5;padding:2px 8px;border-radius:9999px}
+ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+li a{display:block;background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:16px;text-decoration:none;color:#0a0a0a;transition:all .15s}
+li a:hover{border-color:#171717;transform:translateY(-1px)}
+li .name{font-size:14px;font-weight:600;margin-bottom:4px}
+li .desc{font-size:12px;color:#737373;line-height:18px}
+.muted li a{opacity:.5;pointer-events:none;background:#fafafa;border-style:dashed}
+</style>
+</head>
+<body>
+<h1>Stanto</h1>
+<p class="sub">아침 5분 AI 스탠드업 · 디자인 시안</p>
+
+<h2>1순위 — 핵심 루프 <span class="tag">done</span></h2>
+<ul>
+<li><a href="./home-empty.html"><div class="name">홈 — 스탠드업 전 (State A)</div><div class="desc">다크 CTA + 빈 할 일 안내</div></a></li>
+<li><a href="./home.html"><div class="name">홈 — 체크리스트 (State B)</div><div class="desc">회고 배지 + 진행바 + 프로젝트별 섹션</div></a></li>
+<li><a href="./home-empty-tasks.html"><div class="name">홈 — 할 일 없음</div><div class="desc">스탠드업 후 할 일 0개</div></a></li>
+<li><a href="./home-no-projects.html"><div class="name">홈 — 프로젝트 없음</div><div class="desc">첫 진입 엠티뷰</div></a></li>
+<li><a href="./standup.html"><div class="name">아침 스탠드업 (4단계)</div><div class="desc">어제 회고 → AI 제안 → 직접 추가 → 확정</div></a></li>
+</ul>
+
+<h2>2순위 — 온보딩 + 프로젝트 <span class="tag">done</span></h2>
+<ul>
+<li><a href="./onboarding.html"><div class="name">온보딩 (4단계)</div><div class="desc">로그인 → 환영 → 첫 프로젝트 → 알림</div></a></li>
+<li><a href="./projects.html"><div class="name">프로젝트 목록</div><div class="desc">진행도 바 + 컬러 사이드 + 오늘 N/N</div></a></li>
+<li><a href="./project-detail.html"><div class="name">프로젝트 상세</div><div class="desc">단계 진행도 바 + 주간 진행 + 히스토리</div></a></li>
+<li><a href="./project-new.html"><div class="name">새 프로젝트</div><div class="desc">이름/목표 + 템플릿 2열 그리드</div></a></li>
+</ul>
+
+<h2>3순위 — 회고 + 설정 <span class="tag">done</span></h2>
+<ul>
+<li><a href="./weekly-review.html"><div class="name">주간 회고</div><div class="desc">완료율 + 프로젝트 분배 + AI 인사이트</div></a></li>
+<li><a href="./review-list.html"><div class="name">회고 목록</div><div class="desc">최신순 카드 + NEW 뱃지</div></a></li>
+<li><a href="./settings.html"><div class="name">설정</div><div class="desc">프로필 + 알림 + 주 시작 + 계정</div></a></li>
+</ul>
+</body>
+</html>

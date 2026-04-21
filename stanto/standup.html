@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Stanto — 스탠드업</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',system-ui,sans-serif;background:#e5e5e5;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 16px;gap:40px}
+    .lbl{font-size:11px;font-weight:600;letter-spacing:.08em;color:#737373;text-transform:uppercase;text-align:center;margin-bottom:12px}
+    .frame{width:390px;height:844px;background:#fff;border-radius:44px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);position:relative;display:flex;flex-direction:column;}
+    .step-dots{display:flex;gap:6px;align-items:center;}
+    .dot{width:8px;height:8px;border-radius:9999px;background:#e5e5e5;}
+    .dot.on{background:#0a0a0a;width:20px;}
+    .tb-blue{background:#eff6ff;color:#1d4ed8;font-size:11px;padding:2px 8px;border-radius:9999px;font-weight:600;}
+    .tb-green{background:#f0fdf4;color:#15803d;font-size:11px;padding:2px 8px;border-radius:9999px;font-weight:600;}
+    .tb-violet{background:#f5f3ff;color:#6d28d9;font-size:11px;padding:2px 8px;border-radius:9999px;font-weight:600;}
+    .tb-amber{background:#fffbeb;color:#b45309;font-size:11px;padding:2px 8px;border-radius:9999px;font-weight:600;}
+  </style>
+</head>
+<body>
+<!-- STEP 1: 어제 회고 -->
+<div>
+<div class="lbl">Step 1 — 어제 회고</div>
+<div class="frame">
+  <div style="height:52px;padding:16px 28px 0;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:600;flex-shrink:0;"><span>9:41</span><span><span style="display:inline-flex;align-items:center;gap:4px;"><span>●●●</span><span style="display:inline-flex;width:18px;height:11px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/><rect x="4" y="9" width="12" height="6" rx="1" fill="currentColor" stroke="none"/></svg></span></span></span></div>
+  <div style="padding:16px 24px 12px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
+    <button style="background:none;border:none;color:#737373;cursor:pointer;"><span style="display:inline-flex;width:22px;height:22px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span></button>
+    <div class="step-dots"><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    <div style="width:22px;"></div>
+  </div>
+  <div style="padding:0 24px;flex-shrink:0;">
+    <div style="height:3px;background:#e5e5e5;border-radius:9999px;overflow:hidden;"><div style="width:25%;height:100%;background:#0a0a0a;border-radius:9999px;"></div></div>
+  </div>
+  <div style="padding:24px 24px 16px;flex-shrink:0;">
+    <h2 style="font-size:24px;font-weight:800;letter-spacing:-.025em;color:#0a0a0a;margin-bottom:6px;">어제 어땠어요?</h2>
+    <p style="font-size:14px;color:#737373;">완료 여부를 체크해 주세요</p>
+  </div>
+  <div style="flex:1;overflow-y:auto;padding:0 24px;">
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="border:1.5px solid #22c55e;border-radius:14px;padding:14px 16px;background:#f0fdf4;display:flex;align-items:center;gap:12px;">
+        <div style="flex:1;">
+          <span class="tb-blue">사이드앱</span>
+          <p style="font-size:14px;font-weight:500;color:#0a0a0a;margin-top:6px;">OAuth 리팩터링 1/3</p>
+        </div>
+        <div style="display:flex;gap:6px;flex-shrink:0;">
+          <button style="width:32px;height:32px;border-radius:9999px;background:#22c55e;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;"><span style="display:inline-flex;width:16px;height:16px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></button>
+          <button style="width:32px;height:32px;border-radius:9999px;background:#f5f5f5;color:#737373;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;"><span style="display:inline-flex;width:16px;height:16px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg></span></button>
+          <button style="width:32px;height:32px;border-radius:9999px;background:#f5f5f5;color:#737373;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;"><span style="display:inline-flex;width:16px;height:16px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span></button>
+        </div>
+      </div>
+      <div style="border:1.5px solid #e5e5e5;border-radius:14px;padding:14px 16px;background:#fff;display:flex;align-items:center;gap:12px;">
+        <div style="flex:1;">
+          <span class="tb-blue">사이드앱</span>
+          <p style="font-size:14px;font-weight:500;color:#0a0a0a;margin-top:6px;">API 에러 핸들링 정리</p>
+        </div>
+        <div style="display:flex;gap:6px;flex-shrink:0;">
+          <button style="width:32px;height:32px;border-radius:9999px;background:#f5f5f5;color:#737373;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;"><span style="display:inline-flex;width:16px;height:16px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></button>
+          <button style="width:32px;height:32px;border-radius:9999px;background:#f5f5f5;color:#737373;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;"><span style="display:inline-flex;width:16px;height:16px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg></span></button>
+          <button style="width:32px;height:32px;border-radius:9999px;background:#f5f5f5;color:#737373;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;"><span style="display:inline-flex;width:16px;height:16px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span></button>
+        </div>
+      </div>
+      <div style="border:1.5px solid #e5e5e5;border-radius:14px;padding:14px 16px;background:#fff;display:flex;align-items:center;gap:12px;">
+        <div style="flex:1;">
+          <span class="tb-green">본업</span>
+          <p style="font-size:14px;font-weight:500;color:#0a0a0a;margin-top:6px;">스프린트 회의 참여</p>
+        </div>
+        <div style="display:flex;gap:6px;flex-shrink:0;">
+          <button style="width:32px;height:32px;border-radius:9999px;background:#f5f5f5;color:#737373;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;"><span style="display:inline-flex;width:16px;height:16px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></button>
+          <button style="width:32px;height:32px;border-radius:9999px;background:#f5f5f5;color:#737373;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;"><span style="display:inline-flex;width:16px;height:16px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg></span></button>
+          <button style="width:32px;height:32px;border-radius:9999px;background:#f5f5f5;color:#737373;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;"><span style="display:inline-flex;width:16px;height:16px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="padding:16px 24px 32px;flex-shrink:0;">
+    <button style="width:100%;background:#0a0a0a;color:#fafafa;border:none;border-radius:14px;padding:16px;font-size:15px;font-weight:700;cursor:pointer;">다음 →</button>
+  </div>
+</div>
+</div>
+<!-- STEP 2: AI 제안 -->
+<div>
+<div class="lbl">Step 2 — AI 제안</div>
+<div class="frame">
+  <div style="height:52px;padding:16px 28px 0;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:600;flex-shrink:0;"><span>9:41</span><span><span style="display:inline-flex;align-items:center;gap:4px;"><span>●●●</span><span style="display:inline-flex;width:18px;height:11px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/><rect x="4" y="9" width="12" height="6" rx="1" fill="currentColor" stroke="none"/></svg></span></span></span></div>
+  <div style="padding:16px 24px 12px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
+    <button style="background:none;border:none;color:#737373;cursor:pointer;"><span style="display:inline-flex;width:22px;height:22px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span></button>
+    <div class="step-dots"><div class="dot"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div>
+    <button style="background:none;border:none;font-size:13px;font-weight:600;color:#a3a3a3;cursor:pointer;">전부 패스</button>
+  </div>
+  <div style="padding:0 24px;flex-shrink:0;">
+    <div style="height:3px;background:#e5e5e5;border-radius:9999px;overflow:hidden;"><div style="width:50%;height:100%;background:#0a0a0a;border-radius:9999px;"></div></div>
+  </div>
+  <div style="padding:24px 24px 8px;flex-shrink:0;">
+    <h2 style="font-size:24px;font-weight:800;letter-spacing:-.025em;color:#0a0a0a;margin-bottom:4px;">오늘 이런 일 어때요?</h2>
+    <p style="font-size:13px;color:#737373;">AI가 프로젝트 히스토리를 보고 제안했어요</p>
+  </div>
+  <div style="flex:1;overflow-y:auto;padding:12px 24px;">
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="border:1.5px solid #bfdbfe;border-radius:14px;padding:16px;background:#eff6ff;position:relative;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <span class="tb-blue">사이드앱</span>
+          <div style="display:flex;gap:6px;">
+            <button style="background:#fff;border:1px solid #bfdbfe;border-radius:9999px;padding:4px 12px;font-size:12px;font-weight:600;color:#1d4ed8;cursor:pointer;">✓ 수락</button>
+            <button style="background:#fff;border:1px solid #e5e5e5;border-radius:9999px;padding:4px 12px;font-size:12px;font-weight:500;color:#737373;cursor:pointer;">✕ 패스</button>
+          </div>
+        </div>
+        <p style="font-size:14px;font-weight:600;color:#0a0a0a;margin-bottom:6px;">OAuth 리팩터링 2/3 이어가기</p>
+        <p style="font-size:12px;color:#3b82f6;">어제 1/3 완료했어요. 모멘텀 유지해 봐요</p>
+      </div>
+      <div style="border:1px solid #e5e5e5;border-radius:14px;padding:16px;background:#fff;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <span class="tb-violet">블로그</span>
+          <div style="display:flex;gap:6px;">
+            <button style="background:#f5f5f5;border:1px solid #e5e5e5;border-radius:9999px;padding:4px 12px;font-size:12px;font-weight:600;color:#0a0a0a;cursor:pointer;">✓ 수락</button>
+            <button style="background:#f5f5f5;border:1px solid #e5e5e5;border-radius:9999px;padding:4px 12px;font-size:12px;font-weight:500;color:#737373;cursor:pointer;">✕ 패스</button>
+          </div>
+        </div>
+        <p style="font-size:14px;font-weight:600;color:#0a0a0a;margin-bottom:6px;">React 최적화 포스트 초안 작성</p>
+        <p style="font-size:12px;color:#a3a3a3;">5일 이상 업데이트 없는 프로젝트예요</p>
+      </div>
+      <div style="border:1px solid #e5e5e5;border-radius:14px;padding:16px;background:#fff;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <span class="tb-green">본업</span>
+          <div style="display:flex;gap:6px;">
+            <button style="background:#f5f5f5;border:1px solid #e5e5e5;border-radius:9999px;padding:4px 12px;font-size:12px;font-weight:600;color:#0a0a0a;cursor:pointer;">✓ 수락</button>
+            <button style="background:#f5f5f5;border:1px solid #e5e5e5;border-radius:9999px;padding:4px 12px;font-size:12px;font-weight:500;color:#737373;cursor:pointer;">✕ 패스</button>
+          </div>
+        </div>
+        <p style="font-size:14px;font-weight:600;color:#0a0a0a;margin-bottom:6px;">코드 리뷰 백로그 2건 처리</p>
+        <p style="font-size:12px;color:#a3a3a3;">미완료 상태로 남아 있어요</p>
+      </div>
+    </div>
+    <div style="margin-top:12px;padding:10px 14px;background:#f0fdf4;border-radius:10px;display:flex;align-items:center;gap:8px;">
+      <span style="display:inline-flex;width:16px;height:16px;color:#15803d;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+      <span style="font-size:13px;font-weight:600;color:#15803d;">1개 추가됨</span>
+    </div>
+  </div>
+  <div style="padding:12px 24px 32px;flex-shrink:0;">
+    <button style="width:100%;background:#0a0a0a;color:#fafafa;border:none;border-radius:14px;padding:16px;font-size:15px;font-weight:700;cursor:pointer;">다음 →</button>
+  </div>
+</div>
+</div>
+<!-- STEP 3: 직접 추가 -->
+<div>
+<div class="lbl">Step 3 — 직접 추가</div>
+<div class="frame">
+  <div style="height:52px;padding:16px 28px 0;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:600;flex-shrink:0;"><span>9:41</span><span><span style="display:inline-flex;align-items:center;gap:4px;"><span>●●●</span><span style="display:inline-flex;width:18px;height:11px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/><rect x="4" y="9" width="12" height="6" rx="1" fill="currentColor" stroke="none"/></svg></span></span></span></div>
+  <div style="padding:16px 24px 12px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
+    <button style="background:none;border:none;color:#737373;cursor:pointer;"><span style="display:inline-flex;width:22px;height:22px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span></button>
+    <div class="step-dots"><div class="dot"></div><div class="dot"></div><div class="dot on"></div><div class="dot"></div></div>
+    <div style="width:22px;"></div>
+  </div>
+  <div style="padding:0 24px;flex-shrink:0;">
+    <div style="height:3px;background:#e5e5e5;border-radius:9999px;overflow:hidden;"><div style="width:75%;height:100%;background:#0a0a0a;border-radius:9999px;"></div></div>
+  </div>
+  <div style="padding:24px 24px 16px;flex-shrink:0;">
+    <h2 style="font-size:24px;font-weight:800;letter-spacing:-.025em;color:#0a0a0a;margin-bottom:4px;">직접 추가할 게 있나요?</h2>
+    <p style="font-size:13px;color:#737373;">AI가 놓친 것을 직접 추가해요</p>
+  </div>
+  <div style="padding:0 24px;flex-shrink:0;">
+    <div style="border:1.5px solid #0a0a0a;border-radius:14px;padding:14px 16px;background:#fff;">
+      <input type="text" placeholder="오늘 할 일 입력..." style="width:100%;border:none;outline:none;font-size:14px;font-family:inherit;color:#0a0a0a;background:transparent;" />
+    </div>
+    <div style="margin-top:10px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;">
+      <div style="background:#0a0a0a;color:#fafafa;border-radius:9999px;padding:6px 14px;font-size:12px;font-weight:600;white-space:nowrap;flex-shrink:0;gap:5px;display:flex;align-items:center;"><span style="display:inline-flex;width:13px;height:13px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span> 사이드앱</div>
+      <div style="background:#f5f5f5;border:1px solid #e5e5e5;color:#737373;border-radius:9999px;padding:6px 14px;font-size:12px;font-weight:500;white-space:nowrap;flex-shrink:0;gap:5px;display:flex;align-items:center;"><span style="display:inline-flex;width:13px;height:13px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span> 본업</div>
+      <div style="background:#f5f5f5;border:1px solid #e5e5e5;color:#737373;border-radius:9999px;padding:6px 14px;font-size:12px;font-weight:500;white-space:nowrap;flex-shrink:0;gap:5px;display:flex;align-items:center;"><span style="display:inline-flex;width:13px;height:13px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span> 블로그</div>
+    </div>
+  </div>
+  <div style="flex:1;padding:16px 24px 0;overflow-y:auto;">
+    <p style="font-size:12px;font-weight:600;color:#737373;margin-bottom:10px;letter-spacing:.03em;text-transform:uppercase;">추가된 항목</p>
+    <div style="border:1px solid #e5e5e5;border-radius:14px;overflow:hidden;">
+      <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #f5f5f5;">
+        <span class="tb-blue" style="flex-shrink:0;">사이드앱</span>
+        <span style="font-size:14px;flex:1;color:#0a0a0a;">디자인 토큰 문서화</span>
+        <button style="background:none;border:none;color:#a3a3a3;font-size:16px;cursor:pointer;">×</button>
+      </div>
+    </div>
+  </div>
+  <div style="padding:16px 24px 32px;display:flex;gap:10px;flex-shrink:0;">
+    <button style="background:none;border:none;font-size:14px;font-weight:600;color:#a3a3a3;cursor:pointer;padding:8px;">건너뛸게요</button>
+    <button style="flex:1;background:#0a0a0a;color:#fafafa;border:none;border-radius:14px;padding:16px;font-size:15px;font-weight:700;cursor:pointer;">다음 →</button>
+  </div>
+</div>
+</div>
+<!-- STEP 4: 확정 -->
+<div>
+<div class="lbl">Step 4 — 오늘 확정</div>
+<div class="frame">
+  <div style="height:52px;padding:16px 28px 0;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:600;flex-shrink:0;"><span>9:41</span><span><span style="display:inline-flex;align-items:center;gap:4px;"><span>●●●</span><span style="display:inline-flex;width:18px;height:11px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/><rect x="4" y="9" width="12" height="6" rx="1" fill="currentColor" stroke="none"/></svg></span></span></span></div>
+  <div style="padding:16px 24px 12px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
+    <button style="background:none;border:none;color:#737373;cursor:pointer;"><span style="display:inline-flex;width:22px;height:22px;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span></button>
+    <div class="step-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot on"></div></div>
+    <div style="width:22px;"></div>
+  </div>
+  <div style="padding:0 24px;flex-shrink:0;">
+    <div style="height:3px;background:#e5e5e5;border-radius:9999px;overflow:hidden;"><div style="width:100%;height:100%;background:#0a0a0a;border-radius:9999px;"></div></div>
+  </div>
+  <div style="padding:24px 24px 8px;flex-shrink:0;">
+    <h2 style="font-size:24px;font-weight:800;letter-spacing:-.025em;color:#0a0a0a;margin-bottom:4px;">오늘의 할 일이에요</h2>
+    <p style="font-size:13px;color:#737373;">4개 확정</p>
+  </div>
+  <div style="flex:1;overflow-y:auto;padding:12px 24px 0;">
+    <div style="margin-bottom:16px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <div style="width:8px;height:8px;border-radius:9999px;background:#3b82f6;"></div>
+        <span style="font-size:12px;font-weight:700;color:#0a0a0a;">사이드앱</span>
+      </div>
+      <div style="border:1px solid #e5e5e5;border-radius:14px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #f5f5f5;">
+          <div style="width:18px;height:18px;border-radius:9999px;border:2px solid #e5e5e5;flex-shrink:0;"></div>
+          <span style="font-size:14px;color:#0a0a0a;flex:1;">OAuth 리팩터링 2/3</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;">
+          <div style="width:18px;height:18px;border-radius:9999px;border:2px solid #e5e5e5;flex-shrink:0;"></div>
+          <span style="font-size:14px;color:#0a0a0a;flex:1;">디자인 토큰 문서화</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-bottom:16px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <div style="width:8px;height:8px;border-radius:9999px;background:#10b981;"></div>
+        <span style="font-size:12px;font-weight:700;color:#0a0a0a;">본업</span>
+      </div>
+      <div style="border:1px solid #e5e5e5;border-radius:14px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #f5f5f5;">
+          <div style="width:18px;height:18px;border-radius:9999px;border:2px solid #e5e5e5;flex-shrink:0;"></div>
+          <span style="font-size:14px;color:#0a0a0a;flex:1;">코드 리뷰 2건 처리</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-bottom:16px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <div style="width:8px;height:8px;border-radius:9999px;background:#8b5cf6;"></div>
+        <span style="font-size:12px;font-weight:700;color:#0a0a0a;">블로그</span>
+      </div>
+      <div style="border:1px solid #e5e5e5;border-radius:14px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;">
+          <div style="width:18px;height:18px;border-radius:9999px;border:2px solid #e5e5e5;flex-shrink:0;"></div>
+          <span style="font-size:14px;color:#0a0a0a;flex:1;">React 최적화 포스트 초안</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="padding:12px 24px 32px;flex-shrink:0;">
+    <button style="background:none;border:none;font-size:13px;font-weight:600;color:#a3a3a3;cursor:pointer;width:100%;margin-bottom:10px;">← 수정하기</button>
+    <button style="width:100%;background:#0a0a0a;color:#fafafa;border:none;border-radius:14px;padding:16px;font-size:15px;font-weight:700;cursor:pointer;">오늘 확정하기</button>
+  </div>
+</div>
+</div>
+</body></html>

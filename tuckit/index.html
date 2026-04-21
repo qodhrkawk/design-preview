@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuckit v2 — 디자인 프리뷰</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; min-height: 100vh; padding: 40px 20px; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 600px; width: 100%; }
+    h1 { font-size: 28px; font-weight: 800; color: #0a0a0a; margin-bottom: 4px; letter-spacing: -0.025em; }
+    .subtitle { font-size: 14px; color: #737373; margin-bottom: 32px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    a { text-decoration: none; }
+    .card { background: #ffffff; border: 1px solid #e5e5e5; border-radius: 14px; padding: 20px; transition: box-shadow 0.15s; }
+    .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .card-icon { width: 40px; height: 40px; background: #f5f5f5; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+    .card-title { font-size: 15px; font-weight: 600; color: #0a0a0a; margin-bottom: 4px; }
+    .card-desc { font-size: 12px; color: #a3a3a3; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 10px; font-weight: 500; background: #FFF3E0; color: #F57C00; margin-top: 8px; }
+    .badge.p1 { background: #f5f5f5; color: #a3a3a3; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tuckit v2</h1>
+    <div class="subtitle">AI 북마크 앱 — 디자인 프리뷰 (6개 화면)</div>
+    <div class="grid">
+      <a href="onboarding.html">
+        <div class="card">
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
+          </div>
+          <div class="card-title">온보딩</div>
+          <div class="card-desc">소셜 로그인</div>
+          <div class="badge">P0</div>
+        </div>
+      </a>
+      <a href="home.html">
+        <div class="card">
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="card-title">홈</div>
+          <div class="card-desc">링크 목록 + 검색 + 필터</div>
+          <div class="badge">P0</div>
+        </div>
+      </a>
+      <a href="add-link.html">
+        <div class="card">
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <div class="card-title">링크 추가</div>
+          <div class="card-desc">URL → AI 자동 분류 → 저장</div>
+          <div class="badge">P0</div>
+        </div>
+      </a>
+      <a href="detail.html">
+        <div class="card">
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+          </div>
+          <div class="card-title">링크 상세</div>
+          <div class="card-desc">열기 / 편집 / 삭제</div>
+          <div class="badge">P0</div>
+        </div>
+      </a>
+      <a href="collections.html">
+        <div class="card">
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="card-title">컬렉션</div>
+          <div class="card-desc">AI 카테고리 + 내 컬렉션</div>
+          <div class="badge">P0</div>
+        </div>
+      </a>
+      <a href="settings.html">
+        <div class="card">
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <div class="card-title">설정</div>
+          <div class="card-desc">계정 / 테마 / 내보내기</div>
+          <div class="badge p1">P1</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

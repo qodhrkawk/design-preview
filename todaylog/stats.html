@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘뭐했지 - 주간 리포트</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; position: relative; padding-bottom: 80px; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <!-- Status Bar -->
+  <div style="padding: 12px 24px 8px; display: flex; justify-content: space-between; align-items: center;">
+    <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">21:30</span>
+    <div style="display: flex; gap: 6px;">
+      <span style="font-size: 12px;">📶</span>
+      <span style="font-size: 12px;">🔋</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div style="padding: 16px 24px 12px;">
+    <h1 style="font-size: 24px; font-weight: 800; color: #0a0a0a; letter-spacing: -0.025em;">주간 리포트</h1>
+    <p style="font-size: 14px; color: #737373; margin-top: 4px;">3월 25일 ~ 31일</p>
+  </div>
+
+  <!-- Weekly Heatmap -->
+  <div style="margin: 8px 24px 20px; padding: 16px; background: #f8fafc; border-radius: 16px;">
+    <p style="font-size: 13px; font-weight: 600; color: #737373; margin-bottom: 12px;">기록 히트맵</p>
+    <div style="display: flex; justify-content: space-between;">
+      <div style="text-align: center;">
+        <div style="width: 40px; height: 40px; background: #dcfce7; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #166534;">3</div>
+        <p style="font-size: 11px; color: #737373; margin-top: 4px;">월</p>
+      </div>
+      <div style="text-align: center;">
+        <div style="width: 40px; height: 40px; background: #bbf7d0; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #166534;">5</div>
+        <p style="font-size: 11px; color: #737373; margin-top: 4px;">화</p>
+      </div>
+      <div style="text-align: center;">
+        <div style="width: 40px; height: 40px; background: #86efac; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #166534;">7</div>
+        <p style="font-size: 11px; color: #737373; margin-top: 4px;">수</p>
+      </div>
+      <div style="text-align: center;">
+        <div style="width: 40px; height: 40px; background: #dcfce7; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #166534;">4</div>
+        <p style="font-size: 11px; color: #737373; margin-top: 4px;">목</p>
+      </div>
+      <div style="text-align: center;">
+        <div style="width: 40px; height: 40px; background: #4ade80; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #ffffff;">8</div>
+        <p style="font-size: 11px; color: #737373; margin-top: 4px;">금</p>
+      </div>
+      <div style="text-align: center;">
+        <div style="width: 40px; height: 40px; background: #bbf7d0; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #166534;">6</div>
+        <p style="font-size: 11px; color: #737373; margin-top: 4px;">토</p>
+      </div>
+      <div style="text-align: center;">
+        <div style="width: 40px; height: 40px; background: #dcfce7; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #166534;">5</div>
+        <p style="font-size: 11px; color: #737373; margin-top: 4px;">일</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category Time Distribution -->
+  <div style="padding: 0 24px; margin-bottom: 24px;">
+    <p style="font-size: 15px; font-weight: 700; color: #0a0a0a; margin-bottom: 16px;">시간 분배</p>
+
+    <div style="margin-bottom: 14px;">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="font-size: 14px;">💻</span>
+          <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">개발</span>
+        </div>
+        <span style="font-size: 14px; font-weight: 700; color: #0a0a0a;">38%</span>
+      </div>
+      <div style="height: 8px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+        <div style="width: 38%; height: 100%; background: #3b82f6; border-radius: 9999px;"></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 14px;">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="font-size: 14px;">📊</span>
+          <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">투자</span>
+        </div>
+        <span style="font-size: 14px; font-weight: 700; color: #0a0a0a;">22%</span>
+      </div>
+      <div style="height: 8px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+        <div style="width: 22%; height: 100%; background: #22c55e; border-radius: 9999px;"></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 14px;">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="font-size: 14px;">👥</span>
+          <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">사교</span>
+        </div>
+        <span style="font-size: 14px; font-weight: 700; color: #0a0a0a;">18%</span>
+      </div>
+      <div style="height: 8px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+        <div style="width: 18%; height: 100%; background: #f472b6; border-radius: 9999px;"></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 14px;">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="font-size: 14px;">🏃</span>
+          <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">운동</span>
+        </div>
+        <span style="font-size: 14px; font-weight: 700; color: #0a0a0a;">12%</span>
+      </div>
+      <div style="height: 8px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+        <div style="width: 12%; height: 100%; background: #fbbf24; border-radius: 9999px;"></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 14px;">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="font-size: 14px;">📚</span>
+          <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">독서</span>
+        </div>
+        <span style="font-size: 14px; font-weight: 700; color: #0a0a0a;">10%</span>
+      </div>
+      <div style="height: 8px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+        <div style="width: 10%; height: 100%; background: #a78bfa; border-radius: 9999px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Weekly Summary -->
+  <div style="margin: 0 24px 20px; padding: 20px; background: linear-gradient(135deg, #0a0a0a, #1a1a2e); border-radius: 16px; color: #fafafa;">
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+      <span style="font-size: 20px;">🧠</span>
+      <p style="font-size: 16px; font-weight: 700;">AI 주간 리포트</p>
+    </div>
+
+    <div style="margin-bottom: 16px;">
+      <p style="font-size: 13px; color: #a3a3a3; margin-bottom: 4px;">✨ 잘한 점</p>
+      <p style="font-size: 14px; line-height: 1.6; color: #e5e5e5;">개발에 집중력 좋았어! 특히 수요일은 7개 활동을 기록하면서 알차게 보냈네.</p>
+    </div>
+
+    <div style="margin-bottom: 16px;">
+      <p style="font-size: 13px; color: #a3a3a3; margin-bottom: 4px;">⚠️ 개선할 점</p>
+      <p style="font-size: 14px; line-height: 1.6; color: #e5e5e5;">운동이 월·금에만 집중돼 있어. 수요일에 한 번 더 넣으면 3일 간격 루틴이 될 거야.</p>
+    </div>
+
+    <div>
+      <p style="font-size: 13px; color: #a3a3a3; margin-bottom: 4px;">🎯 다음 주 제안</p>
+      <p style="font-size: 14px; line-height: 1.6; color: #e5e5e5;">수요일 운동 추가 + 독서 시간을 아침으로 옮겨보는 건 어때? 아침 독서가 집중력에 좋다는 연구도 있어.</p>
+    </div>
+  </div>
+
+  <!-- Mood Trend -->
+  <div style="margin: 0 24px 20px; padding: 16px; border: 1px solid #e5e5e5; border-radius: 16px;">
+    <p style="font-size: 15px; font-weight: 700; color: #0a0a0a; margin-bottom: 12px;">기분 트렌드</p>
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; height: 60px; padding: 0 8px;">
+      <div style="text-align: center; flex: 1;"><span style="font-size: 24px;">😊</span><p style="font-size: 10px; color: #737373; margin-top: 4px;">월</p></div>
+      <div style="text-align: center; flex: 1;"><span style="font-size: 24px;">😄</span><p style="font-size: 10px; color: #737373; margin-top: 4px;">화</p></div>
+      <div style="text-align: center; flex: 1;"><span style="font-size: 24px;">😄</span><p style="font-size: 10px; color: #737373; margin-top: 4px;">수</p></div>
+      <div style="text-align: center; flex: 1;"><span style="font-size: 24px;">😐</span><p style="font-size: 10px; color: #737373; margin-top: 4px;">목</p></div>
+      <div style="text-align: center; flex: 1;"><span style="font-size: 24px;">😄</span><p style="font-size: 10px; color: #737373; margin-top: 4px;">금</p></div>
+      <div style="text-align: center; flex: 1;"><span style="font-size: 24px;">😊</span><p style="font-size: 10px; color: #737373; margin-top: 4px;">토</p></div>
+      <div style="text-align: center; flex: 1;"><span style="font-size: 24px;">😊</span><p style="font-size: 10px; color: #737373; margin-top: 4px;">일</p></div>
+    </div>
+  </div>
+
+  <!-- Bottom Nav -->
+  <div style="position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 390px; background: #ffffff; border-top: 1px solid #e5e5e5; padding: 10px 0 30px; display: flex; justify-content: space-around;">
+    <div style="text-align: center;">
+      <span style="font-size: 22px;">📋</span>
+      <p style="font-size: 11px; color: #737373; margin-top: 2px;">오늘</p>
+    </div>
+    <div style="text-align: center;">
+      <span style="font-size: 22px;">📅</span>
+      <p style="font-size: 11px; color: #737373; margin-top: 2px;">캘린더</p>
+    </div>
+    <div style="text-align: center;">
+      <span style="font-size: 22px;">📊</span>
+      <p style="font-size: 11px; font-weight: 600; color: #0a0a0a; margin-top: 2px;">통계</p>
+    </div>
+    <div style="text-align: center;">
+      <span style="font-size: 22px;">👤</span>
+      <p style="font-size: 11px; color: #737373; margin-top: 2px;">설정</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

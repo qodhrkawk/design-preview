@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>통계 - 습관 트래커</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; min-height: 100vh; }
+    .mobile-frame { width: 100%; max-width: 390px; min-height: 100vh; background: #ffffff; position: relative; padding-bottom: 72px; }
+  </style>
+</head>
+<body>
+  <div class="mobile-frame">
+    <div style="height: 48px;"></div>
+
+    <div style="padding: 0 20px; display: flex; flex-direction: column; gap: 16px;">
+
+      <!-- Header -->
+      <div>
+        <div style="font-size: 24px; font-weight: 800; color: #0a0a0a;">통계</div>
+        <div style="font-size: 14px; color: #737373; margin-top: 2px;">나의 습관 달성 현황</div>
+      </div>
+
+      <!-- Period Tabs -->
+      <div style="display: flex; background: #f5f5f5; border-radius: 8px; padding: 4px;">
+        <div style="flex: 1; padding: 8px; text-align: center; background: #0a0a0a; color: #fafafa; border-radius: 6px; font-size: 14px; font-weight: 500;">주간</div>
+        <div style="flex: 1; padding: 8px; text-align: center; color: #737373; font-size: 14px;">월간</div>
+        <div style="flex: 1; padding: 8px; text-align: center; color: #737373; font-size: 14px;">전체</div>
+      </div>
+
+      <!-- Summary Cards -->
+      <div style="display: flex; gap: 10px;">
+        <div style="flex: 1; padding: 16px; border-radius: 12px; border: 1px solid #e5e5e5; text-align: center;">
+          <div style="font-size: 28px; font-weight: 800; color: #0a0a0a;">85%</div>
+          <div style="font-size: 12px; color: #737373; margin-top: 4px;">달성률</div>
+        </div>
+        <div style="flex: 1; padding: 16px; border-radius: 12px; border: 1px solid #e5e5e5; text-align: center;">
+          <div style="font-size: 28px; font-weight: 800; color: #0a0a0a;">12</div>
+          <div style="font-size: 12px; color: #737373; margin-top: 4px;">연속 일수</div>
+        </div>
+        <div style="flex: 1; padding: 16px; border-radius: 12px; border: 1px solid #e5e5e5; text-align: center;">
+          <div style="font-size: 28px; font-weight: 800; color: #0a0a0a;">47</div>
+          <div style="font-size: 12px; color: #737373; margin-top: 4px;">총 완료</div>
+        </div>
+      </div>
+
+      <!-- Bar Chart -->
+      <div style="padding: 16px; border-radius: 12px; border: 1px solid #e5e5e5;">
+        <div style="font-size: 14px; font-weight: 600; color: #0a0a0a; margin-bottom: 16px;">일별 달성률</div>
+        <div style="display: flex; align-items: flex-end; justify-content: space-between; height: 120px; gap: 8px;">
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <div style="width: 100%; background: #0a0a0a; border-radius: 4px 4px 0 0; height: 96px;"></div>
+            <span style="font-size: 11px; color: #737373;">월</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <div style="width: 100%; background: #0a0a0a; border-radius: 4px 4px 0 0; height: 108px;"></div>
+            <span style="font-size: 11px; color: #737373;">화</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <div style="width: 100%; background: #0a0a0a; border-radius: 4px 4px 0 0; height: 84px;"></div>
+            <span style="font-size: 11px; color: #737373;">수</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <div style="width: 100%; background: #0a0a0a; border-radius: 4px 4px 0 0; height: 72px;"></div>
+            <span style="font-size: 11px; color: #737373;">목</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <div style="width: 100%; background: #0a0a0a; border-radius: 4px 4px 0 0; height: 60px;"></div>
+            <span style="font-size: 11px; color: #737373;">금</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <div style="width: 100%; background: #e5e5e5; border-radius: 4px 4px 0 0; height: 12px;"></div>
+            <span style="font-size: 11px; color: #a3a3a3;">토</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <div style="width: 100%; background: #e5e5e5; border-radius: 4px 4px 0 0; height: 12px;"></div>
+            <span style="font-size: 11px; color: #a3a3a3;">일</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Per-Habit Stats -->
+      <div style="font-size: 14px; font-weight: 600; color: #0a0a0a;">습관별 달성률</div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 12px; border: 1px solid #e5e5e5;">
+          <span style="font-size: 22px;">💧</span>
+          <div style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span style="font-size: 14px; font-weight: 500; color: #0a0a0a;">물 2L 마시기</span>
+              <span style="font-size: 13px; font-weight: 600; color: #0a0a0a;">100%</span>
+            </div>
+            <div style="background: #f5f5f5; height: 6px; border-radius: 9999px; overflow: hidden;">
+              <div style="background: #22c55e; height: 6px; border-radius: 9999px; width: 100%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 12px; border: 1px solid #e5e5e5;">
+          <span style="font-size: 22px;">🏃</span>
+          <div style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span style="font-size: 14px; font-weight: 500; color: #0a0a0a;">30분 운동</span>
+              <span style="font-size: 13px; font-weight: 600; color: #0a0a0a;">85%</span>
+            </div>
+            <div style="background: #f5f5f5; height: 6px; border-radius: 9999px; overflow: hidden;">
+              <div style="background: #22c55e; height: 6px; border-radius: 9999px; width: 85%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 12px; border: 1px solid #e5e5e5;">
+          <span style="font-size: 22px;">🧘</span>
+          <div style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span style="font-size: 14px; font-weight: 500; color: #0a0a0a;">명상 10분</span>
+              <span style="font-size: 13px; font-weight: 600; color: #ef4444;">42%</span>
+            </div>
+            <div style="background: #f5f5f5; height: 6px; border-radius: 9999px; overflow: hidden;">
+              <div style="background: #ef4444; height: 6px; border-radius: 9999px; width: 42%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Tab Bar -->
+    <div style="position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 390px; height: 72px; background: #ffffff; border-top: 1px solid #e5e5e5; display: flex; justify-content: space-around; align-items: center; padding-bottom: 8px;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+        <span style="font-size: 22px;">🏠</span>
+        <span style="font-size: 10px; color: #737373;">홈</span>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+        <span style="font-size: 22px;">➕</span>
+        <span style="font-size: 10px; color: #737373;">추가</span>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+        <span style="font-size: 22px;">📊</span>
+        <span style="font-size: 10px; font-weight: 600; color: #0a0a0a;">통계</span>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+        <span style="font-size: 22px;">⚙️</span>
+        <span style="font-size: 10px; color: #737373;">설정</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

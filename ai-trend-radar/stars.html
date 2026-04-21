@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Trend Radar — 내 스타</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:          #0a0a0a;
+    --fg:          #fafafa;
+    --card:        #111111;
+    --card-hover:  #161616;
+    --border:      #262626;
+    --muted:       #262626;
+    --muted-fg:    #a3a3a3;
+    --secondary:   #1e1e1e;
+    --primary:     #fafafa;
+    --primary-fg:  #171717;
+    --accent:      #262626;
+    --star-active: #f59e0b;
+    --radius-sm:   6px;
+    --radius-md:   8px;
+    --radius-lg:   12px;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+  /* ── Header ── */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--fg);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .logo-icon { font-size: 20px; line-height: 1; }
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+  }
+  .nav-tab {
+    padding: 6px 14px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted-fg);
+    transition: all 0.15s;
+  }
+  .nav-tab:hover { color: var(--fg); background: var(--accent); }
+  .nav-tab.active {
+    color: var(--fg);
+    background: var(--secondary);
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .logout-btn {
+    font-size: 13px;
+    color: var(--muted-fg);
+    padding: 5px 10px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .logout-btn:hover { color: var(--fg); border-color: #444; }
+
+  /* ── Page header ── */
+  .page-header {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 28px 24px 0;
+  }
+  .page-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .page-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--fg);
+    letter-spacing: -0.025em;
+  }
+  .star-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 10px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #2d2000;
+    color: #f59e0b;
+    border: 1px solid #451f00;
+  }
+  .page-meta {
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--muted-fg);
+  }
+
+  /* ── Filter tabs ── */
+  .filter-bar {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 16px 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .filter-bar::-webkit-scrollbar { display: none; }
+  .filter-tab {
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted-fg);
+    border: 1px solid var(--border);
+    white-space: nowrap;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .filter-tab:hover { color: var(--fg); border-color: #444; }
+  .filter-tab.active {
+    color: var(--fg);
+    background: var(--secondary);
+    border-color: #444;
+  }
+
+  /* ── Grid ── */
+  .grid-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px 24px 48px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  @media (min-width: 640px) {
+    .grid-container { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .grid-container { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ── Card ── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .card:hover {
+    border-color: #383838;
+    background: var(--card-hover);
+  }
+  .card.unstarring {
+    opacity: 0.4;
+    transition: opacity 0.3s;
+  }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .card-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--fg);
+    line-height: 1.35;
+  }
+  .star-btn {
+    font-size: 18px;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: all 0.15s;
+    padding: 2px;
+    color: #f59e0b;
+  }
+  .star-btn:hover { transform: scale(1.1); opacity: 0.7; }
+
+  .card-summary {
+    font-size: 13px;
+    color: var(--muted-fg);
+    line-height: 1.55;
+    margin-top: -4px;
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+  .badge-category {
+    background: var(--muted);
+    color: var(--muted-fg);
+    border: 1px solid var(--border);
+  }
+  .badge-gh { background: #1f2937; color: #9ca3af; border: 1px solid #374151; }
+  .badge-hn { background: #431407; color: #fb923c; border: 1px solid #7c2d12; }
+  .badge-ph { background: #450a0a; color: #f87171; border: 1px solid #7f1d1d; }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 2px;
+  }
+  .score {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fg);
+  }
+  .score-fire { font-size: 14px; }
+  .starred-at {
+    font-size: 11px;
+    color: var(--muted-fg);
+    white-space: nowrap;
+  }
+
+  .card-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border-radius: var(--radius-md);
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    color: var(--muted-fg);
+    transition: all 0.15s;
+  }
+  .link-btn:hover {
+    color: var(--fg);
+    border-color: #444;
+    background: var(--accent);
+  }
+  .unstar-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: var(--radius-md);
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid #7c2d12;
+    color: #fb923c;
+    background: #1c0a00;
+    transition: all 0.15s;
+  }
+  .unstar-btn:hover {
+    background: #2d1200;
+    border-color: #c2410c;
+  }
+
+  /* ── Empty state ── */
+  .empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 24px;
+    color: var(--muted-fg);
+  }
+  .empty-icon { font-size: 44px; margin-bottom: 16px; }
+  .empty-title { font-size: 16px; font-weight: 600; color: var(--fg); margin-bottom: 8px; }
+  .empty-text { font-size: 14px; }
+  .empty-link {
+    display: inline-flex;
+    margin-top: 20px;
+    padding: 8px 20px;
+    border-radius: var(--radius-md);
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--fg);
+    transition: all 0.15s;
+  }
+  .empty-link:hover { border-color: #444; background: var(--accent); }
+</style>
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <a href="main.html" class="logo">
+      <span class="logo-icon"><i data-lucide="radar" style="width:20px;height:20px;color:#8b5cf6;"></i></span>
+      <span>AI Trend Radar</span>
+    </a>
+    <nav class="header-nav">
+      <a href="main.html" class="nav-tab">오늘의 트렌드</a>
+      <a href="stars.html" class="nav-tab active">내 스타</a>
+    </nav>
+    <div class="header-right">
+      <div class="avatar" title="Yunjae">Y</div>
+      <a href="login.html"><button class="logout-btn">로그아웃</button></a>
+    </div>
+  </div>
+</header>
+
+<!-- Page Header -->
+<div class="page-header">
+  <div class="page-title-row">
+    <h1 class="page-title">내 스타</h1>
+    <span class="star-count"><i data-lucide="star" style="width:12px;height:12px;fill:#f59e0b;color:#f59e0b;display:inline;vertical-align:middle;"></i> 5개</span>
+  </div>
+  <p class="page-meta">스타한 AI 트렌드를 모아보세요. 언제든 다시 찾을 수 있습니다.</p>
+</div>
+
+<!-- Filter Bar -->
+<div class="filter-bar">
+  <button class="filter-tab active" onclick="filterCards(this, 'all')">전체</button>
+  <button class="filter-tab" onclick="filterCards(this, 'skill')"><i data-lucide="puzzle" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>스킬·플러그인</button>
+  <button class="filter-tab" onclick="filterCards(this, 'agent')"><i data-lucide="bot" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>에이전트 서비스</button>
+  <button class="filter-tab" onclick="filterCards(this, 'api')"><i data-lucide="cpu" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>API·모델</button>
+</div>
+
+<!-- Card Grid -->
+<main class="grid-container" id="cardGrid">
+
+  <!-- Card 1 -->
+  <div class="card" id="card1" data-category="api">
+    <div class="card-top">
+      <span class="card-name">Gemini 2.5 Pro Experimental</span>
+      <span class="star-btn"><i data-lucide="star" style="width:18px;height:18px;fill:#f59e0b;color:#f59e0b;"></i></span>
+    </div>
+    <p class="card-summary">Google이 공개한 최신 멀티모달 모델. 1M 컨텍스트 윈도우와 향상된 코딩 능력으로 GPT-4o를 넘어서는 벤치마크 달성.</p>
+    <div class="card-meta">
+      <span class="badge badge-category"><i data-lucide="cpu" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>API·모델</span>
+      <span class="badge badge-gh">GH</span>
+      <span class="badge badge-hn">HN</span>
+    </div>
+    <div class="card-footer">
+      <div>
+        <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;color:#ef4444;"></i></span><span>9,240</span></div>
+        <div class="starred-at" style="margin-top:4px;"><i data-lucide="star" style="width:11px;height:11px;fill:#f59e0b;color:#f59e0b;display:inline;vertical-align:middle;margin-right:2px;"></i>2026.04.01 저장</div>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="link-btn">원본 ↗</a>
+        <button class="unstar-btn" onclick="unstar('card1')">해제</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card" id="card2" data-category="agent">
+    <div class="card-top">
+      <span class="card-name">Cursor Agent Mode 2.0</span>
+      <span class="star-btn"><i data-lucide="star" style="width:18px;height:18px;fill:#f59e0b;color:#f59e0b;"></i></span>
+    </div>
+    <p class="card-summary">멀티파일 자율 편집 + 터미널 실행까지 지원하는 에이전트 모드 업데이트. 프로젝트 단위 리팩터링을 자동화.</p>
+    <div class="card-meta">
+      <span class="badge badge-category"><i data-lucide="bot" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>에이전트 서비스</span>
+      <span class="badge badge-ph">PH</span>
+      <span class="badge badge-hn">HN</span>
+    </div>
+    <div class="card-footer">
+      <div>
+        <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;color:#ef4444;"></i></span><span>7,810</span></div>
+        <div class="starred-at" style="margin-top:4px;"><i data-lucide="star" style="width:11px;height:11px;fill:#f59e0b;color:#f59e0b;display:inline;vertical-align:middle;margin-right:2px;"></i>2026.04.01 저장</div>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="link-btn">원본 ↗</a>
+        <button class="unstar-btn" onclick="unstar('card2')">해제</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card" id="card3" data-category="skill">
+    <div class="card-top">
+      <span class="card-name">claude-mcp-toolkit</span>
+      <span class="star-btn"><i data-lucide="star" style="width:18px;height:18px;fill:#f59e0b;color:#f59e0b;"></i></span>
+    </div>
+    <p class="card-summary">Claude MCP 서버를 손쉽게 구성하는 오픈소스 툴킷. 파일시스템·웹·DB 도구를 플러그인 방식으로 조합 가능.</p>
+    <div class="card-meta">
+      <span class="badge badge-category"><i data-lucide="puzzle" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>스킬·플러그인</span>
+      <span class="badge badge-gh">GH</span>
+    </div>
+    <div class="card-footer">
+      <div>
+        <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;color:#ef4444;"></i></span><span>6,530</span></div>
+        <div class="starred-at" style="margin-top:4px;"><i data-lucide="star" style="width:11px;height:11px;fill:#f59e0b;color:#f59e0b;display:inline;vertical-align:middle;margin-right:2px;"></i>2026.03.30 저장</div>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="link-btn">원본 ↗</a>
+        <button class="unstar-btn" onclick="unstar('card3')">해제</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card" id="card4" data-category="skill">
+    <div class="card-top">
+      <span class="card-name">LangGraph v0.3</span>
+      <span class="star-btn"><i data-lucide="star" style="width:18px;height:18px;fill:#f59e0b;color:#f59e0b;"></i></span>
+    </div>
+    <p class="card-summary">멀티에이전트 워크플로우를 그래프로 정의하는 LangChain의 새 프레임워크. 체크포인트·스트리밍·인간 개입 지원.</p>
+    <div class="card-meta">
+      <span class="badge badge-category"><i data-lucide="puzzle" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>스킬·플러그인</span>
+      <span class="badge badge-gh">GH</span>
+    </div>
+    <div class="card-footer">
+      <div>
+        <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;color:#ef4444;"></i></span><span>4,870</span></div>
+        <div class="starred-at" style="margin-top:4px;"><i data-lucide="star" style="width:11px;height:11px;fill:#f59e0b;color:#f59e0b;display:inline;vertical-align:middle;margin-right:2px;"></i>2026.03.29 저장</div>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="link-btn">원본 ↗</a>
+        <button class="unstar-btn" onclick="unstar('card4')">해제</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="card" id="card5" data-category="agent">
+    <div class="card-top">
+      <span class="card-name">Devin 2.0 — Solo Engineer</span>
+      <span class="star-btn"><i data-lucide="star" style="width:18px;height:18px;fill:#f59e0b;color:#f59e0b;"></i></span>
+    </div>
+    <p class="card-summary">Cognition이 공개한 Devin 2.0. GitHub 이슈 자동 처리율 85%를 달성, SWE-bench 리더보드 1위 기록.</p>
+    <div class="card-meta">
+      <span class="badge badge-category"><i data-lucide="bot" style="width:13px;height:13px;display:inline;vertical-align:middle;margin-right:3px;"></i>에이전트 서비스</span>
+      <span class="badge badge-ph">PH</span>
+    </div>
+    <div class="card-footer">
+      <div>
+        <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;color:#ef4444;"></i></span><span>5,410</span></div>
+        <div class="starred-at" style="margin-top:4px;"><i data-lucide="star" style="width:11px;height:11px;fill:#f59e0b;color:#f59e0b;display:inline;vertical-align:middle;margin-right:2px;"></i>2026.03.28 저장</div>
+      </div>
+      <div class="card-actions">
+        <a href="#" class="link-btn">원본 ↗</a>
+        <button class="unstar-btn" onclick="unstar('card5')">해제</button>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function unstar(cardId) {
+    const card = document.getElementById(cardId);
+    card.classList.add('unstarring');
+    setTimeout(() => {
+      card.remove();
+      updateCount();
+      checkEmpty();
+    }, 300);
+  }
+
+  function updateCount() {
+    const remaining = document.querySelectorAll('#cardGrid .card').length;
+    document.querySelector('.star-count').textContent = remaining + '개';
+  }
+
+  function checkEmpty() {
+    const remaining = document.querySelectorAll('#cardGrid .card').length;
+    if (remaining === 0) {
+      const grid = document.getElementById('cardGrid');
+      grid.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-icon"><i data-lucide="star" style="width:44px;height:44px;color:#f59e0b;"></i></div>
+          <div class="empty-title">스타한 항목이 없어요</div>
+          <p class="empty-text">오늘의 트렌드에서 관심 항목에 스타를 눌러보세요.</p>
+          <a href="main.html" class="empty-link">오늘의 트렌드 보기 →</a>
+        </div>`;
+    }
+  }
+
+  function filterCards(tab, category) {
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelectorAll('#cardGrid .card').forEach(card => {
+      card.style.display = (category === 'all' || card.dataset.category === category) ? '' : 'none';
+    });
+  }
+</script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

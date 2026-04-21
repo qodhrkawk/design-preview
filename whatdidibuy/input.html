@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>뭐샀지 - 음성 입력</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; position: relative; }
+  @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.4; } 50% { transform: scale(1.5); opacity: 0; } }
+</style>
+</head>
+<body>
+<div class="phone">
+  <!-- Status Bar -->
+  <div style="padding: 12px 24px 8px; display: flex; justify-content: space-between; align-items: center;">
+    <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">9:41</span>
+    <div style="display: flex; gap: 6px; align-items: center;">
+      <span style="font-size: 12px;">📶</span>
+      <span style="font-size: 12px;">🔋</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div style="padding: 16px 24px 12px; display: flex; align-items: center; gap: 12px;">
+    <div style="width: 36px; height: 36px; background: #f5f5f5; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-size: 16px;">←</div>
+    <h2 style="font-size: 20px; font-weight: 600; color: #0a0a0a;">지출 추가</h2>
+  </div>
+
+  <!-- Voice Recording State -->
+  <div style="display: flex; flex-direction: column; align-items: center; padding: 60px 24px 40px;">
+    <!-- Mic Animation -->
+    <div style="position: relative; width: 120px; height: 120px; display: flex; align-items: center; justify-content: center;">
+      <div style="position: absolute; width: 120px; height: 120px; background: #0a0a0a; opacity: 0.05; border-radius: 9999px; animation: pulse 2s ease-in-out infinite;"></div>
+      <div style="position: absolute; width: 90px; height: 90px; background: #0a0a0a; opacity: 0.1; border-radius: 9999px; animation: pulse 2s ease-in-out infinite 0.3s;"></div>
+      <div style="width: 72px; height: 72px; background: #0a0a0a; border-radius: 9999px; display: flex; align-items: center; justify-content: center; z-index: 1;">
+        <span style="font-size: 32px;">🎙️</span>
+      </div>
+    </div>
+
+    <p style="margin-top: 24px; font-size: 18px; font-weight: 600; color: #0a0a0a;">듣고 있어요...</p>
+    <p style="margin-top: 8px; font-size: 14px; color: #737373;">"스타벅스 아메리카노 4500원" 처럼 말해보세요</p>
+  </div>
+
+  <!-- Recognized Text -->
+  <div style="margin: 0 24px; padding: 20px; background: #f5f5f5; border-radius: 16px;">
+    <p style="font-size: 13px; font-weight: 500; color: #737373; margin-bottom: 8px;">인식된 내용</p>
+    <p style="font-size: 20px; font-weight: 700; color: #0a0a0a;">"점심 김치찌개 구천원"</p>
+  </div>
+
+  <!-- Parsed Result -->
+  <div style="margin: 16px 24px 0; padding: 20px; border: 1px solid #e5e5e5; border-radius: 16px;">
+    <p style="font-size: 13px; font-weight: 500; color: #737373; margin-bottom: 16px;">AI가 분석한 결과</p>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <span style="font-size: 14px; color: #737373;">금액</span>
+      <span style="font-size: 20px; font-weight: 800; color: #0a0a0a;">₩9,000</span>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <span style="font-size: 14px; color: #737373;">카테고리</span>
+      <div style="display: flex; align-items: center; gap: 6px; background: #fce7f3; padding: 6px 14px; border-radius: 9999px;">
+        <span style="font-size: 16px;">🍽️</span>
+        <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">식비</span>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <span style="font-size: 14px; color: #737373;">메모</span>
+      <span style="font-size: 14px; font-weight: 500; color: #0a0a0a;">김치찌개 점심</span>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 14px; color: #737373;">날짜</span>
+      <span style="font-size: 14px; font-weight: 500; color: #0a0a0a;">오늘 · 지금</span>
+    </div>
+  </div>
+
+  <!-- Text Input Alternative -->
+  <div style="margin: 16px 24px 0;">
+    <div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #f5f5f5; border-radius: 12px;">
+      <span style="font-size: 16px;">✏️</span>
+      <input type="text" placeholder="또는 직접 입력: 커피 4500원" style="flex: 1; border: none; background: transparent; font-size: 14px; font-family: Inter, system-ui, sans-serif; color: #0a0a0a; outline: none;" />
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div style="padding: 24px; display: flex; gap: 12px; margin-top: 16px;">
+    <button style="flex: 1; height: 52px; border: 1px solid #e5e5e5; background: #ffffff; border-radius: 12px; font-size: 15px; font-weight: 600; color: #0a0a0a; font-family: Inter, system-ui, sans-serif; cursor: pointer;">다시 말하기</button>
+    <button style="flex: 2; height: 52px; border: none; background: #0a0a0a; border-radius: 12px; font-size: 15px; font-weight: 600; color: #fafafa; font-family: Inter, system-ui, sans-serif; cursor: pointer;">✓ 저장하기</button>
+  </div>
+</div>
+</body>
+</html>

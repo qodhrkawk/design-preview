@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Trend Radar — 오늘의 트렌드</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:          #0a0a0a;
+    --fg:          #fafafa;
+    --card:        #111111;
+    --card-hover:  #161616;
+    --border:      #262626;
+    --muted:       #262626;
+    --muted-fg:    #a3a3a3;
+    --secondary:   #1e1e1e;
+    --primary:     #fafafa;
+    --primary-fg:  #171717;
+    --accent:      #262626;
+    --gh:          #4b5563;
+    --hn:          #ff6600;
+    --ph:          #da552f;
+    --star-active: #f59e0b;
+    --fire:        #f97316;
+    --radius-sm:   6px;
+    --radius-md:   8px;
+    --radius-lg:   12px;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+  /* ── Header ── */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--fg);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fg);
+  }
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+  }
+  .nav-tab {
+    padding: 6px 14px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted-fg);
+    transition: all 0.15s;
+  }
+  .nav-tab:hover { color: var(--fg); background: var(--accent); }
+  .nav-tab.active {
+    color: var(--fg);
+    background: var(--secondary);
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  .update-badge {
+    font-size: 12px;
+    color: var(--muted-fg);
+    white-space: nowrap;
+    display: none;
+  }
+  @media (min-width: 640px) { .update-badge { display: block; } }
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .logout-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: var(--muted-fg);
+    padding: 5px 10px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .logout-btn:hover { color: var(--fg); border-color: #444; }
+
+  /* ── Page header ── */
+  .page-header {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 28px 24px 0;
+  }
+  .page-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .page-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--fg);
+    letter-spacing: -0.025em;
+  }
+  .page-date {
+    font-size: 13px;
+    color: var(--muted-fg);
+  }
+  .page-meta {
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--muted-fg);
+  }
+
+  /* ── Filter tabs ── */
+  .filter-bar {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 16px 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .filter-bar::-webkit-scrollbar { display: none; }
+  .filter-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted-fg);
+    border: 1px solid var(--border);
+    white-space: nowrap;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .filter-tab:hover { color: var(--fg); border-color: #444; }
+  .filter-tab.active {
+    color: var(--fg);
+    background: var(--secondary);
+    border-color: #444;
+  }
+
+  /* ── Grid ── */
+  .grid-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px 24px 48px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  @media (min-width: 640px) {
+    .grid-container { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .grid-container { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ── Card ── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .card:hover {
+    border-color: #383838;
+    background: var(--card-hover);
+  }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .card-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--fg);
+    line-height: 1.35;
+  }
+  .star-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--muted-fg);
+    opacity: 0.5;
+    transition: all 0.15s;
+    padding: 2px;
+  }
+  .star-btn:hover { opacity: 0.8; transform: scale(1.1); }
+  .star-btn.starred { opacity: 1; color: var(--star-active); }
+
+  .card-summary {
+    font-size: 13px;
+    color: var(--muted-fg);
+    line-height: 1.55;
+    margin-top: -4px;
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+  .badge-category {
+    background: var(--muted);
+    color: var(--muted-fg);
+    border: 1px solid var(--border);
+  }
+  .badge-gh {
+    background: #1f2937;
+    color: #9ca3af;
+    border: 1px solid #374151;
+  }
+  .badge-hn {
+    background: #431407;
+    color: #fb923c;
+    border: 1px solid #7c2d12;
+  }
+  .badge-ph {
+    background: #450a0a;
+    color: #f87171;
+    border: 1px solid #7f1d1d;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 2px;
+  }
+  .score {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fg);
+  }
+  .score-fire {
+    display: flex;
+    align-items: center;
+    color: var(--fire);
+  }
+  .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border-radius: var(--radius-md);
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    color: var(--muted-fg);
+    transition: all 0.15s;
+  }
+  .link-btn:hover {
+    color: var(--fg);
+    border-color: #444;
+    background: var(--accent);
+  }
+
+  /* ── Empty state ── */
+  .empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 64px 24px;
+    color: var(--muted-fg);
+  }
+  .empty-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .empty-text { font-size: 15px; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <a href="main.html" class="logo">
+      <span class="logo-icon"><i data-lucide="radio" style="width:20px;height:20px;"></i></span>
+      <span>AI Trend Radar</span>
+    </a>
+    <nav class="header-nav">
+      <a href="main.html" class="nav-tab active">오늘의 트렌드</a>
+      <a href="stars.html" class="nav-tab">내 스타</a>
+    </nav>
+    <div class="header-right">
+      <span class="update-badge">매일 08:00 업데이트</span>
+      <div class="avatar" title="Yunjae">Y</div>
+      <a href="login.html"><button class="logout-btn"><i data-lucide="log-out" style="width:13px;height:13px;"></i>로그아웃</button></a>
+    </div>
+  </div>
+</header>
+
+<!-- Page Header -->
+<div class="page-header">
+  <div class="page-title-row">
+    <h1 class="page-title">오늘의 트렌드</h1>
+    <span class="page-date">2026년 4월 1일 화요일</span>
+  </div>
+  <p class="page-meta">GitHub · Hacker News · Product Hunt 에서 수집한 AI 트렌드 10개</p>
+</div>
+
+<!-- Filter Bar -->
+<div class="filter-bar">
+  <button class="filter-tab active" onclick="filterCards(this, 'all')">전체</button>
+  <button class="filter-tab" onclick="filterCards(this, 'skill')"><i data-lucide="puzzle" style="width:13px;height:13px;"></i> 스킬·플러그인</button>
+  <button class="filter-tab" onclick="filterCards(this, 'agent')"><i data-lucide="bot" style="width:13px;height:13px;"></i> 에이전트 서비스</button>
+  <button class="filter-tab" onclick="filterCards(this, 'api')"><i data-lucide="cpu" style="width:13px;height:13px;"></i> API·모델</button>
+</div>
+
+<!-- Card Grid -->
+<main class="grid-container" id="cardGrid">
+
+  <!-- Card 1 -->
+  <div class="card" data-category="api">
+    <div class="card-top">
+      <span class="card-name">Gemini 2.5 Pro Experimental</span>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
+    </div>
+    <p class="card-summary">Google이 공개한 최신 멀티모달 모델. 1M 컨텍스트 윈도우와 향상된 코딩 능력으로 GPT-4o를 넘어서는 벤치마크 달성.</p>
+    <div class="card-meta">
+      <span class="badge badge-category"><i data-lucide="cpu" style="width:11px;height:11px;"></i> API·모델</span>
+      <span class="badge badge-gh"><i data-lucide="github" style="width:11px;height:11px;"></i> GH</span>
+      <span class="badge badge-hn"><i data-lucide="newspaper" style="width:11px;height:11px;"></i> HN</span>
+    </div>
+    <div class="card-footer">
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>9,240</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card" data-category="agent">
+    <div class="card-top">
+      <span class="card-name">Cursor Agent Mode 2.0</span>
+      <button class="star-btn starred" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
+    </div>
+    <p class="card-summary">멀티파일 자율 편집 + 터미널 실행까지 지원하는 에이전트 모드 업데이트. 프로젝트 단위 리팩터링을 자동화.</p>
+    <div class="card-meta">
+      <span class="badge badge-category"><i data-lucide="bot" style="width:11px;height:11px;"></i> 에이전트 서비스</span>
+      <span class="badge badge-ph"><i data-lucide="rocket" style="width:11px;height:11px;"></i> PH</span>
+      <span class="badge badge-hn"><i data-lucide="newspaper" style="width:11px;height:11px;"></i> HN</span>
+    </div>
+    <div class="card-footer">
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>7,810</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card" data-category="skill">
+    <div class="card-top">
+      <span class="card-name">claude-mcp-toolkit</span>
+      <button class="star-btn starred" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
+    </div>
+    <p class="card-summary">Claude MCP 서버를 손쉽게 구성하는 오픈소스 툴킷. 파일시스템·웹·DB 도구를 플러그인 방식으로 조합 가능.</p>
+    <div class="card-meta">
+      <span class="badge badge-category"><i data-lucide="puzzle" style="width:11px;height:11px;"></i> 스킬·플러그인</span>
+      <span class="badge badge-gh"><i data-lucide="github" style="width:11px;height:11px;"></i> GH</span>
+    </div>
+    <div class="card-footer">
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>6,530</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card" data-category="api">
+    <div class="card-top">
+      <span class="card-name">Mistral Small 3.1</span>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
+    </div>
+    <p class="card-summary">22B 파라미터로 GPT-4o-mini 수준의 성능을 달성한 경량 모델. 무료 상업 라이선스로 자체 배포 가능.</p>
+    <div class="card-meta">
+      <span class="badge badge-category"><i data-lucide="cpu" style="width:11px;height:11px;"></i> API·모델</span>
+      <span class="badge badge-gh"><i data-lucide="github" style="width:11px;height:11px;"></i> GH</span>
+      <span class="badge badge-hn"><i data-lucide="newspaper" style="width:11px;height:11px;"></i> HN</span>
+    </div>
+    <div class="card-footer">
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>5,920</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="card" data-category="agent">
+    <div class="card-top">
+      <span class="card-name">Devin 2.0 — Solo Engineer</span>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
+    </div>
+    <p class="card-summary">Cognition이 공개한 Devin 2.0. GitHub 이슈 자동 처리율 85%를 달성, SWE-bench 리더보드 1위 기록.</p>
+    <div class="card-meta">
+      <span class="badge badge-category"><i data-lucide="bot" style="width:11px;height:11px;"></i> 에이전트 서비스</span>
+      <span class="badge badge-ph"><i data-lucide="rocket" style="width:11px;height:11px;"></i> PH</span>
+    </div>
+    <div class="card-footer">
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>5,410</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="card" data-category="skill">
+    <div class="card-top">
+      <span class="card-name">LangGraph v0.3</span>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
+    </div>
+    <p class="card-summary">멀티에이전트 워크플로우를 그래프로 정의하는 LangChain의 새 프레임워크. 체크포인트·스트리밍·인간 개입 지원.</p>
+    <div class="card-meta">
+      <span class="badge badge-category"><i data-lucide="puzzle" style="width:11px;height:11px;"></i> 스킬·플러그인</span>
+      <span class="badge badge-gh"><i data-lucide="github" style="width:11px;height:11px;"></i> GH</span>
+    </div>
+    <div class="card-footer">
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>4,870</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
+    </div>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="card" data-category="api">
+    <div class="card-top">
+      <span class="card-name">OpenAI Realtime API GA</span>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
+    </div>
+    <p class="card-summary">음성 대화 API 정식 출시. WebSocket 기반으로 200ms 미만 레이턴시의 양방향 음성·텍스트 스트리밍 지원.</p>
+    <div class="card-meta">
+      <span class="badge badge-category"><i data-lucide="cpu" style="width:11px;height:11px;"></i> API·모델</span>
+      <span class="badge badge-gh"><i data-lucide="github" style="width:11px;height:11px;"></i> GH</span>
+      <span class="badge badge-hn"><i data-lucide="newspaper" style="width:11px;height:11px;"></i> HN</span>
+    </div>
+    <div class="card-footer">
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>4,320</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
+    </div>
+  </div>
+
+  <!-- Card 8 -->
+  <div class="card" data-category="agent">
+    <div class="card-top">
+      <span class="card-name">Stitch — AI Product Builder</span>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
+    </div>
+    <p class="card-summary">디자인·코드·배포를 한 번에 처리하는 올인원 AI 프로덕트 빌더. Figma 임포트 후 풀스택 앱 자동 생성.</p>
+    <div class="card-meta">
+      <span class="badge badge-category"><i data-lucide="bot" style="width:11px;height:11px;"></i> 에이전트 서비스</span>
+      <span class="badge badge-ph"><i data-lucide="rocket" style="width:11px;height:11px;"></i> PH</span>
+    </div>
+    <div class="card-footer">
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>3,980</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
+    </div>
+  </div>
+
+  <!-- Card 9 -->
+  <div class="card" data-category="skill">
+    <div class="card-top">
+      <span class="card-name">browser-use v2</span>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
+    </div>
+    <p class="card-summary">LLM이 브라우저를 직접 조작하는 에이전트 라이브러리. Playwright 기반, 시각적 UI 이해 능력 대폭 향상.</p>
+    <div class="card-meta">
+      <span class="badge badge-category"><i data-lucide="puzzle" style="width:11px;height:11px;"></i> 스킬·플러그인</span>
+      <span class="badge badge-gh"><i data-lucide="github" style="width:11px;height:11px;"></i> GH</span>
+    </div>
+    <div class="card-footer">
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>3,640</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
+    </div>
+  </div>
+
+  <!-- Card 10 -->
+  <div class="card" data-category="api">
+    <div class="card-top">
+      <span class="card-name">Perplexity Sonar API</span>
+      <button class="star-btn" onclick="toggleStar(this)"><i data-lucide="star" style="width:18px;height:18px;"></i></button>
+    </div>
+    <p class="card-summary">실시간 웹 검색이 내장된 Perplexity의 Sonar 모델 API 공개. 인용 출처 포함 응답으로 RAG 구성 없이 최신 정보 활용.</p>
+    <div class="card-meta">
+      <span class="badge badge-category"><i data-lucide="cpu" style="width:11px;height:11px;"></i> API·모델</span>
+      <span class="badge badge-hn"><i data-lucide="newspaper" style="width:11px;height:11px;"></i> HN</span>
+      <span class="badge badge-ph"><i data-lucide="rocket" style="width:11px;height:11px;"></i> PH</span>
+    </div>
+    <div class="card-footer">
+      <div class="score"><span class="score-fire"><i data-lucide="flame" style="width:14px;height:14px;"></i></span><span>3,210</span></div>
+      <a href="#" class="link-btn">원본 보기 <i data-lucide="external-link" style="width:12px;height:12px;"></i></a>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function toggleStar(btn) {
+    btn.classList.toggle('starred');
+  }
+
+  function filterCards(tab, category) {
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    const cards = document.querySelectorAll('#cardGrid .card');
+    cards.forEach(card => {
+      if (category === 'all' || card.dataset.category === category) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
