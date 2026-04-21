@@ -22,15 +22,19 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 20
+          cache: npm
+          cache-dependency-path: line/package-lock.json
 
       - name: Install dependencies
-        working-directory: line
-        run: npm ci
+        run: |
+          cd line
+          npm ci
 
       - name: Build
-        working-directory: line
-        run: npm run build
+        run: |
+          cd line
+          npm run build
 
       - name: Prepare site
         run: |
