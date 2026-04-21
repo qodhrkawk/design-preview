@@ -29,9 +29,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd line
-          npm ci
-        env:
-          npm_config_prefer_offline: true
+          npm ci || npm ci
 
       - name: Build
         run: |
