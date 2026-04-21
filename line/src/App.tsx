@@ -2,7 +2,7 @@ import { HashRouter, Routes, Route, Link } from 'react-router-dom'
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRight } from 'lucide-react'
-// Note: when adding lazy-loaded pages, import { lazy, Suspense } from 'react'
+import { lazy, Suspense } from 'react'
 
 // -- PAGE REGISTRY (에이전트가 여기에 추가) --
 interface PageEntry {
@@ -14,14 +14,21 @@ interface PageEntry {
 }
 
 const pages: PageEntry[] = [
-  // 에이전트가 새 페이지 추가 시 이 배열에 엔트리를 추가한다
+  {
+    slug: '2026-04-21-login',
+    title: '로그인',
+    description: '이메일/비밀번호 + 소셜 로그인 (Google, Apple, Kakao)',
+    date: '2026-04-21',
+    viewport: 'desktop',
+  },
 ]
 
 // -- LAZY IMPORTS (에이전트가 여기에 추가) --
+const LoginPage = lazy(() => import('./pages/2026-04-21-login/Page'))
 
 // -- ROUTES (에이전트가 여기에 추가) --
 const pageRoutes: { path: string; element: React.ReactNode }[] = [
-  // 에이전트가 새 라우트 추가 시 이 배열에 엔트리를 추가한다
+  { path: '/2026-04-21-login', element: <Suspense fallback={null}><LoginPage /></Suspense> },
 ]
 
 function Gallery() {
