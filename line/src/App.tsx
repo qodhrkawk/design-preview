@@ -15,6 +15,13 @@ interface PageEntry {
 
 const pages: PageEntry[] = [
   {
+    slug: '2026-04-23-pr-reviewer',
+    title: 'PR Reviewer',
+    description: 'GitHub Enterprise PR 리뷰 도구 (AI 리뷰 + 3-panel diff + 채팅)',
+    date: '2026-04-23',
+    viewport: 'desktop',
+  },
+  {
     slug: '2026-04-21-prompt-lab',
     title: 'Gemma Prompt Lab',
     description: 'Prompt 관리 + LLM 분석 결과 라벨링 도구 (다크 테마)',
@@ -31,11 +38,13 @@ const pages: PageEntry[] = [
 ]
 
 // -- LAZY IMPORTS (에이전트가 여기에 추가) --
+const PRReviewerPage = lazy(() => import('./pages/2026-04-23-pr-reviewer/Page'))
 const PromptLabPage = lazy(() => import('./pages/2026-04-21-prompt-lab/Page'))
 const LoginPage = lazy(() => import('./pages/2026-04-21-login/Page'))
 
 // -- ROUTES (에이전트가 여기에 추가) --
 const pageRoutes: { path: string; element: React.ReactNode }[] = [
+  { path: '/2026-04-23-pr-reviewer', element: <Suspense fallback={null}><PRReviewerPage /></Suspense> },
   { path: '/2026-04-21-prompt-lab', element: <Suspense fallback={null}><PromptLabPage /></Suspense> },
   { path: '/2026-04-21-login', element: <Suspense fallback={null}><LoginPage /></Suspense> },
 ]
