@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GlitchLog - 홈</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Inter, system-ui, sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .phone {
+    width: 390px;
+    min-height: 100vh;
+    background: #ffffff;
+    position: relative;
+    overflow-y: auto;
+    padding-bottom: 80px;
+  }
+  .status-bar {
+    height: 54px;
+    padding: 14px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0a0a0a;
+  }
+  .header {
+    padding: 8px 24px 20px;
+  }
+  .header h1 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #0a0a0a;
+    letter-spacing: -0.025em;
+    line-height: 36px;
+  }
+  .header p {
+    font-size: 14px;
+    color: #737373;
+    margin-top: 4px;
+    line-height: 20px;
+  }
+  .stats-row {
+    display: flex;
+    gap: 10px;
+    padding: 0 24px;
+    margin-bottom: 20px;
+  }
+  .stat-card {
+    flex: 1;
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 14px;
+  }
+  .stat-number {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0a0a0a;
+    line-height: 32px;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: #737373;
+    line-height: 16px;
+    margin-top: 2px;
+  }
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0a0a0a;
+    line-height: 28px;
+  }
+  .section-link {
+    font-size: 14px;
+    color: #737373;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .glitch-list {
+    padding: 0 24px;
+  }
+  .glitch-card {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 10px;
+  }
+  .glitch-card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .app-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    flex-shrink: 0;
+  }
+  .app-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .app-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0a0a0a;
+    line-height: 20px;
+  }
+  .glitch-time {
+    font-size: 12px;
+    color: #737373;
+    line-height: 16px;
+  }
+  .glitch-tag {
+    display: inline-flex;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 9999px;
+    padding: 2px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #171717;
+  }
+  .tag-bug { background: #fef2f2; color: #dc2626; }
+  .tag-ux { background: #fefce8; color: #ca8a04; }
+  .tag-slow { background: #eff6ff; color: #2563eb; }
+  .tag-crash { background: #fef2f2; color: #dc2626; }
+  .glitch-desc {
+    font-size: 14px;
+    color: #0a0a0a;
+    line-height: 20px;
+  }
+  .glitch-card-bottom {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .severity {
+    display: flex;
+    gap: 3px;
+  }
+  .severity-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: #e5e5e5;
+  }
+  .severity-dot.active { background: #ef4444; }
+  .severity-dot.mid { background: #f59e0b; }
+  .severity-dot.low { background: #22c55e; }
+  .fab {
+    position: fixed;
+    bottom: 96px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 9999px;
+    background: #171717;
+    color: #fafafa;
+    border: none;
+    font-size: 28px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
+    cursor: pointer;
+    z-index: 10;
+  }
+  .tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 390px;
+    height: 80px;
+    background: #ffffff;
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 10px;
+    z-index: 10;
+  }
+  .tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+  }
+  .tab-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tab-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  .tab-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: #737373;
+  }
+  .tab-item.active .tab-label { color: #171717; }
+  .tab-item.active svg { stroke: #171717; }
+  .tab-item svg { stroke: #a3a3a3; }
+  .ai-insight-banner {
+    margin: 0 24px 16px;
+    background: linear-gradient(135deg, #171717 0%, #3f3f46 100%);
+    border-radius: 12px;
+    padding: 16px;
+    color: #fafafa;
+  }
+  .ai-insight-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #a3a3a3;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .ai-insight-text {
+    font-size: 14px;
+    line-height: 20px;
+    color: #fafafa;
+    font-weight: 400;
+  }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="status-bar">
+    <span>9:41</span>
+    <span style="display:flex;gap:6px;align-items:center;">
+      <svg width="16" height="12" fill="none"><rect x="0" y="3" width="3" height="9" rx="1" fill="#0a0a0a"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="#0a0a0a"/><rect x="9" y="0" width="3" height="12" rx="1" fill="#0a0a0a"/><rect x="13" y="1" width="3" height="11" rx="1" fill="#e5e5e5"/></svg>
+      <svg width="25" height="12" fill="none"><rect x="0" y="0" width="22" height="12" rx="3" stroke="#0a0a0a" stroke-width="1"/><rect x="2" y="2" width="16" height="8" rx="2" fill="#0a0a0a"/><rect x="23" y="4" width="2" height="4" rx="1" fill="#0a0a0a"/></svg>
+    </span>
+  </div>
+
+  <div class="header">
+    <h1>GlitchLog</h1>
+    <p>일상 속 불편함을 기록하세요</p>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-number">47</div>
+      <div class="stat-label">총 기록</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">12</div>
+      <div class="stat-label">앱/서비스</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">3</div>
+      <div class="stat-label">이번 주</div>
+    </div>
+  </div>
+
+  <div class="ai-insight-banner">
+    <div class="ai-insight-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      AI 인사이트
+    </div>
+    <div class="ai-insight-text">배달앱에서 반복되는 UX 불만 4건 — "주문 취소 버튼이 너무 깊이 숨겨져 있다"는 패턴이 보여요.</div>
+  </div>
+
+  <div class="section-header">
+    <span class="section-title">최근 기록</span>
+    <a class="section-link" href="#">전체보기</a>
+  </div>
+
+  <div class="glitch-list">
+    <div class="glitch-card">
+      <div class="glitch-card-top">
+        <div class="app-icon" style="background:#22c55e;">N</div>
+        <div class="app-info">
+          <div class="app-name">네이버 지도</div>
+          <div class="glitch-time">오늘 오후 1:23</div>
+        </div>
+        <span class="glitch-tag tag-ux">UX</span>
+      </div>
+      <div class="glitch-desc">길찾기 결과에서 도보 경로가 갑자기 자동차 경로로 바뀜. 뒤로가기 누르면 처음부터 다시 검색해야 함</div>
+      <div class="glitch-card-bottom">
+        <div class="severity">
+          <div class="severity-dot mid"></div>
+          <div class="severity-dot mid"></div>
+          <div class="severity-dot"></div>
+        </div>
+        <span style="font-size:12px;color:#737373;">짜증 2/3</span>
+      </div>
+    </div>
+
+    <div class="glitch-card">
+      <div class="glitch-card-top">
+        <div class="app-icon" style="background:#3b82f6;">C</div>
+        <div class="app-info">
+          <div class="app-name">쿠팡</div>
+          <div class="glitch-time">어제 오후 8:15</div>
+        </div>
+        <span class="glitch-tag tag-bug">버그</span>
+      </div>
+      <div class="glitch-desc">장바구니에서 수량 변경하면 가격이 0원으로 표시됨. 새로고침하면 정상으로 돌아오는데 매번 그럼</div>
+      <div class="glitch-card-bottom">
+        <div class="severity">
+          <div class="severity-dot active"></div>
+          <div class="severity-dot active"></div>
+          <div class="severity-dot active"></div>
+        </div>
+        <span style="font-size:12px;color:#737373;">짜증 3/3</span>
+      </div>
+    </div>
+
+    <div class="glitch-card">
+      <div class="glitch-card-top">
+        <div class="app-icon" style="background:#8b5cf6;">S</div>
+        <div class="app-info">
+          <div class="app-name">스타벅스</div>
+          <div class="glitch-time">4월 23일</div>
+        </div>
+        <span class="glitch-tag tag-slow">느림</span>
+      </div>
+      <div class="glitch-desc">사이렌 오더 결제 후 주문 상태 화면 로딩이 10초 이상. 주문 됐는지 불안해서 두 번 결제할 뻔</div>
+      <div class="glitch-card-bottom">
+        <div class="severity">
+          <div class="severity-dot mid"></div>
+          <div class="severity-dot mid"></div>
+          <div class="severity-dot"></div>
+        </div>
+        <span style="font-size:12px;color:#737373;">짜증 2/3</span>
+      </div>
+    </div>
+
+    <div class="glitch-card">
+      <div class="glitch-card-top">
+        <div class="app-icon" style="background:#f59e0b;">B</div>
+        <div class="app-info">
+          <div class="app-name">배달의민족</div>
+          <div class="glitch-time">4월 22일</div>
+        </div>
+        <span class="glitch-tag tag-ux">UX</span>
+      </div>
+      <div class="glitch-desc">리뷰 쓰기 화면에서 사진 추가하면 작성 중이던 텍스트가 날아감. 긴 리뷰 쓰다가 다 날림</div>
+      <div class="glitch-card-bottom">
+        <div class="severity">
+          <div class="severity-dot active"></div>
+          <div class="severity-dot active"></div>
+          <div class="severity-dot active"></div>
+        </div>
+        <span style="font-size:12px;color:#737373;">짜증 3/3</span>
+      </div>
+    </div>
+  </div>
+
+  <button class="fab">+</button>
+
+  <div class="tab-bar">
+    <a class="tab-item active" href="#">
+      <div class="tab-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <span class="tab-label">홈</span>
+    </a>
+    <a class="tab-item" href="#">
+      <div class="tab-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <span class="tab-label">검색</span>
+    </a>
+    <a class="tab-item" href="#">
+      <div class="tab-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <span class="tab-label">인사이트</span>
+    </a>
+    <a class="tab-item" href="#">
+      <div class="tab-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <span class="tab-label">프로필</span>
+    </a>
+  </div>
+</div>
+</body>
+</html>
