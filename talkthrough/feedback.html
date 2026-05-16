@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>리허썰 — 피드백</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; min-height: 100vh; }
+  .frame { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <!-- Status bar spacer -->
+  <div style="height: 44px;"></div>
+
+  <!-- Header -->
+  <div style="padding: 12px 16px; display: flex; align-items: center; gap: 12px;">
+    <div style="width: 36px; height: 36px; border-radius: 9999px; display: flex; align-items: center; justify-content: center;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </div>
+    <div style="flex: 1; font-size: 15px; font-weight: 600; color: #0a0a0a;">리허설 결과</div>
+    <div style="background: #f5f5f5; border-radius: 9999px; padding: 6px 12px; font-size: 12px; font-weight: 600; color: #0a0a0a;">공유</div>
+  </div>
+
+  <!-- Score Card -->
+  <div style="margin: 8px 16px 16px 16px; background: #0a0a0a; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+    <div style="font-size: 12px; color: #a3a3a3; font-weight: 500;">종합 점수</div>
+    <div style="display: flex; align-items: baseline; gap: 4px;">
+      <div style="font-size: 56px; font-weight: 800; color: #fafafa; line-height: 1; letter-spacing: -0.04em;">78</div>
+      <div style="font-size: 18px; color: #a3a3a3; font-weight: 500;">/100</div>
+    </div>
+    <div style="background: #1f3a25; color: #4ade80; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 9999px; display: flex; align-items: center; gap: 4px;">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      준비 양호 · 실전 가능
+    </div>
+  </div>
+
+  <!-- Sub scores -->
+  <div style="padding: 0 16px 16px 16px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 12px;">
+      <div style="font-size: 11px; color: #737373; font-weight: 500;">명확성</div>
+      <div style="font-size: 22px; font-weight: 700; color: #0a0a0a; margin-top: 4px; letter-spacing: -0.02em;">85</div>
+      <div style="height: 4px; background: #f5f5f5; border-radius: 9999px; margin-top: 8px; overflow: hidden;">
+        <div style="width: 85%; height: 100%; background: #22c55e;"></div>
+      </div>
+    </div>
+
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 12px;">
+      <div style="font-size: 11px; color: #737373; font-weight: 500;">근거 강도</div>
+      <div style="font-size: 22px; font-weight: 700; color: #0a0a0a; margin-top: 4px; letter-spacing: -0.02em;">82</div>
+      <div style="height: 4px; background: #f5f5f5; border-radius: 9999px; margin-top: 8px; overflow: hidden;">
+        <div style="width: 82%; height: 100%; background: #22c55e;"></div>
+      </div>
+    </div>
+
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 12px;">
+      <div style="font-size: 11px; color: #737373; font-weight: 500;">감정 조절</div>
+      <div style="font-size: 22px; font-weight: 700; color: #0a0a0a; margin-top: 4px; letter-spacing: -0.02em;">66</div>
+      <div style="height: 4px; background: #f5f5f5; border-radius: 9999px; margin-top: 8px; overflow: hidden;">
+        <div style="width: 66%; height: 100%; background: #f59e0b;"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 잘한 점 -->
+  <div style="padding: 4px 20px 8px 20px; font-size: 13px; font-weight: 600; color: #0a0a0a;">잘한 점</div>
+  <div style="padding: 0 16px 12px 16px;">
+    <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 14px; display: flex; gap: 10px; align-items: flex-start;">
+      <div style="width: 24px; height: 24px; border-radius: 9999px; background: #22c55e; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div>
+        <div style="font-size: 13px; font-weight: 600; color: #14532d;">구체적 숫자 제시</div>
+        <div style="font-size: 12px; color: #166534; margin-top: 2px; line-height: 18px;">"월 800만원 절감"처럼 정량 근거를 즉시 꺼낸 게 협상력을 높였어. 팀장 톤이 누그러진 시점이 이 발언 직후.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 개선 포인트 -->
+  <div style="padding: 4px 20px 8px 20px; font-size: 13px; font-weight: 600; color: #0a0a0a;">개선 포인트</div>
+  <div style="padding: 0 16px 12px 16px; display: flex; flex-direction: column; gap: 8px;">
+
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 14px; display: flex; gap: 10px; align-items: flex-start;">
+      <div style="width: 24px; height: 24px; border-radius: 9999px; background: #f59e0b; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #ffffff; font-size: 12px; font-weight: 700;">1</div>
+      <div style="flex: 1;">
+        <div style="font-size: 13px; font-weight: 600; color: #0a0a0a;">희망 금액을 명시하지 않음</div>
+        <div style="font-size: 12px; color: #525252; margin-top: 2px; line-height: 18px;">근거는 좋았는데 "그래서 얼마"를 끝까지 안 꺼냈어. 상대가 먼저 부르면 협상력 -30%.</div>
+        <div style="background: #fffbeb; border-left: 3px solid #f59e0b; padding: 8px 10px; margin-top: 8px; border-radius: 4px; font-size: 12px; color: #78350f; line-height: 18px;">"이 성과를 반영해서 현재 5500만에서 6300만 정도를 생각하고 있습니다."</div>
+      </div>
+    </div>
+
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 14px; display: flex; gap: 10px; align-items: flex-start;">
+      <div style="width: 24px; height: 24px; border-radius: 9999px; background: #f59e0b; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #ffffff; font-size: 12px; font-weight: 700;">2</div>
+      <div style="flex: 1;">
+        <div style="font-size: 13px; font-weight: 600; color: #0a0a0a;">상대 압박에 사과로 시작</div>
+        <div style="font-size: 12px; color: #525252; margin-top: 2px; line-height: 18px;">"감사합니다"로 시작한 건 좋았지만 톤이 살짝 방어적. 동료 협상가 톤이면 더 좋음.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA buttons -->
+  <div style="margin-top: auto; padding: 16px 16px 24px 16px; display: flex; gap: 8px;">
+    <div style="flex: 1; background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 12px; padding: 14px; text-align: center; font-size: 14px; font-weight: 600; color: #0a0a0a;">기록 저장</div>
+    <div style="flex: 1.4; background: #171717; border-radius: 12px; padding: 14px; text-align: center; font-size: 14px; font-weight: 600; color: #fafafa; display: flex; align-items: center; justify-content: center; gap: 6px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      한 번 더 연습
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
