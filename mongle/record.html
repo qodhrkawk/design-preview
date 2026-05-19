@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>몽글 — 꿈 기록</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; min-height: 100vh; display: flex; justify-content: center; }
+  .app { width: 390px; min-height: 100vh; background: #ffffff; }
+  .lucide { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  textarea { font-family: inherit; }
+  textarea:focus { outline: none; }
+  .chip { padding:8px 14px; background:#f5f5f5; color:#171717; border-radius:9999px; font-size:13px; font-weight:500; cursor:pointer; border:1px solid transparent; }
+  .chip.active { background:#0a0a0a; color:#fafafa; }
+  .mood { width:48px; height:48px; border-radius:9999px; display:flex; align-items:center; justify-content:center; background:#f5f5f5; border:2px solid transparent; cursor:pointer; }
+  .mood.active { border-color:#0a0a0a; }
+</style>
+</head>
+<body>
+<div class="app">
+  <!-- Header -->
+  <header style="display:flex; align-items:center; justify-content:space-between; padding:16px 12px; border-bottom:1px solid #e5e5e5;">
+    <button style="width:40px; height:40px; border:none; background:transparent; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#0a0a0a;">
+      <svg class="lucide" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    </button>
+    <h1 style="font-size:16px; font-weight:600; color:#0a0a0a;">오늘의 꿈</h1>
+    <button style="padding:8px 14px; background:#171717; color:#fafafa; border:none; border-radius:8px; font-size:13px; font-weight:500; cursor:pointer;">저장</button>
+  </header>
+
+  <!-- Date -->
+  <div style="padding: 16px 20px 8px;">
+    <span style="font-size:12px; color:#737373; font-weight:500;">2026년 5월 19일 화 · 06:42</span>
+  </div>
+
+  <!-- Voice / Text input -->
+  <div style="padding: 8px 20px 16px;">
+    <textarea placeholder="기억나는 대로 적어봐. 단편적이어도 괜찮아." style="width:100%; min-height:140px; padding:14px; border:1px solid #e5e5e5; border-radius:12px; font-size:15px; line-height:22px; color:#0a0a0a; resize:none;">엘리베이터에 혼자 탔는데 버튼을 눌러도 계속 내려가기만 했다. 지하 100층까지 갔는데 멈출 수가 없었음. 무서운데 소리는 안 나왔다.</textarea>
+
+    <div style="display:flex; gap:8px; margin-top:10px;">
+      <button style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; padding:10px; background:#f5f5f5; border:none; border-radius:8px; font-size:13px; font-weight:500; color:#171717; cursor:pointer; height:40px;">
+        <svg class="lucide" viewBox="0 0 24 24" style="width:16px;height:16px;"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        음성으로
+      </button>
+      <button style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; padding:10px; background:#f5f5f5; border:none; border-radius:8px; font-size:13px; font-weight:500; color:#171717; cursor:pointer; height:40px;">
+        <svg class="lucide" viewBox="0 0 24 24" style="width:16px;height:16px;"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+        AI 정리
+      </button>
+    </div>
+  </div>
+
+  <!-- Mood -->
+  <div style="padding: 8px 20px 16px;">
+    <div style="font-size:13px; font-weight:600; color:#0a0a0a; margin-bottom:10px;">꿈에서 느낀 감정</div>
+    <div style="display:flex; gap:10px; justify-content:space-between;">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+        <div class="mood">
+          <svg class="lucide" viewBox="0 0 24 24" style="width:24px;height:24px; color:#737373;"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <span style="font-size:11px; color:#737373;">기쁨</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+        <div class="mood active">
+          <svg class="lucide" viewBox="0 0 24 24" style="width:24px;height:24px; color:#0a0a0a;"><circle cx="12" cy="12" r="10"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/><path d="M16 16s-1.5-2-4-2-4 2-4 2"/></svg>
+        </div>
+        <span style="font-size:11px; font-weight:600; color:#0a0a0a;">불안</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+        <div class="mood">
+          <svg class="lucide" viewBox="0 0 24 24" style="width:24px;height:24px; color:#737373;"><circle cx="12" cy="12" r="10"/><line x1="8" y1="15" x2="16" y2="15"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <span style="font-size:11px; color:#737373;">우울</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+        <div class="mood">
+          <svg class="lucide" viewBox="0 0 24 24" style="width:24px;height:24px; color:#737373;"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        </div>
+        <span style="font-size:11px; color:#737373;">분노</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+        <div class="mood">
+          <svg class="lucide" viewBox="0 0 24 24" style="width:24px;height:24px; color:#737373;"><path d="M12 2 9.1 8.6 2 9.3l5.5 4.7L5.8 21 12 17.3 18.2 21l-1.7-7 5.5-4.7-7.1-.7z"/></svg>
+        </div>
+        <span style="font-size:11px; color:#737373;">신비</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tags -->
+  <div style="padding: 8px 20px 16px;">
+    <div style="font-size:13px; font-weight:600; color:#0a0a0a; margin-bottom:10px;">모티프 (AI 자동 추출)</div>
+    <div style="display:flex; flex-wrap:wrap; gap:8px;">
+      <span class="chip active">#엘리베이터</span>
+      <span class="chip active">#추락</span>
+      <span class="chip active">#통제불능</span>
+      <span class="chip">#지하</span>
+      <span class="chip">+ 추가</span>
+    </div>
+  </div>
+
+  <!-- Sleep context -->
+  <div style="padding: 8px 20px 24px;">
+    <div style="font-size:13px; font-weight:600; color:#0a0a0a; margin-bottom:10px;">컨디션</div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <button class="chip active" style="display:flex; align-items:center; gap:4px;">
+        <svg class="lucide" viewBox="0 0 24 24" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        6시간 잤어
+      </button>
+      <button class="chip">스트레스 받았어</button>
+      <button class="chip">술 마셨어</button>
+      <button class="chip">운동했어</button>
+    </div>
+  </div>
+
+  <!-- AI insight preview -->
+  <div style="margin: 0 20px 32px; padding:16px; background:#0a0a0a; color:#fafafa; border-radius:12px;">
+    <div style="display:flex; align-items:center; gap:6px; margin-bottom:10px;">
+      <svg class="lucide" viewBox="0 0 24 24" style="width:16px;height:16px; color:#fafafa;"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+      <span style="font-size:12px; font-weight:600; color:#a3a3a3; letter-spacing:0.05em; text-transform:uppercase;">AI 첫 인상</span>
+    </div>
+    <p style="font-size:14px; line-height:22px; color:#fafafa;">'통제불능'이라는 키워드가 최근 3주간 5번째야. 일·관계 중에 마음대로 안 되는 게 있어?</p>
+  </div>
+</div>
+</body>
+</html>
