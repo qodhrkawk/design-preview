@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오분이 - 5분 세션</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:#f5f5f5;color:#0a0a0a;display:flex;justify-content:center;min-height:100vh}
+.app{width:390px;background:#fafafa;min-height:100vh;display:flex;flex-direction:column}
+.header{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;background:#ffffff;border-bottom:1px solid #e5e5e5}
+.back{width:36px;height:36px;border:1px solid #e5e5e5;border-radius:9999px;display:flex;align-items:center;justify-content:center;background:#ffffff;cursor:pointer}
+.header-title{font-size:14px;font-weight:600}
+.timer-badge{font-size:13px;font-weight:600;color:#171717;background:#f5f5f5;padding:6px 12px;border-radius:9999px;display:flex;align-items:center;gap:6px}
+.timer-badge svg{width:14px;height:14px;stroke:#171717}
+.context{padding:24px 20px 8px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.tag-row{display:flex;gap:6px}
+.tag{font-size:12px;font-weight:500;padding:4px 10px;border-radius:9999px;background:#171717;color:#fafafa}
+.tag.muted{background:#f5f5f5;color:#737373;border:1px solid #e5e5e5}
+.ai-card{margin:16px 20px;background:#ffffff;border:1px solid #e5e5e5;border-radius:16px;padding:20px}
+.ai-head{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.ai-dot{width:8px;height:8px;background:#22c55e;border-radius:9999px}
+.ai-name{font-size:12px;font-weight:600;color:#737373;letter-spacing:0.04em;text-transform:uppercase}
+.ai-msg{font-size:15px;font-weight:500;line-height:24px;color:#0a0a0a}
+.ai-msg b{font-weight:700}
+.action-card{margin:0 20px 12px;background:#ffffff;border:1px solid #e5e5e5;border-radius:14px;padding:18px;display:flex;align-items:flex-start;gap:14px;cursor:pointer}
+.action-card.primary{background:#171717;border-color:#171717}
+.action-card.primary .step-num{background:rgba(255,255,255,0.12);color:#fafafa}
+.action-card.primary .step-title{color:#fafafa}
+.action-card.primary .step-desc{color:rgba(250,250,250,0.7)}
+.action-card.primary .step-time{color:rgba(250,250,250,0.6)}
+.step-num{width:32px;height:32px;background:#f5f5f5;border-radius:9999px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#171717;flex-shrink:0}
+.step-body{flex:1}
+.step-title{font-size:15px;font-weight:600;color:#0a0a0a;margin-bottom:4px}
+.step-desc{font-size:13px;color:#737373;line-height:18px}
+.step-time{font-size:11px;color:#a3a3a3;margin-top:8px;display:flex;align-items:center;gap:4px}
+.step-time svg{width:11px;height:11px;stroke:currentColor}
+.why-card{margin:8px 20px 20px;background:#ffffff;border:1px solid #e5e5e5;border-radius:14px;padding:16px}
+.why-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px;font-weight:600;color:#737373;letter-spacing:0.04em;text-transform:uppercase}
+.why-head svg{width:14px;height:14px;stroke:#737373}
+.why-body{font-size:13px;color:#525252;line-height:20px}
+.why-body b{color:#0a0a0a;font-weight:600}
+.footer{margin-top:auto;padding:16px 20px 24px;background:#ffffff;border-top:1px solid #e5e5e5;display:flex;gap:8px}
+.btn-secondary{flex:1;height:48px;background:#f5f5f5;color:#171717;border:1px solid #e5e5e5;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer}
+.btn-primary{flex:2;height:48px;background:#171717;color:#fafafa;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
+.btn-primary svg{width:16px;height:16px;stroke:#fafafa}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <button class="back"><svg fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <div class="header-title">5분 회복 세션</div>
+    <div class="timer-badge"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>05:00</div>
+  </div>
+  <div class="context">
+    <div class="tag-row">
+      <div class="tag">불안</div>
+      <div class="tag muted">금요일 14:04</div>
+      <div class="tag muted">실내</div>
+    </div>
+  </div>
+  <div class="ai-card">
+    <div class="ai-head">
+      <div class="ai-dot"></div>
+      <div class="ai-name">오분이 AI</div>
+    </div>
+    <div class="ai-msg">윤재 데이터 보면 <b>금요일 오후 불안</b>은 <b>호흡 + 짧은 환기</b>로 회복률 82%였어. 오늘 컨디션 맞춰 3단계 짜봤어.</div>
+  </div>
+  <div class="action-card primary">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <div class="step-title">창문 열고 신선한 공기 마시기</div>
+      <div class="step-desc">30초간 그냥 바깥 풍경만 바라봐. 폰 보지 말고.</div>
+      <div class="step-time"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>30초</div>
+    </div>
+  </div>
+  <div class="action-card">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <div class="step-title">4-7-8 호흡 5세트</div>
+      <div class="step-desc">4초 들숨, 7초 멈춤, 8초 날숨. 화면 가이드 따라하면 돼.</div>
+      <div class="step-time"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2분 30초</div>
+    </div>
+  </div>
+  <div class="action-card">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <div class="step-title">불안 한 줄로 적어보기</div>
+      <div class="step-desc">"지금 ___ 가 걱정돼." 빈칸만 채우고 닫아.</div>
+      <div class="step-time"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2분</div>
+    </div>
+  </div>
+  <div class="why-card">
+    <div class="why-head"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>왜 이 조합?</div>
+    <div class="why-body">최근 7주 기록에서 <b>불안 + 오후 + 실내</b> 조건일 때 호흡 기반 액션이 다른 방법보다 평균 <b>+38%</b> 회복 효과 보였어. 산책은 토요일에 더 잘 듣더라.</div>
+  </div>
+  <div class="footer">
+    <button class="btn-secondary">다시 추천</button>
+    <button class="btn-primary">시작 <svg fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+  </div>
+</div>
+</body>
+</html>
