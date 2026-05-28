@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>왜미뤘지 - 패턴 분석</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:#f5f5f5;min-height:100vh;display:flex;justify-content:center}
+  .app{width:390px;background:#ffffff;min-height:100vh;color:#0a0a0a}
+</style>
+</head>
+<body>
+<div class="app">
+  <!-- Header -->
+  <div style="padding:20px 20px 12px">
+    <div style="font-size:24px;font-weight:600;letter-spacing:-0.025em;margin-bottom:4px">내 미루기 패턴</div>
+    <div style="font-size:13px;color:#737373">최근 30일 분석</div>
+  </div>
+
+  <!-- Type badge -->
+  <div style="margin:8px 20px 16px;padding:20px;background:linear-gradient(135deg,#171717 0%,#404040 100%);border-radius:16px;color:#fafafa">
+    <div style="font-size:12px;font-weight:500;opacity:0.7;letter-spacing:0.05em;margin-bottom:6px">내 유형</div>
+    <div style="font-size:22px;font-weight:700;letter-spacing:-0.025em;margin-bottom:8px">완벽주의 + 사회적 회피형</div>
+    <div style="font-size:13px;line-height:1.5;opacity:0.85">결과물 퀄리티 걱정 + 사람 대면 부담이 겹치면 미루기 확률 78%</div>
+  </div>
+
+  <!-- Stats grid -->
+  <div style="padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px">
+    <div style="padding:16px;background:#f5f5f5;border-radius:12px">
+      <div style="font-size:11px;color:#737373;font-weight:500;margin-bottom:4px">평균 미루는 기간</div>
+      <div style="font-size:22px;font-weight:700;letter-spacing:-0.025em">4.2일</div>
+    </div>
+    <div style="padding:16px;background:#f5f5f5;border-radius:12px">
+      <div style="font-size:11px;color:#737373;font-weight:500;margin-bottom:4px">완료율</div>
+      <div style="display:flex;align-items:baseline;gap:6px">
+        <div style="font-size:22px;font-weight:700;letter-spacing:-0.025em">68%</div>
+        <div style="font-size:12px;color:#22c55e;font-weight:500">+12%</div>
+      </div>
+    </div>
+    <div style="padding:16px;background:#f5f5f5;border-radius:12px">
+      <div style="font-size:11px;color:#737373;font-weight:500;margin-bottom:4px">트리거 1위</div>
+      <div style="font-size:15px;font-weight:600;line-height:1.3;margin-top:4px">완벽한 결과 부담</div>
+    </div>
+    <div style="padding:16px;background:#f5f5f5;border-radius:12px">
+      <div style="font-size:11px;color:#737373;font-weight:500;margin-bottom:4px">가장 잘 미루는 요일</div>
+      <div style="font-size:15px;font-weight:600;line-height:1.3;margin-top:4px">월요일 · 일요일</div>
+    </div>
+  </div>
+
+  <!-- Triggers chart -->
+  <div style="padding:0 20px 16px">
+    <div style="font-size:14px;font-weight:600;margin-bottom:12px">미루는 이유 TOP 5</div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+          <div style="font-size:13px;font-weight:500">완벽한 결과 부담</div>
+          <div style="font-size:12px;color:#737373;font-weight:500">34%</div>
+        </div>
+        <div style="height:8px;background:#f5f5f5;border-radius:9999px;overflow:hidden">
+          <div style="width:34%;height:100%;background:#171717;border-radius:9999px"></div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+          <div style="font-size:13px;font-weight:500">사람 대면 부담</div>
+          <div style="font-size:12px;color:#737373;font-weight:500">22%</div>
+        </div>
+        <div style="height:8px;background:#f5f5f5;border-radius:9999px;overflow:hidden">
+          <div style="width:22%;height:100%;background:#171717;border-radius:9999px"></div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+          <div style="font-size:13px;font-weight:500">시간 견적 모호</div>
+          <div style="font-size:12px;color:#737373;font-weight:500">18%</div>
+        </div>
+        <div style="height:8px;background:#f5f5f5;border-radius:9999px;overflow:hidden">
+          <div style="width:18%;height:100%;background:#171717;border-radius:9999px"></div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+          <div style="font-size:13px;font-weight:500">에너지 부족</div>
+          <div style="font-size:12px;color:#737373;font-weight:500">14%</div>
+        </div>
+        <div style="height:8px;background:#f5f5f5;border-radius:9999px;overflow:hidden">
+          <div style="width:14%;height:100%;background:#a3a3a3;border-radius:9999px"></div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+          <div style="font-size:13px;font-weight:500">재미 없음</div>
+          <div style="font-size:12px;color:#737373;font-weight:500">12%</div>
+        </div>
+        <div style="height:8px;background:#f5f5f5;border-radius:9999px;overflow:hidden">
+          <div style="width:12%;height:100%;background:#a3a3a3;border-radius:9999px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI insight card -->
+  <div style="margin:8px 20px 16px;padding:18px;background:#ffffff;border:1px solid #e5e5e5;border-radius:12px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+      <div style="width:24px;height:24px;border-radius:9999px;background:#171717;display:flex;align-items:center;justify-content:center">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+      </div>
+      <div style="font-size:13px;font-weight:600">이번 주 인사이트</div>
+    </div>
+    <div style="font-size:14px;font-weight:600;line-height:1.5;margin-bottom:8px;color:#171717">
+      "월요일 오전에 잡힌 일은 4번 중 3번 미뤘어"
+    </div>
+    <div style="font-size:13px;color:#737373;line-height:1.6">
+      주말에서 평일 전환할 때 진입 비용이 큰 듯. 일요일 저녁에 월요일 첫 일을 잘게 쪼개서 5분만 미리 시작해보면?
+    </div>
+  </div>
+
+  <!-- Improvement track -->
+  <div style="padding:0 20px 16px">
+    <div style="font-size:14px;font-weight:600;margin-bottom:12px">개선 트래킹</div>
+    <div style="padding:16px;background:#f5f5f5;border-radius:12px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div style="font-size:13px;font-weight:500">"완벽주의 부담" 개선 시도</div>
+        <div style="font-size:11px;padding:2px 8px;background:#22c55e;color:#fafafa;border-radius:9999px;font-weight:500">진행중</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:11px;color:#737373;font-weight:500;margin-bottom:6px">
+        <div>4주 전</div><div>3주 전</div><div>2주 전</div><div>1주 전</div><div style="color:#171717;font-weight:600">이번주</div>
+      </div>
+      <div style="display:flex;gap:4px;height:48px;align-items:flex-end">
+        <div style="flex:1;height:80%;background:#a3a3a3;border-radius:4px"></div>
+        <div style="flex:1;height:65%;background:#a3a3a3;border-radius:4px"></div>
+        <div style="flex:1;height:70%;background:#a3a3a3;border-radius:4px"></div>
+        <div style="flex:1;height:50%;background:#a3a3a3;border-radius:4px"></div>
+        <div style="flex:1;height:34%;background:#171717;border-radius:4px"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Nav -->
+  <div style="display:flex;justify-content:space-around;padding:12px 20px 24px;border-top:1px solid #e5e5e5;margin-top:16px">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#a3a3a3">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <div style="font-size:11px;font-weight:500">홈</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#171717">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+      <div style="font-size:11px;font-weight:600">패턴</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#a3a3a3">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-3"/><path d="M9 11V7a3 3 0 0 1 6 0v4"/></svg>
+      <div style="font-size:11px;font-weight:500">아카이브</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
