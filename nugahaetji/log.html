@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>분담 - 기록</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+  body{background:#fafafa;min-height:100vh;display:flex;justify-content:center}
+  .app{width:390px;background:#ffffff;min-height:100vh;position:relative}
+  input,textarea{font-family:inherit}
+  input:focus,textarea:focus{outline:none;border-color:#a3a3a3}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- Status bar -->
+  <div style="height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-size:14px;font-weight:600;color:#0a0a0a">
+    <span>9:41</span>
+    <span style="display:flex;gap:6px;align-items:center">
+      <svg width="16" height="11" viewBox="0 0 16 11" fill="none"><path d="M1 7L3 9L7 5M9 7L11 9L15 5" stroke="#0a0a0a" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <svg width="24" height="11" viewBox="0 0 24 11" fill="none"><rect x="0.5" y="0.5" width="21" height="10" rx="2.5" stroke="#0a0a0a" opacity="0.4"/><rect x="2" y="2" width="18" height="7" rx="1.5" fill="#0a0a0a"/><rect x="22.5" y="3.5" width="1" height="4" rx="0.5" fill="#0a0a0a" opacity="0.4"/></svg>
+    </span>
+  </div>
+
+  <!-- Top bar -->
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 20px 0 20px">
+    <button style="background:none;border:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    </button>
+    <div style="font-size:15px;font-weight:600;color:#0a0a0a">새 기록</div>
+    <button style="background:none;border:none;width:40px;height:40px;font-size:14px;font-weight:600;color:#a3a3a3;cursor:pointer">저장</button>
+  </div>
+
+  <!-- Title -->
+  <div style="padding:24px 20px 8px 20px">
+    <div style="font-size:24px;font-weight:700;color:#0a0a0a;letter-spacing:-0.025em;line-height:32px">뭐 했어?</div>
+    <div style="font-size:14px;color:#737373;margin-top:4px">한 줄로 적으면 AI가 알아서 분류해</div>
+  </div>
+
+  <!-- Input -->
+  <div style="padding:8px 20px 0 20px">
+    <textarea placeholder="예) 방금 설거지 다 했어. 30분쯤 걸린듯" style="width:100%;min-height:96px;padding:14px 14px;border:1px solid #e5e5e5;border-radius:8px;font-size:15px;color:#0a0a0a;line-height:22px;resize:none;background:#ffffff">방금 빨래 돌리고 분리수거까지 다녀왔어</textarea>
+  </div>
+
+  <!-- AI parsed result -->
+  <div style="margin:16px 20px 0 20px;padding:16px;border-radius:12px;background:#f5f5f5">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L13.5 6.5 18 8 13.5 9.5 12 14 10.5 9.5 6 8 10.5 6.5z"/></svg>
+      <span style="font-size:12px;font-weight:600;color:#171717">AI가 정리한 내용</span>
+    </div>
+
+    <!-- Parsed items -->
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;align-items:center;background:#ffffff;border:1px solid #e5e5e5;border-radius:8px;padding:12px;gap:10px">
+        <div style="width:32px;height:32px;border-radius:8px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+        </div>
+        <div style="flex:1">
+          <div style="font-size:14px;font-weight:600;color:#0a0a0a">빨래</div>
+          <div style="font-size:12px;color:#737373;margin-top:1px">세탁기 돌림 · 약 20분</div>
+        </div>
+        <button style="background:none;border:none;cursor:pointer;padding:4px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div style="display:flex;align-items:center;background:#ffffff;border:1px solid #e5e5e5;border-radius:8px;padding:12px;gap:10px">
+        <div style="width:32px;height:32px;border-radius:8px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+        </div>
+        <div style="flex:1">
+          <div style="font-size:14px;font-weight:600;color:#0a0a0a">분리수거</div>
+          <div style="font-size:12px;color:#737373;margin-top:1px">동까지 다녀옴 · 약 15분</div>
+        </div>
+        <button style="background:none;border:none;cursor:pointer;padding:4px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Add manually -->
+    <button style="margin-top:12px;width:100%;height:36px;background:none;border:1px dashed #a3a3a3;border-radius:8px;font-size:13px;color:#737373;font-weight:500;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      직접 추가
+    </button>
+  </div>
+
+  <!-- Who section -->
+  <div style="padding:24px 20px 0 20px">
+    <div style="font-size:13px;font-weight:600;color:#737373;margin-bottom:10px;letter-spacing:-0.01em">누가 했어?</div>
+    <div style="display:flex;gap:8px">
+      <button style="flex:1;height:44px;border-radius:8px;background:#171717;color:#fafafa;border:none;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px">
+        <div style="width:22px;height:22px;border-radius:9999px;background:#fafafa;color:#171717;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">윤</div>
+        나 · 윤재
+      </button>
+      <button style="flex:1;height:44px;border-radius:8px;background:#ffffff;color:#171717;border:1px solid #e5e5e5;font-size:14px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px">
+        <div style="width:22px;height:22px;border-radius:9999px;background:#f5f5f5;color:#171717;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">지</div>
+        지은
+      </button>
+    </div>
+  </div>
+
+  <!-- When section -->
+  <div style="padding:24px 20px 0 20px">
+    <div style="font-size:13px;font-weight:600;color:#737373;margin-bottom:10px;letter-spacing:-0.01em">언제?</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <span style="height:36px;padding:0 14px;border-radius:9999px;background:#171717;color:#fafafa;font-size:13px;font-weight:600;display:inline-flex;align-items:center">방금</span>
+      <span style="height:36px;padding:0 14px;border-radius:9999px;background:#ffffff;color:#171717;border:1px solid #e5e5e5;font-size:13px;font-weight:500;display:inline-flex;align-items:center">오늘 오전</span>
+      <span style="height:36px;padding:0 14px;border-radius:9999px;background:#ffffff;color:#171717;border:1px solid #e5e5e5;font-size:13px;font-weight:500;display:inline-flex;align-items:center">어제</span>
+      <span style="height:36px;padding:0 14px;border-radius:9999px;background:#ffffff;color:#171717;border:1px solid #e5e5e5;font-size:13px;font-weight:500;display:inline-flex;align-items:center">직접 선택</span>
+    </div>
+  </div>
+
+  <!-- Spacer -->
+  <div style="height:32px"></div>
+
+  <!-- Save button -->
+  <div style="padding:0 20px 32px 20px">
+    <button style="width:100%;height:52px;border-radius:8px;background:#171717;color:#fafafa;border:none;font-size:15px;font-weight:600;cursor:pointer">기록 완료</button>
+  </div>
+
+</div>
+</body>
+</html>
