@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><title>비웠어 - 통계</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:#fafafa;display:flex;justify-content:center;min-height:100vh;color:#0a0a0a}
+.app{width:390px;background:#ffffff;min-height:100vh;display:flex;flex-direction:column}
+</style></head>
+<body>
+<div class="app">
+  <!-- Header -->
+  <div style="padding:20px 20px 8px">
+    <div style="font-size:12px;color:#737373;font-weight:500">2026년 상반기</div>
+    <div style="font-size:24px;font-weight:600;letter-spacing:-0.025em;margin-top:4px">비움 리포트</div>
+  </div>
+
+  <!-- 한 줄 요약 -->
+  <div style="margin:16px 20px 0;padding:18px;background:#171717;color:#fafafa;border-radius:14px">
+    <div style="font-size:12px;opacity:0.7;font-weight:500">올해 비운 물건</div>
+    <div style="display:flex;align-items:baseline;gap:6px;margin-top:4px">
+      <div style="font-size:32px;font-weight:800;letter-spacing:-0.025em">142</div>
+      <div style="font-size:13px;opacity:0.7">개 · 작년 대비 +38%</div>
+    </div>
+  </div>
+
+  <!-- 처분 방법 분포 -->
+  <div style="margin:20px 20px 0">
+    <div style="font-size:11px;color:#737373;font-weight:600;letter-spacing:0.04em">처분 방법</div>
+    <div style="margin-top:12px;display:flex;height:12px;border-radius:9999px;overflow:hidden;background:#f5f5f5">
+      <div style="width:42%;background:#16a34a"></div>
+      <div style="width:31%;background:#d97706"></div>
+      <div style="width:27%;background:#dc2626"></div>
+    </div>
+    <div style="display:flex;gap:12px;margin-top:10px;font-size:12px">
+      <div style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:9999px;background:#16a34a"></span><span style="color:#404040">기부 42%</span></div>
+      <div style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:9999px;background:#d97706"></span><span style="color:#404040">판매 31%</span></div>
+      <div style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:9999px;background:#dc2626"></span><span style="color:#404040">버림 27%</span></div>
+    </div>
+  </div>
+
+  <!-- AI 패턴 인사이트 -->
+  <div style="margin:24px 20px 0">
+    <div style="font-size:11px;color:#737373;font-weight:600;letter-spacing:0.04em;margin-bottom:10px">AI가 찾은 너의 패턴</div>
+
+    <div style="padding:16px;border:1px solid #e5e5e5;border-radius:12px;display:flex;gap:12px;align-items:flex-start">
+      <div style="width:32px;height:32px;border-radius:9999px;background:#dbeafe;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div style="flex:1">
+        <div style="font-size:14px;font-weight:600;line-height:20px">가장 빨리 비워지는 건 옷</div>
+        <div style="font-size:12px;color:#737373;margin-top:4px;line-height:18px">평균 보유 11개월. 가전(3.2년)보다 4배 빨라.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:10px;padding:16px;border:1px solid #e5e5e5;border-radius:12px;display:flex;gap:12px;align-items:flex-start">
+      <div style="width:32px;height:32px;border-radius:9999px;background:#fef3c7;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </div>
+      <div style="flex:1">
+        <div style="font-size:14px;font-weight:600;line-height:20px">"세일 때 산 거" 가장 후회 多</div>
+        <div style="font-size:12px;color:#737373;margin-top:4px;line-height:18px">회고 키워드 분석 — 73%가 부정적 톤.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:10px;padding:16px;border:1px solid #e5e5e5;border-radius:12px;display:flex;gap:12px;align-items:flex-start">
+      <div style="width:32px;height:32px;border-radius:9999px;background:#dcfce7;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div style="flex:1">
+        <div style="font-size:14px;font-weight:600;line-height:20px">기부 비율이 40% 넘어</div>
+        <div style="font-size:12px;color:#737373;margin-top:4px;line-height:18px">상위 7% 미니멀리스트. 누적 기부가 23kg.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 월별 미니 차트 -->
+  <div style="margin:24px 20px 32px">
+    <div style="font-size:11px;color:#737373;font-weight:600;letter-spacing:0.04em;margin-bottom:14px">월별 비움</div>
+    <div style="display:flex;align-items:flex-end;gap:8px;height:120px">
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+        <div style="width:100%;height:38%;background:#e5e5e5;border-radius:6px"></div>
+        <div style="font-size:10px;color:#737373;font-weight:500">1월</div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+        <div style="width:100%;height:55%;background:#e5e5e5;border-radius:6px"></div>
+        <div style="font-size:10px;color:#737373;font-weight:500">2월</div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+        <div style="width:100%;height:70%;background:#e5e5e5;border-radius:6px"></div>
+        <div style="font-size:10px;color:#737373;font-weight:500">3월</div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+        <div style="width:100%;height:50%;background:#e5e5e5;border-radius:6px"></div>
+        <div style="font-size:10px;color:#737373;font-weight:500">4월</div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+        <div style="width:100%;height:85%;background:#e5e5e5;border-radius:6px"></div>
+        <div style="font-size:10px;color:#737373;font-weight:500">5월</div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+        <div style="width:100%;height:65%;background:#171717;border-radius:6px"></div>
+        <div style="font-size:10px;color:#171717;font-weight:700">6월</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:60px"></div>
+</div>
+</body></html>
