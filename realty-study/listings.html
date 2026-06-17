@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>매물 · 부동산 공부</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --background:#ffffff; --foreground:#0a0a0a; --card:#ffffff; --card-foreground:#0a0a0a;
+    --primary:#171717; --primary-foreground:#fafafa; --secondary:#f5f5f5; --secondary-foreground:#171717;
+    --muted:#f5f5f5; --muted-foreground:#737373; --accent:#f5f5f5; --border:#e5e5e5; --input:#e5e5e5; --ring:#a3a3a3;
+    --success:#22c55e; --warning:#f59e0b; --info:#3b82f6; --destructive:#ef4444;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:Inter,system-ui,sans-serif;background:#f5f5f5;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;min-height:100vh;}
+  .phone{width:390px;background:var(--background);min-height:100vh;position:relative;padding-bottom:72px;}
+  .topbar{position:sticky;top:0;background:var(--background);border-bottom:1px solid var(--border);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;z-index:10;}
+  .logo{font-size:17px;font-weight:700;letter-spacing:-0.02em;}
+  .sub{font-size:13px;color:var(--muted-foreground);font-weight:500;}
+  .body{padding:16px;}
+  .row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+  h2{font-size:18px;font-weight:700;letter-spacing:-0.02em;}
+  .btn-primary{background:var(--primary);color:var(--primary-foreground);border:none;border-radius:8px;padding:0 14px;height:36px;font-size:13px;font-weight:500;font-family:inherit;cursor:pointer;}
+  .filters{display:flex;gap:8px;margin-bottom:16px;}
+  .chip{padding:6px 14px;border-radius:9999px;border:1px solid var(--border);background:var(--background);color:var(--muted-foreground);font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;}
+  .chip.on{background:var(--primary);color:var(--primary-foreground);border-color:var(--primary);}
+  .list{display:flex;flex-direction:column;gap:12px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;cursor:pointer;transition:box-shadow .15s;}
+  .card:hover{box-shadow:0 4px 6px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.05);}
+  .card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+  .cname{font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .meta{font-size:13px;color:var(--muted-foreground);margin-top:5px;}
+  .addr{font-size:12px;color:var(--muted-foreground);margin-top:3px;}
+  .badge{padding:2px 10px;border-radius:9999px;font-size:11px;font-weight:600;}
+  .score-big{font-size:26px;font-weight:800;line-height:1;letter-spacing:-0.02em;}
+  .score-cap{font-size:10px;color:var(--muted-foreground);margin-top:3px;text-align:right;}
+  .users{display:flex;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);}
+  .uline{font-size:12px;color:var(--muted-foreground);}
+  .uline b{font-weight:700;}
+  .uprog{font-size:10px;color:var(--ring);}
+  .tabbar{position:fixed;bottom:0;width:390px;background:var(--background);border-top:1px solid var(--border);display:flex;}
+  .tab{flex:1;text-align:center;padding:9px 0 12px;font-size:11px;color:var(--muted-foreground);font-weight:500;cursor:pointer;}
+  .tab.on{color:var(--foreground);font-weight:600;}
+  .tab .ic{font-size:20px;display:block;margin-bottom:2px;}
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="topbar"><div class="logo">🏠 부동산 공부</div><div class="sub">윤재 · 여친</div></div>
+  <div class="body">
+    <div class="row"><h2>매물 3</h2><button class="btn-primary">+ 매물 등록</button></div>
+    <div class="filters"><button class="chip">최근순</button><button class="chip on">점수순</button></div>
+    <div class="list">
+
+      <div class="card">
+        <div class="card-head">
+          <div style="flex:1;min-width:0;">
+            <div class="cname">래미안 강남포레 84A <span class="badge" style="background:#dcfce7;color:#16a34a;">관심 ★</span></div>
+            <div class="meta">매매 · 18.5억 · 아파트 · 84㎡ (34평)</div>
+            <div class="addr">📍 서울 강남구 도곡동</div>
+          </div>
+          <div><div class="score-big" style="color:var(--success);">82.4</div><div class="score-cap">평균점수</div></div>
+        </div>
+        <div class="users">
+          <div class="uline">윤재 <b style="color:var(--success);">86.7</b> <span class="uprog">(13/23)</span></div>
+          <div class="uline">여친 <b style="color:var(--warning);">78.0</b> <span class="uprog">(13/23)</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div style="flex:1;min-width:0;">
+            <div class="cname">마포 한강뷰 오피스텔 <span class="badge" style="background:#fef3c7;color:#d97706;">임장완료</span></div>
+            <div class="meta">전세 · 보증금 4.5억 · 오피스텔 · 59㎡ (23평)</div>
+            <div class="addr">📍 서울 마포구 합정동</div>
+          </div>
+          <div><div class="score-big" style="color:var(--warning);">62.1</div><div class="score-cap">평균점수</div></div>
+        </div>
+        <div class="users">
+          <div class="uline">윤재 <b style="color:var(--warning);">64.3</b> <span class="uprog">(7/23)</span></div>
+          <div class="uline">여친 <b style="color:var(--warning);">60.0</b> <span class="uprog">(7/23)</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div style="flex:1;min-width:0;">
+            <div class="cname">분당 정자 푸르지오 <span class="badge" style="background:#dbeafe;color:#2563eb;">후보</span></div>
+            <div class="meta">매매 · 12.8억 · 아파트 · 59㎡ (25평)</div>
+            <div class="addr">📍 경기 성남시 분당구 정자동</div>
+          </div>
+          <div><div class="score-big" style="color:var(--muted-foreground);">—</div><div class="score-cap">평균점수</div></div>
+        </div>
+        <div class="users">
+          <div class="uline">윤재 <b style="color:var(--ring);">미평가</b></div>
+          <div class="uline">여친 <b style="color:var(--ring);">미평가</b></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="tabbar">
+    <div class="tab"><span class="ic">📚</span>공부</div>
+    <div class="tab on"><span class="ic">🏠</span>매물</div>
+    <div class="tab"><span class="ic">✅</span>체크리스트</div>
+  </div>
+</div>
+</body>
+</html>
