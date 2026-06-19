@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>갑론을박 - 판정 결과</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Inter, system-ui, sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    color: #0a0a0a;
+  }
+  .screen {
+    width: 390px;
+    min-height: 100vh;
+    background: #ffffff;
+    position: relative;
+    padding-bottom: 120px;
+  }
+</style>
+</head>
+<body>
+<div class="screen">
+
+  <!-- Status Bar -->
+  <div style="display:flex; justify-content:space-between; align-items:center; padding:14px 24px 8px; font-size:12px; font-weight:600; color:#0a0a0a;">
+    <span>9:41</span>
+    <div style="display:flex; gap:6px; align-items:center;">
+      <svg width="16" height="12" fill="none"><rect x="0" y="3" width="3" height="9" rx="1" fill="#0a0a0a"/><rect x="4.5" y="1.5" width="3" height="10.5" rx="1" fill="#0a0a0a"/><rect x="9" y="0" width="3" height="12" rx="1" fill="#0a0a0a"/><rect x="13" y="0" width="3" height="12" rx="1" fill="#0a0a0a" opacity="0.3"/></svg>
+      <svg width="24" height="12" fill="none"><rect x="0" y="1" width="20" height="10" rx="2" stroke="#0a0a0a" stroke-width="1.5"/><rect x="2" y="3" width="14" height="6" rx="1" fill="#0a0a0a"/><rect x="21" y="4" width="3" height="4" rx="1" fill="#0a0a0a" opacity="0.4"/></svg>
+    </div>
+  </div>
+
+  <!-- Nav Header -->
+  <div style="display:flex; align-items:center; padding:8px 24px 12px; gap:12px;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    <div style="flex:1; text-align:center;">
+      <div style="font-size:15px; font-weight:600; color:#0a0a0a;">판정 결과</div>
+    </div>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+  </div>
+
+  <!-- Question -->
+  <div style="margin:0 24px 20px; text-align:center;">
+    <div style="font-size:18px; font-weight:700; color:#0a0a0a; line-height:1.4;">이직을 지금 해야 할까,<br>1년 더 다녀야 할까?</div>
+  </div>
+
+  <!-- Score Visualization -->
+  <div style="margin:0 24px 24px;">
+    <div style="position:relative; height:140px; display:flex; align-items:center; justify-content:center;">
+      <!-- Circle background -->
+      <svg width="140" height="140" viewBox="0 0 140 140" style="position:absolute;">
+        <circle cx="70" cy="70" r="60" fill="none" stroke="#e5e5e5" stroke-width="8"/>
+        <!-- Blue (반대) takes 58% = 208.8° -->
+        <circle cx="70" cy="70" r="60" fill="none" stroke="#3b82f6" stroke-width="8" stroke-dasharray="219 158" stroke-dashoffset="94" stroke-linecap="round" transform="rotate(-90 70 70)"/>
+        <!-- Red (찬성) takes 42% = 158.4° -->
+        <circle cx="70" cy="70" r="60" fill="none" stroke="#ef4444" stroke-width="8" stroke-dasharray="158 219" stroke-dashoffset="-125" stroke-linecap="round" transform="rotate(-90 70 70)"/>
+      </svg>
+      <div style="text-align:center; z-index:1;">
+        <div style="font-size:11px; font-weight:500; color:#737373;">승자</div>
+        <div style="font-size:28px; font-weight:800; color:#3b82f6;">반대</div>
+        <div style="font-size:13px; font-weight:500; color:#737373;">58 : 42</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Score Bars -->
+  <div style="margin:0 24px 24px; display:flex; gap:12px;">
+    <div style="flex:1; text-align:center;">
+      <div style="display:flex; align-items:center; justify-content:center; gap:6px; margin-bottom:8px;">
+        <div style="width:10px; height:10px; border-radius:9999px; background:#ef4444;"></div>
+        <span style="font-size:13px; font-weight:600; color:#ef4444;">찬성파</span>
+      </div>
+      <div style="font-size:28px; font-weight:800; color:#ef4444;">42</div>
+      <div style="display:flex; gap:4px; margin-top:8px; justify-content:center;">
+        <div style="background:#fef2f2; border-radius:6px; padding:4px 8px;">
+          <div style="font-size:10px; color:#737373;">논리</div>
+          <div style="font-size:13px; font-weight:600; color:#ef4444;">14</div>
+        </div>
+        <div style="background:#fef2f2; border-radius:6px; padding:4px 8px;">
+          <div style="font-size:10px; color:#737373;">근거</div>
+          <div style="font-size:13px; font-weight:600; color:#ef4444;">12</div>
+        </div>
+        <div style="background:#fef2f2; border-radius:6px; padding:4px 8px;">
+          <div style="font-size:10px; color:#737373;">설득</div>
+          <div style="font-size:13px; font-weight:600; color:#ef4444;">16</div>
+        </div>
+      </div>
+    </div>
+    <div style="width:1px; background:#e5e5e5;"></div>
+    <div style="flex:1; text-align:center;">
+      <div style="display:flex; align-items:center; justify-content:center; gap:6px; margin-bottom:8px;">
+        <div style="width:10px; height:10px; border-radius:9999px; background:#3b82f6;"></div>
+        <span style="font-size:13px; font-weight:600; color:#3b82f6;">반대파</span>
+      </div>
+      <div style="font-size:28px; font-weight:800; color:#3b82f6;">58</div>
+      <div style="display:flex; gap:4px; margin-top:8px; justify-content:center;">
+        <div style="background:#eff6ff; border-radius:6px; padding:4px 8px;">
+          <div style="font-size:10px; color:#737373;">논리</div>
+          <div style="font-size:13px; font-weight:600; color:#3b82f6;">20</div>
+        </div>
+        <div style="background:#eff6ff; border-radius:6px; padding:4px 8px;">
+          <div style="font-size:10px; color:#737373;">근거</div>
+          <div style="font-size:13px; font-weight:600; color:#3b82f6;">18</div>
+        </div>
+        <div style="background:#eff6ff; border-radius:6px; padding:4px 8px;">
+          <div style="font-size:10px; color:#737373;">설득</div>
+          <div style="font-size:13px; font-weight:600; color:#3b82f6;">20</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Judge Summary -->
+  <div style="margin:0 24px 20px;">
+    <div style="background:#f5f5f5; border-radius:12px; padding:16px;">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+        <div style="width:28px; height:28px; border-radius:9999px; background:#171717; display:flex; align-items:center; justify-content:center;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </div>
+        <div>
+          <div style="font-size:13px; font-weight:600; color:#0a0a0a;">AI 심판 종합 판정</div>
+        </div>
+      </div>
+      <div style="font-size:14px; line-height:1.7; color:#0a0a0a;">
+        반대파의 주장이 더 설득력 있었습니다. 핵심 포인트:
+      </div>
+      <div style="margin-top:10px; display:flex; flex-direction:column; gap:6px;">
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+          <div style="min-width:20px; height:20px; border-radius:9999px; background:#3b82f6; display:flex; align-items:center; justify-content:center; margin-top:2px;">
+            <span style="font-size:10px; font-weight:700; color:#ffffff;">1</span>
+          </div>
+          <div style="font-size:13px; line-height:1.5; color:#0a0a0a;">퇴직금과 스톡옵션의 <strong>구체적 금액 근거</strong>가 찬성파의 시장 타이밍 주장보다 객관적이었음</div>
+        </div>
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+          <div style="min-width:20px; height:20px; border-radius:9999px; background:#3b82f6; display:flex; align-items:center; justify-content:center; margin-top:2px;">
+            <span style="font-size:10px; font-weight:700; color:#ffffff;">2</span>
+          </div>
+          <div style="font-size:13px; line-height:1.5; color:#0a0a0a;">현재 회사에서 <strong>승진 루트를 먼저 확인</strong>하는 것이 리스크 관리 측면에서 합리적</div>
+        </div>
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+          <div style="min-width:20px; height:20px; border-radius:9999px; background:#3b82f6; display:flex; align-items:center; justify-content:center; margin-top:2px;">
+            <span style="font-size:10px; font-weight:700; color:#ffffff;">3</span>
+          </div>
+          <div style="font-size:13px; line-height:1.5; color:#0a0a0a;">다만 찬성파의 <strong>기회비용 논리</strong>도 유효 — 6개월 안에 내부 변화가 없으면 이직 준비 시작 권장</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- User's Decision -->
+  <div style="margin:0 24px 20px;">
+    <div style="font-size:14px; font-weight:600; color:#0a0a0a; margin-bottom:10px;">나의 결정은?</div>
+    <div style="display:flex; gap:8px;">
+      <div style="flex:1; background:#ffffff; border:2px solid #e5e5e5; border-radius:12px; padding:14px; text-align:center; cursor:pointer;">
+        <div style="font-size:20px; margin-bottom:4px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" style="margin:0 auto;"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </div>
+        <div style="font-size:13px; font-weight:500; color:#0a0a0a;">이직한다</div>
+      </div>
+      <div style="flex:1; background:#eff6ff; border:2px solid #3b82f6; border-radius:12px; padding:14px; text-align:center; cursor:pointer;">
+        <div style="font-size:20px; margin-bottom:4px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" style="margin:0 auto;"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </div>
+        <div style="font-size:13px; font-weight:600; color:#3b82f6;">더 다닌다</div>
+      </div>
+      <div style="flex:1; background:#ffffff; border:2px solid #e5e5e5; border-radius:12px; padding:14px; text-align:center; cursor:pointer;">
+        <div style="font-size:20px; margin-bottom:4px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" style="margin:0 auto;"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+        </div>
+        <div style="font-size:13px; font-weight:500; color:#737373;">아직 모름</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Actions -->
+  <div style="position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:390px; background:#ffffff; border-top:1px solid #e5e5e5; padding:12px 24px 32px;">
+    <div style="display:flex; gap:8px;">
+      <div style="flex:1; background:#f5f5f5; border-radius:10px; padding:12px; text-align:center; cursor:pointer;">
+        <div style="display:flex; align-items:center; justify-content:center; gap:6px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          <span style="font-size:13px; font-weight:500; color:#737373;">다시 토론</span>
+        </div>
+      </div>
+      <div style="flex:1; background:#171717; border-radius:10px; padding:12px; text-align:center; cursor:pointer;">
+        <div style="display:flex; align-items:center; justify-content:center; gap:6px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          <span style="font-size:13px; font-weight:500; color:#fafafa;">새 질문</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

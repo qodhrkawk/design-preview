@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>부동산 공부 — 디자인 시안</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f5f5;--card:#fff;--fg:#0a0a0a;--muted:#737373;--border:#e5e5e5;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);min-height:100vh;padding:40px 20px;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:920px;margin:0 auto;}
+h1{font-size:28px;font-weight:800;letter-spacing:-0.025em;}.sub{font-size:14px;color:var(--muted);margin:6px 0 32px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;}
+a.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;text-decoration:none;color:inherit;transition:box-shadow .15s;}
+a.card:hover{box-shadow:0 4px 6px rgba(0,0,0,.08);}
+.ic{width:40px;height:40px;background:#f5f5f5;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px;}
+.t{font-size:15px;font-weight:600;}.d{font-size:12px;color:var(--muted);margin-top:4px;line-height:17px;}
+</style></head><body>
+<div class="wrap">
+  <h1>🏠 부동산 공부 — 디자인 시안</h1>
+  <div class="sub">shadcn/ui · Mobile-first (390px) · 윤재 & 여친 둘이 쓰는 공부+매물 플랫폼</div>
+  <div class="grid">
+    <a class="card" href="listings.html"><div class="ic">🏠</div><div class="t">매물 목록</div><div class="d">점수순 정렬, 윤재 vs 여친 점수 비교, 상태 뱃지</div></a>
+    <a class="card" href="detail.html"><div class="ic">📊</div><div class="t">매물 상세 · 점수</div><div class="d">5점 척도 평가, 카테고리별 체크리스트, 둘 비교</div></a>
+    <a class="card" href="study.html"><div class="ic">📚</div><div class="t">공부 노트</div><div class="d">마크다운 노트, 태그, 같이 갱신</div></a>
+    <a class="card" href="checklist.html"><div class="ic">✅</div><div class="t">체크리스트 관리</div><div class="d">표준 임장 항목 23개, 가중치 조절</div></a>
+  </div>
+</div></body></html>

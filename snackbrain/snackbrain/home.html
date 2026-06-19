@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SnackBrain - 홈</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #f5f5f5;
+    color: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .phone {
+    width: 390px;
+    min-height: 100vh;
+    background: #ffffff;
+    position: relative;
+    overflow-x: hidden;
+  }
+  .status-bar {
+    height: 54px;
+    padding: 14px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .header {
+    padding: 12px 24px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left h1 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 34px;
+  }
+  .header-left h1 span { color: #f59e0b; }
+  .header-left p {
+    font-size: 14px;
+    color: #737373;
+    margin-top: 2px;
+  }
+  .streak-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    border-radius: 9999px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #92400e;
+  }
+  .topics-scroll {
+    padding: 0 24px 16px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .topics-scroll::-webkit-scrollbar { display: none; }
+  .topic-chip {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #e5e5e5;
+    background: #ffffff;
+    color: #737373;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .topic-chip.active {
+    background: #171717;
+    color: #fafafa;
+    border-color: #171717;
+  }
+  .section-title {
+    padding: 0 24px 12px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .section-title span { color: #737373; font-size: 13px; font-weight: 400; }
+  .card-feed {
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 100px;
+  }
+  .learn-card {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .learn-card:hover {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
+  }
+  .card-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+  .tag-investing { background: #dbeafe; color: #1e40af; }
+  .tag-ai { background: #fae8ff; color: #86198f; }
+  .tag-productivity { background: #dcfce7; color: #166534; }
+  .tag-coding { background: #fef3c7; color: #92400e; }
+  .card-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .card-summary {
+    font-size: 14px;
+    line-height: 22px;
+    color: #525252;
+    margin-bottom: 16px;
+  }
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-time {
+    font-size: 12px;
+    color: #a3a3a3;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .card-actions {
+    display: flex;
+    gap: 8px;
+  }
+  .card-action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    border: 1px solid #e5e5e5;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .card-action-btn:hover { background: #f5f5f5; }
+  .card-action-btn.done {
+    background: #171717;
+    border-color: #171717;
+    color: #ffffff;
+  }
+  .progress-section {
+    padding: 0 24px 20px;
+  }
+  .progress-bar-wrap {
+    background: #f5f5f5;
+    border-radius: 9999px;
+    height: 8px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #171717, #525252);
+    width: 40%;
+    transition: width 0.3s;
+  }
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #737373;
+    margin-top: 6px;
+  }
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 390px;
+    height: 84px;
+    background: #ffffff;
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 12px;
+  }
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #a3a3a3;
+    cursor: pointer;
+  }
+  .nav-item.active { color: #171717; }
+  .nav-icon { font-size: 22px; }
+  .daily-goal {
+    margin: 0 24px 16px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #171717, #404040);
+    border-radius: 16px;
+    color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .daily-goal-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .daily-goal-label { font-size: 12px; color: #a3a3a3; }
+  .daily-goal-text { font-size: 16px; font-weight: 700; }
+  .daily-goal-right {
+    font-size: 32px;
+    font-weight: 800;
+    color: #f59e0b;
+  }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="status-bar">
+    <span>14:03</span>
+    <span>📶 🔋</span>
+  </div>
+
+  <div class="header">
+    <div class="header-left">
+      <h1>Snack<span>Brain</span> 🧠</h1>
+      <p>오늘의 뇌간식 준비됐어!</p>
+    </div>
+    <div class="streak-badge">🔥 12일</div>
+  </div>
+
+  <div class="daily-goal">
+    <div class="daily-goal-left">
+      <span class="daily-goal-label">오늘의 목표</span>
+      <span class="daily-goal-text">5장 중 2장 완료</span>
+    </div>
+    <div class="daily-goal-right">2/5</div>
+  </div>
+
+  <div class="topics-scroll">
+    <div class="topic-chip active">전체</div>
+    <div class="topic-chip">📈 투자</div>
+    <div class="topic-chip">🤖 AI</div>
+    <div class="topic-chip">⚡ 생산성</div>
+    <div class="topic-chip">💻 코딩</div>
+    <div class="topic-chip">🧘 멘탈</div>
+  </div>
+
+  <div class="section-title">
+    오늘의 카드 <span>4월 7일 화요일</span>
+  </div>
+
+  <div class="card-feed">
+    <div class="learn-card">
+      <div class="card-tag tag-investing">📈 투자</div>
+      <div class="card-title">PER이 낮으면 무조건 좋은 걸까?</div>
+      <div class="card-summary">낮은 PER = 저평가라는 공식의 함정. 실적이 꺾이면 PER은 자동으로 낮아진다. 진짜 봐야 할 건 Forward PER과 이익 추세.</div>
+      <div class="card-meta">
+        <span class="card-time">⏱ 3분 · 핵심개념</span>
+        <div class="card-actions">
+          <div class="card-action-btn">🔖</div>
+          <div class="card-action-btn done">✓</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="learn-card">
+      <div class="card-tag tag-ai">🤖 AI</div>
+      <div class="card-title">AI 에이전트 vs 챗봇, 뭐가 다른데?</div>
+      <div class="card-summary">챗봇은 질문에 답하고 끝. 에이전트는 스스로 계획 세우고, 도구를 사용하고, 결과를 확인까지 한다. 2026년 핵심 키워드.</div>
+      <div class="card-meta">
+        <span class="card-time">⏱ 2분 · 트렌드</span>
+        <div class="card-actions">
+          <div class="card-action-btn">🔖</div>
+          <div class="card-action-btn">✓</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="learn-card">
+      <div class="card-tag tag-productivity">⚡ 생산성</div>
+      <div class="card-title">2분 규칙이 진짜 통하는 이유</div>
+      <div class="card-summary">GTD의 핵심 원칙: 2분 안에 끝날 일은 바로 한다. 뇌의 "열린 루프"를 닫아서 인지 부하를 줄이는 과학적 근거가 있다.</div>
+      <div class="card-meta">
+        <span class="card-time">⏱ 3분 · 라이프해킹</span>
+        <div class="card-actions">
+          <div class="card-action-btn">🔖</div>
+          <div class="card-action-btn">✓</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="learn-card">
+      <div class="card-tag tag-coding">💻 코딩</div>
+      <div class="card-title">TypeScript의 as const 활용법</div>
+      <div class="card-summary">리터럴 타입을 그대로 유지하고 싶을 때. enum 대신 const assertion으로 타입 안전한 상수를 만드는 패턴.</div>
+      <div class="card-meta">
+        <span class="card-time">⏱ 2분 · 코드팁</span>
+        <div class="card-actions">
+          <div class="card-action-btn">🔖</div>
+          <div class="card-action-btn">✓</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="learn-card" style="border: 1px dashed #d4d4d4; background: #fafafa; text-align: center; padding: 32px 20px;">
+      <div style="font-size: 32px; margin-bottom: 12px;">🎉</div>
+      <div style="font-size: 16px; font-weight: 600; margin-bottom: 6px;">오늘의 카드 끝!</div>
+      <div style="font-size: 14px; color: #737373;">내일 새로운 5장이 준비될 거야</div>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item active">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </div>
+    <div class="nav-item">
+      <span class="nav-icon">🔖</span>
+      <span>저장됨</span>
+    </div>
+    <div class="nav-item">
+      <span class="nav-icon">📊</span>
+      <span>통계</span>
+    </div>
+    <div class="nav-item">
+      <span class="nav-icon">⚙️</span>
+      <span>설정</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

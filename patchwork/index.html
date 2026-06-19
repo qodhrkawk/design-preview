@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patchwork — 홈</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #f5f5f5;
+  color: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+.phone {
+  width: 390px;
+  min-height: 100vh;
+  background: #ffffff;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Status bar */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.status-bar .time { font-weight: 700; }
+.status-bar .icons { display: flex; gap: 6px; align-items: center; }
+
+/* Header */
+.header {
+  padding: 8px 24px 20px;
+}
+.greeting {
+  font-size: 14px;
+  line-height: 20px;
+  color: #737373;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+.header-title {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* Session Card */
+.session-card {
+  margin: 0 24px 16px;
+  background: #0a0a0a;
+  border-radius: 16px;
+  padding: 24px;
+  color: #fafafa;
+}
+.session-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #a3a3a3;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+.session-project {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.session-context {
+  font-size: 14px;
+  line-height: 22px;
+  color: #a3a3a3;
+  margin-bottom: 20px;
+}
+.session-context strong { color: #fafafa; }
+.session-timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.timer-display {
+  font-size: 36px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+.timer-label {
+  font-size: 12px;
+  color: #a3a3a3;
+  margin-top: 2px;
+}
+.btn-start {
+  background: #fafafa;
+  color: #171717;
+  border: none;
+  border-radius: 9999px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-start svg { width: 18px; height: 18px; }
+
+/* Task Section */
+.section {
+  padding: 0 24px;
+  margin-bottom: 24px;
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.section-action {
+  font-size: 13px;
+  font-weight: 500;
+  color: #737373;
+  text-decoration: none;
+}
+
+/* Task Items */
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.task-item:last-child { border-bottom: none; }
+.task-check {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #d4d4d4;
+  border-radius: 6px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  cursor: pointer;
+}
+.task-check.done {
+  background: #22c55e;
+  border-color: #22c55e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.task-check.done svg { width: 14px; height: 14px; }
+.task-content { flex: 1; }
+.task-title {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+  margin-bottom: 4px;
+}
+.task-title.done {
+  text-decoration: line-through;
+  color: #a3a3a3;
+}
+.task-meta {
+  font-size: 12px;
+  color: #a3a3a3;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.task-tag {
+  background: #f5f5f5;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #737373;
+}
+.task-tag.ai {
+  background: #eff6ff;
+  color: #3b82f6;
+}
+.task-est {
+  font-size: 12px;
+  color: #a3a3a3;
+  font-weight: 500;
+}
+
+/* AI Suggestion Banner */
+.ai-banner {
+  margin: 0 24px 20px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.ai-icon {
+  width: 32px;
+  height: 32px;
+  background: #3b82f6;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.ai-icon svg { width: 18px; height: 18px; color: #fff; }
+.ai-text {
+  font-size: 13px;
+  line-height: 20px;
+  color: #1e40af;
+}
+.ai-text strong { font-weight: 600; }
+
+/* Projects Section */
+.project-cards {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 0 24px 4px;
+  scrollbar-width: none;
+}
+.project-cards::-webkit-scrollbar { display: none; }
+.project-card {
+  flex-shrink: 0;
+  width: 200px;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 16px;
+}
+.project-emoji {
+  width: 36px;
+  height: 36px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.project-name {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.project-stat {
+  font-size: 12px;
+  color: #737373;
+  margin-bottom: 10px;
+}
+.project-progress {
+  width: 100%;
+  height: 4px;
+  background: #f0f0f0;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+.project-progress-bar {
+  height: 100%;
+  border-radius: 9999px;
+}
+
+/* Bottom Nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 390px;
+  background: #ffffff;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0 28px;
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: #a3a3a3;
+  font-size: 10px;
+  font-weight: 500;
+}
+.nav-item.active { color: #0a0a0a; }
+.nav-item svg { width: 24px; height: 24px; }
+.spacer { height: 90px; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <!-- Status Bar -->
+  <div class="status-bar">
+    <span class="time">14:03</span>
+    <div class="icons">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="13" x2="23" y2="11"/></svg>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="greeting">수요일 오후 · 30분 여유 있을 때</div>
+    <div class="header-title">이어서 만들기</div>
+  </div>
+
+  <!-- AI Suggestion Banner -->
+  <div class="ai-banner">
+    <div class="ai-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="ai-text">
+      <strong>AI 추천:</strong> 지난번 로그인 UI 작업이 80% 완료됐어요. 오늘 <strong>30분이면 마무리</strong>할 수 있어요.
+    </div>
+  </div>
+
+  <!-- Session Card -->
+  <div class="session-card">
+    <div class="session-label">이어서 작업할 프로젝트</div>
+    <div class="session-project">Tuckit — 로그인 화면</div>
+    <div class="session-context">
+      마지막 작업: <strong>4월 20일 (2일 전)</strong><br>
+      남은 태스크: <strong>2개</strong> · 예상 <strong>25분</strong>
+    </div>
+    <div class="session-timer">
+      <div>
+        <div class="timer-display">30:00</div>
+        <div class="timer-label">집중 세션</div>
+      </div>
+      <button class="btn-start">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        시작하기
+      </button>
+    </div>
+  </div>
+
+  <!-- Today's Tasks -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">오늘의 태스크</span>
+      <a href="#" class="section-action">전체 보기</a>
+    </div>
+    <div class="task-item">
+      <div class="task-check done">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="task-content">
+        <div class="task-title done">소셜 로그인 버튼 레이아웃</div>
+        <div class="task-meta">
+          <span class="task-tag">UI</span>
+          <span class="task-est">10분</span>
+        </div>
+      </div>
+    </div>
+    <div class="task-item">
+      <div class="task-check"></div>
+      <div class="task-content">
+        <div class="task-title">이메일 유효성 검사 로직 추가</div>
+        <div class="task-meta">
+          <span class="task-tag ai">AI 분해</span>
+          <span class="task-est">15분</span>
+        </div>
+      </div>
+    </div>
+    <div class="task-item">
+      <div class="task-check"></div>
+      <div class="task-content">
+        <div class="task-title">비밀번호 재설정 플로우 와이어프레임</div>
+        <div class="task-meta">
+          <span class="task-tag">디자인</span>
+          <span class="task-est">10분</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- My Projects -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">내 프로젝트</span>
+      <a href="#" class="section-action">+</a>
+    </div>
+  </div>
+  <div class="project-cards">
+    <div class="project-card">
+      <div class="project-emoji">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div class="project-name">Tuckit</div>
+      <div class="project-stat">12/18 태스크 · 67%</div>
+      <div class="project-progress">
+        <div class="project-progress-bar" style="width:67%;background:#3b82f6;"></div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-emoji">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="project-name">포트폴리오 웹</div>
+      <div class="project-stat">3/10 태스크 · 30%</div>
+      <div class="project-progress">
+        <div class="project-progress-bar" style="width:30%;background:#f59e0b;"></div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-emoji">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="project-name">블로그 리뉴얼</div>
+      <div class="project-stat">0/5 태스크 · 0%</div>
+      <div class="project-progress">
+        <div class="project-progress-bar" style="width:0%;background:#22c55e;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- Bottom Nav -->
+  <div class="bottom-nav">
+    <a href="#" class="nav-item active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>홈</span>
+    </a>
+    <a href="#" class="nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+      <span>프로젝트</span>
+    </a>
+    <a href="#" class="nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+      <span>통계</span>
+    </a>
+    <a href="#" class="nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <span>설정</span>
+    </a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오분이 - 인사이트</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:#f5f5f5;color:#0a0a0a;display:flex;justify-content:center;min-height:100vh}
+.app{width:390px;background:#fafafa;min-height:100vh;display:flex;flex-direction:column}
+.header{padding:20px 20px 16px;background:#ffffff;border-bottom:1px solid #e5e5e5}
+.h-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.title{font-size:22px;font-weight:700;letter-spacing:-0.025em}
+.period{font-size:13px;font-weight:500;color:#737373;background:#f5f5f5;padding:6px 12px;border-radius:9999px;display:flex;align-items:center;gap:6px}
+.period svg{width:14px;height:14px;stroke:#737373}
+.summary-row{display:flex;gap:8px}
+.summary-card{flex:1;background:#f5f5f5;border-radius:10px;padding:12px}
+.s-label{font-size:11px;color:#737373;margin-bottom:4px;font-weight:500;letter-spacing:0.02em}
+.s-val{font-size:20px;font-weight:700;letter-spacing:-0.02em}
+.s-val small{font-size:12px;font-weight:500;color:#22c55e;margin-left:4px}
+.s-val small.warn{color:#f59e0b}
+.section-title{padding:24px 20px 10px;font-size:13px;font-weight:600;color:#737373;letter-spacing:0.04em;text-transform:uppercase}
+.insight-card{margin:0 20px 12px;background:#ffffff;border:1px solid #e5e5e5;border-radius:14px;padding:18px}
+.ic-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.ic-icon{width:32px;height:32px;border-radius:9999px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ic-icon svg{width:16px;height:16px;stroke:#171717}
+.ic-icon.green{background:#dcfce7}
+.ic-icon.green svg{stroke:#15803d}
+.ic-icon.amber{background:#fef3c7}
+.ic-icon.amber svg{stroke:#b45309}
+.ic-title{font-size:14px;font-weight:600;flex:1}
+.ic-body{font-size:13px;color:#525252;line-height:20px}
+.ic-body b{color:#0a0a0a;font-weight:600}
+.bar-row{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.bar{display:flex;align-items:center;gap:10px}
+.bar-label{font-size:12px;width:60px;color:#525252;font-weight:500}
+.bar-track{flex:1;height:8px;background:#f5f5f5;border-radius:9999px;overflow:hidden}
+.bar-fill{height:100%;background:#171717;border-radius:9999px}
+.bar-val{font-size:11px;color:#737373;width:36px;text-align:right;font-weight:600}
+.streak-card{margin:0 20px 12px;background:#171717;color:#fafafa;border-radius:14px;padding:18px;display:flex;align-items:center;gap:14px}
+.streak-num{font-size:36px;font-weight:800;letter-spacing:-0.03em;line-height:1}
+.streak-body .l1{font-size:12px;opacity:0.7;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:4px;font-weight:500}
+.streak-body .l2{font-size:14px;font-weight:500;line-height:20px}
+.bottom-nav{margin-top:auto;border-top:1px solid #e5e5e5;background:#ffffff;display:flex;padding:8px 0 16px;position:sticky;bottom:0}
+.nav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px;cursor:pointer;color:#737373}
+.nav-item.active{color:#171717}
+.nav-item svg{width:20px;height:20px;stroke:currentColor}
+.nav-item span{font-size:11px;font-weight:500}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <div class="h-top">
+      <div class="title">너의 회복 패턴</div>
+      <div class="period">7주 <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="summary-row">
+      <div class="summary-card"><div class="s-label">평균 회복률</div><div class="s-val">71% <small>+8</small></div></div>
+      <div class="summary-card"><div class="s-label">세션 수</div><div class="s-val">43</div></div>
+      <div class="summary-card"><div class="s-label">취약 요일</div><div class="s-val">금 <small class="warn">↓</small></div></div>
+    </div>
+  </div>
+  <div class="streak-card">
+    <div class="streak-num">12</div>
+    <div class="streak-body"><div class="l1">DAY STREAK</div><div class="l2">매일 한 번씩은 체크하고 있어. 좋은 흐름이야.</div></div>
+  </div>
+  <div class="section-title">너에게 잘 듣는 5분</div>
+  <div class="insight-card">
+    <div class="ic-head"><div class="ic-icon green"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><div class="ic-title">호흡 기반 액션</div></div>
+    <div class="ic-body"><b>불안·조급</b>에 가장 잘 들어. 평균 <b>+78%</b> 회복.</div>
+    <div class="bar-row">
+      <div class="bar"><div class="bar-label">호흡</div><div class="bar-track"><div class="bar-fill" style="width:78%"></div></div><div class="bar-val">78%</div></div>
+      <div class="bar"><div class="bar-label">걷기</div><div class="bar-track"><div class="bar-fill" style="width:64%"></div></div><div class="bar-val">64%</div></div>
+      <div class="bar"><div class="bar-label">차/음료</div><div class="bar-track"><div class="bar-fill" style="width:58%"></div></div><div class="bar-val">58%</div></div>
+      <div class="bar"><div class="bar-label">음악</div><div class="bar-track"><div class="bar-fill" style="width:51%"></div></div><div class="bar-val">51%</div></div>
+      <div class="bar"><div class="bar-label">메모</div><div class="bar-track"><div class="bar-fill" style="width:42%"></div></div><div class="bar-val">42%</div></div>
+    </div>
+  </div>
+  <div class="section-title">AI가 발견한 패턴</div>
+  <div class="insight-card">
+    <div class="ic-head"><div class="ic-icon amber"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg></div><div class="ic-title">금요일 14시~16시 주의</div></div>
+    <div class="ic-body">최근 6주 중 5주에서 이 시간대에 <b>불안 스파이크</b> 기록. 회의/마감 패턴인지 한번 봐.</div>
+  </div>
+  <div class="insight-card">
+    <div class="ic-head"><div class="ic-icon"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="ic-title">잠 6시간 미만 다음날</div></div>
+    <div class="ic-body">우울 빈도가 평소 대비 <b>2.3배</b>. 액션 효과도 18% 낮아져. 수면 우선해보자.</div>
+  </div>
+  <div class="insight-card">
+    <div class="ic-head"><div class="ic-icon green"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="ic-title">아침 산책 효과 톱</div></div>
+    <div class="ic-body">출근 전 <b>10분 산책</b>한 날은 하루 평균 기분 점수가 <b>+1.2</b>점 높아.</div>
+  </div>
+  <div class="bottom-nav">
+    <div class="nav-item"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>홈</span></div>
+    <div class="nav-item"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>기록</span></div>
+    <div class="nav-item active"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span>인사이트</span></div>
+    <div class="nav-item"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/></svg><span>나</span></div>
+  </div>
+</div>
+</body>
+</html>

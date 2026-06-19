@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nopely — 홈</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Inter, system-ui, sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    color: #0a0a0a;
+  }
+  .phone {
+    width: 390px;
+    min-height: 100vh;
+    background: #ffffff;
+    position: relative;
+    overflow-y: auto;
+  }
+  .status-bar {
+    height: 54px;
+    padding: 14px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .header {
+    padding: 8px 24px 20px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 36px;
+  }
+  .header p {
+    font-size: 14px;
+    color: #737373;
+    margin-top: 4px;
+    line-height: 20px;
+  }
+  .quick-action {
+    margin: 0 24px 24px;
+    background: #171717;
+    border-radius: 16px;
+    padding: 20px;
+    color: #fafafa;
+    cursor: pointer;
+    transition: transform 0.15s;
+  }
+  .quick-action:active { transform: scale(0.98); }
+  .quick-action-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #a3a3a3;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+  .quick-action-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    margin-bottom: 4px;
+  }
+  .quick-action-desc {
+    font-size: 14px;
+    color: #a3a3a3;
+    line-height: 20px;
+  }
+  .quick-action-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 24px;
+    margin-bottom: 12px;
+  }
+  .category-scroll {
+    display: flex;
+    gap: 10px;
+    padding: 0 24px;
+    overflow-x: auto;
+    margin-bottom: 24px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .category-scroll::-webkit-scrollbar { display: none; }
+  .category-chip {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 500;
+    background: #f5f5f5;
+    color: #171717;
+    border: 1px solid #e5e5e5;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .category-chip.active {
+    background: #171717;
+    color: #fafafa;
+    border-color: #171717;
+  }
+  .recent-list {
+    padding: 0 24px;
+    margin-bottom: 100px;
+  }
+  .recent-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .recent-card:active { background: #f5f5f5; }
+  .recent-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+  .recent-icon.work { background: #dbeafe; color: #3b82f6; }
+  .recent-icon.social { background: #fce7f3; color: #ec4899; }
+  .recent-icon.family { background: #dcfce7; color: #22c55e; }
+  .recent-content { flex: 1; min-width: 0; }
+  .recent-title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+    margin-bottom: 2px;
+  }
+  .recent-preview {
+    font-size: 13px;
+    color: #737373;
+    line-height: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .recent-meta {
+    font-size: 12px;
+    color: #a3a3a3;
+    margin-top: 6px;
+  }
+  .recent-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 500;
+    margin-right: 6px;
+  }
+  .badge-sent { background: #dcfce7; color: #16a34a; }
+  .badge-saved { background: #f5f5f5; color: #737373; }
+  .stats-row {
+    display: flex;
+    gap: 10px;
+    padding: 0 24px;
+    margin-bottom: 24px;
+  }
+  .stat-card {
+    flex: 1;
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-number {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 32px;
+    color: #171717;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: #737373;
+    margin-top: 2px;
+  }
+  .tab-bar {
+    position: fixed;
+    bottom: 0;
+    width: 390px;
+    height: 82px;
+    background: #ffffff;
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding-top: 10px;
+  }
+  .tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    color: #a3a3a3;
+    font-size: 11px;
+    font-weight: 500;
+  }
+  .tab-item.active { color: #171717; }
+  .tab-item svg { width: 24px; height: 24px; }
+  .fab {
+    position: fixed;
+    bottom: 96px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 56px;
+    background: #171717;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fafafa;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="status-bar">
+    <span>14:03</span>
+    <span style="display:flex;gap:4px;align-items:center;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="13" x2="23" y2="11"/></svg>
+    </span>
+  </div>
+
+  <div class="header">
+    <h1>Nopely</h1>
+    <p>오늘도 현명한 거절 한 스푼 ✨</p>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-number">23</div>
+      <div class="stat-label">이번 달 거절</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">4.2h</div>
+      <div class="stat-label">절약한 시간</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">87%</div>
+      <div class="stat-label">만족도</div>
+    </div>
+  </div>
+
+  <div class="quick-action">
+    <div class="quick-action-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </div>
+    <div class="quick-action-label">Quick Start</div>
+    <div class="quick-action-title">거절이 필요한 순간?</div>
+    <div class="quick-action-desc">상황을 알려주면 AI가 정중한 거절 메시지를 만들어줘</div>
+  </div>
+
+  <div class="section-title">카테고리</div>
+  <div class="category-scroll">
+    <div class="category-chip active">전체</div>
+    <div class="category-chip">직장</div>
+    <div class="category-chip">모임/약속</div>
+    <div class="category-chip">부탁</div>
+    <div class="category-chip">가족</div>
+    <div class="category-chip">연애</div>
+    <div class="category-chip">세일즈</div>
+  </div>
+
+  <div class="section-title">최근 거절</div>
+  <div class="recent-list">
+    <div class="recent-card">
+      <div class="recent-icon work">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      </div>
+      <div class="recent-content">
+        <div class="recent-title">팀장님 야근 요청</div>
+        <div class="recent-preview">"오늘 선약이 있어서 어렵겠습니다. 내일 오전에..."</div>
+        <div class="recent-meta">
+          <span class="recent-badge badge-sent">전송됨</span>
+          2시간 전
+        </div>
+      </div>
+    </div>
+
+    <div class="recent-card">
+      <div class="recent-icon social">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="recent-content">
+        <div class="recent-title">동창 모임 참석 요청</div>
+        <div class="recent-preview">"이번에는 일정이 안 맞아서 참석하기 어려울..."</div>
+        <div class="recent-meta">
+          <span class="recent-badge badge-saved">저장됨</span>
+          어제
+        </div>
+      </div>
+    </div>
+
+    <div class="recent-card">
+      <div class="recent-icon family">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <div class="recent-content">
+        <div class="recent-title">엄마 주말 방문 요청</div>
+        <div class="recent-preview">"이번 주는 프로젝트 마감이 있어서 다음 주에..."</div>
+        <div class="recent-meta">
+          <span class="recent-badge badge-sent">전송됨</span>
+          3일 전
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-bar">
+    <div class="tab-item active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>홈</span>
+    </div>
+    <div class="tab-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <span>템플릿</span>
+    </div>
+    <div class="tab-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span>연습</span>
+    </div>
+    <div class="tab-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      <span>통계</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

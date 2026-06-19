@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=390,initial-scale=1" />
+<title>잘했어 — 홈</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+  body{font-family:Inter,system-ui,-apple-system,sans-serif;background:#ffffff;color:#0a0a0a;width:390px;margin:0 auto;font-size:16px;line-height:1.5}
+  .icon{width:20px;height:20px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+</style>
+</head>
+<body>
+
+<!-- Status bar -->
+<div style="height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-size:14px;font-weight:600;color:#0a0a0a">
+  <span>9:41</span>
+  <span style="display:flex;gap:6px;align-items:center">
+    <svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M2 20h.01M7 20v-4M12 20v-8M17 20V8M22 4v16"/></svg>
+    <svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+    <span style="font-weight:700">87%</span>
+  </span>
+</div>
+
+<!-- Header -->
+<div style="padding:12px 20px 4px 20px;display:flex;align-items:center;justify-content:space-between">
+  <div style="display:flex;align-items:center;gap:10px">
+    <div style="width:36px;height:36px;border-radius:9999px;background:#171717;color:#fafafa;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">윤</div>
+    <div>
+      <div style="font-size:12px;color:#737373;font-weight:500">잘 쌓고 있어요</div>
+      <div style="font-size:14px;font-weight:600">기록 47일째</div>
+    </div>
+  </div>
+  <button style="width:40px;height:40px;border-radius:9999px;background:#f5f5f5;border:0;display:flex;align-items:center;justify-content:center;color:#171717">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+  </button>
+</div>
+
+<!-- Hero card: today's prompt -->
+<div style="margin:20px;padding:24px;border-radius:16px;background:#0a0a0a;color:#fafafa">
+  <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:#a3a3a3;font-weight:500;margin-bottom:12px">
+    <svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    <span>오늘 18:00 · 매일 저녁 알림</span>
+  </div>
+  <div style="font-size:24px;font-weight:700;letter-spacing:-0.02em;line-height:1.3;margin-bottom:6px">오늘 잘한 거,<br/>한 줄만.</div>
+  <div style="font-size:14px;color:#a3a3a3;margin-bottom:20px">큰 일 아니어도 돼요. 작게 시작합시다.</div>
+
+  <div style="background:#171717;border:1px solid #262626;border-radius:12px;padding:14px;display:flex;align-items:center;gap:10px">
+    <svg class="icon" style="color:#737373" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+    <input placeholder="예: 미팅 진행 매끄럽게 리드함" style="flex:1;background:transparent;border:0;outline:0;color:#fafafa;font-size:15px;font-family:inherit"/>
+  </div>
+
+  <div style="display:flex;gap:8px;margin-top:14px">
+    <button style="flex:1;height:44px;border-radius:10px;background:#fafafa;color:#171717;border:0;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center;gap:6px;font-family:inherit">
+      <svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+      기록하기
+    </button>
+    <button style="width:44px;height:44px;border-radius:10px;background:#262626;color:#fafafa;border:0;display:flex;align-items:center;justify-content:center">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
+    </button>
+    <button style="width:44px;height:44px;border-radius:10px;background:#262626;color:#fafafa;border:0;display:flex;align-items:center;justify-content:center">
+      <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- Streak strip -->
+<div style="margin:0 20px;padding:14px 16px;border:1px solid #e5e5e5;border-radius:12px;display:flex;align-items:center;justify-content:space-between">
+  <div style="display:flex;align-items:center;gap:10px">
+    <div style="width:32px;height:32px;border-radius:9999px;background:#fff7ed;color:#f59e0b;display:flex;align-items:center;justify-content:center">
+      <svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+    </div>
+    <div>
+      <div style="font-size:14px;font-weight:600">7일 연속 기록 중</div>
+      <div style="font-size:12px;color:#737373">놓치지 마요</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:4px">
+    <div style="width:8px;height:8px;border-radius:9999px;background:#22c55e"></div>
+    <div style="width:8px;height:8px;border-radius:9999px;background:#22c55e"></div>
+    <div style="width:8px;height:8px;border-radius:9999px;background:#22c55e"></div>
+    <div style="width:8px;height:8px;border-radius:9999px;background:#22c55e"></div>
+    <div style="width:8px;height:8px;border-radius:9999px;background:#22c55e"></div>
+    <div style="width:8px;height:8px;border-radius:9999px;background:#22c55e"></div>
+    <div style="width:8px;height:8px;border-radius:9999px;background:#22c55e"></div>
+  </div>
+</div>
+
+<!-- Section: 최근 기록 -->
+<div style="padding:24px 20px 12px;display:flex;align-items:center;justify-content:space-between">
+  <div style="font-size:18px;font-weight:700;letter-spacing:-0.01em">이번 주 기록</div>
+  <button style="background:transparent;border:0;color:#737373;font-size:13px;font-weight:500;display:flex;align-items:center;gap:2px;font-family:inherit">
+    전체보기
+    <svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+  </button>
+</div>
+
+<!-- Entry 1 -->
+<div style="margin:0 20px 12px;padding:16px;border:1px solid #e5e5e5;border-radius:12px;background:#ffffff">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+    <div style="font-size:12px;color:#737373;font-weight:500">어제 · 6월 6일</div>
+    <div style="display:inline-flex;align-items:center;gap:4px;background:#f5f5f5;border-radius:9999px;padding:2px 10px;font-size:11px;font-weight:600;color:#171717">
+      <svg class="icon" style="width:11px;height:11px" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      협업
+    </div>
+  </div>
+  <div style="font-size:15px;color:#0a0a0a;font-weight:500;line-height:1.5;margin-bottom:10px">디자이너랑 충돌 있던 컴포넌트 명세, 30분 통화로 합의 끌어내고 문서로 정리</div>
+  <div style="display:flex;align-items:center;gap:8px;padding-top:10px;border-top:1px dashed #e5e5e5">
+    <svg class="icon" style="width:14px;height:14px;color:#737373" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+    <div style="font-size:12px;color:#737373;flex:1">AI: <span style="color:#171717;font-weight:500">갈등 조율 + 문서화</span> — STAR로 변환 가능</div>
+  </div>
+</div>
+
+<!-- Entry 2 -->
+<div style="margin:0 20px 12px;padding:16px;border:1px solid #e5e5e5;border-radius:12px;background:#ffffff">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+    <div style="font-size:12px;color:#737373;font-weight:500">6월 5일</div>
+    <div style="display:inline-flex;align-items:center;gap:4px;background:#f5f5f5;border-radius:9999px;padding:2px 10px;font-size:11px;font-weight:600;color:#171717">
+      <svg class="icon" style="width:11px;height:11px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/></svg>
+      문제해결
+    </div>
+  </div>
+  <div style="font-size:15px;color:#0a0a0a;font-weight:500;line-height:1.5">3주째 막혀있던 결제 실패 버그, 로그 패턴 발견해서 해결</div>
+</div>
+
+<!-- Entry 3 -->
+<div style="margin:0 20px 24px;padding:16px;border:1px solid #e5e5e5;border-radius:12px;background:#ffffff">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+    <div style="font-size:12px;color:#737373;font-weight:500">6월 4일</div>
+    <div style="display:inline-flex;align-items:center;gap:4px;background:#f5f5f5;border-radius:9999px;padding:2px 10px;font-size:11px;font-weight:600;color:#171717">
+      <svg class="icon" style="width:11px;height:11px" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      주도성
+    </div>
+  </div>
+  <div style="font-size:15px;color:#0a0a0a;font-weight:500;line-height:1.5">팀 회고 포맷이 비효율적이라 새 템플릿 제안 → 채택됨</div>
+</div>
+
+<!-- Bottom nav -->
+<div style="position:sticky;bottom:0;background:#ffffff;border-top:1px solid #e5e5e5;display:flex;height:64px;padding:0 8px">
+  <button style="flex:1;background:transparent;border:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#171717;font-family:inherit">
+    <svg class="icon" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+    <span style="font-size:11px;font-weight:600">홈</span>
+  </button>
+  <button style="flex:1;background:transparent;border:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#a3a3a3;font-family:inherit">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    <span style="font-size:11px;font-weight:500">페르소나</span>
+  </button>
+  <button style="flex:1;background:transparent;border:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#a3a3a3;font-family:inherit">
+    <svg class="icon" viewBox="0 0 24 24"><path d="m21.7 16.4-9.4 5.7a1 1 0 0 1-1 0l-9.4-5.7a1 1 0 0 1-.5-.9V8.5a1 1 0 0 1 .5-.9l9.4-5.7a1 1 0 0 1 1 0l9.4 5.7a1 1 0 0 1 .5.9v7a1 1 0 0 1-.5.9z"/><path d="m7.5 4.27 9 5.15M21 8.5l-9.5 5.5L2 8.5"/><path d="M12 22V14"/></svg>
+    <span style="font-size:11px;font-weight:500">무기고</span>
+  </button>
+  <button style="flex:1;background:transparent;border:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#a3a3a3;font-family:inherit">
+    <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    <span style="font-size:11px;font-weight:500">설정</span>
+  </button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=390,initial-scale=1" />
+<title>잘했어 — 페르소나</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
+  body{font-family:Inter,system-ui,-apple-system,sans-serif;background:#fafafa;color:#0a0a0a;width:390px;margin:0 auto;font-size:16px;line-height:1.5}
+  .icon{stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+</style>
+</head>
+<body>
+
+<!-- Status bar -->
+<div style="height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-size:14px;font-weight:600;background:#fafafa">
+  <span>9:41</span>
+  <span style="font-weight:700;font-size:13px">87%</span>
+</div>
+
+<!-- Top bar -->
+<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 20px 16px">
+  <button style="width:40px;height:40px;border-radius:9999px;background:#ffffff;border:1px solid #e5e5e5;display:flex;align-items:center;justify-content:center;color:#171717">
+    <svg class="icon" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+  </button>
+  <div style="font-size:14px;font-weight:600">AI 강점 페르소나</div>
+  <button style="width:40px;height:40px;border-radius:9999px;background:#ffffff;border:1px solid #e5e5e5;display:flex;align-items:center;justify-content:center;color:#171717">
+    <svg class="icon" style="width:18px;height:18px" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+  </button>
+</div>
+
+<!-- Persona Card (Hero) -->
+<div style="margin:0 20px;padding:28px 24px;border-radius:20px;background:linear-gradient(135deg,#171717 0%,#262626 100%);color:#fafafa;position:relative;overflow:hidden">
+  <div style="position:absolute;top:-30px;right:-30px;width:140px;height:140px;border-radius:9999px;background:rgba(250,250,250,0.04)"></div>
+  <div style="position:absolute;bottom:-40px;left:-20px;width:100px;height:100px;border-radius:9999px;background:rgba(250,250,250,0.03)"></div>
+
+  <div style="position:relative">
+    <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(250,250,250,0.1);border:1px solid rgba(250,250,250,0.15);border-radius:9999px;padding:5px 12px;font-size:11px;font-weight:600;color:#fafafa;margin-bottom:18px">
+      <svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      47개 기록 분석 · v3
+    </div>
+
+    <div style="font-size:13px;color:#a3a3a3;font-weight:500;margin-bottom:6px">당신은</div>
+    <div style="font-size:30px;font-weight:800;letter-spacing:-0.025em;line-height:1.15;margin-bottom:14px">조율형<br/>문제해결자</div>
+    <div style="font-size:14px;color:#d4d4d4;line-height:1.55">사람 사이를 매끄럽게 잇고, 갈등 속에서 합의를 끌어내는 사람. 데이터로 설득합니다.</div>
+  </div>
+</div>
+
+<!-- Strengths bars -->
+<div style="margin:20px;padding:20px;background:#ffffff;border:1px solid #e5e5e5;border-radius:16px">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+    <div style="font-size:15px;font-weight:700;letter-spacing:-0.01em">강점 분포</div>
+    <div style="font-size:11px;color:#737373;font-weight:500;display:flex;align-items:center;gap:4px">
+      <svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      최근 30일
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600">
+          <span style="width:8px;height:8px;border-radius:9999px;background:#0a0a0a"></span>
+          협업·조율
+        </div>
+        <span style="font-size:12px;color:#737373;font-weight:600">14회</span>
+      </div>
+      <div style="height:6px;background:#f5f5f5;border-radius:9999px;overflow:hidden">
+        <div style="width:78%;height:100%;background:#0a0a0a;border-radius:9999px"></div>
+      </div>
+    </div>
+
+    <div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600">
+          <span style="width:8px;height:8px;border-radius:9999px;background:#404040"></span>
+          문제해결
+        </div>
+        <span style="font-size:12px;color:#737373;font-weight:600">11회</span>
+      </div>
+      <div style="height:6px;background:#f5f5f5;border-radius:9999px;overflow:hidden">
+        <div style="width:62%;height:100%;background:#404040;border-radius:9999px"></div>
+      </div>
+    </div>
+
+    <div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600">
+          <span style="width:8px;height:8px;border-radius:9999px;background:#737373"></span>
+          주도성
+        </div>
+        <span style="font-size:12px;color:#737373;font-weight:600">8회</span>
+      </div>
+      <div style="height:6px;background:#f5f5f5;border-radius:9999px;overflow:hidden">
+        <div style="width:44%;height:100%;background:#737373;border-radius:9999px"></div>
+      </div>
+    </div>
+
+    <div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600">
+          <span style="width:8px;height:8px;border-radius:9999px;background:#a3a3a3"></span>
+          학습·성장
+        </div>
+        <span style="font-size:12px;color:#737373;font-weight:600">6회</span>
+      </div>
+      <div style="height:6px;background:#f5f5f5;border-radius:9999px;overflow:hidden">
+        <div style="width:33%;height:100%;background:#a3a3a3;border-radius:9999px"></div>
+      </div>
+    </div>
+
+    <div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600">
+          <span style="width:8px;height:8px;border-radius:9999px;background:#d4d4d4"></span>
+          창의·기획
+        </div>
+        <span style="font-size:12px;color:#737373;font-weight:600">5회</span>
+      </div>
+      <div style="height:6px;background:#f5f5f5;border-radius:9999px;overflow:hidden">
+        <div style="width:28%;height:100%;background:#d4d4d4;border-radius:9999px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AI Insight -->
+<div style="margin:0 20px 20px;padding:18px;background:#ffffff;border:1px solid #e5e5e5;border-radius:16px">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+    <div style="width:24px;height:24px;border-radius:9999px;background:#0a0a0a;color:#fafafa;display:flex;align-items:center;justify-content:center">
+      <svg class="icon" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <div style="font-size:13px;font-weight:700">AI가 본 당신</div>
+  </div>
+  <div style="font-size:14px;color:#171717;line-height:1.6">
+    최근 3주간 <span style="background:#fef3c7;padding:1px 5px;border-radius:4px;font-weight:600">갈등 조정</span> 상황에서 빛났어요. 4번의 충돌 중 4번 모두 합의로 끝낸 점이 인상적. 다음 면접에서 <span style="background:#dbeafe;padding:1px 5px;border-radius:4px;font-weight:600">"이해관계자 관리"</span> 키워드로 STAR 답변 준비하면 강해요.
+  </div>
+</div>
+
+<!-- This week's highlight -->
+<div style="margin:0 20px 20px">
+  <div style="font-size:15px;font-weight:700;letter-spacing:-0.01em;margin-bottom:12px;padding:0 4px">이번 주 빛난 순간</div>
+  <div style="padding:16px;border:1px solid #e5e5e5;border-radius:12px;background:#ffffff">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+      <div style="width:24px;height:24px;border-radius:9999px;background:#fef3c7;color:#f59e0b;display:flex;align-items:center;justify-content:center">
+        <svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div style="font-size:12px;font-weight:600;color:#737373">6월 6일 · 협업</div>
+    </div>
+    <div style="font-size:14px;font-weight:600;color:#0a0a0a;line-height:1.5">디자이너랑 충돌 있던 컴포넌트 명세, 30분 통화로 합의 끌어내고 문서로 정리</div>
+    <button style="margin-top:14px;width:100%;height:40px;border-radius:10px;background:#f5f5f5;border:0;color:#171717;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;gap:6px;font-family:inherit">
+      STAR 변환하기
+      <svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+<div style="height:80px"></div>
+
+</body>
+</html>

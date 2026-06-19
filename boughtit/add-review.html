@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BoughtIt — 리뷰 작성</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    background: #f5f5f5;
+    color: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .phone {
+    width: 390px;
+    min-height: 844px;
+    background: #ffffff;
+    position: relative;
+  }
+  .status-bar {
+    height: 54px;
+    padding: 14px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .nav-bar {
+    padding: 8px 20px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-bar .back {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 16px; font-weight: 500; color: #171717;
+    cursor: pointer; background: none; border: none;
+  }
+  .nav-bar .back svg { width: 20px; height: 20px; }
+  .nav-bar h2 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #171717;
+  }
+  .nav-bar .save-btn {
+    font-size: 15px;
+    font-weight: 600;
+    color: #7c3aed;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .form-content {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Photo Upload */
+  .photo-section {
+    display: flex;
+    gap: 10px;
+  }
+  .photo-upload {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #d4d4d4;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    background: #fafafa;
+  }
+  .photo-upload svg { width: 24px; height: 24px; color: #a3a3a3; }
+  .photo-upload span { font-size: 11px; color: #a3a3a3; font-weight: 500; }
+  .photo-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    background: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .photo-preview .placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #e0e7ff, #ddd6fe);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .photo-preview .placeholder svg { width: 32px; height: 32px; color: #7c3aed; }
+  .photo-preview .remove {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 20px; height: 20px;
+    border-radius: 9999px;
+    background: rgba(0,0,0,0.5);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .photo-preview .remove svg { width: 12px; height: 12px; color: #fff; }
+
+  /* AI Badge */
+  .ai-detect-badge {
+    background: linear-gradient(135deg, #f0f9ff, #ede9fe);
+    border: 1px solid #ddd6fe;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .ai-detect-badge .sparkle {
+    width: 28px; height: 28px;
+    background: #7c3aed;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .ai-detect-badge .sparkle svg { width: 14px; height: 14px; color: #fff; }
+  .ai-detect-badge .text {
+    font-size: 13px;
+    color: #525252;
+    line-height: 18px;
+  }
+  .ai-detect-badge .text strong { color: #171717; }
+
+  /* Form Fields */
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #171717;
+  }
+  .field input, .field textarea, .field select {
+    font-family: Inter, system-ui, sans-serif;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 15px;
+    color: #0a0a0a;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus {
+    border-color: #7c3aed;
+  }
+  .field textarea { resize: none; min-height: 80px; line-height: 22px; }
+  .field input::placeholder, .field textarea::placeholder { color: #a3a3a3; }
+  .field .hint { font-size: 12px; color: #a3a3a3; font-weight: 400; }
+
+  /* Rating */
+  .rating-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .rating-row .star {
+    width: 36px; height: 36px;
+    cursor: pointer;
+    color: #e5e5e5;
+  }
+  .rating-row .star.active { color: #f59e0b; }
+  .rating-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #737373;
+    margin-left: 4px;
+  }
+
+  /* Category Tags */
+  .category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .cat-tag {
+    padding: 8px 14px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #e5e5e5;
+    background: #ffffff;
+    color: #525252;
+    cursor: pointer;
+  }
+  .cat-tag.active {
+    background: #171717;
+    color: #fafafa;
+    border-color: #171717;
+  }
+
+  /* Price Input */
+  .price-wrapper {
+    position: relative;
+  }
+  .price-wrapper .currency {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    font-weight: 500;
+    color: #737373;
+  }
+  .price-wrapper input { padding-left: 26px; }
+
+  /* AI Generated Tags */
+  .ai-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+  .ai-tag {
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 500;
+    background: #ede9fe;
+    color: #7c3aed;
+  }
+
+  /* Submit Button */
+  .submit-area {
+    padding: 20px 20px 40px;
+  }
+  .submit-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #171717;
+    color: #fafafa;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Inter, system-ui, sans-serif;
+    cursor: pointer;
+  }
+  .submit-hint {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #a3a3a3;
+  }
+</style>
+</head>
+<body>
+<div class="phone">
+  <!-- Status Bar -->
+  <div class="status-bar">
+    <span>9:41</span>
+    <div style="display:flex;gap:6px;align-items:center">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="6" width="3" height="12" rx="1"/><rect x="6" y="4" width="3" height="14" rx="1"/><rect x="11" y="2" width="3" height="16" rx="1"/><rect x="16" y="6" width="3" height="12" rx="1"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2"/></svg>
+    </div>
+  </div>
+
+  <!-- Nav Bar -->
+  <div class="nav-bar">
+    <button class="back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <h2>리뷰 작성</h2>
+    <button class="save-btn">저장</button>
+  </div>
+
+  <div class="form-content">
+    <!-- Photo Upload -->
+    <div class="photo-section">
+      <div class="photo-preview">
+        <div class="placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1"/></svg>
+        </div>
+        <div class="remove">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </div>
+      </div>
+      <div class="photo-upload">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+        <span>사진 추가</span>
+      </div>
+    </div>
+
+    <!-- AI Auto-detect -->
+    <div class="ai-detect-badge">
+      <div class="sparkle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="M2 12h4"/><path d="M12 18v4"/><path d="M22 12h-4"/><path d="m19.07 4.93-2.83 2.83"/></svg>
+      </div>
+      <div class="text">
+        AI가 사진에서 <strong>Galaxy S26 Ultra</strong>를 인식했어요. 제품명과 카테고리가 자동 입력됩니다.
+      </div>
+    </div>
+
+    <!-- Product Name -->
+    <div class="field">
+      <label>제품명</label>
+      <input type="text" value="Galaxy S26 Ultra" placeholder="제품 이름을 입력해주세요">
+    </div>
+
+    <!-- Brand -->
+    <div class="field">
+      <label>브랜드</label>
+      <input type="text" value="삼성" placeholder="브랜드명 (선택)">
+    </div>
+
+    <!-- Category -->
+    <div class="field">
+      <label>카테고리</label>
+      <div class="category-tags">
+        <div class="cat-tag active">전자기기</div>
+        <div class="cat-tag">생활용품</div>
+        <div class="cat-tag">식품</div>
+        <div class="cat-tag">의류</div>
+        <div class="cat-tag">뷰티</div>
+        <div class="cat-tag">도서</div>
+        <div class="cat-tag">기타</div>
+      </div>
+    </div>
+
+    <!-- Rating -->
+    <div class="field">
+      <label>만족도</label>
+      <div class="rating-row">
+        <svg class="star active" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star active" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star active" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star active" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <span class="rating-label">만족</span>
+      </div>
+    </div>
+
+    <!-- Price -->
+    <div class="field">
+      <label>구매 가격</label>
+      <div class="price-wrapper">
+        <span class="currency">₩</span>
+        <input type="text" value="1,599,000" placeholder="가격 입력 (선택)">
+      </div>
+    </div>
+
+    <!-- Short Review -->
+    <div class="field">
+      <label>한줄 후기</label>
+      <textarea placeholder="이 제품에 대한 솔직한 느낌을 적어주세요">카메라 진짜 좋아졌고 S펜 반응속도도 빨라짐. 다만 무게가 좀 무거워서 한손 사용 불편.</textarea>
+      <div class="hint">AI가 장단점을 자동으로 분석해줘요</div>
+    </div>
+
+    <!-- AI Generated Tags -->
+    <div class="field">
+      <label>AI 추출 키워드</label>
+      <div class="ai-tags">
+        <span class="ai-tag">카메라 성능</span>
+        <span class="ai-tag">S펜</span>
+        <span class="ai-tag">무게감</span>
+        <span class="ai-tag">한손 조작</span>
+      </div>
+    </div>
+
+    <!-- Satisfaction Check-in -->
+    <div class="field">
+      <label>만족도 체크인 알림</label>
+      <select>
+        <option selected>1주 후 & 1개월 후</option>
+        <option>1주 후만</option>
+        <option>1개월 후만</option>
+        <option>알림 없음</option>
+      </select>
+      <div class="hint">시간이 지나도 만족하는지 다시 확인해줘요</div>
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <div class="submit-area">
+    <button class="submit-btn">리뷰 저장하기</button>
+    <div class="submit-hint">AI가 장단점과 태그를 자동 생성합니다</div>
+  </div>
+</div>
+</body>
+</html>

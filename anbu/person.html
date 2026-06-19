@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390, initial-scale=1.0">
+<title>안부 — 인물</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui,-apple-system,'Apple SD Gothic Neo',sans-serif;}
+  body{background:#f5f5f5;color:#0a0a0a;display:flex;justify-content:center;}
+  .app{width:390px;min-height:844px;background:#ffffff;display:flex;flex-direction:column;}
+  .status{height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-size:14px;font-weight:600;}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:8px 16px 4px;}
+  .iconbtn{width:36px;height:36px;border-radius:9999px;display:flex;align-items:center;justify-content:center;background:transparent;border:none;}
+  .hero{padding:20px 20px 16px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .avatar-lg{width:80px;height:80px;border-radius:9999px;background:#3b82f6;color:#fafafa;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;}
+  .person-name{font-size:22px;font-weight:700;letter-spacing:-0.02em;}
+  .person-sub{font-size:13px;color:#737373;}
+  .tags{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap;justify-content:center;}
+  .tag{font-size:11px;font-weight:500;padding:3px 10px;border-radius:9999px;background:#f5f5f5;color:#525252;}
+  .actions{display:flex;gap:8px;padding:8px 20px 16px;}
+  .act{flex:1;height:40px;border-radius:10px;border:1px solid #e5e5e5;background:#ffffff;display:flex;align-items:center;justify-content:center;gap:6px;font-size:13px;font-weight:500;color:#0a0a0a;}
+  .act.primary{background:#171717;color:#fafafa;border-color:#171717;}
+  .section{padding:0 20px;margin-bottom:20px;}
+  .section-title{font-size:13px;font-weight:600;color:#737373;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:10px;}
+  .row{display:flex;gap:8px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #f5f5f5;}
+  .row:last-child{border-bottom:none;}
+  .row-icon{width:28px;height:28px;border-radius:8px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#525252;}
+  .row-text{flex:1;font-size:14px;line-height:20px;color:#0a0a0a;}
+  .row-meta{font-size:12px;color:#737373;margin-top:2px;}
+  .card{background:#fafafa;border:1px solid #e5e5e5;border-radius:14px;padding:14px;margin-bottom:8px;}
+  .insight-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+  .insight-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:9999px;background:#171717;color:#fafafa;display:inline-flex;align-items:center;gap:4px;}
+  .insight-body{font-size:13px;color:#0a0a0a;line-height:19px;}
+  .insight-cta{margin-top:8px;font-size:12px;color:#3b82f6;font-weight:600;}
+  .timeline{position:relative;padding-left:20px;}
+  .timeline::before{content:'';position:absolute;left:5px;top:6px;bottom:6px;width:1.5px;background:#e5e5e5;}
+  .tl-item{position:relative;padding:6px 0 14px;}
+  .tl-dot{position:absolute;left:-19px;top:9px;width:10px;height:10px;border-radius:9999px;background:#fafafa;border:2px solid #171717;}
+  .tl-date{font-size:11px;color:#737373;font-weight:500;}
+  .tl-text{font-size:13px;color:#0a0a0a;line-height:18px;margin-top:2px;}
+  .meter{margin-top:10px;height:6px;background:#f5f5f5;border-radius:9999px;overflow:hidden;}
+  .meter-fill{height:100%;width:38%;background:#ef4444;border-radius:9999px;}
+  .meter-row{display:flex;justify-content:space-between;font-size:12px;color:#737373;margin-top:6px;}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="status"><span>9:41</span><span></span></div>
+  <div class="topbar">
+    <button class="iconbtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+    <button class="iconbtn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>
+  </div>
+
+  <div class="hero">
+    <div class="avatar-lg">민</div>
+    <div class="person-name">김민지</div>
+    <div class="person-sub">친구 · 마지막 연락 42일 전</div>
+    <div class="tags">
+      <div class="tag">대학동기</div>
+      <div class="tag">개발자</div>
+      <div class="tag">서울 거주</div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="act primary">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2.4"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg>
+      안부 보내기
+    </button>
+    <button class="act">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>
+      메모 추가
+    </button>
+  </div>
+
+  <div class="section">
+    <div class="section-title">AI 인사이트</div>
+    <div class="card">
+      <div class="insight-head">
+        <span class="insight-badge">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+          AI
+        </span>
+        <span style="font-size:12px;color:#737373;">42일째 연락 없음</span>
+      </div>
+      <div class="insight-body">평소 평균 연락 주기는 18일. 마지막 대화에서 <b>이직</b> 얘기 나왔는데 후속 안 물어봄. 슬쩍 안부 묻기 좋은 타이밍.</div>
+      <div class="insight-cta">메시지 제안 보기 →</div>
+    </div>
+    <div class="card">
+      <div class="insight-head">
+        <span class="insight-badge">친밀도</span>
+        <span style="font-size:12px;color:#737373;">최근 6개월 기준</span>
+      </div>
+      <div class="meter"><div class="meter-fill"></div></div>
+      <div class="meter-row"><span>38 / 100</span><span style="color:#ef4444;">하락 중</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">기억해둘 것</div>
+    <div class="row">
+      <div class="row-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <div><div class="row-text">생일 8월 14일</div><div class="row-meta">2개월 후</div></div>
+    </div>
+    <div class="row">
+      <div class="row-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <div><div class="row-text">밀가루 알레르기 있음</div><div class="row-meta">2025-12 식사 자리에서</div></div>
+    </div>
+    <div class="row">
+      <div class="row-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+      <div><div class="row-text">최근 관심사: 클라이밍, 일본어</div><div class="row-meta">대화 키워드 자동 추출</div></div>
+    </div>
+    <div class="row">
+      <div class="row-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 1.892.402 3.13 1.5 4.5L12 22l6.5-7.5c1.098-1.37 1.5-2.608 1.5-4.5a8 8 0 0 0-8-8z"/></svg></div>
+      <div><div class="row-text">반려묘 이름: 망고 (3살)</div><div class="row-meta">2025-09 메모</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">최근 만남 · 대화</div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">42일 전 · 카톡</div><div class="tl-text">"이직했어, 당근으로 옮김 ㅎㅎ" — 후속 확인 필요</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">3개월 전 · 만남</div><div class="tl-text">을지로 카페. 망고 사진 보여줌. 일본어 학원 등록했다고.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">5개월 전 · 통화</div><div class="tl-text">번아웃 호소. 휴직 고민 중이라고 했음.</div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

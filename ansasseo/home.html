@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>안샀어 — 홈</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',system-ui,sans-serif; background:#ffffff; color:#0a0a0a; width:390px; margin:0 auto; min-height:844px; padding-bottom:88px; }
+  .header { padding:20px 20px 12px; }
+  .greet { font-size:14px; color:#737373; font-weight:400; }
+  .title { font-size:30px; font-weight:600; letter-spacing:-0.025em; margin-top:2px; }
+  .summary { display:flex; gap:12px; padding:12px 20px 20px; }
+  .stat { flex:1; background:#fafafa; border:1px solid #e5e5e5; border-radius:12px; padding:14px; }
+  .stat .label { font-size:12px; color:#737373; }
+  .stat .value { font-size:24px; font-weight:600; letter-spacing:-0.025em; margin-top:4px; }
+  .stat .value.up { color:#22c55e; }
+  .stat .value.down { color:#ef4444; }
+  .seg { display:flex; gap:6px; padding:0 20px 16px; }
+  .seg button { flex:1; height:36px; border:1px solid #e5e5e5; background:#ffffff; border-radius:8px; font-size:14px; font-weight:500; color:#737373; cursor:pointer; }
+  .seg button.active { background:#171717; color:#fafafa; border-color:#171717; }
+  .list { padding:0 20px; display:flex; flex-direction:column; gap:12px; }
+  .card { border:1px solid #e5e5e5; border-radius:12px; padding:16px; background:#ffffff; }
+  .card-top { display:flex; justify-content:space-between; align-items:flex-start; }
+  .tk { display:flex; align-items:center; gap:10px; }
+  .logo { width:36px; height:36px; border-radius:9999px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:#171717; }
+  .name { font-size:16px; font-weight:600; }
+  .meta { font-size:12px; color:#737373; margin-top:1px; }
+  .badge { font-size:12px; font-weight:500; padding:2px 10px; border-radius:9999px; }
+  .badge.skip { background:#fef2f2; color:#ef4444; }
+  .badge.sold { background:#eff6ff; color:#3b82f6; }
+  .delta { text-align:right; }
+  .delta .pct { font-size:18px; font-weight:600; letter-spacing:-0.025em; }
+  .delta .pct.up { color:#22c55e; }
+  .delta .pct.down { color:#ef4444; }
+  .delta .since { font-size:12px; color:#737373; margin-top:1px; }
+  .reason { margin-top:12px; padding:10px 12px; background:#f5f5f5; border-radius:8px; font-size:13px; color:#404040; line-height:18px; }
+  .reason b { color:#737373; font-weight:500; }
+  .ai-line { display:flex; align-items:center; gap:6px; margin-top:10px; font-size:13px; font-weight:500; }
+  .ai-line.win { color:#ef4444; }
+  .ai-line.good { color:#22c55e; }
+  .tabbar { position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:390px; height:72px; background:#ffffff; border-top:1px solid #e5e5e5; display:flex; align-items:center; justify-content:space-around; padding-bottom:8px; }
+  .tab { display:flex; flex-direction:column; align-items:center; gap:3px; color:#a3a3a3; font-size:11px; font-weight:500; }
+  .tab.active { color:#171717; }
+  .fab { position:fixed; bottom:90px; left:50%; transform:translateX(calc(195px - 80px)); width:56px; height:56px; border-radius:9999px; background:#171717; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 15px rgba(0,0,0,0.2); }
+  svg { display:block; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="greet">윤재님, 이번 달 관망 종목</div>
+    <div class="title">안 샀어</div>
+  </div>
+
+  <div class="summary">
+    <div class="stat">
+      <div class="label">놓친 수익 (가상)</div>
+      <div class="value down">-₩412K</div>
+    </div>
+    <div class="stat">
+      <div class="label">잘 피한 손실</div>
+      <div class="value up">+₩168K</div>
+    </div>
+  </div>
+
+  <div class="seg">
+    <button class="active">전체</button>
+    <button>안 샀어</button>
+    <button>안 팔았어</button>
+  </div>
+
+  <div class="list">
+    <div class="card">
+      <div class="card-top">
+        <div class="tk">
+          <div class="logo">엔</div>
+          <div>
+            <div class="name">엔비디아 <span class="badge skip">안 샀어</span></div>
+            <div class="meta">5월 2일 · 관망가 $118.20</div>
+          </div>
+        </div>
+        <div class="delta">
+          <div class="pct up">+31.4%</div>
+          <div class="since">48일째</div>
+        </div>
+      </div>
+      <div class="reason"><b>그때 내 생각:</b> "너무 올랐어. 조정 오면 사자."</div>
+      <div class="ai-line win">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12A10 10 0 1 1 12 2"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        100주 샀다면 +₩412K — 가장 후회되는 결정
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="tk">
+          <div class="logo">에</div>
+          <div>
+            <div class="name">에코프로 <span class="badge sold">안 팔았어</span></div>
+            <div class="meta">4월 18일 · 관망가 ₩98,400</div>
+          </div>
+        </div>
+        <div class="delta">
+          <div class="pct down">-12.6%</div>
+          <div class="since">62일째</div>
+        </div>
+      </div>
+      <div class="reason"><b>그때 내 생각:</b> "익절할까? 아니 더 갈 것 같아."</div>
+      <div class="ai-line good">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        팔았으면 +₩124K 지킴 — 다음엔 익절 룰 지키자
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="tk">
+          <div class="logo">비</div>
+          <div>
+            <div class="name">비트코인 <span class="badge skip">안 샀어</span></div>
+            <div class="meta">6월 1일 · 관망가 ₩84.2M</div>
+          </div>
+        </div>
+        <div class="delta">
+          <div class="pct down">-4.1%</div>
+          <div class="since">18일째</div>
+        </div>
+      </div>
+      <div class="reason"><b>그때 내 생각:</b> "반감기 끝났으니 들어가볼까."</div>
+      <div class="ai-line good">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        안 사길 잘했어 — 아직은 관망이 맞았다
+      </div>
+    </div>
+  </div>
+
+  <div class="fab">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+  </div>
+
+  <div class="tabbar">
+    <div class="tab active">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      <span>관망</span>
+    </div>
+    <div class="tab">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+      <span>리포트</span>
+    </div>
+    <div class="tab">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+      <span>나의 습관</span>
+    </div>
+  </div>
+</body>
+</html>

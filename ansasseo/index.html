@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>안샀어 — 화면 모음</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',system-ui,sans-serif; background:#f5f5f5; color:#0a0a0a; padding:40px 16px; }
+  .wrap { max-width:1280px; margin:0 auto; }
+  h1 { font-size:36px; font-weight:800; letter-spacing:-0.025em; margin-bottom:8px; }
+  p.sub { font-size:16px; color:#737373; margin-bottom:32px; }
+  .row { display:flex; flex-wrap:wrap; gap:32px; justify-content:center; }
+  .frame { display:flex; flex-direction:column; align-items:center; gap:12px; }
+  .frame iframe { width:390px; height:844px; border:1px solid #e5e5e5; border-radius:24px; background:#fff; box-shadow:0 10px 15px rgba(0,0,0,0.1),0 4px 6px rgba(0,0,0,0.05); }
+  .frame span { font-size:14px; font-weight:500; color:#171717; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>안샀어 <span style="font-size:18px;font-weight:500;color:#737373;">(Woulda)</span></h1>
+    <p class="sub">AI 안 산 종목 후회 저널 — 살까 말까 했던 결정을 기록하고, AI가 "그때 샀더라면"을 채점</p>
+    <div class="row">
+      <div class="frame"><iframe src="home.html"></iframe><span>1. 홈 — 관망 리스트</span></div>
+      <div class="frame"><iframe src="add.html"></iframe><span>2. 결정 기록</span></div>
+      <div class="frame"><iframe src="verdict.html"></iframe><span>3. AI 채점 리포트</span></div>
+    </div>
+  </div>
+</body>
+</html>

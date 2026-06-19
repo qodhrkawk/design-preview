@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BoughtIt — AI 분석</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    background: #f5f5f5;
+    color: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .phone {
+    width: 390px;
+    min-height: 844px;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+  }
+  .status-bar {
+    height: 54px;
+    padding: 14px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .header {
+    padding: 8px 20px 20px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: #171717;
+  }
+  .header .subtitle {
+    font-size: 14px;
+    color: #737373;
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  .content {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 100px;
+  }
+
+  /* Stat Cards Row */
+  .stat-row {
+    display: flex;
+    gap: 10px;
+  }
+  .stat-card {
+    flex: 1;
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .stat-card .icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 8px;
+  }
+  .stat-card .icon svg { width: 16px; height: 16px; }
+  .stat-card .val {
+    font-size: 20px;
+    font-weight: 700;
+    color: #171717;
+  }
+  .stat-card .lbl {
+    font-size: 12px;
+    font-weight: 400;
+    color: #737373;
+    margin-top: 2px;
+  }
+
+  /* Section Card */
+  .section-card {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .section-card .sc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .section-card .sc-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #171717;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-card .sc-title svg { width: 16px; height: 16px; color: #7c3aed; }
+  .section-card .sc-link {
+    font-size: 13px;
+    color: #7c3aed;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  /* Satisfaction Trend */
+  .trend-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 120px;
+    padding: 0 4px;
+  }
+  .trend-bar-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .trend-bar {
+    width: 100%;
+    border-radius: 6px 6px 0 0;
+    min-height: 8px;
+  }
+  .trend-label {
+    font-size: 11px;
+    color: #a3a3a3;
+    font-weight: 500;
+  }
+  .trend-value {
+    font-size: 11px;
+    color: #171717;
+    font-weight: 600;
+  }
+
+  /* Category Breakdown */
+  .cat-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cat-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cat-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: #171717;
+    width: 70px;
+    flex-shrink: 0;
+  }
+  .cat-bar-bg {
+    flex: 1;
+    height: 8px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .cat-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+  }
+  .cat-count {
+    font-size: 12px;
+    color: #737373;
+    font-weight: 500;
+    width: 24px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* AI Insights List */
+  .insight-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .insight-item {
+    background: linear-gradient(135deg, #faf5ff, #f0f9ff);
+    border: 1px solid #e9d5ff;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .insight-emoji {
+    font-size: 20px;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .insight-text {
+    font-size: 13px;
+    color: #374151;
+    line-height: 19px;
+  }
+  .insight-text strong { color: #171717; }
+
+  /* Regret vs Worth */
+  .rw-section {
+    display: flex;
+    gap: 10px;
+  }
+  .rw-card {
+    flex: 1;
+    border-radius: 12px;
+    padding: 14px;
+  }
+  .rw-card.worth { background: #dcfce7; }
+  .rw-card.regret { background: #fee2e2; }
+  .rw-card .rw-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .rw-card.worth .rw-title { color: #166534; }
+  .rw-card.regret .rw-title { color: #991b1b; }
+  .rw-item {
+    font-size: 12px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .rw-card.worth .rw-item { color: #166534; }
+  .rw-card.regret .rw-item { color: #991b1b; }
+  .rw-item .dot {
+    width: 4px; height: 4px;
+    border-radius: 9999px;
+    flex-shrink: 0;
+  }
+  .rw-card.worth .dot { background: #22c55e; }
+  .rw-card.regret .dot { background: #ef4444; }
+
+  /* Check-in Reminder */
+  .checkin-card {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .checkin-icon {
+    width: 36px; height: 36px;
+    background: #f59e0b;
+    border-radius: 9999px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .checkin-icon svg { width: 18px; height: 18px; color: #fff; }
+  .checkin-text { flex: 1; }
+  .checkin-text .ct-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #92400e;
+  }
+  .checkin-text .ct-desc {
+    font-size: 12px;
+    color: #a16207;
+    margin-top: 2px;
+  }
+  .checkin-btn {
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: #f59e0b;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-family: Inter, system-ui, sans-serif;
+  }
+
+  /* Tab Bar */
+  .tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 390px;
+    height: 83px;
+    background: #ffffff;
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    padding: 8px 0 28px;
+    z-index: 10;
+  }
+  .tab-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+  }
+  .tab-item svg { width: 22px; height: 22px; color: #a3a3a3; }
+  .tab-item.active svg { color: #171717; }
+  .tab-item span { font-size: 10px; font-weight: 500; color: #a3a3a3; }
+  .tab-item.active span { color: #171717; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <!-- Status Bar -->
+  <div class="status-bar">
+    <span>9:41</span>
+    <div style="display:flex;gap:6px;align-items:center">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="6" width="3" height="12" rx="1"/><rect x="6" y="4" width="3" height="14" rx="1"/><rect x="11" y="2" width="3" height="16" rx="1"/><rect x="16" y="6" width="3" height="12" rx="1"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2"/></svg>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>AI 분석</h1>
+    <div class="subtitle">47개 리뷰 기반 · 최근 90일</div>
+  </div>
+
+  <div class="content">
+    <!-- Stats Row -->
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="icon" style="background:#dcfce7">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="val">72%</div>
+        <div class="lbl">만족 비율</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon" style="background:#fee2e2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round"><path d="M3 3l18 18"/><path d="M21 3 3 21"/></svg>
+        </div>
+        <div class="val">15%</div>
+        <div class="lbl">후회 비율</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon" style="background:#fef3c7">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="val">₩48K</div>
+        <div class="lbl">평균 단가</div>
+      </div>
+    </div>
+
+    <!-- Check-in Reminder -->
+    <div class="checkin-card">
+      <div class="checkin-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="checkin-text">
+        <div class="ct-title">체크인 3건 대기 중</div>
+        <div class="ct-desc">에어팟 프로 3 외 2건의 만족도 재평가</div>
+      </div>
+      <button class="checkin-btn">확인</button>
+    </div>
+
+    <!-- Satisfaction Trend -->
+    <div class="section-card">
+      <div class="sc-header">
+        <div class="sc-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          만족도 추이
+        </div>
+        <a href="#" class="sc-link">6개월</a>
+      </div>
+      <div class="trend-chart">
+        <div class="trend-bar-group">
+          <div class="trend-value">3.2</div>
+          <div class="trend-bar" style="height:52px;background:#fbbf24"></div>
+          <div class="trend-label">11월</div>
+        </div>
+        <div class="trend-bar-group">
+          <div class="trend-value">3.8</div>
+          <div class="trend-bar" style="height:68px;background:#a3e635"></div>
+          <div class="trend-label">12월</div>
+        </div>
+        <div class="trend-bar-group">
+          <div class="trend-value">4.2</div>
+          <div class="trend-bar" style="height:78px;background:#22c55e"></div>
+          <div class="trend-label">1월</div>
+        </div>
+        <div class="trend-bar-group">
+          <div class="trend-value">3.5</div>
+          <div class="trend-bar" style="height:58px;background:#fbbf24"></div>
+          <div class="trend-label">2월</div>
+        </div>
+        <div class="trend-bar-group">
+          <div class="trend-value">4.0</div>
+          <div class="trend-bar" style="height:74px;background:#22c55e"></div>
+          <div class="trend-label">3월</div>
+        </div>
+        <div class="trend-bar-group">
+          <div class="trend-value">4.1</div>
+          <div class="trend-bar" style="height:76px;background:#22c55e"></div>
+          <div class="trend-label">4월</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Breakdown -->
+    <div class="section-card">
+      <div class="sc-header">
+        <div class="sc-title">카테고리별 분포</div>
+      </div>
+      <div class="cat-breakdown">
+        <div class="cat-row">
+          <span class="cat-name">전자기기</span>
+          <div class="cat-bar-bg"><div class="cat-bar-fill" style="width:68%;background:#7c3aed"></div></div>
+          <span class="cat-count">18</span>
+        </div>
+        <div class="cat-row">
+          <span class="cat-name">생활용품</span>
+          <div class="cat-bar-bg"><div class="cat-bar-fill" style="width:42%;background:#3b82f6"></div></div>
+          <span class="cat-count">11</span>
+        </div>
+        <div class="cat-row">
+          <span class="cat-name">식품</span>
+          <div class="cat-bar-bg"><div class="cat-bar-fill" style="width:30%;background:#22c55e"></div></div>
+          <span class="cat-count">8</span>
+        </div>
+        <div class="cat-row">
+          <span class="cat-name">의류</span>
+          <div class="cat-bar-bg"><div class="cat-bar-fill" style="width:22%;background:#f59e0b"></div></div>
+          <span class="cat-count">6</span>
+        </div>
+        <div class="cat-row">
+          <span class="cat-name">기타</span>
+          <div class="cat-bar-bg"><div class="cat-bar-fill" style="width:15%;background:#a3a3a3"></div></div>
+          <span class="cat-count">4</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Insights -->
+    <div class="section-card">
+      <div class="sc-header">
+        <div class="sc-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="M2 12h4"/><path d="M12 18v4"/><path d="M22 12h-4"/><path d="m19.07 4.93-2.83 2.83"/></svg>
+          AI 패턴 분석
+        </div>
+      </div>
+      <div class="insight-list">
+        <div class="insight-item">
+          <div class="insight-emoji" style="font-size:16px;color:#7c3aed;font-weight:700">01</div>
+          <div class="insight-text"><strong>전자기기 충동구매 경향:</strong> ₩100만 이상 제품의 체크인 만족도가 평균 0.8점 하락. 구매 전 1주 대기 추천.</div>
+        </div>
+        <div class="insight-item">
+          <div class="insight-emoji" style="font-size:16px;color:#7c3aed;font-weight:700">02</div>
+          <div class="insight-text"><strong>생활용품 만족도 최고:</strong> 평균 4.5점. MUJI, 다이소 제품에서 일관되게 높은 만족도. 가성비가 핵심 키워드.</div>
+        </div>
+        <div class="insight-item">
+          <div class="insight-emoji" style="font-size:16px;color:#7c3aed;font-weight:700">03</div>
+          <div class="insight-text"><strong>의류는 온라인 구매 주의:</strong> 오프라인 4.1점 vs 온라인 2.8점. "실물과 다름"이 반복 키워드.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Worth vs Regret -->
+    <div class="rw-section">
+      <div class="rw-card worth">
+        <div class="rw-title">인생템 TOP 3</div>
+        <div class="rw-item"><span class="dot"></span> MUJI 스탠딩 데스크</div>
+        <div class="rw-item"><span class="dot"></span> 에어팟 맥스</div>
+        <div class="rw-item"><span class="dot"></span> 브리타 정수기</div>
+      </div>
+      <div class="rw-card regret">
+        <div class="rw-title">후회템 TOP 3</div>
+        <div class="rw-item"><span class="dot"></span> 나이키 에어맥스 DN</div>
+        <div class="rw-item"><span class="dot"></span> 무선 마사지건</div>
+        <div class="rw-item"><span class="dot"></span> 스마트 체중계</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Bar -->
+  <div class="tab-bar">
+    <div class="tab-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>홈</span>
+    </div>
+    <div class="tab-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+      <span>카테고리</span>
+    </div>
+    <div class="tab-item active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="M2 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="M12 18v4"/><path d="m19.07 19.07-2.83-2.83"/><path d="M22 12h-4"/><path d="m19.07 4.93-2.83 2.83"/></svg>
+      <span>AI 분석</span>
+    </div>
+    <div class="tab-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+      <span>프로필</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

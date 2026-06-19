@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SnackBrain - 관심분야 설정</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #f5f5f5;
+    color: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .phone {
+    width: 390px;
+    min-height: 100vh;
+    background: #ffffff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .status-bar {
+    height: 54px;
+    padding: 14px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .step-indicator {
+    padding: 16px 24px 8px;
+    display: flex;
+    gap: 8px;
+  }
+  .step-bar {
+    flex: 1;
+    height: 4px;
+    border-radius: 9999px;
+    background: #e5e5e5;
+  }
+  .step-bar.active { background: #171717; }
+  .step-bar.done { background: #171717; }
+  .onboard-content {
+    flex: 1;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .emoji-hero {
+    font-size: 56px;
+    text-align: center;
+    margin-bottom: 16px;
+    margin-top: 8px;
+  }
+  .onboard-title {
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 36px;
+    letter-spacing: -0.025em;
+    margin-bottom: 8px;
+  }
+  .onboard-subtitle {
+    font-size: 15px;
+    color: #737373;
+    text-align: center;
+    line-height: 22px;
+    margin-bottom: 32px;
+  }
+  .section-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #a3a3a3;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+  .topics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .topic-card {
+    padding: 20px 16px;
+    border: 2px solid #e5e5e5;
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #ffffff;
+  }
+  .topic-card:hover {
+    border-color: #a3a3a3;
+  }
+  .topic-card.selected {
+    border-color: #171717;
+    background: #fafafa;
+  }
+  .topic-card .emoji {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  .topic-card .name {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .topic-card .desc {
+    font-size: 12px;
+    color: #a3a3a3;
+  }
+  .topic-card.selected .check-mark {
+    display: block;
+  }
+  .check-mark {
+    display: none;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    background: #171717;
+    border-radius: 9999px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+  }
+  .topic-card {
+    position: relative;
+  }
+  .depth-section {
+    margin-bottom: 32px;
+  }
+  .depth-options {
+    display: flex;
+    gap: 8px;
+  }
+  .depth-option {
+    flex: 1;
+    padding: 12px 8px;
+    border: 2px solid #e5e5e5;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .depth-option.selected {
+    border-color: #171717;
+    background: #fafafa;
+  }
+  .depth-option .level { font-size: 20px; margin-bottom: 4px; }
+  .depth-option .label { font-size: 13px; font-weight: 600; }
+  .depth-option .sublabel { font-size: 11px; color: #a3a3a3; margin-top: 2px; }
+  .daily-section {
+    margin-bottom: 32px;
+  }
+  .daily-options {
+    display: flex;
+    gap: 10px;
+  }
+  .daily-option {
+    flex: 1;
+    padding: 16px 8px;
+    border: 2px solid #e5e5e5;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .daily-option.selected {
+    border-color: #171717;
+    background: #fafafa;
+  }
+  .daily-option .num {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 2px;
+  }
+  .daily-option .label {
+    font-size: 12px;
+    color: #737373;
+  }
+  .daily-option .time {
+    font-size: 11px;
+    color: #a3a3a3;
+    margin-top: 4px;
+  }
+  .spacer { flex: 1; }
+  .bottom-area {
+    padding: 0 24px 40px;
+  }
+  .count-label {
+    text-align: center;
+    font-size: 14px;
+    color: #737373;
+    margin-bottom: 12px;
+  }
+  .count-label strong { color: #171717; }
+  .start-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+    border: none;
+    background: #171717;
+    color: #fafafa;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .start-btn:hover { background: #404040; }
+  .skip-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: none;
+    font-size: 14px;
+    color: #a3a3a3;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="status-bar">
+    <span>14:00</span>
+    <span>📶 🔋</span>
+  </div>
+
+  <div class="step-indicator">
+    <div class="step-bar done"></div>
+    <div class="step-bar active"></div>
+    <div class="step-bar"></div>
+  </div>
+
+  <div class="onboard-content">
+    <div class="emoji-hero">🧠</div>
+    <h1 class="onboard-title">관심 분야를 골라봐</h1>
+    <p class="onboard-subtitle">AI가 매일 맞춤 학습 카드를 만들어줄게.<br>최소 2개 이상 선택해줘.</p>
+
+    <div class="section-label">분야 선택</div>
+    <div class="topics-grid">
+      <div class="topic-card selected">
+        <span class="check-mark" style="display:block;">✓</span>
+        <div class="emoji">📈</div>
+        <div class="name">투자</div>
+        <div class="desc">주식, 경제, 재테크</div>
+      </div>
+      <div class="topic-card selected">
+        <span class="check-mark" style="display:block;">✓</span>
+        <div class="emoji">🤖</div>
+        <div class="name">AI · 테크</div>
+        <div class="desc">AI 트렌드, 도구 활용</div>
+      </div>
+      <div class="topic-card">
+        <span class="check-mark">✓</span>
+        <div class="emoji">⚡</div>
+        <div class="name">생산성</div>
+        <div class="desc">시간관리, 습관, GTD</div>
+      </div>
+      <div class="topic-card selected">
+        <span class="check-mark" style="display:block;">✓</span>
+        <div class="emoji">💻</div>
+        <div class="name">코딩</div>
+        <div class="desc">웹개발, 앱개발, 팁</div>
+      </div>
+      <div class="topic-card">
+        <span class="check-mark">✓</span>
+        <div class="emoji">🧘</div>
+        <div class="name">멘탈 · 심리</div>
+        <div class="desc">마인드셋, 스트레스 관리</div>
+      </div>
+      <div class="topic-card">
+        <span class="check-mark">✓</span>
+        <div class="emoji">🎨</div>
+        <div class="name">디자인</div>
+        <div class="desc">UI/UX, 비주얼, 브랜드</div>
+      </div>
+    </div>
+
+    <div class="daily-section">
+      <div class="section-label">하루 목표량</div>
+      <div class="daily-options">
+        <div class="daily-option">
+          <div class="num">3</div>
+          <div class="label">가볍게</div>
+          <div class="time">~9분</div>
+        </div>
+        <div class="daily-option selected">
+          <div class="num">5</div>
+          <div class="label">보통</div>
+          <div class="time">~15분</div>
+        </div>
+        <div class="daily-option">
+          <div class="num">10</div>
+          <div class="label">빡세게</div>
+          <div class="time">~30분</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="depth-section">
+      <div class="section-label">난이도</div>
+      <div class="depth-options">
+        <div class="depth-option">
+          <div class="level">🌱</div>
+          <div class="label">입문</div>
+          <div class="sublabel">기초부터</div>
+        </div>
+        <div class="depth-option selected">
+          <div class="level">🌿</div>
+          <div class="label">중급</div>
+          <div class="sublabel">핵심 위주</div>
+        </div>
+        <div class="depth-option">
+          <div class="level">🌳</div>
+          <div class="label">고급</div>
+          <div class="sublabel">심화 분석</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-area">
+    <div class="count-label"><strong>3개</strong> 분야 선택됨 · 하루 <strong>5장</strong></div>
+    <button class="start-btn">시작하기 🚀</button>
+    <button class="skip-btn">나중에 설정할게</button>
+  </div>
+</div>
+</body>
+</html>

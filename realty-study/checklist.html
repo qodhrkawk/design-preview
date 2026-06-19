@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>체크리스트 · 부동산</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--background:#ffffff;--foreground:#0a0a0a;--card:#ffffff;--primary:#171717;--primary-foreground:#fafafa;--muted:#f5f5f5;--muted-foreground:#737373;--border:#e5e5e5;--ring:#a3a3a3;--warning:#f59e0b;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Inter,system-ui,sans-serif;background:#f5f5f5;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;}
+.phone{width:390px;background:var(--background);min-height:100vh;padding-bottom:72px;}
+.topbar{position:sticky;top:0;background:var(--background);border-bottom:1px solid var(--border);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-size:17px;font-weight:700;letter-spacing:-0.02em;}.sub{font-size:13px;color:var(--muted-foreground);font-weight:500;}
+.body{padding:16px;}.row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+h2{font-size:18px;font-weight:700;letter-spacing:-0.02em;}
+.desc{font-size:12px;color:var(--muted-foreground);margin-bottom:16px;line-height:18px;}
+.btn-primary{background:var(--primary);color:var(--primary-foreground);border:none;border-radius:8px;padding:0 14px;height:36px;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;}
+.cat{font-size:13px;font-weight:700;margin:0 0 8px 2px;}
+.item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:11px 13px;margin-bottom:7px;display:flex;justify-content:space-between;align-items:center;}
+.il{font-size:14px;font-weight:600;}.ix{color:var(--warning);font-size:11px;font-weight:700;}.ih{font-size:11px;color:var(--muted-foreground);margin-top:2px;}
+.tabbar{position:fixed;bottom:0;width:390px;background:var(--background);border-top:1px solid var(--border);display:flex;}
+.tab{flex:1;text-align:center;padding:9px 0 12px;font-size:11px;color:var(--muted-foreground);font-weight:500;}.tab.on{color:var(--foreground);font-weight:600;}.tab .ic{font-size:20px;display:block;margin-bottom:2px;}
+</style></head><body>
+<div class="phone">
+  <div class="topbar"><div class="logo">🏠 부동산 공부</div><div class="sub">윤재 · 여친</div></div>
+  <div class="body">
+    <div class="row"><h2>체크리스트 항목</h2><button class="btn-primary">+ 항목 추가</button></div>
+    <div class="desc">공부하면서 항목을 추가/수정해나가자. 가중치(×)가 높을수록 점수에 더 반영돼.</div>
+
+    <div class="cat">입지·교통</div>
+    <div class="item"><div><div class="il">역세권 (지하철 도보거리) <span class="ix">×2</span></div><div class="ih">도보 10분 이내면 좋음</div></div></div>
+    <div class="item"><div><div class="il">버스/주요도로 접근성</div><div class="ih">출퇴근 경로 고려</div></div></div>
+    <div class="item"><div><div class="il">직장/생활권까지 통근시간 <span class="ix">×2</span></div><div class="ih">실제 통근 시뮬레이션</div></div></div>
+
+    <div class="cat" style="margin-top:16px;">건물·세대</div>
+    <div class="item"><div><div class="il">건물 연식·관리상태 <span class="ix">×2</span></div><div class="ih">외벽/공용부 청결</div></div></div>
+    <div class="item"><div><div class="il">채광·향 (남향 등) <span class="ix">×2</span></div><div class="ih">실제 방문시 햇빛 체크</div></div></div>
+    <div class="item"><div><div class="il">곰팡이·누수·결로 <span class="ix">×2</span></div><div class="ih">화장실/베란다/창틀 확인</div></div></div>
+
+    <div class="cat" style="margin-top:16px;">권리·법률</div>
+    <div class="item"><div><div class="il">등기부등본 (근저당/가압류) <span class="ix">×3</span></div><div class="ih">융자 과다 여부 ⚠️</div></div></div>
+    <div class="item"><div><div class="il">전입세대열람·선순위 <span class="ix">×3</span></div><div class="ih">전세면 보증금 안전성 ⚠️</div></div></div>
+
+    <div class="cat" style="margin-top:16px;">가격·가치</div>
+    <div class="item"><div><div class="il">시세 대비 적정성 <span class="ix">×3</span></div><div class="ih">실거래가/네이버 비교</div></div></div>
+    <div class="item"><div><div class="il">향후 개발·호재 <span class="ix">×2</span></div><div class="ih">재건축/교통/개발계획</div></div></div>
+  </div>
+  <div class="tabbar"><div class="tab"><span class="ic">📚</span>공부</div><div class="tab"><span class="ic">🏠</span>매물</div><div class="tab on"><span class="ic">✅</span>체크리스트</div></div>
+</div></body></html>

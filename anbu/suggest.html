@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390, initial-scale=1.0">
+<title>안부 — 메시지 제안</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui,-apple-system,'Apple SD Gothic Neo',sans-serif;}
+  body{background:#f5f5f5;color:#0a0a0a;display:flex;justify-content:center;}
+  .app{width:390px;min-height:844px;background:#ffffff;display:flex;flex-direction:column;}
+  .status{height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-size:14px;font-weight:600;}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:8px 16px;border-bottom:1px solid #f5f5f5;}
+  .iconbtn{width:36px;height:36px;border-radius:9999px;display:flex;align-items:center;justify-content:center;background:transparent;border:none;}
+  .topbar-title{font-size:15px;font-weight:600;}
+  .target{padding:14px 20px 8px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f5f5f5;}
+  .avatar{width:36px;height:36px;border-radius:9999px;background:#3b82f6;color:#fafafa;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;}
+  .target-name{font-size:14px;font-weight:600;}
+  .target-meta{font-size:11px;color:#737373;}
+  .controls{padding:16px 20px;display:flex;flex-direction:column;gap:14px;}
+  .control-label{font-size:12px;font-weight:600;color:#737373;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{font-size:13px;font-weight:500;padding:7px 12px;border-radius:9999px;background:#f5f5f5;color:#525252;border:1px solid transparent;}
+  .chip.active{background:#171717;color:#fafafa;border-color:#171717;}
+  .divider{height:1px;background:#f5f5f5;margin:0 20px;}
+  .messages{padding:16px 20px 8px;display:flex;flex-direction:column;gap:10px;}
+  .head{display:flex;align-items:center;justify-content:space-between;}
+  .head-title{font-size:13px;font-weight:600;color:#0a0a0a;}
+  .head-cta{font-size:12px;color:#3b82f6;font-weight:600;display:flex;align-items:center;gap:4px;}
+  .msg{background:#fafafa;border:1px solid #e5e5e5;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px;}
+  .msg.selected{border:1.5px solid #171717;background:#ffffff;box-shadow:0 4px 12px rgba(0,0,0,0.05);}
+  .msg-head{display:flex;align-items:center;justify-content:space-between;}
+  .style-badge{font-size:10px;font-weight:600;padding:3px 8px;border-radius:9999px;background:#171717;color:#fafafa;}
+  .style-badge.alt{background:#f5f5f5;color:#525252;}
+  .msg-len{font-size:11px;color:#a3a3a3;}
+  .msg-body{font-size:14px;line-height:21px;color:#0a0a0a;}
+  .msg-actions{display:flex;gap:8px;}
+  .mini{height:32px;padding:0 12px;border-radius:8px;background:#ffffff;border:1px solid #e5e5e5;font-size:12px;font-weight:500;color:#525252;display:flex;align-items:center;gap:5px;}
+  .mini.primary{background:#171717;color:#fafafa;border-color:#171717;}
+  .footer{position:sticky;bottom:0;background:#ffffff;border-top:1px solid #e5e5e5;padding:12px 20px 20px;display:flex;gap:10px;}
+  .btn{flex:1;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:14px;font-weight:600;border:none;}
+  .btn-secondary{background:#f5f5f5;color:#0a0a0a;flex:0 0 88px;}
+  .btn-primary{background:#171717;color:#fafafa;}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="status"><span>9:41</span><span></span></div>
+  <div class="topbar">
+    <button class="iconbtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+    <div class="topbar-title">메시지 제안</div>
+    <button class="iconbtn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></button>
+  </div>
+
+  <div class="target">
+    <div class="avatar">민</div>
+    <div style="flex:1;">
+      <div class="target-name">김민지에게</div>
+      <div class="target-meta">42일째 연락 안 함 · 이직 후속 안부</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div>
+      <div class="control-label">톤</div>
+      <div class="chips">
+        <div class="chip">짧고 가볍게</div>
+        <div class="chip active">친근하게</div>
+        <div class="chip">진지하게</div>
+        <div class="chip">유머</div>
+      </div>
+    </div>
+    <div>
+      <div class="control-label">맥락 포함</div>
+      <div class="chips">
+        <div class="chip active">이직 안부</div>
+        <div class="chip active">망고 (반려묘)</div>
+        <div class="chip">일본어 학원</div>
+        <div class="chip">날씨</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="messages">
+    <div class="head">
+      <div class="head-title">AI 제안 3가지</div>
+      <div class="head-cta">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg>
+        다시 생성
+      </div>
+    </div>
+
+    <div class="msg selected">
+      <div class="msg-head">
+        <span class="style-badge">추천 · 친근</span>
+        <span class="msg-len">58자</span>
+      </div>
+      <div class="msg-body">민지야, 당근 옮긴 지 한 달 좀 넘었지? 새 팀은 좀 적응됐어? 망고도 잘 있고? 🐱</div>
+      <div class="msg-actions">
+        <button class="mini primary">선택</button>
+        <button class="mini">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>
+          편집
+        </button>
+        <button class="mini">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          복사
+        </button>
+      </div>
+    </div>
+
+    <div class="msg">
+      <div class="msg-head">
+        <span class="style-badge alt">짧게</span>
+        <span class="msg-len">22자</span>
+      </div>
+      <div class="msg-body">오랜만! 잘 지내? 당근은 어때 ㅎㅎ</div>
+      <div class="msg-actions">
+        <button class="mini primary">선택</button>
+        <button class="mini">편집</button>
+      </div>
+    </div>
+
+    <div class="msg">
+      <div class="msg-head">
+        <span class="style-badge alt">길게</span>
+        <span class="msg-len">94자</span>
+      </div>
+      <div class="msg-body">민지! 지난번에 당근 간다고 한 게 벌써 한 달 반이네. 적응 잘 하고 있어? 새 팀 분위기는 어때? 우리 마지막에 본 게 을지로였는데 그 카페 또 가고 싶다 ㅎㅎ</div>
+      <div class="msg-actions">
+        <button class="mini primary">선택</button>
+        <button class="mini">편집</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button class="btn btn-secondary">초안 저장</button>
+    <button class="btn btn-primary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2.4"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg>
+      카톡으로 보내기
+    </button>
+  </div>
+</div>
+</body>
+</html>

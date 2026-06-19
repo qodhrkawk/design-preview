@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>매물 상세 · 부동산 공부</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--background:#ffffff;--foreground:#0a0a0a;--card:#ffffff;--primary:#171717;--primary-foreground:#fafafa;--secondary:#f5f5f5;--secondary-foreground:#171717;--muted:#f5f5f5;--muted-foreground:#737373;--border:#e5e5e5;--ring:#a3a3a3;--success:#22c55e;--warning:#f59e0b;--info:#3b82f6;--destructive:#ef4444;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:Inter,system-ui,sans-serif;background:#f5f5f5;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;}
+  .phone{width:390px;background:var(--background);min-height:100vh;}
+  .body{padding:16px;}
+  .back{background:none;border:1px solid var(--border);border-radius:8px;padding:7px 12px;font-size:13px;font-weight:500;color:var(--foreground);cursor:pointer;font-family:inherit;margin-bottom:14px;}
+  .info{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px;}
+  .iname{font-size:18px;font-weight:700;letter-spacing:-0.02em;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .badge{padding:2px 10px;border-radius:9999px;font-size:11px;font-weight:600;background:#dcfce7;color:#16a34a;}
+  .meta{font-size:13px;color:var(--muted-foreground);margin-top:5px;}
+  .memo{font-size:13px;line-height:20px;background:var(--muted);border-radius:8px;padding:10px 12px;margin-top:10px;}
+  .cmp{display:flex;gap:10px;margin-bottom:14px;}
+  .cmp-card{flex:1;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center;}
+  .cmp-name{font-size:12px;color:var(--muted-foreground);}
+  .cmp-score{font-size:30px;font-weight:800;letter-spacing:-0.02em;margin-top:2px;}
+  .who{font-size:12px;color:var(--muted-foreground);margin-bottom:7px;}
+  .seg{display:flex;gap:8px;margin-bottom:18px;}
+  .seg button{flex:1;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--background);color:var(--muted-foreground);font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;}
+  .seg button.on{background:var(--primary);color:var(--primary-foreground);border-color:var(--primary);}
+  .cat{font-size:13px;font-weight:700;color:var(--foreground);margin:0 0 8px 2px;}
+  .item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:8px;}
+  .ilabel{font-size:14px;font-weight:600;}
+  .ix{color:var(--warning);font-size:11px;font-weight:700;}
+  .ihint{font-size:11px;color:var(--muted-foreground);margin-top:2px;}
+  .scale{display:flex;gap:6px;margin-top:9px;}
+  .scale button{flex:1;height:38px;border-radius:8px;border:1px solid var(--border);background:var(--muted);color:var(--muted-foreground);font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;}
+  .scale button.sel{background:var(--success);color:#fff;border-color:var(--success);font-weight:800;}
+  .scale button.sel.mid{background:var(--warning);border-color:var(--warning);}
+  .scale button.sel.low{background:var(--destructive);border-color:var(--destructive);}
+  .compare{display:flex;gap:14px;margin-top:9px;}
+  .compare span{font-size:11px;color:var(--muted-foreground);}
+  .compare b{font-weight:700;}
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="body">
+    <button class="back">← 매물 목록</button>
+    <div class="info">
+      <div class="iname">래미안 강남포레 84A <span class="badge">관심 ★</span></div>
+      <div class="meta">매매 · 18.5억 · 아파트 · 84㎡ (34평) · 12/20층</div>
+      <div class="meta">📍 서울 강남구 도곡동</div>
+      <div class="memo">남향, 채광 좋음. 역까지 도보 7분. 관리상태 깔끔.</div>
+    </div>
+
+    <div class="cmp">
+      <div class="cmp-card"><div class="cmp-name">윤재</div><div class="cmp-score" style="color:var(--success);">86.7</div></div>
+      <div class="cmp-card"><div class="cmp-name">여친</div><div class="cmp-score" style="color:var(--warning);">78.0</div></div>
+    </div>
+
+    <div class="who">누가 점수 매기는 중?</div>
+    <div class="seg"><button class="on">윤재</button><button>여친</button></div>
+
+    <div class="cat">입지·교통</div>
+    <div class="item">
+      <div class="ilabel">역세권 (지하철 도보거리) <span class="ix">×2</span></div>
+      <div class="ihint">도보 10분 이내면 좋음</div>
+      <div class="scale"><button>1</button><button>2</button><button>3</button><button>4</button><button class="sel">5</button></div>
+      <div class="compare"><span>윤재: <b style="color:var(--success);">5</b></span><span>여친: <b style="color:var(--warning);">4</b></span></div>
+    </div>
+    <div class="item">
+      <div class="ilabel">직장/생활권까지 통근시간 <span class="ix">×2</span></div>
+      <div class="ihint">실제 통근 시뮬레이션</div>
+      <div class="scale"><button>1</button><button>2</button><button>3</button><button class="sel mid">4</button><button>5</button></div>
+      <div class="compare"><span>윤재: <b style="color:var(--warning);">4</b></span><span>여친: <b style="color:var(--warning);">3</b></span></div>
+    </div>
+
+    <div class="cat" style="margin-top:16px;">건물·세대</div>
+    <div class="item">
+      <div class="ilabel">채광·향 (남향 등) <span class="ix">×2</span></div>
+      <div class="ihint">실제 방문시 햇빛 체크</div>
+      <div class="scale"><button>1</button><button>2</button><button>3</button><button>4</button><button class="sel">5</button></div>
+      <div class="compare"><span>윤재: <b style="color:var(--success);">5</b></span><span>여친: <b style="color:var(--success);">5</b></span></div>
+    </div>
+    <div class="item">
+      <div class="ilabel">곰팡이·누수·결로 <span class="ix">×2</span></div>
+      <div class="ihint">화장실/베란다/창틀 확인</div>
+      <div class="scale"><button>1</button><button>2</button><button>3</button><button class="sel mid">4</button><button>5</button></div>
+      <div class="compare"><span>윤재: <b style="color:var(--warning);">4</b></span><span>여친: <b style="color:var(--warning);">3</b></span></div>
+    </div>
+
+    <div class="cat" style="margin-top:16px;">권리·법률</div>
+    <div class="item">
+      <div class="ilabel">등기부등본 (근저당/가압류) <span class="ix">×3</span></div>
+      <div class="ihint">융자 과다 여부 ⚠️</div>
+      <div class="scale"><button>1</button><button>2</button><button class="sel mid">3</button><button>4</button><button>5</button></div>
+      <div class="compare"><span>윤재: <b style="color:var(--warning);">3</b></span><span>여친: <b style="color:var(--warning);">3</b></span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
