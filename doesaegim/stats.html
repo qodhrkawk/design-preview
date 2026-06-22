@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>그럴수도 — 패턴</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',system-ui,sans-serif; background:#ffffff; color:#0a0a0a; width:390px; margin:0 auto; min-height:844px; padding-bottom:88px; }
+  .header { padding:24px 20px 6px; }
+  .title { font-size:30px; font-weight:600; letter-spacing:-0.025em; }
+  .sub { font-size:14px; color:#737373; margin-top:4px; }
+  /* hero stat */
+  .hero { margin:18px 20px 0; padding:22px; border:1px solid #e5e5e5; border-radius:16px; background:#fafafa; text-align:center; }
+  .hero .big { font-size:52px; font-weight:800; letter-spacing:-0.03em; color:#16a34a; line-height:1; }
+  .hero .cap { font-size:14px; color:#404040; margin-top:8px; line-height:20px; }
+  .hero .cap b { color:#16a34a; }
+  .grid { display:flex; gap:12px; padding:16px 20px 0; }
+  .stat { flex:1; border:1px solid #e5e5e5; border-radius:12px; padding:14px; }
+  .stat .l { font-size:12px; color:#737373; }
+  .stat .v { font-size:24px; font-weight:600; letter-spacing:-0.025em; margin-top:4px; }
+  .sec-t { font-size:14px; font-weight:600; padding:24px 20px 10px; }
+  /* trigger bars */
+  .trig { padding:0 20px; }
+  .trow { margin-bottom:14px; }
+  .ttop { display:flex; justify-content:space-between; font-size:13px; margin-bottom:6px; }
+  .ttop .n { font-weight:500; color:#404040; }
+  .ttop .c { color:#737373; }
+  .track { height:8px; background:#f5f5f5; border-radius:9999px; overflow:hidden; }
+  .fill { height:100%; border-radius:9999px; background:#171717; }
+  .insight { margin:8px 20px 0; padding:16px; border:1px solid #e5e5e5; border-radius:12px; display:flex; gap:12px; }
+  .ic { width:36px; height:36px; border-radius:9999px; background:#f5f5f5; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+  .insight .h { font-size:13px; font-weight:600; margin-bottom:4px; }
+  .insight .b { font-size:13px; color:#404040; line-height:19px; }
+  .tabbar { position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:390px; height:72px; background:#ffffff; border-top:1px solid #e5e5e5; display:flex; align-items:center; justify-content:space-around; padding-bottom:8px; }
+  .tab { display:flex; flex-direction:column; align-items:center; gap:3px; color:#a3a3a3; font-size:11px; font-weight:500; }
+  .tab.active { color:#171717; }
+  svg { display:block; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title">패턴</div>
+    <div class="sub">곱씹은 것 중 실제로 별일이었던 비율</div>
+  </div>
+
+  <div class="hero">
+    <div class="big">88%</div>
+    <div class="cap">네가 곱씹은 일의 <b>88%는 별일 아니었어.</b><br>다음에 또 곱씹을 때 이 숫자 기억해.</div>
+  </div>
+
+  <div class="grid">
+    <div class="stat">
+      <div class="l">이번 달 곱씹기</div>
+      <div class="v">17번</div>
+    </div>
+    <div class="stat">
+      <div class="l">평균 별일도</div>
+      <div class="v">23<span style="font-size:14px;color:#737373;">/100</span></div>
+    </div>
+  </div>
+
+  <div class="sec-t">어디서 제일 많이 곱씹어?</div>
+  <div class="trig">
+    <div class="trow">
+      <div class="ttop"><span class="n">카톡·DM</span><span class="c">7번 · 평균 별일 18</span></div>
+      <div class="track"><div class="fill" style="width:70%;"></div></div>
+    </div>
+    <div class="trow">
+      <div class="ttop"><span class="n">상사·윗사람</span><span class="c">5번 · 평균 별일 34</span></div>
+      <div class="track"><div class="fill" style="width:50%;background:#f59e0b;"></div></div>
+    </div>
+    <div class="trow">
+      <div class="ttop"><span class="n">회식·모임</span><span class="c">3번 · 평균 별일 15</span></div>
+      <div class="track"><div class="fill" style="width:30%;"></div></div>
+    </div>
+    <div class="trow">
+      <div class="ttop"><span class="n">친구</span><span class="c">2번 · 평균 별일 11</span></div>
+      <div class="track"><div class="fill" style="width:20%;"></div></div>
+    </div>
+  </div>
+
+  <div class="sec-t">AI 인사이트</div>
+  <div class="insight">
+    <div class="ic">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 2.4 1.2 4.5 3 5.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 0 0-7-7Z"/><path d="M9 21h6"/></svg>
+    </div>
+    <div>
+      <div class="h">'카톡' 보낸 직후가 위험해</div>
+      <div class="b">메시지 보내고 5분 안에 곱씹는 게 많아. 근데 별일도는 평균 18로 제일 낮음. 보내고 바로 폰 덮는 연습 ㄱ?</div>
+    </div>
+  </div>
+
+  <div class="tabbar">
+    <div class="tab">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      따져보기
+    </div>
+    <div class="tab active">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+      패턴
+    </div>
+    <div class="tab">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+      나
+    </div>
+  </div>
+</body>
+</html>
