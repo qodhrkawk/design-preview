@@ -21,18 +21,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: line/package-lock.json
 
-      - name: Install dependencies
+      # 'line' is an optional Vite app. Its build must never block static previews.
+      - name: Build line (optional)
+        id: line
+        continue-on-error: true
         run: |
-          cd line
-          npm ci
-
-      - name: Build
-        run: |
-          cd line
-          npm run build
+          if [ -f line/package.json ]; then
+            cd line
+            npm install --no-audit --no-fund
+            npm run build
+          else
+            echo "no line project; skipping"
+          fi
 
       - name: Prepare site
         run: |
@@ -44,7 +45,9 @@ jobs:
             --exclude='.git' \
             --exclude='node_modules' \
             . _site/
-          cp -r line/dist _site/line
+          if [ -d line/dist ]; then
+            cp -r line/dist _site/line
+          fi
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
