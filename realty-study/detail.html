@@ -2,98 +2,148 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>매물 상세 · 부동산 공부</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{--background:#ffffff;--foreground:#0a0a0a;--card:#ffffff;--primary:#171717;--primary-foreground:#fafafa;--secondary:#f5f5f5;--secondary-foreground:#171717;--muted:#f5f5f5;--muted-foreground:#737373;--border:#e5e5e5;--ring:#a3a3a3;--success:#22c55e;--warning:#f59e0b;--info:#3b82f6;--destructive:#ef4444;}
+  :root{
+    --background:#ffffff; --foreground:#0a0a0a; --card:#ffffff;
+    --primary:#171717; --primary-foreground:#fafafa;
+    --secondary:#f5f5f5; --secondary-foreground:#171717;
+    --muted:#f5f5f5; --muted-foreground:#737373;
+    --accent:#f5f5f5; --border:#e5e5e5; --input:#e5e5e5; --ring:#a3a3a3;
+    --success:#22c55e; --warning:#f59e0b; --info:#3b82f6; --destructive:#ef4444;
+  }
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:Inter,system-ui,sans-serif;background:#f5f5f5;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;}
-  .phone{width:390px;background:var(--background);min-height:100vh;}
-  .body{padding:16px;}
-  .back{background:none;border:1px solid var(--border);border-radius:8px;padding:7px 12px;font-size:13px;font-weight:500;color:var(--foreground);cursor:pointer;font-family:inherit;margin-bottom:14px;}
-  .info{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px;}
-  .iname{font-size:18px;font-weight:700;letter-spacing:-0.02em;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-  .badge{padding:2px 10px;border-radius:9999px;font-size:11px;font-weight:600;background:#dcfce7;color:#16a34a;}
-  .meta{font-size:13px;color:var(--muted-foreground);margin-top:5px;}
-  .memo{font-size:13px;line-height:20px;background:var(--muted);border-radius:8px;padding:10px 12px;margin-top:10px;}
-  .cmp{display:flex;gap:10px;margin-bottom:14px;}
-  .cmp-card{flex:1;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center;}
-  .cmp-name{font-size:12px;color:var(--muted-foreground);}
-  .cmp-score{font-size:30px;font-weight:800;letter-spacing:-0.02em;margin-top:2px;}
-  .who{font-size:12px;color:var(--muted-foreground);margin-bottom:7px;}
-  .seg{display:flex;gap:8px;margin-bottom:18px;}
-  .seg button{flex:1;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--background);color:var(--muted-foreground);font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;}
-  .seg button.on{background:var(--primary);color:var(--primary-foreground);border-color:var(--primary);}
-  .cat{font-size:13px;font-weight:700;color:var(--foreground);margin:0 0 8px 2px;}
-  .item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:8px;}
-  .ilabel{font-size:14px;font-weight:600;}
-  .ix{color:var(--warning);font-size:11px;font-weight:700;}
-  .ihint{font-size:11px;color:var(--muted-foreground);margin-top:2px;}
-  .scale{display:flex;gap:6px;margin-top:9px;}
-  .scale button{flex:1;height:38px;border-radius:8px;border:1px solid var(--border);background:var(--muted);color:var(--muted-foreground);font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;}
+  body{font-family:Inter,system-ui,sans-serif;background:#f5f5f5;color:var(--foreground);-webkit-font-smoothing:antialiased;display:flex;justify-content:center;}
+  .phone{width:100%;max-width:390px;background:var(--background);min-height:100vh;padding-bottom:96px;}
+  svg{display:block;}
+  /* topbar */
+  .topbar{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;gap:8px;z-index:10;}
+  .iconbtn{width:36px;height:36px;border:none;background:none;border-radius:9px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--foreground);}
+  .iconbtn:active{background:var(--muted);}
+  .iconbtn .ic{width:22px;height:22px;}
+  .tbtitle{font-size:15px;font-weight:700;letter-spacing:-0.01em;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .body{padding:18px 20px;}
+  /* info */
+  .info{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
+  .iname{font-size:19px;font-weight:800;letter-spacing:-0.02em;display:flex;align-items:center;gap:8px;flex-wrap:wrap;line-height:1.25;}
+  .badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:9999px;font-size:11px;font-weight:600;line-height:1;background:#dcfce7;color:#15803d;}
+  .badge .ic{width:12px;height:12px;}
+  .meta{display:flex;align-items:center;gap:5px;font-size:13px;color:var(--muted-foreground);margin-top:8px;font-weight:500;}
+  .meta .ic{width:14px;height:14px;flex-shrink:0;}
+  .memo{display:flex;gap:8px;font-size:13px;line-height:1.5;background:var(--muted);border-radius:10px;padding:12px;margin-top:14px;color:var(--secondary-foreground);}
+  .memo .ic{width:15px;height:15px;flex-shrink:0;margin-top:2px;color:var(--muted-foreground);}
+  /* compare */
+  .cmp{display:flex;gap:12px;margin-bottom:20px;}
+  .cmp-card{flex:1;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px 14px;text-align:center;box-shadow:0 1px 2px rgba(0,0,0,.04);}
+  .cmp-name{font-size:12px;color:var(--muted-foreground);font-weight:600;display:flex;align-items:center;justify-content:center;gap:5px;}
+  .cmp-name .ic{width:13px;height:13px;}
+  .cmp-score{font-size:32px;font-weight:800;letter-spacing:-0.03em;margin-top:4px;line-height:1;}
+  .cmp-prog{font-size:11px;color:var(--ring);font-weight:600;margin-top:4px;}
+  /* section title */
+  .sect{font-size:13px;font-weight:700;color:var(--muted-foreground);margin:0 0 10px 2px;text-transform:uppercase;letter-spacing:.03em;}
+  /* segment */
+  .seg{display:flex;gap:0;margin-bottom:22px;background:var(--muted);border-radius:11px;padding:4px;}
+  .seg button{flex:1;padding:9px;border-radius:8px;border:none;background:none;color:var(--muted-foreground);font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:6px;}
+  .seg button .ic{width:15px;height:15px;}
+  .seg button.on{background:var(--background);color:var(--foreground);box-shadow:0 1px 2px rgba(0,0,0,.08);}
+  /* category */
+  .cat{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:700;color:var(--foreground);margin:22px 0 10px 2px;letter-spacing:-0.01em;}
+  .cat:first-of-type{margin-top:0;}
+  .cat .ic{width:17px;height:17px;color:var(--muted-foreground);}
+  .item{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:10px;}
+  .ihead{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
+  .ilabel{font-size:14px;font-weight:600;line-height:1.35;}
+  .weight{flex-shrink:0;background:var(--secondary);color:var(--muted-foreground);font-size:11px;font-weight:700;padding:2px 7px;border-radius:6px;}
+  .ihint{display:flex;align-items:center;gap:4px;font-size:12px;color:var(--muted-foreground);margin-top:4px;}
+  .ihint .ic{width:13px;height:13px;flex-shrink:0;}
+  .scale{display:flex;gap:7px;margin-top:12px;}
+  .scale button{flex:1;height:42px;border-radius:10px;border:1px solid var(--border);background:var(--background);color:var(--muted-foreground);font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;}
   .scale button.sel{background:var(--success);color:#fff;border-color:var(--success);font-weight:800;}
   .scale button.sel.mid{background:var(--warning);border-color:var(--warning);}
   .scale button.sel.low{background:var(--destructive);border-color:var(--destructive);}
-  .compare{display:flex;gap:14px;margin-top:9px;}
-  .compare span{font-size:11px;color:var(--muted-foreground);}
-  .compare b{font-weight:700;}
+  .compare{display:flex;gap:8px;margin-top:11px;}
+  .cpill{display:inline-flex;align-items:center;gap:5px;background:var(--muted);border-radius:8px;padding:5px 10px;font-size:12px;color:var(--muted-foreground);font-weight:500;}
+  .cpill b{font-weight:800;}
+  /* save bar */
+  .savebar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:390px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);border-top:1px solid var(--border);padding:14px 20px calc(14px + env(safe-area-inset-bottom));}
+  .btn-save{width:100%;height:48px;background:var(--primary);color:var(--primary-foreground);border:none;border-radius:12px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;}
+  .btn-save .ic{width:18px;height:18px;}
 </style>
 </head>
 <body>
 <div class="phone">
+  <div class="topbar">
+    <button class="iconbtn"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <div class="tbtitle">래미안 강남포레 84A</div>
+    <button class="iconbtn"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></button>
+  </div>
   <div class="body">
-    <button class="back">← 매물 목록</button>
     <div class="info">
-      <div class="iname">래미안 강남포레 84A <span class="badge">관심 ★</span></div>
-      <div class="meta">매매 · 18.5억 · 아파트 · 84㎡ (34평) · 12/20층</div>
-      <div class="meta">📍 서울 강남구 도곡동</div>
-      <div class="memo">남향, 채광 좋음. 역까지 도보 7분. 관리상태 깔끔.</div>
+      <div class="iname">래미안 강남포레 84A
+        <span class="badge"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l2.9 6.2 6.8.6-5.1 4.5 1.5 6.7L12 17l-6 3.5 1.5-6.7L2.4 9.3l6.8-.6z"/></svg>관심</span>
+      </div>
+      <div class="meta"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>매매 18.5억 · 아파트 · 84㎡ (34평) · 12/20층</div>
+      <div class="meta"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>서울 강남구 도곡동</div>
+      <div class="memo"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7.5a2.5 2.5 0 0 1 2.5 2.5c0 1.5-2.5 2-2.5 4"/><path d="M4 22V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H8z"/></svg><span>남향, 채광 좋음. 역까지 도보 7분. 관리상태 깔끔.</span></div>
     </div>
 
     <div class="cmp">
-      <div class="cmp-card"><div class="cmp-name">윤재</div><div class="cmp-score" style="color:var(--success);">86.7</div></div>
-      <div class="cmp-card"><div class="cmp-name">여친</div><div class="cmp-score" style="color:var(--warning);">78.0</div></div>
+      <div class="cmp-card">
+        <div class="cmp-name"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v1"/></svg>윤재</div>
+        <div class="cmp-score" style="color:var(--success);">86.7</div>
+        <div class="cmp-prog">13/23 평가</div>
+      </div>
+      <div class="cmp-card">
+        <div class="cmp-name"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v1"/></svg>여친</div>
+        <div class="cmp-score" style="color:var(--warning);">78.0</div>
+        <div class="cmp-prog">13/23 평가</div>
+      </div>
     </div>
 
-    <div class="who">누가 점수 매기는 중?</div>
-    <div class="seg"><button class="on">윤재</button><button>여친</button></div>
+    <div class="sect">점수 매기는 중</div>
+    <div class="seg"><button class="on"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v1"/></svg>윤재</button><button><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v1"/></svg>여친</button></div>
 
-    <div class="cat">입지·교통</div>
+    <div class="cat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20 3 17V4l6 3 6-3 6 3v13l-6-3-6 3z"/><path d="M9 7v13"/><path d="M15 4v13"/></svg>입지·교통</div>
     <div class="item">
-      <div class="ilabel">역세권 (지하철 도보거리) <span class="ix">×2</span></div>
-      <div class="ihint">도보 10분 이내면 좋음</div>
+      <div class="ihead"><div class="ilabel">역세권 (지하철 도보거리)</div><span class="weight">×2</span></div>
+      <div class="ihint"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>도보 10분 이내면 좋음</div>
       <div class="scale"><button>1</button><button>2</button><button>3</button><button>4</button><button class="sel">5</button></div>
-      <div class="compare"><span>윤재: <b style="color:var(--success);">5</b></span><span>여친: <b style="color:var(--warning);">4</b></span></div>
+      <div class="compare"><span class="cpill">윤재 <b style="color:var(--success);">5</b></span><span class="cpill">여친 <b style="color:var(--warning);">4</b></span></div>
     </div>
     <div class="item">
-      <div class="ilabel">직장/생활권까지 통근시간 <span class="ix">×2</span></div>
-      <div class="ihint">실제 통근 시뮬레이션</div>
+      <div class="ihead"><div class="ilabel">직장/생활권까지 통근시간</div><span class="weight">×2</span></div>
+      <div class="ihint"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>실제 통근 시뮬레이션</div>
       <div class="scale"><button>1</button><button>2</button><button>3</button><button class="sel mid">4</button><button>5</button></div>
-      <div class="compare"><span>윤재: <b style="color:var(--warning);">4</b></span><span>여친: <b style="color:var(--warning);">3</b></span></div>
+      <div class="compare"><span class="cpill">윤재 <b style="color:var(--warning);">4</b></span><span class="cpill">여친 <b style="color:var(--warning);">3</b></span></div>
     </div>
 
-    <div class="cat" style="margin-top:16px;">건물·세대</div>
+    <div class="cat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/></svg>건물·세대</div>
     <div class="item">
-      <div class="ilabel">채광·향 (남향 등) <span class="ix">×2</span></div>
-      <div class="ihint">실제 방문시 햇빛 체크</div>
+      <div class="ihead"><div class="ilabel">채광·향 (남향 등)</div><span class="weight">×2</span></div>
+      <div class="ihint"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.9 4.9 1.4 1.4"/><path d="m17.7 17.7 1.4 1.4"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.3 17.7-1.4 1.4"/><path d="m19.1 4.9-1.4 1.4"/></svg>실제 방문시 햇빛 체크</div>
       <div class="scale"><button>1</button><button>2</button><button>3</button><button>4</button><button class="sel">5</button></div>
-      <div class="compare"><span>윤재: <b style="color:var(--success);">5</b></span><span>여친: <b style="color:var(--success);">5</b></span></div>
+      <div class="compare"><span class="cpill">윤재 <b style="color:var(--success);">5</b></span><span class="cpill">여친 <b style="color:var(--success);">5</b></span></div>
     </div>
     <div class="item">
-      <div class="ilabel">곰팡이·누수·결로 <span class="ix">×2</span></div>
-      <div class="ihint">화장실/베란다/창틀 확인</div>
+      <div class="ihead"><div class="ilabel">곰팡이·누수·결로</div><span class="weight">×2</span></div>
+      <div class="ihint"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7"/></svg>화장실/베란다/창틀 확인</div>
       <div class="scale"><button>1</button><button>2</button><button>3</button><button class="sel mid">4</button><button>5</button></div>
-      <div class="compare"><span>윤재: <b style="color:var(--warning);">4</b></span><span>여친: <b style="color:var(--warning);">3</b></span></div>
+      <div class="compare"><span class="cpill">윤재 <b style="color:var(--warning);">4</b></span><span class="cpill">여친 <b style="color:var(--warning);">3</b></span></div>
     </div>
 
-    <div class="cat" style="margin-top:16px;">권리·법률</div>
+    <div class="cat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16v-3a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v3"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>권리·법률</div>
     <div class="item">
-      <div class="ilabel">등기부등본 (근저당/가압류) <span class="ix">×3</span></div>
-      <div class="ihint">융자 과다 여부 ⚠️</div>
+      <div class="ihead"><div class="ilabel">등기부등본 (근저당/가압류)</div><span class="weight">×3</span></div>
+      <div class="ihint"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>융자 과다 여부 주의</div>
       <div class="scale"><button>1</button><button>2</button><button class="sel mid">3</button><button>4</button><button>5</button></div>
-      <div class="compare"><span>윤재: <b style="color:var(--warning);">3</b></span><span>여친: <b style="color:var(--warning);">3</b></span></div>
+      <div class="compare"><span class="cpill">윤재 <b style="color:var(--warning);">3</b></span><span class="cpill">여친 <b style="color:var(--warning);">3</b></span></div>
     </div>
+  </div>
+
+  <div class="savebar">
+    <button class="btn-save"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg>윤재 점수 저장</button>
   </div>
 </div>
 </body>
