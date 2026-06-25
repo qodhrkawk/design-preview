@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>또그거 — 런북 상세</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:Inter,system-ui,sans-serif; background:#f5f5f5; display:flex; justify-content:center; }
+  .app { width:390px; min-height:844px; background:#ffffff; position:relative; padding-bottom:88px; }
+  .icon { width:20px; height:20px; stroke:currentColor; stroke-width:2; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+  .step-num { width:28px; height:28px; border-radius:9999px; background:#171717; color:#fafafa; font-size:14px; font-weight:600; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+</style>
+</head>
+<body>
+<div class="app">
+  <!-- Header -->
+  <div style="padding:20px 20px 8px; display:flex; align-items:center; gap:12px;">
+    <div style="width:40px; height:40px; border-radius:9999px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; color:#171717;">
+      <svg class="icon" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+    </div>
+    <div style="flex:1;"></div>
+    <div style="width:40px; height:40px; border-radius:9999px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; color:#171717;">
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+    </div>
+  </div>
+
+  <!-- Title block -->
+  <div style="padding:8px 20px 12px;">
+    <div style="display:flex; gap:8px; margin-bottom:8px;">
+      <span style="background:#f5f5f5; color:#171717; border-radius:9999px; padding:2px 10px; font-size:12px; font-weight:500;">기기</span>
+      <span style="background:#f5f5f5; color:#737373; border-radius:9999px; padding:2px 10px; font-size:12px; font-weight:500;">2번 꺼내봄</span>
+    </div>
+    <div style="font-size:24px; line-height:32px; font-weight:600; letter-spacing:-0.01em; color:#0a0a0a;">공유기 인터넷 끊겼을 때</div>
+    <div style="font-size:14px; line-height:20px; color:#737373; margin-top:6px;">작년 11월 기록 · AI가 정리한 5단계</div>
+  </div>
+
+  <!-- AI summary banner -->
+  <div style="margin:0 20px 16px; background:#f5f5f5; border-radius:12px; padding:14px; display:flex; gap:10px; align-items:flex-start;">
+    <div style="color:#171717; flex-shrink:0; margin-top:1px;">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M12 2v4"/><path d="m6.4 6.4 2.8 2.8"/><path d="M2 12h4"/><path d="M12 18v4"/><path d="m17.6 17.6-2.8-2.8"/><path d="M18 12h4"/></svg>
+    </div>
+    <div style="font-size:14px; line-height:20px; color:#171717;">대부분 <b>3번(전원 30초)</b> 에서 해결됐어. 거기부터 해봐.</div>
+  </div>
+
+  <!-- Prep -->
+  <div style="padding:0 20px 8px;">
+    <div style="font-size:12px; line-height:16px; color:#737373; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:8px;">준비물</div>
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:12px 16px; display:flex; align-items:center; gap:10px;">
+      <div style="color:#171717;"><svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <span style="font-size:14px; line-height:20px; color:#0a0a0a;">클립 or 이쑤시개 (리셋 버튼용)</span>
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <div style="padding:16px 20px 8px;">
+    <div style="font-size:12px; line-height:16px; color:#737373; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:12px;">단계</div>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+
+      <div style="display:flex; gap:12px; align-items:flex-start;">
+        <div class="step-num">1</div>
+        <div style="flex:1; padding-top:3px;">
+          <div style="font-size:14px; line-height:20px; color:#0a0a0a; font-weight:500;">공유기 뒷면 LED 확인</div>
+          <div style="font-size:14px; line-height:20px; color:#737373; margin-top:2px;">인터넷 LED가 빨강이면 회선 문제, 꺼져있으면 전원 문제.</div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px; align-items:flex-start;">
+        <div class="step-num">2</div>
+        <div style="flex:1; padding-top:3px;">
+          <div style="font-size:14px; line-height:20px; color:#0a0a0a; font-weight:500;">모뎀(작은 박스) 먼저 재부팅</div>
+          <div style="font-size:14px; line-height:20px; color:#737373; margin-top:2px;">전원 뽑고 1분 → 다시 꽂고 LED 안정될 때까지 대기.</div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px; align-items:flex-start;">
+        <div class="step-num" style="background:#22c55e;">3</div>
+        <div style="flex:1; padding-top:3px;">
+          <div style="font-size:14px; line-height:20px; color:#0a0a0a; font-weight:500;">공유기 전원 30초 뽑았다 꽂기</div>
+          <div style="font-size:14px; line-height:20px; color:#737373; margin-top:2px;">여기서 보통 해결됨. 모뎀 안정 후 1~2분 대기.</div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px; align-items:flex-start;">
+        <div class="step-num">4</div>
+        <div style="flex:1; padding-top:3px;">
+          <div style="font-size:14px; line-height:20px; color:#0a0a0a; font-weight:500;">그래도 안 되면 192.168.0.1 접속</div>
+          <div style="font-size:14px; line-height:20px; color:#737373; margin-top:2px;">관리자 ID admin / 내 메모: 비번은 영수증 사진 참고.</div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px; align-items:flex-start;">
+        <div class="step-num">5</div>
+        <div style="flex:1; padding-top:3px;">
+          <div style="font-size:14px; line-height:20px; color:#0a0a0a; font-weight:500;">최후엔 KT 100번 / 기사 방문</div>
+          <div style="font-size:14px; line-height:20px; color:#737373; margin-top:2px;">회선 장애면 내가 할 거 없음. 바로 전화.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom action -->
+  <div style="position:absolute; bottom:0; left:0; right:0; padding:16px 20px 28px; background:#ffffff; border-top:1px solid #e5e5e5; display:flex; gap:8px;">
+    <div style="flex:1; height:48px; background:#171717; color:#fafafa; border-radius:8px; display:flex; align-items:center; justify-content:center; gap:8px; font-size:14px; font-weight:500;">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+      이 단계 따라하기
+    </div>
+    <div style="width:48px; height:48px; background:#f5f5f5; border:1px solid #e5e5e5; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#171717;">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+    </div>
+  </div>
+</div>
+</body>
+</html>

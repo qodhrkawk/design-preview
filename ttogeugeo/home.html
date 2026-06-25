@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>또그거 — 홈</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:Inter,system-ui,sans-serif; background:#f5f5f5; display:flex; justify-content:center; }
+  .app { width:390px; min-height:844px; background:#ffffff; position:relative; padding-bottom:88px; }
+  .icon { width:20px; height:20px; stroke:currentColor; stroke-width:2; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+</style>
+</head>
+<body>
+<div class="app">
+  <!-- Header -->
+  <div style="padding:20px 20px 12px; display:flex; align-items:center; justify-content:space-between;">
+    <div>
+      <div style="font-size:12px; line-height:16px; color:#737373; font-weight:500;">내 라이프 런북</div>
+      <div style="font-size:30px; line-height:36px; font-weight:800; letter-spacing:-0.025em; color:#0a0a0a;">또그거</div>
+    </div>
+    <div style="width:40px; height:40px; border-radius:9999px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; color:#171717;">
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    </div>
+  </div>
+
+  <!-- AI nudge card -->
+  <div style="margin:8px 20px 4px; background:#171717; border-radius:12px; padding:16px; display:flex; gap:12px; align-items:flex-start;">
+    <div style="width:32px; height:32px; border-radius:8px; background:#262626; display:flex; align-items:center; justify-content:center; color:#fafafa; flex-shrink:0;">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M12 2v4"/><path d="m6.4 6.4 2.8 2.8"/><path d="M2 12h4"/><path d="M12 18v4"/><path d="m17.6 17.6-2.8-2.8"/><path d="M18 12h4"/></svg>
+    </div>
+    <div>
+      <div style="font-size:14px; line-height:20px; font-weight:600; color:#fafafa;">너 이거 전에 해봤어</div>
+      <div style="font-size:14px; line-height:20px; color:#a3a3a3; margin-top:2px;">"공유기 인터넷 끊김"은 작년 11월에 정리해뒀어. 그 단계 다시 볼래?</div>
+    </div>
+  </div>
+
+  <!-- Stats row -->
+  <div style="display:flex; gap:8px; padding:16px 20px 8px;">
+    <div style="flex:1; background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:14px;">
+      <div style="font-size:24px; line-height:32px; font-weight:600; color:#0a0a0a;">37</div>
+      <div style="font-size:12px; line-height:16px; color:#737373;">저장된 런북</div>
+    </div>
+    <div style="flex:1; background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:14px;">
+      <div style="font-size:24px; line-height:32px; font-weight:600; color:#0a0a0a;">12</div>
+      <div style="font-size:12px; line-height:16px; color:#737373;">다시 꺼내본 횟수</div>
+    </div>
+  </div>
+
+  <!-- Section title -->
+  <div style="padding:12px 20px 8px; display:flex; align-items:center; justify-content:space-between;">
+    <div style="font-size:16px; line-height:24px; font-weight:600; color:#0a0a0a;">최근 런북</div>
+    <div style="font-size:12px; line-height:16px; color:#737373; font-weight:500;">전체보기</div>
+  </div>
+
+  <!-- Runbook list -->
+  <div style="padding:0 20px; display:flex; flex-direction:column; gap:8px;">
+    <!-- item -->
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px; display:flex; gap:12px; align-items:center;">
+      <div style="width:40px; height:40px; border-radius:10px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; color:#171717; flex-shrink:0;">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><path d="M12 20h.01"/></svg>
+      </div>
+      <div style="flex:1; min-width:0;">
+        <div style="font-size:14px; line-height:20px; font-weight:600; color:#0a0a0a;">공유기 인터넷 끊겼을 때</div>
+        <div style="font-size:12px; line-height:16px; color:#737373; margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">5단계 · 준비물 1개 · 작년 11월</div>
+      </div>
+      <span style="background:#f5f5f5; color:#171717; border-radius:9999px; padding:2px 10px; font-size:12px; font-weight:500;">기기</span>
+    </div>
+
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px; display:flex; gap:12px; align-items:center;">
+      <div style="width:40px; height:40px; border-radius:10px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; color:#171717; flex-shrink:0;">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 0 5 0 5 0c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 7c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65"/></svg>
+      </div>
+      <div style="flex:1; min-width:0;">
+        <div style="font-size:14px; line-height:20px; font-weight:600; color:#0a0a0a;">연말정산 간소화 자료 받기</div>
+        <div style="font-size:12px; line-height:16px; color:#737373; margin-top:2px;">7단계 · 매년 1월 리마인드</div>
+      </div>
+      <span style="background:#f5f5f5; color:#171717; border-radius:9999px; padding:2px 10px; font-size:12px; font-weight:500;">행정</span>
+    </div>
+
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px; display:flex; gap:12px; align-items:center;">
+      <div style="width:40px; height:40px; border-radius:10px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; color:#171717; flex-shrink:0;">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+      </div>
+      <div style="flex:1; min-width:0;">
+        <div style="font-size:14px; line-height:20px; font-weight:600; color:#0a0a0a;">보일러 외출모드 + 온수 설정</div>
+        <div style="font-size:12px; line-height:16px; color:#737373; margin-top:2px;">4단계 · 사진 2장</div>
+      </div>
+      <span style="background:#f5f5f5; color:#171717; border-radius:9999px; padding:2px 10px; font-size:12px; font-weight:500;">집</span>
+    </div>
+
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px; display:flex; gap:12px; align-items:center;">
+      <div style="width:40px; height:40px; border-radius:10px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; color:#171717; flex-shrink:0;">
+        <svg class="icon" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+      </div>
+      <div style="flex:1; min-width:0;">
+        <div style="font-size:14px; line-height:20px; font-weight:600; color:#0a0a0a;">쿠팡 부분 환불 요청하기</div>
+        <div style="font-size:12px; line-height:16px; color:#737373; margin-top:2px;">6단계 · 2번 꺼내봄</div>
+      </div>
+      <span style="background:#f5f5f5; color:#171717; border-radius:9999px; padding:2px 10px; font-size:12px; font-weight:500;">금융</span>
+    </div>
+  </div>
+
+  <!-- FAB -->
+  <div style="position:absolute; right:20px; bottom:104px; width:56px; height:56px; border-radius:9999px; background:#171717; display:flex; align-items:center; justify-content:center; color:#fafafa; box-shadow:0 10px 15px rgba(0,0,0,0.1),0 4px 6px rgba(0,0,0,0.05);">
+    <svg class="icon" viewBox="0 0 24 24" style="width:24px;height:24px;"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+  </div>
+
+  <!-- Bottom nav -->
+  <div style="position:absolute; bottom:0; left:0; right:0; height:64px; background:#ffffff; border-top:1px solid #e5e5e5; display:flex; align-items:center; justify-content:space-around; padding:0 24px;">
+    <div style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#171717;">
+      <svg class="icon" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span style="font-size:12px; line-height:16px; font-weight:500;">홈</span>
+    </div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#737373;">
+      <svg class="icon" viewBox="0 0 24 24"><line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/></svg>
+      <span style="font-size:12px; line-height:16px;">런북</span>
+    </div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#737373;">
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span style="font-size:12px; line-height:16px;">알림</span>
+    </div>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:4px; color:#737373;">
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+      <span style="font-size:12px; line-height:16px;">내정보</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
