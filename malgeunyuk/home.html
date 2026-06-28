@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>말근육 · 오늘의 훈련</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:Inter,system-ui,sans-serif; background:#f5f5f5; display:flex; justify-content:center; min-height:100vh; }
+  .app { width:100%; max-width:390px; background:#ffffff; min-height:100vh; padding:0 0 96px; position:relative; }
+  .head { padding:56px 20px 16px; }
+  .greet { font-size:14px; color:#737373; font-weight:500; }
+  .title { font-size:30px; font-weight:800; letter-spacing:-0.025em; color:#0a0a0a; margin-top:4px; }
+  .streak { display:inline-flex; align-items:center; gap:6px; margin-top:12px; background:#f5f5f5; border-radius:9999px; padding:6px 12px; font-size:12px; font-weight:600; color:#171717; }
+  .section { padding:8px 20px; }
+  .label { font-size:11px; font-weight:600; color:#737373; letter-spacing:0.05em; text-transform:uppercase; margin:20px 0 10px; }
+  .today-card { border:1px solid #e5e5e5; border-radius:16px; padding:24px; background:#0a0a0a; }
+  .today-tag { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600; color:#a3a3a3; }
+  .today-prompt { font-size:20px; line-height:28px; font-weight:600; color:#fafafa; margin:14px 0 20px; }
+  .start-btn { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; height:48px; background:#fafafa; color:#171717; border:none; border-radius:10px; font-size:15px; font-weight:600; cursor:pointer; }
+  .cards { display:flex; flex-direction:column; gap:12px; }
+  .card { display:flex; align-items:center; gap:14px; border:1px solid #e5e5e5; border-radius:12px; padding:16px; }
+  .ico { width:40px; height:40px; flex-shrink:0; border-radius:10px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; }
+  .ico svg { width:20px; height:20px; stroke:#171717; }
+  .ctxt { flex:1; }
+  .cname { font-size:15px; font-weight:600; color:#0a0a0a; }
+  .cdesc { font-size:13px; color:#737373; margin-top:2px; }
+  .badge { font-size:11px; font-weight:600; color:#22c55e; background:#f0fdf4; border-radius:9999px; padding:3px 9px; }
+  .nav { position:fixed; bottom:0; width:100%; max-width:390px; height:64px; background:#ffffff; border-top:1px solid #e5e5e5; display:flex; }
+  .nav a { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; font-size:11px; font-weight:500; color:#a3a3a3; text-decoration:none; }
+  .nav a.on { color:#0a0a0a; }
+  .nav svg { width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:2; }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="head">
+    <div class="greet">금요일 아침</div>
+    <div class="title">오늘의 말근육</div>
+    <div class="streak">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+      12일 연속
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label">오늘의 1분 훈련</div>
+    <div class="today-card">
+      <div class="today-tag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        상황 말하기 · 회의
+      </div>
+      <div class="today-prompt">"이번 일정은 좀 빡빡할 것 같아요"를 더 또렷하게 말해본다면?</div>
+      <button class="start-btn">
+        훈련 시작
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label">이번 주 약점 보강</div>
+    <div class="cards">
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
+        <div class="ctxt"><div class="cname">입버릇 줄이기</div><div class="cdesc">"좀·진짜·약간" 과다 사용 감지됨</div></div>
+        <span class="badge">−38%</span>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div class="ctxt"><div class="cname">정확한 단어 찾기</div><div class="cdesc">"그거·뭐냐" 대신 핵심어 떠올리기</div></div>
+        <span class="badge">신규</span>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-6 0v4"/><rect x="2" y="9" width="20" height="11" rx="2"/></svg></div>
+        <div class="ctxt"><div class="cname">한 문장으로 압축</div><div class="cdesc">길게 늘어진 말을 짧고 단단하게</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="nav">
+  <a class="on" href="home.html"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>홈</a>
+  <a href="session.html"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>훈련</a>
+  <a href="report.html"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>성장</a>
+</div>
+</div>
+</body>
+</html>

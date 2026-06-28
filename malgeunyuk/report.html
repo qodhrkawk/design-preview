@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>말근육 · 성장 리포트</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:Inter,system-ui,sans-serif; background:#f5f5f5; display:flex; justify-content:center; min-height:100vh; }
+  .app { width:100%; max-width:390px; background:#ffffff; min-height:100vh; padding:0 0 96px; }
+  .head { padding:56px 20px 8px; }
+  .title { font-size:30px; font-weight:800; letter-spacing:-0.025em; color:#0a0a0a; }
+  .sub { font-size:14px; color:#737373; margin-top:4px; }
+  .section { padding:8px 20px; }
+  .label { font-size:11px; font-weight:600; color:#737373; letter-spacing:0.05em; text-transform:uppercase; margin:20px 0 10px; }
+  .score-card { border:1px solid #e5e5e5; border-radius:16px; padding:24px; }
+  .score-top { display:flex; align-items:flex-end; gap:8px; }
+  .score-num { font-size:48px; font-weight:800; letter-spacing:-0.03em; color:#0a0a0a; line-height:1; }
+  .score-unit { font-size:16px; font-weight:600; color:#737373; margin-bottom:6px; }
+  .score-delta { display:inline-flex; align-items:center; gap:4px; font-size:13px; font-weight:600; color:#22c55e; margin-top:10px; }
+  .score-delta svg { width:14px; height:14px; stroke:#22c55e; stroke-width:2.5; fill:none; }
+  .chart { display:flex; align-items:flex-end; gap:8px; height:96px; margin-top:18px; }
+  .col { flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; }
+  .col i { width:100%; max-width:24px; background:#e5e5e5; border-radius:6px 6px 0 0; }
+  .col.hi i { background:#171717; }
+  .col span { font-size:10px; color:#a3a3a3; font-weight:500; }
+  .stat-row { display:flex; gap:12px; }
+  .stat { flex:1; border:1px solid #e5e5e5; border-radius:12px; padding:16px; }
+  .stat-n { font-size:24px; font-weight:800; color:#0a0a0a; }
+  .stat-l { font-size:12px; color:#737373; margin-top:2px; }
+  .word-card { border:1px solid #e5e5e5; border-radius:12px; padding:16px; }
+  .word-row { display:flex; align-items:center; justify-content:space-between; padding:10px 0; }
+  .word-row + .word-row { border-top:1px solid #f0f0f0; }
+  .word-l { display:flex; align-items:center; gap:10px; }
+  .word-old { font-size:14px; color:#a3a3a3; text-decoration:line-through; }
+  .word-arrow { color:#a3a3a3; }
+  .word-new { font-size:14px; font-weight:600; color:#0a0a0a; }
+  .word-cnt { font-size:12px; font-weight:600; color:#22c55e; }
+  .insight { border:1px solid #e5e5e5; border-radius:12px; padding:16px; background:#fafafa; display:flex; gap:12px; }
+  .insight svg { width:20px; height:20px; flex-shrink:0; stroke:#171717; stroke-width:2; fill:none; margin-top:1px; }
+  .insight p { font-size:14px; line-height:21px; color:#171717; }
+  .insight b { font-weight:700; }
+  .nav { position:fixed; bottom:0; width:100%; max-width:390px; height:64px; background:#ffffff; border-top:1px solid #e5e5e5; display:flex; }
+  .nav a { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; font-size:11px; font-weight:500; color:#a3a3a3; text-decoration:none; }
+  .nav a.on { color:#0a0a0a; }
+  .nav svg { width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:2; }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="head">
+    <div class="title">성장 리포트</div>
+    <div class="sub">6월 4주차 · 27회 훈련</div>
+  </div>
+
+  <div class="section">
+    <div class="label">이번 주 표현력 점수</div>
+    <div class="score-card">
+      <div class="score-top">
+        <span class="score-num">74</span>
+        <span class="score-unit">/ 100</span>
+      </div>
+      <div class="score-delta">
+        <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+        지난주보다 +9점
+      </div>
+      <div class="chart">
+        <div class="col"><i style="height:40%"></i><span>1주</span></div>
+        <div class="col"><i style="height:48%"></i><span>2주</span></div>
+        <div class="col"><i style="height:62%"></i><span>3주</span></div>
+        <div class="col hi"><i style="height:74%"></i><span>4주</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="stat-row">
+      <div class="stat"><div class="stat-n">−42%</div><div class="stat-l">입버릇 빈도</div></div>
+      <div class="stat"><div class="stat-n">+31</div><div class="stat-l">새 표현 습득</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label">바꿔낸 말버릇</div>
+    <div class="word-card">
+      <div class="word-row">
+        <div class="word-l"><span class="word-old">좀 그런</span><span class="word-arrow">→</span><span class="word-new">애매한</span></div>
+        <span class="word-cnt">18회 교정</span>
+      </div>
+      <div class="word-row">
+        <div class="word-l"><span class="word-old">그거 있잖아</span><span class="word-arrow">→</span><span class="word-new">정확한 명사</span></div>
+        <span class="word-cnt">12회 교정</span>
+      </div>
+      <div class="word-row">
+        <div class="word-l"><span class="word-old">너무 좋다</span><span class="word-arrow">→</span><span class="word-new">든든하다·흡족하다</span></div>
+        <span class="word-cnt">9회 교정</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label">AI 코치 한마디</div>
+    <div class="insight">
+      <svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg>
+      <p>회의·보고 상황에서 부쩍 <b>또렷해졌어.</b> 다음 주는 '감정 표현'이 약점이야. 좋고 싫음을 한 단어로 짚는 훈련을 추천할게.</p>
+    </div>
+  </div>
+</div>
+
+<div class="nav">
+  <a href="home.html"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>홈</a>
+  <a href="session.html"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>훈련</a>
+  <a class="on" href="report.html"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>성장</a>
+</div>
+</div>
+</body>
+</html>
