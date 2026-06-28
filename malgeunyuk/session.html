@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>말근육 · 훈련</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:Inter,system-ui,sans-serif; background:#f5f5f5; display:flex; justify-content:center; min-height:100vh; }
+  .app { width:100%; max-width:390px; background:#ffffff; min-height:100vh; padding:0 0 24px; }
+  .top { padding:52px 20px 12px; display:flex; align-items:center; gap:12px; }
+  .x { width:36px; height:36px; border-radius:9999px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .x svg { width:18px; height:18px; stroke:#171717; stroke-width:2; }
+  .bar { flex:1; height:6px; background:#f5f5f5; border-radius:9999px; overflow:hidden; }
+  .bar i { display:block; height:100%; width:66%; background:#171717; border-radius:9999px; }
+  .step { font-size:12px; font-weight:600; color:#737373; }
+  .body { padding:24px 20px; }
+  .qtag { font-size:11px; font-weight:600; color:#737373; letter-spacing:0.05em; text-transform:uppercase; }
+  .q { font-size:24px; line-height:32px; font-weight:700; letter-spacing:-0.02em; color:#0a0a0a; margin:10px 0 24px; }
+  .mine { border:1px solid #e5e5e5; border-radius:12px; padding:16px; background:#fafafa; }
+  .mine-lbl { font-size:12px; font-weight:600; color:#737373; margin-bottom:8px; }
+  .mine-txt { font-size:15px; line-height:24px; color:#171717; }
+  .mark { background:#fef9c3; border-radius:4px; padding:0 2px; }
+  .ai { border:1px solid #e5e5e5; border-radius:12px; padding:16px; margin-top:14px; }
+  .ai-head { display:flex; align-items:center; gap:8px; margin-bottom:10px; }
+  .ai-dot { width:24px; height:24px; border-radius:9999px; background:#0a0a0a; display:flex; align-items:center; justify-content:center; }
+  .ai-dot svg { width:14px; height:14px; stroke:#fafafa; stroke-width:2; fill:none; }
+  .ai-name { font-size:13px; font-weight:600; color:#0a0a0a; }
+  .ai-up { font-size:16px; line-height:26px; font-weight:600; color:#0a0a0a; }
+  .ai-why { font-size:13px; line-height:20px; color:#737373; margin-top:10px; padding-top:10px; border-top:1px solid #f0f0f0; }
+  .chips { display:flex; gap:8px; margin-top:14px; flex-wrap:wrap; }
+  .chip { font-size:12px; font-weight:600; color:#171717; background:#f5f5f5; border-radius:9999px; padding:6px 12px; }
+  .actions { padding:0 20px; margin-top:24px; display:flex; flex-direction:column; gap:10px; }
+  .primary { height:48px; background:#171717; color:#fafafa; border:none; border-radius:10px; font-size:15px; font-weight:600; cursor:pointer; }
+  .ghost { height:44px; background:#ffffff; color:#171717; border:1px solid #e5e5e5; border-radius:10px; font-size:14px; font-weight:500; cursor:pointer; }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top">
+    <div class="x"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+    <div class="bar"><i></i></div>
+    <div class="step">2/3</div>
+  </div>
+
+  <div class="body">
+    <div class="qtag">상황 말하기 · 회의</div>
+    <div class="q">일정이 빠듯하다는 걸 팀장에게 어떻게 말할래?</div>
+
+    <div class="mine">
+      <div class="mine-lbl">내 답변</div>
+      <div class="mine-txt">음 이번 일정이 <span class="mark">좀</span> <span class="mark">약간</span> 빡빡할 것 같은데 <span class="mark">그거</span> 조정이 <span class="mark">좀</span> 필요할 것 같아요</div>
+    </div>
+
+    <div class="ai">
+      <div class="ai-head">
+        <div class="ai-dot"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1-6.3-4.6L5.7 21l2.3-7.1-6-4.5h7.6z"/></svg></div>
+        <div class="ai-name">이렇게 다듬으면</div>
+      </div>
+      <div class="ai-up">"현재 일정으로는 마감을 맞추기 빠듯합니다. 우선순위를 한 번 조정하면 좋겠어요."</div>
+      <div class="ai-why">군더더기 '좀·약간·그거'를 걷어내고, 막연한 "빡빡하다"를 "마감을 맞추기 빠듯하다"로 또렷하게 바꿨어. 요청도 명확해졌지.</div>
+      <div class="chips">
+        <span class="chip">입버릇 4개 제거</span>
+        <span class="chip">+ 우선순위 조정</span>
+        <span class="chip">+ 빠듯하다</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="primary">이 표현 내 걸로 저장</button>
+    <button class="ghost">다시 말해보기</button>
+  </div>
+</div>
+</body>
+</html>
