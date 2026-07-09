@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>감자 콘솔 — B 터미널 · 레인 목록</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Inter, system-ui, sans-serif; background: #171717; display: flex; justify-content: center; min-height: 100vh; }
+.mobile-frame { width: 100%; max-width: 390px; min-height: 100vh; background: #0a0a0a; position: relative; }
+.mono { font-family: 'SF Mono', ui-monospace, 'JetBrains Mono', monospace; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+</style>
+</head>
+<body>
+<div class="mobile-frame">
+  <div style="height: 48px;"></div>
+
+  <!-- top bar: terminal title style -->
+  <header style="padding: 8px 20px 14px 20px; border-bottom: 1px solid #262626;">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <div class="mono" style="font-size: 16px; line-height: 24px; font-weight: 600; color: #fafafa;">gamja<span style="color: #22c55e;">@</span>console</div>
+      <div class="mono" style="display: flex; align-items: center; gap: 6px; font-size: 11px; line-height: 16px; color: #22c55e; border: 1px solid #14532d; background: rgba(34,197,94,0.08); border-radius: 6px; padding: 3px 8px;">
+        <span style="width: 6px; height: 6px; border-radius: 9999px; background: #22c55e; animation: pulse 2s ease infinite;"></span>
+        CONNECTED
+      </div>
+    </div>
+    <div class="mono" style="font-size: 11px; line-height: 16px; color: #737373; margin-top: 4px;">4 lanes · 2 running</div>
+  </header>
+
+  <main style="padding: 12px 12px 120px 12px; display: flex; flex-direction: column; gap: 8px;">
+
+    <!-- lane running -->
+    <div style="background: #171717; border: 1px solid #262626; border-left: 3px solid #22c55e; border-radius: 8px; padding: 12px 14px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+        <div class="mono" style="font-size: 14px; line-height: 20px; font-weight: 600; color: #fafafa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><span style="color: #22c55e;">❯</span> 리팩토링 작업</div>
+        <span class="mono" style="font-size: 10px; line-height: 14px; font-weight: 600; color: #22c55e; letter-spacing: 0.05em; flex-shrink: 0;">RUNNING</span>
+      </div>
+      <div class="mono" style="font-size: 12px; line-height: 18px; color: #a3a3a3; margin-top: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">테스트 12개 통과, lint 정리 중<span style="display: inline-block; width: 6px; height: 12px; background: #22c55e; vertical-align: -2px; margin-left: 2px; animation: blink 1s step-end infinite;"></span></div>
+      <div class="mono" style="font-size: 11px; line-height: 16px; color: #525252; margin-top: 8px;">last: 방금</div>
+    </div>
+
+    <!-- lane running -->
+    <div style="background: #171717; border: 1px solid #262626; border-left: 3px solid #22c55e; border-radius: 8px; padding: 12px 14px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+        <div class="mono" style="font-size: 14px; line-height: 20px; font-weight: 600; color: #fafafa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><span style="color: #22c55e;">❯</span> 주읽이 크롤러 디버깅</div>
+        <span class="mono" style="font-size: 10px; line-height: 14px; font-weight: 600; color: #22c55e; letter-spacing: 0.05em; flex-shrink: 0;">RUNNING</span>
+      </div>
+      <div class="mono" style="font-size: 12px; line-height: 18px; color: #a3a3a3; margin-top: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">공시 파서 타임아웃 원인 추적 중<span style="display: inline-block; width: 6px; height: 12px; background: #22c55e; vertical-align: -2px; margin-left: 2px; animation: blink 1s step-end infinite;"></span></div>
+      <div class="mono" style="font-size: 11px; line-height: 16px; color: #525252; margin-top: 8px;">last: 2m ago</div>
+    </div>
+
+    <!-- lane idle -->
+    <div style="background: #171717; border: 1px solid #262626; border-left: 3px solid #404040; border-radius: 8px; padding: 12px 14px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+        <div class="mono" style="font-size: 14px; line-height: 20px; font-weight: 600; color: #fafafa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><span style="color: #737373;">❯</span> 블로그 초안</div>
+        <span class="mono" style="font-size: 10px; line-height: 14px; font-weight: 600; color: #737373; letter-spacing: 0.05em; flex-shrink: 0;">IDLE</span>
+      </div>
+      <div class="mono" style="font-size: 12px; line-height: 18px; color: #a3a3a3; margin-top: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">초안 3개 완성. 검토 대기</div>
+      <div class="mono" style="font-size: 11px; line-height: 16px; color: #525252; margin-top: 8px;">last: 1h ago</div>
+    </div>
+
+    <!-- lane idle -->
+    <div style="background: #171717; border: 1px solid #262626; border-left: 3px solid #404040; border-radius: 8px; padding: 12px 14px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+        <div class="mono" style="font-size: 14px; line-height: 20px; font-weight: 600; color: #fafafa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><span style="color: #737373;">❯</span> 서버 로그 정리</div>
+        <span class="mono" style="font-size: 10px; line-height: 14px; font-weight: 600; color: #737373; letter-spacing: 0.05em; flex-shrink: 0;">IDLE</span>
+      </div>
+      <div class="mono" style="font-size: 12px; line-height: 18px; color: #a3a3a3; margin-top: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">launchd 재등록 완료</div>
+      <div class="mono" style="font-size: 11px; line-height: 16px; color: #525252; margin-top: 8px;">last: 어제</div>
+    </div>
+  </main>
+
+  <!-- new lane -->
+  <div style="position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 390px; padding: 16px 12px 32px 12px; background: linear-gradient(to top, #0a0a0a 60%, rgba(10,10,10,0));">
+    <button class="mono" style="width: 100%; height: 48px; display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(34,197,94,0.1); color: #22c55e; border: 1px solid #14532d; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+      new lane
+    </button>
+  </div>
+</div>
+</body>
+</html>
