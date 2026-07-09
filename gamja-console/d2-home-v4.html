@@ -29,7 +29,7 @@ body { font-family: Inter, system-ui, sans-serif; background: #0b0a1e; }
 
 /* ── desktop ≥ 900px: two-pane ─────────────── */
 @media (min-width: 900px) {
-  .app { flex-direction: row; height: 100vh; max-width: 1440px; margin: 0 auto; border-left: 1px solid #4b3b8f; border-right: 1px solid #4b3b8f; }
+  .app { flex-direction: row; height: 100vh; width: 100%; }
   .lanes-pane { width: 460px; flex-shrink: 0; border-right: 1px solid #4b3b8f; display: flex; flex-direction: column; height: 100vh; }
   .work-list { flex: 1; overflow-y: auto; min-height: 0; }
   .detail-pane { display: block; flex: 1; min-width: 0; height: 100vh; }
@@ -335,7 +335,7 @@ body { font-family: Inter, system-ui, sans-serif; background: #0b0a1e; }
         </div>
       </div>
       <!-- messages -->
-      <div style="flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:14px;min-height:0;">
+      <div style="flex:1;overflow-y:auto;padding:20px;min-height:0;"><div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px;">
         <div style="display:flex;justify-content:flex-end;">
           <div style="max-width:75%;background:#241a52;border:1px solid #4b3b8f;color:#efeaff;border-radius:14px;border-bottom-right-radius:4px;padding:10px 14px;font-size:14px;line-height:21px;">gamja-console 서버 코드 리팩토링 시작해줘. 테스트 먼저 돌리고.</div>
         </div>
@@ -359,12 +359,12 @@ body { font-family: Inter, system-ui, sans-serif; background: #0b0a1e; }
             <div class="mono" style="font-size:10px;color:#4ee0c0;margin-top:5px;padding-left:4px;letter-spacing:0.05em;">STREAMING…</div>
           </div>
         </div>
-      </div>
+      </div></div>
       <!-- composer -->
-      <div style="flex-shrink:0;border-top:1px solid #4b3b8f;padding:14px 20px;display:flex;align-items:flex-end;gap:8px;">
+      <div style="flex-shrink:0;border-top:1px solid #4b3b8f;padding:14px 20px;"><div style="max-width:760px;margin:0 auto;display:flex;align-items:flex-end;gap:8px;">
         <div style="flex:1;background:#1e1650;border:1px solid #4b3b8f;border-radius:12px;padding:11px 15px;font-size:14px;line-height:21px;color:#9a91c4;min-height:44px;">메시지 입력…</div>
         <button style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,#a78bfa,#4ee0c0);border:none;border-radius:12px;cursor:pointer;flex-shrink:0;box-shadow:0 4px 12px rgba(78,224,192,0.35);"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0c1027" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></button>
-      </div>
+      </div></div>
     </div>
   </div>
 </div>
