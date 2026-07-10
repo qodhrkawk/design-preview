@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>집공부 v2 시안</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:Inter,system-ui,sans-serif;background:#f5f5f5;color:#0a0a0a;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;min-height:100vh;padding:32px 20px;}
+  .wrap{width:100%;max-width:390px;}
+  h1{font-size:24px;font-weight:800;letter-spacing:-0.03em;}
+  .sub{font-size:13px;color:#737373;margin-top:6px;font-weight:500;line-height:1.5;}
+  .list{display:flex;flex-direction:column;gap:10px;margin-top:24px;}
+  a.item{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #e5e5e5;border-radius:14px;padding:16px 18px;text-decoration:none;color:inherit;box-shadow:0 1px 2px rgba(0,0,0,.04);transition:transform .1s;}
+  a.item:active{transform:scale(.99);}
+  .no{width:30px;height:30px;border-radius:9px;background:#171717;color:#fafafa;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;}
+  .t{font-size:15px;font-weight:700;letter-spacing:-0.01em;}
+  .d{font-size:12px;color:#737373;margin-top:2px;font-weight:500;}
+  .arrow{margin-left:auto;color:#a3a3a3;font-size:16px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>집공부 v2</h1>
+  <div class="sub">2026-07-10 리스펙 · 커플 점수 제거 / 레벨 학습 / 청약 신규 / 매물 단순화</div>
+  <div class="list">
+    <a class="item" href="./learn-home.html"><span class="no">1</span><span><span class="t">학습 홈</span><br><span class="d">진행률 링 + 레벨 로드맵 + 이어서 학습 CTA</span></span><span class="arrow">→</span></a>
+    <a class="item" href="./lesson-viewer.html"><span class="no">2</span><span><span class="t">레슨 뷰어</span><br><span class="d">MD 콘텐츠 + 학습 완료 체크</span></span><span class="arrow">→</span></a>
+    <a class="item" href="./subscriptions.html"><span class="no">3</span><span><span class="t">청약 공고 리스트</span><br><span class="d">상태 뱃지 + D-day + 내 가점 배너</span></span><span class="arrow">→</span></a>
+    <a class="item" href="./score-calculator.html"><span class="no">4</span><span><span class="t">가점 계산기</span><br><span class="d">84점 만점 · 3개 항목 스테퍼</span></span><span class="arrow">→</span></a>
+    <a class="item" href="./listings.html"><span class="no">5</span><span><span class="t">매물 리스트</span><br><span class="d">점수 제거 · 상태 뱃지 + 임장기록 확인수</span></span><span class="arrow">→</span></a>
+  </div>
+</div>
+</body>
+</html>

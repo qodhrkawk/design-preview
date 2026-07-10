@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>레슨 · 집공부</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --background:#ffffff; --foreground:#0a0a0a; --card:#ffffff;
+    --primary:#171717; --primary-foreground:#fafafa;
+    --secondary:#f5f5f5; --secondary-foreground:#171717;
+    --muted:#f5f5f5; --muted-foreground:#737373;
+    --border:#e5e5e5; --ring:#a3a3a3;
+    --success:#22c55e; --warning:#f59e0b; --info:#3b82f6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:Inter,system-ui,sans-serif;background:#f5f5f5;color:var(--foreground);-webkit-font-smoothing:antialiased;display:flex;justify-content:center;min-height:100vh;}
+  .phone{width:100%;max-width:390px;background:var(--background);min-height:100vh;position:relative;padding-bottom:120px;}
+  svg{display:block;}
+  .topbar{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;gap:10px;z-index:10;}
+  .back{width:36px;height:36px;border-radius:10px;border:none;background:none;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--foreground);flex-shrink:0;}
+  .back .ic{width:20px;height:20px;}
+  .top-info{flex:1;min-width:0;}
+  .top-lv{font-size:11px;font-weight:700;color:var(--muted-foreground);letter-spacing:.03em;}
+  .top-title{font-size:14px;font-weight:700;letter-spacing:-0.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .top-prog{font-size:11px;font-weight:600;color:var(--muted-foreground);flex-shrink:0;}
+  .pbar-top{height:3px;background:var(--secondary);}
+  .pbar-top .fill{height:100%;background:var(--primary);width:60%;}
+  /* content */
+  .content{padding:24px 20px;}
+  .lesson-cap{display:inline-flex;align-items:center;gap:5px;background:var(--secondary);color:var(--secondary-foreground);font-size:11px;font-weight:700;padding:4px 10px;border-radius:9999px;}
+  .lesson-cap .ic{width:12px;height:12px;}
+  .md h1{font-size:24px;font-weight:800;letter-spacing:-0.03em;line-height:1.3;margin:14px 0 6px;}
+  .md .meta{font-size:12px;color:var(--ring);font-weight:600;margin-bottom:20px;display:flex;align-items:center;gap:5px;}
+  .md .meta .ic{width:13px;height:13px;}
+  .md h2{font-size:17px;font-weight:700;letter-spacing:-0.02em;margin:26px 0 10px;}
+  .md p{font-size:15px;line-height:1.75;color:#262626;margin-bottom:12px;}
+  .md strong{font-weight:700;color:var(--foreground);}
+  .md ul{margin:0 0 12px 4px;list-style:none;}
+  .md li{font-size:15px;line-height:1.7;color:#262626;padding-left:16px;position:relative;margin-bottom:6px;}
+  .md li::before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;border-radius:9999px;background:var(--ring);}
+  .callout{display:flex;gap:10px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;padding:14px 16px;margin:16px 0;}
+  .callout .ic{width:17px;height:17px;color:#2563eb;flex-shrink:0;margin-top:2px;}
+  .callout p{font-size:13px;line-height:1.65;color:#1e40af;margin:0;font-weight:500;}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+  th{background:var(--muted);text-align:left;padding:9px 12px;font-weight:700;border:1px solid var(--border);}
+  td{padding:9px 12px;border:1px solid var(--border);color:#262626;line-height:1.5;}
+  /* nav between lessons */
+  .lesson-nav{display:flex;gap:10px;margin-top:32px;}
+  .lnav{flex:1;display:flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:12px;padding:12px 14px;cursor:pointer;background:var(--card);min-width:0;}
+  .lnav .ic{width:16px;height:16px;color:var(--muted-foreground);flex-shrink:0;}
+  .lnav-cap{font-size:10px;color:var(--ring);font-weight:700;letter-spacing:.03em;}
+  .lnav-t{font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .lnav.next{justify-content:flex-end;text-align:right;}
+  /* bottom complete bar */
+  .donebar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:390px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);border-top:1px solid var(--border);padding:12px 20px calc(12px + env(safe-area-inset-bottom));z-index:20;}
+  .btn-done{width:100%;height:50px;border:none;border-radius:13px;background:var(--primary);color:var(--primary-foreground);font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;letter-spacing:-0.01em;}
+  .btn-done .ic{width:19px;height:19px;}
+  .btn-done.checked{background:#dcfce7;color:#15803d;}
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="topbar">
+    <button class="back"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <div class="top-info">
+      <div class="top-lv">LV.2 계약과 권리</div>
+      <div class="top-title">보증금 지키기 — HUG·HF 보증보험</div>
+    </div>
+    <div class="top-prog">4/5</div>
+  </div>
+  <div class="pbar-top"><div class="fill"></div></div>
+
+  <div class="content">
+    <span class="lesson-cap">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      레슨 4
+    </span>
+
+    <div class="md">
+      <h1>보증금 지키기 — HUG·HF 보증보험</h1>
+      <div class="meta">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        읽기 약 6분 · 감자봇 작성
+      </div>
+
+      <p>전세 계약에서 가장 무서운 시나리오는 <strong>집주인이 보증금을 돌려주지 못하는 상황</strong>이야. 전세보증금 반환보증은 이럴 때 보증기관이 대신 보증금을 돌려주는 안전장치다.</p>
+
+      <h2>보증기관 두 곳</h2>
+      <ul>
+        <li><strong>HUG (주택도시보증공사)</strong> — 가장 많이 쓰이는 전세보증금 반환보증. 네이버부동산·카카오페이에서도 가입 가능</li>
+        <li><strong>HF (한국주택금융공사)</strong> — 전세자금대출과 연계 가입이 일반적. 보증료가 상대적으로 저렴</li>
+      </ul>
+
+      <table>
+        <tr><th></th><th>HUG</th><th>HF</th></tr>
+        <tr><td>가입 한도</td><td>수도권 7억 이하</td><td>수도권 7억 이하</td></tr>
+        <tr><td>보증료율</td><td>연 0.115~0.154%</td><td>연 0.02~0.04%</td></tr>
+        <tr><td>가입 경로</td><td>직접 가입 가능</td><td>대출 연계 위주</td></tr>
+      </table>
+
+      <div class="callout">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <p>보증보험은 잔금일(입주일)로부터 계약기간 절반이 지나기 전에만 가입할 수 있어. 계약하자마자 바로 가입하는 게 안전하다.</p>
+      </div>
+
+      <h2>가입 전 체크</h2>
+      <ul>
+        <li>등기부등본에서 <strong>선순위 근저당 + 보증금 합계</strong>가 집값의 일정 비율 이하인지 확인</li>
+        <li>집주인 세금 체납 여부 — 국세·지방세 완납증명서 요구 가능</li>
+        <li>불법 건축물 여부 — 건축물대장 확인 (위반건축물은 가입 거절)</li>
+      </ul>
+
+      <p>보증보험 가입이 <strong>거절되는 집이라면 그 자체가 위험 신호</strong>다. 가입 가능 여부를 계약 전 특약으로 걸어두는 것도 방법이야.</p>
+    </div>
+
+    <div class="lesson-nav">
+      <div class="lnav">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        <div style="min-width:0;">
+          <div class="lnav-cap">이전</div>
+          <div class="lnav-t">대항력이란</div>
+        </div>
+      </div>
+      <div class="lnav next">
+        <div style="min-width:0;">
+          <div class="lnav-cap">다음</div>
+          <div class="lnav-t">계약 프로세스 A to Z</div>
+        </div>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="donebar">
+    <button class="btn-done">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      학습 완료
+    </button>
+  </div>
+</div>
+</body>
+</html>
