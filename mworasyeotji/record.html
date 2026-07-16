@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>뭐라셨지 — 진료 기록</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Inter, system-ui, sans-serif; background:#f5f5f5; display:flex; justify-content:center; }
+.phone { width:390px; min-height:844px; background:#ffffff; display:flex; flex-direction:column; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="display:flex; align-items:center; gap:12px; padding:16px 20px;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    <div style="font-size:16px; line-height:24px; font-weight:600; color:#0a0a0a;">진료 요약</div>
+    <div style="margin-left:auto; display:flex; align-items:center; gap:6px; background:#f5f5f5; border-radius:9999px; padding:4px 12px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
+      <span style="font-size:12px; font-weight:500; color:#171717;">공유</span>
+    </div>
+  </div>
+
+  <!-- Visit info -->
+  <div style="padding:8px 20px 16px 20px; border-bottom:1px solid #e5e5e5;">
+    <div style="font-size:20px; line-height:28px; font-weight:600; color:#0a0a0a; letter-spacing:-0.025em;">서울정형외과 · 어깨 통증</div>
+    <div style="display:flex; align-items:center; gap:8px; margin-top:6px;">
+      <span style="font-size:13px; color:#737373;">7월 4일 (토) 10:42 · 나</span>
+      <span style="background:#f5f5f5; color:#171717; border-radius:9999px; padding:2px 10px; font-size:12px; font-weight:500;">녹음 8분 32초</span>
+    </div>
+  </div>
+
+  <!-- AI summary section -->
+  <div style="padding:20px;">
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3L12 3z"/></svg>
+      <span style="font-size:14px; font-weight:600; color:#0a0a0a;">AI 요약</span>
+      <span style="font-size:12px; color:#737373;">녹음에서 자동 추출</span>
+    </div>
+
+    <!-- Diagnosis -->
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px; margin-bottom:10px;">
+      <div style="font-size:12px; line-height:16px; font-weight:500; color:#737373; margin-bottom:6px;">진단</div>
+      <div style="font-size:15px; line-height:22px; font-weight:600; color:#0a0a0a;">회전근개 염좌 (오른쪽 어깨)</div>
+      <div style="font-size:13px; line-height:19px; color:#737373; margin-top:4px;">파열은 아니고 염증 단계. 2주 치료 후 호전 없으면 MRI 검토.</div>
+    </div>
+
+    <!-- Medication -->
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px; margin-bottom:10px;">
+      <div style="font-size:12px; line-height:16px; font-weight:500; color:#737373; margin-bottom:6px;">처방 · 복약</div>
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:8px 0; border-bottom:1px solid #f5f5f5;">
+        <div>
+          <div style="font-size:14px; font-weight:600; color:#0a0a0a;">소염진통제</div>
+          <div style="font-size:12px; color:#737373;">하루 2회 · 식후 · 14일분</div>
+        </div>
+        <span style="background:#f5f5f5; color:#171717; border-radius:6px; padding:4px 8px; font-size:12px; font-weight:500;">복약 알림 ON</span>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:8px 0;">
+        <div>
+          <div style="font-size:14px; font-weight:600; color:#0a0a0a;">근이완제</div>
+          <div style="font-size:12px; color:#737373;">하루 1회 · 자기 전 · 7일분</div>
+        </div>
+        <span style="background:#f5f5f5; color:#737373; border-radius:6px; padding:4px 8px; font-size:12px; font-weight:500;">알림 OFF</span>
+      </div>
+    </div>
+
+    <!-- Instructions -->
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px; margin-bottom:10px;">
+      <div style="font-size:12px; line-height:16px; font-weight:500; color:#737373; margin-bottom:8px;">의사 지시사항</div>
+      <div style="display:flex; gap:8px; align-items:flex-start; margin-bottom:8px;">
+        <svg style="flex-shrink:0; margin-top:2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        <span style="font-size:14px; line-height:20px; color:#0a0a0a;">2주간 무거운 물건 들지 않기</span>
+      </div>
+      <div style="display:flex; gap:8px; align-items:flex-start; margin-bottom:8px;">
+        <svg style="flex-shrink:0; margin-top:2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        <span style="font-size:14px; line-height:20px; color:#0a0a0a;">온찜질 하루 2회, 15분씩</span>
+      </div>
+      <div style="display:flex; gap:8px; align-items:flex-start;">
+        <svg style="flex-shrink:0; margin-top:2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        <span style="font-size:14px; line-height:20px; color:#0a0a0a;">통증 심해지면 바로 내원</span>
+      </div>
+    </div>
+
+    <!-- Next visit -->
+    <div style="background:#171717; border-radius:12px; padding:16px; display:flex; align-items:center; gap:12px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      <div style="flex:1;">
+        <div style="font-size:14px; font-weight:600; color:#fafafa;">재진: 7월 18일 (토) 10:30</div>
+        <div style="font-size:12px; color:#a3a3a3; margin-top:2px;">캘린더에 등록됨 · 전날 리마인드</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </div>
+
+    <!-- Transcript toggle -->
+    <div style="display:flex; align-items:center; justify-content:center; gap:6px; padding:16px 0 4px 0;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+      <span style="font-size:13px; font-weight:500; color:#737373;">전체 녹취록 보기</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
