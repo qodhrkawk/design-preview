@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>성의껏 — AI 금액 가이드</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#f5f5f5; font-family:Inter,system-ui,sans-serif; display:flex; justify-content:center; }
+  .screen { width:390px; min-height:844px; background:#ffffff; display:flex; flex-direction:column; }
+</style>
+</head>
+<body>
+<div class="screen">
+
+  <!-- Header -->
+  <div style="display:flex; align-items:center; gap:12px; padding:16px 20px 12px 20px;">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+    <div style="font-size:20px; line-height:28px; font-weight:600; color:#0a0a0a;">얼마가 적당할까?</div>
+  </div>
+
+  <!-- Context card -->
+  <div style="margin:8px 20px 0 20px; border:1px solid #e5e5e5; border-radius:12px; padding:16px;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <div style="width:44px; height:44px; border-radius:9999px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:600; color:#171717;">김</div>
+      <div style="flex:1;">
+        <div style="font-size:16px; line-height:24px; font-weight:600; color:#0a0a0a;">김지수 결혼식</div>
+        <div style="font-size:14px; line-height:20px; color:#737373;">7월 22일 (수) · 대학 동기 · 친밀도 상</div>
+      </div>
+      <span style="background:#f5f5f5; color:#171717; border-radius:9999px; padding:2px 10px; font-size:12px; line-height:16px; font-weight:500;">결혼</span>
+    </div>
+  </div>
+
+  <!-- AI recommendation -->
+  <div style="margin:16px 20px 0 20px; background:#171717; border-radius:16px; padding:24px;">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+      <span style="font-size:14px; line-height:20px; font-weight:500; color:#a3a3a3;">AI 추천 금액</span>
+    </div>
+    <div style="font-size:36px; line-height:40px; font-weight:800; letter-spacing:-0.025em; color:#fafafa; margin-top:12px;">100,000원</div>
+    <div style="margin-top:16px; display:flex; flex-direction:column; gap:8px;">
+      <div style="display:flex; align-items:flex-start; gap:8px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:3px;"><path d="M20 6 9 17l-5-5"/></svg>
+        <span style="font-size:14px; line-height:20px; color:#d4d4d4;">작년 11월 내 결혼식에 축의 10만원 받음</span>
+      </div>
+      <div style="display:flex; align-items:flex-start; gap:8px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:3px;"><path d="M20 6 9 17l-5-5"/></svg>
+        <span style="font-size:14px; line-height:20px; color:#d4d4d4;">같은 그룹(대학 동기) 평균 지출 9만원</span>
+      </div>
+      <div style="display:flex; align-items:flex-start; gap:8px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:3px;"><path d="M20 6 9 17l-5-5"/></svg>
+        <span style="font-size:14px; line-height:20px; color:#d4d4d4;">최근 3년 연락 빈도: 높음 (친밀도 상)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Range slider -->
+  <div style="margin:24px 20px 0 20px;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <span style="font-size:14px; line-height:20px; font-weight:500; color:#0a0a0a;">금액 범위</span>
+      <span style="font-size:12px; line-height:16px; color:#737373;">참석 여부, 관계에 따라 조절</span>
+    </div>
+    <div style="margin-top:16px; height:6px; background:#f5f5f5; border-radius:9999px; position:relative;">
+      <div style="position:absolute; left:30%; width:40%; height:6px; background:#171717; border-radius:9999px;"></div>
+      <div style="position:absolute; left:48%; top:-7px; width:20px; height:20px; background:#ffffff; border:2px solid #171717; border-radius:9999px; box-shadow:0 1px 3px rgba(0,0,0,0.1);"></div>
+    </div>
+    <div style="display:flex; justify-content:space-between; margin-top:8px;">
+      <span style="font-size:12px; line-height:16px; color:#737373;">5만</span>
+      <span style="font-size:12px; line-height:16px; font-weight:500; color:#171717;">10만</span>
+      <span style="font-size:12px; line-height:16px; color:#737373;">20만</span>
+    </div>
+  </div>
+
+  <!-- Situation chips -->
+  <div style="margin:24px 20px 0 20px;">
+    <div style="font-size:14px; line-height:20px; font-weight:500; color:#0a0a0a;">상황 반영</div>
+    <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;">
+      <span style="background:#171717; color:#fafafa; border-radius:9999px; padding:6px 14px; font-size:13px; line-height:18px; font-weight:500;">참석함</span>
+      <span style="background:#f5f5f5; color:#171717; border:1px solid #e5e5e5; border-radius:9999px; padding:6px 14px; font-size:13px; line-height:18px;">불참·송금만</span>
+      <span style="background:#f5f5f5; color:#171717; border:1px solid #e5e5e5; border-radius:9999px; padding:6px 14px; font-size:13px; line-height:18px;">동반 1인</span>
+      <span style="background:#f5f5f5; color:#171717; border:1px solid #e5e5e5; border-radius:9999px; padding:6px 14px; font-size:13px; line-height:18px;">호텔 예식</span>
+    </div>
+  </div>
+
+  <!-- Peer stats -->
+  <div style="margin:24px 20px 0 20px; border:1px solid #e5e5e5; border-radius:12px; padding:16px;">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+      <span style="font-size:14px; line-height:20px; font-weight:600; color:#0a0a0a;">내 기록 기준 통계</span>
+    </div>
+    <div style="display:flex; gap:12px; margin-top:12px;">
+      <div style="flex:1;">
+        <div style="font-size:12px; line-height:16px; color:#737373;">결혼식 평균</div>
+        <div style="font-size:18px; line-height:28px; font-weight:600; color:#0a0a0a;">92,000원</div>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:12px; line-height:16px; color:#737373;">대학 동기 평균</div>
+        <div style="font-size:18px; line-height:28px; font-weight:600; color:#0a0a0a;">90,000원</div>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:12px; line-height:16px; color:#737373;">올해 총 지출</div>
+        <div style="font-size:18px; line-height:28px; font-weight:600; color:#0a0a0a;">55만원</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div style="margin:auto 20px 24px 20px; padding-top:24px;">
+    <div style="background:#171717; color:#fafafa; border-radius:10px; height:52px; display:flex; align-items:center; justify-content:center; font-size:16px; line-height:24px; font-weight:600;">10만원으로 기록하기</div>
+    <div style="margin-top:8px; height:44px; display:flex; align-items:center; justify-content:center; font-size:14px; line-height:20px; font-weight:500; color:#737373;">금액 직접 입력</div>
+  </div>
+
+</div>
+</body>
+</html>
