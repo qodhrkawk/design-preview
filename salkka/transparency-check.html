@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>도리 투명 배경 확인</title>
+<style>
+  body { margin:0; font-family:-apple-system,'Apple SD Gothic Neo',sans-serif; }
+  .checker { background: repeating-conic-gradient(#ddd 0% 25%, #fff 0% 50%) 0 0/24px 24px; }
+  .amber { background:#f59e0b; } .dark { background:#292524; } .green { background:#16a34a; }
+  section { display:flex; justify-content:center; gap:12px; padding:24px 12px; flex-wrap:wrap; }
+  img { width:150px; }
+  h2 { text-align:center; margin:16px 0 0; font-size:15px; color:#555; }
+  .dark h2 { color:#ccc; }
+</style></head>
+<body>
+<h2>체크무늬 (투명 확인)</h2>
+<section class="checker"><img src="assets/base.png"><img src="assets/joy.png"><img src="assets/curious.png"><img src="assets/celebrate.png"><img src="assets/think.png"></section>
+<div class="amber"><h2>앰버 배경</h2><section><img src="assets/base.png"><img src="assets/joy.png"><img src="assets/curious.png"><img src="assets/celebrate.png"><img src="assets/think.png"></section></div>
+<div class="dark"><h2>다크 배경</h2><section><img src="assets/base.png"><img src="assets/joy.png"><img src="assets/curious.png"><img src="assets/celebrate.png"><img src="assets/think.png"></section></div>
+</body></html>
