@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>살까말까 — 시안 v2</title>
+<style>
+  body { margin: 0; background: #f0efeb; font-family: -apple-system, 'Apple SD Gothic Neo', sans-serif; padding: 24px 12px 60px; }
+  h1 { text-align: center; font-size: 22px; }
+  p.sub { text-align: center; color: #777; font-size: 14px; margin-bottom: 28px; }
+  .row { display: flex; gap: 18px; overflow-x: auto; padding: 0 12px 20px; }
+  .shot { flex-shrink: 0; text-align: center; }
+  .shot iframe { width: 390px; height: 844px; border: 1px solid #ddd; border-radius: 18px; background: #fff; }
+  .shot .label { font-weight: 700; margin-top: 8px; font-size: 15px; }
+  .shot .label a { color: #b45309; text-decoration: none; font-weight: 600; font-size: 13px; margin-left: 6px; }
+  @media (min-width: 2100px) { .row { justify-content: center; } }
+</style>
+</head>
+<body>
+<h1>살까말까 — 화면 시안 v2</h1>
+<p class="sub">확정 캐릭터(도리) 반영 · 좌우 스크롤</p>
+<div class="row">
+  <div class="shot"><iframe src="home.html"></iframe><div class="label">홈<a href="home.html" target="_blank">크게</a></div></div>
+  <div class="shot"><iframe src="add.html"></iframe><div class="label">담기<a href="add.html" target="_blank">크게</a></div></div>
+  <div class="shot"><iframe src="decide.html"></iframe><div class="label">결정<a href="decide.html" target="_blank">크게</a></div></div>
+  <div class="shot"><iframe src="retro.html"></iframe><div class="label">회고<a href="retro.html" target="_blank">크게</a></div></div>
+  <div class="shot"><iframe src="stats.html"></iframe><div class="label">통계<a href="stats.html" target="_blank">크게</a></div></div>
+</div>
+<div class="row" style="margin-top:8px">
+  <div class="shot"><iframe src="character-v2.html" style="height:600px"></iframe><div class="label">캐릭터 히스토리<a href="character-v2.html" target="_blank">크게</a></div></div>
+</div>
+</body>
+</html>
