@@ -14,19 +14,20 @@
 <div class="mobile-frame" style="padding-bottom:96px;">
   <div style="height:48px;"></div>
 
-  <!-- Top bar -->
-  <div style="padding:12px 20px;">
+  <!-- Top bar with joy -->
+  <div style="padding:12px 20px; display:flex; align-items:center; justify-content:space-between;">
     <h1 style="font-size:20px; line-height:28px; font-weight:700; color:#0a0a0a; letter-spacing:-0.025em;">통계</h1>
+    <img src="assets/joy.png" width="44" height="44" alt="도리" style="display:block; border-radius:12px;">
   </div>
 
   <!-- Summary cards -->
   <div style="display:flex; gap:10px; padding:4px 20px 0;">
-    <div style="flex:1; background:#fffbeb; border:1px solid #fde68a; border-radius:12px; padding:14px;">
+    <div style="flex:1; background:#faf5e6; border:1px solid #f0e6c8; border-radius:12px; padding:14px;">
       <div style="display:flex; align-items:center; gap:6px;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 3c-4.2 0-7 2-7 4.6h14C19 5 16.2 3 12 3z" fill="#78350f"/><path d="M6.2 7.6c.3 6 2.4 10.4 5.8 13.4 3.4-3 5.5-7.4 5.8-13.4z" fill="#b45309"/></svg>
-        <p style="font-size:12px; line-height:16px; color:#92400e; font-weight:500;">총 아낀 돈</p>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a16207" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+        <p style="font-size:12px; line-height:16px; color:#a16207; font-weight:500;">총 아낀 돈</p>
       </div>
-      <p style="font-size:22px; line-height:28px; font-weight:800; color:#78350f; letter-spacing:-0.025em; margin-top:6px;">557,000원</p>
+      <p style="font-size:22px; line-height:28px; font-weight:800; color:#713f12; letter-spacing:-0.025em; margin-top:6px;">557,000원</p>
     </div>
     <div style="flex:1; background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:14px;">
       <div style="display:flex; align-items:center; gap:6px;">
@@ -46,23 +47,23 @@
     <!-- Bar chart -->
     <div style="display:flex; align-items:flex-end; gap:12px; height:120px; margin-top:20px;">
       <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;">
-        <div style="width:100%; max-width:32px; height:28px; background:#fde68a; border-radius:6px 6px 0 0;"></div>
+        <div style="width:100%; max-width:32px; height:28px; background:#f0e6c8; border-radius:6px 6px 0 0;"></div>
         <span style="font-size:11px; color:#a3a3a3;">2월</span>
       </div>
       <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;">
-        <div style="width:100%; max-width:32px; height:44px; background:#fde68a; border-radius:6px 6px 0 0;"></div>
+        <div style="width:100%; max-width:32px; height:44px; background:#f0e6c8; border-radius:6px 6px 0 0;"></div>
         <span style="font-size:11px; color:#a3a3a3;">3월</span>
       </div>
       <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;">
-        <div style="width:100%; max-width:32px; height:36px; background:#fde68a; border-radius:6px 6px 0 0;"></div>
+        <div style="width:100%; max-width:32px; height:36px; background:#f0e6c8; border-radius:6px 6px 0 0;"></div>
         <span style="font-size:11px; color:#a3a3a3;">4월</span>
       </div>
       <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;">
-        <div style="width:100%; max-width:32px; height:64px; background:#fbbf24; border-radius:6px 6px 0 0;"></div>
+        <div style="width:100%; max-width:32px; height:64px; background:#eeca7a; border-radius:6px 6px 0 0;"></div>
         <span style="font-size:11px; color:#a3a3a3;">5월</span>
       </div>
       <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;">
-        <div style="width:100%; max-width:32px; height:52px; background:#fbbf24; border-radius:6px 6px 0 0;"></div>
+        <div style="width:100%; max-width:32px; height:52px; background:#eeca7a; border-radius:6px 6px 0 0;"></div>
         <span style="font-size:11px; color:#a3a3a3;">6월</span>
       </div>
       <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;">
@@ -152,25 +153,9 @@
   </div>
 
   <!-- Dori insight -->
-  <div style="margin:12px 20px 0; display:flex; gap:12px; align-items:flex-start; background:#fffbeb; border:1px solid #fde68a; border-radius:12px; padding:14px 16px;">
-    <!-- Dori 생각 포즈 (미니) -->
-    <svg width="44" height="44" viewBox="0 0 120 120" fill="none" style="flex-shrink:0;">
-      <path d="M78 84c20-4 30-20 27-36-2-11-11-19-21-19 8 7 11 16 8 26-3 12-11 19-20 21z" fill="#b45309"/>
-      <path d="M39 31c-4-9 0-17 8-18 3 5 2 12-2 17z" fill="#b45309"/>
-      <path d="M73 31c4-9 0-17-8-18-3 5-2 12 2 17z" fill="#b45309"/>
-      <ellipse cx="56" cy="88" rx="24" ry="19" fill="#d97706"/>
-      <ellipse cx="56" cy="92" rx="15" ry="12" fill="#fde68a"/>
-      <circle cx="56" cy="46" r="23" fill="#d97706"/>
-      <path d="M56 38c9 0 15 7 15 14 0 9-7 15-15 15s-15-6-15-15c0-7 6-14 15-14z" fill="#fde68a"/>
-      <circle cx="45" cy="44" r="3" fill="#451a03"/>
-      <circle cx="63" cy="44" r="3" fill="#451a03"/>
-      <ellipse cx="56" cy="52" rx="2.5" ry="2" fill="#92400e"/>
-      <path d="M51 58q5-2 9 .5" stroke="#92400e" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-      <ellipse cx="68" cy="63" rx="5.5" ry="4.5" fill="#d97706"/>
-    </svg>
-    <div style="flex:1;">
-      <p style="font-size:13px; line-height:19px; color:#57534e;">패션은 사고 나서 아쉬웠던 적이 많네. 다음엔 7일 쿨다운 어때? 취미는 거의 다 만족했으니까 너무 참지 않아도 되고.</p>
-    </div>
+  <div style="margin:12px 20px 0; display:flex; gap:12px; align-items:center; background:#faf5e6; border:1px solid #f0e6c8; border-radius:12px; padding:12px 14px;">
+    <img src="assets/think.png" width="52" height="52" alt="도리" style="display:block; border-radius:10px; flex-shrink:0;">
+    <p style="font-size:13px; line-height:19px; color:#57534e;">패션은 사고 나서 아쉬웠던 적이 많네. 다음엔 7일 쿨다운 어때? 취미는 거의 다 만족했으니까 너무 참지 않아도 되고.</p>
   </div>
 
   <!-- Tab bar -->
