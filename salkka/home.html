@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>살까말까 — 홈</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; min-height: 100vh; }
+    .mobile-frame { width: 100%; max-width: 390px; min-height: 100vh; background: #ffffff; position: relative; }
+  </style>
+</head>
+<body>
+<div class="mobile-frame" style="padding-bottom:88px;">
+  <div style="height:48px;"></div>
+
+  <!-- Top bar -->
+  <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 20px;">
+    <h1 style="font-size:20px; line-height:28px; font-weight:700; color:#0a0a0a; letter-spacing:-0.025em;">살까말까</h1>
+    <button style="width:40px; height:40px; border:none; background:transparent; display:flex; align-items:center; justify-content:center; border-radius:8px; cursor:pointer;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+    </button>
+  </div>
+
+  <!-- Dori + Storage hero -->
+  <div style="margin:4px 20px 0; background:#fffbeb; border:1px solid #fde68a; border-radius:16px; padding:20px; position:relative; overflow:hidden;">
+    <div style="display:flex; align-items:center; gap:16px;">
+      <!-- Dori (기본 포즈, 도토리 안음) -->
+      <svg width="88" height="88" viewBox="0 0 120 120" fill="none" style="flex-shrink:0;">
+        <path d="M78 84c20-4 30-20 27-36-2-11-11-19-21-19 8 7 11 16 8 26-3 12-11 19-20 21z" fill="#b45309"/>
+        <path d="M80 79c13-4 20-14 18-25-1-7-5-12-11-13 5 5 6 12 4 18-3 9-7 14-14 17z" fill="#d97706" opacity="0.45"/>
+        <path d="M39 31c-4-9 0-17 8-18 3 5 2 12-2 17z" fill="#b45309"/>
+        <path d="M73 31c4-9 0-17-8-18-3 5-2 12 2 17z" fill="#b45309"/>
+        <ellipse cx="56" cy="88" rx="24" ry="19" fill="#d97706"/>
+        <ellipse cx="56" cy="92" rx="15" ry="12" fill="#fde68a"/>
+        <circle cx="56" cy="46" r="23" fill="#d97706"/>
+        <path d="M56 38c9 0 15 7 15 14 0 9-7 15-15 15s-15-6-15-15c0-7 6-14 15-14z" fill="#fde68a"/>
+        <circle cx="47" cy="46" r="3" fill="#451a03"/>
+        <circle cx="65" cy="46" r="3" fill="#451a03"/>
+        <circle cx="48" cy="45" r="1" fill="#ffffff"/>
+        <circle cx="66" cy="45" r="1" fill="#ffffff"/>
+        <circle cx="41" cy="53" r="4" fill="#fdba74" opacity="0.7"/>
+        <circle cx="71" cy="53" r="4" fill="#fdba74" opacity="0.7"/>
+        <ellipse cx="56" cy="52" rx="2.5" ry="2" fill="#92400e"/>
+        <path d="M52 57q4 3.5 8 0" stroke="#92400e" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M56 86c-4.5 0-7.5 2-7.5 4.2h15c0-2.2-3-4.2-7.5-4.2z" fill="#78350f"/>
+        <path d="M49 90.2c.3 4.2 2.7 7.4 7 9.6 4.3-2.2 6.7-5.4 7-9.6z" fill="#b45309"/>
+        <ellipse cx="45" cy="91" rx="5" ry="4" fill="#d97706"/>
+        <ellipse cx="67" cy="91" rx="5" ry="4" fill="#d97706"/>
+      </svg>
+      <div style="flex:1;">
+        <p style="font-size:13px; line-height:18px; color:#92400e; font-weight:500;">도토리 창고에 쌓인 돈</p>
+        <p style="font-size:30px; line-height:36px; font-weight:800; color:#78350f; letter-spacing:-0.025em; margin-top:2px;">428,000원</p>
+        <div style="display:flex; align-items:center; gap:6px; margin-top:8px;">
+          <div style="flex:1; height:8px; background:#fde68a; border-radius:9999px; overflow:hidden;">
+            <div style="width:64%; height:8px; background:#d97706; border-radius:9999px;"></div>
+          </div>
+          <span style="font-size:11px; color:#92400e; font-weight:600; flex-shrink:0;">Lv.3 창고</span>
+        </div>
+      </div>
+    </div>
+    <!-- Dori speech -->
+    <div style="margin-top:14px; background:#ffffff; border:1px solid #fde68a; border-radius:10px; padding:10px 14px;">
+      <p style="font-size:13px; line-height:19px; color:#57534e;">이번 달에만 도토리 두 개 채웠어. 너 좀 하는데?</p>
+    </div>
+  </div>
+
+  <!-- Decision pending (highlighted) -->
+  <div style="padding:24px 20px 8px; display:flex; align-items:center; justify-content:space-between;">
+    <h2 style="font-size:16px; line-height:24px; font-weight:600; color:#0a0a0a;">결정할 시간</h2>
+    <span style="background:#d97706; color:#ffffff; border-radius:9999px; padding:2px 10px; font-size:12px; font-weight:600;">1</span>
+  </div>
+  <div style="margin:0 20px; background:#ffffff; border:1.5px solid #d97706; border-radius:12px; padding:16px; box-shadow:0 4px 6px rgba(217,119,6,0.08), 0 2px 4px rgba(0,0,0,0.04);">
+    <div style="display:flex; gap:12px; align-items:center;">
+      <div style="width:52px; height:52px; background:#f5f5f5; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 0 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/></svg>
+      </div>
+      <div style="flex:1; min-width:0;">
+        <p style="font-size:15px; line-height:21px; font-weight:600; color:#0a0a0a; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">소니 WH-1000XM5 헤드폰</p>
+        <p style="font-size:14px; line-height:20px; color:#737373; margin-top:2px;">129,000원 · 3일 기다렸어</p>
+      </div>
+    </div>
+    <div style="margin-top:12px; background:#fffbeb; border-radius:8px; padding:8px 12px; display:flex; align-items:center; gap:8px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;"><path d="M12 3c-4.2 0-7 2-7 4.6h14C19 5 16.2 3 12 3z" fill="#78350f"/><path d="M6.2 7.6c.3 6 2.4 10.4 5.8 13.4 3.4-3 5.5-7.4 5.8-13.4z" fill="#b45309"/></svg>
+      <p style="font-size:13px; line-height:18px; color:#92400e;">도리: 이거, 아직도 설레?</p>
+    </div>
+    <button style="width:100%; margin-top:12px; background:#171717; color:#fafafa; border:none; border-radius:8px; height:40px; font-size:14px; font-weight:500; font-family:inherit; cursor:pointer;">지금 결정하기</button>
+  </div>
+
+  <!-- Cooldown in progress -->
+  <div style="padding:24px 20px 8px;">
+    <h2 style="font-size:16px; line-height:24px; font-weight:600; color:#0a0a0a;">기다리는 중</h2>
+  </div>
+  <div style="margin:0 20px; display:flex; flex-direction:column; gap:10px;">
+
+    <!-- Card 1 -->
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px;">
+      <div style="display:flex; gap:12px; align-items:center;">
+        <div style="width:44px; height:44px; background:#f5f5f5; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+        </div>
+        <div style="flex:1; min-width:0;">
+          <p style="font-size:14px; line-height:20px; font-weight:600; color:#0a0a0a; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">유니클로 U 크루넥 티셔츠</p>
+          <p style="font-size:13px; line-height:18px; color:#737373; margin-top:1px;">29,900원</p>
+        </div>
+        <div style="text-align:right; flex-shrink:0;">
+          <p style="font-size:13px; line-height:18px; font-weight:600; color:#d97706;">18시간 남음</p>
+          <p style="font-size:11px; line-height:15px; color:#a3a3a3;">72h 중</p>
+        </div>
+      </div>
+      <div style="margin-top:12px; height:6px; background:#f5f5f5; border-radius:9999px; overflow:hidden;">
+        <div style="width:75%; height:6px; background:#d97706; border-radius:9999px;"></div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px;">
+      <div style="display:flex; gap:12px; align-items:center;">
+        <div style="width:44px; height:44px; background:#f5f5f5; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+        </div>
+        <div style="flex:1; min-width:0;">
+          <p style="font-size:14px; line-height:20px; font-weight:600; color:#0a0a0a; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">보조배터리 20000mAh</p>
+          <p style="font-size:13px; line-height:18px; color:#737373; margin-top:1px;">45,800원</p>
+        </div>
+        <div style="text-align:right; flex-shrink:0;">
+          <p style="font-size:13px; line-height:18px; font-weight:600; color:#0a0a0a;">2일 4시간</p>
+          <p style="font-size:11px; line-height:15px; color:#a3a3a3;">7일 중</p>
+        </div>
+      </div>
+      <div style="margin-top:12px; height:6px; background:#f5f5f5; border-radius:9999px; overflow:hidden;">
+        <div style="width:68%; height:6px; background:#a3a3a3; border-radius:9999px;"></div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px;">
+      <div style="display:flex; gap:12px; align-items:center;">
+        <div style="width:44px; height:44px; background:#f5f5f5; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+        </div>
+        <div style="flex:1; min-width:0;">
+          <p style="font-size:14px; line-height:20px; font-weight:600; color:#0a0a0a; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">달리기의 세계 (양장판)</p>
+          <p style="font-size:13px; line-height:18px; color:#737373; margin-top:1px;">18,500원</p>
+        </div>
+        <div style="text-align:right; flex-shrink:0;">
+          <p style="font-size:13px; line-height:18px; font-weight:600; color:#0a0a0a;">6시간 남음</p>
+          <p style="font-size:11px; line-height:15px; color:#a3a3a3;">24h 중</p>
+        </div>
+      </div>
+      <div style="margin-top:12px; height:6px; background:#f5f5f5; border-radius:9999px; overflow:hidden;">
+        <div style="width:75%; height:6px; background:#d97706; border-radius:9999px;"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FAB -->
+  <button style="position:fixed; bottom:96px; right:calc(50% - 195px + 20px); width:56px; height:56px; border-radius:9999px; background:#d97706; border:none; box-shadow:0 10px 15px rgba(217,119,6,0.3), 0 4px 6px rgba(0,0,0,0.1); display:flex; align-items:center; justify-content:center; cursor:pointer;">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5v14"/></svg>
+  </button>
+
+  <!-- Tab bar -->
+  <div style="position:fixed; bottom:0; width:100%; max-width:390px; background:#ffffff; border-top:1px solid #e5e5e5; display:flex; padding:8px 0 24px;">
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding-top:6px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      <span style="font-size:11px; font-weight:600; color:#171717;">홈</span>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding-top:6px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+      <span style="font-size:11px; font-weight:500; color:#a3a3a3;">기록</span>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding-top:6px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+      <span style="font-size:11px; font-weight:500; color:#a3a3a3;">통계</span>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding-top:6px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <span style="font-size:11px; font-weight:500; color:#a3a3a3;">설정</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

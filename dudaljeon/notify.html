@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>두달전 — 통보하기</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f5f5f5; font-family: Inter, system-ui, sans-serif; color: #0a0a0a; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="display:flex; align-items:center; gap:12px; padding:20px;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+    <span style="font-size:20px; font-weight:600; letter-spacing:-0.025em;">갱신 통보하기</span>
+  </div>
+
+  <!-- Deadline strip -->
+  <div style="margin:0 20px; background:#fef2f2; border:1px solid #fecaca; border-radius:10px; padding:12px 16px; display:flex; align-items:center; gap:10px;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    <div style="font-size:13px; color:#7f1d1d;"><b>9월 8일</b>까지 임대인에게 도달해야 효력이 있어요 · D-47</div>
+  </div>
+
+  <!-- Step guide -->
+  <div style="padding:24px 20px 0 20px;">
+    <div style="font-size:14px; font-weight:600; color:#737373; margin-bottom:12px;">1단계 · 문자 초안 고르기</div>
+
+    <!-- Template selected -->
+    <div style="border:2px solid #171717; border-radius:12px; padding:16px; background:#ffffff;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="background:#171717; color:#fafafa; border-radius:9999px; padding:2px 10px; font-size:12px; font-weight:500;">갱신청구권 행사</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div style="margin-top:12px; background:#f5f5f5; border-radius:8px; padding:14px; font-size:13px; line-height:20px; color:#171717;">
+        안녕하세요, 302호 세입자 김윤재입니다. 주택임대차보호법 제6조의3에 따라 <b>계약갱신요구권을 행사</b>하여 2026년 11월 9일 만기 예정인 임대차계약의 갱신을 요청드립니다. 확인 부탁드립니다.
+      </div>
+      <div style="margin-top:10px; display:flex; gap:8px;">
+        <button style="flex:1; background:#171717; color:#fafafa; border:none; border-radius:8px; height:40px; font-size:14px; font-weight:500; font-family:inherit; display:flex; align-items:center; justify-content:center; gap:6px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          문자로 보내기
+        </button>
+        <button style="width:40px; background:#ffffff; border:1px solid #e5e5e5; border-radius:8px; display:flex; align-items:center; justify-content:center;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Other templates -->
+    <div style="margin-top:10px; border:1px solid #e5e5e5; border-radius:12px; padding:14px 16px; display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <div style="font-size:14px; font-weight:600;">조건 변경하고 재계약</div>
+        <div style="font-size:12px; color:#737373; margin-top:2px;">보증금·월세 조정 협의 요청 문구</div>
+      </div>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+    <div style="margin-top:8px; border:1px solid #e5e5e5; border-radius:12px; padding:14px 16px; display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <div style="font-size:14px; font-weight:600;">만기에 나가겠다고 통보</div>
+        <div style="font-size:12px; color:#737373; margin-top:2px;">퇴거 의사 + 보증금 반환 요청 문구</div>
+      </div>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+  </div>
+
+  <!-- Step 2: evidence -->
+  <div style="padding:28px 20px 0 20px;">
+    <div style="font-size:14px; font-weight:600; color:#737373; margin-bottom:12px;">2단계 · 보낸 증거 남기기</div>
+    <div style="border:1px dashed #d4d4d4; border-radius:12px; padding:20px; display:flex; flex-direction:column; align-items:center; gap:8px; background:#fafafa;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+      <div style="font-size:14px; font-weight:500;">문자 스크린샷 첨부</div>
+      <div style="font-size:12px; color:#737373; text-align:center; line-height:17px;">보낸 날짜와 함께 보관돼요.<br>나중에 분쟁 생기면 이게 증거예요.</div>
+    </div>
+
+    <!-- Saved evidence example -->
+    <div style="margin-top:10px; border:1px solid #e5e5e5; border-radius:12px; padding:12px 16px; display:flex; align-items:center; gap:12px;">
+      <div style="width:40px; height:40px; border-radius:8px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:14px; font-weight:600;">갱신 요구 문자.png</div>
+        <div style="font-size:12px; color:#737373; margin-top:2px;">2026.07.22 14:03 저장 · 통보일 기록됨</div>
+      </div>
+      <span style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; border-radius:9999px; padding:2px 10px; font-size:12px; font-weight:500;">증거 보관</span>
+    </div>
+  </div>
+
+  <div style="flex:1;"></div>
+
+  <!-- Bottom CTA -->
+  <div style="padding:16px 20px 32px 20px; border-top:1px solid #e5e5e5;">
+    <button style="width:100%; background:#171717; color:#fafafa; border:none; border-radius:10px; height:48px; font-size:15px; font-weight:600; font-family:inherit;">통보 완료로 표시</button>
+    <div style="text-align:center; font-size:12px; color:#737373; margin-top:10px;">완료하면 타임라인이 "재계약 준비" 단계로 넘어가요</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>살까말까 — 통계</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; min-height: 100vh; }
+    .mobile-frame { width: 100%; max-width: 390px; min-height: 100vh; background: #ffffff; position: relative; }
+  </style>
+</head>
+<body>
+<div class="mobile-frame" style="padding-bottom:96px;">
+  <div style="height:48px;"></div>
+
+  <!-- Top bar -->
+  <div style="padding:12px 20px;">
+    <h1 style="font-size:20px; line-height:28px; font-weight:700; color:#0a0a0a; letter-spacing:-0.025em;">통계</h1>
+  </div>
+
+  <!-- Summary cards -->
+  <div style="display:flex; gap:10px; padding:4px 20px 0;">
+    <div style="flex:1; background:#fffbeb; border:1px solid #fde68a; border-radius:12px; padding:14px;">
+      <div style="display:flex; align-items:center; gap:6px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 3c-4.2 0-7 2-7 4.6h14C19 5 16.2 3 12 3z" fill="#78350f"/><path d="M6.2 7.6c.3 6 2.4 10.4 5.8 13.4 3.4-3 5.5-7.4 5.8-13.4z" fill="#b45309"/></svg>
+        <p style="font-size:12px; line-height:16px; color:#92400e; font-weight:500;">총 아낀 돈</p>
+      </div>
+      <p style="font-size:22px; line-height:28px; font-weight:800; color:#78350f; letter-spacing:-0.025em; margin-top:6px;">557,000원</p>
+    </div>
+    <div style="flex:1; background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:14px;">
+      <div style="display:flex; align-items:center; gap:6px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+        <p style="font-size:12px; line-height:16px; color:#737373; font-weight:500;">결정한 횟수</p>
+      </div>
+      <p style="font-size:22px; line-height:28px; font-weight:800; color:#0a0a0a; letter-spacing:-0.025em; margin-top:6px;">23번</p>
+    </div>
+  </div>
+
+  <!-- Monthly saved chart -->
+  <div style="margin:16px 20px 0; background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:20px;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2 style="font-size:16px; line-height:24px; font-weight:600; color:#0a0a0a;">월별 아낀 돈</h2>
+      <span style="font-size:12px; color:#a3a3a3;">최근 6개월</span>
+    </div>
+    <!-- Bar chart -->
+    <div style="display:flex; align-items:flex-end; gap:12px; height:120px; margin-top:20px;">
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;">
+        <div style="width:100%; max-width:32px; height:28px; background:#fde68a; border-radius:6px 6px 0 0;"></div>
+        <span style="font-size:11px; color:#a3a3a3;">2월</span>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;">
+        <div style="width:100%; max-width:32px; height:44px; background:#fde68a; border-radius:6px 6px 0 0;"></div>
+        <span style="font-size:11px; color:#a3a3a3;">3월</span>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;">
+        <div style="width:100%; max-width:32px; height:36px; background:#fde68a; border-radius:6px 6px 0 0;"></div>
+        <span style="font-size:11px; color:#a3a3a3;">4월</span>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;">
+        <div style="width:100%; max-width:32px; height:64px; background:#fbbf24; border-radius:6px 6px 0 0;"></div>
+        <span style="font-size:11px; color:#a3a3a3;">5월</span>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;">
+        <div style="width:100%; max-width:32px; height:52px; background:#fbbf24; border-radius:6px 6px 0 0;"></div>
+        <span style="font-size:11px; color:#a3a3a3;">6월</span>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;">
+        <div style="position:relative; width:100%; max-width:32px;">
+          <span style="position:absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:11px; font-weight:700; color:#d97706; white-space:nowrap;">15.8만</span>
+          <div style="width:100%; height:96px; background:#d97706; border-radius:6px 6px 0 0;"></div>
+        </div>
+        <span style="font-size:11px; color:#0a0a0a; font-weight:600;">7월</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wise spending score -->
+  <div style="margin:12px 20px 0; background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:20px;">
+    <h2 style="font-size:16px; line-height:24px; font-weight:600; color:#0a0a0a;">현명한 소비 점수</h2>
+    <p style="font-size:13px; line-height:18px; color:#737373; margin-top:2px;">산 것 중에 2주 뒤에도 만족한 비율</p>
+    <div style="display:flex; align-items:center; gap:20px; margin-top:16px;">
+      <!-- Donut -->
+      <div style="position:relative; width:96px; height:96px; flex-shrink:0;">
+        <svg width="96" height="96" viewBox="0 0 96 96">
+          <circle cx="48" cy="48" r="40" fill="none" stroke="#f5f5f5" stroke-width="10"/>
+          <circle cx="48" cy="48" r="40" fill="none" stroke="#d97706" stroke-width="10" stroke-linecap="round" stroke-dasharray="196 251" transform="rotate(-90 48 48)"/>
+        </svg>
+        <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+          <span style="font-size:24px; line-height:28px; font-weight:800; color:#0a0a0a;">78</span>
+          <span style="font-size:11px; color:#a3a3a3;">/ 100</span>
+        </div>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:13px; color:#737373;">잘 샀어</span>
+          <span style="font-size:13px; font-weight:600; color:#22c55e;">7건</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:13px; color:#737373;">그냥 그래</span>
+          <span style="font-size:13px; font-weight:600; color:#737373;">2건</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:13px; color:#737373;">후회돼</span>
+          <span style="font-size:13px; font-weight:600; color:#ef4444;">1건</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category satisfaction -->
+  <div style="margin:12px 20px 0; background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:20px;">
+    <h2 style="font-size:16px; line-height:24px; font-weight:600; color:#0a0a0a;">카테고리별 만족도</h2>
+    <div style="display:flex; flex-direction:column; gap:14px; margin-top:16px;">
+      <div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+          <span style="font-size:13px; font-weight:500; color:#0a0a0a;">취미</span>
+          <span style="font-size:13px; font-weight:600; color:#22c55e;">92%</span>
+        </div>
+        <div style="height:8px; background:#f5f5f5; border-radius:9999px; overflow:hidden;">
+          <div style="width:92%; height:8px; background:#22c55e; border-radius:9999px;"></div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+          <span style="font-size:13px; font-weight:500; color:#0a0a0a;">전자기기</span>
+          <span style="font-size:13px; font-weight:600; color:#0a0a0a;">75%</span>
+        </div>
+        <div style="height:8px; background:#f5f5f5; border-radius:9999px; overflow:hidden;">
+          <div style="width:75%; height:8px; background:#d97706; border-radius:9999px;"></div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+          <span style="font-size:13px; font-weight:500; color:#0a0a0a;">생활</span>
+          <span style="font-size:13px; font-weight:600; color:#0a0a0a;">66%</span>
+        </div>
+        <div style="height:8px; background:#f5f5f5; border-radius:9999px; overflow:hidden;">
+          <div style="width:66%; height:8px; background:#d97706; border-radius:9999px;"></div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+          <span style="font-size:13px; font-weight:500; color:#0a0a0a;">패션</span>
+          <span style="font-size:13px; font-weight:600; color:#ef4444;">40%</span>
+        </div>
+        <div style="height:8px; background:#f5f5f5; border-radius:9999px; overflow:hidden;">
+          <div style="width:40%; height:8px; background:#ef4444; border-radius:9999px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dori insight -->
+  <div style="margin:12px 20px 0; display:flex; gap:12px; align-items:flex-start; background:#fffbeb; border:1px solid #fde68a; border-radius:12px; padding:14px 16px;">
+    <!-- Dori 생각 포즈 (미니) -->
+    <svg width="44" height="44" viewBox="0 0 120 120" fill="none" style="flex-shrink:0;">
+      <path d="M78 84c20-4 30-20 27-36-2-11-11-19-21-19 8 7 11 16 8 26-3 12-11 19-20 21z" fill="#b45309"/>
+      <path d="M39 31c-4-9 0-17 8-18 3 5 2 12-2 17z" fill="#b45309"/>
+      <path d="M73 31c4-9 0-17-8-18-3 5-2 12 2 17z" fill="#b45309"/>
+      <ellipse cx="56" cy="88" rx="24" ry="19" fill="#d97706"/>
+      <ellipse cx="56" cy="92" rx="15" ry="12" fill="#fde68a"/>
+      <circle cx="56" cy="46" r="23" fill="#d97706"/>
+      <path d="M56 38c9 0 15 7 15 14 0 9-7 15-15 15s-15-6-15-15c0-7 6-14 15-14z" fill="#fde68a"/>
+      <circle cx="45" cy="44" r="3" fill="#451a03"/>
+      <circle cx="63" cy="44" r="3" fill="#451a03"/>
+      <ellipse cx="56" cy="52" rx="2.5" ry="2" fill="#92400e"/>
+      <path d="M51 58q5-2 9 .5" stroke="#92400e" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <ellipse cx="68" cy="63" rx="5.5" ry="4.5" fill="#d97706"/>
+    </svg>
+    <div style="flex:1;">
+      <p style="font-size:13px; line-height:19px; color:#57534e;">패션은 사고 나서 아쉬웠던 적이 많네. 다음엔 7일 쿨다운 어때? 취미는 거의 다 만족했으니까 너무 참지 않아도 되고.</p>
+    </div>
+  </div>
+
+  <!-- Tab bar -->
+  <div style="position:fixed; bottom:0; width:100%; max-width:390px; background:#ffffff; border-top:1px solid #e5e5e5; display:flex; padding:8px 0 24px;">
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding-top:6px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      <span style="font-size:11px; font-weight:500; color:#a3a3a3;">홈</span>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding-top:6px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+      <span style="font-size:11px; font-weight:500; color:#a3a3a3;">기록</span>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding-top:6px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+      <span style="font-size:11px; font-weight:600; color:#171717;">통계</span>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding-top:6px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <span style="font-size:11px; font-weight:500; color:#a3a3a3;">설정</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
