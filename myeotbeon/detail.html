@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>몇번남았지 — 회차권 상세</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f5f5f5; font-family: Inter, system-ui, sans-serif; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; padding-bottom: 40px; }
+</style>
+</head>
+<body>
+<div class="screen">
+
+  <!-- Header -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 20px;">
+    <button style="width: 40px; height: 40px; border: none; background: none; display: flex; align-items: center; justify-content: center; cursor: pointer; margin-left: -8px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <span style="font-size: 16px; font-weight: 600;">PT 김코치</span>
+    <button style="width: 40px; height: 40px; border: none; background: none; display: flex; align-items: center; justify-content: center; cursor: pointer; margin-right: -8px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+    </button>
+  </div>
+
+  <!-- Hero -->
+  <div style="padding: 8px 20px 0 20px;">
+    <div style="background: #171717; border-radius: 16px; padding: 24px; color: #fafafa;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div style="font-size: 14px; line-height: 20px; color: #a3a3a3;">바디짐 강남점 · 20회권</div>
+        <span style="background: #262626; color: #fafafa; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">D-42</span>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 8px; margin-top: 12px;">
+        <span style="font-size: 48px; line-height: 52px; font-weight: 800; letter-spacing: -0.025em;">7회</span>
+        <span style="font-size: 16px; line-height: 24px; color: #a3a3a3;">남음</span>
+      </div>
+      <div style="height: 8px; background: #262626; border-radius: 9999px; margin-top: 16px; overflow: hidden;">
+        <div style="width: 35%; height: 8px; background: #fafafa; border-radius: 9999px;"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; margin-top: 16px; padding-top: 16px; border-top: 1px solid #262626;">
+        <div>
+          <div style="font-size: 12px; line-height: 16px; color: #a3a3a3;">남은 금액</div>
+          <div style="font-size: 16px; line-height: 24px; font-weight: 600;">385,000원</div>
+        </div>
+        <div>
+          <div style="font-size: 12px; line-height: 16px; color: #a3a3a3;">주간 페이스</div>
+          <div style="font-size: 16px; line-height: 24px; font-weight: 600;">주 1.6회</div>
+        </div>
+        <div>
+          <div style="font-size: 12px; line-height: 16px; color: #a3a3a3;">예상 소진일</div>
+          <div style="font-size: 16px; line-height: 24px; font-weight: 600;">8/28</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pace insight -->
+  <div style="margin: 16px 20px 0 20px; display: flex; align-items: center; gap: 10px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 14px 16px;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
+    <span style="font-size: 13px; line-height: 18px; color: #15803d;">이 페이스면 만기 12일 전에 다 써요. 여유 있어요.</span>
+  </div>
+
+  <!-- Use button -->
+  <div style="padding: 16px 20px 0 20px;">
+    <button style="width: 100%; height: 52px; background: #171717; color: #fafafa; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      오늘 1회 사용 기록
+    </button>
+  </div>
+
+  <!-- History -->
+  <div style="padding: 24px 20px 0 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+      <span style="font-size: 16px; font-weight: 600;">사용 기록</span>
+      <span style="font-size: 13px; color: #737373;">13회 사용</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column;">
+      <!-- item -->
+      <div style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f5f5f5;">
+        <div style="width: 36px; height: 36px; border-radius: 9999px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #171717; flex-shrink: 0;">13</div>
+        <div style="flex: 1;">
+          <div style="font-size: 14px; line-height: 20px; font-weight: 500;">7/24 (금) 19:30</div>
+          <div style="font-size: 12px; line-height: 16px; color: #737373;">하체 데드리프트 5×5, 컨디션 좋았음</div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f5f5f5;">
+        <div style="width: 36px; height: 36px; border-radius: 9999px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #171717; flex-shrink: 0;">12</div>
+        <div style="flex: 1;">
+          <div style="font-size: 14px; line-height: 20px; font-weight: 500;">7/21 (화) 19:30</div>
+          <div style="font-size: 12px; line-height: 16px; color: #737373;">가슴/어깨, 벤치 60kg 성공</div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f5f5f5;">
+        <div style="width: 36px; height: 36px; border-radius: 9999px; background: #fef2f2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </div>
+        <div style="flex: 1;">
+          <div style="font-size: 14px; line-height: 20px; font-weight: 500;">7/17 (금) — 노쇼 차감</div>
+          <div style="font-size: 12px; line-height: 16px; color: #ef4444;">당일 취소로 1회 차감됨 (증빙 캡처 저장)</div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f5f5f5;">
+        <div style="width: 36px; height: 36px; border-radius: 9999px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #171717; flex-shrink: 0;">11</div>
+        <div style="flex: 1;">
+          <div style="font-size: 14px; line-height: 20px; font-weight: 500;">7/14 (화) 19:30</div>
+          <div style="font-size: 12px; line-height: 16px; color: #737373;">등/이두</div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>
+      </div>
+    </div>
+
+    <button style="width: 100%; height: 44px; margin-top: 12px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 14px; font-weight: 500; color: #171717; font-family: inherit; cursor: pointer;">전체 기록 보기</button>
+  </div>
+
+</div>
+</body>
+</html>
