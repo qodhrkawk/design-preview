@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>쿵쿵일지 — 홈</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 20px 8px 20px;">
+    <div>
+      <div style="font-size:24px; line-height:32px; font-weight:600; color:#0a0a0a;">쿵쿵일지</div>
+      <div style="font-size:14px; line-height:20px; color:#737373; margin-top:2px;">8월 13일 목요일</div>
+    </div>
+    <div style="width:40px; height:40px; border-radius:9999px; background:#f5f5f5; display:flex; align-items:center; justify-content:center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+    </div>
+  </div>
+
+  <!-- Streak summary card -->
+  <div style="margin:12px 20px 0 20px; background:#171717; border-radius:16px; padding:20px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+      <div>
+        <div style="font-size:12px; line-height:16px; color:#a3a3a3;">이번 주 기록</div>
+        <div style="font-size:36px; line-height:40px; font-weight:800; letter-spacing:-0.025em; color:#fafafa; margin-top:4px;">17건</div>
+      </div>
+      <div style="background:#262626; border-radius:9999px; padding:4px 12px; display:flex; align-items:center; gap:6px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+        <span style="font-size:12px; font-weight:500; color:#fafafa;">12일 연속 기록 중</span>
+      </div>
+    </div>
+    <div style="display:flex; gap:16px; margin-top:16px; padding-top:16px; border-top:1px solid #262626;">
+      <div style="flex:1;">
+        <div style="font-size:12px; color:#a3a3a3;">가장 잦은 시간</div>
+        <div style="font-size:14px; font-weight:600; color:#fafafa; margin-top:2px;">22시 ~ 24시</div>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:12px; color:#a3a3a3;">가장 잦은 유형</div>
+        <div style="font-size:14px; font-weight:600; color:#fafafa; margin-top:2px;">발망치 소리</div>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:12px; color:#a3a3a3;">야간 발생</div>
+        <div style="font-size:14px; font-weight:600; color:#fafafa; margin-top:2px;">9건 (53%)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick record -->
+  <div style="padding:24px 20px 0 20px;">
+    <div style="font-size:14px; line-height:20px; font-weight:500; color:#0a0a0a; margin-bottom:12px;">지금 들리는 소음, 바로 기록</div>
+    <div style="display:flex; flex-wrap:wrap; gap:8px;">
+      <div style="display:flex; align-items:center; gap:8px; background:#f5f5f5; border:1px solid #e5e5e5; border-radius:9999px; padding:10px 16px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6a2 2 0 0 1 2-2h2"/><path d="M4 16v2a2 2 0 0 0 2 2h2"/><path d="M16 4h2a2 2 0 0 1 2 2v2"/><path d="M16 20h2a2 2 0 0 0 2-2v-2"/><circle cx="12" cy="12" r="3"/></svg>
+        <span style="font-size:14px; font-weight:500; color:#171717;">발망치</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; background:#f5f5f5; border:1px solid #e5e5e5; border-radius:9999px; padding:10px 16px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg>
+        <span style="font-size:14px; font-weight:500; color:#171717;">가구 끄는 소리</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; background:#f5f5f5; border:1px solid #e5e5e5; border-radius:9999px; padding:10px 16px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v13"/><path d="M22 10v3"/></svg>
+        <span style="font-size:14px; font-weight:500; color:#171717;">음악 · TV</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; background:#f5f5f5; border:1px solid #e5e5e5; border-radius:9999px; padding:10px 16px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.25 16.25h1.5L12 17z"/><path d="M16 14v.5"/><path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309"/><path d="M8 14v.5"/><path d="M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 2.5c2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"/></svg>
+        <span style="font-size:14px; font-weight:500; color:#171717;">반려동물</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; background:#f5f5f5; border:1px solid #e5e5e5; border-radius:9999px; padding:10px 16px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+        <span style="font-size:14px; font-weight:500; color:#171717;">기타</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Today's log -->
+  <div style="padding:28px 20px 0 20px; flex:1;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+      <div style="font-size:14px; font-weight:500; color:#0a0a0a;">오늘 기록 3건</div>
+      <span style="font-size:14px; color:#737373;">전체 보기</span>
+    </div>
+
+    <!-- log item -->
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px; margin-bottom:8px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div style="width:36px; height:36px; border-radius:9999px; background:#fef2f2; display:flex; align-items:center; justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6a2 2 0 0 1 2-2h2"/><path d="M4 16v2a2 2 0 0 0 2 2h2"/><path d="M16 4h2a2 2 0 0 1 2 2v2"/><path d="M16 20h2a2 2 0 0 0 2-2v-2"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div>
+            <div style="font-size:14px; font-weight:600; color:#0a0a0a;">발망치 소리</div>
+            <div style="font-size:12px; color:#737373; margin-top:2px;">06:40 · 15분 지속</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="background:#fef2f2; color:#ef4444; border-radius:9999px; padding:2px 10px; font-size:12px; font-weight:500;">심함</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px; margin-bottom:8px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div style="width:36px; height:36px; border-radius:9999px; background:#fffbeb; display:flex; align-items:center; justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg>
+          </div>
+          <div>
+            <div style="font-size:14px; font-weight:600; color:#0a0a0a;">가구 끄는 소리</div>
+            <div style="font-size:12px; color:#737373; margin-top:2px;">13:05 · 3분 지속 · 녹음 1개</div>
+          </div>
+        </div>
+        <span style="background:#fffbeb; color:#f59e0b; border-radius:9999px; padding:2px 10px; font-size:12px; font-weight:500;">보통</span>
+      </div>
+    </div>
+
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div style="width:36px; height:36px; border-radius:9999px; background:#f5f5f5; display:flex; align-items:center; justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v13"/><path d="M22 10v3"/></svg>
+          </div>
+          <div>
+            <div style="font-size:14px; font-weight:600; color:#0a0a0a;">음악 · TV</div>
+            <div style="font-size:12px; color:#737373; margin-top:2px;">00:12 · 20분 지속 · 야간</div>
+          </div>
+        </div>
+        <span style="background:#f5f5f5; color:#737373; border-radius:9999px; padding:2px 10px; font-size:12px; font-weight:500;">약함</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom tab bar -->
+  <div style="border-top:1px solid #e5e5e5; display:flex; padding:12px 0 28px 0; background:#ffffff;">
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span style="font-size:12px; font-weight:500; color:#171717;">홈</span>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+      <span style="font-size:12px; color:#a3a3a3;">일지</span>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+      <span style="font-size:12px; color:#a3a3a3;">리포트</span>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+      <span style="font-size:12px; color:#a3a3a3;">대응 가이드</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
