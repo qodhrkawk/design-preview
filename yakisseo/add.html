@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>약있어? — 약 등록</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="padding: 56px 20px 20px 20px; display: flex; align-items: center; gap: 12px;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    <div style="font-size: 20px; line-height: 28px; font-weight: 600; color: #0a0a0a;">약 등록</div>
+  </div>
+
+  <div style="padding: 0 20px; display: flex; flex-direction: column; gap: 20px;">
+
+    <!-- Name -->
+    <div>
+      <div style="font-size: 14px; font-weight: 500; color: #0a0a0a; margin-bottom: 8px;">약 이름</div>
+      <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 10px 12px; font-size: 15px; font-weight: 500; color: #0a0a0a;">어린이 부루펜 시럽</div>
+    </div>
+
+    <!-- Category -->
+    <div>
+      <div style="font-size: 14px; font-weight: 500; color: #0a0a0a; margin-bottom: 8px;">분류</div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <span style="background: #171717; color: #fafafa; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500;">해열·진통</span>
+        <span style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500;">소화</span>
+        <span style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500;">감기</span>
+        <span style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500;">연고·외용</span>
+        <span style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500;">안약</span>
+        <span style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500;">밴드·드레싱</span>
+      </div>
+    </div>
+
+    <!-- Form type -->
+    <div>
+      <div style="font-size: 14px; font-weight: 500; color: #0a0a0a; margin-bottom: 8px;">제형</div>
+      <div style="display: flex; gap: 8px;">
+        <div style="flex: 1; background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 8px; padding: 12px 0; text-align: center; font-size: 14px; font-weight: 500; color: #737373;">알약</div>
+        <div style="flex: 1; background: #ffffff; border: 2px solid #171717; border-radius: 8px; padding: 12px 0; text-align: center; font-size: 14px; font-weight: 600; color: #171717;">시럽</div>
+        <div style="flex: 1; background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 8px; padding: 12px 0; text-align: center; font-size: 14px; font-weight: 500; color: #737373;">연고</div>
+        <div style="flex: 1; background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 8px; padding: 12px 0; text-align: center; font-size: 14px; font-weight: 500; color: #737373;">점안</div>
+      </div>
+    </div>
+
+    <!-- Expiry -->
+    <div>
+      <div style="font-size: 14px; font-weight: 500; color: #0a0a0a; margin-bottom: 8px;">유효기한 (포장 표기)</div>
+      <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between;">
+        <span style="font-size: 15px; font-weight: 500; color: #0a0a0a;">2027년 3월</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+      </div>
+    </div>
+
+    <!-- Opened toggle + auto rule -->
+    <div>
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+        <div style="font-size: 14px; font-weight: 500; color: #0a0a0a;">개봉했어요</div>
+        <div style="width: 44px; height: 26px; border-radius: 9999px; background: #171717; position: relative;">
+          <div style="width: 20px; height: 20px; border-radius: 9999px; background: #ffffff; position: absolute; top: 3px; right: 3px;"></div>
+        </div>
+      </div>
+      <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+        <span style="font-size: 15px; font-weight: 500; color: #0a0a0a;">개봉일: 2026년 8월 16일</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+      </div>
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 14px 16px; display: flex; gap: 10px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <div>
+          <div style="font-size: 13px; line-height: 18px; font-weight: 600; color: #1d4ed8;">시럽은 개봉 후 1개월까지만 안전해요</div>
+          <div style="font-size: 13px; line-height: 18px; font-weight: 400; color: #3b82f6; margin-top: 2px;">유효기한(2027.3)보다 빠른 <b>2026.9.15</b>을 사용기한으로 설정하고, 7일 전에 알려드릴게요.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div>
+      <div style="font-size: 14px; font-weight: 500; color: #0a0a0a; margin-bottom: 8px;">보관 위치</div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <span style="background: #171717; color: #fafafa; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500;">거실 서랍장</span>
+        <span style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500;">욕실 수납장</span>
+        <span style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500;">주방 상부장</span>
+        <span style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 4px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          추가
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Save button -->
+  <div style="margin-top: auto; padding: 20px 20px 40px 20px;">
+    <button style="width: 100%; background: #171717; color: #fafafa; border: none; border-radius: 10px; padding: 16px; font-size: 16px; font-weight: 600; font-family: inherit; cursor: pointer;">등록하기</button>
+  </div>
+
+</div>
+</body>
+</html>
