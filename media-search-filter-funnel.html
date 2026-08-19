@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이미지가 스텝마다 어떻게 걸러지는가 — Media Search</title>
+<style>
+  :root{
+    --ink:#0f172a; --sub:#64748b; --faint:#94a3b8; --line:#e6eaf0;
+    --page:#f6f8fb; --card:#ffffff;
+    --blue:#2563eb; --blue-bg:#eff5ff; --blue-bd:#cfe0fd; --blue-dp:#1d4ed8;
+    --amber:#d97706; --amber-bg:#fff8ec; --amber-bd:#f6dfa6; --amber-dp:#92400e;
+    --green:#16a34a; --green-bg:#f1fbf4; --green-bd:#bfe9cc; --green-dp:#15803d;
+    --rose:#e11d48; --rose-bg:#fff2f4; --rose-bd:#f7cdd5; --rose-dp:#9f1239;
+    --shadow:0 1px 2px rgba(15,23,42,.04), 0 10px 24px -12px rgba(15,23,42,.16);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:
+      radial-gradient(1200px 480px at 50% -140px, #eef3fb 0%, rgba(238,243,251,0) 70%),
+      var(--page);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Segoe UI",Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:44px 24px 64px}
+
+  /* ---------- header ---------- */
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:7px;
+    font-size:11.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--blue); background:var(--blue-bg); border:1px solid var(--blue-bd);
+    padding:5px 11px; border-radius:999px;
+  }
+  h1{font-size:27px; line-height:1.25; font-weight:800; letter-spacing:-.02em; margin:16px 0 8px}
+  .cap{font-size:13px; color:var(--sub); margin:0; max-width:760px}
+  .cap b{color:var(--ink); font-weight:700}
+
+  /* ---------- query pill ---------- */
+  .query{
+    display:inline-flex; align-items:center; gap:9px; margin-top:18px;
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:9px 14px 9px 12px; box-shadow:var(--shadow);
+  }
+  .query .q-ic{color:var(--faint)}
+  .query .q-txt{font-size:15px; font-weight:700}
+  .query .q-tag{font-size:11.5px; color:var(--sub); background:#f1f5f9; border-radius:6px; padding:2px 8px}
+
+  /* ---------- funnel ---------- */
+  .funnel{margin-top:30px; display:flex; flex-direction:column; align-items:center}
+  .stage{
+    width:100%; background:var(--card); border:1px solid var(--line); border-radius:20px;
+    box-shadow:var(--shadow); padding:20px 22px; position:relative; overflow:hidden;
+  }
+  .stage::before{content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--ac,#cbd5e1)}
+  .s0{max-width:960px; --ac:#cbd5e1}
+  .s1{max-width:880px; --ac:var(--blue)}
+  .s2{max-width:840px; --ac:var(--amber)}
+  .s3{max-width:740px; --ac:var(--green)}
+  .result{max-width:560px}
+
+  .s-head{display:flex; align-items:flex-start; gap:16px}
+  .s-main{flex:1; min-width:0}
+  .s-badge{
+    display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:800;
+    letter-spacing:.03em; padding:5px 10px 5px 8px; border-radius:8px; margin-bottom:9px;
+  }
+  .s-badge svg{width:15px; height:15px}
+  .b-neutral{background:#f1f5f9; color:#475569; border:1px solid #e2e8f0}
+  .b-blue{background:var(--blue-bg); color:var(--blue-dp); border:1px solid var(--blue-bd)}
+  .b-amber{background:var(--amber-bg); color:var(--amber-dp); border:1px solid var(--amber-bd)}
+  .b-green{background:var(--green-bg); color:var(--green-dp); border:1px solid var(--green-bd)}
+  .key-tag{margin-left:8px; font-size:10.5px; font-weight:800; color:var(--amber-dp);
+    background:#fef3c7; border:1px solid var(--amber-bd); padding:2px 7px; border-radius:6px; letter-spacing:.02em}
+  .s-title{font-size:17px; font-weight:800; letter-spacing:-.01em; margin:0 0 4px}
+  .s-desc{font-size:13px; color:var(--sub); margin:0}
+  .s-desc code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; color:var(--ink); background:#f1f5f9; padding:1px 5px; border-radius:5px}
+
+  /* metric block on the right */
+  .metric{flex:none; width:132px; text-align:right; padding-left:14px; border-left:1px solid var(--line)}
+  .metric .m-label{font-size:10.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--faint)}
+  .metric .m-num{font-size:30px; font-weight:800; letter-spacing:-.02em; line-height:1.05; margin-top:3px}
+  .metric .m-num small{font-size:14px; font-weight:700; color:var(--sub); margin-left:2px}
+  .metric .m-sub{font-size:11px; color:var(--sub); margin-top:2px}
+  .m-bar{margin-top:9px; height:6px; border-radius:999px; background:#eef2f7; overflow:hidden}
+  .m-bar > i{display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,#94a3b8,#cbd5e1)}
+  .s1 .m-num, .s1 .metric .m-num small{color:var(--rose-dp)}
+  .s1 .m-bar > i{background:linear-gradient(90deg,var(--rose),#fb7185)}
+  .s2 .m-num{color:var(--green-dp)}
+  .s2 .m-bar > i{background:linear-gradient(90deg,var(--green),#4ade80)}
+  .s0 .m-num{color:#334155}
+
+  /* chips */
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
+  .chip{
+    display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700;
+    padding:6px 11px; border-radius:999px; background:#fff; border:1px solid var(--line);
+  }
+  .chip .sc{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-weight:700; font-size:11.5px;
+    padding:1px 6px; border-radius:5px; background:#f1f5f9; color:#475569}
+  .chip.hi{border-color:var(--green-bd); background:var(--green-bg); color:var(--green-dp)}
+  .chip.hi .sc{background:#dff3e4; color:var(--green-dp)}
+  .chip.lo{border-color:var(--rose-bd); background:var(--rose-bg); color:var(--rose-dp)}
+  .chip.lo .sc{background:#fbdde2; color:var(--rose-dp)}
+  .note{font-size:12px; color:var(--faint); margin-top:11px}
+
+  /* stage 2 two columns */
+  .cols{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px}
+  .col{border:1px solid var(--line); border-radius:14px; padding:13px 14px}
+  .col.keep{background:var(--green-bg); border-color:var(--green-bd)}
+  .col.drop{background:var(--rose-bg); border-color:var(--rose-bd)}
+  .col-h{display:flex; align-items:center; gap:7px; font-size:12px; font-weight:800; margin-bottom:10px}
+  .col.keep .col-h{color:var(--green-dp)}
+  .col.drop .col-h{color:var(--rose-dp)}
+  .col-h svg{width:14px; height:14px}
+  .tag{display:inline-flex; align-items:center; font-size:13px; font-weight:700; padding:5px 12px; border-radius:8px; margin:0 6px 6px 0}
+  .tag.keep{background:#fff; color:var(--green-dp); border:1px solid var(--green-bd)}
+  .tag.drop{background:#fff; color:var(--rose-dp); border:1px solid var(--rose-bd); text-decoration:line-through; text-decoration-color:#f2a3b0}
+  .rule{display:flex; flex-wrap:wrap; gap:7px; margin-top:14px}
+  .rule .r{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11.5px; font-weight:600;
+    color:var(--amber-dp); background:var(--amber-bg); border:1px solid var(--amber-bd); padding:4px 9px; border-radius:7px}
+
+  .callout{
+    display:flex; align-items:flex-start; gap:9px; margin-top:15px;
+    background:linear-gradient(180deg,#fff8ec,#fffdf7); border:1px solid var(--amber-bd);
+    border-radius:12px; padding:12px 14px; font-size:12.5px; color:var(--amber-dp); font-weight:600;
+  }
+  .callout svg{width:16px; height:16px; flex:none; margin-top:1px; color:var(--amber)}
+  .callout b{color:#7c2d12}
+
+  .formula{
+    margin-top:14px; display:flex; align-items:center; gap:10px;
+    background:#0f172a; color:#e2e8f0; border-radius:12px; padding:12px 15px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:13.5px; font-weight:600;
+    overflow-x:auto;
+  }
+  .formula .lb{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;
+    font-size:11px; font-weight:700; color:#94a3b8; letter-spacing:.04em; flex:none}
+  .formula .op{color:#7dd3fc}
+  .formula .hl{color:#fca5a5}
+
+  /* connector */
+  .conn{display:flex; flex-direction:column; align-items:center; gap:0; padding:2px 0}
+  .conn .line{width:2px; height:16px; background:linear-gradient(#cbd5e1,#e2e8f0)}
+  .conn .delta{
+    display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700;
+    color:var(--rose-dp); background:var(--rose-bg); border:1px solid var(--rose-bd);
+    padding:4px 11px; border-radius:999px; margin:2px 0;
+  }
+  .conn .delta svg{width:13px; height:13px}
+  .conn .delta .why{color:var(--sub); font-weight:600}
+  .conn .chev{color:#cbd5e1}
+  .conn .chev svg{width:20px; height:20px; display:block}
+
+  /* result card */
+  .result{background:linear-gradient(180deg,#16a34a,#12924a); border:none; color:#fff;
+    text-align:center; padding:24px 22px}
+  .result::before{display:none}
+  .result .r-num{font-size:44px; font-weight:800; letter-spacing:-.02em; line-height:1}
+  .result .r-num small{font-size:20px; font-weight:700; opacity:.9; margin-left:3px}
+  .result .r-lab{font-size:13.5px; font-weight:600; color:#dcfce7; margin-top:6px}
+  .result .r-cmp{display:inline-flex; align-items:center; gap:8px; margin-top:14px;
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.25); border-radius:999px;
+    padding:7px 14px; font-size:12px; font-weight:600; color:#fff}
+  .result .r-cmp b{font-weight:800}
+  .result .r-cmp .x{color:#fecaca}
+
+  /* contrast box */
+  .contrast{
+    margin-top:34px; background:var(--card); border:1px solid var(--line);
+    border-radius:20px; box-shadow:var(--shadow); padding:22px 24px; position:relative; overflow:hidden;
+  }
+  .contrast::before{content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--blue)}
+  .contrast .c-top{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+  .c-eyebrow{font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--blue-dp);
+    background:var(--blue-bg); border:1px solid var(--blue-bd); padding:4px 10px; border-radius:7px}
+  .contrast h2{font-size:16px; font-weight:800; margin:0}
+  .contrast h2 .q{color:var(--blue-dp)}
+  .c-flow{display:flex; align-items:center; flex-wrap:wrap; gap:9px; margin-top:15px}
+  .c-step{display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700;
+    background:#f8fafc; border:1px solid var(--line); border-radius:10px; padding:8px 12px}
+  .c-step .k{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11.5px; color:#475569;
+    background:#eef2f7; padding:1px 6px; border-radius:5px}
+  .c-step.keep{background:var(--green-bg); border-color:var(--green-bd); color:var(--green-dp)}
+  .c-step.big{background:var(--green-bg); border-color:var(--green-bd); color:var(--green-dp); font-size:13.5px; font-weight:800}
+  .c-arrow{color:var(--faint)}
+  .c-arrow svg{width:17px; height:17px; display:block}
+  .c-concl{display:flex; align-items:flex-start; gap:9px; margin-top:16px; font-size:13px; color:var(--ink)}
+  .c-concl svg{width:17px; height:17px; flex:none; margin-top:2px; color:var(--amber)}
+  .c-concl b{font-weight:800}
+  .c-concl .sig{color:var(--green-dp); font-weight:800}
+  .c-concl .noise{color:var(--rose-dp); font-weight:800}
+
+  /* legend */
+  .legend{display:flex; flex-wrap:wrap; gap:10px 20px; margin:26px 4px 0; font-size:12.5px; color:#475569}
+  .legend span{display:inline-flex; align-items:center; gap:8px}
+  .legend .dot{width:12px; height:12px; border-radius:4px; flex:none}
+
+  @media (max-width:720px){
+    h1{font-size:22px}
+    .s-head{flex-direction:column; gap:14px}
+    .metric{width:100%; text-align:left; padding-left:0; border-left:none; border-top:1px solid var(--line); padding-top:12px}
+    .m-bar{max-width:220px}
+    .cols{grid-template-columns:1fr}
+    .stage,.s0,.s1,.s2,.s3,.result{max-width:100%}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="eyebrow">
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+    Media Search · 온디바이스 이미지 검색
+  </span>
+  <h1>이미지가 스텝마다 어떻게 걸러지는가 — 예시</h1>
+  <p class="cap">예시 쿼리 <b>“강아지”</b>(좁은 검색). 수치는 오프라인 평가 코퍼스(MediaSearchSample, 1,216장) 기준 예시이며 LINE 런타임 실측이 아니다.</p>
+
+  <span class="query">
+    <span class="q-ic"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    <span class="q-txt">강아지</span>
+    <span class="q-tag">좁은 검색</span>
+  </span>
+
+  <div class="funnel">
+
+    <!-- Stage 0 -->
+    <section class="stage s0">
+      <div class="s-head">
+        <div class="s-main">
+          <span class="s-badge b-neutral">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            후보 전체
+          </span>
+          <h3 class="s-title">채팅방 전체 이미지</h3>
+          <p class="s-desc">방 진입 때 미리 VNClassify로 분석해 키워드→confidence로 저장해둔 후보 전체.</p>
+        </div>
+        <div class="metric">
+          <div class="m-label">후보 전체</div>
+          <div class="m-num">1,216<small>장</small></div>
+          <div class="m-bar"><i style="width:100%"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="conn">
+      <span class="line"></span>
+      <span class="delta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg> 1,070장 <span class="why">· 매칭 키워드 없음</span></span>
+      <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+    </div>
+
+    <!-- Stage 1 -->
+    <section class="stage s1">
+      <div class="s-head">
+        <div class="s-main">
+          <span class="s-badge b-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            Stage 1 · 의미 매칭
+          </span>
+          <h3 class="s-title">검색어 → 키워드</h3>
+          <p class="s-desc">“강아지”를 임베딩해 1,303개 VNClassify 키워드와 코사인 유사도. 상위 후보:</p>
+          <div class="chips">
+            <span class="chip lo">canine <span class="sc">0.77</span></span>
+            <span class="chip hi">dog <span class="sc">0.75</span></span>
+            <span class="chip hi">retriever <span class="sc">0.71</span></span>
+            <span class="chip lo">animal <span class="sc">0.67</span></span>
+          </div>
+          <p class="note">VNClassify는 개 이미지에 dog뿐 아니라 상위 계층 canine·animal도 함께 부착한다.</p>
+        </div>
+        <div class="metric">
+          <div class="m-label">매칭 이미지</div>
+          <div class="m-num">146<small>장</small></div>
+          <div class="m-sub">사자·고양이 섞임</div>
+          <div class="m-bar"><i style="width:35%"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="conn">
+      <span class="line"></span>
+      <span class="delta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg> 126장 <span class="why">· animal 태그만 공유하던 이미지</span></span>
+      <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+    </div>
+
+    <!-- Stage 2 (KEY) -->
+    <section class="stage s2">
+      <div class="s-head">
+        <div class="s-main">
+          <span class="s-badge b-amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg>
+            Stage 2 · 상위태그 억제
+          </span>
+          <span class="key-tag">핵심 단계</span>
+          <h3 class="s-title">is-a 방향성으로 조상 제거</h3>
+          <div class="rule">
+            <span class="r">상대컷 0.77 → 0.67</span>
+            <span class="r">peak step-down (canine → dog)</span>
+            <span class="r">dog의 조상 제거</span>
+          </div>
+          <div class="cols">
+            <div class="col keep">
+              <div class="col-h">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                채택 (유지)
+              </div>
+              <span class="tag keep">dog</span>
+              <span class="tag keep">retriever</span>
+            </div>
+            <div class="col drop">
+              <div class="col-h">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                제거 (조상·상위어)
+              </div>
+              <span class="tag drop">canine</span>
+              <span class="tag drop">mammal</span>
+              <span class="tag drop">animal</span>
+            </div>
+          </div>
+          <div class="callout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 10 5 5-5 5"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg>
+            <span>여기서 <b>animal 태그만 공유하던 사자·고양이</b>가 매칭 대상에서 빠진다.</span>
+          </div>
+        </div>
+        <div class="metric">
+          <div class="m-label">억제 후</div>
+          <div class="m-num">20<small>장</small></div>
+          <div class="m-sub">전부 개</div>
+          <div class="m-bar"><i style="width:13%"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="conn">
+      <span class="line"></span>
+      <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+    </div>
+
+    <!-- Stage 3 -->
+    <section class="stage s3">
+      <div class="s-head">
+        <div class="s-main">
+          <span class="s-badge b-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+            Stage 3 · 이미지 채점 · conf 게이트
+          </span>
+          <h3 class="s-title">채택 키워드를 conf ≥ 0.40으로 가진 이미지만</h3>
+          <div class="formula">
+            <span class="lb">SCORE</span>
+            <span>score <span class="op">=</span> cos <span class="op">×</span> conf <span class="op">×</span> (1 <span class="op">+</span> <span class="hl">0.15 · depth</span>)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="conn">
+      <span class="line"></span>
+      <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+    </div>
+
+    <!-- Result -->
+    <section class="stage result">
+      <div class="r-num">20<small>장</small></div>
+      <div class="r-lab">전부 개 (사자·고양이 없음)</div>
+      <div class="r-cmp">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        조상억제 <span class="x">없으면</span> <b>146장</b> — 사자·고양이 섞여 나옴
+      </div>
+    </section>
+
+  </div>
+
+  <!-- contrast: broad query -->
+  <div class="contrast">
+    <div class="c-top">
+      <span class="c-eyebrow">대비 케이스</span>
+      <h2>넓은 검색 <span class="q">“동물”</span></h2>
+    </div>
+    <div class="c-flow">
+      <span class="c-step">peak = animal <span class="k">top 0.805</span></span>
+      <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      <span class="c-step">animal은 조상이 없어 억제 <span class="k">no-op</span></span>
+      <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      <span class="c-step keep">animal 태그 유지</span>
+      <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      <span class="c-step big">146장 그대로</span>
+    </div>
+    <div class="c-concl">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m6.4 6.4-2.8-2.8"/><path d="M2 12h4"/><circle cx="12" cy="14" r="6"/></svg>
+      <span>같은 규칙인데 상위태그가 <span class="sig">신호(동물)</span>냐 <span class="noise">잡음(강아지)</span>이냐를 <b>쿼리가 결정</b>한다. 넓은 쿼리엔 animal 유지가 정답이므로 고정 blocklist·넓이판별 로직이 필요 없다.</span>
+    </div>
+  </div>
+
+  <!-- legend -->
+  <div class="legend">
+    <span><i class="dot" style="background:var(--green)"></i>채택 키워드 / 결과</span>
+    <span><i class="dot" style="background:var(--rose)"></i>억제·탈락 (상위 계층태그)</span>
+    <span><i class="dot" style="background:var(--amber)"></i>핵심 단계 — is-a 조상억제</span>
+    <span><i class="dot" style="background:var(--blue)"></i>의미 매칭</span>
+  </div>
+
+</div>
+</body>
+</html>
