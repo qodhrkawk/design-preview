@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>봤던집 — 비교</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; position: relative; padding-bottom: 40px; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="padding: 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #e5e5e5;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+    <div style="font-size: 20px; line-height: 28px; font-weight: 600; color: #0a0a0a;">나란히 비교</div>
+  </div>
+
+  <!-- Compare header -->
+  <div style="display: flex; padding: 16px 20px 0; gap: 12px;">
+    <div style="width: 96px;"></div>
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 14px; font-weight: 600; color: #0a0a0a;">역 3분 신축</div>
+      <div style="font-size: 24px; font-weight: 600; color: #0a0a0a; margin-top: 4px;">86<span style="font-size: 12px; color: #737373; font-weight: 400;">점</span></div>
+      <span style="display: inline-block; background: #22c55e; color: #ffffff; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; margin-top: 4px;">우세</span>
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 14px; font-weight: 600; color: #0a0a0a;">언덕 위 투룸</div>
+      <div style="font-size: 24px; font-weight: 600; color: #737373; margin-top: 4px;">74<span style="font-size: 12px; color: #737373; font-weight: 400;">점</span></div>
+      <span style="display: inline-block; background: #f5f5f5; color: #737373; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; margin-top: 4px;">2위</span>
+    </div>
+  </div>
+
+  <!-- Compare rows -->
+  <div style="padding: 16px 20px; display: flex; flex-direction: column;">
+
+    <!-- 월 부담 -->
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #e5e5e5;">
+      <div style="width: 96px; font-size: 12px; font-weight: 500; color: #737373;">월 실부담<br><span style="font-weight: 400;">(월세+관리비)</span></div>
+      <div style="flex: 1; text-align: center; font-size: 14px; font-weight: 500; color: #0a0a0a;">72만</div>
+      <div style="flex: 1; text-align: center; font-size: 14px; font-weight: 500; color: #22c55e;">55만</div>
+    </div>
+
+    <!-- 보증금 -->
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #e5e5e5;">
+      <div style="width: 96px; font-size: 12px; font-weight: 500; color: #737373;">보증금</div>
+      <div style="flex: 1; text-align: center; font-size: 14px; font-weight: 500; color: #22c55e;">1,000만</div>
+      <div style="flex: 1; text-align: center; font-size: 14px; font-weight: 500; color: #0a0a0a;">3,000만</div>
+    </div>
+
+    <!-- 채광 -->
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #e5e5e5;">
+      <div style="width: 96px; font-size: 12px; font-weight: 500; color: #737373;">채광 <span style="background:#f5f5f5; border-radius:9999px; padding:1px 6px; font-size:10px;">중요 x2</span></div>
+      <div style="flex: 1; display: flex; justify-content: center;"><span style="width: 28px; height: 28px; background: #22c55e; color: #ffffff; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">O</span></div>
+      <div style="flex: 1; display: flex; justify-content: center;"><span style="width: 28px; height: 28px; background: #f59e0b; color: #ffffff; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">△</span></div>
+    </div>
+
+    <!-- 수압 -->
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #e5e5e5;">
+      <div style="width: 96px; font-size: 12px; font-weight: 500; color: #737373;">수압</div>
+      <div style="flex: 1; display: flex; justify-content: center;"><span style="width: 28px; height: 28px; background: #22c55e; color: #ffffff; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">O</span></div>
+      <div style="flex: 1; display: flex; justify-content: center;"><span style="width: 28px; height: 28px; background: #22c55e; color: #ffffff; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">O</span></div>
+    </div>
+
+    <!-- 방음 -->
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #e5e5e5;">
+      <div style="width: 96px; font-size: 12px; font-weight: 500; color: #737373;">방음 <span style="background:#f5f5f5; border-radius:9999px; padding:1px 6px; font-size:10px;">중요 x2</span></div>
+      <div style="flex: 1; display: flex; justify-content: center;"><span style="width: 28px; height: 28px; background: #ef4444; color: #ffffff; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">X</span></div>
+      <div style="flex: 1; display: flex; justify-content: center;"><span style="width: 28px; height: 28px; background: #22c55e; color: #ffffff; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">O</span></div>
+    </div>
+
+    <!-- 역까지 -->
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #e5e5e5;">
+      <div style="width: 96px; font-size: 12px; font-weight: 500; color: #737373;">역까지 도보</div>
+      <div style="flex: 1; text-align: center; font-size: 14px; font-weight: 500; color: #22c55e;">3분</div>
+      <div style="flex: 1; text-align: center; font-size: 14px; font-weight: 500; color: #ef4444;">15분</div>
+    </div>
+
+    <!-- 사진 -->
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #e5e5e5;">
+      <div style="width: 96px; font-size: 12px; font-weight: 500; color: #737373;">화장실 사진</div>
+      <div style="flex: 1; display: flex; justify-content: center;"><div style="width: 100%; height: 80px; background: #f5f5f5; border-radius: 8px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div></div>
+      <div style="flex: 1; display: flex; justify-content: center;"><div style="width: 100%; height: 80px; background: #f5f5f5; border-radius: 8px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div></div>
+    </div>
+
+    <!-- 한줄 느낌 -->
+    <div style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 0;">
+      <div style="width: 96px; font-size: 12px; font-weight: 500; color: #737373;">한 줄 느낌</div>
+      <div style="flex: 1; text-align: center; font-size: 12px; color: #0a0a0a; background: #f5f5f5; border-radius: 8px; padding: 8px;">밝고 깔끔한데 옆방 소리 들림</div>
+      <div style="flex: 1; text-align: center; font-size: 12px; color: #0a0a0a; background: #f5f5f5; border-radius: 8px; padding: 8px;">넓어서 좋은데 언덕이 빡셈</div>
+    </div>
+
+  </div>
+
+  <!-- Summary card -->
+  <div style="margin: 0 20px; background: #f5f5f5; border-radius: 12px; padding: 16px;">
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+      <span style="font-size: 14px; font-weight: 600; color: #0a0a0a;">갈리는 지점</span>
+    </div>
+    <div style="font-size: 14px; line-height: 20px; color: #171717;">역 3분 신축이 <b>교통·채광</b>에서 앞서고, 언덕 투룸이 <b>월 부담·방음·넓이</b>에서 앞서요. 내 기준에서 중요 x2로 둔 <b>방음</b>이 갈리는 항목이에요.</div>
+  </div>
+
+</div>
+</body>
+</html>

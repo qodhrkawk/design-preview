@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>봤던집 — 홈</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; position: relative; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="padding: 24px 20px 16px; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <div style="font-size: 24px; line-height: 32px; font-weight: 600; color: #0a0a0a;">봤던집</div>
+      <div style="font-size: 14px; line-height: 20px; color: #737373; margin-top: 2px;">이번 이사 · 본 집 5곳</div>
+    </div>
+    <button style="display: flex; align-items: center; gap: 6px; background: #171717; color: #fafafa; border: none; border-radius: 8px; padding: 10px 16px; font-size: 14px; font-weight: 500; font-family: inherit; height: 40px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+      집 기록
+    </button>
+  </div>
+
+  <!-- Compare CTA -->
+  <div style="margin: 0 20px 16px; background: #f5f5f5; border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="18" x="3" y="3" rx="1"/><rect width="7" height="18" x="14" y="3" rx="1"/></svg>
+      <span style="font-size: 14px; font-weight: 500; color: #171717;">2곳 선택해서 나란히 비교하기</span>
+    </div>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+  </div>
+
+  <!-- Sort tabs -->
+  <div style="display: flex; gap: 8px; padding: 0 20px 16px;">
+    <span style="background: #171717; color: #fafafa; border-radius: 9999px; padding: 6px 14px; font-size: 12px; font-weight: 500;">내 점수순</span>
+    <span style="background: #f5f5f5; color: #737373; border-radius: 9999px; padding: 6px 14px; font-size: 12px; font-weight: 500;">최근 본 순</span>
+    <span style="background: #f5f5f5; color: #737373; border-radius: 9999px; padding: 6px 14px; font-size: 12px; font-weight: 500;">가격순</span>
+  </div>
+
+  <!-- House cards -->
+  <div style="padding: 0 20px; display: flex; flex-direction: column; gap: 12px;">
+
+    <!-- Card 1 : best -->
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 16px; font-weight: 600; color: #0a0a0a;">역 3분 신축 오피스텔</span>
+          <span style="background: #22c55e; color: #ffffff; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">1위</span>
+        </div>
+        <span style="font-size: 20px; font-weight: 600; color: #0a0a0a;">86<span style="font-size: 12px; color: #737373; font-weight: 400;">점</span></span>
+      </div>
+      <div style="font-size: 14px; color: #737373; margin-top: 4px;">보증금 1,000 / 월 65 + 관리비 7 · 8/17(월) 봄</div>
+      <div style="display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap;">
+        <span style="display: inline-flex; align-items: center; gap: 4px; background: #f5f5f5; color: #171717; border-radius: 9999px; padding: 3px 10px; font-size: 12px; font-weight: 500;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>채광 좋음</span>
+        <span style="display: inline-flex; align-items: center; gap: 4px; background: #f5f5f5; color: #171717; border-radius: 9999px; padding: 3px 10px; font-size: 12px; font-weight: 500;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>수압 강함</span>
+        <span style="display: inline-flex; align-items: center; gap: 4px; background: #fef2f2; color: #ef4444; border-radius: 9999px; padding: 3px 10px; font-size: 12px; font-weight: 500;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>방음 약함</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #e5e5e5;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg>
+        <span style="font-size: 12px; color: #737373;">사진 6장 · 우리부동산 김실장 010-1234-5678</span>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 16px; font-weight: 600; color: #0a0a0a;">언덕 위 넓은 투룸</span>
+          <span style="background: #f5f5f5; color: #171717; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">2위</span>
+        </div>
+        <span style="font-size: 20px; font-weight: 600; color: #0a0a0a;">74<span style="font-size: 12px; color: #737373; font-weight: 400;">점</span></span>
+      </div>
+      <div style="font-size: 14px; color: #737373; margin-top: 4px;">보증금 3,000 / 월 50 + 관리비 5 · 8/17(월) 봄</div>
+      <div style="display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap;">
+        <span style="display: inline-flex; align-items: center; gap: 4px; background: #f5f5f5; color: #171717; border-radius: 9999px; padding: 3px 10px; font-size: 12px; font-weight: 500;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>넓음 (12평)</span>
+        <span style="display: inline-flex; align-items: center; gap: 4px; background: #f5f5f5; color: #171717; border-radius: 9999px; padding: 3px 10px; font-size: 12px; font-weight: 500;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><circle cx="12" cy="12" r="10"/></svg>역까지 15분</span>
+      </div>
+    </div>
+
+    <!-- Card 3 : dealbreaker -->
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px; opacity: 0.75;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 16px; font-weight: 600; color: #0a0a0a;">싼 대신 곰팡이집</span>
+          <span style="background: #ef4444; color: #fafafa; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">탈락</span>
+        </div>
+        <span style="font-size: 20px; font-weight: 600; color: #737373;">—</span>
+      </div>
+      <div style="font-size: 14px; color: #737373; margin-top: 4px;">보증금 500 / 월 45 + 관리비 3 · 8/16(일) 봄</div>
+      <div style="display: flex; gap: 6px; margin-top: 12px;">
+        <span style="display: inline-flex; align-items: center; gap: 4px; background: #fef2f2; color: #ef4444; border-radius: 9999px; padding: 3px 10px; font-size: 12px; font-weight: 500;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>딜브레이커: 벽면 곰팡이</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom nav -->
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; display: flex; border-top: 1px solid #e5e5e5; background: #ffffff; padding: 8px 0 24px;">
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; padding-top: 8px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      <span style="font-size: 12px; font-weight: 500; color: #171717;">본 집</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; padding-top: 8px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="18" x="3" y="3" rx="1"/><rect width="7" height="18" x="14" y="3" rx="1"/></svg>
+      <span style="font-size: 12px; color: #737373;">비교</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; padding-top: 8px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span style="font-size: 12px; color: #737373;">내 기준</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
