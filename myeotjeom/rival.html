@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>몇점 — 상대 상세</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="padding: 20px; display: flex; align-items: center; gap: 12px;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    <div style="font-size: 20px; line-height: 28px; font-weight: 600; color: #0a0a0a;">상대 상세</div>
+  </div>
+
+  <!-- Profile -->
+  <div style="padding: 0 20px 20px; display: flex; align-items: center; gap: 16px;">
+    <div style="width: 64px; height: 64px; border-radius: 9999px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 600; color: #171717;">진</div>
+    <div style="flex: 1;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 20px; font-weight: 600; color: #0a0a0a;">진우형</span>
+        <span style="background: #f5f5f5; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; color: #171717;">4구 200</span>
+      </div>
+      <div style="font-size: 13px; color: #737373; margin-top: 4px;">23경기 · 주로 역전당구클럽</div>
+    </div>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+  </div>
+
+  <!-- Head-to-head summary -->
+  <div style="margin: 0 20px; background: #171717; border-radius: 16px; padding: 20px;">
+    <div style="font-size: 12px; color: #a3a3a3; margin-bottom: 12px;">상대전적</div>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <div style="text-align: center;">
+        <div style="font-size: 30px; line-height: 36px; font-weight: 600; color: #fafafa;">9</div>
+        <div style="font-size: 12px; color: #22c55e; font-weight: 500;">승</div>
+      </div>
+      <div style="flex: 1; height: 8px; border-radius: 9999px; background: #ef4444; overflow: hidden; display: flex;">
+        <div style="width: 39%; background: #22c55e;"></div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 30px; line-height: 36px; font-weight: 600; color: #fafafa;">14</div>
+        <div style="font-size: 12px; color: #ef4444; font-weight: 500;">패</div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 8px; margin-top: 16px;">
+      <div style="flex: 1; background: #262626; border-radius: 8px; padding: 10px 12px;">
+        <div style="font-size: 11px; color: #a3a3a3;">최근 5경기</div>
+        <div style="font-size: 14px; font-weight: 600; color: #fafafa; margin-top: 2px;">2승 3패</div>
+      </div>
+      <div style="flex: 1; background: #262626; border-radius: 8px; padding: 10px 12px;">
+        <div style="font-size: 11px; color: #a3a3a3;">게임비 누적</div>
+        <div style="font-size: 14px; font-weight: 600; color: #ef4444; margin-top: 2px;">-38,000원</div>
+      </div>
+      <div style="flex: 1; background: #262626; border-radius: 8px; padding: 10px 12px;">
+        <div style="font-size: 11px; color: #a3a3a3;">치수 변화</div>
+        <div style="font-size: 14px; font-weight: 600; color: #fafafa; margin-top: 2px;">180→200</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Insight -->
+  <div style="margin: 12px 20px 0; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 12px 16px; display: flex; gap: 10px;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+    <div style="font-size: 13px; line-height: 19px; color: #1e40af;">진우형 치수 200으로 올린 뒤로는 5승 4패로 팽팽해요. 지금 치수가 적당합니다.</div>
+  </div>
+
+  <!-- Match history -->
+  <div style="padding: 24px 20px 8px; display: flex; align-items: center; justify-content: space-between;">
+    <div style="font-size: 16px; font-weight: 600; color: #0a0a0a;">경기 히스토리</div>
+    <div style="font-size: 13px; font-weight: 500; color: #737373;">전체 23</div>
+  </div>
+
+  <div style="padding: 0 20px 32px; display: flex; flex-direction: column; gap: 8px;">
+
+    <!-- Match 1 -->
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 40px; height: 40px; border-radius: 9999px; background: #fef2f2; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #ef4444; flex-shrink: 0;">패</div>
+      <div style="flex: 1;">
+        <div style="font-size: 14px; font-weight: 500; color: #0a0a0a;">8/19 (수) · 역전당구클럽</div>
+        <div style="font-size: 13px; color: #737373; margin-top: 2px;">이닝 21 · 게임비 14,000원 냄</div>
+      </div>
+    </div>
+
+    <!-- Match 2 -->
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 40px; height: 40px; border-radius: 9999px; background: #f0fdf4; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #22c55e; flex-shrink: 0;">승</div>
+      <div style="flex: 1;">
+        <div style="font-size: 14px; font-weight: 500; color: #0a0a0a;">8/12 (수) · 역전당구클럽</div>
+        <div style="font-size: 13px; color: #737373; margin-top: 2px;">이닝 17 · 하이런 30 · "뒤돌리기 감 좋았음"</div>
+      </div>
+    </div>
+
+    <!-- Match 3 -->
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 40px; height: 40px; border-radius: 9999px; background: #fef2f2; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #ef4444; flex-shrink: 0;">패</div>
+      <div style="flex: 1;">
+        <div style="font-size: 14px; font-weight: 500; color: #0a0a0a;">8/5 (수) · 블루문볼</div>
+        <div style="font-size: 13px; color: #737373; margin-top: 2px;">이닝 24 · "수비 당구에 말림"</div>
+      </div>
+    </div>
+
+    <!-- Match 4 -->
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 40px; height: 40px; border-radius: 9999px; background: #fef2f2; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #ef4444; flex-shrink: 0;">패</div>
+      <div style="flex: 1;">
+        <div style="font-size: 14px; font-weight: 500; color: #0a0a0a;">7/29 (수) · 역전당구클럽</div>
+        <div style="font-size: 13px; color: #737373; margin-top: 2px;">이닝 19</div>
+      </div>
+    </div>
+
+    <!-- Match 5 -->
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 40px; height: 40px; border-radius: 9999px; background: #f0fdf4; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #22c55e; flex-shrink: 0;">승</div>
+      <div style="flex: 1;">
+        <div style="font-size: 14px; font-weight: 500; color: #0a0a0a;">7/22 (수) · 역전당구클럽</div>
+        <div style="font-size: 13px; color: #737373; margin-top: 2px;">이닝 15 · 게임비 안 냄</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
