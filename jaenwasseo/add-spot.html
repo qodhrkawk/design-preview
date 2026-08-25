@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>재놨어 — 자리 등록</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; position: relative; padding-bottom: 40px; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="padding: 24px 20px 16px 20px; display: flex; align-items: center; gap: 12px;">
+    <button style="width: 40px; height: 40px; border-radius: 8px; background: #f5f5f5; border: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+    <div style="font-size: 20px; line-height: 28px; font-weight: 600; color: #0a0a0a;">자리 등록</div>
+  </div>
+
+  <!-- 프리셋 선택 -->
+  <div style="padding: 0 20px;">
+    <div style="font-size: 14px; line-height: 20px; font-weight: 600; color: #0a0a0a; margin-bottom: 10px;">뭘 잴 거야?</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <div style="background: #171717; color: #fafafa; border-radius: 9999px; padding: 8px 16px; font-size: 13px; font-weight: 500; cursor: pointer;">소파 자리</div>
+      <div style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 8px 16px; font-size: 13px; font-weight: 500; cursor: pointer;">침대 자리</div>
+      <div style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 8px 16px; font-size: 13px; font-weight: 500; cursor: pointer;">냉장고 자리</div>
+      <div style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 8px 16px; font-size: 13px; font-weight: 500; cursor: pointer;">세탁기 자리</div>
+      <div style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 8px 16px; font-size: 13px; font-weight: 500; cursor: pointer;">문 · 통로</div>
+      <div style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 8px 16px; font-size: 13px; font-weight: 500; cursor: pointer;">창문 · 커튼</div>
+      <div style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 8px 16px; font-size: 13px; font-weight: 500; cursor: pointer;">직접 입력</div>
+    </div>
+  </div>
+
+  <!-- 측정 가이드 -->
+  <div style="padding: 20px 20px 0 20px;">
+    <div style="background: #f5f5f5; border-radius: 12px; padding: 16px;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <div style="font-size: 13px; line-height: 18px; font-weight: 600; color: #0a0a0a;">소파 자리, 이렇게 재</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; gap: 10px; align-items: flex-start;">
+          <div style="width: 20px; height: 20px; border-radius: 9999px; background: #171717; color: #fafafa; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+          <div style="font-size: 13px; line-height: 18px; color: #0a0a0a;">벽면 폭 — 콘센트·스위치 피해서 실제 쓸 수 있는 폭</div>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: flex-start;">
+          <div style="width: 20px; height: 20px; border-radius: 9999px; background: #171717; color: #fafafa; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+          <div style="font-size: 13px; line-height: 18px; color: #0a0a0a;">깊이 — 벽에서 통로 최소 60cm 남기고 잰 값</div>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: flex-start;">
+          <div style="width: 20px; height: 20px; border-radius: 9999px; background: #171717; color: #fafafa; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+          <div style="font-size: 13px; line-height: 18px; color: #0a0a0a;">TV까지 거리 — 시청거리 확인용 (선택)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 입력 필드 -->
+  <div style="padding: 20px 20px 0 20px;">
+    <div style="margin-bottom: 14px;">
+      <div style="font-size: 13px; line-height: 18px; font-weight: 500; color: #0a0a0a; margin-bottom: 6px;">자리 이름</div>
+      <input value="거실 소파 자리" style="width: 100%; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 8px 12px; font-size: 14px; height: 44px; font-family: Inter, system-ui, sans-serif; color: #0a0a0a;">
+    </div>
+
+    <div style="display: flex; gap: 8px; margin-bottom: 14px;">
+      <div style="flex: 1;">
+        <div style="font-size: 13px; line-height: 18px; font-weight: 500; color: #0a0a0a; margin-bottom: 6px;">최대 폭 (cm)</div>
+        <input value="240" style="width: 100%; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 8px 12px; font-size: 16px; font-weight: 600; height: 44px; font-family: Inter, system-ui, sans-serif; color: #0a0a0a;">
+      </div>
+      <div style="flex: 1;">
+        <div style="font-size: 13px; line-height: 18px; font-weight: 500; color: #0a0a0a; margin-bottom: 6px;">최대 깊이 (cm)</div>
+        <input value="95" style="width: 100%; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 8px 12px; font-size: 16px; font-weight: 600; height: 44px; font-family: Inter, system-ui, sans-serif; color: #0a0a0a;">
+      </div>
+      <div style="flex: 1;">
+        <div style="font-size: 13px; line-height: 18px; font-weight: 500; color: #737373; margin-bottom: 6px;">높이 제한</div>
+        <input placeholder="없음" style="width: 100%; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 8px 12px; font-size: 16px; font-weight: 600; height: 44px; font-family: Inter, system-ui, sans-serif; color: #0a0a0a;">
+      </div>
+    </div>
+
+    <div style="margin-bottom: 14px;">
+      <div style="font-size: 13px; line-height: 18px; font-weight: 500; color: #0a0a0a; margin-bottom: 6px;">공간</div>
+      <div style="display: flex; gap: 8px;">
+        <div style="background: #171717; color: #fafafa; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500; cursor: pointer;">거실</div>
+        <div style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500; cursor: pointer;">안방</div>
+        <div style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500; cursor: pointer;">주방</div>
+        <div style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500; cursor: pointer;">작은방</div>
+        <div style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500; cursor: pointer;">+</div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 14px;">
+      <div style="font-size: 13px; line-height: 18px; font-weight: 500; color: #0a0a0a; margin-bottom: 6px;">메모 (선택)</div>
+      <input value="좌측 벽에 콘센트 2구, TV까지 260cm" style="width: 100%; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 8px 12px; font-size: 14px; height: 44px; font-family: Inter, system-ui, sans-serif; color: #0a0a0a;">
+    </div>
+
+    <!-- 사진 첨부 -->
+    <div style="margin-bottom: 20px;">
+      <div style="font-size: 13px; line-height: 18px; font-weight: 500; color: #0a0a0a; margin-bottom: 6px;">현장 사진 (선택)</div>
+      <div style="display: flex; gap: 8px;">
+        <div style="width: 72px; height: 72px; border-radius: 8px; border: 1px dashed #a3a3a3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; cursor: pointer;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+          <span style="font-size: 10px; color: #737373;">촬영</span>
+        </div>
+        <div style="width: 72px; height: 72px; border-radius: 8px; background: #f5f5f5; border: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <button style="width: 100%; background: #171717; color: #fafafa; border: none; border-radius: 8px; height: 52px; font-size: 15px; font-weight: 600; font-family: Inter, system-ui, sans-serif; cursor: pointer;">저장</button>
+  </div>
+
+</div>
+</body>
+</html>
