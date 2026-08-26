@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>살까말까 — 분석 실패 폴백</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; min-height: 100vh; }
+    .mobile-frame { width: 100%; max-width: 390px; min-height: 100vh; background: #ffffff; position: relative; }
+  </style>
+</head>
+<body>
+<div class="mobile-frame" style="padding-bottom:96px;">
+  <div style="height:48px;"></div>
+
+  <div style="text-align:center; padding:8px 0 0;">
+    <div style="width:36px; height:4px; background:#e6d9b8; border-radius:9999px; margin:0 auto 12px;"></div>
+  </div>
+  <div style="display:flex; align-items:center; justify-content:space-between; padding:0 20px;">
+    <button style="width:40px; height:40px; margin-left:-8px; border:none; background:transparent; display:flex; align-items:center; justify-content:center; border-radius:8px; cursor:pointer;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <h1 style="font-size:18px; line-height:28px; font-weight:600; color:#0a0a0a;">직접 담기</h1>
+    <div style="width:32px;"></div>
+  </div>
+
+  <!-- Fail notice with dori -->
+  <div style="margin:12px 20px 0; background:#faf5e6; border:1px solid #f0e6c8; border-radius:14px; padding:18px 16px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+    <img src="assets/think.png" width="96" height="96" alt="도리" style="display:block;">
+    <p style="font-size:16px; line-height:22px; font-weight:700; color:#713f12; margin-top:6px;">이 화면은 잘 못 읽겠어</p>
+    <p style="font-size:13px; line-height:19px; color:#a16207; margin-top:6px; max-width:280px;">글자가 흐리거나 상품 화면이 아닐 수 있어. 손으로 적어주면 바로 담을게.</p>
+    <button style="margin-top:14px; display:inline-flex; align-items:center; gap:6px; background:#ffffff; border:1px solid #f0e6c8; border-radius:9999px; padding:8px 16px; font-size:13px; font-weight:600; color:#a16207; font-family:inherit; cursor:pointer;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a16207" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+      다른 스크린샷으로 다시
+    </button>
+  </div>
+
+  <!-- Manual form -->
+  <div style="padding:20px 20px 0; display:flex; flex-direction:column; gap:16px;">
+    <div>
+      <label style="display:block; font-size:14px; line-height:20px; font-weight:500; color:#0a0a0a; margin-bottom:6px;">상품명</label>
+      <input type="text" placeholder="예: 소니 WH-1000XM5 헤드폰" style="width:100%; height:44px; background:#ffffff; border:1px solid #e5e5e5; border-radius:8px; padding:8px 12px; font-size:14px; font-family:inherit; color:#0a0a0a; outline:none;">
+    </div>
+
+    <div>
+      <label style="display:block; font-size:14px; line-height:20px; font-weight:500; color:#0a0a0a; margin-bottom:6px;">가격</label>
+      <div style="position:relative;">
+        <input type="text" placeholder="129,000" style="width:100%; height:44px; background:#ffffff; border:1px solid #e5e5e5; border-radius:8px; padding:8px 40px 8px 12px; font-size:14px; font-family:inherit; color:#0a0a0a; outline:none;">
+        <span style="position:absolute; right:14px; top:12px; font-size:14px; color:#737373;">원</span>
+      </div>
+    </div>
+
+    <div>
+      <label style="display:block; font-size:14px; line-height:20px; font-weight:500; color:#0a0a0a; margin-bottom:6px;">카테고리</label>
+      <div style="display:flex; flex-wrap:wrap; gap:8px;">
+        <span style="height:34px; display:inline-flex; align-items:center; background:#ffffff; color:#737373; border:1px solid #e5e5e5; border-radius:9999px; padding:0 14px; font-size:13px; font-weight:500;">전자기기</span>
+        <span style="height:34px; display:inline-flex; align-items:center; background:#ffffff; color:#737373; border:1px solid #e5e5e5; border-radius:9999px; padding:0 14px; font-size:13px; font-weight:500;">패션</span>
+        <span style="height:34px; display:inline-flex; align-items:center; background:#ffffff; color:#737373; border:1px solid #e5e5e5; border-radius:9999px; padding:0 14px; font-size:13px; font-weight:500;">취미</span>
+        <span style="height:34px; display:inline-flex; align-items:center; background:#ffffff; color:#737373; border:1px solid #e5e5e5; border-radius:9999px; padding:0 14px; font-size:13px; font-weight:500;">생활</span>
+        <span style="height:34px; display:inline-flex; align-items:center; background:#ffffff; color:#737373; border:1px solid #e5e5e5; border-radius:9999px; padding:0 14px; font-size:13px; font-weight:500;">기타</span>
+      </div>
+    </div>
+
+    <!-- Cooldown -->
+    <div>
+      <label style="display:block; font-size:14px; line-height:20px; font-weight:500; color:#0a0a0a; margin-bottom:6px;">얼마나 기다려볼까?</label>
+      <div style="display:flex; gap:8px;">
+        <div style="flex:1; background:#ffffff; border:1px solid #e5e5e5; border-radius:10px; padding:12px 8px; text-align:center;">
+          <p style="font-size:15px; font-weight:600; color:#737373;">24시간</p>
+          <p style="font-size:11px; color:#a3a3a3; margin-top:2px;">가벼운 것</p>
+        </div>
+        <div style="flex:1; background:#faf5e6; border:1.5px solid #d97706; border-radius:10px; padding:12px 8px; text-align:center; position:relative;">
+          <p style="font-size:15px; font-weight:700; color:#a16207;">72시간</p>
+          <p style="font-size:11px; color:#b45309; margin-top:2px;">기본 추천</p>
+          <span style="position:absolute; top:-8px; right:8px; background:#d97706; color:#ffffff; font-size:10px; font-weight:600; border-radius:9999px; padding:1px 7px;">추천</span>
+        </div>
+        <div style="flex:1; background:#ffffff; border:1px solid #e5e5e5; border-radius:10px; padding:12px 8px; text-align:center;">
+          <p style="font-size:15px; font-weight:600; color:#737373;">7일</p>
+          <p style="font-size:11px; color:#a3a3a3; margin-top:2px;">큰 지출</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:fixed; bottom:0; width:100%; max-width:390px; background:#ffffff; border-top:1px solid #e5e5e5; padding:12px 20px 28px;">
+    <button style="width:100%; background:#d97706; color:#ffffff; border:none; border-radius:10px; height:48px; font-size:15px; font-weight:600; font-family:inherit; cursor:pointer;">위시리스트에 담기</button>
+  </div>
+</div>
+</body>
+</html>
