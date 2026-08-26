@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>살까말까 — 분석 중</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; min-height: 100vh; }
+    .mobile-frame { width: 100%; max-width: 390px; min-height: 100vh; background: #ffffff; position: relative; }
+    @keyframes scan { 0% { top:8%; } 50% { top:78%; } 100% { top:8%; } }
+    @keyframes pulse { 0%,100% { opacity:0.35; } 50% { opacity:1; } }
+    @keyframes bob { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } }
+    .scanline { animation: scan 2.2s ease-in-out infinite; }
+    .dot { animation: pulse 1.4s ease-in-out infinite; }
+    .dot:nth-child(2) { animation-delay: .2s; }
+    .dot:nth-child(3) { animation-delay: .4s; }
+    .dori-bob { animation: bob 2.6s ease-in-out infinite; }
+  </style>
+</head>
+<body>
+<div class="mobile-frame">
+  <div style="height:48px;"></div>
+
+  <!-- Sheet header -->
+  <div style="padding:8px 20px 0; text-align:center;">
+    <div style="width:36px; height:4px; background:#e6d9b8; border-radius:9999px; margin:0 auto;"></div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; align-items:center; padding:32px 24px 0;">
+
+    <!-- Scanning thumbnail -->
+    <div style="position:relative; width:150px;">
+      <div style="width:150px; height:230px; background:linear-gradient(160deg,#ffffff,#f5f5f5); border:1px solid #e6d9b8; border-radius:16px; overflow:hidden; display:flex; flex-direction:column; position:relative;">
+        <div style="height:30px; background:#f0e6c8; display:flex; align-items:center; padding:0 10px;">
+          <div style="width:40px; height:6px; background:#d9c99a; border-radius:9999px;"></div>
+        </div>
+        <div style="flex:1; padding:12px; display:flex; flex-direction:column; gap:9px;">
+          <div style="width:100%; aspect-ratio:1.15; background:#e6d9b8; border-radius:8px;"></div>
+          <div style="width:82%; height:9px; background:#e0e0e0; border-radius:9999px;"></div>
+          <div style="width:52%; height:9px; background:#d97706; border-radius:9999px;"></div>
+          <div style="width:68%; height:8px; background:#ededed; border-radius:9999px;"></div>
+        </div>
+        <!-- scan line -->
+        <div class="scanline" style="position:absolute; left:0; width:100%; height:2px; background:#d97706; box-shadow:0 0 12px 2px rgba(217,119,6,0.55);"></div>
+      </div>
+      <!-- corner brackets -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" style="position:absolute; top:-6px; left:-6px;"><path d="M3 9V5a2 2 0 0 1 2-2h4"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" style="position:absolute; top:-6px; right:-6px;"><path d="M15 3h4a2 2 0 0 1 2 2v4"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" style="position:absolute; bottom:-6px; left:-6px;"><path d="M9 21H5a2 2 0 0 1-2-2v-4"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" style="position:absolute; bottom:-6px; right:-6px;"><path d="M21 15v4a2 2 0 0 1-2 2h-4"/></svg>
+    </div>
+
+    <!-- Dori + loading dots -->
+    <div class="dori-bob" style="margin-top:28px;">
+      <img src="assets/think.png" width="120" height="120" alt="도리 생각 중" style="display:block;">
+    </div>
+
+    <p style="font-size:20px; line-height:28px; font-weight:700; color:#713f12; margin-top:12px; letter-spacing:-0.02em;">화면 읽는 중…</p>
+
+    <div style="display:flex; gap:6px; margin-top:14px;">
+      <div class="dot" style="width:8px; height:8px; border-radius:9999px; background:#d97706;"></div>
+      <div class="dot" style="width:8px; height:8px; border-radius:9999px; background:#d97706;"></div>
+      <div class="dot" style="width:8px; height:8px; border-radius:9999px; background:#d97706;"></div>
+    </div>
+
+    <!-- Step chips -->
+    <div style="display:flex; flex-direction:column; gap:8px; margin-top:26px; width:100%; max-width:260px;">
+      <div style="display:flex; align-items:center; gap:10px; background:#faf5e6; border:1px solid #f0e6c8; border-radius:10px; padding:10px 12px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M20 6 9 17l-5-5"/></svg>
+        <span style="font-size:13px; font-weight:600; color:#a16207;">글자 인식 완료</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:10px; background:#faf5e6; border:1.5px solid #d97706; border-radius:10px; padding:10px 12px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+        <span style="font-size:13px; font-weight:600; color:#a16207;">상품 정보 정리 중</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:10px; background:#ffffff; border:1px solid #e5e5e5; border-radius:10px; padding:10px 12px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c4c4c4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/></svg>
+        <span style="font-size:13px; font-weight:500; color:#a3a3a3;">가격·카테고리 채우기</span>
+      </div>
+    </div>
+
+    <p style="font-size:12px; line-height:17px; color:#a3a3a3; text-align:center; margin:22px 20px 0;">보통 2~3초면 끝나. 잠깐만 기다려줘.</p>
+  </div>
+</div>
+</body>
+</html>

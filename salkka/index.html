@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>살까말까 — 시안 v2</title>
+<title>살까말까 — 시안</title>
 <style>
   body { margin: 0; background: #f0efeb; font-family: -apple-system, 'Apple SD Gothic Neo', sans-serif; padding: 24px 12px 60px; }
   h1 { text-align: center; font-size: 22px; }
-  p.sub { text-align: center; color: #777; font-size: 14px; margin-bottom: 28px; }
+  h2 { text-align: center; font-size: 16px; color:#b45309; margin: 36px 0 4px; }
+  p.sub { text-align: center; color: #777; font-size: 14px; margin-bottom: 20px; }
   .row { display: flex; gap: 18px; overflow-x: auto; padding: 0 12px 20px; }
   .shot { flex-shrink: 0; text-align: center; }
   .shot iframe { width: 390px; height: 844px; border: 1px solid #ddd; border-radius: 18px; background: #fff; }
@@ -17,17 +18,26 @@
 </style>
 </head>
 <body>
-<h1>살까말까 — 화면 시안 v2</h1>
+<h1>살까말까 — 화면 시안</h1>
 <p class="sub">확정 캐릭터(도리) 반영 · 좌우 스크롤</p>
+
+<h2>담기 플로우 개편 — 캡쳐 기반 (신규)</h2>
+<p class="sub">스크린샷 자동 감지 → OCR+AI 분석 → 확인 → 담기</p>
+<div class="row">
+  <div class="shot"><iframe src="capture-detect.html"></iframe><div class="label">① 캡쳐 감지<a href="capture-detect.html" target="_blank">크게</a></div></div>
+  <div class="shot"><iframe src="capture-analyzing.html"></iframe><div class="label">② 분석 중<a href="capture-analyzing.html" target="_blank">크게</a></div></div>
+  <div class="shot"><iframe src="capture-confirm.html"></iframe><div class="label">③ 결과 확인<a href="capture-confirm.html" target="_blank">크게</a></div></div>
+  <div class="shot"><iframe src="capture-candidates.html"></iframe><div class="label">④ 여러 개 감지<a href="capture-candidates.html" target="_blank">크게</a></div></div>
+  <div class="shot"><iframe src="capture-fail.html"></iframe><div class="label">⑤ 실패 폴백<a href="capture-fail.html" target="_blank">크게</a></div></div>
+</div>
+
+<h2>화면 시안 v2 (기존)</h2>
 <div class="row">
   <div class="shot"><iframe src="home.html"></iframe><div class="label">홈<a href="home.html" target="_blank">크게</a></div></div>
-  <div class="shot"><iframe src="add.html"></iframe><div class="label">담기<a href="add.html" target="_blank">크게</a></div></div>
+  <div class="shot"><iframe src="add.html"></iframe><div class="label">담기(구·링크)<a href="add.html" target="_blank">크게</a></div></div>
   <div class="shot"><iframe src="decide.html"></iframe><div class="label">결정<a href="decide.html" target="_blank">크게</a></div></div>
   <div class="shot"><iframe src="retro.html"></iframe><div class="label">회고<a href="retro.html" target="_blank">크게</a></div></div>
   <div class="shot"><iframe src="stats.html"></iframe><div class="label">통계<a href="stats.html" target="_blank">크게</a></div></div>
-</div>
-<div class="row" style="margin-top:8px">
-  <div class="shot"><iframe src="character-v2.html" style="height:600px"></iframe><div class="label">캐릭터 히스토리<a href="character-v2.html" target="_blank">크게</a></div></div>
 </div>
 </body>
 </html>
