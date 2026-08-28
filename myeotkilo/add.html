@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>몇킬로였지 — 머신 등록</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; position: relative; padding-bottom: 120px; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="padding: 24px 20px 16px 20px; display: flex; align-items: center; gap: 12px;">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    <div style="font-size: 20px; line-height: 28px; font-weight: 600; color: #0a0a0a;">머신 등록</div>
+  </div>
+
+  <div style="padding: 0 20px; display: flex; flex-direction: column; gap: 20px;">
+
+    <!-- Photo -->
+    <div style="height: 140px; background: #f5f5f5; border: 1px dashed #d4d4d4; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+      <span style="font-size: 13px; color: #737373;">머신 사진 찍기 (선택)</span>
+    </div>
+
+    <!-- Name -->
+    <div>
+      <div style="font-size: 14px; font-weight: 500; color: #0a0a0a; margin-bottom: 8px;">머신 이름</div>
+      <div style="height: 44px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 8px 12px; display: flex; align-items: center;">
+        <span style="font-size: 15px; color: #0a0a0a;">랫풀다운</span>
+      </div>
+      <div style="display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap;">
+        <div style="background: #f5f5f5; border-radius: 9999px; padding: 4px 12px; font-size: 12px; color: #171717;">체스트 프레스</div>
+        <div style="background: #f5f5f5; border-radius: 9999px; padding: 4px 12px; font-size: 12px; color: #171717;">레그 프레스</div>
+        <div style="background: #f5f5f5; border-radius: 9999px; padding: 4px 12px; font-size: 12px; color: #171717;">숄더 프레스</div>
+        <div style="background: #f5f5f5; border-radius: 9999px; padding: 4px 12px; font-size: 12px; color: #171717;">레그 컬</div>
+        <div style="background: #f5f5f5; border-radius: 9999px; padding: 4px 12px; font-size: 12px; color: #171717;">시티드 로우</div>
+      </div>
+    </div>
+
+    <!-- Body part -->
+    <div>
+      <div style="font-size: 14px; font-weight: 500; color: #0a0a0a; margin-bottom: 8px;">부위</div>
+      <div style="display: flex; gap: 8px;">
+        <div style="flex: 1; height: 40px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #737373;">가슴</div>
+        <div style="flex: 1; height: 40px; background: #171717; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; color: #fafafa;">등</div>
+        <div style="flex: 1; height: 40px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #737373;">하체</div>
+        <div style="flex: 1; height: 40px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #737373;">어깨</div>
+        <div style="flex: 1; height: 40px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #737373;">팔</div>
+      </div>
+    </div>
+
+    <!-- Weight stepper -->
+    <div>
+      <div style="font-size: 14px; font-weight: 500; color: #0a0a0a; margin-bottom: 8px;">무게</div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 52px; height: 52px; background: #f5f5f5; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg>
+        </div>
+        <div style="flex: 1; height: 64px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+          <span style="font-size: 32px; font-weight: 800; color: #0a0a0a; letter-spacing: -0.025em;">32.5</span>
+          <span style="font-size: 16px; font-weight: 500; color: #737373;">kg</span>
+        </div>
+        <div style="width: 52px; height: 52px; background: #f5f5f5; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 8px; margin-top: 8px;">
+        <div style="background: #f5f5f5; border-radius: 9999px; padding: 4px 12px; font-size: 12px; color: #737373;">±2.5kg 단위</div>
+        <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 4px 12px; font-size: 12px; color: #737373;">±5kg</div>
+        <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 4px 12px; font-size: 12px; color: #737373;">핀 번호로</div>
+      </div>
+    </div>
+
+    <!-- Custom settings -->
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <div style="font-size: 14px; font-weight: 500; color: #0a0a0a;">세팅 항목</div>
+        <div style="font-size: 13px; color: #737373;">머신마다 다르게 추가</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; gap: 8px;">
+          <div style="flex: 1; height: 44px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 8px 12px; display: flex; align-items: center; font-size: 14px; color: #0a0a0a;">무릎 패드</div>
+          <div style="width: 100px; height: 44px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 8px 12px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; color: #0a0a0a;">3번</div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <div style="flex: 1; height: 44px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 8px 12px; display: flex; align-items: center; font-size: 14px; color: #0a0a0a;">그립</div>
+          <div style="width: 100px; height: 44px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 8px 12px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; color: #0a0a0a;">와이드</div>
+        </div>
+        <div style="height: 44px; border: 1px dashed #d4d4d4; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          <span style="font-size: 13px; color: #737373;">항목 추가 (시트 높이, 발판, 각도...)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Memo -->
+    <div>
+      <div style="font-size: 14px; font-weight: 500; color: #0a0a0a; margin-bottom: 8px;">메모 (선택)</div>
+      <div style="min-height: 72px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 10px 12px; font-size: 14px; color: #737373;">자세 팁, 다음 목표 등</div>
+    </div>
+
+  </div>
+
+  <!-- Bottom CTA -->
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 20px 32px 20px; background: #ffffff; border-top: 1px solid #e5e5e5;">
+    <div style="height: 52px; background: #171717; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 16px; font-weight: 600; color: #fafafa;">저장</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
