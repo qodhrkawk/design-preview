@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>담갔어 — 디자인 시안</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:#f5f5f5;color:#0a0a0a;padding:32px 16px}
+.wrap{max-width:1300px;margin:0 auto}
+h1{font-size:30px;font-weight:600;letter-spacing:-0.025em;margin-bottom:8px}
+p.desc{font-size:14px;color:#737373;margin-bottom:32px}
+.grid{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
+.shot{display:flex;flex-direction:column;gap:12px}
+.shot h2{font-size:16px;font-weight:600;text-align:center}
+iframe{width:390px;height:844px;border:1px solid #e5e5e5;border-radius:16px;background:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>담갔어 (Damgasseo)</h1>
+<p class="desc">매실청·담금주·수제청 숙성 관리 앱 — 핵심 화면 시안 (390px 모바일 기준)</p>
+<div class="grid">
+<div class="shot"><h2>1. 홈 — 내 담금 목록</h2><iframe src="home.html"></iframe></div>
+<div class="shot"><h2>2. 담금 상세 — 숙성 타임라인</h2><iframe src="detail.html"></iframe></div>
+<div class="shot"><h2>3. 새 담금 등록 — 프리셋</h2><iframe src="add.html"></iframe></div>
+</div>
+</div>
+</body>
+</html>
