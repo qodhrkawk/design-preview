@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>장비빨 — 장비 상세</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f5f5f5; font-family: Inter, system-ui, sans-serif; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="display:flex; align-items:center; gap:12px; padding:16px 20px 12px;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    <div style="flex:1; font-size:18px; font-weight:600; color:#0a0a0a;">장비 상세</div>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+  </div>
+
+  <!-- Gear identity -->
+  <div style="padding:8px 20px 0;">
+    <div style="display:flex; gap:16px; align-items:center;">
+      <div style="width:72px; height:72px; border-radius:12px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></svg>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:20px; font-weight:600; color:#0a0a0a; letter-spacing:-0.025em;">스노우피크 어메니티돔 M</div>
+        <div style="font-size:13px; color:#737373; margin-top:3px;">텐트·타프 · 2024년 3월 구입</div>
+        <div style="display:flex; gap:6px; margin-top:8px;">
+          <div style="background:#f5f5f5; border-radius:9999px; padding:2px 10px; font-size:12px; font-weight:500; color:#171717;">사용 12회</div>
+          <div style="background:#f0fdf4; border-radius:9999px; padding:2px 10px; font-size:12px; font-weight:500; color:#16a34a;">상태 좋음</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Location card -->
+  <div style="margin:20px 20px 0; background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px;">
+    <div style="display:flex; align-items:center; justify-content:space-between;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <div style="font-size:14px; font-weight:600; color:#0a0a0a;">보관 위치</div>
+          <div style="font-size:13px; color:#737373; margin-top:1px;">베란다 창고 · 상단 선반 왼쪽</div>
+        </div>
+      </div>
+      <div style="font-size:13px; font-weight:500; color:#737373;">수정</div>
+    </div>
+    <div style="margin-top:12px; background:#f5f5f5; border-radius:8px; padding:10px 12px; font-size:13px; color:#525252;">
+      폴대는 본체 가방이랑 따로 — 긴 수납백에 있음. 팩·망치는 리빙박스 B.
+    </div>
+  </div>
+
+  <!-- Condition / maintenance -->
+  <div style="margin:12px 20px 0; background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px;">
+    <div style="font-size:14px; font-weight:600; color:#0a0a0a; margin-bottom:12px;">상태 메모</div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div style="display:flex; gap:10px; align-items:flex-start;">
+        <div style="width:8px; height:8px; border-radius:9999px; background:#f59e0b; margin-top:5px; flex-shrink:0;"></div>
+        <div>
+          <div style="font-size:14px; color:#0a0a0a;">스커트 쪽 심실링 벗겨짐 — 다음 장마 전 보수 필요</div>
+          <div style="font-size:12px; color:#a3a3a3; margin-top:2px;">8월 15일 철수하면서 기록</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; align-items:flex-start;">
+        <div style="width:8px; height:8px; border-radius:9999px; background:#22c55e; margin-top:5px; flex-shrink:0;"></div>
+        <div>
+          <div style="font-size:14px; color:#0a0a0a;">완전 건조 후 수납 완료</div>
+          <div style="font-size:12px; color:#a3a3a3; margin-top:2px;">8월 17일</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Usage history -->
+  <div style="margin:12px 20px 0; background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; padding:16px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+      <div style="font-size:14px; font-weight:600; color:#0a0a0a;">사용 기록</div>
+      <div style="font-size:12px; color:#737373;">비 맞은 날 2회</div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+          <span style="font-size:14px; color:#0a0a0a;">홍천 힐링캠프</span>
+        </div>
+        <span style="font-size:13px; color:#737373;">8/15 · 1박</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/></svg>
+          <span style="font-size:14px; color:#0a0a0a;">가평 우중캠핑</span>
+        </div>
+        <span style="font-size:13px; color:#737373;">7/4 · 2박</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+          <span style="font-size:14px; color:#0a0a0a;">자라섬 봄 캠핑</span>
+        </div>
+        <span style="font-size:13px; color:#737373;">5/9 · 1박</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cost per use -->
+  <div style="margin:12px 20px 24px; background:#171717; border-radius:12px; padding:16px; display:flex; justify-content:space-between; align-items:center;">
+    <div>
+      <div style="font-size:13px; color:#a3a3a3;">1회당 사용 비용</div>
+      <div style="font-size:22px; font-weight:700; color:#fafafa; margin-top:2px;">₩45,750</div>
+      <div style="font-size:12px; color:#a3a3a3; margin-top:2px;">₩549,000 ÷ 12회 — 쓸수록 내려가요</div>
+    </div>
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#404040" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
+  </div>
+
+  <!-- Bottom nav -->
+  <div style="margin-top:auto; border-top:1px solid #e5e5e5; display:flex; padding:10px 0 24px;">
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span style="font-size:11px; font-weight:400; color:#a3a3a3;">홈</span>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+      <span style="font-size:11px; font-weight:600; color:#171717;">장비</span>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6.5"/><path d="m16 19 2 2 4-4"/><path d="M3 10h18"/></svg>
+      <span style="font-size:11px; font-weight:400; color:#a3a3a3;">체크</span>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+      <span style="font-size:11px; font-weight:400; color:#a3a3a3;">기록</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
