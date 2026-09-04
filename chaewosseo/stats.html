@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>채웠어 — 통계</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; position: relative; padding-bottom: 100px; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px;">
+    <span style="font-size: 24px; line-height: 32px; font-weight: 600; color: #0a0a0a;">통계</span>
+    <div style="display: flex; align-items: center; gap: 6px; background: #f5f5f5; border-radius: 9999px; padding: 6px 14px;">
+      <span style="font-size: 13px; font-weight: 500; color: #171717;">최근 6개월</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+  </div>
+
+  <!-- Savings hero card -->
+  <div style="margin: 0 20px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 16px; padding: 24px;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      <span style="font-size: 14px; font-weight: 500; color: #737373;">6개월간 휘발유 대비 절약</span>
+    </div>
+    <div style="font-size: 36px; line-height: 44px; font-weight: 800; color: #0a0a0a; letter-spacing: -0.025em; margin-top: 8px;">1,038,700원</div>
+    <div style="font-size: 13px; color: #737373; margin-top: 4px;">같은 거리를 아반떼(연비 14km/L, 1,680원/L)로 달렸다면</div>
+  </div>
+
+  <!-- Monthly bar chart -->
+  <div style="margin: 16px 20px 0 20px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 20px;">
+    <div style="font-size: 15px; font-weight: 600; color: #0a0a0a;">월별 충전비</div>
+    <div style="display: flex; align-items: flex-end; gap: 12px; height: 140px; margin-top: 20px; padding: 0 4px;">
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <span style="font-size: 10px; color: #737373;">7.2만</span>
+        <div style="width: 100%; height: 96px; background: #e5e5e5; border-radius: 6px 6px 0 0;"></div>
+        <span style="font-size: 11px; color: #737373;">4월</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <span style="font-size: 10px; color: #737373;">6.4만</span>
+        <div style="width: 100%; height: 85px; background: #e5e5e5; border-radius: 6px 6px 0 0;"></div>
+        <span style="font-size: 11px; color: #737373;">5월</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <span style="font-size: 10px; color: #737373;">8.8만</span>
+        <div style="width: 100%; height: 117px; background: #e5e5e5; border-radius: 6px 6px 0 0;"></div>
+        <span style="font-size: 11px; color: #737373;">6월</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <span style="font-size: 10px; color: #737373;">7.9만</span>
+        <div style="width: 100%; height: 105px; background: #e5e5e5; border-radius: 6px 6px 0 0;"></div>
+        <span style="font-size: 11px; color: #737373;">7월</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <span style="font-size: 10px; color: #737373;">6.1만</span>
+        <div style="width: 100%; height: 81px; background: #e5e5e5; border-radius: 6px 6px 0 0;"></div>
+        <span style="font-size: 11px; color: #737373;">8월</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <span style="font-size: 10px; font-weight: 600; color: #171717;">5.8만</span>
+        <div style="width: 100%; height: 78px; background: #171717; border-radius: 6px 6px 0 0;"></div>
+        <span style="font-size: 11px; font-weight: 600; color: #171717;">9월</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Efficiency trend -->
+  <div style="margin: 16px 20px 0 20px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 15px; font-weight: 600; color: #0a0a0a;">평균 전비</span>
+      <div style="display: flex; align-items: center; gap: 4px;">
+        <span style="font-size: 20px; font-weight: 700; color: #0a0a0a;">5.4</span>
+        <span style="font-size: 13px; color: #737373;">km/kWh</span>
+      </div>
+    </div>
+    <svg width="100%" height="60" viewBox="0 0 310 60" style="margin-top: 12px;">
+      <polyline points="0,38 62,32 124,42 186,28 248,22 310,18" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="310" cy="18" r="4" fill="#171717"/>
+    </svg>
+    <div style="display: flex; align-items: center; gap: 6px; margin-top: 8px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg>
+      <span style="font-size: 13px; color: #22c55e; font-weight: 500;">여름 에어컨 시즌 끝나고 전비 회복 중</span>
+    </div>
+  </div>
+
+  <!-- Charger ranking -->
+  <div style="margin: 16px 20px 0 20px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 20px;">
+    <div style="font-size: 15px; font-weight: 600; color: #0a0a0a; margin-bottom: 16px;">충전처별 평균 단가</div>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+          <span style="font-size: 13px; font-weight: 500; color: #0a0a0a;">아파트 완속</span>
+          <span style="font-size: 13px; font-weight: 600; color: #22c55e;">140원/kWh</span>
+        </div>
+        <div style="height: 6px; background: #f5f5f5; border-radius: 9999px;"><div style="width: 28%; height: 6px; background: #22c55e; border-radius: 9999px;"></div></div>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+          <span style="font-size: 13px; font-weight: 500; color: #0a0a0a;">환경부 급속</span>
+          <span style="font-size: 13px; font-weight: 600; color: #171717;">327원/kWh</span>
+        </div>
+        <div style="height: 6px; background: #f5f5f5; border-radius: 9999px;"><div style="width: 65%; height: 6px; background: #737373; border-radius: 9999px;"></div></div>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+          <span style="font-size: 13px; font-weight: 500; color: #0a0a0a;">SK일렉링크 급속</span>
+          <span style="font-size: 13px; font-weight: 600; color: #171717;">350원/kWh</span>
+        </div>
+        <div style="height: 6px; background: #f5f5f5; border-radius: 9999px;"><div style="width: 70%; height: 6px; background: #737373; border-radius: 9999px;"></div></div>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+          <span style="font-size: 13px; font-weight: 500; color: #0a0a0a;">차지비 급속</span>
+          <span style="font-size: 13px; font-weight: 600; color: #ef4444;">398원/kWh</span>
+        </div>
+        <div style="height: 6px; background: #f5f5f5; border-radius: 9999px;"><div style="width: 80%; height: 6px; background: #ef4444; border-radius: 9999px;"></div></div>
+      </div>
+    </div>
+    <div style="margin-top: 16px; background: #f5f5f5; border-radius: 10px; padding: 12px 16px; display: flex; align-items: flex-start; gap: 8px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      <span style="font-size: 13px; line-height: 18px; color: #737373;">급속 비중을 30%→20%로 줄이면 월 <span style="font-weight: 600; color: #171717;">약 6,200원</span> 더 아낄 수 있어</span>
+    </div>
+  </div>
+
+  <!-- Bottom nav -->
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: #ffffff; border-top: 1px solid #e5e5e5; display: flex; padding-bottom: 16px;">
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span style="font-size: 11px; font-weight: 500; color: #a3a3a3;">홈</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+      <span style="font-size: 11px; font-weight: 500; color: #a3a3a3;">기록</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+      <span style="font-size: 11px; font-weight: 600; color: #171717;">통계</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
