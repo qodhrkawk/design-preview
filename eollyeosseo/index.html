@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>얼렸어 — 홈</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="padding: 20px 20px 12px; display: flex; align-items: center; justify-content: space-between;">
+    <div>
+      <div style="font-size: 24px; font-weight: 600; line-height: 32px; color: #0a0a0a;">얼렸어</div>
+      <div style="font-size: 14px; line-height: 20px; color: #737373; margin-top: 2px;">우리집 냉동실 12개 품목</div>
+    </div>
+    <button style="width: 40px; height: 40px; border-radius: 8px; border: 1px solid #e5e5e5; background: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    </button>
+  </div>
+
+  <!-- Summary strip -->
+  <div style="margin: 4px 20px 16px; display: flex; gap: 8px;">
+    <div style="flex: 1; background: #fef2f2; border: 1px solid #fecaca; border-radius: 12px; padding: 12px;">
+      <div style="font-size: 12px; line-height: 16px; color: #b91c1c; font-weight: 500;">먼저 먹어야 해</div>
+      <div style="font-size: 24px; font-weight: 800; line-height: 32px; color: #dc2626;">3</div>
+    </div>
+    <div style="flex: 1; background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 12px;">
+      <div style="font-size: 12px; line-height: 16px; color: #b45309; font-weight: 500;">기한 임박</div>
+      <div style="font-size: 24px; font-weight: 800; line-height: 32px; color: #f59e0b;">2</div>
+    </div>
+    <div style="flex: 1; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 12px;">
+      <div style="font-size: 12px; line-height: 16px; color: #15803d; font-weight: 500;">신선</div>
+      <div style="font-size: 24px; font-weight: 800; line-height: 32px; color: #22c55e;">7</div>
+    </div>
+  </div>
+
+  <!-- Filter chips -->
+  <div style="padding: 0 20px 16px; display: flex; gap: 8px; overflow-x: auto;">
+    <span style="background: #171717; color: #fafafa; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500; white-space: nowrap;">전체</span>
+    <span style="background: #f5f5f5; color: #171717; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500; white-space: nowrap;">위 칸</span>
+    <span style="background: #f5f5f5; color: #171717; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500; white-space: nowrap;">가운데 서랍</span>
+    <span style="background: #f5f5f5; color: #171717; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500; white-space: nowrap;">문쪽</span>
+  </div>
+
+  <!-- List -->
+  <div style="flex: 1; padding: 0 20px 100px; display: flex; flex-direction: column; gap: 10px;">
+
+    <div style="font-size: 12px; font-weight: 600; color: #b91c1c; letter-spacing: 0.02em; margin-bottom: -2px;">먼저 먹어야 해</div>
+
+    <!-- Item: overdue -->
+    <div style="background: #ffffff; border: 1px solid #fecaca; border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 40px; height: 40px; border-radius: 9999px; background: #fef2f2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="m4.93 4.93 14.14 14.14"/><path d="m19.07 4.93-14.14 14.14"/><path d="M2 12h20"/></svg>
+      </div>
+      <div style="flex: 1; min-width: 0;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="font-size: 15px; font-weight: 600; color: #0a0a0a;">냉동밥</span>
+          <span style="background: #f5f5f5; color: #737373; border-radius: 9999px; padding: 1px 8px; font-size: 11px; font-weight: 500;">3개</span>
+        </div>
+        <div style="font-size: 13px; color: #737373; margin-top: 2px;">6/28 얼림 · 위 칸</div>
+        <div style="margin-top: 8px; height: 4px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+          <div style="width: 100%; height: 100%; background: #dc2626;"></div>
+        </div>
+      </div>
+      <div style="text-align: right; flex-shrink: 0;">
+        <div style="font-size: 13px; font-weight: 600; color: #dc2626;">41일 지남</div>
+        <div style="font-size: 11px; color: #737373;">권장 1개월</div>
+      </div>
+    </div>
+
+    <div style="background: #ffffff; border: 1px solid #fecaca; border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 40px; height: 40px; border-radius: 9999px; background: #fef2f2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 12a5 5 0 0 0-5-5c-2.76 0-5 2.24-5 5"/><path d="M2 12h20"/><path d="M12 12v8"/><path d="M8 20h8"/></svg>
+      </div>
+      <div style="flex: 1; min-width: 0;">
+        <div style="font-size: 15px; font-weight: 600; color: #0a0a0a;">미역국 소분</div>
+        <div style="font-size: 13px; color: #737373; margin-top: 2px;">7/12 얼림 · 가운데 서랍</div>
+        <div style="margin-top: 8px; height: 4px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+          <div style="width: 100%; height: 100%; background: #dc2626;"></div>
+        </div>
+      </div>
+      <div style="text-align: right; flex-shrink: 0;">
+        <div style="font-size: 13px; font-weight: 600; color: #dc2626;">27일 지남</div>
+        <div style="font-size: 11px; color: #737373;">권장 1개월</div>
+      </div>
+    </div>
+
+    <div style="font-size: 12px; font-weight: 600; color: #b45309; letter-spacing: 0.02em; margin-top: 8px; margin-bottom: -2px;">기한 임박</div>
+
+    <div style="background: #ffffff; border: 1px solid #fde68a; border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 40px; height: 40px; border-radius: 9999px; background: #fffbeb; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 3H8.7a2 2 0 0 0-1.9 1.4L4 14h16l-2.6-9.6A2 2 0 0 0 15.5 3Z"/><path d="M4 14v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg>
+      </div>
+      <div style="flex: 1; min-width: 0;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="font-size: 15px; font-weight: 600; color: #0a0a0a;">돼지고기 목살 소분</span>
+          <span style="background: #f5f5f5; color: #737373; border-radius: 9999px; padding: 1px 8px; font-size: 11px; font-weight: 500;">2팩</span>
+        </div>
+        <div style="font-size: 13px; color: #737373; margin-top: 2px;">6/20 얼림 · 가운데 서랍</div>
+        <div style="margin-top: 8px; height: 4px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+          <div style="width: 82%; height: 100%; background: #f59e0b;"></div>
+        </div>
+      </div>
+      <div style="text-align: right; flex-shrink: 0;">
+        <div style="font-size: 13px; font-weight: 600; color: #b45309;">17일 남음</div>
+        <div style="font-size: 11px; color: #737373;">권장 3개월</div>
+      </div>
+    </div>
+
+    <div style="font-size: 12px; font-weight: 600; color: #15803d; letter-spacing: 0.02em; margin-top: 8px; margin-bottom: -2px;">신선</div>
+
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 40px; height: 40px; border-radius: 9999px; background: #f0fdf4; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M12 2v20"/></svg>
+      </div>
+      <div style="flex: 1; min-width: 0;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="font-size: 15px; font-weight: 600; color: #0a0a0a;">다진마늘 큐브</span>
+        </div>
+        <div style="font-size: 13px; color: #737373; margin-top: 2px;">9/2 얼림 · 문쪽</div>
+        <div style="margin-top: 8px; height: 4px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+          <div style="width: 6%; height: 100%; background: #22c55e;"></div>
+        </div>
+      </div>
+      <div style="text-align: right; flex-shrink: 0;">
+        <div style="font-size: 13px; font-weight: 600; color: #15803d;">85일 남음</div>
+        <div style="font-size: 11px; color: #737373;">권장 3개월</div>
+      </div>
+    </div>
+
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 40px; height: 40px; border-radius: 9999px; background: #f0fdf4; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10Z"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+      </div>
+      <div style="flex: 1; min-width: 0;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="font-size: 15px; font-weight: 600; color: #0a0a0a;">만두</span>
+          <span style="background: #f5f5f5; color: #737373; border-radius: 9999px; padding: 1px 8px; font-size: 11px; font-weight: 500;">1봉</span>
+        </div>
+        <div style="font-size: 13px; color: #737373; margin-top: 2px;">8/30 얼림 · 위 칸</div>
+        <div style="margin-top: 8px; height: 4px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+          <div style="width: 5%; height: 100%; background: #22c55e;"></div>
+        </div>
+      </div>
+      <div style="text-align: right; flex-shrink: 0;">
+        <div style="font-size: 13px; font-weight: 600; color: #15803d;">172일 남음</div>
+        <div style="font-size: 11px; color: #737373;">권장 6개월</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FAB -->
+  <div style="position: absolute; bottom: 88px; right: 20px;">
+    <button style="width: 56px; height: 56px; border-radius: 9999px; background: #171717; border: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05); cursor: pointer;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+    </button>
+  </div>
+
+  <!-- Bottom nav -->
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 72px; background: #ffffff; border-top: 1px solid #e5e5e5; display: flex; align-items: center; padding-bottom: 8px;">
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z"/></svg>
+      <span style="font-size: 11px; font-weight: 600; color: #171717;">냉동실</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+      <span style="font-size: 11px; font-weight: 400; color: #a3a3a3;">장보기 체크</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+      <span style="font-size: 11px; font-weight: 400; color: #a3a3a3;">리포트</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
