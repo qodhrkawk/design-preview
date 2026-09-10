@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>뭐들었지 — 롤 보관함</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="padding: 24px 20px 12px;">
+    <div style="font-size: 24px; line-height: 32px; font-weight: 600; color: #0a0a0a;">롤 보관함</div>
+    <div style="font-size: 14px; line-height: 20px; color: #737373; margin-top: 2px;">올해 14롤 · 총 21롤</div>
+  </div>
+
+  <!-- 필터 칩 -->
+  <div style="padding: 8px 20px 16px; display: flex; gap: 8px;">
+    <span style="background: #171717; color: #fafafa; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500;">전체</span>
+    <span style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500;">현상 대기 2</span>
+    <span style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500;">현상소</span>
+    <span style="background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 9999px; padding: 6px 14px; font-size: 13px; font-weight: 500;">완료</span>
+  </div>
+
+  <!-- 현상 대기 롤 -->
+  <div style="margin: 0 20px 12px; background: #ffffff; border: 1px solid #fde68a; border-radius: 12px; padding: 16px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <div>
+        <div style="font-size: 15px; font-weight: 600; color: #0a0a0a;">Kodak Gold 200 <span style="color: #737373; font-weight: 400; font-size: 13px;">#R-013</span></div>
+        <div style="font-size: 12px; color: #737373; margin-top: 2px;">Rollei 35 · 8월 12일 ~ 8월 18일 · 36컷</div>
+      </div>
+      <span style="background: #fffbeb; color: #b45309; border: 1px solid #fde68a; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">현상 대기 23일</span>
+    </div>
+    <div style="margin-top: 12px; display: flex; gap: 8px;">
+      <button style="flex: 1; height: 38px; background: #171717; color: #fafafa; border: none; border-radius: 8px; font-size: 13px; font-weight: 500; font-family: inherit;">현상 맡김으로 변경</button>
+      <button style="height: 38px; background: #ffffff; color: #171717; border: 1px solid #e5e5e5; border-radius: 8px; padding: 0 14px; font-size: 13px; font-weight: 500; font-family: inherit;">상세</button>
+    </div>
+  </div>
+
+  <!-- 현상소에 있는 롤 -->
+  <div style="margin: 0 20px 12px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <div>
+        <div style="font-size: 15px; font-weight: 600; color: #0a0a0a;">Fuji C200 <span style="color: #737373; font-weight: 400; font-size: 13px;">#R-012</span></div>
+        <div style="font-size: 12px; color: #737373; margin-top: 2px;">Nikon FM2 · 7월 25일 ~ 8월 9일 · 36컷</div>
+      </div>
+      <span style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">현상소</span>
+    </div>
+    <div style="margin-top: 10px; background: #f5f5f5; border-radius: 8px; padding: 10px 12px; display: flex; align-items: center; gap: 8px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+      <div style="font-size: 13px; color: #0a0a0a;">필름로그 현상소 (합정) · 9월 8일 접수</div>
+    </div>
+  </div>
+
+  <!-- 완료 롤 -->
+  <div style="margin: 0 20px 12px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <div>
+        <div style="font-size: 15px; font-weight: 600; color: #0a0a0a;">Portra 800 <span style="color: #737373; font-weight: 400; font-size: 13px;">#R-011</span></div>
+        <div style="font-size: 12px; color: #737373; margin-top: 2px;">Nikon FM2 · 7월 2일 ~ 7월 20일 · 36컷</div>
+      </div>
+      <span style="background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">스캔 완료</span>
+    </div>
+    <div style="margin-top: 10px; display: flex; align-items: center; gap: 8px;">
+      <div style="display: flex; gap: 2px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div style="font-size: 13px; color: #737373;">"입자감 좋음. 실내는 +1스톱 줄 걸"</div>
+    </div>
+  </div>
+
+  <!-- 완료 롤 2 -->
+  <div style="margin: 0 20px 12px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <div>
+        <div style="font-size: 15px; font-weight: 600; color: #0a0a0a;">Kentmere 400 <span style="color: #737373; font-weight: 400; font-size: 13px;">#R-010</span></div>
+        <div style="font-size: 12px; color: #737373; margin-top: 2px;">Rollei 35 · 6월 14일 ~ 6월 30일 · 24컷</div>
+      </div>
+      <span style="background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">스캔 완료</span>
+    </div>
+  </div>
+
+  <div style="flex: 1;"></div>
+
+  <!-- 탭바 -->
+  <div style="border-top: 1px solid #e5e5e5; display: flex; padding: 10px 0 28px;">
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+      <span style="font-size: 11px; color: #a3a3a3;">카메라</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2h10"/><path d="M5 6h14"/><rect width="18" height="12" x="3" y="10" rx="2"/></svg>
+      <span style="font-size: 11px; font-weight: 600; color: #171717;">롤 보관함</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+      <span style="font-size: 11px; color: #a3a3a3;">통계</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
