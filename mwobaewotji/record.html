@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>뭐배웠지 — 레슨 기록</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="display:flex; align-items:center; gap:12px; padding:16px 20px 12px;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    <div style="flex:1;">
+      <div style="font-size:18px; line-height:24px; font-weight:600; color:#0a0a0a;">오늘 레슨 기록</div>
+      <div style="font-size:12px; color:#737373;">수영 · 김재현 코치 · 12회차 · 6월 11일</div>
+    </div>
+    <div style="font-size:14px; font-weight:600; color:#737373;">임시저장</div>
+  </div>
+
+  <!-- 30-second banner -->
+  <div style="margin:8px 20px 16px; background:#eff6ff; border-radius:10px; padding:10px 14px; display:flex; align-items:center; gap:8px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    <span style="font-size:13px; line-height:18px; color:#3b82f6; font-weight:500;">샤워하기 전 30초면 충분해. 한 칸만 채워도 저장돼.</span>
+  </div>
+
+  <!-- Section: 배운 것 -->
+  <div style="padding:0 20px 20px;">
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+      <div style="width:22px; height:22px; border-radius:9999px; background:#f0fdf4; display:flex; align-items:center; justify-content:center;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <span style="font-size:15px; font-weight:600; color:#0a0a0a;">오늘 배운 것</span>
+    </div>
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:8px; padding:12px; min-height:72px;">
+      <div style="font-size:14px; line-height:20px; color:#0a0a0a;">자유형 롤링 — 몸통 전체가 좌우로 기울어지는 느낌. 어깨만 돌리는 게 아니라 골반까지 같이.</div>
+    </div>
+  </div>
+
+  <!-- Section: 코치 지적 -->
+  <div style="padding:0 20px 20px;">
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+      <div style="width:22px; height:22px; border-radius:9999px; background:#fffbeb; display:flex; align-items:center; justify-content:center;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <span style="font-size:15px; font-weight:600; color:#0a0a0a;">지적받은 것</span>
+      <span style="font-size:12px; color:#737373;">이전 지적에서 고르거나 새로 추가</span>
+    </div>
+    <!-- Repeat suggestion chips -->
+    <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+      <div style="background:#fef2f2; border:1px solid #fecaca; border-radius:9999px; padding:6px 12px; font-size:13px; font-weight:500; color:#ef4444; display:flex; align-items:center; gap:6px;">
+        무릎 굽힌 킥
+        <span style="background:#ef4444; color:#fafafa; border-radius:9999px; padding:0 6px; font-size:11px; font-weight:600;">3회</span>
+      </div>
+      <div style="background:#f5f5f5; border:1px solid #e5e5e5; border-radius:9999px; padding:6px 12px; font-size:13px; font-weight:500; color:#171717;">호흡 시 고개 과다</div>
+      <div style="background:#f5f5f5; border:1px solid #e5e5e5; border-radius:9999px; padding:6px 12px; font-size:13px; font-weight:500; color:#171717;">팔꿈치 빠짐</div>
+      <div style="background:#ffffff; border:1px dashed #e5e5e5; border-radius:9999px; padding:6px 12px; font-size:13px; font-weight:500; color:#737373; display:flex; align-items:center; gap:4px;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        새 지적
+      </div>
+    </div>
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:8px; padding:12px;">
+      <div style="font-size:14px; line-height:20px; color:#0a0a0a;">무릎 굽힌 킥 — 오늘도 지적. 다운킥 때 허벅지 힘 빠진다고.</div>
+    </div>
+  </div>
+
+  <!-- Section: 잘한 것 -->
+  <div style="padding:0 20px 20px;">
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+      <div style="width:22px; height:22px; border-radius:9999px; background:#f0fdf4; display:flex; align-items:center; justify-content:center;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+      </div>
+      <span style="font-size:15px; font-weight:600; color:#0a0a0a;">칭찬받은 것 / 잘된 것</span>
+    </div>
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:8px; padding:12px;">
+      <div style="font-size:14px; line-height:20px; color:#737373;">사이드 호흡 많이 좋아졌다고! 👉 지난 지적 "호흡 시 고개 과다" 졸업 후보</div>
+    </div>
+    <!-- graduation suggestion -->
+    <div style="margin-top:8px; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:10px 12px; display:flex; align-items:center; justify-content:space-between;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        <span style="font-size:13px; font-weight:500; color:#171717;">"호흡 시 고개 과다" 졸업 처리할까?</span>
+      </div>
+      <div style="background:#22c55e; color:#fafafa; border-radius:6px; padding:6px 12px; font-size:13px; font-weight:600;">졸업</div>
+    </div>
+  </div>
+
+  <!-- Section: 숙제 -->
+  <div style="padding:0 20px 20px;">
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+      <div style="width:22px; height:22px; border-radius:9999px; background:#eff6ff; display:flex; align-items:center; justify-content:center;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      </div>
+      <span style="font-size:15px; font-weight:600; color:#0a0a0a;">다음까지 숙제</span>
+    </div>
+    <div style="background:#ffffff; border:1px solid #e5e5e5; border-radius:8px; padding:12px;">
+      <div style="font-size:14px; line-height:20px; color:#0a0a0a;">킥판 발차기 200m + 롤링 드릴 4×25m</div>
+    </div>
+    <div style="margin-top:8px; display:flex; align-items:center; gap:8px;">
+      <div style="width:36px; height:20px; border-radius:9999px; background:#171717; display:flex; align-items:center; padding:2px; justify-content:flex-end;">
+        <div style="width:16px; height:16px; border-radius:9999px; background:#fafafa;"></div>
+      </div>
+      <span style="font-size:13px; color:#737373;">레슨 전날 저녁에 복습 알림 받기</span>
+    </div>
+  </div>
+
+  <!-- Save button -->
+  <div style="margin-top:auto; padding:16px 20px 32px; border-top:1px solid #e5e5e5;">
+    <div style="background:#171717; border-radius:8px; height:48px; display:flex; align-items:center; justify-content:center;">
+      <span style="font-size:15px; font-weight:600; color:#fafafa;">저장하기</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
