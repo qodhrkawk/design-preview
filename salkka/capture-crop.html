@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>살까말까 — 영역 크롭</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; min-height: 100vh; }
+    .mobile-frame { width: 100%; max-width: 390px; height: 844px; background: #0a0a0a; position: relative; overflow: hidden; }
+    .scrim { position: absolute; background: rgba(10,10,10,0.62); z-index: 2; }
+    .handle { position: absolute; width: 22px; height: 22px; z-index: 4; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.45)); }
+    .gline { position: absolute; background: rgba(255,255,255,0.55); box-shadow: 0 0 0 0.5px rgba(0,0,0,0.18); z-index: 3; }
+  </style>
+</head>
+<body>
+<div class="mobile-frame">
+
+  <!-- ===== 가짜 스크린샷 (풀블리드, 노이즈 포함 쇼핑 화면) ===== -->
+  <div style="position:absolute; inset:0; background:#ffffff; z-index:1; display:flex; flex-direction:column;">
+    <div style="height:48px;"></div>
+    <!-- 쇼핑앱 검색바 -->
+    <div style="padding:8px 16px; display:flex; align-items:center; gap:10px;">
+      <div style="flex:1; height:36px; background:#f0f0f0; border-radius:9999px; display:flex; align-items:center; padding:0 14px; gap:8px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <span style="font-size:13px; color:#a3a3a3;">헤드폰</span>
+      </div>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    </div>
+    <!-- 상품 영역 (크롭 대상) -->
+    <div style="padding:10px 16px 0;">
+      <div style="width:100%; height:230px; background:linear-gradient(160deg,#f5f5f5,#e8e8e8); border-radius:12px; display:flex; align-items:center; justify-content:center;">
+        <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#c4c4c4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 0 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/></svg>
+      </div>
+      <p style="font-size:16px; line-height:22px; font-weight:600; color:#171717; margin-top:12px;">소니 WH-1000XM5 무선 노이즈캔슬링 헤드폰</p>
+      <p style="font-size:13px; color:#737373; margin-top:4px;">블랙 · 공식 수입 정품</p>
+      <div style="display:flex; align-items:baseline; gap:6px; margin-top:8px;">
+        <span style="font-size:14px; font-weight:700; color:#ef4444;">18%</span>
+        <span style="font-size:20px; font-weight:800; color:#171717;">329,000원</span>
+        <span style="font-size:13px; color:#a3a3a3; text-decoration:line-through;">399,000원</span>
+      </div>
+    </div>
+    <!-- 노이즈: 할부/적립 배너 -->
+    <div style="margin:12px 16px 0; background:#f8f8f8; border-radius:8px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center;">
+      <span style="font-size:12px; color:#737373;">월 27,417원 × 12개월 무이자</span>
+      <span style="font-size:12px; font-weight:600; color:#3b82f6;">카드 혜택</span>
+    </div>
+    <!-- 노이즈: 추천 상품 -->
+    <div style="padding:16px 16px 0;">
+      <p style="font-size:14px; font-weight:700; color:#171717;">함께 본 상품</p>
+      <div style="display:flex; gap:10px; margin-top:10px;">
+        <div style="flex:1;"><div style="width:100%; aspect-ratio:1; background:#efefef; border-radius:8px;"></div><div style="width:90%; height:7px; background:#e5e5e5; border-radius:9999px; margin-top:7px;"></div><div style="width:60%; height:8px; background:#d4d4d4; border-radius:9999px; margin-top:5px;"></div></div>
+        <div style="flex:1;"><div style="width:100%; aspect-ratio:1; background:#efefef; border-radius:8px;"></div><div style="width:85%; height:7px; background:#e5e5e5; border-radius:9999px; margin-top:7px;"></div><div style="width:55%; height:8px; background:#d4d4d4; border-radius:9999px; margin-top:5px;"></div></div>
+        <div style="flex:1;"><div style="width:100%; aspect-ratio:1; background:#efefef; border-radius:8px;"></div><div style="width:88%; height:7px; background:#e5e5e5; border-radius:9999px; margin-top:7px;"></div><div style="width:50%; height:8px; background:#d4d4d4; border-radius:9999px; margin-top:5px;"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 스크림 (크롭 영역: left 20 / top 110 / width 350 / height 470) ===== -->
+  <div class="scrim" style="left:0; top:0; right:0; height:110px;"></div>
+  <div class="scrim" style="left:0; top:580px; right:0; bottom:0;"></div>
+  <div class="scrim" style="left:0; top:110px; width:20px; height:470px;"></div>
+  <div class="scrim" style="right:0; top:110px; width:20px; height:470px;"></div>
+
+  <!-- ===== 크롭 사각형 ===== -->
+  <div style="position:absolute; left:20px; top:110px; width:350px; height:470px; border:2px solid #ffffff; border-radius:4px; z-index:3; box-shadow:0 0 0 1px rgba(0,0,0,0.35), 0 2px 12px rgba(0,0,0,0.25);">
+    <!-- 3분할 가이드 -->
+    <div class="gline" style="left:33.33%; top:0; width:1px; height:100%;"></div>
+    <div class="gline" style="left:66.66%; top:0; width:1px; height:100%;"></div>
+    <div class="gline" style="top:33.33%; left:0; height:1px; width:100%;"></div>
+    <div class="gline" style="top:66.66%; left:0; height:1px; width:100%;"></div>
+    <!-- 모서리 핸들 4개 (L자) -->
+    <div class="handle" style="left:-4px; top:-4px; border-left:4px solid #ffffff; border-top:4px solid #ffffff; border-top-left-radius:6px;"></div>
+    <div class="handle" style="right:-4px; top:-4px; border-right:4px solid #ffffff; border-top:4px solid #ffffff; border-top-right-radius:6px;"></div>
+    <div class="handle" style="left:-4px; bottom:-4px; border-left:4px solid #ffffff; border-bottom:4px solid #ffffff; border-bottom-left-radius:6px;"></div>
+    <div class="handle" style="right:-4px; bottom:-4px; border-right:4px solid #ffffff; border-bottom:4px solid #ffffff; border-bottom-right-radius:6px;"></div>
+  </div>
+
+  <!-- ===== 상단 바 ===== -->
+  <div style="position:absolute; left:0; right:0; top:0; z-index:5; background:linear-gradient(to bottom, rgba(10,10,10,0.72), rgba(10,10,10,0)); padding:56px 16px 28px; display:flex; align-items:center; gap:12px;">
+    <button style="width:38px; height:38px; border:none; border-radius:9999px; background:rgba(255,255,255,0.16); display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <p style="flex:1; text-align:center; font-size:16px; font-weight:600; color:#ffffff; letter-spacing:-0.01em; margin-right:50px;">분석할 영역을 잘라줘</p>
+  </div>
+
+  <!-- ===== 도리 힌트 칩 ===== -->
+  <div style="position:absolute; left:0; right:0; top:596px; z-index:5; display:flex; justify-content:center;">
+    <div style="display:inline-flex; align-items:center; gap:7px; background:rgba(250,245,230,0.96); border:1px solid #f0e6c8; border-radius:9999px; padding:6px 14px 6px 8px; box-shadow:0 4px 10px rgba(0,0,0,0.25);">
+      <img src="assets/curious.png" width="24" height="24" alt="도리" style="display:block; border-radius:9999px;">
+      <span style="font-size:12px; font-weight:600; color:#a16207;">상품 이름이랑 가격만 보이게 잘라줘</span>
+    </div>
+  </div>
+
+  <!-- ===== 하단 버튼 ===== -->
+  <div style="position:absolute; left:0; right:0; bottom:0; z-index:5; background:linear-gradient(to top, rgba(10,10,10,0.85), rgba(10,10,10,0)); padding:36px 20px 32px;">
+    <button style="width:100%; background:#d97706; color:#ffffff; border:none; border-radius:10px; height:48px; font-size:15px; font-weight:600; font-family:inherit; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg>
+      이 영역 분석
+    </button>
+    <button style="width:100%; margin-top:10px; background:transparent; color:#ffffff; border:1px solid rgba(255,255,255,0.4); border-radius:10px; height:44px; font-size:14px; font-weight:600; font-family:inherit; cursor:pointer;">전체 사용</button>
+  </div>
+
+</div>
+</body>
+</html>

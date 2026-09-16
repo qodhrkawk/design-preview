@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><style>
+* { margin:0; padding:0; }
+body { width: 1024px; height: 1024px; overflow: hidden; }
+.icon { width:1024px; height:1024px; display:flex; align-items:center; justify-content:center; position:relative; }
+/* A: 그린 배경 + 흰 부조봉투 + 하트 씰 */
+.a { background: linear-gradient(160deg, #1ea54e 0%, #14803c 100%); }
+.a .env { width: 520px; height: 680px; background:#fdfcf8; border-radius: 48px; position:relative; box-shadow: 0 40px 80px rgba(0,0,0,.25); }
+.a .env::before { content:''; position:absolute; top:0; left:0; right:0; height:0;
+  border-left:260px solid transparent; border-right:260px solid transparent; border-top:220px solid #f3f0e8; 
+  border-radius:48px 48px 0 0; }
+.a .seal { position:absolute; top:150px; left:50%; transform:translateX(-50%); width:150px; height:150px; background:#e0483e; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(0,0,0,.18); z-index:2; }
+/* B: 크림 배경 + 그린 봉투 라인 + 금액 라인 */
+.b { background: linear-gradient(160deg,#f7f4ec,#efe9db); }
+.b .env { width:560px; height:700px; background:#ffffff; border-radius:44px; border:14px solid #171717; position:relative; box-shadow:0 30px 60px rgba(0,0,0,.12); display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding-bottom:70px; gap:28px; }
+.b .flap { position:absolute; top:-14px; left:-14px; right:-14px; height:0; border-left:280px solid transparent; border-right:280px solid transparent; border-top:240px solid #171717; border-radius:44px 44px 0 0; }
+.b .flap-in { position:absolute; top:-14px; left:6px; right:6px; height:0; border-left:260px solid transparent; border-right:260px solid transparent; border-top:222px solid #1ea54e; }
+.b .line { width:300px; height:26px; background:#e5e0d3; border-radius:13px; }
+.b .line.short { width:190px; }
+/* C: 다크 배경 + 장부 + 그린 하트 */
+.c { background: linear-gradient(160deg,#232323,#111); }
+.c .book { width:560px; height:700px; background:#fdfcf8; border-radius:36px 56px 56px 36px; position:relative; box-shadow:0 40px 80px rgba(0,0,0,.4); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:34px; }
+.c .book::before { content:''; position:absolute; left:0; top:0; bottom:0; width:64px; background:#1ea54e; border-radius:36px 0 0 36px; }
+.c .row { width:330px; height:24px; background:#e8e4d8; border-radius:12px; margin-left:40px; }
+.c .row.short { width:210px; }
+</style></head><body>
+<div class="icon a" id="a">
+  <div class="env"><div class="seal">
+    <svg width="84" height="84" viewBox="0 0 24 24" fill="#fff"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+  </div></div>
+</div>
+</body></html>
