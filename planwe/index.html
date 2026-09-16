@@ -3,44 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PlanWe — 디자인 시안</title>
+<title>PlanWe · 시안 v1 전체</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:Inter, system-ui, sans-serif; background:#f5f5f5; color:#0a0a0a; padding:40px 20px 80px; }
-  .wrap { max-width:1240px; margin:0 auto; }
-  header { text-align:center; margin-bottom:8px; }
-  .mark { width:60px; height:60px; border-radius:16px; background:#0f766e; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 8px 16px rgba(15,118,110,0.25); }
-  h1 { font-size:34px; font-weight:800; letter-spacing:-0.025em; margin-top:16px; }
-  .sub { font-size:15px; color:#737373; margin-top:8px; }
-  .meta { font-size:13px; color:#a3a3a3; margin-top:6px; }
-  .grid { display:flex; flex-wrap:wrap; gap:32px; justify-content:center; margin-top:48px; }
-  .cell { display:flex; flex-direction:column; align-items:center; }
-  .cap { font-size:14px; font-weight:600; margin-top:14px; }
-  .capd { font-size:12px; color:#737373; margin-top:2px; text-align:center; max-width:390px; }
-  iframe { width:390px; height:844px; border:1px solid #e5e5e5; border-radius:24px; background:#fff; box-shadow:0 10px 30px rgba(0,0,0,0.08); }
-  .num { font-size:12px; font-weight:700; color:#fff; background:#0f766e; border-radius:9999px; width:22px; height:22px; display:inline-flex; align-items:center; justify-content:center; margin-right:6px; }
+  body { font-family:Inter, system-ui, sans-serif; background:#f0f0f0; padding:40px 24px 80px; }
+  h1 { font-size:28px; font-weight:800; letter-spacing:-0.02em; color:#0a0a0a; }
+  .sub { font-size:14px; color:#737373; margin-top:6px; }
+  .grid { display:flex; flex-wrap:wrap; gap:32px; margin-top:32px; justify-content:center; }
+  .shot { display:flex; flex-direction:column; gap:10px; }
+  .shot .name { font-size:14px; font-weight:600; color:#0a0a0a; display:flex; align-items:center; gap:8px; }
+  .shot .num { width:22px; height:22px; border-radius:9999px; background:#0f766e; color:#fff; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  iframe { width:390px; height:844px; border:1px solid #d4d4d4; border-radius:20px; background:#fff; }
+  a { color:inherit; text-decoration:none; }
+  .name a:hover { text-decoration:underline; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="mark"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-    <h1>PlanWe 플랜위</h1>
-    <p class="sub">공동 목표 준비 매니저 · 방 + 투두 + 지출 + 예산 + AI 입력</p>
-    <p class="meta">시안 v1 · 9화면 · 390×844 · shadcn/ui + 딥 틸 포인트 · 이모지 없음/lucide SVG</p>
-  </header>
+  <h1>PlanWe 플랜위 — 시안 v1</h1>
+  <p class="sub">공동 목표 준비 매니저 · shadcn/ui 라이트 + 딥 틸 #0f766e · 390×844 · 클릭하면 단독 화면으로 열려요</p>
 
   <div class="grid">
-    <div class="cell"><iframe src="login.html"></iframe><div class="cap"><span class="num">1</span>Login</div><div class="capd">로고+태그라인, Apple/Google 로그인</div></div>
-    <div class="cell"><iframe src="onboarding.html"></iframe><div class="cap"><span class="num">2</span>Onboarding</div><div class="capd">방 만들기 · 템플릿 선택(결혼/여행/이사/이벤트/빈방)</div></div>
-    <div class="cell"><iframe src="home.html"></iframe><div class="cap"><span class="num">3</span>Home</div><div class="capd">방명+D-day, 예산 게이지 3색(집행/예정/잔여), 임박 투두·결제 예정 top3</div></div>
-    <div class="cell"><iframe src="todos.html"></iframe><div class="cap"><span class="num">4</span>Todos</div><div class="capd">마감/예약 세그먼트, 담당자 필터 칩, 체크리스트</div></div>
-    <div class="cell"><iframe src="ai.html"></iframe><div class="cap"><span class="num">5</span>AI · 앱의 얼굴</div><div class="capd">채팅 UI + 파싱 확인 카드(인라인 수정) + 잔여 쿼터 뱃지</div></div>
-    <div class="cell"><iframe src="expenses.html"></iframe><div class="cap"><span class="num">6</span>Expenses</div><div class="capd">완료/예정 세그먼트, 멤버별 분담 합계, 카테고리 예산 대비 바</div></div>
-    <div class="cell"><iframe src="expense-modal.html"></iframe><div class="cap"><span class="num">7</span>Expense Modal</div><div class="capd">다중 수단 분할(수단+금액 행 추가), 계약금/잔금 묶기</div></div>
-    <div class="cell"><iframe src="settings.html"></iframe><div class="cap"><span class="num">8</span>Settings</div><div class="capd">방 관리(멤버/초대코드/설정), 프로필, 구독 진입점</div></div>
-    <div class="cell"><iframe src="paywall.html"></iframe><div class="cap"><span class="num">9</span>Paywall</div><div class="capd">PlanWe Plus ₩2,900/월 · "1명 구독하면 방 전체 혜택"</div></div>
+    <div class="shot">
+      <div class="name"><span class="num">1</span><a href="./login.html">login — 로그인</a></div>
+      <iframe src="./login.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">2</span><a href="./onboarding.html">onboarding — 방 만들기</a></div>
+      <iframe src="./onboarding.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">3</span><a href="./home.html">home — 홈 (예산 게이지 + D-day)</a></div>
+      <iframe src="./home.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">4</span><a href="./todos.html">todos — 투두</a></div>
+      <iframe src="./todos.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">5</span><a href="./ai.html">ai — AI 채팅 + 확인 카드</a></div>
+      <iframe src="./ai.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">6</span><a href="./expenses.html">expenses — 지출</a></div>
+      <iframe src="./expenses.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">7</span><a href="./expense-modal.html">expense-modal — 지출 입력 (분할 결제)</a></div>
+      <iframe src="./expense-modal.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">8</span><a href="./settings.html">settings — 설정</a></div>
+      <iframe src="./settings.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">9</span><a href="./paywall.html">paywall — PlanWe Plus</a></div>
+      <iframe src="./paywall.html" scrolling="no"></iframe>
+    </div>
   </div>
-</div>
 </body>
 </html>
