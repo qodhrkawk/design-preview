@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1290px; height: 2796px; overflow: hidden; }
+  body {
+    font-family: -apple-system, 'Apple SD Gothic Neo', 'Pretendard', sans-serif;
+    background: var(--bg, #f5f2ec);
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .copy { text-align: center; padding: 160px 100px 0; }
+  .headline { font-size: 92px; font-weight: 800; letter-spacing: -2px; color: #171717; line-height: 1.25; }
+  .sub { margin-top: 36px; font-size: 44px; font-weight: 500; color: #737373; line-height: 1.4; }
+  .accent { color: #16a34a; }
+  .phone-wrap { margin-top: 110px; position: relative; }
+  .phone {
+    width: 940px; border-radius: 120px; padding: 26px;
+    background: #171717;
+    box-shadow: 0 60px 120px rgba(0,0,0,.28);
+  }
+  .phone img { width: 100%; display: block; border-radius: 96px; }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div class="headline" id="headline"></div>
+    <div class="sub" id="sub"></div>
+  </div>
+  <div class="phone-wrap"><div class="phone"><img id="shot" src=""></div></div>
+<script>
+  const p = new URLSearchParams(location.search);
+  document.getElementById('headline').innerHTML = p.get('h') || '';
+  document.getElementById('sub').innerHTML = p.get('s') || '';
+  document.getElementById('shot').src = p.get('img') || '';
+  if (p.get('bg')) document.body.style.setProperty('--bg', p.get('bg'));
+</script>
+</body>
+</html>
