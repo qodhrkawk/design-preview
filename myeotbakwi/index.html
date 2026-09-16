@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>몇바퀴 — 전체 시안</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f5f5f5; font-family: Inter, system-ui, sans-serif; color: #0a0a0a; padding: 40px 20px; }
+  .wrap { max-width: 1300px; margin: 0 auto; }
+  h1 { font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -0.025em; margin-bottom: 8px; }
+  p.sub { font-size: 14px; color: #737373; margin-bottom: 32px; }
+  .grid { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+  .col { display: flex; flex-direction: column; gap: 12px; }
+  .col h2 { font-size: 16px; font-weight: 600; }
+  iframe { width: 390px; height: 844px; border: 1px solid #e5e5e5; border-radius: 16px; background: #ffffff; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>몇바퀴 — 수험생 회독 트래커</h1>
+  <p class="sub">교재별 N회독 진행을 O/△/X로 기록하고, 시험일까지 완주 가능한 페이스인지 알려주는 앱 (390px 모바일 기준)</p>
+  <div class="grid">
+    <div class="col">
+      <h2>1. 홈 — 교재별 회독 현황</h2>
+      <iframe src="home.html"></iframe>
+    </div>
+    <div class="col">
+      <h2>2. 회독표 — O/△/X 그리드</h2>
+      <iframe src="grid.html"></iframe>
+    </div>
+    <div class="col">
+      <h2>3. 통계 — 완주 예측 &amp; 약점</h2>
+      <iframe src="stats.html"></iframe>
+    </div>
+  </div>
+</div>
+</body>
+</html>
