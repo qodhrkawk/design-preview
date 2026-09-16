@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>몇바퀴 — 통계</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f5f5f5; font-family: Inter, system-ui, sans-serif; color: #0a0a0a; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="padding: 24px 20px 16px 20px;">
+    <div style="font-size: 24px; line-height: 32px; font-weight: 800; letter-spacing: -0.025em;">통계</div>
+    <div style="font-size: 14px; line-height: 20px; color: #737373; margin-top: 2px;">시험까지 갈 수 있는 페이스인지 확인해요</div>
+  </div>
+
+  <!-- Pace forecast card -->
+  <div style="margin: 0 20px 16px 20px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 20px;">
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span style="font-size: 15px; font-weight: 600;">완주 예측 (D-94 기준)</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div>
+        <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 5px;">
+          <span>국어 기본서 · 목표 3회독</span>
+          <span style="font-weight: 600; color: #15803d;">D-31 완주 예상</span>
+        </div>
+        <div style="height: 8px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+          <div style="width: 78%; height: 100%; background: #22c55e; border-radius: 9999px;"></div>
+        </div>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 5px;">
+          <span>행정법 기출 · 목표 3회독</span>
+          <span style="font-weight: 600; color: #b91c1c;">시험 후 완주 ⟶ 위험</span>
+        </div>
+        <div style="height: 8px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+          <div style="width: 43%; height: 100%; background: #ef4444; border-radius: 9999px;"></div>
+        </div>
+        <div style="font-size: 12px; color: #737373; margin-top: 4px;">지금 페이스: 하루 0.8챕터 → 필요: 하루 2챕터</div>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 5px;">
+          <span>영어 어휘 · 목표 5회독</span>
+          <span style="font-weight: 600; color: #15803d;">D-72 완주 예상</span>
+        </div>
+        <div style="height: 8px; background: #f5f5f5; border-radius: 9999px; overflow: hidden;">
+          <div style="width: 91%; height: 100%; background: #22c55e; border-radius: 9999px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Weakness change card -->
+  <div style="margin: 0 20px 16px 20px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 20px;">
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+      <span style="font-size: 15px; font-weight: 600;">바퀴별 이해도 변화 — 행정법</span>
+    </div>
+
+    <!-- stacked bars -->
+    <div style="display: flex; align-items: flex-end; gap: 24px; height: 140px; padding: 0 12px;">
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; justify-content: flex-end;">
+        <div style="width: 44px; display: flex; flex-direction: column; border-radius: 8px; overflow: hidden;">
+          <div style="height: 46px; background: #ef4444;"></div>
+          <div style="height: 38px; background: #f59e0b;"></div>
+          <div style="height: 26px; background: #22c55e;"></div>
+        </div>
+        <span style="font-size: 12px; color: #737373;">1회독</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; justify-content: flex-end;">
+        <div style="width: 44px; display: flex; flex-direction: column; border-radius: 8px; overflow: hidden;">
+          <div style="height: 22px; background: #ef4444;"></div>
+          <div style="height: 40px; background: #f59e0b;"></div>
+          <div style="height: 48px; background: #22c55e;"></div>
+        </div>
+        <span style="font-size: 12px; color: #737373;">2회독</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; justify-content: flex-end;">
+        <div style="width: 44px; display: flex; flex-direction: column; border-radius: 8px; overflow: hidden; opacity: 0.35;">
+          <div style="height: 10px; background: #ef4444;"></div>
+          <div style="height: 26px; background: #f59e0b;"></div>
+          <div style="height: 64px; background: #22c55e;"></div>
+        </div>
+        <span style="font-size: 12px; color: #a3a3a3;">3회독 (예상)</span>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center; gap: 14px; margin-top: 12px;">
+      <div style="display: flex; align-items: center; gap: 5px;"><div style="width: 10px; height: 10px; border-radius: 3px; background: #22c55e;"></div><span style="font-size: 11px; color: #737373;">O</span></div>
+      <div style="display: flex; align-items: center; gap: 5px;"><div style="width: 10px; height: 10px; border-radius: 3px; background: #f59e0b;"></div><span style="font-size: 11px; color: #737373;">△</span></div>
+      <div style="display: flex; align-items: center; gap: 5px;"><div style="width: 10px; height: 10px; border-radius: 3px; background: #ef4444;"></div><span style="font-size: 11px; color: #737373;">X</span></div>
+    </div>
+  </div>
+
+  <!-- Stubborn chapters -->
+  <div style="margin: 0 20px 24px 20px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 20px;">
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+      <span style="font-size: 15px; font-weight: 600;">2바퀴 돌아도 X인 챕터</span>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f5f5f5;">
+        <span style="font-size: 14px;">행정법 · 5. 행정행위 Ⅱ</span>
+        <span style="background: #fef2f2; color: #b91c1c; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">X → X</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f5f5f5;">
+        <span style="font-size: 14px;">행정법 · 14. 손해배상</span>
+        <span style="background: #fef2f2; color: #b91c1c; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">X → X</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0;">
+        <span style="font-size: 14px;">국어 · 9. 고전 문법</span>
+        <span style="background: #fffbeb; color: #b45309; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">X → △</span>
+      </div>
+    </div>
+    <button style="margin-top: 14px; width: 100%; height: 44px; border-radius: 10px; border: none; background: #171717; color: #fafafa; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer;">이 챕터들만 다시 돌기</button>
+  </div>
+
+  <div style="flex: 1;"></div>
+
+  <!-- Tab bar -->
+  <div style="border-top: 1px solid #e5e5e5; display: flex; padding: 10px 0 24px 0;">
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span style="font-size: 11px; color: #a3a3a3;">홈</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
+      <span style="font-size: 11px; color: #a3a3a3;">회독표</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+      <span style="font-size: 11px; font-weight: 600; color: #171717;">통계</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

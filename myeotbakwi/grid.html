@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>몇바퀴 — 회독표</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f5f5f5; font-family: Inter, system-ui, sans-serif; color: #0a0a0a; display: flex; justify-content: center; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <div style="padding: 24px 20px 4px 20px; display: flex; align-items: center; gap: 12px;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+    <div style="flex: 1;">
+      <div style="font-size: 18px; line-height: 26px; font-weight: 600;">행정법 기출 1000제</div>
+      <div style="font-size: 12px; line-height: 16px; color: #737373;">30챕터 · 2바퀴째 돌고 있어요</div>
+    </div>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+  </div>
+
+  <!-- Legend -->
+  <div style="padding: 12px 20px 16px 20px; display: flex; gap: 12px; align-items: center;">
+    <div style="display: flex; align-items: center; gap: 5px;">
+      <div style="width: 14px; height: 14px; border-radius: 4px; background: #22c55e;"></div>
+      <span style="font-size: 12px; color: #737373;">O 알아</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 5px;">
+      <div style="width: 14px; height: 14px; border-radius: 4px; background: #f59e0b;"></div>
+      <span style="font-size: 12px; color: #737373;">△ 애매해</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 5px;">
+      <div style="width: 14px; height: 14px; border-radius: 4px; background: #ef4444;"></div>
+      <span style="font-size: 12px; color: #737373;">X 몰라</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 5px;">
+      <div style="width: 14px; height: 14px; border-radius: 4px; background: #f5f5f5; border: 1px solid #e5e5e5;"></div>
+      <span style="font-size: 12px; color: #737373;">안 봄</span>
+    </div>
+  </div>
+
+  <!-- Grid header row -->
+  <div style="padding: 0 20px;">
+    <div style="display: flex; align-items: center; margin-bottom: 8px;">
+      <div style="width: 150px; font-size: 12px; font-weight: 500; color: #737373;">챕터</div>
+      <div style="flex: 1; display: flex; gap: 6px;">
+        <div style="flex: 1; text-align: center; font-size: 12px; font-weight: 500; color: #737373;">1회독</div>
+        <div style="flex: 1; text-align: center; font-size: 12px; font-weight: 500; color: #737373;">2회독</div>
+        <div style="flex: 1; text-align: center; font-size: 12px; font-weight: 500; color: #737373;">3회독</div>
+      </div>
+    </div>
+
+    <!-- Rows -->
+    <!-- Row template: name + 3 cells -->
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+
+      <div style="display: flex; align-items: center;">
+        <div style="width: 150px; font-size: 13px; line-height: 18px; padding-right: 8px;">1. 행정법 통칙</div>
+        <div style="flex: 1; display: flex; gap: 6px;">
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #22c55e; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 13px; font-weight: 600;">O</div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #22c55e; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 13px; font-weight: 600;">O</div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f5f5f5; border: 1px solid #e5e5e5;"></div>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center;">
+        <div style="width: 150px; font-size: 13px; line-height: 18px; padding-right: 8px;">2. 행정상 법률관계</div>
+        <div style="flex: 1; display: flex; gap: 6px;">
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f59e0b; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 13px; font-weight: 600;">△</div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #22c55e; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 13px; font-weight: 600;">O</div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f5f5f5; border: 1px solid #e5e5e5;"></div>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center;">
+        <div style="width: 150px; font-size: 13px; line-height: 18px; padding-right: 8px;">3. 행정입법</div>
+        <div style="flex: 1; display: flex; gap: 6px;">
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #ef4444; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 13px; font-weight: 600;">X</div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f59e0b; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 13px; font-weight: 600;">△</div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f5f5f5; border: 1px solid #e5e5e5;"></div>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center;">
+        <div style="width: 150px; font-size: 13px; line-height: 18px; padding-right: 8px;">4. 행정행위 Ⅰ</div>
+        <div style="flex: 1; display: flex; gap: 6px;">
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f59e0b; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 13px; font-weight: 600;">△</div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f59e0b; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 13px; font-weight: 600;">△</div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f5f5f5; border: 1px solid #e5e5e5;"></div>
+        </div>
+      </div>
+
+      <!-- Highlighted current row -->
+      <div style="display: flex; align-items: center; background: #fafafa; border: 1px solid #171717; border-radius: 10px; padding: 4px; margin: 0 -4px;">
+        <div style="width: 146px; font-size: 13px; line-height: 18px; padding-right: 8px; padding-left: 4px; font-weight: 600;">5. 행정행위 Ⅱ</div>
+        <div style="flex: 1; display: flex; gap: 6px;">
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #ef4444; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 13px; font-weight: 600;">X</div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #ffffff; border: 2px dashed #171717; display: flex; align-items: center; justify-content: center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          </div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f5f5f5; border: 1px solid #e5e5e5;"></div>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center;">
+        <div style="width: 150px; font-size: 13px; line-height: 18px; padding-right: 8px;">6. 그 밖의 행정작용</div>
+        <div style="flex: 1; display: flex; gap: 6px;">
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #22c55e; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 13px; font-weight: 600;">O</div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f5f5f5; border: 1px solid #e5e5e5;"></div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f5f5f5; border: 1px solid #e5e5e5;"></div>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center;">
+        <div style="width: 150px; font-size: 13px; line-height: 18px; padding-right: 8px;">7. 행정절차법</div>
+        <div style="flex: 1; display: flex; gap: 6px;">
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f59e0b; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 13px; font-weight: 600;">△</div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f5f5f5; border: 1px solid #e5e5e5;"></div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f5f5f5; border: 1px solid #e5e5e5;"></div>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center;">
+        <div style="width: 150px; font-size: 13px; line-height: 18px; padding-right: 8px;">8. 정보공개·개인정보</div>
+        <div style="flex: 1; display: flex; gap: 6px;">
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #22c55e; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 13px; font-weight: 600;">O</div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f5f5f5; border: 1px solid #e5e5e5;"></div>
+          <div style="flex: 1; height: 36px; border-radius: 8px; background: #f5f5f5; border: 1px solid #e5e5e5;"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom sheet: tap action -->
+  <div style="margin-top: auto;">
+    <div style="margin: 20px; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; box-shadow: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);">
+      <div style="font-size: 14px; line-height: 20px; font-weight: 600; margin-bottom: 4px;">5. 행정행위 Ⅱ — 2회독</div>
+      <div style="font-size: 12px; line-height: 16px; color: #737373; margin-bottom: 14px;">이번 바퀴에서 어땠어요?</div>
+      <div style="display: flex; gap: 8px;">
+        <button style="flex: 1; height: 48px; border-radius: 10px; border: none; background: #22c55e; color: #ffffff; font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer;">O 알아</button>
+        <button style="flex: 1; height: 48px; border-radius: 10px; border: none; background: #f59e0b; color: #ffffff; font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer;">△ 애매해</button>
+        <button style="flex: 1; height: 48px; border-radius: 10px; border: none; background: #ef4444; color: #ffffff; font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer;">X 몰라</button>
+      </div>
+      <div style="margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>
+        <span style="font-size: 12px; color: #737373;">한 줄 메모 남기기 (선택)</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
