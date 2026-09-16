@@ -3,93 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>PlanWe · 방 만들기</title>
+<title>PlanWe — 방 만들기</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:Inter, system-ui, sans-serif; background:#e5e5e5; display:flex; justify-content:center; min-height:100vh; }
-  .frame { width:100%; max-width:390px; min-height:844px; background:#ffffff; position:relative; display:flex; flex-direction:column; }
-  .tpl { border:1px solid #e5e5e5; border-radius:14px; padding:16px; display:flex; align-items:center; gap:14px; cursor:pointer; transition:all .15s; }
-  .tpl.sel { border-color:#0f766e; background:#f0fdfa; }
-  .ic { width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;background:#EEECE9;display:flex;justify-content:center;min-height:100vh}
+.frame{width:100%;max-width:390px;min-height:100vh;background:#FAFAF9;padding-bottom:40px}
+.tpl{display:flex;align-items:center;gap:14px;background:#ffffff;border:1px solid #E7E5E4;border-radius:14px;padding:16px;cursor:pointer}
+.tpl .ic{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.field{display:flex;flex-direction:column;gap:6px}
+.label{font-size:13px;font-weight:600;color:#44403C}
+.input{height:46px;background:#ffffff;border:1px solid #E7E5E4;border-radius:10px;padding:0 14px;font-size:15px;color:#1C1917;display:flex;align-items:center;justify-content:space-between}
 </style>
 </head>
 <body>
 <div class="frame">
-  <div style="height:48px;"></div>
-
-  <!-- header -->
-  <div style="padding:8px 24px 0; display:flex; align-items:center; gap:14px;">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
-    <div style="flex:1; height:4px; background:#f5f5f5; border-radius:9999px; overflow:hidden;">
-      <div style="width:33%; height:100%; background:#0f766e; border-radius:9999px;"></div>
-    </div>
-    <span style="font-size:13px; font-weight:500; color:#737373;">1/3</span>
+  <div style="height:48px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 24px 6px;font-size:14px;font-weight:600;color:#1C1917">
+    <span>9:41</span>
+    <span style="display:flex;gap:5px;align-items:center">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="#1C1917"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13" y="0" width="3" height="12" rx="1"/></svg>
+      <svg width="22" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="19" height="11" rx="3" stroke="#1C1917"/><rect x="2" y="2" width="14" height="8" rx="1.5" fill="#1C1917"/><path d="M21.5 4v4a2 2 0 0 0 0-4Z" fill="#1C1917"/></svg>
+    </span>
   </div>
 
-  <div style="padding:24px 24px 0;">
-    <h2 style="font-size:26px; line-height:32px; font-weight:700; letter-spacing:-0.02em; color:#0a0a0a;">어떤 일을 준비해요?</h2>
-    <p style="margin-top:8px; font-size:15px; line-height:22px; color:#737373;">템플릿을 고르면 투두와 지출 카테고리가<br>미리 채워져요.</p>
+  <!-- nav -->
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 16px">
+    <button style="width:40px;height:40px;border:none;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1C1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <!-- step dots -->
+    <div style="display:flex;gap:6px;align-items:center">
+      <div style="width:22px;height:6px;border-radius:9999px;background:#0F766E"></div>
+      <div style="width:6px;height:6px;border-radius:9999px;background:#D6D3D1"></div>
+    </div>
+    <div style="width:40px"></div>
+  </div>
+
+  <div style="padding:8px 24px 0">
+    <h1 style="font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.02em;color:#1C1917">어떤 일을<br>같이 준비하나요?</h1>
+    <p style="margin-top:8px;font-size:14px;line-height:20px;color:#78716C">템플릿을 고르면 투두와 예산 카테고리를 미리 채워드려요</p>
   </div>
 
   <!-- templates -->
-  <div style="padding:24px; display:flex; flex-direction:column; gap:10px;">
-    <div class="tpl sel">
-      <div class="ic" style="background:#0f766e;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-4.5-8-11a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 6.5-8 11-8 11z"/></svg>
+  <div style="display:flex;flex-direction:column;gap:10px;padding:20px 20px 0">
+    <!-- selected: wedding -->
+    <div class="tpl" style="border:1.5px solid #0F766E;background:#F0FDFA;box-shadow:0 2px 8px rgba(15,118,110,0.08)">
+      <div class="ic" style="background:#0F766E">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
       </div>
-      <div style="flex:1;">
-        <div style="font-size:16px; font-weight:600; color:#0a0a0a;">결혼 준비</div>
-        <div style="font-size:13px; color:#737373; margin-top:2px;">스드메·예식장·신혼여행 프리셋</div>
+      <div style="flex:1">
+        <div style="font-size:15px;font-weight:700;color:#134E48">결혼 준비</div>
+        <div style="font-size:12px;color:#0F766E;margin-top:2px">투두 24개 · 카테고리 6개 프리셋</div>
       </div>
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-    </div>
-
-    <div class="tpl">
-      <div class="ic" style="background:#f0fdfa;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
-      </div>
-      <div style="flex:1;">
-        <div style="font-size:16px; font-weight:600; color:#0a0a0a;">여행</div>
-        <div style="font-size:13px; color:#737373; margin-top:2px;">항공·숙소·교통·액티비티</div>
+      <div style="width:22px;height:22px;border-radius:9999px;background:#0F766E;display:flex;align-items:center;justify-content:center">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
       </div>
     </div>
-
     <div class="tpl">
-      <div class="ic" style="background:#f0fdfa;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      <div class="ic" style="background:#EFF6FF">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2Z"/></svg>
       </div>
-      <div style="flex:1;">
-        <div style="font-size:16px; font-weight:600; color:#0a0a0a;">이사</div>
-        <div style="font-size:13px; color:#737373; margin-top:2px;">계약·이삿짐·가전·인테리어</div>
+      <div style="flex:1">
+        <div style="font-size:15px;font-weight:600;color:#1C1917">여행</div>
+        <div style="font-size:12px;color:#A8A29E;margin-top:2px">항공·숙소·일정 프리셋</div>
       </div>
     </div>
-
     <div class="tpl">
-      <div class="ic" style="background:#f0fdfa;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      <div class="ic" style="background:#FFF7ED">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
       </div>
-      <div style="flex:1;">
-        <div style="font-size:16px; font-weight:600; color:#0a0a0a;">이벤트</div>
-        <div style="font-size:13px; color:#737373; margin-top:2px;">파티·기념일·모임 준비</div>
+      <div style="flex:1">
+        <div style="font-size:15px;font-weight:600;color:#1C1917">이사</div>
+        <div style="font-size:12px;color:#A8A29E;margin-top:2px">계약·이사·입주 체크리스트</div>
       </div>
     </div>
-
     <div class="tpl">
-      <div class="ic" style="background:#f5f5f5;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      <div class="ic" style="background:#FDF4FF">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C026D3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
       </div>
-      <div style="flex:1;">
-        <div style="font-size:16px; font-weight:600; color:#0a0a0a;">빈 방에서 시작</div>
-        <div style="font-size:13px; color:#737373; margin-top:2px;">직접 항목을 추가할게요</div>
+      <div style="flex:1">
+        <div style="font-size:15px;font-weight:600;color:#1C1917">이벤트</div>
+        <div style="font-size:12px;color:#A8A29E;margin-top:2px">파티·기념일·모임 준비</div>
+      </div>
+    </div>
+    <div class="tpl">
+      <div class="ic" style="background:#F5F5F4">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#78716C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3a2 2 0 0 0-2 2"/><path d="M19 3a2 2 0 0 1 2 2"/><path d="M21 19a2 2 0 0 1-2 2"/><path d="M5 21a2 2 0 0 1-2-2"/><path d="M9 3h1"/><path d="M9 21h1"/><path d="M14 3h1"/><path d="M14 21h1"/><path d="M3 9v1"/><path d="M21 9v1"/><path d="M3 14v1"/><path d="M21 14v1"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+      </div>
+      <div style="flex:1">
+        <div style="font-size:15px;font-weight:600;color:#1C1917">빈 방으로 시작</div>
+        <div style="font-size:12px;color:#A8A29E;margin-top:2px">처음부터 직접 구성</div>
       </div>
     </div>
   </div>
 
-  <div style="flex:1;"></div>
+  <!-- divider -->
+  <div style="height:1px;background:#E7E5E4;margin:24px 20px"></div>
+
+  <!-- step 2 fields -->
+  <div style="padding:0 20px;display:flex;flex-direction:column;gap:16px">
+    <div class="field">
+      <span class="label">방 이름</span>
+      <div class="input"><span style="font-weight:600">우리 결혼 준비</span></div>
+    </div>
+    <div style="display:flex;gap:12px">
+      <div class="field" style="flex:1">
+        <span class="label">통화</span>
+        <div class="input"><span>KRW ₩</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+      </div>
+      <div class="field" style="flex:1.4">
+        <span class="label">목표일 (D-day)</span>
+        <div class="input"><span>2027. 1. 23.</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <span class="label">총 예산</span>
+      <div class="input"><span style="font-weight:600">₩ 30,000,000</span><span style="font-size:12px;color:#A8A29E">나중에 수정 가능</span></div>
+    </div>
+  </div>
 
   <!-- CTA -->
-  <div style="padding:0 24px 44px;">
-    <button style="width:100%; height:52px; border:none; border-radius:12px; background:#0f766e; color:#fafafa; font-size:15px; font-weight:600; cursor:pointer;">다음</button>
+  <div style="padding:24px 20px 0">
+    <button style="width:100%;height:52px;background:#0F766E;color:#ffffff;border:none;border-radius:14px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 6px 16px rgba(15,118,110,0.25)">방 만들기</button>
+    <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:16px">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#78716C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span style="font-size:14px;font-weight:600;color:#57534E">초대 코드로 참여하기</span>
+    </div>
   </div>
 </div>
 </body>

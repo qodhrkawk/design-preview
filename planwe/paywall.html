@@ -3,99 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>PlanWe · Plus</title>
+<title>PlanWe — Plus</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:Inter, system-ui, sans-serif; background:#e5e5e5; display:flex; justify-content:center; min-height:100vh; }
-  .frame { width:100%; max-width:390px; min-height:844px; background:#fafafa; position:relative; display:flex; flex-direction:column; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;background:#EEECE9;display:flex;justify-content:center;min-height:100vh}
+.frame{width:100%;max-width:390px;min-height:100vh;background:linear-gradient(175deg,#134E48 0%,#0F766E 42%,#FAFAF9 42.2%);display:flex;flex-direction:column}
+.feat{display:flex;align-items:center;gap:12px}
+.feat .ic{width:38px;height:38px;border-radius:11px;background:#F0FDFA;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 </style>
 </head>
 <body>
 <div class="frame">
-  <!-- hero -->
-  <div style="background:linear-gradient(160deg, #0f766e 0%, #134e4a 100%); padding:56px 24px 32px; border-radius:0 0 28px 28px; position:relative;">
-    <div style="position:absolute; top:52px; right:20px; width:32px; height:32px; border-radius:9999px; background:rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-    </div>
-    <div style="width:56px; height:56px; border-radius:16px; background:rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center;">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    </div>
-    <h1 style="font-size:28px; line-height:34px; font-weight:800; letter-spacing:-0.02em; color:#ffffff; margin-top:18px;">PlanWe Plus</h1>
-    <p style="font-size:15px; line-height:22px; color:#99f6e4; margin-top:8px;">준비의 모든 순간을 더 편하게.<br>한 명만 구독해도 방 전체가 누려요.</p>
+  <div style="height:48px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 24px 6px;font-size:14px;font-weight:600;color:#ffffff">
+    <span>9:41</span>
+    <span style="display:flex;gap:5px;align-items:center">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="#ffffff"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13" y="0" width="3" height="12" rx="1"/></svg>
+      <svg width="22" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="19" height="11" rx="3" stroke="#ffffff"/><rect x="2" y="2" width="14" height="8" rx="1.5" fill="#ffffff"/><path d="M21.5 4v4a2 2 0 0 0 0-4Z" fill="#ffffff"/></svg>
+    </span>
   </div>
 
-  <div style="padding:24px 20px 0; flex:1;">
-    <!-- benefits -->
-    <div style="display:flex; flex-direction:column; gap:14px;">
-      <div style="display:flex; align-items:center; gap:14px;">
-        <div style="width:42px; height:42px; border-radius:12px; background:#f0fdfa; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 0-3 3v1H8a4 4 0 0 0 0 8h1v1a3 3 0 0 0 6 0v-1h1a4 4 0 0 0 0-8h-1V6a3 3 0 0 0-3-3z"/><path d="M9 12h.01M15 12h.01"/></svg>
-        </div>
-        <div>
-          <div style="font-size:15px; font-weight:600; color:#0a0a0a;">AI 입력 무제한</div>
-          <div style="font-size:13px; color:#737373; margin-top:1px;">말하듯 기록하고, 언제든 물어보세요</div>
-        </div>
+  <!-- close -->
+  <div style="display:flex;justify-content:flex-end;padding:8px 16px 0">
+    <button style="width:32px;height:32px;border-radius:9999px;background:rgba(255,255,255,0.16);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </div>
+
+  <!-- hero -->
+  <div style="padding:8px 28px 26px;text-align:center">
+    <div style="display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.25);border-radius:9999px;padding:7px 15px">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+      <span style="font-size:13px;font-weight:800;color:#ffffff;letter-spacing:0.02em">PlanWe Plus</span>
+    </div>
+    <h1 style="margin-top:16px;font-size:26px;line-height:34px;font-weight:800;letter-spacing:-0.02em;color:#ffffff">둘이 준비하는 큰 일,<br>AI가 전부 받아 적을게요</h1>
+    <!-- room-wide benefit highlight -->
+    <div style="margin-top:16px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px 16px;box-shadow:0 8px 24px rgba(0,0,0,0.18)">
+      <div style="display:flex">
+        <div style="width:24px;height:24px;border-radius:9999px;background:#0F766E;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff">윤</div>
+        <div style="width:24px;height:24px;border-radius:9999px;background:#F59E0B;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;margin-left:-7px">소</div>
       </div>
-      <div style="display:flex; align-items:center; gap:14px;">
-        <div style="width:42px; height:42px; border-radius:12px; background:#f0fdfa; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
-        </div>
-        <div>
-          <div style="font-size:15px; font-weight:600; color:#0a0a0a;">방 무제한</div>
-          <div style="font-size:13px; color:#737373; margin-top:1px;">결혼도, 여행도, 이사도 동시에</div>
-        </div>
+      <span style="font-size:13px;font-weight:700;color:#134E48">1명만 구독해도 방 전체가 Plus</span>
+    </div>
+  </div>
+
+  <!-- feature card -->
+  <div style="margin:0 20px;background:#ffffff;border:1px solid #E7E5E4;border-radius:20px;padding:22px 20px;box-shadow:0 12px 32px rgba(0,0,0,0.08);display:flex;flex-direction:column;gap:18px">
+    <div class="feat">
+      <div class="ic">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
       </div>
-      <div style="display:flex; align-items:center; gap:14px;">
-        <div style="width:42px; height:42px; border-radius:12px; background:#f0fdfa; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.73 21a2 2 0 0 1-3.46 0"/><path d="M18.63 13A17.89 17.89 0 0 1 18 8"/><path d="M6.26 6.26A5.86 5.86 0 0 0 6 8c0 7-3 9-3 9h14"/><path d="M18 8a6 6 0 0 0-9.33-5"/><path d="M1 1l22 22"/></svg>
-        </div>
-        <div>
-          <div style="font-size:15px; font-weight:600; color:#0a0a0a;">광고 제거</div>
-          <div style="font-size:13px; color:#737373; margin-top:1px;">방해 없이 깔끔한 화면</div>
-        </div>
+      <div style="flex:1">
+        <div style="font-size:15px;font-weight:700;color:#1C1917">AI 입력 무제한</div>
+        <div style="font-size:12px;color:#78716C;margin-top:2px">월 20회 제한 없이 말하듯 기록 · 질문</div>
       </div>
     </div>
-
-    <!-- shared benefit callout -->
-    <div style="margin-top:20px; background:#fffbeb; border:1px solid #fde68a; border-radius:12px; padding:14px 16px; display:flex; align-items:center; gap:12px;">
-      <div style="display:flex; flex-shrink:0;">
-        <span style="width:28px; height:28px; border-radius:9999px; background:#0f766e; color:#fff; font-size:11px; font-weight:600; display:flex; align-items:center; justify-content:center; border:2px solid #fffbeb;">윤</span>
-        <span style="width:28px; height:28px; border-radius:9999px; background:#f59e0b; color:#fff; font-size:11px; font-weight:600; display:flex; align-items:center; justify-content:center; margin-left:-10px; border:2px solid #fffbeb;">소</span>
+    <div class="feat">
+      <div class="ic">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10a2 2 0 0 1 .7-1.5l7-6.1a2 2 0 0 1 2.6 0l7 6.1A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M12 22V12"/><path d="M8 12h8"/></svg>
       </div>
-      <div style="font-size:13px; line-height:19px; color:#78350f;"><b>1명만 구독하면 방 전체 혜택.</b> 함께 쓰는 사람 모두 Plus가 돼요.</div>
+      <div style="flex:1">
+        <div style="font-size:15px;font-weight:700;color:#1C1917">방 무제한</div>
+        <div style="font-size:12px;color:#78716C;margin-top:2px">결혼 준비 + 신혼여행 + 이사, 동시에</div>
+      </div>
     </div>
+    <div class="feat">
+      <div class="ic">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13.5 8.5-5 5"/><path d="m8.5 8.5 5 5"/><circle cx="12" cy="12" r="10"/></svg>
+      </div>
+      <div style="flex:1">
+        <div style="font-size:15px;font-weight:700;color:#1C1917">광고 제거</div>
+        <div style="font-size:12px;color:#78716C;margin-top:2px">배너 없이 깔끔한 화면</div>
+      </div>
+    </div>
+  </div>
 
-    <!-- plans -->
-    <div style="display:flex; gap:10px; margin-top:22px;">
-      <!-- yearly -->
-      <div style="flex:1; background:#ffffff; border:2px solid #0f766e; border-radius:14px; padding:16px 14px; position:relative;">
-        <span style="position:absolute; top:-10px; left:12px; background:#0f766e; color:#fff; font-size:11px; font-weight:700; border-radius:9999px; padding:3px 10px;">17% 할인</span>
-        <div style="font-size:13px; font-weight:600; color:#737373; margin-top:4px;">연간</div>
-        <div style="font-size:20px; font-weight:800; color:#0a0a0a; margin-top:4px; letter-spacing:-0.01em;">₩29,000</div>
-        <div style="font-size:12px; color:#a3a3a3; margin-top:2px;">월 ₩2,417 꼴</div>
+  <!-- plans -->
+  <div style="margin:16px 20px 0;display:flex;flex-direction:column;gap:10px">
+    <!-- yearly (selected) -->
+    <div style="position:relative;border:1.5px solid #0F766E;background:#F0FDFA;border-radius:16px;padding:16px 18px;display:flex;align-items:center;gap:12px">
+      <span style="position:absolute;top:-10px;right:14px;background:#F59E0B;color:#ffffff;font-size:11px;font-weight:800;border-radius:9999px;padding:3px 10px">2개월 무료</span>
+      <div style="width:22px;height:22px;border-radius:9999px;background:#0F766E;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
       </div>
-      <!-- monthly -->
-      <div style="flex:1; background:#ffffff; border:1px solid #e5e5e5; border-radius:14px; padding:16px 14px;">
-        <div style="font-size:13px; font-weight:600; color:#737373; margin-top:4px;">월간</div>
-        <div style="font-size:20px; font-weight:800; color:#0a0a0a; margin-top:4px; letter-spacing:-0.01em;">₩2,900</div>
-        <div style="font-size:12px; color:#a3a3a3; margin-top:2px;">매월 결제</div>
+      <div style="flex:1">
+        <div style="font-size:15px;font-weight:800;color:#134E48">연간</div>
+        <div style="font-size:12px;color:#0F766E;margin-top:1px">₩29,000/년 · 월 ₩2,417꼴</div>
       </div>
+      <span style="font-size:17px;font-weight:800;color:#134E48">₩29,000</span>
+    </div>
+    <!-- monthly -->
+    <div style="border:1px solid #E7E5E4;background:#ffffff;border-radius:16px;padding:16px 18px;display:flex;align-items:center;gap:12px">
+      <div style="width:22px;height:22px;border-radius:9999px;border:2px solid #D6D3D1;flex-shrink:0"></div>
+      <div style="flex:1">
+        <div style="font-size:15px;font-weight:700;color:#1C1917">월간</div>
+        <div style="font-size:12px;color:#A8A29E;margin-top:1px">언제든 해지 가능</div>
+      </div>
+      <span style="font-size:17px;font-weight:800;color:#1C1917">₩2,900<span style="font-size:12px;font-weight:500;color:#A8A29E">/월</span></span>
     </div>
   </div>
 
   <!-- CTA -->
-  <div style="padding:16px 20px 40px;">
-    <div style="background:#0f766e; border-radius:14px; height:54px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 16px rgba(15,118,110,0.3);">
-      <span style="font-size:16px; font-weight:700; color:#ffffff;">Plus 시작하기</span>
+  <div style="padding:18px 20px 0;margin-top:auto">
+    <button style="width:100%;height:54px;background:#0F766E;color:#ffffff;border:none;border-radius:15px;font-family:inherit;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 8px 20px rgba(15,118,110,0.3)">Plus 시작하기</button>
+    <div style="display:flex;justify-content:center;gap:18px;padding:14px 0 30px">
+      <span style="font-size:12px;color:#A8A29E">구매 복원</span>
+      <span style="font-size:12px;color:#A8A29E">이용약관</span>
+      <span style="font-size:12px;color:#A8A29E">개인정보 처리방침</span>
     </div>
-    <div style="display:flex; justify-content:center; gap:16px; margin-top:14px;">
-      <span style="font-size:12px; color:#a3a3a3;">구매 복원</span>
-      <span style="font-size:12px; color:#d4d4d4;">·</span>
-      <span style="font-size:12px; color:#a3a3a3;">이용약관</span>
-      <span style="font-size:12px; color:#d4d4d4;">·</span>
-      <span style="font-size:12px; color:#a3a3a3;">개인정보 처리방침</span>
-    </div>
-    <p style="text-align:center; font-size:11px; line-height:16px; color:#d4d4d4; margin-top:10px;">구독은 언제든 해지할 수 있어요. 결제는 App Store 계정으로 청구됩니다.</p>
   </div>
 </div>
 </body>
