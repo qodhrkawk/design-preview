@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlanWe · 시안 v1 전체</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:Inter, system-ui, sans-serif; background:#f0f0f0; padding:40px 24px 80px; }
+  h1 { font-size:28px; font-weight:800; letter-spacing:-0.02em; color:#0a0a0a; }
+  .sub { font-size:14px; color:#737373; margin-top:6px; }
+  .grid { display:flex; flex-wrap:wrap; gap:32px; margin-top:32px; justify-content:center; }
+  .shot { display:flex; flex-direction:column; gap:10px; }
+  .shot .name { font-size:14px; font-weight:600; color:#0a0a0a; display:flex; align-items:center; gap:8px; }
+  .shot .num { width:22px; height:22px; border-radius:9999px; background:#0f766e; color:#fff; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  iframe { width:390px; height:844px; border:1px solid #d4d4d4; border-radius:20px; background:#fff; }
+  a { color:inherit; text-decoration:none; }
+  .name a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+  <h1>PlanWe 플랜위 — 시안 v1</h1>
+  <p class="sub">공동 목표 준비 매니저 · shadcn/ui 라이트 + 딥 틸 #0f766e · 390×844 · 클릭하면 단독 화면으로 열려요</p>
+
+  <div class="grid">
+    <div class="shot">
+      <div class="name"><span class="num">1</span><a href="./login.html">login — 로그인</a></div>
+      <iframe src="./login.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">2</span><a href="./onboarding.html">onboarding — 방 만들기</a></div>
+      <iframe src="./onboarding.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">3</span><a href="./home.html">home — 홈 (예산 게이지 + D-day)</a></div>
+      <iframe src="./home.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">4</span><a href="./todos.html">todos — 투두</a></div>
+      <iframe src="./todos.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">5</span><a href="./ai.html">ai — AI 채팅 + 확인 카드</a></div>
+      <iframe src="./ai.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">6</span><a href="./expenses.html">expenses — 지출</a></div>
+      <iframe src="./expenses.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">7</span><a href="./expense-modal.html">expense-modal — 지출 입력 (분할 결제)</a></div>
+      <iframe src="./expense-modal.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">8</span><a href="./settings.html">settings — 설정</a></div>
+      <iframe src="./settings.html" scrolling="no"></iframe>
+    </div>
+    <div class="shot">
+      <div class="name"><span class="num">9</span><a href="./paywall.html">paywall — PlanWe Plus</a></div>
+      <iframe src="./paywall.html" scrolling="no"></iframe>
+    </div>
+  </div>
+</body>
+</html>
