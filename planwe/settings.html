@@ -3,163 +3,187 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>PlanWe · 설정</title>
+<title>PlanWe — 설정</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:Inter, system-ui, sans-serif; background:#e5e5e5; display:flex; justify-content:center; min-height:100vh; }
-  .frame { width:100%; max-width:390px; min-height:844px; background:#fafafa; position:relative; }
-  .scroll { padding:0 20px 200px; }
-  .card { background:#ffffff; border:1px solid #e5e5e5; border-radius:14px; }
-  .row { padding:14px 16px; display:flex; align-items:center; gap:12px; }
-  .sect { padding:24px 4px 8px; font-size:13px; font-weight:600; color:#737373; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;background:#EEECE9;display:flex;justify-content:center;min-height:100vh}
+.frame{width:100%;max-width:390px;min-height:100vh;background:#FAFAF9;position:relative;padding-bottom:150px}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding-top:10px}
+.tab span{font-size:10px;font-weight:500;color:#A8A29E}
+.sect{padding:18px 20px 8px;font-size:12px;font-weight:700;color:#78716C;letter-spacing:0.02em}
+.item{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#fff}
+.item .ic{width:32px;height:32px;border-radius:9px;background:#F5F5F4;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.item .t{flex:1;font-size:14px;font-weight:600;color:#1C1917}
 </style>
 </head>
 <body>
 <div class="frame">
-  <div style="height:48px;"></div>
-
-  <div style="padding:8px 20px 0;">
-    <h2 style="font-size:26px; font-weight:700; letter-spacing:-0.02em; color:#0a0a0a;">설정</h2>
+  <div style="height:48px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 24px 6px;font-size:14px;font-weight:600;color:#1C1917">
+    <span>9:41</span>
+    <span style="display:flex;gap:5px;align-items:center">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="#1C1917"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13" y="0" width="3" height="12" rx="1"/></svg>
+      <svg width="22" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="19" height="11" rx="3" stroke="#1C1917"/><rect x="2" y="2" width="14" height="8" rx="1.5" fill="#1C1917"/><path d="M21.5 4v4a2 2 0 0 0 0-4Z" fill="#1C1917"/></svg>
+    </span>
   </div>
 
-  <div class="scroll">
-    <!-- Plus banner -->
-    <div style="margin-top:16px; background:linear-gradient(135deg, #0f766e 0%, #115e59 100%); border-radius:16px; padding:18px; display:flex; align-items:center; gap:14px;">
-      <div style="width:44px; height:44px; border-radius:12px; background:rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      </div>
-      <div style="flex:1;">
-        <div style="font-size:16px; font-weight:700; color:#fff;">PlanWe Plus</div>
-        <div style="font-size:12px; color:#99f6e4; margin-top:2px;">AI 무제한 · 광고 제거 · 방 무제한</div>
-      </div>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#99f6e4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-    </div>
+  <div style="padding:12px 20px 12px">
+    <span style="font-size:24px;font-weight:800;letter-spacing:-0.02em;color:#1C1917">설정</span>
+  </div>
 
-    <!-- room management -->
-    <div class="sect">방 관리</div>
-    <div class="card" style="overflow:hidden;">
-      <div class="row" style="border-bottom:1px solid #f5f5f5;">
-        <div style="width:36px; height:36px; border-radius:10px; background:#0f766e; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-4.5-8-11a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 6.5-8 11-8 11z"/></svg>
-        </div>
-        <div style="flex:1;">
-          <div style="font-size:15px; font-weight:600; color:#0a0a0a;">우리 결혼</div>
-          <div style="font-size:12px; color:#a3a3a3; margin-top:1px;">결혼 템플릿 · KRW · D-88</div>
-        </div>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+  <!-- Plus upsell banner -->
+  <div style="margin:0 20px;background:linear-gradient(135deg,#134E48,#0F766E);border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 8px 20px rgba(15,118,110,0.22)">
+    <div style="width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+    </div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:800;color:#ffffff">PlanWe Plus</div>
+      <div style="font-size:12px;color:#99F6E4;margin-top:2px">AI 무제한 · 광고 제거 · 방 무제한</div>
+    </div>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#99F6E4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+  </div>
+
+  <!-- room section -->
+  <div class="sect">현재 방 — 우리 결혼 준비</div>
+  <div style="margin:0 20px;border:1px solid #E7E5E4;border-radius:14px;overflow:hidden">
+    <!-- members -->
+    <div class="item" style="border-bottom:1px solid #F5F5F4">
+      <div class="ic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </div>
-      <!-- members -->
-      <div class="row" style="border-bottom:1px solid #f5f5f5;">
-        <span style="font-size:14px; color:#737373; width:36px; text-align:center; flex-shrink:0;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </span>
-        <div style="flex:1; display:flex; align-items:center; gap:8px;">
-          <span style="font-size:14px; font-weight:500; color:#0a0a0a;">멤버</span>
-          <div style="display:flex;">
-            <span style="width:24px; height:24px; border-radius:9999px; background:#0f766e; color:#fff; font-size:10px; font-weight:600; display:flex; align-items:center; justify-content:center; border:2px solid #fff;">윤</span>
-            <span style="width:24px; height:24px; border-radius:9999px; background:#f59e0b; color:#fff; font-size:10px; font-weight:600; display:flex; align-items:center; justify-content:center; margin-left:-8px; border:2px solid #fff;">소</span>
-          </div>
+      <span class="t">멤버</span>
+      <div style="display:flex;align-items:center;gap:8px">
+        <div style="display:flex">
+          <div style="width:24px;height:24px;border-radius:9999px;background:#0F766E;border:1.5px solid #fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff">윤</div>
+          <div style="width:24px;height:24px;border-radius:9999px;background:#F59E0B;border:1.5px solid #fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;margin-left:-6px">소</div>
         </div>
-        <span style="font-size:13px; color:#a3a3a3;">2명</span>
-      </div>
-      <!-- invite code -->
-      <div class="row">
-        <span style="width:36px; text-align:center; flex-shrink:0;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
-        </span>
-        <span style="flex:1; font-size:14px; font-weight:500; color:#0a0a0a;">초대 코드</span>
-        <div style="display:flex; align-items:center; gap:8px; background:#f0fdfa; border-radius:8px; padding:6px 12px;">
-          <span style="font-size:15px; font-weight:700; color:#0f766e; letter-spacing:0.15em;">HK29XF</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-        </div>
+        <span style="font-size:13px;color:#78716C">2명</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D6D3D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
       </div>
     </div>
-
-    <!-- room settings -->
-    <div class="sect">방 설정</div>
-    <div class="card" style="overflow:hidden;">
-      <div class="row" style="border-bottom:1px solid #f5f5f5;">
-        <span style="flex:1; font-size:14px; font-weight:500; color:#0a0a0a;">목표일</span>
-        <span style="font-size:14px; color:#737373;">2026. 12. 13</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    <!-- invite code -->
+    <div class="item" style="border-bottom:1px solid #F5F5F4">
+      <div class="ic" style="background:#F0FDFA">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
       </div>
-      <div class="row" style="border-bottom:1px solid #f5f5f5;">
-        <span style="flex:1; font-size:14px; font-weight:500; color:#0a0a0a;">총 예산</span>
-        <span style="font-size:14px; color:#737373;">5,000만원</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-      </div>
-      <div class="row" style="border-bottom:1px solid #f5f5f5;">
-        <span style="flex:1; font-size:14px; font-weight:500; color:#0a0a0a;">카테고리 편집</span>
-        <span style="font-size:13px; color:#a3a3a3;">6개</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-      </div>
-      <div class="row">
-        <span style="flex:1; font-size:14px; font-weight:500; color:#0a0a0a;">결제수단 관리</span>
-        <span style="font-size:13px; color:#a3a3a3;">4개</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      <span class="t">초대 코드</span>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:14px;font-weight:800;letter-spacing:0.14em;color:#0F766E;background:#F0FDFA;border-radius:8px;padding:4px 10px">HK3Q7B</span>
+        <button style="display:flex;align-items:center;gap:4px;background:#0F766E;border:none;border-radius:8px;padding:6px 10px;cursor:pointer">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="m16 6-4-4-4 4"/><path d="M12 2v13"/></svg>
+          <span style="font-size:12px;font-weight:700;color:#fff">공유</span>
+        </button>
       </div>
     </div>
-
-    <!-- profile -->
-    <div class="sect">프로필</div>
-    <div class="card" style="overflow:hidden;">
-      <div class="row" style="border-bottom:1px solid #f5f5f5;">
-        <span style="width:32px; height:32px; border-radius:9999px; background:#0f766e; color:#fff; font-size:13px; font-weight:600; display:flex; align-items:center; justify-content:center; flex-shrink:0;">윤</span>
-        <div style="flex:1;">
-          <div style="font-size:14px; font-weight:600; color:#0a0a0a;">윤재</div>
-          <div style="font-size:12px; color:#a3a3a3; margin-top:1px;">Apple로 로그인</div>
-        </div>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    <div class="item" style="border-bottom:1px solid #F5F5F4">
+      <div class="ic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.2 6.4a1 1 0 0 0 0-1.4l-2.2-2.2a1 1 0 0 0-1.4 0L3 17.4V21h3.6Z"/><path d="m15 5 4 4"/></svg>
       </div>
-      <div class="row">
-        <span style="flex:1; font-size:14px; font-weight:500; color:#0a0a0a;">언어</span>
-        <span style="font-size:14px; color:#737373;">한국어</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-      </div>
+      <span class="t">방 설정</span>
+      <span style="font-size:13px;color:#A8A29E">이름 · 통화 · 목표일 · 예산</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D6D3D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
     </div>
-
-    <!-- etc -->
-    <div class="sect">기타</div>
-    <div class="card" style="overflow:hidden;">
-      <div class="row" style="border-bottom:1px solid #f5f5f5;">
-        <span style="flex:1; font-size:14px; font-weight:500; color:#0a0a0a;">이용약관</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    <div class="item" style="border-bottom:1px solid #F5F5F4">
+      <div class="ic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.9a2 2 0 0 0-1.4-.6H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.1 2.1 0 0 0 3 0l7.2-7.2a2.1 2.1 0 0 0 0-3Z"/><circle cx="7.5" cy="7.5" r="0.5" fill="#57534E"/></svg>
       </div>
-      <div class="row" style="border-bottom:1px solid #f5f5f5;">
-        <span style="flex:1; font-size:14px; font-weight:500; color:#0a0a0a;">개인정보 처리방침</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      <span class="t">카테고리 관리</span>
+      <span style="font-size:13px;color:#A8A29E">6개</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D6D3D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+    <div class="item">
+      <div class="ic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
       </div>
-      <div class="row">
-        <span style="flex:1; font-size:14px; font-weight:500; color:#ef4444;">방 나가기</span>
-      </div>
+      <span class="t">결제 수단 관리</span>
+      <span style="font-size:13px;color:#A8A29E">4개</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D6D3D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
     </div>
   </div>
 
-  <!-- AdMob + tab bar -->
-  <div style="position:fixed; bottom:0; left:0; right:0; max-width:390px; margin:0 auto;">
-    <div style="height:50px; background:#f0f0f0; border-top:1px solid #e5e5e5; display:flex; align-items:center; justify-content:center;"><span style="font-size:11px; color:#a3a3a3; letter-spacing:0.05em;">AdMob 배너 320×50</span></div>
-    <div style="height:84px; background:#ffffff; border-top:1px solid #e5e5e5; display:flex; align-items:flex-start; padding:10px 8px 0;">
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
-        <span style="font-size:10px; color:#a3a3a3;">홈</span>
+  <!-- rooms -->
+  <div class="sect">방</div>
+  <div style="margin:0 20px;border:1px solid #E7E5E4;border-radius:14px;overflow:hidden">
+    <div class="item" style="border-bottom:1px solid #F5F5F4">
+      <div class="ic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
       </div>
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 12H3M16 6H3M21 18H3"/><path d="M18 9l2 2 3-3"/></svg>
-        <span style="font-size:10px; color:#a3a3a3;">투두</span>
+      <span class="t">방 전환</span>
+      <span style="font-size:13px;color:#A8A29E">1개 / 무료 1개</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D6D3D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+    <div class="item">
+      <div class="ic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
       </div>
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
-        <div style="width:56px; height:56px; border-radius:9999px; background:#0f766e; display:flex; align-items:center; justify-content:center; margin-top:-24px; box-shadow:0 8px 16px rgba(15,118,110,0.35);">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 0-3 3v1H8a4 4 0 0 0 0 8h1v1a3 3 0 0 0 6 0v-1h1a4 4 0 0 0 0-8h-1V6a3 3 0 0 0-3-3z"/><path d="M9 12h.01M15 12h.01"/></svg>
+      <span class="t">새 방 만들기</span>
+      <span style="display:flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:#B45309;background:#FEF3C7;border-radius:9999px;padding:3px 9px">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Plus</span>
+    </div>
+  </div>
+
+  <!-- profile / app -->
+  <div class="sect">내 정보 · 앱</div>
+  <div style="margin:0 20px;border:1px solid #E7E5E4;border-radius:14px;overflow:hidden">
+    <div class="item" style="border-bottom:1px solid #F5F5F4">
+      <div style="width:32px;height:32px;border-radius:9999px;background:#0F766E;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0">윤</div>
+      <span class="t">프로필</span>
+      <span style="font-size:13px;color:#A8A29E">윤재 · 틸</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D6D3D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+    <div class="item" style="border-bottom:1px solid #F5F5F4">
+      <div class="ic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+      </div>
+      <span class="t">언어</span>
+      <span style="font-size:13px;color:#A8A29E">한국어</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D6D3D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+    <div class="item" style="border-bottom:1px solid #F5F5F4">
+      <div class="ic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+      </div>
+      <span class="t">약관 · 개인정보 처리방침</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D6D3D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+    <div class="item">
+      <div class="ic" style="background:#FEF2F2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+      </div>
+      <span class="t" style="color:#EF4444">방 나가기</span>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:20px;font-size:11px;color:#D6D3D1">PlanWe v1.0.0</div>
+
+  <!-- ad banner + tab bar -->
+  <div style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:390px">
+    <div style="height:56px;background:#F5F5F4;border-top:1px solid #E7E5E4;display:flex;align-items:center;justify-content:center;gap:6px">
+      <span style="font-size:10px;font-weight:700;color:#A8A29E;border:1px solid #D6D3D1;border-radius:4px;padding:1px 5px">AD</span>
+      <span style="font-size:12px;color:#A8A29E">AdMob 배너 320×50</span>
+    </div>
+    <div style="height:84px;background:#ffffff;border-top:1px solid #E7E5E4;display:flex;align-items:flex-start;position:relative">
+      <div class="tab">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10a2 2 0 0 1 .7-1.5l7-6.1a2 2 0 0 1 2.6 0l7 6.1A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2h-4a1 1 0 0 1-1-1v-5a2 2 0 0 0-4 0v5a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2Z"/></svg>
+        <span>홈</span>
+      </div>
+      <div class="tab">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="6" height="6" rx="1"/><path d="m3 17 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg>
+        <span>투두</span>
+      </div>
+      <div class="tab" style="position:relative">
+        <div style="position:absolute;top:-24px;width:56px;height:56px;border-radius:9999px;background:linear-gradient(135deg,#0F766E,#14B8A6);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(15,118,110,0.35);border:4px solid #FAFAF9">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
         </div>
-        <span style="font-size:10px; font-weight:600; color:#0f766e; margin-top:2px;">AI</span>
+        <span style="margin-top:36px;color:#0F766E;font-weight:600">AI</span>
       </div>
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        <span style="font-size:10px; color:#a3a3a3;">지출</span>
+      <div class="tab">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+        <span>지출</span>
       </div>
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-        <span style="font-size:10px; font-weight:600; color:#0f766e;">설정</span>
+      <div class="tab">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span style="color:#0F766E;font-weight:700">설정</span>
       </div>
     </div>
   </div>

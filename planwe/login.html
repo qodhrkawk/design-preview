@@ -3,46 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>PlanWe · 로그인</title>
+<title>PlanWe — 로그인</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:Inter, system-ui, sans-serif; background:#e5e5e5; display:flex; justify-content:center; min-height:100vh; }
-  .frame { width:100%; max-width:390px; min-height:844px; background:#ffffff; position:relative; display:flex; flex-direction:column; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;background:#EEECE9;display:flex;justify-content:center;min-height:100vh}
+.frame{width:100%;max-width:390px;min-height:100vh;background:linear-gradient(180deg,#FAFAF9 0%,#F0FDFA 100%);display:flex;flex-direction:column}
 </style>
 </head>
 <body>
 <div class="frame">
   <!-- status bar -->
-  <div style="height:48px;"></div>
+  <div style="height:48px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 24px 6px;font-size:14px;font-weight:600;color:#1C1917">
+    <span>9:41</span>
+    <span style="display:flex;gap:5px;align-items:center">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="#1C1917"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13" y="0" width="3" height="12" rx="1"/></svg>
+      <svg width="22" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="19" height="11" rx="3" stroke="#1C1917"/><rect x="2" y="2" width="14" height="8" rx="1.5" fill="#1C1917"/><path d="M21.5 4v4a2 2 0 0 0 0-4Z" fill="#1C1917"/></svg>
+    </span>
+  </div>
 
-  <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 32px;">
+  <!-- hero -->
+  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 32px">
     <!-- logo mark -->
-    <div style="width:76px; height:76px; border-radius:20px; background:#0f766e; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 15px rgba(15,118,110,0.25);">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    <div style="width:88px;height:88px;border-radius:24px;background:linear-gradient(135deg,#0F766E,#14B8A6);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(15,118,110,0.28)">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"/><path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7"/><path d="M 7 16.5 12.3 11.2"/><path d="M11 8.2 12.9 6.3a2.82 2.82 0 1 1 4 4L11.7 15.5"/></svg>
     </div>
+    <div style="margin-top:24px;font-size:34px;font-weight:800;letter-spacing:-0.03em;color:#134E48">PlanWe</div>
+    <div style="margin-top:10px;font-size:16px;font-weight:600;color:#1C1917">같이 준비, 같이 기록</div>
+    <div style="margin-top:4px;font-size:13px;font-weight:400;color:#78716C">Plan big things, together.</div>
 
-    <h1 style="margin-top:28px; font-size:34px; line-height:40px; font-weight:800; letter-spacing:-0.025em; color:#0a0a0a;">PlanWe</h1>
-    <p style="margin-top:10px; font-size:16px; line-height:24px; color:#737373; text-align:center;">같이 준비, 같이 기록<br><span style="font-size:13px; color:#a3a3a3;">Plan big things, together.</span></p>
-
-    <!-- feature chips -->
-    <div style="display:flex; gap:8px; margin-top:28px;">
-      <span style="font-size:12px; font-weight:500; color:#0f766e; background:#f0fdfa; border-radius:9999px; padding:6px 12px;">투두</span>
-      <span style="font-size:12px; font-weight:500; color:#0f766e; background:#f0fdfa; border-radius:9999px; padding:6px 12px;">지출·예산</span>
-      <span style="font-size:12px; font-weight:500; color:#0f766e; background:#f0fdfa; border-radius:9999px; padding:6px 12px;">AI 입력</span>
+    <!-- value chips -->
+    <div style="margin-top:28px;display:flex;gap:8px">
+      <span style="display:flex;align-items:center;gap:5px;background:#ffffff;border:1px solid #E7E5E4;border-radius:9999px;padding:6px 12px;font-size:12px;font-weight:500;color:#57534E">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="6" height="6" rx="1"/><path d="m3 17 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg>
+        투두</span>
+      <span style="display:flex;align-items:center;gap:5px;background:#ffffff;border:1px solid #E7E5E4;border-radius:9999px;padding:6px 12px;font-size:12px;font-weight:500;color:#57534E">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+        지출·예산</span>
+      <span style="display:flex;align-items:center;gap:5px;background:#ffffff;border:1px solid #E7E5E4;border-radius:9999px;padding:6px 12px;font-size:12px;font-weight:500;color:#57534E">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+        AI 입력</span>
     </div>
   </div>
 
-  <!-- buttons -->
-  <div style="padding:0 24px 44px; display:flex; flex-direction:column; gap:12px;">
-    <button style="height:52px; border:none; border-radius:12px; background:#0a0a0a; color:#fafafa; font-size:15px; font-weight:600; display:flex; align-items:center; justify-content:center; gap:10px; cursor:pointer;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="#fafafa"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"/></svg>
+  <!-- auth buttons -->
+  <div style="padding:0 24px 20px;display:flex;flex-direction:column;gap:10px">
+    <button style="display:flex;align-items:center;justify-content:center;gap:8px;height:52px;background:#1C1917;color:#FAFAF9;border:none;border-radius:14px;font-family:inherit;font-size:15px;font-weight:600;cursor:pointer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#FAFAF9"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.09ZM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25Z"/></svg>
       Apple로 계속하기
     </button>
-    <button style="height:52px; border:1px solid #e5e5e5; border-radius:12px; background:#ffffff; color:#171717; font-size:15px; font-weight:600; display:flex; align-items:center; justify-content:center; gap:10px; cursor:pointer;">
-      <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+    <button style="display:flex;align-items:center;justify-content:center;gap:8px;height:52px;background:#ffffff;color:#1C1917;border:1px solid #E7E5E4;border-radius:14px;font-family:inherit;font-size:15px;font-weight:600;cursor:pointer">
+      <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.9Z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7Z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44Z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C41.4 35.4 44 30.2 44 24c0-1.3-.1-2.7-.4-3.9Z"/></svg>
       Google로 계속하기
     </button>
-    <p style="margin-top:8px; font-size:12px; line-height:18px; color:#a3a3a3; text-align:center;">계속하면 서비스 약관 및 개인정보 처리방침에<br>동의하는 것으로 간주됩니다.</p>
+    <div style="text-align:center;margin-top:8px;font-size:11px;line-height:16px;color:#A8A29E">
+      계속하면 PlanWe의 <span style="text-decoration:underline">이용약관</span> 및 <span style="text-decoration:underline">개인정보 처리방침</span>에<br>동의하는 것으로 간주됩니다
+    </div>
+    <div style="height:20px"></div>
   </div>
 </div>
 </body>

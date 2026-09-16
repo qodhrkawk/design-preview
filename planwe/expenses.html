@@ -3,119 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>PlanWe · 지출</title>
+<title>PlanWe — 지출</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:Inter, system-ui, sans-serif; background:#e5e5e5; display:flex; justify-content:center; min-height:100vh; }
-  .frame { width:100%; max-width:390px; min-height:844px; background:#fafafa; position:relative; }
-  .scroll { padding:0 20px 200px; }
-  .card { background:#ffffff; border:1px solid #e5e5e5; border-radius:14px; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;background:#EEECE9;display:flex;justify-content:center;min-height:100vh}
+.frame{width:100%;max-width:390px;min-height:100vh;background:#FAFAF9;position:relative;padding-bottom:150px}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding-top:10px}
+.tab span{font-size:10px;font-weight:500;color:#A8A29E}
+.exp{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#fff}
 </style>
 </head>
 <body>
 <div class="frame">
-  <div style="height:48px;"></div>
+  <div style="height:48px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 24px 6px;font-size:14px;font-weight:600;color:#1C1917">
+    <span>9:41</span>
+    <span style="display:flex;gap:5px;align-items:center">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="#1C1917"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13" y="0" width="3" height="12" rx="1"/></svg>
+      <svg width="22" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="19" height="11" rx="3" stroke="#1C1917"/><rect x="2" y="2" width="14" height="8" rx="1.5" fill="#1C1917"/><path d="M21.5 4v4a2 2 0 0 0 0-4Z" fill="#1C1917"/></svg>
+    </span>
+  </div>
 
   <!-- header -->
-  <div style="padding:8px 20px 0; display:flex; align-items:center; justify-content:space-between;">
-    <h2 style="font-size:26px; font-weight:700; letter-spacing:-0.02em; color:#0a0a0a;">지출</h2>
-    <div style="width:38px; height:38px; border-radius:9999px; background:#0f766e; display:flex; align-items:center; justify-content:center;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-    </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 20px 12px">
+    <span style="font-size:24px;font-weight:800;letter-spacing:-0.02em;color:#1C1917">지출</span>
+    <button style="width:38px;height:38px;border-radius:12px;background:#0F766E;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(15,118,110,0.25)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+    </button>
   </div>
 
-  <!-- member split header -->
-  <div style="padding:14px 20px 0;">
-    <div class="card" style="padding:16px; display:flex; gap:10px;">
-      <div style="flex:1; text-align:center; padding:6px 0;">
-        <div style="display:flex; align-items:center; justify-content:center; gap:5px;"><span style="width:16px; height:16px; border-radius:9999px; background:#0f766e; color:#fff; font-size:9px; display:flex; align-items:center; justify-content:center;">윤</span><span style="font-size:12px; color:#737373;">윤재</span></div>
-        <div style="font-size:17px; font-weight:700; color:#0a0a0a; margin-top:6px;">1,180만</div>
-      </div>
-      <div style="width:1px; background:#f0f0f0;"></div>
-      <div style="flex:1; text-align:center; padding:6px 0;">
-        <div style="display:flex; align-items:center; justify-content:center; gap:5px;"><span style="width:16px; height:16px; border-radius:9999px; background:#f59e0b; color:#fff; font-size:9px; display:flex; align-items:center; justify-content:center;">소</span><span style="font-size:12px; color:#737373;">소정</span></div>
-        <div style="font-size:17px; font-weight:700; color:#0a0a0a; margin-top:6px;">1,420만</div>
-      </div>
-      <div style="width:1px; background:#f0f0f0;"></div>
-      <div style="flex:1; text-align:center; padding:6px 0;">
-        <div style="font-size:12px; color:#737373;">합계</div>
-        <div style="font-size:17px; font-weight:700; color:#0f766e; margin-top:6px;">2,600만</div>
-      </div>
+  <!-- member split summary header -->
+  <div style="margin:0 20px;background:#134E48;border-radius:16px;padding:18px 20px;color:#fff">
+    <div style="display:flex;justify-content:space-between;align-items:baseline">
+      <span style="font-size:12px;font-weight:500;color:#99F6E4">총 지출 (집행)</span>
+      <span style="font-size:22px;font-weight:800;letter-spacing:-0.01em">₩13,200,000</span>
     </div>
-  </div>
-
-  <!-- segment -->
-  <div style="padding:14px 20px 0;">
-    <div style="display:flex; background:#f0f0f0; border-radius:10px; padding:3px;">
-      <div style="flex:1; text-align:center; padding:8px; background:#ffffff; border-radius:8px; font-size:14px; font-weight:600; color:#0a0a0a; box-shadow:0 1px 2px rgba(0,0,0,0.06);">결제 완료</div>
-      <div style="flex:1; text-align:center; padding:8px; font-size:14px; font-weight:500; color:#737373;">결제 예정</div>
-    </div>
-  </div>
-
-  <div class="scroll">
-    <!-- category budget bars -->
-    <div style="padding:20px 4px 8px; font-size:13px; font-weight:600; color:#737373;">카테고리별 예산</div>
-    <div class="card" style="padding:16px; display:flex; flex-direction:column; gap:16px;">
-      <div>
-        <div style="display:flex; justify-content:space-between; margin-bottom:7px;"><span style="font-size:14px; font-weight:500; color:#0a0a0a;">예식장</span><span style="font-size:13px; color:#737373;">1,800 / <b style="color:#0a0a0a;">2,000만</b></span></div>
-        <div style="height:8px; background:#f5f5f5; border-radius:9999px; overflow:hidden;"><div style="width:90%; height:100%; background:#0f766e; border-radius:9999px;"></div></div>
-      </div>
-      <div>
-        <div style="display:flex; justify-content:space-between; margin-bottom:7px;"><span style="font-size:14px; font-weight:500; color:#0a0a0a;">스드메</span><span style="font-size:13px; color:#737373;">520 / <b style="color:#0a0a0a;">600만</b></span></div>
-        <div style="height:8px; background:#f5f5f5; border-radius:9999px; overflow:hidden;"><div style="width:87%; height:100%; background:#0f766e; border-radius:9999px;"></div></div>
-      </div>
-      <div>
-        <div style="display:flex; justify-content:space-between; margin-bottom:7px;"><span style="font-size:14px; font-weight:500; color:#0a0a0a;">신혼여행</span><span style="font-size:13px; color:#ef4444;">720 / <b style="color:#0a0a0a;">700만</b></span></div>
-        <div style="height:8px; background:#fef2f2; border-radius:9999px; overflow:hidden;"><div style="width:100%; height:100%; background:#ef4444; border-radius:9999px;"></div></div>
-      </div>
-    </div>
-
-    <!-- expense list -->
-    <div style="padding:24px 4px 8px; font-size:13px; font-weight:600; color:#737373;">9월</div>
-    <div class="card" style="overflow:hidden;">
-      <div style="padding:14px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #f5f5f5;">
-        <div style="width:38px; height:38px; border-radius:10px; background:#f0fdfa; display:flex; align-items:center; justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-        <div style="flex:1;"><div style="font-size:14px; font-weight:600; color:#0a0a0a;">스튜디오 계약금</div><div style="font-size:12px; color:#a3a3a3; margin-top:1px;">9/15 · 소정 · 스드메</div></div>
-        <span style="font-size:14px; font-weight:700; color:#0a0a0a;">75만</span>
-      </div>
-      <div style="padding:14px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #f5f5f5;">
-        <div style="width:38px; height:38px; border-radius:10px; background:#f0fdfa; display:flex; align-items:center; justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg></div>
-        <div style="flex:1;"><div style="font-size:14px; font-weight:600; color:#0a0a0a;">예식장 계약금</div><div style="font-size:12px; color:#a3a3a3; margin-top:1px;">9/10 · 윤재 · 예식장</div><div style="display:inline-flex; align-items:center; gap:4px; margin-top:4px; font-size:11px; color:#0f766e; background:#f0fdfa; border-radius:6px; padding:2px 7px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7h12M8 12h12M8 17h12M3 7h.01M3 12h.01M3 17h.01"/></svg>잔금 800만 예정</div></div>
-        <span style="font-size:14px; font-weight:700; color:#0a0a0a;">200만</span>
-      </div>
-      <div style="padding:14px 16px; display:flex; align-items:center; gap:12px;">
-        <div style="width:38px; height:38px; border-radius:10px; background:#f0fdfa; display:flex; align-items:center; justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H5"/></svg></div>
-        <div style="flex:1;"><div style="font-size:14px; font-weight:600; color:#0a0a0a;">예물 예약금</div><div style="font-size:12px; color:#a3a3a3; margin-top:1px;">9/8 · 윤재+소정 분할 · 예물</div></div>
-        <span style="font-size:14px; font-weight:700; color:#0a0a0a;">120만</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- AdMob + tab bar -->
-  <div style="position:fixed; bottom:0; left:0; right:0; max-width:390px; margin:0 auto;">
-    <div style="height:50px; background:#f0f0f0; border-top:1px solid #e5e5e5; display:flex; align-items:center; justify-content:center;"><span style="font-size:11px; color:#a3a3a3; letter-spacing:0.05em;">AdMob 배너 320×50</span></div>
-    <div style="height:84px; background:#ffffff; border-top:1px solid #e5e5e5; display:flex; align-items:flex-start; padding:10px 8px 0;">
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
-        <span style="font-size:10px; color:#a3a3a3;">홈</span>
-      </div>
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 12H3M16 6H3M21 18H3"/><path d="M18 9l2 2 3-3"/></svg>
-        <span style="font-size:10px; color:#a3a3a3;">투두</span>
-      </div>
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
-        <div style="width:56px; height:56px; border-radius:9999px; background:#0f766e; display:flex; align-items:center; justify-content:center; margin-top:-24px; box-shadow:0 8px 16px rgba(15,118,110,0.35);">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 0-3 3v1H8a4 4 0 0 0 0 8h1v1a3 3 0 0 0 6 0v-1h1a4 4 0 0 0 0-8h-1V6a3 3 0 0 0-3-3z"/><path d="M9 12h.01M15 12h.01"/></svg>
+    <div style="height:1px;background:rgba(255,255,255,0.14);margin:14px 0 12px"></div>
+    <div style="display:flex;gap:12px">
+      <div style="flex:1;display:flex;align-items:center;gap:8px">
+        <div style="width:26px;height:26px;border-radius:9999px;background:#0F766E;border:1.5px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700">윤</div>
+        <div>
+          <div style="font-size:11px;color:#99F6E4">윤재 분담</div>
+          <div style="font-size:15px;font-weight:700">₩7,450,000</div>
         </div>
-        <span style="font-size:10px; font-weight:600; color:#0f766e; margin-top:2px;">AI</span>
       </div>
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        <span style="font-size:10px; font-weight:600; color:#0f766e;">지출</span>
+      <div style="flex:1;display:flex;align-items:center;gap:8px">
+        <div style="width:26px;height:26px;border-radius:9999px;background:#F59E0B;border:1.5px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700">소</div>
+        <div>
+          <div style="font-size:11px;color:#99F6E4">소정 분담</div>
+          <div style="font-size:15px;font-weight:700">₩5,750,000</div>
+        </div>
       </div>
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-        <span style="font-size:10px; color:#a3a3a3;">설정</span>
+    </div>
+  </div>
+
+  <!-- segment paid/planned -->
+  <div style="margin:16px 20px 0;background:#EEECE9;border-radius:12px;padding:4px;display:flex">
+    <div style="flex:1;height:36px;background:#ffffff;border-radius:9px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:14px;font-weight:700;color:#1C1917;box-shadow:0 1px 3px rgba(0,0,0,0.08)">지출 완료<span style="font-size:11px;font-weight:700;color:#0F766E;background:#F0FDFA;border-radius:9999px;padding:1px 7px">12</span></div>
+    <div style="flex:1;height:36px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:14px;font-weight:500;color:#78716C">예정<span style="font-size:11px;font-weight:600;color:#B45309;background:#FEF3C7;border-radius:9999px;padding:1px 7px">3</span></div>
+  </div>
+
+  <!-- category budget bars -->
+  <div style="margin:16px 20px 0;background:#ffffff;border:1px solid #E7E5E4;border-radius:16px;padding:16px 18px">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <span style="font-size:13px;font-weight:700;color:#1C1917">카테고리별 예산</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+    <div style="margin-top:12px;display:flex;flex-direction:column;gap:12px">
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px">
+          <span style="font-weight:600;color:#44403C">웨딩홀</span>
+          <span style="color:#78716C"><b style="color:#1C1917">₩8.5M</b> / 10M</span>
+        </div>
+        <div style="height:7px;border-radius:9999px;background:#EEECE9;overflow:hidden;display:flex">
+          <div style="width:60%;background:#0F766E"></div><div style="width:25%;background:#F59E0B"></div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px">
+          <span style="font-weight:600;color:#44403C">스드메</span>
+          <span style="color:#78716C"><b style="color:#1C1917">₩4.25M</b> / 6M</span>
+        </div>
+        <div style="height:7px;border-radius:9999px;background:#EEECE9;overflow:hidden;display:flex">
+          <div style="width:57.5%;background:#0F766E"></div><div style="width:13.3%;background:#F59E0B"></div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px">
+          <span style="font-weight:600;color:#EF4444">혼수·가전</span>
+          <span style="color:#78716C"><b style="color:#EF4444">₩5.5M</b> / 5M · 초과</span>
+        </div>
+        <div style="height:7px;border-radius:9999px;background:#EEECE9;overflow:hidden;display:flex">
+          <div style="width:100%;background:#EF4444"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- expense list -->
+  <div style="padding:18px 20px 8px;font-size:12px;font-weight:700;color:#78716C;letter-spacing:0.02em">9월 15일 (월)</div>
+  <div style="margin:0 20px;border:1px solid #E7E5E4;border-radius:14px;overflow:hidden">
+    <div class="exp" style="border-bottom:1px solid #F5F5F4">
+      <div style="width:38px;height:38px;border-radius:11px;background:#F0FDFA;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+      </div>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:14px;font-weight:600;color:#1C1917">스튜디오 계약금</span>
+          <span style="font-size:10px;font-weight:700;color:#0369A1;background:#E0F2FE;border-radius:5px;padding:2px 6px">1/2회차</span>
+        </div>
+        <div style="font-size:12px;color:#78716C;margin-top:2px">스드메 · 소정 국민카드</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="font-size:15px;font-weight:700;color:#1C1917">₩750,000</div>
+        <div style="display:flex;justify-content:flex-end;margin-top:3px">
+          <div style="width:18px;height:18px;border-radius:9999px;background:#F59E0B;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff">소</div>
+        </div>
+      </div>
+    </div>
+    <div class="exp">
+      <div style="width:38px;height:38px;border-radius:11px;background:#FDF4FF;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C026D3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
+      </div>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:14px;font-weight:600;color:#1C1917">웨딩홀 계약금</span>
+          <span style="font-size:10px;font-weight:700;color:#57534E;background:#F5F5F4;border-radius:5px;padding:2px 6px">분할 2수단</span>
+        </div>
+        <div style="font-size:12px;color:#78716C;margin-top:2px">웨딩홀 · 신한카드 + 현금</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="font-size:15px;font-weight:700;color:#1C1917">₩5,000,000</div>
+        <div style="display:flex;justify-content:flex-end;margin-top:3px">
+          <div style="width:18px;height:18px;border-radius:9999px;background:#0F766E;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff">윤</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:18px 20px 8px;font-size:12px;font-weight:700;color:#78716C;letter-spacing:0.02em">9월 12일 (금)</div>
+  <div style="margin:0 20px;border:1px solid #E7E5E4;border-radius:14px;overflow:hidden">
+    <div class="exp">
+      <div style="width:38px;height:38px;border-radius:11px;background:#FFF7ED;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+      </div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:14px;font-weight:600;color:#1C1917">냉장고 구매</div>
+        <div style="font-size:12px;color:#78716C;margin-top:2px">혼수·가전 · 윤재 신한카드</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="font-size:15px;font-weight:700;color:#1C1917">₩2,890,000</div>
+        <div style="display:flex;justify-content:flex-end;margin-top:3px">
+          <div style="width:18px;height:18px;border-radius:9999px;background:#0F766E;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff">윤</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ad banner + tab bar -->
+  <div style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:390px">
+    <div style="height:56px;background:#F5F5F4;border-top:1px solid #E7E5E4;display:flex;align-items:center;justify-content:center;gap:6px">
+      <span style="font-size:10px;font-weight:700;color:#A8A29E;border:1px solid #D6D3D1;border-radius:4px;padding:1px 5px">AD</span>
+      <span style="font-size:12px;color:#A8A29E">AdMob 배너 320×50</span>
+    </div>
+    <div style="height:84px;background:#ffffff;border-top:1px solid #E7E5E4;display:flex;align-items:flex-start;position:relative">
+      <div class="tab">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10a2 2 0 0 1 .7-1.5l7-6.1a2 2 0 0 1 2.6 0l7 6.1A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2h-4a1 1 0 0 1-1-1v-5a2 2 0 0 0-4 0v5a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2Z"/></svg>
+        <span>홈</span>
+      </div>
+      <div class="tab">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="6" height="6" rx="1"/><path d="m3 17 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg>
+        <span>투두</span>
+      </div>
+      <div class="tab" style="position:relative">
+        <div style="position:absolute;top:-24px;width:56px;height:56px;border-radius:9999px;background:linear-gradient(135deg,#0F766E,#14B8A6);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(15,118,110,0.35);border:4px solid #FAFAF9">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+        </div>
+        <span style="margin-top:36px;color:#0F766E;font-weight:600">AI</span>
+      </div>
+      <div class="tab">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+        <span style="color:#0F766E;font-weight:700">지출</span>
+      </div>
+      <div class="tab">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span>설정</span>
       </div>
     </div>
   </div>

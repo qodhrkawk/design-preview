@@ -3,104 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>PlanWe · 투두</title>
+<title>PlanWe — 투두</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:Inter, system-ui, sans-serif; background:#e5e5e5; display:flex; justify-content:center; min-height:100vh; }
-  .frame { width:100%; max-width:390px; min-height:844px; background:#fafafa; position:relative; }
-  .scroll { padding:0 20px 200px; }
-  .card { background:#ffffff; border:1px solid #e5e5e5; border-radius:14px; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;background:#EEECE9;display:flex;justify-content:center;min-height:100vh}
+.frame{width:100%;max-width:390px;min-height:100vh;background:#FAFAF9;position:relative;padding-bottom:150px}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding-top:10px}
+.tab span{font-size:10px;font-weight:500;color:#A8A29E}
+.row{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#fff}
+.check{width:22px;height:22px;border-radius:9999px;border:2px solid #D6D3D1;flex-shrink:0}
+.check.done{background:#0F766E;border-color:#0F766E;display:flex;align-items:center;justify-content:center}
+.chip{display:flex;align-items:center;gap:5px;border-radius:9999px;padding:7px 13px;font-size:13px;font-weight:600;white-space:nowrap}
 </style>
 </head>
 <body>
 <div class="frame">
-  <div style="height:48px;"></div>
+  <div style="height:48px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 24px 6px;font-size:14px;font-weight:600;color:#1C1917">
+    <span>9:41</span>
+    <span style="display:flex;gap:5px;align-items:center">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="#1C1917"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13" y="0" width="3" height="12" rx="1"/></svg>
+      <svg width="22" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="19" height="11" rx="3" stroke="#1C1917"/><rect x="2" y="2" width="14" height="8" rx="1.5" fill="#1C1917"/><path d="M21.5 4v4a2 2 0 0 0 0-4Z" fill="#1C1917"/></svg>
+    </span>
+  </div>
 
   <!-- header -->
-  <div style="padding:8px 20px 0; display:flex; align-items:center; justify-content:space-between;">
-    <h2 style="font-size:26px; font-weight:700; letter-spacing:-0.02em; color:#0a0a0a;">투두</h2>
-    <div style="width:38px; height:38px; border-radius:9999px; background:#0f766e; display:flex; align-items:center; justify-content:center;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 20px 12px">
+    <span style="font-size:24px;font-weight:800;letter-spacing:-0.02em;color:#1C1917">투두</span>
+    <button style="width:38px;height:38px;border-radius:12px;background:#0F766E;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(15,118,110,0.25)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+    </button>
+  </div>
+
+  <!-- segment: 마감/예약 -->
+  <div style="margin:0 20px;background:#EEECE9;border-radius:12px;padding:4px;display:flex">
+    <div style="flex:1;height:36px;background:#ffffff;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#1C1917;box-shadow:0 1px 3px rgba(0,0,0,0.08)">마감</div>
+    <div style="flex:1;height:36px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;color:#78716C">예약</div>
+  </div>
+
+  <!-- assignee filter chips -->
+  <div style="display:flex;gap:8px;padding:14px 20px 6px;overflow-x:auto">
+    <span class="chip" style="background:#1C1917;color:#FAFAF9">전체</span>
+    <span class="chip" style="background:#ffffff;border:1px solid #E7E5E4;color:#57534E">
+      <span style="width:16px;height:16px;border-radius:9999px;background:#0F766E;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff">윤</span>윤재</span>
+    <span class="chip" style="background:#ffffff;border:1px solid #E7E5E4;color:#57534E">
+      <span style="width:16px;height:16px;border-radius:9999px;background:#F59E0B;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff">소</span>소정</span>
+    <span class="chip" style="background:#ffffff;border:1px solid #E7E5E4;color:#57534E">담당 없음</span>
+  </div>
+
+  <!-- overdue group -->
+  <div style="padding:14px 20px 8px;font-size:12px;font-weight:700;color:#EF4444;letter-spacing:0.02em">지남 · 1</div>
+  <div style="margin:0 20px;border:1px solid #FECACA;border-radius:14px;overflow:hidden">
+    <div class="row" style="background:#FEF2F2">
+      <div class="check" style="border-color:#FCA5A5"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:14px;font-weight:600;color:#1C1917">상견례 식당 예약</div>
+        <div style="font-size:12px;color:#EF4444;margin-top:2px;font-weight:600">9월 14일 마감 · 2일 지남</div>
+      </div>
+      <div style="width:24px;height:24px;border-radius:9999px;background:#0F766E;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0">윤</div>
     </div>
   </div>
 
-  <!-- segment -->
-  <div style="padding:16px 20px 0;">
-    <div style="display:flex; background:#f0f0f0; border-radius:10px; padding:3px;">
-      <div style="flex:1; text-align:center; padding:8px; background:#ffffff; border-radius:8px; font-size:14px; font-weight:600; color:#0a0a0a; box-shadow:0 1px 2px rgba(0,0,0,0.06);">마감</div>
-      <div style="flex:1; text-align:center; padding:8px; font-size:14px; font-weight:500; color:#737373;">예약</div>
+  <!-- this week -->
+  <div style="padding:18px 20px 8px;font-size:12px;font-weight:700;color:#78716C;letter-spacing:0.02em">이번 주 · 3</div>
+  <div style="margin:0 20px;border:1px solid #E7E5E4;border-radius:14px;overflow:hidden">
+    <div class="row" style="border-bottom:1px solid #F5F5F4">
+      <div class="check"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:14px;font-weight:600;color:#1C1917">스튜디오 촬영 예약 확정</div>
+        <div style="font-size:12px;color:#EF4444;margin-top:2px;font-weight:600">내일 마감</div>
+      </div>
+      <div style="width:24px;height:24px;border-radius:9999px;background:#F59E0B;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0">소</div>
     </div>
-  </div>
-
-  <!-- assignee chips -->
-  <div style="padding:14px 20px 0; display:flex; gap:8px;">
-    <span style="font-size:13px; font-weight:600; color:#fafafa; background:#0a0a0a; border-radius:9999px; padding:6px 14px;">전체</span>
-    <span style="font-size:13px; font-weight:500; color:#171717; background:#ffffff; border:1px solid #e5e5e5; border-radius:9999px; padding:6px 14px; display:flex; align-items:center; gap:6px;"><span style="width:14px; height:14px; border-radius:9999px; background:#0f766e; color:#fff; font-size:8px; display:flex; align-items:center; justify-content:center;">윤</span>윤재</span>
-    <span style="font-size:13px; font-weight:500; color:#171717; background:#ffffff; border:1px solid #e5e5e5; border-radius:9999px; padding:6px 14px; display:flex; align-items:center; gap:6px;"><span style="width:14px; height:14px; border-radius:9999px; background:#f59e0b; color:#fff; font-size:8px; display:flex; align-items:center; justify-content:center;">소</span>소정</span>
-  </div>
-
-  <div class="scroll">
-    <!-- date group: 이번 주 -->
-    <div style="padding:20px 4px 8px; font-size:13px; font-weight:600; color:#737373;">이번 주</div>
-    <div class="card" style="overflow:hidden;">
-      <div style="padding:15px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #f5f5f5;">
-        <span style="width:22px; height:22px; border:2px solid #d4d4d4; border-radius:7px; flex-shrink:0;"></span>
-        <div style="flex:1;"><div style="font-size:15px; font-weight:500; color:#0a0a0a;">청첩장 시안 확정</div><div style="font-size:12px; color:#a3a3a3; margin-top:2px;">9/17 마감</div></div>
-        <span style="width:22px; height:22px; border-radius:9999px; background:#f59e0b; color:#fff; font-size:10px; font-weight:600; display:flex; align-items:center; justify-content:center;">소</span>
-      </div>
-      <div style="padding:15px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #f5f5f5;">
-        <span style="width:22px; height:22px; border:2px solid #d4d4d4; border-radius:7px; flex-shrink:0;"></span>
-        <div style="flex:1;"><div style="font-size:15px; font-weight:500; color:#0a0a0a;">본식 스냅 계약</div><div style="font-size:12px; color:#a3a3a3; margin-top:2px;">9/19 마감</div></div>
-        <span style="width:22px; height:22px; border-radius:9999px; background:#0f766e; color:#fff; font-size:10px; font-weight:600; display:flex; align-items:center; justify-content:center;">윤</span>
-      </div>
-      <div style="padding:15px 16px; display:flex; align-items:center; gap:12px;">
-        <span style="width:22px; height:22px; border:2px solid #d4d4d4; border-radius:7px; flex-shrink:0;"></span>
-        <div style="flex:1;"><div style="font-size:15px; font-weight:500; color:#0a0a0a;">예물 방문 예약</div><div style="font-size:12px; color:#a3a3a3; margin-top:2px;">9/22 마감</div></div>
-        <span style="width:22px; height:22px; border-radius:9999px; background:#f59e0b; color:#fff; font-size:10px; font-weight:600; display:flex; align-items:center; justify-content:center;">소</span>
-      </div>
-    </div>
-
-    <!-- date group: 완료 -->
-    <div style="padding:24px 4px 8px; font-size:13px; font-weight:600; color:#737373;">완료</div>
-    <div class="card" style="overflow:hidden;">
-      <div style="padding:15px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #f5f5f5;">
-        <span style="width:22px; height:22px; background:#0f766e; border-radius:7px; flex-shrink:0; display:flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-        <div style="flex:1;"><div style="font-size:15px; font-weight:500; color:#a3a3a3; text-decoration:line-through;">웨딩홀 계약</div></div>
-        <span style="width:22px; height:22px; border-radius:9999px; background:#e5e5e5; color:#737373; font-size:10px; font-weight:600; display:flex; align-items:center; justify-content:center;">윤</span>
-      </div>
-      <div style="padding:15px 16px; display:flex; align-items:center; gap:12px;">
-        <span style="width:22px; height:22px; background:#0f766e; border-radius:7px; flex-shrink:0; display:flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-        <div style="flex:1;"><div style="font-size:15px; font-weight:500; color:#a3a3a3; text-decoration:line-through;">스튜디오 촬영</div></div>
-        <span style="width:22px; height:22px; border-radius:9999px; background:#e5e5e5; color:#737373; font-size:10px; font-weight:600; display:flex; align-items:center; justify-content:center;">소</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- AdMob + tab bar -->
-  <div style="position:fixed; bottom:0; left:0; right:0; max-width:390px; margin:0 auto;">
-    <div style="height:50px; background:#f0f0f0; border-top:1px solid #e5e5e5; display:flex; align-items:center; justify-content:center;"><span style="font-size:11px; color:#a3a3a3; letter-spacing:0.05em;">AdMob 배너 320×50</span></div>
-    <div style="height:84px; background:#ffffff; border-top:1px solid #e5e5e5; display:flex; align-items:flex-start; padding:10px 8px 0;">
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
-        <span style="font-size:10px; color:#a3a3a3;">홈</span>
-      </div>
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 12H3M16 6H3M21 18H3"/><path d="M18 9l2 2 3-3"/></svg>
-        <span style="font-size:10px; font-weight:600; color:#0f766e;">투두</span>
-      </div>
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
-        <div style="width:56px; height:56px; border-radius:9999px; background:#0f766e; display:flex; align-items:center; justify-content:center; margin-top:-24px; box-shadow:0 8px 16px rgba(15,118,110,0.35);">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 0-3 3v1H8a4 4 0 0 0 0 8h1v1a3 3 0 0 0 6 0v-1h1a4 4 0 0 0 0-8h-1V6a3 3 0 0 0-3-3z"/><path d="M9 12h.01M15 12h.01"/></svg>
+    <div class="row" style="border-bottom:1px solid #F5F5F4">
+      <div class="check"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:14px;font-weight:600;color:#1C1917">청첩장 시안 고르기</div>
+        <div style="display:flex;align-items:center;gap:6px;margin-top:2px">
+          <span style="font-size:12px;color:#78716C">9월 20일 (토)</span>
+          <span style="display:flex;align-items:center;gap:3px;font-size:11px;color:#A8A29E">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>
+            메모 1</span>
         </div>
-        <span style="font-size:10px; font-weight:600; color:#0f766e; margin-top:2px;">AI</span>
       </div>
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        <span style="font-size:10px; color:#a3a3a3;">지출</span>
+      <div style="width:24px;height:24px;border-radius:9999px;background:#0F766E;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0">윤</div>
+    </div>
+    <div class="row">
+      <div class="check done">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
       </div>
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-        <span style="font-size:10px; color:#a3a3a3;">설정</span>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:14px;font-weight:500;color:#A8A29E;text-decoration:line-through">웨딩홀 계약금 입금</div>
+        <div style="font-size:12px;color:#D6D3D1;margin-top:2px">9월 15일 완료</div>
+      </div>
+      <div style="width:24px;height:24px;border-radius:9999px;background:#D6D3D1;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0">윤</div>
+    </div>
+  </div>
+
+  <!-- later -->
+  <div style="padding:18px 20px 8px;font-size:12px;font-weight:700;color:#78716C;letter-spacing:0.02em">나중에 · 2</div>
+  <div style="margin:0 20px;border:1px solid #E7E5E4;border-radius:14px;overflow:hidden">
+    <div class="row" style="border-bottom:1px solid #F5F5F4">
+      <div class="check"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:14px;font-weight:600;color:#1C1917">신혼여행 항공권 알아보기</div>
+        <div style="font-size:12px;color:#78716C;margin-top:2px">10월 5일 (일)</div>
+      </div>
+      <div style="display:flex;flex-shrink:0">
+        <div style="width:24px;height:24px;border-radius:9999px;background:#0F766E;border:1.5px solid #fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff">윤</div>
+        <div style="width:24px;height:24px;border-radius:9999px;background:#F59E0B;border:1.5px solid #fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;margin-left:-6px">소</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="check"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:14px;font-weight:600;color:#1C1917">혼수 가전 리스트 정리</div>
+        <div style="font-size:12px;color:#A8A29E;margin-top:2px">기한 없음</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ad banner + tab bar -->
+  <div style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:390px">
+    <div style="height:56px;background:#F5F5F4;border-top:1px solid #E7E5E4;display:flex;align-items:center;justify-content:center;gap:6px">
+      <span style="font-size:10px;font-weight:700;color:#A8A29E;border:1px solid #D6D3D1;border-radius:4px;padding:1px 5px">AD</span>
+      <span style="font-size:12px;color:#A8A29E">AdMob 배너 320×50</span>
+    </div>
+    <div style="height:84px;background:#ffffff;border-top:1px solid #E7E5E4;display:flex;align-items:flex-start;position:relative">
+      <div class="tab">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10a2 2 0 0 1 .7-1.5l7-6.1a2 2 0 0 1 2.6 0l7 6.1A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2h-4a1 1 0 0 1-1-1v-5a2 2 0 0 0-4 0v5a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2Z"/></svg>
+        <span>홈</span>
+      </div>
+      <div class="tab">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="6" height="6" rx="1"/><path d="m3 17 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg>
+        <span style="color:#0F766E;font-weight:700">투두</span>
+      </div>
+      <div class="tab" style="position:relative">
+        <div style="position:absolute;top:-24px;width:56px;height:56px;border-radius:9999px;background:linear-gradient(135deg,#0F766E,#14B8A6);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(15,118,110,0.35);border:4px solid #FAFAF9">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+        </div>
+        <span style="margin-top:36px;color:#0F766E;font-weight:600">AI</span>
+      </div>
+      <div class="tab">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+        <span>지출</span>
+      </div>
+      <div class="tab">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span>설정</span>
       </div>
     </div>
   </div>
