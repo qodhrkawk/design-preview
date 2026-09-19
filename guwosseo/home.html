@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>구웠어 — 홈</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; min-height: 100vh; }
+  .app { width: 100%; max-width: 390px; background: #ffffff; min-height: 100vh; padding-bottom: 96px; position: relative; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- Header -->
+  <div style="padding: 56px 20px 16px; display: flex; align-items: center; justify-content: space-between;">
+    <div>
+      <div style="font-size: 24px; font-weight: 800; color: #0a0a0a; letter-spacing: -0.025em;">구웠어</div>
+      <div style="font-size: 13px; color: #737373; margin-top: 2px;">우리집 오븐 기준으로 기록하는 베이킹 노트</div>
+    </div>
+    <div style="width: 40px; height: 40px; border: 1px solid #e5e5e5; border-radius: 9999px; display: flex; align-items: center; justify-content: center;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+    </div>
+  </div>
+
+  <!-- 내 오븐 프로필 카드 -->
+  <div style="margin: 8px 20px 0; background: #171717; border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+    <div style="width: 40px; height: 40px; background: #262626; border-radius: 9999px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><circle cx="7" cy="6" r="0.5" fill="#fafafa"/><circle cx="10" cy="6" r="0.5" fill="#fafafa"/><path d="M7 14h10v4H7z"/></svg>
+    </div>
+    <div style="flex: 1;">
+      <div style="font-size: 12px; color: #a3a3a3;">내 오븐 · 위즈웰 GL-42</div>
+      <div style="font-size: 15px; font-weight: 600; color: #fafafa; margin-top: 2px;">레시피보다 평균 <span style="color: #f59e0b;">-10°C · +4분</span></div>
+    </div>
+    <div style="font-size: 11px; color: #a3a3a3; text-align: right;">배치 23회<br>기준</div>
+  </div>
+
+  <!-- 지난번 메모 하이라이트 -->
+  <div style="margin: 12px 20px 0; background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 14px 16px; display: flex; gap: 10px; align-items: flex-start;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.6a2 2 0 0 0-.59-1.41l-4.6-4.6A2 2 0 0 0 13.4 2z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>
+    <div>
+      <div style="font-size: 12px; font-weight: 600; color: #b45309;">바나나 파운드 · 지난번 메모</div>
+      <div style="font-size: 13px; color: #78350f; margin-top: 2px; line-height: 18px;">"다음엔 165도로 낮추고 쿠킹호일 15분에 덮기. 설탕 10g 줄여도 될 듯"</div>
+    </div>
+  </div>
+
+  <!-- 섹션 타이틀 -->
+  <div style="padding: 24px 20px 12px; display: flex; align-items: center; justify-content: space-between;">
+    <div style="font-size: 18px; font-weight: 600; color: #0a0a0a;">내 레시피</div>
+    <div style="font-size: 13px; color: #737373; display: flex; align-items: center; gap: 4px;">
+      최근 구운 순
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+  </div>
+
+  <!-- 레시피 카드 목록 -->
+  <div style="padding: 0 20px; display: flex; flex-direction: column; gap: 12px;">
+
+    <!-- 카드 1 -->
+    <div style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px;">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between;">
+        <div>
+          <div style="font-size: 16px; font-weight: 600; color: #0a0a0a;">바나나 파운드</div>
+          <div style="font-size: 12px; color: #737373; margin-top: 2px;">파운드 틀 중(21cm) · 7번 구움</div>
+        </div>
+        <span style="background: #f0fdf4; color: #16a34a; border-radius: 9999px; padding: 3px 10px; font-size: 12px; font-weight: 500;">성공 5</span>
+      </div>
+      <div style="display: flex; gap: 8px; margin-top: 12px;">
+        <div style="flex: 1; background: #f5f5f5; border-radius: 8px; padding: 8px 10px;">
+          <div style="font-size: 11px; color: #737373;">레시피</div>
+          <div style="font-size: 13px; font-weight: 600; color: #0a0a0a; margin-top: 1px;">175°C · 25분</div>
+        </div>
+        <div style="flex: 1; background: #171717; border-radius: 8px; padding: 8px 10px;">
+          <div style="font-size: 11px; color: #a3a3a3;">우리집 오븐</div>
+          <div style="font-size: 13px; font-weight: 600; color: #fafafa; margin-top: 1px;">165°C · 29분</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px; margin-top: 10px;">
+        <div style="display: flex; gap: 3px;">
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #22c55e;"></div>
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #22c55e;"></div>
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #ef4444;"></div>
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #22c55e;"></div>
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #f59e0b;"></div>
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #22c55e;"></div>
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #22c55e;"></div>
+        </div>
+        <div style="font-size: 11px; color: #737373;">최근 7회 · 3일 전</div>
+      </div>
+    </div>
+
+    <!-- 카드 2 -->
+    <div style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px;">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between;">
+        <div>
+          <div style="font-size: 16px; font-weight: 600; color: #0a0a0a;">바스크 치즈케이크</div>
+          <div style="font-size: 12px; color: #737373; margin-top: 2px;">원형 1호(15cm) · 4번 구움</div>
+        </div>
+        <span style="background: #fef2f2; color: #dc2626; border-radius: 9999px; padding: 3px 10px; font-size: 12px; font-weight: 500;">보정 중</span>
+      </div>
+      <div style="display: flex; gap: 8px; margin-top: 12px;">
+        <div style="flex: 1; background: #f5f5f5; border-radius: 8px; padding: 8px 10px;">
+          <div style="font-size: 11px; color: #737373;">레시피</div>
+          <div style="font-size: 13px; font-weight: 600; color: #0a0a0a; margin-top: 1px;">230°C · 30분</div>
+        </div>
+        <div style="flex: 1; background: #171717; border-radius: 8px; padding: 8px 10px;">
+          <div style="font-size: 11px; color: #a3a3a3;">우리집 오븐</div>
+          <div style="font-size: 13px; font-weight: 600; color: #fafafa; margin-top: 1px;">220°C · 33분?</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px; margin-top: 10px;">
+        <div style="display: flex; gap: 3px;">
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #ef4444;"></div>
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #f59e0b;"></div>
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #f59e0b;"></div>
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #22c55e;"></div>
+        </div>
+        <div style="font-size: 11px; color: #737373;">최근 4회 · 1주 전</div>
+      </div>
+    </div>
+
+    <!-- 카드 3 -->
+    <div style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px;">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between;">
+        <div>
+          <div style="font-size: 16px; font-weight: 600; color: #0a0a0a;">초코칩 쿠키</div>
+          <div style="font-size: 12px; color: #737373; margin-top: 2px;">오븐팬 · 12번 구움</div>
+        </div>
+        <span style="background: #f0fdf4; color: #16a34a; border-radius: 9999px; padding: 3px 10px; font-size: 12px; font-weight: 500;">안정</span>
+      </div>
+      <div style="display: flex; gap: 8px; margin-top: 12px;">
+        <div style="flex: 1; background: #f5f5f5; border-radius: 8px; padding: 8px 10px;">
+          <div style="font-size: 11px; color: #737373;">레시피</div>
+          <div style="font-size: 13px; font-weight: 600; color: #0a0a0a; margin-top: 1px;">180°C · 12분</div>
+        </div>
+        <div style="flex: 1; background: #171717; border-radius: 8px; padding: 8px 10px;">
+          <div style="font-size: 11px; color: #a3a3a3;">우리집 오븐</div>
+          <div style="font-size: 13px; font-weight: 600; color: #fafafa; margin-top: 1px;">170°C · 14분</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px; margin-top: 10px;">
+        <div style="display: flex; gap: 3px;">
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #22c55e;"></div>
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #22c55e;"></div>
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #22c55e;"></div>
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #22c55e;"></div>
+          <div style="width: 8px; height: 8px; border-radius: 9999px; background: #22c55e;"></div>
+        </div>
+        <div style="font-size: 11px; color: #737373;">최근 5회 연속 성공 · 2주 전</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FAB -->
+  <div style="position: fixed; bottom: 88px; left: 50%; transform: translateX(115px); width: 56px; height: 56px; background: #171717; border-radius: 9999px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+  </div>
+
+  <!-- Bottom Nav -->
+  <div style="position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 390px; background: #ffffff; border-top: 1px solid #e5e5e5; display: flex; padding: 8px 0 24px;">
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      <span style="font-size: 11px; font-weight: 600; color: #171717;">홈</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M12 15h0M17 15h0" stroke-linecap="round"/><path d="M2 9h20"/></svg>
+      <span style="font-size: 11px; color: #a3a3a3;">틀 변환</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg>
+      <span style="font-size: 11px; color: #a3a3a3;">타임라인</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
