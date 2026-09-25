@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>다음판 — 다음판 짜기</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; color: #0a0a0a; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; position: relative; padding-bottom: 110px; }
+  .lv { width: 22px; height: 22px; border-radius: 6px; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; background:#e5e5e5; }
+  .seg { flex:1; height:36px; border-radius:6px; font-size:14px; font-weight:500; border:none; background:transparent; color:#737373; }
+  .row { display:flex; align-items:center; gap:10px; padding:12px 0; border-bottom:1px solid #f5f5f5; }
+  .check { width:22px; height:22px; border-radius:6px; border:1px solid #e5e5e5; display:flex; align-items:center; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="screen">
+
+  <div style="display:flex; align-items:center; gap:12px; padding:16px 20px;">
+    <button style="width:40px; height:40px; border-radius:8px; border:1px solid #e5e5e5; background:#ffffff; display:flex; align-items:center; justify-content:center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <div style="font-size:18px; font-weight:600; flex:1;">다음판 짜기 → 3코트</div>
+  </div>
+
+  <!-- Type segment -->
+  <div style="padding:0 20px;">
+    <div style="display:flex; gap:4px; background:#f5f5f5; border-radius:8px; padding:4px;">
+      <button class="seg" style="background:#ffffff; color:#0a0a0a; box-shadow:0 1px 2px rgba(0,0,0,0.05);">자동</button>
+      <button class="seg">남복</button>
+      <button class="seg">여복</button>
+      <button class="seg">혼복</button>
+    </div>
+  </div>
+
+  <!-- Proposal -->
+  <div style="padding:16px 20px 0 20px;">
+    <div style="border:1px solid #171717; border-radius:12px; padding:16px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+        <div style="font-size:14px; font-weight:600;">추천 대진</div>
+        <div style="display:flex; align-items:center; gap:4px; font-size:12px; font-weight:500; color:#22c55e;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          팀 급수 합 동일
+        </div>
+      </div>
+      <div style="display:flex; align-items:stretch; gap:10px;">
+        <div style="flex:1; background:#f5f5f5; border-radius:8px; padding:12px; display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; align-items:center; gap:8px; font-size:15px; font-weight:500;"><span class="lv" style="background:#171717; color:#fafafa;">B</span>강태현</div>
+          <div style="display:flex; align-items:center; gap:8px; font-size:15px; font-weight:500;"><span class="lv" style="background:#ffffff;">D</span>문경호</div>
+        </div>
+        <div style="display:flex; align-items:center; font-size:12px; font-weight:600; color:#a3a3a3;">VS</div>
+        <div style="flex:1; background:#f5f5f5; border-radius:8px; padding:12px; display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; align-items:center; gap:8px; font-size:15px; font-weight:500;"><span class="lv" style="background:#ffffff;">C</span>서지훈</div>
+          <div style="display:flex; align-items:center; gap:8px; font-size:15px; font-weight:500;"><span class="lv" style="background:#ffffff;">C</span>임재원</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:6px; margin-top:14px;">
+        <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:#737373;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          4명 모두 대기 10분 이상 · 게임수 가장 적은 순
+        </div>
+        <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:#737373;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          오늘 같은 편으로 친 적 없는 조합
+        </div>
+      </div>
+    </div>
+    <button style="margin-top:10px; width:100%; height:40px; border-radius:8px; border:1px solid #e5e5e5; background:#ffffff; font-size:14px; font-weight:500; display:flex; align-items:center; justify-content:center; gap:6px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      다른 조합
+    </button>
+  </div>
+
+  <!-- Waiting list -->
+  <div style="padding:20px 20px 0 20px;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+      <div style="font-size:16px; font-weight:600;">대기 중 6명</div>
+      <div style="font-size:12px; color:#737373;">직접 골라도 돼요 (4명)</div>
+    </div>
+    <div style="margin-top:6px;">
+      <div class="row">
+        <div class="check" style="background:#171717; border-color:#171717;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span class="lv" style="background:#171717; color:#fafafa;">B</span>
+        <span style="flex:1; font-size:15px; font-weight:500;">강태현</span>
+        <span style="font-size:13px; color:#737373;">2판 · 18분</span>
+      </div>
+      <div class="row">
+        <div class="check" style="background:#171717; border-color:#171717;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span class="lv">C</span>
+        <span style="flex:1; font-size:15px; font-weight:500;">서지훈</span>
+        <span style="font-size:13px; color:#737373;">2판 · 15분</span>
+      </div>
+      <div class="row">
+        <div class="check" style="background:#171717; border-color:#171717;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span class="lv">D</span>
+        <span style="flex:1; font-size:15px; font-weight:500;">문경호</span>
+        <span style="font-size:13px; color:#737373;">3판 · 12분</span>
+      </div>
+      <div class="row">
+        <div class="check" style="background:#171717; border-color:#171717;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span class="lv">C</span>
+        <span style="flex:1; font-size:15px; font-weight:500;">임재원</span>
+        <span style="font-size:13px; color:#737373;">3판 · 10분</span>
+      </div>
+      <div class="row">
+        <div class="check"></div>
+        <span class="lv">D</span>
+        <span style="flex:1; font-size:15px; font-weight:500;">장유나</span>
+        <span style="font-size:13px; color:#737373;">3판 · 4분</span>
+      </div>
+      <div class="row" style="opacity:0.5;">
+        <div class="check"></div>
+        <span class="lv">초</span>
+        <span style="flex:1; font-size:15px; font-weight:500;">신다은 <span style="font-size:12px; color:#737373; font-weight:400;">· 게스트</span></span>
+        <span style="background:#f5f5f5; border-radius:9999px; padding:2px 8px; font-size:12px; color:#737373;">쉬는 중</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:absolute; left:0; right:0; bottom:0; padding:12px 20px 28px 20px; background:#ffffff; border-top:1px solid #e5e5e5;">
+    <button style="width:100%; height:48px; border-radius:8px; border:none; background:#171717; color:#fafafa; font-size:15px; font-weight:500;">3코트에 투입</button>
+  </div>
+</div>
+</body>
+</html>
