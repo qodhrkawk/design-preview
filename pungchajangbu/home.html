@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>풍차장부 — 홈</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; color: #0a0a0a; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .section-title { font-size: 14px; font-weight: 600; color: #0a0a0a; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .muted { color: #737373; }
+  .slot { width: 44px; height: 44px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- Header -->
+  <header style="padding: 56px 20px 16px; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <div style="font-size: 12px; color: #737373;">2026년 10월 1일 목요일</div>
+      <div style="font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.025em;">풍차장부</div>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <div style="width: 40px; height: 40px; border: 1px solid #e5e5e5; border-radius: 9999px; display: flex; align-items: center; justify-content: center;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+      </div>
+      <div style="width: 40px; height: 40px; background: #171717; border-radius: 9999px; display: flex; align-items: center; justify-content: center;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 0 20px 110px; display: flex; flex-direction: column; gap: 24px;">
+
+    <!-- Summary -->
+    <section style="background: #171717; color: #fafafa; border-radius: 16px; padding: 20px;">
+      <div style="font-size: 13px; color: #a3a3a3;">굴리는 원금 · 13개 계좌</div>
+      <div style="font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -0.025em; margin-top: 4px;">2억 3,140만원</div>
+      <div style="display: flex; gap: 16px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #262626;">
+        <div style="flex: 1;">
+          <div style="font-size: 12px; color: #a3a3a3;">만기 시 세후 이자</div>
+          <div style="font-size: 16px; font-weight: 600; margin-top: 2px;">+512만 3천원</div>
+        </div>
+        <div style="flex: 1;">
+          <div style="font-size: 12px; color: #a3a3a3;">우대조건 놓치면</div>
+          <div style="font-size: 16px; font-weight: 600; margin-top: 2px; color: #f59e0b;">−38만 1천원</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming maturity -->
+    <section>
+      <div class="section-title"><span>다가오는 만기</span><span class="muted" style="font-size: 13px; font-weight: 400;">전체 보기</span></div>
+      <div style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div>
+            <div style="display: flex; gap: 6px; align-items: center;">
+              <span style="background: #fef2f2; color: #ef4444; border-radius: 6px; padding: 2px 8px; font-size: 12px; font-weight: 600;">D-13</span>
+              <span style="font-size: 12px; color: #737373;">10월 14일 (수)</span>
+            </div>
+            <div style="font-size: 16px; font-weight: 600; margin-top: 6px;">OK저축은행 정기예금</div>
+            <div style="font-size: 13px; color: #737373; margin-top: 2px;">원금 5,000만원 · 연 3.8% · 12개월</div>
+          </div>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </div>
+        <div style="background: #f5f5f5; border-radius: 8px; padding: 10px 12px; display: flex; justify-content: space-between; font-size: 13px;">
+          <span class="muted">세후 수령 예상</span>
+          <span style="font-weight: 600;">51,607,400원</span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button style="flex: 1; height: 40px; background: #171717; color: #fafafa; border: none; border-radius: 8px; font-size: 14px; font-weight: 500; font-family: inherit;">재예치 플랜 세우기</button>
+          <button style="height: 40px; padding: 0 14px; background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 14px; font-weight: 500; font-family: inherit;">해지 체크리스트</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- This month todo -->
+    <section>
+      <div class="section-title"><span>이번 달 챙길 것</span><span style="font-size: 12px; font-weight: 500; background: #f5f5f5; border-radius: 9999px; padding: 2px 10px;">3건</span></div>
+      <div style="border: 1px solid #e5e5e5; border-radius: 12px;">
+        <div style="padding: 14px 16px; display: flex; gap: 12px; align-items: center; border-bottom: 1px solid #e5e5e5;">
+          <div style="width: 36px; height: 36px; border-radius: 9999px; background: #fffbeb; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+          </div>
+          <div style="flex: 1;">
+            <div style="font-size: 14px; font-weight: 500;">신한카드 실적 30만원 채우기</div>
+            <div style="font-size: 12px; color: #737373;">쏠편한 적금 우대 +0.8%p · 10월 31일까지</div>
+          </div>
+          <div style="width: 22px; height: 22px; border: 1.5px solid #d4d4d4; border-radius: 6px;"></div>
+        </div>
+        <div style="padding: 14px 16px; display: flex; gap: 12px; align-items: center; border-bottom: 1px solid #e5e5e5;">
+          <div style="width: 36px; height: 36px; border-radius: 9999px; background: #eff6ff; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12 4 4"/><path d="M12 12h8"/><path d="M12 12v8"/><path d="m12 12 8-8"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <div style="flex: 1;">
+            <div style="font-size: 14px; font-weight: 500;">풍차 10번째 날개 가입</div>
+            <div style="font-size: 12px; color: #737373;">월 20만원 · 12개월 적금 · 오늘</div>
+          </div>
+          <div style="width: 22px; height: 22px; border: 1.5px solid #d4d4d4; border-radius: 6px;"></div>
+        </div>
+        <div style="padding: 14px 16px; display: flex; gap: 12px; align-items: center;">
+          <div style="width: 36px; height: 36px; border-radius: 9999px; background: #f0fdf4; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <div style="flex: 1;">
+            <div style="font-size: 14px; font-weight: 500; color: #737373; text-decoration: line-through;">급여이체 50만원 이상</div>
+            <div style="font-size: 12px; color: #a3a3a3;">쏠편한 적금 우대 +0.5%p · 9월 25일 확인</div>
+          </div>
+          <div style="width: 22px; height: 22px; background: #171717; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Windmill -->
+    <section>
+      <div class="section-title"><span>풍차 현황</span><span class="muted" style="font-size: 13px; font-weight: 400;">9 / 12 날개</span></div>
+      <div style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between;">
+          <div class="slot" style="background: #171717; color: #fafafa;">1월<span style="font-size: 10px; color: #a3a3a3;">9/12</span></div>
+          <div class="slot" style="background: #171717; color: #fafafa;">2월<span style="font-size: 10px; color: #a3a3a3;">8/12</span></div>
+          <div class="slot" style="background: #171717; color: #fafafa;">3월<span style="font-size: 10px; color: #a3a3a3;">7/12</span></div>
+          <div class="slot" style="background: #171717; color: #fafafa;">4월<span style="font-size: 10px; color: #a3a3a3;">6/12</span></div>
+          <div class="slot" style="background: #171717; color: #fafafa;">5월<span style="font-size: 10px; color: #a3a3a3;">5/12</span></div>
+          <div class="slot" style="background: #171717; color: #fafafa;">6월<span style="font-size: 10px; color: #a3a3a3;">4/12</span></div>
+          <div class="slot" style="background: #171717; color: #fafafa;">7월<span style="font-size: 10px; color: #a3a3a3;">3/12</span></div>
+          <div class="slot" style="background: #171717; color: #fafafa;">8월<span style="font-size: 10px; color: #a3a3a3;">2/12</span></div>
+          <div class="slot" style="background: #171717; color: #fafafa;">9월<span style="font-size: 10px; color: #a3a3a3;">1/12</span></div>
+          <div class="slot" style="border: 1.5px dashed #171717; color: #171717;">10월<span style="font-size: 10px;">오늘</span></div>
+          <div class="slot" style="background: #f5f5f5; color: #a3a3a3;">11월</div>
+          <div class="slot" style="background: #f5f5f5; color: #a3a3a3;">12월</div>
+        </div>
+        <div style="margin-top: 14px; font-size: 13px; color: #737373; display: flex; gap: 6px; align-items: center;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+          2027년 1월부터 매달 만기 · 월 납입 합계 180만원
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Tab bar -->
+  <nav style="position: absolute; bottom: 0; left: 0; right: 0; height: 84px; border-top: 1px solid #e5e5e5; background: #ffffff; display: flex; justify-content: space-around; padding-top: 10px;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; color: #171717;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>장부</div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #a3a3a3;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>캘린더</div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #a3a3a3;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>보호한도</div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #a3a3a3;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>설정</div>
+  </nav>
+</div>
+</body>
+</html>
