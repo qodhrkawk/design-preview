@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>째도돼 — 과목 상세 · 째면 어떻게 돼?</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; color: #0a0a0a; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .section-title { font-size: 14px; font-weight: 600; margin-bottom: 10px; display: flex; justify-content: space-between; }
+  .wk { width: 40px; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #737373; }
+  .dot { width: 16px; height: 16px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <header style="padding: 56px 20px 12px; display: flex; align-items: center; justify-content: space-between;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      <div>
+        <div style="font-size: 18px; font-weight: 600;">마케팅원론</div>
+        <div style="font-size: 12px; color: #737373;">화 3시간 · 시수 기준 1/4</div>
+      </div>
+    </div>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/></svg>
+  </header>
+
+  <main style="padding: 8px 20px 40px; display: flex; flex-direction: column; gap: 24px;">
+
+    <!-- Gauge -->
+    <section style="border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px;">
+      <div style="font-size: 13px; color: #737373;">F까지 남은 결석</div>
+      <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 4px;">
+        <span style="font-size: 36px; line-height: 40px; font-weight: 800; letter-spacing: -0.025em; color: #f59e0b;">2시간</span>
+        <span style="font-size: 14px; color: #737373;">/ 한도 11시간</span>
+      </div>
+      <div style="height: 10px; border-radius: 9999px; background: #f5f5f5; margin-top: 14px; display: flex; overflow: hidden;">
+        <div style="width: 54.5%; background: #737373;"></div>
+        <div style="width: 27.3%; background: #f59e0b;"></div>
+      </div>
+      <div style="display: flex; gap: 14px; margin-top: 10px; font-size: 12px; color: #737373;">
+        <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #737373;"></span>결석 6h</span>
+        <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #f59e0b;"></span>지각 환산 3h</span>
+        <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #f5f5f5; border: 1px solid #e5e5e5;"></span>여유 2h</span>
+      </div>
+    </section>
+
+    <!-- Simulator -->
+    <section style="background: #171717; color: #fafafa; border-radius: 16px; padding: 20px;">
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #a3a3a3; font-weight: 500;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+        이번 주 화요일 째면?
+      </div>
+      <div style="display: flex; gap: 8px; margin-top: 12px;">
+        <div style="flex: 1; height: 36px; border-radius: 8px; background: #fafafa; color: #171717; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600;">통째로 결석</div>
+        <div style="flex: 1; height: 36px; border-radius: 8px; border: 1px solid #404040; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #d4d4d4;">1교시만</div>
+        <div style="flex: 1; height: 36px; border-radius: 8px; border: 1px solid #404040; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #d4d4d4;">지각</div>
+      </div>
+      <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #262626;">
+        <div style="font-size: 20px; line-height: 28px; font-weight: 600; color: #ef4444;">안 돼. 바로 F야</div>
+        <div style="font-size: 13px; color: #a3a3a3; margin-top: 4px; line-height: 20px;">3시간 결석 → 12시간으로 한도(11시간) 초과.<br>1교시만 빠지면 1시간 남아. 지각은 2번까지 OK.</div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section>
+      <div class="section-title"><span>주차별 출결</span><span style="font-size: 12px; color: #737373; font-weight: 400;">15주 중 6주 진행</span></div>
+      <div style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 6px 4px;">
+          <div class="wk"><div class="dot" style="background: #f59e0b;"></div>1</div>
+          <div class="wk"><div class="dot" style="background: #ef4444;"></div>2</div>
+          <div class="wk"><div class="dot" style="background: #f59e0b;"></div>3</div>
+          <div class="wk"><div class="dot" style="background: #f59e0b;"></div>4</div>
+          <div class="wk"><div class="dot" style="background: #ef4444;"></div>5</div>
+          <div class="wk"><div class="dot" style="background: #3b82f6;"></div>6</div>
+          <div class="wk"><div class="dot" style="background: #ffffff; border: 1.5px dashed #a3a3a3;"></div>7</div>
+          <div class="wk"><div class="dot" style="background: #f5f5f5;"></div>8</div>
+          <div class="wk"><div class="dot" style="background: #f5f5f5;"></div>9</div>
+          <div class="wk"><div class="dot" style="background: #f5f5f5;"></div>10</div>
+          <div class="wk"><div class="dot" style="background: #f5f5f5;"></div>11</div>
+          <div class="wk"><div class="dot" style="background: #f5f5f5;"></div>12</div>
+          <div class="wk"><div class="dot" style="background: #f5f5f5;"></div>13</div>
+          <div class="wk"><div class="dot" style="background: #f5f5f5;"></div>14</div>
+          <div class="wk"><div class="dot" style="background: #f5f5f5;"></div>15</div>
+        </div>
+        <div style="display: flex; gap: 12px; margin-top: 14px; font-size: 12px; color: #737373; flex-wrap: wrap;">
+          <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #171717;"></span>출석</span>
+          <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #f59e0b;"></span>지각</span>
+          <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #ef4444;"></span>결석</span>
+          <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #3b82f6;"></span>공결</span>
+          <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #f5f5f5;"></span>예정</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Log -->
+    <section>
+      <div class="section-title"><span>기록</span></div>
+      <div style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 0 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid #e5e5e5;">
+          <div><div style="font-size: 14px; font-weight: 500;">6주차 · 공결</div><div style="font-size: 12px; color: #737373;">9/29 · 예비군 · 증빙 제출함</div></div>
+          <span style="background: #eff6ff; color: #3b82f6; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">차감 없음</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid #e5e5e5;">
+          <div><div style="font-size: 14px; font-weight: 500;">5주차 · 결석</div><div style="font-size: 12px; color: #737373;">9/22 · 늦잠</div></div>
+          <span style="background: #fef2f2; color: #ef4444; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">−3h</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0;">
+          <div><div style="font-size: 14px; font-weight: 500;">4주차 · 지각</div><div style="font-size: 12px; color: #737373;">9/15 · 지각 3회째 → 결석 1회로 환산</div></div>
+          <span style="background: #fffbeb; color: #b45309; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">−3h</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
