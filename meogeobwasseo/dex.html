@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>먹어봤어 — 재료 도감</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; color: #0a0a0a; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .tab { height: 32px; padding: 0 12px; border-radius: 9999px; font-size: 13px; font-weight: 500; display: flex; align-items: center; white-space: nowrap; }
+  .grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .cell { width: calc((100% - 16px) / 3); height: 72px; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px; font-size: 13px; font-weight: 500; }
+  .ok { background: #ffffff; border: 1px solid #e5e5e5; }
+  .ok small { color: #16a34a; }
+  .warn { background: #fffbeb; border: 1px solid #f59e0b; }
+  .warn small { color: #b45309; }
+  .now { background: #ffffff; border: 2px dashed #171717; }
+  .no { background: #f5f5f5; color: #a3a3a3; border: 1px solid #f5f5f5; }
+  small { font-size: 11px; font-weight: 400; display: flex; align-items: center; gap: 3px; }
+  .section-title { font-size: 14px; font-weight: 600; margin-bottom: 10px; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <header style="padding: 56px 20px 12px; display: flex; flex-direction: column; gap: 14px;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.025em;">재료 도감</div>
+      <div style="font-size: 13px; color: #737373;">15 / 42 먹어봤어요</div>
+    </div>
+    <div style="height: 40px; border: 1px solid #e5e5e5; border-radius: 8px; display: flex; align-items: center; gap: 8px; padding: 0 12px; color: #737373; font-size: 14px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      재료 검색 — "이거 먹여봤나?"
+    </div>
+    <div style="display: flex; gap: 6px; overflow: hidden;">
+      <span class="tab" style="background: #171717; color: #fafafa;">전체</span>
+      <span class="tab" style="background: #f5f5f5;">곡류</span>
+      <span class="tab" style="background: #f5f5f5;">채소</span>
+      <span class="tab" style="background: #f5f5f5;">육류·생선</span>
+      <span class="tab" style="background: #f5f5f5;">과일</span>
+      <span class="tab" style="background: #f5f5f5;">알레르겐</span>
+    </div>
+  </header>
+
+  <main style="padding: 8px 20px 120px; display: flex; flex-direction: column; gap: 22px;">
+
+    <!-- Legend -->
+    <div style="display: flex; gap: 14px; font-size: 12px; color: #737373;">
+      <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 9999px; background: #22c55e;"></span>통과</span>
+      <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 9999px; background: #f59e0b;"></span>의심 · 재테스트</span>
+      <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 9999px; border: 2px solid #171717;"></span>테스트 중</span>
+      <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 9999px; background: #e5e5e5;"></span>아직</span>
+    </div>
+
+    <section>
+      <div class="section-title"><span>주요 알레르겐</span><span style="font-size: 13px; color: #737373; font-weight: 400;">2 / 6</span></div>
+      <div class="grid">
+        <div class="cell ok">밀<small>통과 · 9/22</small></div>
+        <div class="cell now">소고기<small>테스트 2일차</small></div>
+        <div class="cell no">달걀<small>다음 순서</small></div>
+        <div class="cell no">우유<small>아직</small></div>
+        <div class="cell ok">대두(두부)<small>통과 · 10/2</small></div>
+        <div class="cell no">땅콩<small>아직</small></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title"><span>채소</span><span style="font-size: 13px; color: #737373; font-weight: 400;">6 / 14</span></div>
+      <div class="grid">
+        <div class="cell ok">애호박<small>통과 · 8/30</small></div>
+        <div class="cell ok">감자<small>통과 · 9/3</small></div>
+        <div class="cell ok">양배추<small>통과 · 9/7</small></div>
+        <div class="cell warn">당근<small>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/></svg>
+          입 주변 발진</small></div>
+        <div class="cell ok">청경채<small>통과 · 9/15</small></div>
+        <div class="cell ok">시금치<small>통과 · 9/26</small></div>
+        <div class="cell no">브로콜리<small>예약 10/13</small></div>
+        <div class="cell no">단호박<small>예약 10/20</small></div>
+        <div class="cell no">무<small>아직</small></div>
+      </div>
+    </section>
+
+    <!-- Suspect detail preview -->
+    <section style="border: 1px solid #f59e0b; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-size: 15px; font-weight: 600;">당근 — 재테스트 대기</div>
+        <span style="background: #fef3c7; color: #92400e; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">의심</span>
+      </div>
+      <div style="font-size: 13px; line-height: 20px; color: #737373;">9/11 2일차 · 먹인 뒤 40분 · 입 주변 붉은 발진 · 2시간 후 사라짐 · 사진 2장</div>
+      <div style="display: flex; gap: 8px;">
+        <button style="flex: 1; height: 40px; border: 1px solid #e5e5e5; border-radius: 8px; background: #ffffff; font-size: 13px; font-weight: 500; font-family: inherit;">기록 보기</button>
+        <button style="flex: 1; height: 40px; border: none; border-radius: 8px; background: #171717; color: #fafafa; font-size: 13px; font-weight: 500; font-family: inherit;">재테스트 예약</button>
+      </div>
+    </section>
+
+  </main>
+
+  <nav style="position: absolute; bottom: 0; left: 0; right: 0; height: 84px; border-top: 1px solid #e5e5e5; background: #ffffff; display: flex; padding: 10px 8px 0;">
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #737373;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>오늘
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 600;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>재료 도감
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #737373;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>달력
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #737373;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>소아과 모드
+    </div>
+  </nav>
+
+</div>
+</body>
+</html>

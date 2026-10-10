@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>먹어봤어 — 홈</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; color: #0a0a0a; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .section-title { font-size: 14px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .card { border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .day { flex: 1; height: 44px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 11px; gap: 2px; }
+  .chip { height: 36px; padding: 0 14px; border: 1px solid #e5e5e5; border-radius: 9999px; display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <header style="padding: 56px 20px 16px; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <div style="font-size: 12px; color: #737373;">10월 10일 토 · 서아 생후 187일 · 초기 이유식</div>
+      <div style="font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.025em;">먹어봤어</div>
+    </div>
+    <div style="width: 40px; height: 40px; border: 1px solid #e5e5e5; border-radius: 9999px; display: flex; align-items: center; justify-content: center;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+    </div>
+  </header>
+
+  <main style="padding: 0 20px 120px; display: flex; flex-direction: column; gap: 24px;">
+
+    <!-- Today verdict -->
+    <section style="background: #171717; color: #fafafa; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span style="font-size: 13px; color: #a3a3a3;">오늘 새 재료</span>
+      </div>
+      <div style="font-size: 22px; line-height: 30px; font-weight: 700; letter-spacing: -0.025em;">아직 안 돼요 — 소고기 관찰 2일차</div>
+      <div style="font-size: 13px; line-height: 20px; color: #d4d4d4;">내일(10/11) 저녁까지 이상 없으면 모레부터 새 재료를 시작할 수 있어요. 오늘은 통과한 재료로만 먹여주세요.</div>
+      <div style="display: flex; gap: 8px;">
+        <div style="flex: 1; background: #262626; border-radius: 10px; padding: 10px 12px;">
+          <div style="font-size: 11px; color: #a3a3a3;">통과</div>
+          <div style="font-size: 16px; font-weight: 600; margin-top: 2px;">14개</div>
+        </div>
+        <div style="flex: 1; background: #262626; border-radius: 10px; padding: 10px 12px;">
+          <div style="font-size: 11px; color: #f59e0b;">의심</div>
+          <div style="font-size: 16px; font-weight: 600; margin-top: 2px; color: #f59e0b;">1개</div>
+        </div>
+        <div style="flex: 1; background: #262626; border-radius: 10px; padding: 10px 12px;">
+          <div style="font-size: 11px; color: #a3a3a3;">주요 알레르겐</div>
+          <div style="font-size: 16px; font-weight: 600; margin-top: 2px;">2 / 6</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Current test -->
+    <section>
+      <div class="section-title"><span>진행 중인 테스트</span><span style="font-size: 13px; color: #737373; font-weight: 400;">3일 규칙</span></div>
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 16px; font-weight: 600;">소고기 (안심)</div>
+            <div style="font-size: 13px; color: #737373; margin-top: 2px;">쌀미음 + 소고기 · 오전 10시에 먹이기</div>
+          </div>
+          <span class="badge" style="background: #fef3c7; color: #92400e;">관찰 중</span>
+        </div>
+        <div style="display: flex; gap: 6px;">
+          <div class="day" style="background: #171717; color: #fafafa;"><span style="font-weight: 600;">1일</span><span>이상 없음</span></div>
+          <div class="day" style="background: #fafafa; border: 2px solid #171717;"><span style="font-weight: 600;">2일</span><span style="color: #737373;">오늘</span></div>
+          <div class="day" style="background: #f5f5f5; color: #737373;"><span style="font-weight: 600;">3일</span><span>10/11</span></div>
+          <div class="day" style="background: #f5f5f5; color: #737373;"><span style="font-weight: 600;">+24h</span><span>판정</span></div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button style="flex: 1; height: 44px; border: none; border-radius: 8px; background: #171717; color: #fafafa; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 6px; font-family: inherit;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            먹였고 괜찮아요
+          </button>
+          <button style="flex: 1; height: 44px; border: 1px solid #e5e5e5; border-radius: 8px; background: #ffffff; color: #ef4444; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 6px; font-family: inherit;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            반응 있어요
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next queue -->
+    <section>
+      <div class="section-title"><span>다음에 테스트할 재료</span><span style="font-size: 13px; color: #737373; font-weight: 400;">순서 바꾸기</span></div>
+      <div style="display: flex; flex-direction: column; border: 1px solid #e5e5e5; border-radius: 12px;">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid #e5e5e5;">
+          <span style="width: 24px; height: 24px; border-radius: 9999px; background: #171717; color: #fafafa; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center;">1</span>
+          <div style="flex: 1;"><div style="font-size: 14px; font-weight: 500;">브로콜리</div><div style="font-size: 12px; color: #737373;">10/13 월 시작 예정</div></div>
+          <span class="badge" style="background: #f5f5f5; color: #171717;">채소</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid #e5e5e5;">
+          <span style="width: 24px; height: 24px; border-radius: 9999px; background: #f5f5f5; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center;">2</span>
+          <div style="flex: 1;"><div style="font-size: 14px; font-weight: 500;">달걀 노른자</div><div style="font-size: 12px; color: #737373;">10/16 목 · 평일 오전 권장</div></div>
+          <span class="badge" style="background: #fee2e2; color: #b91c1c;">주요 알레르겐</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px;">
+          <span style="width: 24px; height: 24px; border-radius: 9999px; background: #f5f5f5; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center;">3</span>
+          <div style="flex: 1;"><div style="font-size: 14px; font-weight: 500;">단호박</div><div style="font-size: 12px; color: #737373;">10/20 월 시작 예정</div></div>
+          <span class="badge" style="background: #f5f5f5; color: #171717;">채소</span>
+        </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; gap: 8px; margin-top: 10px; padding: 12px; background: #eff6ff; border-radius: 8px;">
+        <svg style="flex-shrink: 0; margin-top: 1px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span style="font-size: 12px; line-height: 18px; color: #1e40af;">달걀은 소아과 문 여는 평일 오전에 시작하도록 일정을 자동으로 맞췄어요.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <nav style="position: absolute; bottom: 0; left: 0; right: 0; height: 84px; border-top: 1px solid #e5e5e5; background: #ffffff; display: flex; padding: 10px 8px 0;">
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 600;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>오늘
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #737373;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>재료 도감
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #737373;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>달력
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #737373;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>소아과 모드
+    </div>
+  </nav>
+
+</div>
+</body>
+</html>
