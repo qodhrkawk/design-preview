@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>물잡혔어 — 입수 플랜</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; color: #0a0a0a; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .card { border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .step { display: flex; gap: 12px; }
+  .rail { display: flex; flex-direction: column; align-items: center; width: 24px; }
+  .node { width: 24px; height: 24px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
+  .line { width: 2px; flex: 1; background: #e5e5e5; margin: 4px 0; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <header style="padding: 56px 20px 12px; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <div style="font-size: 12px; color: #737373;">거실 60큐브 · 10월 24일 금</div>
+      <div style="font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.025em;">물 잡혔어요</div>
+    </div>
+    <span class="badge" style="background: #dcfce7; color: #166534;">0·0 연속 3회</span>
+  </header>
+
+  <main style="padding: 0 20px 120px; display: flex; flex-direction: column; gap: 20px;">
+    <section class="card" style="flex-direction: row; gap: 0; padding: 0;">
+      <div style="flex: 1; padding: 14px 16px; border-right: 1px solid #e5e5e5;">
+        <div style="font-size: 12px; color: #737373;">물잡이 기간</div>
+        <div style="font-size: 20px; font-weight: 700;">29일</div>
+      </div>
+      <div style="flex: 1; padding: 14px 16px; border-right: 1px solid #e5e5e5;">
+        <div style="font-size: 12px; color: #737373;">아질산 최고</div>
+        <div style="font-size: 20px; font-weight: 700;">2.0</div>
+      </div>
+      <div style="flex: 1; padding: 14px 16px;">
+        <div style="font-size: 12px; color: #737373;">측정</div>
+        <div style="font-size: 20px; font-weight: 700;">14회</div>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 4px;">
+      <div style="font-size: 14px; font-weight: 600; margin-bottom: 8px;">단계 입수 플랜 <span style="font-weight: 400; color: #737373; font-size: 12px;">한 번에 다 넣지 않기</span></div>
+
+      <div class="step">
+        <div class="rail"><div class="node" style="background:#171717; color:#fafafa;">1</div><div class="line"></div></div>
+        <div style="flex: 1; padding-bottom: 16px; display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; justify-content: space-between;"><div style="font-size: 14px; font-weight: 600;">1차 입수 · 오늘</div><span class="badge" style="background:#f5f5f5; color:#171717;">목표의 1/3</span></div>
+          <div style="font-size: 13px; color: #525252;">네온테트라 6 · 코리도라스 3</div>
+          <div style="display: flex; gap: 6px;">
+            <div style="height: 32px; padding: 0 12px; background:#171717; color:#fafafa; border-radius: 8px; display: flex; align-items: center; font-size: 12px; font-weight: 500;">입수 완료</div>
+            <div style="height: 32px; padding: 0 12px; border:1px solid #e5e5e5; border-radius: 8px; display: flex; align-items: center; font-size: 12px; font-weight: 500;">물맞춤 타이머</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="rail"><div class="node" style="border: 1.5px solid #d4d4d4; color:#737373;">2</div><div class="line"></div></div>
+        <div style="flex: 1; padding-bottom: 16px; display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-size: 14px; font-weight: 600;">미니 사이클 체크 · 입수 후 1~7일</div>
+          <div style="font-size: 13px; color: #737373;">매일 측정 알림 · 암모니아/아질산 0.25 넘으면 경고</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="rail"><div class="node" style="border: 1.5px solid #d4d4d4; color:#737373;">3</div><div class="line"></div></div>
+        <div style="flex: 1; padding-bottom: 16px; display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-size: 14px; font-weight: 600;">2차 입수 · 11/7 이후</div>
+          <div style="font-size: 13px; color: #737373;">미니 사이클 통과해야 열려요</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="rail"><div class="node" style="border: 1.5px solid #d4d4d4; color:#737373;">4</div></div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-size: 14px; font-weight: 600;">유지 모드 전환</div>
+          <div style="font-size: 13px; color: #737373;">주 1회 25% 환수 루틴 · 질산염 20 넘으면 환수 당기기</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="background: #fafafa;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+        <div style="font-size: 14px; font-weight: 600;">물잡이 리포트 공유</div>
+      </div>
+      <div style="font-size: 12px; line-height: 18px; color: #737373;">29일간 그래프 + 측정표 한 장 이미지. 카페에 "물 잡힌 거 맞나요?" 물어볼 때 그대로 첨부.</div>
+    </section>
+  </main>
+
+  <nav style="position: absolute; bottom: 0; left: 0; right: 0; height: 84px; border-top: 1px solid #e5e5e5; background: #ffffff; display: flex; justify-content: space-around; padding-top: 10px;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 600;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>홈</div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #737373;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6.5L4.5 19A2 2 0 0 0 6.2 22h11.6a2 2 0 0 0 1.7-3L14 9.5V3"/></svg>측정</div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #737373;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>일지</div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: #737373;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>수조</div>
+  </nav>
+</div>
+</body>
+</html>
