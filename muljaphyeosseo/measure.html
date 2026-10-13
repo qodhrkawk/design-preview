@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>물잡혔어 — 측정 기록</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; color: #0a0a0a; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .param { display: flex; flex-direction: column; gap: 10px; padding: 16px 0; border-bottom: 1px solid #e5e5e5; }
+  .row { display: flex; gap: 6px; }
+  .sw { flex: 1; height: 52px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 4px; font-size: 11px; font-weight: 500; border: 2px solid transparent; }
+  .sel { border-color: #171717; box-shadow: 0 0 0 2px #ffffff inset; }
+  .chip { height: 32px; padding: 0 12px; border: 1px solid #e5e5e5; border-radius: 9999px; display: flex; align-items: center; font-size: 12px; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <header style="padding: 56px 20px 8px; display: flex; align-items: center; gap: 12px;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    <div style="flex: 1;">
+      <div style="font-size: 18px; font-weight: 600;">측정 기록</div>
+      <div style="font-size: 12px; color: #737373;">거실 60큐브 · 19일차 · 10/13 14:05</div>
+    </div>
+  </header>
+
+  <main style="padding: 4px 20px 120px; display: flex; flex-direction: column;">
+    <div style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f5f5f5; border-radius: 10px; font-size: 12px; color: #525252;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6.5L4.5 19A2 2 0 0 0 6.2 22h11.6a2 2 0 0 0 1.7-3L14 9.5V3"/></svg>
+      <span style="flex:1;">내 시약: <b style="color:#171717;">API 담수 마스터 키트</b> · 시약 색 그대로 탭</span>
+      <span style="color: #171717; font-weight: 500;">변경</span>
+    </div>
+
+    <!-- Ammonia -->
+    <section class="param">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <div style="font-size: 15px; font-weight: 600;">암모니아 NH₃/NH₄</div>
+        <div style="font-size: 13px; color: #22c55e; font-weight: 600;">0 ppm</div>
+      </div>
+      <div class="row">
+        <div class="sw sel" style="background:#f4e66b; color:#404040;">0</div>
+        <div class="sw" style="background:#d8e36a; color:#404040;">0.25</div>
+        <div class="sw" style="background:#b9d872; color:#404040;">0.5</div>
+        <div class="sw" style="background:#9ccc7c; color:#404040;">1.0</div>
+        <div class="sw" style="background:#76b98a; color:#ffffff;">2.0</div>
+        <div class="sw" style="background:#4f9d8a; color:#ffffff;">4.0</div>
+        <div class="sw" style="background:#2f7f7c; color:#ffffff;">8.0</div>
+      </div>
+    </section>
+
+    <!-- Nitrite -->
+    <section class="param">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <div style="font-size: 15px; font-weight: 600;">아질산 NO₂</div>
+        <div style="font-size: 13px; color: #f59e0b; font-weight: 600;">1.0 ppm · 지난번 2.0</div>
+      </div>
+      <div class="row">
+        <div class="sw" style="background:#a9d7e8; color:#404040;">0</div>
+        <div class="sw" style="background:#b7b6dc; color:#404040;">0.25</div>
+        <div class="sw" style="background:#c39ad0; color:#ffffff;">0.5</div>
+        <div class="sw sel" style="background:#c47cc0; color:#ffffff;">1.0</div>
+        <div class="sw" style="background:#b65fae; color:#ffffff;">2.0</div>
+        <div class="sw" style="background:#a2449b; color:#ffffff;">5.0</div>
+      </div>
+    </section>
+
+    <!-- Nitrate -->
+    <section class="param">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <div style="font-size: 15px; font-weight: 600;">질산염 NO₃</div>
+        <div style="font-size: 13px; color: #737373; font-weight: 600;">10 ppm</div>
+      </div>
+      <div class="row">
+        <div class="sw" style="background:#f4e66b; color:#404040;">0</div>
+        <div class="sw" style="background:#f6c45e; color:#404040;">5</div>
+        <div class="sw sel" style="background:#f39b4c; color:#ffffff;">10</div>
+        <div class="sw" style="background:#ea6c3c; color:#ffffff;">20</div>
+        <div class="sw" style="background:#db4632; color:#ffffff;">40</div>
+        <div class="sw" style="background:#c22a2a; color:#ffffff;">80</div>
+      </div>
+    </section>
+
+    <!-- optional -->
+    <section class="param" style="border-bottom: none;">
+      <div style="font-size: 15px; font-weight: 600;">오늘 한 일 <span style="font-size: 12px; color: #737373; font-weight: 400;">선택</span></div>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+        <div class="chip" style="background:#171717; color:#fafafa; border-color:#171717;">사료 투입</div>
+        <div class="chip">박테리아제</div>
+        <div class="chip">부분 환수</div>
+        <div class="chip">여과재 추가</div>
+        <div class="chip">수온 조절</div>
+        <div class="chip">+ 메모</div>
+      </div>
+    </section>
+
+    <!-- instant feedback -->
+    <div style="border: 1px solid #22c55e; background: #f0fdf4; border-radius: 12px; padding: 14px 16px; display: flex; gap: 10px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:1px;"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <div style="display: flex; flex-direction: column; gap: 2px;">
+        <div style="font-size: 14px; font-weight: 600; color: #166534;">아질산이 꺾였어요</div>
+        <div style="font-size: 12px; line-height: 18px; color: #15803d;">2.0 → 1.0. 질산염도 올라가는 중이라 2단계 박테리아가 자리 잡고 있어요. 예상 입수일 10/22 → <b>10/20</b>로 당겨졌어요.</div>
+      </div>
+    </div>
+  </main>
+
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 20px 32px; background: #ffffff; border-top: 1px solid #e5e5e5;">
+    <div style="height: 48px; background: #171717; color: #fafafa; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600;">저장</div>
+  </div>
+</div>
+</body>
+</html>
