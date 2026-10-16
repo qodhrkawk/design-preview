@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>연차각 — 회사 규칙</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; color: #0a0a0a; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .label { font-size: 13px; font-weight: 600; }
+  .muted { font-size: 12px; color: #737373; line-height: 17px; }
+  .seg { display: flex; padding: 4px; background: #f5f5f5; border-radius: 10px; gap: 4px; }
+  .seg div { flex: 1; height: 36px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; color: #737373; }
+  .seg .on { background: #ffffff; color: #0a0a0a; box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .input { height: 44px; border: 1px solid #e5e5e5; border-radius: 8px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; font-size: 15px; }
+  .toggle { width: 44px; height: 26px; border-radius: 9999px; position: relative; flex-shrink: 0; }
+  .toggle::after { content: ""; position: absolute; top: 3px; width: 20px; height: 20px; border-radius: 9999px; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+  .t-on { background: #171717; } .t-on::after { left: 21px; }
+  .t-off { background: #e5e5e5; } .t-off::after { left: 3px; }
+  .rowline { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f5f5f5; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <header style="padding: 56px 20px 16px; display: flex; align-items: center; gap: 12px;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    <div style="font-size: 20px; line-height: 28px; font-weight: 600;">우리 회사 연차 규칙</div>
+  </header>
+
+  <main style="padding: 0 20px 120px; display: flex; flex-direction: column; gap: 22px;">
+    <!-- computed summary -->
+    <section style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px; display: flex; gap: 14px; align-items: center; background: #fafafa;">
+      <div style="width: 52px; height: 52px; border-radius: 12px; background: #171717; color: #fafafa; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div style="font-size: 20px; font-weight: 800; line-height: 22px;">15</div>
+        <div style="font-size: 10px; color: #a3a3a3;">일</div>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+        <div style="font-size: 14px; font-weight: 600;">2026년 발생 연차 15일</div>
+        <div class="muted">근로기준법 제60조 기준 자동 계산 · 2027년엔 15일, 2028년부터 16일</div>
+      </div>
+    </section>
+
+    <div class="field">
+      <div class="label">입사일</div>
+      <div class="input">2024. 3. 4.
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="label">연차 산정 기준</div>
+      <div class="seg"><div class="on">회계연도 (1/1)</div><div>입사일</div></div>
+      <div class="muted">대부분 회사는 회계연도 기준이에요. 인사 시스템에 "1월 1일 일괄 부여"면 회계연도.</div>
+    </div>
+
+    <div class="field">
+      <div class="label">쓸 수 있는 단위</div>
+      <div style="display: flex; gap: 8px;">
+        <div style="height: 36px; padding: 0 14px; border-radius: 9999px; background: #171717; color: #fafafa; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>연차 1</div>
+        <div style="height: 36px; padding: 0 14px; border-radius: 9999px; background: #171717; color: #fafafa; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>반차 0.5</div>
+        <div style="height: 36px; padding: 0 14px; border-radius: 9999px; background: #171717; color: #fafafa; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>반반차 0.25</div>
+        <div style="height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #e5e5e5; font-size: 13px; font-weight: 500; display: flex; align-items: center;">시간</div>
+      </div>
+    </div>
+
+    <section style="display: flex; flex-direction: column;">
+      <div class="label" style="margin-bottom: 2px;">우리 회사만의 것</div>
+      <div class="rowline">
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+          <div style="font-size: 14px; font-weight: 500;">남은 연차 이월</div>
+          <div class="muted">최대 5일 · 다음해 3/31까지 소진</div>
+        </div>
+        <div class="toggle t-on"></div>
+      </div>
+      <div class="rowline">
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+          <div style="font-size: 14px; font-weight: 500;">연차 사용 촉진제</div>
+          <div class="muted">7월에 회사가 사용계획 요청 — 미사용분 수당 없음 주의</div>
+        </div>
+        <div class="toggle t-on"></div>
+      </div>
+      <div class="rowline">
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+          <div style="font-size: 14px; font-weight: 500;">회사 지정 휴무일</div>
+          <div class="muted">창립기념일 6/11 · 노조창립일 없음</div>
+        </div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+      <div class="rowline">
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+          <div style="font-size: 14px; font-weight: 500;">별도 휴가 (연차 미차감)</div>
+          <div class="muted">리프레시 3일 · 생일 반차 · 여름휴가 3일</div>
+        </div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+      <div class="rowline" style="border-bottom: none;">
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+          <div style="font-size: 14px; font-weight: 500;">근로자의 날 휴무</div>
+          <div class="muted">2027년 노동절 5/1(토) → 5/3(월) 대체</div>
+        </div>
+        <div class="toggle t-on"></div>
+      </div>
+    </section>
+
+    <div style="height: 44px; border-radius: 8px; background: #171717; color: #fafafa; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500;">저장하고 남은 연차 보기</div>
+  </main>
+</div>
+</body>
+</html>
