@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>뚜땄어 — 병 상세</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; color: #0a0a0a; }
+  .phone { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .muted { font-size: 12px; color: #737373; }
+  .card { border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+  .stat { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+  .stat b { font-size: 18px; font-weight: 600; }
+  .log { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f5f5f5; font-size: 14px; }
+  .dot { width: 8px; height: 8px; border-radius: 9999px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <header style="padding: 56px 20px 8px; display: flex; justify-content: space-between; align-items: center;">
+    <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: flex-start;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </div>
+    <div style="font-size: 16px; font-weight: 600;">병 상세</div>
+    <div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: flex-end;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+    </div>
+  </header>
+
+  <main style="padding: 8px 20px 120px; display: flex; flex-direction: column; gap: 20px;">
+    <!-- bottle hero with big gauge -->
+    <section style="display: flex; gap: 20px; align-items: center;">
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div style="width: 22px; height: 18px; border: 2px solid #171717; border-bottom: none; border-radius: 4px 4px 0 0;"></div>
+        <div style="width: 84px; height: 168px; border: 2px solid #171717; border-radius: 18px 18px 10px 10px; position: relative; overflow: hidden;">
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 22%; background: #ef4444;"></div>
+          <div style="position: absolute; left: 0; right: 0; bottom: 33%; border-top: 1.5px dashed #a3a3a3;"></div>
+          <div style="position: absolute; left: 0; right: 0; bottom: 50%; border-top: 1.5px dashed #e5e5e5;"></div>
+        </div>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
+        <span class="badge" style="background: #ef4444; color: #fafafa; align-self: flex-start;">산화 주의</span>
+        <div style="font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em;">글렌드로낙 12년</div>
+        <div class="muted" style="font-size: 13px;">싱글몰트 · 셰리캐스크 · 700ml · 43%</div>
+        <div style="display: flex; align-items: baseline; gap: 4px; margin-top: 4px;">
+          <div style="font-size: 36px; line-height: 40px; font-weight: 800; letter-spacing: -0.03em;">22%</div>
+          <div class="muted" style="font-size: 14px;">≈ 154ml · 5잔</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- level adjust -->
+    <section class="card" style="gap: 10px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-size: 14px; font-weight: 500;">잔량 눈대중 보정</div>
+        <div class="muted">병 보고 맞춰주세요</div>
+      </div>
+      <div style="position: relative; height: 24px; display: flex; align-items: center;">
+        <div style="position: absolute; left: 0; right: 0; height: 6px; background: #f5f5f5; border-radius: 9999px;"></div>
+        <div style="position: absolute; left: 0; width: 22%; height: 6px; background: #171717; border-radius: 9999px;"></div>
+        <div style="position: absolute; left: calc(22% - 11px); width: 22px; height: 22px; background: #ffffff; border: 2px solid #171717; border-radius: 9999px;"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between;" class="muted">
+        <span>빈 병</span><span>1/3</span><span>1/2</span><span>가득</span>
+      </div>
+    </section>
+
+    <!-- stats -->
+    <section class="card" style="flex-direction: row; gap: 0;">
+      <div class="stat"><span class="muted">뚜따한 지</span><b>231일</b></div>
+      <div class="stat" style="border-left: 1px solid #e5e5e5; padding-left: 14px;"><span class="muted">1/3 아래로</span><b>41일째</b></div>
+      <div class="stat" style="border-left: 1px solid #e5e5e5; padding-left: 14px;"><span class="muted">잔당 가격</span><b>3,900원</b></div>
+    </section>
+
+    <!-- oxidation guide -->
+    <section class="card" style="background: #fafafa;">
+      <div style="display: flex; gap: 10px; align-items: flex-start;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-size: 14px; font-weight: 600;">병 속 공기가 술보다 많아졌어요</div>
+          <div class="muted" style="font-size: 13px; line-height: 19px;">잔량이 1/3 아래면 산화가 빨라져요. 2개월 안에 비우거나, 100ml 바이알 2개로 나눠 담으면 향을 더 오래 지킬 수 있어요.</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <button style="flex: 1; height: 40px; border-radius: 8px; border: none; background: #171717; color: #fafafa; font-size: 14px; font-weight: 500;">바이알로 소분 기록</button>
+        <button style="flex: 1; height: 40px; border-radius: 8px; border: 1px solid #e5e5e5; background: #ffffff; color: #171717; font-size: 14px; font-weight: 500;">마실 날 알림</button>
+      </div>
+    </section>
+
+    <!-- pour log -->
+    <section style="display: flex; flex-direction: column;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+        <div style="font-size: 16px; font-weight: 600;">따른 기록</div>
+        <div class="muted">총 18잔 · 546ml</div>
+      </div>
+      <div class="log"><span class="dot" style="background: #171717;"></span><div style="flex: 1;">니트 한 잔 <span class="muted">30ml</span></div><div class="muted">10.17 금</div></div>
+      <div class="log"><span class="dot" style="background: #171717;"></span><div style="flex: 1;">하이볼 <span class="muted">45ml</span></div><div class="muted">10.11 토</div></div>
+      <div class="log"><span class="dot" style="background: #f59e0b;"></span><div style="flex: 1;">1/3선 통과 <span class="muted">잔량 33%</span></div><div class="muted">09.08 화</div></div>
+      <div class="log"><span class="dot" style="background: #171717;"></span><div style="flex: 1;">친구랑 두 잔 <span class="muted">60ml</span></div><div class="muted">09.05 토</div></div>
+      <div class="log" style="border-bottom: none;"><span class="dot" style="background: #22c55e;"></span><div style="flex: 1;">뚜따 <span class="muted">구매가 69,000원</span></div><div class="muted">03.02 월</div></div>
+    </section>
+  </main>
+
+  <!-- sticky pour CTA -->
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 20px 34px; background: #ffffff; border-top: 1px solid #e5e5e5;">
+    <button style="width: 100%; height: 48px; border-radius: 10px; border: none; background: #171717; color: #fafafa; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"/></svg>
+      한 잔 따랐어
+    </button>
+  </div>
+</div>
+</body>
+</html>
