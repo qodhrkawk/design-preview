@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>뚜땄어 — 한 잔 기록</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; display: flex; justify-content: center; color: #0a0a0a; }
+  .phone { width: 390px; min-height: 844px; background: #737373; display: flex; flex-direction: column; justify-content: flex-end; position: relative; }
+  .muted { font-size: 12px; color: #737373; }
+  .opt { flex: 1; height: 72px; border: 1px solid #e5e5e5; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+  .opt b { font-size: 15px; font-weight: 600; }
+  .bottle-pick { display: flex; align-items: center; gap: 10px; padding: 0 12px; height: 52px; border: 1px solid #e5e5e5; border-radius: 10px; flex-shrink: 0; }
+  ::-webkit-scrollbar { display: none; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <!-- dimmed background hint -->
+  <div style="position: absolute; top: 56px; left: 20px; right: 20px; color: #d4d4d4; font-size: 24px; font-weight: 600;">내 술장</div>
+
+  <section style="background: #ffffff; border-radius: 16px 16px 0 0; padding: 12px 20px 34px; display: flex; flex-direction: column; gap: 20px; position: relative;">
+    <div style="width: 40px; height: 4px; background: #e5e5e5; border-radius: 9999px; align-self: center;"></div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="font-size: 20px; line-height: 28px; font-weight: 600;">한 잔 따랐어</div>
+      <div class="muted">10.19 월 21:40</div>
+    </div>
+
+    <!-- bottle select -->
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="font-size: 14px; font-weight: 500;">어떤 병?</div>
+      <div style="display: flex; gap: 8px; overflow-x: auto;">
+        <div class="bottle-pick" style="border: 2px solid #171717;">
+          <div style="width: 12px; height: 28px; border: 1.5px solid #171717; border-radius: 3px; position: relative; overflow: hidden;"><i style="position: absolute; bottom: 0; left: 0; right: 0; height: 22%; background: #ef4444;"></i></div>
+          <div style="display: flex; flex-direction: column;"><span style="font-size: 13px; font-weight: 600; white-space: nowrap;">글렌드로낙 12</span><span class="muted">22%</span></div>
+        </div>
+        <div class="bottle-pick">
+          <div style="width: 12px; height: 28px; border: 1.5px solid #171717; border-radius: 3px; position: relative; overflow: hidden;"><i style="position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: #ef4444;"></i></div>
+          <div style="display: flex; flex-direction: column;"><span style="font-size: 13px; font-weight: 600; white-space: nowrap;">탈리스커 10</span><span class="muted">30%</span></div>
+        </div>
+        <div class="bottle-pick">
+          <div style="width: 12px; height: 28px; border: 1.5px solid #171717; border-radius: 3px; position: relative; overflow: hidden;"><i style="position: absolute; bottom: 0; left: 0; right: 0; height: 70%; background: #22c55e;"></i></div>
+          <div style="display: flex; flex-direction: column;"><span style="font-size: 13px; font-weight: 600; white-space: nowrap;">야마자키</span><span class="muted">70%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- amount -->
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="font-size: 14px; font-weight: 500;">얼마나?</div>
+      <div style="display: flex; gap: 8px;">
+        <div class="opt"><b>반 잔</b><span class="muted">15ml</span></div>
+        <div class="opt" style="border: 2px solid #171717; background: #fafafa;"><b>한 잔</b><span class="muted">30ml</span></div>
+        <div class="opt"><b>하이볼</b><span class="muted">45ml</span></div>
+        <div class="opt"><b>더블</b><span class="muted">60ml</span></div>
+      </div>
+    </div>
+
+    <!-- result preview -->
+    <div style="border-radius: 12px; background: #fef2f2; border: 1px solid #fecaca; padding: 14px 16px; display: flex; align-items: center; gap: 14px;">
+      <div style="display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 600;">
+        22%
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        <span style="color: #dc2626;">18%</span>
+      </div>
+      <div class="muted" style="font-size: 13px; line-height: 18px; flex: 1;">4잔 남아요. 이 페이스면 11월 9일쯤 비워요.</div>
+    </div>
+
+    <!-- optional one-liner -->
+    <div style="height: 40px; border: 1px solid #e5e5e5; border-radius: 8px; padding: 0 12px; display: flex; align-items: center; font-size: 14px; color: #a3a3a3;">한 줄 메모 (선택) — 예: 건포도, 끝이 짧아짐</div>
+
+    <button style="height: 48px; border-radius: 10px; border: none; background: #171717; color: #fafafa; font-size: 15px; font-weight: 600;">기록하기</button>
+  </section>
+</div>
+</body>
+</html>
