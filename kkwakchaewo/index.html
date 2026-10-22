@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>꽉채워 — 디자인 시안</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; padding: 32px 16px; }
+  h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.025em; }
+  p { font-size: 14px; color: #737373; margin-top: 4px; }
+  .grid { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-top: 24px; }
+  .item { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .item span { font-size: 13px; font-weight: 500; }
+  iframe { width: 390px; height: 844px; border: 1px solid #e5e5e5; border-radius: 16px; background: #ffffff; }
+</style>
+</head>
+<body>
+  <div style="text-align: center;">
+    <h1>꽉채워 (Kkwakchaewo)</h1>
+    <p>연금저축·IRP 세액공제 빈칸 계산기 — 여러 계좌 합산, 예정 자동이체 반영, 어디에 얼마·언제까지</p>
+  </div>
+  <div class="grid">
+    <div class="item"><span>1. 홈 (빈칸 게이지)</span><iframe src="home.html"></iframe></div>
+    <div class="item"><span>2. 채우기 계획</span><iframe src="plan.html"></iframe></div>
+    <div class="item"><span>3. 납입 기록 시트</span><iframe src="record.html"></iframe></div>
+  </div>
+</body>
+</html>

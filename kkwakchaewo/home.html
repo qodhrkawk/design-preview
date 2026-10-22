@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>꽉채워 — 홈</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <!-- status bar -->
+  <div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 14px; font-weight: 600;">
+    <span>14:00</span>
+    <span style="display: flex; gap: 6px; align-items: center;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg>
+      <svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg>
+    </span>
+  </div>
+
+  <!-- header -->
+  <header style="display: flex; align-items: center; justify-content: space-between; padding: 8px 20px 16px;">
+    <div style="display: flex; flex-direction: column; gap: 2px;">
+      <span style="font-size: 12px; color: #737373;">2026년 귀속 · 총급여 5,500만원 초과</span>
+      <h1 style="font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.025em;">꽉채워</h1>
+    </div>
+    <button style="width: 40px; height: 40px; border-radius: 8px; border: 1px solid #e5e5e5; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+    </button>
+  </header>
+
+  <section style="padding: 0 20px; display: flex; flex-direction: column; gap: 16px; padding-bottom: 100px;">
+
+    <!-- main gauge card -->
+    <div style="border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 14px; color: #737373;">연말까지 더 넣을 돈</span>
+          <span class="num" style="font-size: 36px; line-height: 40px; font-weight: 800; letter-spacing: -0.025em;">270만원</span>
+        </div>
+        <span style="display: flex; align-items: center; gap: 4px; background: #fef3c7; color: #92400e; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          12/30까지 D-69
+        </span>
+      </div>
+
+      <!-- stacked bar: paid / scheduled / gap -->
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="position: relative; display: flex; height: 14px; border-radius: 9999px; overflow: hidden; background: #f5f5f5;">
+          <div style="position: absolute; left: 66.7%; top: 0; bottom: 0; width: 2px; background: #ffffff;"></div>
+          <div style="width: 61.1%; background: #171717;"></div>
+          <div style="width: 8.9%; background: repeating-linear-gradient(45deg, #737373, #737373 3px, #a3a3a3 3px, #a3a3a3 6px);"></div>
+        </div>
+        <div style="position: relative; height: 16px; font-size: 12px; color: #737373;">
+          <span class="num" style="position: absolute; left: 0;">0</span>
+          <span class="num" style="position: absolute; left: 66.7%; transform: translateX(-50%);">600</span>
+          <span class="num" style="position: absolute; right: 0;">900만</span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 8px;">
+        <div style="flex: 1; background: #f5f5f5; border-radius: 8px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px;">
+          <span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #737373;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #171717;"></span>납입 완료</span>
+          <span class="num" style="font-size: 16px; font-weight: 600;">550만</span>
+        </div>
+        <div style="flex: 1; background: #f5f5f5; border-radius: 8px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px;">
+          <span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #737373;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #a3a3a3;"></span>자동이체 예정</span>
+          <span class="num" style="font-size: 16px; font-weight: 600;">80만</span>
+        </div>
+        <div style="flex: 1; background: #f5f5f5; border-radius: 8px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px;">
+          <span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #737373;"><span style="width: 8px; height: 8px; border-radius: 2px; border: 1px solid #a3a3a3;"></span>빈칸</span>
+          <span class="num" style="font-size: 16px; font-weight: 600;">270만</span>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #e5e5e5; padding-top: 14px;">
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <span style="font-size: 12px; color: #737373;">예상 환급 (13.2%)</span>
+          <span class="num" style="font-size: 14px; font-weight: 500;">83.2만원 <span style="color: #a3a3a3;">→</span> <b style="font-weight: 600;">118.8만원</b></span>
+        </div>
+        <span class="num" style="font-size: 12px; font-weight: 600; color: #16a34a; background: #f0fdf4; padding: 4px 8px; border-radius: 6px;">+35.6만 놓치는 중</span>
+      </div>
+    </div>
+
+    <!-- plan CTA -->
+    <a href="plan.html" style="text-decoration: none; color: #fafafa; background: #171717; border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between;">
+      <span style="display: flex; align-items: center; gap: 10px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+        <span style="display: flex; flex-direction: column; gap: 2px;">
+          <span style="font-size: 14px; font-weight: 600;">어디에 얼마, 언제까지 넣을지 보기</span>
+          <span style="font-size: 12px; color: #a3a3a3;">연금저축 120만 · IRP 150만</span>
+        </span>
+      </span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </a>
+
+    <!-- accounts -->
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 style="font-size: 16px; font-weight: 600;">내 연금계좌 3개</h2>
+        <span style="font-size: 12px; color: #737373;">연금저축 예정 합계 480 / 600만</span>
+      </div>
+
+      <!-- account row -->
+      <a href="record.html" style="text-decoration: none; color: inherit; border: 1px solid #e5e5e5; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="display: flex; align-items: center; gap: 10px;">
+            <span style="width: 36px; height: 36px; border-radius: 8px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">미래</span>
+            <span style="display: flex; flex-direction: column; gap: 2px;">
+              <span style="font-size: 14px; font-weight: 600;">연금저축펀드</span>
+              <span style="font-size: 12px; color: #737373;">매월 25일 20만 자동이체</span>
+            </span>
+          </span>
+          <span class="num" style="font-size: 14px; font-weight: 600;">300만</span>
+        </div>
+        <div style="display: flex; height: 6px; border-radius: 9999px; overflow: hidden; background: #f5f5f5;">
+          <div style="width: 50%; background: #171717;"></div><div style="width: 10%; background: #a3a3a3;"></div>
+        </div>
+      </a>
+
+      <div style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="display: flex; align-items: center; gap: 10px;">
+            <span style="width: 36px; height: 36px; border-radius: 8px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">삼성</span>
+            <span style="display: flex; flex-direction: column; gap: 2px;">
+              <span style="font-size: 14px; font-weight: 600;">IRP</span>
+              <span style="font-size: 12px; color: #737373;">수동 납입 · 마지막 7/14</span>
+            </span>
+          </span>
+          <span class="num" style="font-size: 14px; font-weight: 600;">150만</span>
+        </div>
+        <div style="display: flex; height: 6px; border-radius: 9999px; overflow: hidden; background: #f5f5f5;">
+          <div style="width: 16.7%; background: #171717;"></div>
+        </div>
+      </div>
+
+      <div style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="display: flex; align-items: center; gap: 10px;">
+            <span style="width: 36px; height: 36px; border-radius: 8px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">한화</span>
+            <span style="display: flex; flex-direction: column; gap: 2px;">
+              <span style="font-size: 14px; font-weight: 600;">연금저축보험</span>
+              <span style="font-size: 12px; color: #737373;">매월 10일 10만 · 추가납입 확인 필요</span>
+            </span>
+          </span>
+          <span class="num" style="font-size: 14px; font-weight: 600;">100만</span>
+        </div>
+        <div style="display: flex; height: 6px; border-radius: 9999px; overflow: hidden; background: #f5f5f5;">
+          <div style="width: 16.7%; background: #171717;"></div><div style="width: 3.3%; background: #a3a3a3;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ISA notice -->
+    <div style="border: 1px dashed #d4d4d4; border-radius: 12px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start;">
+      <svg style="flex-shrink: 0; margin-top: 2px;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <span style="font-size: 14px; font-weight: 600;">ISA 만기 2027.03.02</span>
+        <span style="font-size: 12px; line-height: 18px; color: #737373;">만기 후 60일 안에 연금계좌로 옮기면 전환액 10%(최대 300만)만큼 내년 공제 한도가 늘어나요. 만기 30일 전에 알려드릴게요.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAB -->
+  <button style="position: absolute; right: 20px; bottom: 32px; height: 48px; padding: 0 20px; border-radius: 9999px; background: #171717; color: #fafafa; border: none; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; box-shadow: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+    납입 기록
+  </button>
+</main>
+</body>
+</html>
