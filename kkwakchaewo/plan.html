@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>꽉채워 — 채우기 계획</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; }
+  .num { font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <div style="height: 44px; display: flex; align-items: center; padding: 0 24px; font-size: 14px; font-weight: 600;">14:00</div>
+
+  <header style="display: flex; align-items: center; gap: 8px; padding: 4px 12px 12px;">
+    <a href="home.html" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </a>
+    <h1 style="font-size: 18px; font-weight: 600;">채우기 계획</h1>
+  </header>
+
+  <section style="padding: 0 20px 32px; display: flex; flex-direction: column; gap: 20px;">
+
+    <!-- summary -->
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <span style="font-size: 14px; color: #737373;">예정 자동이체까지 반영한 빈칸</span>
+      <span class="num" style="font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -0.025em;">270만원 → 환급 +35.6만</span>
+    </div>
+
+    <!-- split -->
+    <div style="border: 1px solid #e5e5e5; border-radius: 12px; overflow: hidden;">
+      <div style="padding: 14px 16px; background: #fafafa; border-bottom: 1px solid #e5e5e5; font-size: 12px; font-weight: 500; color: #737373;">한도 규칙대로 나누면</div>
+
+      <div style="padding: 16px; display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="display: flex; flex-direction: column; gap: 2px;">
+            <span style="font-size: 14px; font-weight: 600;">연금저축 (미래에셋)</span>
+            <span style="font-size: 12px; color: #737373;">연금저축 합계 600만 선까지 남은 만큼</span>
+          </span>
+          <span class="num" style="font-size: 18px; font-weight: 600;">120만</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="display: flex; flex-direction: column; gap: 2px;">
+            <span style="font-size: 14px; font-weight: 600;">IRP (삼성)</span>
+            <span style="font-size: 12px; color: #737373;">600만 넘는 몫은 IRP로만 공제돼요</span>
+          </span>
+          <span class="num" style="font-size: 18px; font-weight: 600;">150만</span>
+        </div>
+      </div>
+
+      <div style="margin: 0 16px 16px; padding: 12px; border-radius: 8px; background: #fef2f2; display: flex; gap: 10px; align-items: flex-start;">
+        <svg style="flex-shrink: 0; margin-top: 1px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+        <span style="font-size: 12px; line-height: 18px; color: #991b1b;">연금저축에 270만 다 넣으면 150만은 올해 공제 안 돼요. 환급 19.8만 손해.</span>
+      </div>
+    </div>
+
+    <!-- deadlines -->
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <h2 style="font-size: 16px; font-weight: 600;">언제까지 넣어야 안전한지</h2>
+
+      <div style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 4px 16px;">
+        <div style="display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #e5e5e5;">
+          <div style="width: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 8px; background: #f5f5f5; padding: 6px 0;">
+            <span style="font-size: 11px; color: #737373;">12월</span>
+            <span class="num" style="font-size: 18px; font-weight: 700;">24</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 2px; justify-content: center;">
+            <span style="font-size: 14px; font-weight: 600;">연금저축 120만</span>
+            <span style="font-size: 12px; color: #737373;">펀드 매수 체결 기준인 곳이 있어 성탄 전 권장</span>
+          </div>
+          <span style="align-self: center; background: #f5f5f5; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">D-63</span>
+        </div>
+        <div style="display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #e5e5e5;">
+          <div style="width: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 8px; background: #f5f5f5; padding: 6px 0;">
+            <span style="font-size: 11px; color: #737373;">12월</span>
+            <span class="num" style="font-size: 18px; font-weight: 700;">30</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 2px; justify-content: center;">
+            <span style="font-size: 14px; font-weight: 600;">IRP 150만 · 오후 3시 전</span>
+            <span style="font-size: 12px; color: #737373;">31일(목) 증시 휴장 — IRP는 영업시간 마감</span>
+          </div>
+          <span style="align-self: center; background: #fef3c7; color: #92400e; border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500;">D-69</span>
+        </div>
+        <div style="display: flex; gap: 12px; padding: 12px 0;">
+          <div style="width: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 8px; border: 1px solid #e5e5e5; padding: 6px 0;">
+            <span style="font-size: 11px; color: #737373;">12월</span>
+            <span class="num" style="font-size: 18px; font-weight: 700; color: #a3a3a3;">31</span>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 2px; justify-content: center;">
+            <span style="font-size: 14px; font-weight: 500; color: #737373;">법정 마감 (입금 처리일 기준)</span>
+            <span style="font-size: 12px; color: #a3a3a3;">이체 누른 날이 아니라 납입내역에 찍힌 날</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- reminders -->
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <h2 style="font-size: 16px; font-weight: 600;">알림</h2>
+      <div style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 4px 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e5e5e5;">
+          <span style="display: flex; flex-direction: column; gap: 2px;">
+            <span style="font-size: 14px; font-weight: 500;">월말 점검</span>
+            <span style="font-size: 12px; color: #737373;">매달 말일 "이번 달 빈칸" 한 줄</span>
+          </span>
+          <span style="width: 44px; height: 24px; border-radius: 9999px; background: #171717; display: flex; align-items: center; padding: 2px; justify-content: flex-end;"><span style="width: 20px; height: 20px; border-radius: 9999px; background: #ffffff;"></span></span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
+          <span style="display: flex; flex-direction: column; gap: 2px;">
+            <span style="font-size: 14px; font-weight: 500;">12월 막차 3단계</span>
+            <span style="font-size: 12px; color: #737373;">12/1 · 12/20 · 12/29 오전 9시</span>
+          </span>
+          <span style="width: 44px; height: 24px; border-radius: 9999px; background: #171717; display: flex; align-items: center; padding: 2px; justify-content: flex-end;"><span style="width: 20px; height: 20px; border-radius: 9999px; background: #ffffff;"></span></span>
+        </div>
+      </div>
+    </div>
+
+    <button style="height: 48px; border-radius: 8px; background: #171717; color: #fafafa; border: none; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      넣었으면 체크하기
+    </button>
+    <span style="font-size: 11px; line-height: 16px; color: #a3a3a3; text-align: center;">세법·마감 시각은 금융사마다 달라요. 실제 마감은 가입한 곳 공지를 확인하세요.</span>
+  </section>
+</main>
+</body>
+</html>
