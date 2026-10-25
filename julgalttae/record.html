@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>줄갈때 — 오늘 친 기록</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: rgba(10,10,10,0.45); display: flex; flex-direction: column; justify-content: flex-end; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .chip { height: 40px; padding: 0 14px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #ffffff; font-size: 14px; font-weight: 500; color: #171717; display: inline-flex; align-items: center; gap: 6px; }
+  .chip.on { border: 2px solid #171717; background: #fafafa; font-weight: 600; }
+  .label { font-size: 14px; font-weight: 500; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <div style="position: absolute; top: 60px; left: 20px; right: 20px; height: 140px; border-radius: 16px; background: rgba(255,255,255,0.5);"></div>
+
+  <section style="background: #ffffff; border-radius: 16px 16px 0 0; padding: 8px 20px 28px; display: flex; flex-direction: column; gap: 18px; position: relative;">
+    <div style="width: 36px; height: 4px; border-radius: 9999px; background: #e5e5e5; align-self: center;"></div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h2 style="font-size: 18px; font-weight: 600;">오늘 쳤어</h2>
+      <span style="font-size: 12px; color: #737373;">10월 25일 (일)</span>
+    </div>
+
+    <!-- racket picker -->
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span class="label">어떤 라켓으로</span>
+      <div style="display: flex; gap: 8px;">
+        <button style="flex: 1; height: 60px; border-radius: 8px; border: 2px solid #171717; background: #fafafa; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;">
+          <span style="font-size: 13px; font-weight: 600;">퓨어에어로 98</span>
+          <span class="num" style="font-size: 11px; color: #92400e;">3.5h 남음</span>
+        </button>
+        <button style="flex: 1; height: 60px; border-radius: 8px; border: 1px solid #e5e5e5; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;">
+          <span style="font-size: 13px; font-weight: 600;">블레이드 100</span>
+          <span class="num" style="font-size: 11px; color: #737373;">22h 남음</span>
+        </button>
+        <button style="width: 60px; height: 60px; border-radius: 8px; border: 1px solid #e5e5e5; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-size: 11px; color: #737373;">
+          <span style="font-size: 13px; font-weight: 600; color: #171717;">둘 다</span>
+          <span>반반</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- type -->
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span class="label">뭐 했어</span>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button class="chip">레슨</button>
+        <button class="chip on">게임</button>
+        <button class="chip">랠리</button>
+        <button class="chip">대회</button>
+      </div>
+      <span style="font-size: 12px; color: #737373;">강도 가중치: 레슨 0.8 · 게임 1.0 · 대회 1.2 (설정에서 변경)</span>
+    </div>
+
+    <!-- duration -->
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span class="label">몇 시간</span>
+      <div style="display: flex; gap: 8px;">
+        <button class="chip num" style="flex: 1; justify-content: center;">20분</button>
+        <button class="chip num" style="flex: 1; justify-content: center;">1h</button>
+        <button class="chip on num" style="flex: 1; justify-content: center;">2h</button>
+        <button class="chip num" style="flex: 1; justify-content: center;">3h</button>
+        <button class="chip" style="flex: 1; justify-content: center;">직접</button>
+      </div>
+    </div>
+
+    <!-- feel -->
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span class="label">줄 감은 어땠어 <span style="font-weight: 400; color: #737373;">(선택)</span></span>
+      <div style="display: flex; gap: 8px;">
+        <button class="chip" style="flex: 1; justify-content: center;">😀 쫀쫀</button>
+        <button class="chip" style="flex: 1; justify-content: center;">🙂 괜찮</button>
+        <button class="chip on" style="flex: 1; justify-content: center;">😐 둔함</button>
+        <button class="chip" style="flex: 1; justify-content: center;">😣 판자</button>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button class="chip" style="height: 32px; font-size: 13px;">공이 날림</button>
+        <button class="chip on" style="height: 32px; font-size: 13px;">스핀 안 걸림</button>
+        <button class="chip" style="height: 32px; font-size: 13px;">줄 밀림</button>
+        <button class="chip" style="height: 32px; font-size: 13px;">💪 팔꿈치 시큰</button>
+        <button class="chip" style="height: 32px; font-size: 13px; color: #ef4444; border-color: #fecaca;">줄 끊어짐</button>
+      </div>
+    </div>
+
+    <!-- preview -->
+    <div style="background: #f5f5f5; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;">
+      <div style="display: flex; justify-content: space-between; font-size: 13px;">
+        <span style="color: #737373;">퓨어에어로 98 남은 수명</span>
+        <span class="num" style="font-weight: 600;">3.5h → <span style="color: #ef4444;">1.5h</span></span>
+      </div>
+      <div style="position: relative; height: 8px; border-radius: 9999px; background: #e5e5e5; overflow: hidden;">
+        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 91.7%; background: #f59e0b;"></div>
+        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 80.6%; background: #171717;"></div>
+      </div>
+      <span style="font-size: 12px; line-height: 18px; color: #737373;">"둔함"이 2회 연속이에요. 이번 줄은 <b style="color:#171717;">16.5시간</b>에서 감이 떨어진 걸로 기록할게요 — 다음엔 이 조합 기본 수명을 16h로 맞춰드려요.</span>
+    </div>
+
+    <button style="height: 48px; border-radius: 8px; background: #171717; color: #fafafa; border: none; font-size: 15px; font-weight: 600;">저장</button>
+  </section>
+</main>
+</body>
+</html>
