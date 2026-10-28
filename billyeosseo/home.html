@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>빌렸어 — 홈</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; }
+  .who { height: 22px; padding: 0 8px; border-radius: 6px; background: #f5f5f5; font-size: 11px; font-weight: 500; display: inline-flex; align-items: center; color: #171717; }
+</style>
+
+</head>
+<body>
+<main class="screen">
+  <div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 14px; font-weight: 600;"><span>14:00</span><span style="display: flex; gap: 6px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+
+
+  <header style="display: flex; align-items: center; justify-content: space-between; padding: 8px 20px 16px;">
+    <div style="display: flex; flex-direction: column; gap: 2px;">
+      <span class="num" style="font-size: 12px; color: #737373;">빌린 책 23권 · 도서관 3곳 · 회원증 4장</span>
+      <h1 style="font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.025em;">빌렸어</h1>
+    </div>
+    <button style="width: 40px; height: 40px; border-radius: 8px; border: 1px solid #e5e5e5; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+    </button>
+  </header>
+
+  <section style="padding: 0 20px 110px; display: flex; flex-direction: column; gap: 16px;">
+
+    <!-- bundle 1: urgent -->
+    <article style="border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 16px; font-weight: 600;">해오름도서관</span>
+          <span class="num" style="font-size: 12px; color: #737373;">10/15 빌림 · 어린이자료실</span>
+        </div>
+        <span class="badge" style="background: #fee2e2; color: #991b1b;">내일 마감</span>
+      </div>
+
+      <div style="display: flex; align-items: flex-end; justify-content: space-between;">
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <span style="font-size: 12px; color: #737373;">반납일</span>
+          <span class="num" style="font-size: 36px; line-height: 40px; font-weight: 800; letter-spacing: -0.025em;">D-1</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+          <span class="num" style="font-size: 16px; font-weight: 600;">9권 · 10/29 (목)</span>
+          <span style="display: flex; gap: 4px;"><span class="who num">엄마 5</span><span class="who num">지우 4</span></span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 8px;">
+        <a href="pack.html" style="flex: 1; height: 40px; border-radius: 8px; background: #171717; color: #fafafa; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20h12a2 2 0 0 0 2-2V8H4v10a2 2 0 0 0 2 2Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          반납 가방 싸기 <span class="num" style="opacity: 0.7;">6/9</span>
+        </a>
+        <button style="flex: 1; height: 40px; border-radius: 8px; border: 1px solid #e5e5e5; background: #f5f5f5; color: #171717; font-size: 14px; font-weight: 500;">
+          연장했어 <span class="num" style="color: #737373;">→ 11/5</span>
+        </button>
+      </div>
+      <span style="font-size: 12px; color: #737373; margin-top: -6px;">연장 1회 남음 · 예약 걸린 책은 연장 안 돼요</span>
+    </article>
+
+    <!-- bundle 2: holiday warning -->
+    <article style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 15px; font-weight: 600;">시립중앙도서관</span>
+          <span style="display: flex; gap: 4px;"><span class="who num">엄마 6</span><span class="who num">아빠 2</span></span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px;">
+          <span class="num" style="font-size: 20px; font-weight: 700;">D-5</span>
+          <span class="num" style="font-size: 12px; color: #737373;">8권 · 11/2 (월)</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: flex-start; background: #fef3c7; border-radius: 8px; padding: 10px 12px;">
+        <svg style="flex-shrink: 0; margin-top: 1px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="m14 14-4 4"/><path d="m10 14 4 4"/></svg>
+        <span style="font-size: 12px; line-height: 18px; color: #78350f;">반납일이 <b>첫째 월요일 휴관</b>이에요. 무인반납함만 열려요 — 딸림자료 있는 책 1권은 일요일까지 데스크 반납.</span>
+      </div>
+    </article>
+
+    <!-- bundle 3: ILL -->
+    <article style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <span style="display: flex; align-items: center; gap: 6px;">
+          <span style="font-size: 15px; font-weight: 600;">별빛작은도서관</span>
+          <span style="background: #f5f5f5; border-radius: 6px; padding: 1px 6px; font-size: 11px; font-weight: 500;">상호대차</span>
+        </span>
+        <span class="num" style="font-size: 12px; color: #737373;">6권 · 11/9 (월) · 연장 불가</span>
+      </div>
+      <span class="num" style="font-size: 20px; font-weight: 700; color: #737373;">D-12</span>
+    </article>
+
+    <!-- card capacity -->
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 14px; font-weight: 600;">회원증별 남은 권수</span>
+        <a href="cards.html" style="font-size: 12px; color: #737373; text-decoration: none;">전체 보기</a>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+        <div style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 12px; color: #737373;">엄마 · 해오름</span>
+          <span class="num" style="font-size: 18px; font-weight: 700;">0권 <span style="font-size: 12px; font-weight: 500; color: #991b1b;">꽉 참</span></span>
+          <div style="height: 4px; border-radius: 9999px; background: #171717;"></div>
+        </div>
+        <div style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 12px; color: #737373;">지우 · 해오름</span>
+          <span class="num" style="font-size: 18px; font-weight: 700;">1권</span>
+          <div style="height: 4px; border-radius: 9999px; background: #f5f5f5; overflow: hidden;"><div style="width: 80%; height: 100%; background: #171717;"></div></div>
+        </div>
+        <div style="border: 1px dashed #22c55e; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 6px; grid-column: span 2; flex-direction: row; justify-content: space-between; align-items: center;">
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <span style="font-size: 12px; color: #737373;">아빠 · 해오름</span>
+            <span style="font-size: 14px; font-weight: 600;">5권 비어 있어요</span>
+          </div>
+          <span style="font-size: 12px; color: #166534;">내일 반납하면서 같이 빌리기</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <button style="position: absolute; right: 20px; bottom: 32px; height: 48px; padding: 0 20px; border-radius: 9999px; background: #171717; color: #fafafa; border: none; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; box-shadow: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+    빌려왔어
+  </button>
+</main>
+</body>
+</html>

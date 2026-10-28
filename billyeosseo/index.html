@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>빌렸어 — 디자인 시안</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; padding: 32px 16px; }
+  h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.025em; }
+  p { font-size: 14px; color: #737373; margin-top: 4px; }
+  .grid { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-top: 24px; }
+  .item { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .item span { font-size: 13px; font-weight: 500; }
+  iframe { width: 390px; height: 844px; border: 1px solid #e5e5e5; border-radius: 16px; background: #ffffff; }
+</style>
+</head>
+<body>
+  <div style="text-align: center;">
+    <h1>빌렸어 (Billyeosseo)</h1>
+    <p>우리집 도서관 대출 장부 — 도서관 여러 곳 × 가족 회원증 여러 장을 한 화면에서. 반납 묶음 D-day, 반납 가방 체크, 연체 정지 계산</p>
+  </div>
+  <div class="grid">
+    <div class="item"><span>1. 홈 (반납 묶음 보드)</span><iframe src="home.html"></iframe></div>
+    <div class="item"><span>2. 반납 가방 체크</span><iframe src="pack.html"></iframe></div>
+    <div class="item"><span>3. 회원증 · 연체 계산기</span><iframe src="cards.html"></iframe></div>
+  </div>
+</body>
+</html>
