@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>봐주셨어 — 디자인 시안</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; padding: 32px 16px; }
+  h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.025em; }
+  p { font-size: 14px; color: #737373; margin-top: 4px; }
+  .grid { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-top: 24px; }
+  .item { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .item span { font-size: 13px; font-weight: 500; }
+  iframe { width: 390px; height: 844px; border: 1px solid #e5e5e5; border-radius: 16px; background: #ffffff; }
+</style>
+</head>
+<body>
+  <div style="text-align: center;">
+    <h1>봐주셨어 (Bwajusyeosseo)</h1>
+    <p>등하원·돌봄 이모님 직접 고용 가정용 근무시간·급여 장부 — 원탭 도착/퇴근, 우리집 계약 규칙대로 월 정산서 자동, 이모님과 같이 보는 투명한 내역</p>
+  </div>
+  <div class="grid">
+    <div class="item"><span>1. 오늘 (원탭 기록)</span><iframe src="home.html"></iframe></div>
+    <div class="item"><span>2. 월 정산서 (공유)</span><iframe src="settle.html"></iframe></div>
+    <div class="item"><span>3. 우리집 계약 규칙</span><iframe src="rules.html"></iframe></div>
+  </div>
+</body>
+</html>
