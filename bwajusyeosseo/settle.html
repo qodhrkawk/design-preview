@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>봐주셨어 — 10월 정산서</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; }
+  .row { display: flex; justify-content: space-between; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid #f5f5f5; gap: 12px; }
+  .row:last-child { border-bottom: none; }
+  .lbl { display: flex; flex-direction: column; gap: 3px; }
+  .lbl b { font-size: 14px; font-weight: 500; }
+  .lbl small { font-size: 12px; color: #737373; line-height: 16px; }
+  .amt { font-size: 14px; font-weight: 600; white-space: nowrap; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 14px; font-weight: 600;"><span class="num">16:10</span><span style="display: flex; gap: 6px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+
+  <header style="display: flex; align-items: center; gap: 8px; padding: 8px 12px 12px;">
+    <a href="home.html" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </a>
+    <div style="flex: 1; display: flex; justify-content: center; align-items: center; gap: 12px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      <span style="font-size: 16px; font-weight: 600;">2026년 10월</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+    <div style="width: 40px;"></div>
+  </header>
+
+  <section style="padding: 0 20px 150px; display: flex; flex-direction: column; gap: 20px;">
+
+    <!-- total -->
+    <div style="border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 13px; color: #737373;">김정숙 이모님 · 시급 15,000원</span>
+        <span class="badge" style="background: #fffbeb; color: #92400e;">10/30 하원 진행 중</span>
+      </div>
+      <span class="num" style="font-size: 32px; line-height: 36px; font-weight: 700; letter-spacing: -0.025em;">1,652,500원</span>
+      <div style="display: flex; gap: 16px;">
+        <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 11px; color: #737373;">지급 시간</span><span class="num" style="font-size: 14px; font-weight: 600;">109.5시간</span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 11px; color: #737373;">계약 근무일</span><span class="num" style="font-size: 14px; font-weight: 600;">21일</span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 11px; color: #737373;">지급일</span><span class="num" style="font-size: 14px; font-weight: 600;">11/5 (목)</span></div>
+      </div>
+    </div>
+
+    <!-- breakdown -->
+    <div style="display: flex; flex-direction: column;">
+      <span style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">내역</span>
+
+      <div class="row">
+        <div class="lbl"><b>기본 근무</b><small class="num">평일 21일 × 5시간 (등원 2 + 하원 3)</small></div>
+        <span class="amt num">1,575,000</span>
+      </div>
+      <div class="row">
+        <div class="lbl"><b>공휴일 유급</b><small class="num">10/9 한글날 · 규칙: 공휴일 쉬어도 지급</small></div>
+        <span class="amt num">+75,000</span>
+      </div>
+      <div class="row">
+        <div class="lbl"><b>연장 근무 2.5시간</b><small class="num">10/14 +1h (야근) · 10/29 +1.5h (야근)<br>30분 단위 올림</small></div>
+        <span class="amt num">+37,500</span>
+      </div>
+      <div class="row">
+        <div class="lbl"><b>추가 업무</b><small class="num">10/22 병원 동행 1회 × 10,000</small></div>
+        <span class="amt num">+10,000</span>
+      </div>
+      <div class="row">
+        <div class="lbl"><b style="color: #b91c1c;">차감 3시간</b><small class="num">10/27 하원 결근 (이모님 병원) · 규칙: 이모님 사정 → 차감</small></div>
+        <span class="amt num" style="color: #b91c1c;">−45,000</span>
+      </div>
+    </div>
+
+    <!-- not deducted -->
+    <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 14px 16px; display: flex; gap: 10px; align-items: flex-start;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px; flex-shrink: 0;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+      <div style="display: flex; flex-direction: column; gap: 3px;">
+        <span style="font-size: 13px; font-weight: 600; color: #166534;">차감하지 않은 것</span>
+        <span class="num" style="font-size: 12px; color: #166534; line-height: 18px;">10/20 등원 — 우리가 취소 (전액 지급)<br>10분 이내 이른 퇴근·늦은 도착 7건 — 무시</span>
+      </div>
+    </div>
+
+    <a href="#" style="font-size: 13px; color: #737373; text-decoration: none; display: flex; align-items: center; gap: 6px; justify-content: center;">
+      날짜별 출퇴근 기록 21일 보기
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </a>
+  </section>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 20px 28px; background: #ffffff; border-top: 1px solid #e5e5e5; display: flex; flex-direction: column; gap: 8px;">
+    <button style="height: 48px; border-radius: 10px; background: #171717; color: #fafafa; border: none; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" x2="12" y1="2" y2="15"/></svg>
+      이모님께 정산서 보내기
+    </button>
+    <span style="font-size: 11px; color: #737373; text-align: center;">이미지로 저장돼 카톡·문자로 보낼 수 있어요 · 이체는 직접</span>
+  </div>
+</main>
+</body>
+</html>

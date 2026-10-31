@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>봐주셨어 — 우리집 계약 규칙</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .group { border: 1px solid #e5e5e5; border-radius: 16px; padding: 4px 16px; display: flex; flex-direction: column; }
+  .item { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid #f5f5f5; gap: 12px; }
+  .item:last-child { border-bottom: none; }
+  .k { font-size: 14px; font-weight: 500; }
+  .sub { font-size: 12px; color: #737373; margin-top: 2px; }
+  .v { font-size: 14px; font-weight: 600; white-space: nowrap; }
+  .h { font-size: 13px; font-weight: 600; color: #737373; margin: 0 4px 8px; }
+  .seg { display: flex; background: #f5f5f5; border-radius: 8px; padding: 3px; }
+  .seg span { padding: 5px 10px; font-size: 12px; font-weight: 500; border-radius: 6px; color: #737373; }
+  .seg .on { background: #ffffff; color: #171717; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+  .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; color: #737373; text-decoration: none; }
+  .dchip { width: 36px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 14px; font-weight: 600;"><span class="num">16:10</span><span style="display: flex; gap: 6px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+
+  <header style="padding: 8px 20px 16px; display: flex; flex-direction: column; gap: 2px;">
+    <span style="font-size: 12px; color: #737373;">김정숙 이모님 · 2026/03/02부터</span>
+    <h1 style="font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.025em;">우리집 계약 규칙</h1>
+  </header>
+
+  <section style="padding: 0 20px 100px; display: flex; flex-direction: column; gap: 20px;">
+
+    <div>
+      <div class="h">근무</div>
+      <div class="group">
+        <div class="item">
+          <div><div class="k">요일</div></div>
+          <div style="display: flex; gap: 4px;">
+            <span class="dchip" style="background: #171717; color: #fafafa;">월</span>
+            <span class="dchip" style="background: #171717; color: #fafafa;">화</span>
+            <span class="dchip" style="background: #171717; color: #fafafa;">수</span>
+            <span class="dchip" style="background: #171717; color: #fafafa;">목</span>
+            <span class="dchip" style="background: #171717; color: #fafafa;">금</span>
+          </div>
+        </div>
+        <div class="item">
+          <div><div class="k">등원 구간</div><div class="sub">아침 준비 + 등원</div></div>
+          <span class="v num">07:30 – 09:30</span>
+        </div>
+        <div class="item">
+          <div><div class="k">하원 구간</div><div class="sub">하원 + 학원 픽업 + 간식</div></div>
+          <span class="v num">15:30 – 18:30</span>
+        </div>
+        <div class="item">
+          <div><div class="k">시급</div></div>
+          <span class="v num">15,000원</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="h">시간 차이 처리</div>
+      <div class="group">
+        <div class="item">
+          <div><div class="k">이 정도 차이는 무시</div><div class="sub">일찍 퇴근·조금 늦은 도착</div></div>
+          <div class="seg"><span>5분</span><span class="on">10분</span><span>15분</span></div>
+        </div>
+        <div class="item">
+          <div><div class="k">연장 근무 계산</div><div class="sub">우리 야근으로 늦게 퇴근</div></div>
+          <div class="seg"><span>분 단위</span><span class="on">30분 올림</span></div>
+        </div>
+        <div class="item">
+          <div><div class="k">연장 시급</div></div>
+          <div class="seg"><span class="on">동일</span><span>1.5배</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="h">쉬는 날 지급</div>
+      <div class="group">
+        <div class="item">
+          <div><div class="k">우리가 취소</div><div class="sub">가족 여행, 부모 휴가 등</div></div>
+          <span class="v" style="color: #166534;">전액 지급</span>
+        </div>
+        <div class="item">
+          <div><div class="k">아이가 아파 취소</div><div class="sub">당일 아침 연락</div></div>
+          <span class="v">50% 지급</span>
+        </div>
+        <div class="item">
+          <div><div class="k">이모님 사정</div></div>
+          <span class="v" style="color: #b91c1c;">차감</span>
+        </div>
+        <div class="item">
+          <div><div class="k">공휴일</div><div class="sub">대체공휴일 포함, 달력 내장</div></div>
+          <span class="v" style="color: #166534;">쉬어도 지급</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="h">추가 업무 단가</div>
+      <div class="group">
+        <div class="item"><div class="k">병원 동행</div><span class="v num">10,000원 / 회</span></div>
+        <div class="item"><div class="k">저녁 차림</div><span class="v num">5,000원 / 회</span></div>
+        <div class="item" style="justify-content: flex-start; gap: 8px; color: #737373;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          <span style="font-size: 14px;">항목 추가</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: #fafafa; border: 1px solid #e5e5e5; border-radius: 12px; padding: 14px 16px; display: flex; gap: 10px; align-items: flex-start;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px; flex-shrink: 0;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      <span style="font-size: 12px; color: #525252; line-height: 18px;">규칙을 바꾸면 <b>바꾼 날부터</b> 적용돼요. 지난 정산은 그대로 남아요. 규칙표도 이미지로 이모님과 공유할 수 있어요.</span>
+    </div>
+  </section>
+
+  <nav style="position: absolute; left: 0; right: 0; bottom: 0; height: 76px; border-top: 1px solid #e5e5e5; background: #ffffff; display: flex; padding: 10px 0 20px;">
+    <a class="tab" href="home.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>오늘</a>
+    <a class="tab" href="settle.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>정산</a>
+    <a class="tab" href="rules.html" style="color: #171717;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg>계약 규칙</a>
+  </nav>
+</main>
+</body>
+</html>
