@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>틀어봤어 — 실험 결과</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; }
+  .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; color: #737373; text-decoration: none; }
+  .chip { height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #ffffff; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px; color: #171717; }
+  .chip.on { background: #171717; color: #fafafa; border-color: #171717; }
+  .label { font-size: 13px; font-weight: 600; }
+  .muted { font-size: 12px; color: #737373; }
+  .card { border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .key { height: 52px; border-radius: 10px; background: #f5f5f5; border: none; font-size: 22px; font-weight: 500; display: flex; align-items: center; justify-content: center; color: #171717; font-family: inherit; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 14px; font-weight: 600;"><span class="num">08:12</span><span style="display: flex; gap: 6px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+  <header style="display: flex; align-items: center; gap: 12px; padding: 8px 20px 12px;">
+    <a href="home.html" style="width: 40px; height: 40px; border-radius: 8px; border: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: center;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </a>
+    <div style="display: flex; flex-direction: column;">
+      <h1 style="font-size: 20px; line-height: 28px; font-weight: 600;">실험 결과</h1>
+      <span class="muted">잘 때 온돌 vs 실내 · 10/14 ~ 10/27 완료</span>
+    </div>
+  </header>
+
+  <section style="padding: 0 20px 100px; display: flex; flex-direction: column; gap: 16px;">
+
+    <!-- 판정 -->
+    <article style="border-radius: 16px; background: #171717; color: #fafafa; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+      <span class="badge" style="background: #262626; color: #fafafa; align-self: flex-start;">우리집 판정</span>
+      <span style="font-size: 20px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em;">잘 때는 <u>온돌 50℃</u>가<br>하루 0.7㎥ 덜 써요</span>
+      <span class="num" style="font-size: 13px; color: #a3a3a3;">겨울 4개월 환산 약 <b style="color: #fafafa;">32,000원</b> 절약 · 기온 보정 적용</span>
+    </article>
+
+    <!-- 비교 표 -->
+    <article class="card" style="gap: 0; padding: 0;">
+      <div style="display: flex; padding: 12px 16px; border-bottom: 1px solid #e5e5e5; font-size: 12px; color: #737373; font-weight: 500;">
+        <span style="flex: 1.3;"></span><span style="flex: 1; text-align: right;">A · 실내 20℃</span><span style="flex: 1; text-align: right; color: #171717; font-weight: 600;">B · 온돌 50℃</span>
+      </div>
+      <div style="display: flex; padding: 12px 16px; border-bottom: 1px solid #e5e5e5; font-size: 14px;">
+        <span style="flex: 1.3; color: #737373;">측정일</span><span class="num" style="flex: 1; text-align: right;">7일</span><span class="num" style="flex: 1; text-align: right;">6일 <span style="font-size: 11px; color: #a3a3a3;">(1일 제외)</span></span>
+      </div>
+      <div style="display: flex; padding: 12px 16px; border-bottom: 1px solid #e5e5e5; font-size: 14px;">
+        <span style="flex: 1.3; color: #737373;">평균 바깥 기온</span><span class="num" style="flex: 1; text-align: right;">9.1℃</span><span class="num" style="flex: 1; text-align: right;">7.4℃</span>
+      </div>
+      <div style="display: flex; padding: 12px 16px; border-bottom: 1px solid #e5e5e5; font-size: 14px;">
+        <span style="flex: 1.3; color: #737373;">실측 사용량</span><span class="num" style="flex: 1; text-align: right;">2.4㎥/일</span><span class="num" style="flex: 1; text-align: right;">2.0㎥/일</span>
+      </div>
+      <div style="display: flex; padding: 12px 16px; border-bottom: 1px solid #e5e5e5; font-size: 14px; background: #fafafa;">
+        <span style="flex: 1.3; font-weight: 600;">기온 보정 후</span><span class="num" style="flex: 1; text-align: right; font-weight: 600;">2.4㎥/일</span><span class="num" style="flex: 1; text-align: right; font-weight: 700;">1.7㎥/일</span>
+      </div>
+      <div style="display: flex; padding: 12px 16px; font-size: 14px;">
+        <span style="flex: 1.3; color: #737373;">아침 체감</span><span style="flex: 1; text-align: right;">따뜻 5 · 추움 2</span><span style="flex: 1; text-align: right;">따뜻 6 · 추움 0</span>
+      </div>
+    </article>
+
+    <!-- 신뢰도 -->
+    <article class="card" style="gap: 10px; padding: 16px 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span class="label">결과 믿어도 돼?</span>
+        <span class="badge" style="background: #f0fdf4; color: #15803d;">꽤 확실</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+        <span style="display: flex; gap: 8px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>양쪽 6일 이상 측정</span>
+        <span style="display: flex; gap: 8px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>차이(29%)가 하루 편차보다 큼</span>
+        <span style="display: flex; gap: 8px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><circle cx="12" cy="12" r="10"/></svg>기온 차 1.7℃ — 보정했지만 한파 땐 다시 재보기 추천</span>
+      </div>
+    </article>
+
+    <!-- 액션 -->
+    <div style="display: flex; gap: 8px;">
+      <button style="flex: 1; height: 44px; border-radius: 8px; border: 1px solid #e5e5e5; background: #f5f5f5; font-size: 14px; font-weight: 500; color: #171717; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 6px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" x2="12" y1="2" y2="15"/></svg>가족에게 공유
+      </button>
+      <button style="flex: 1; height: 44px; border-radius: 8px; border: none; background: #171717; font-size: 14px; font-weight: 500; color: #fafafa; font-family: inherit;">B를 우리집 기본으로</button>
+    </div>
+    <span class="muted" style="text-align: center;">기본 설정은 보일러 옆 붙여둘 메모 카드로도 만들 수 있어요</span>
+  </section>
+  <nav style="position: absolute; left: 0; right: 0; bottom: 0; height: 76px; border-top: 1px solid #e5e5e5; background: #ffffff; display: flex; padding: 10px 0 20px;">
+    <a class="tab" href="home.html" style="color: #737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>홈</a>
+    <a class="tab" href="log.html" style="color: #737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>검침</a>
+    <a class="tab" href="result.html" style="color: #171717;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31"/><path d="M14 9.3V1.99"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/><path d="M5.52 16h12.96"/></svg>실험</a>
+  </nav>
+</main>
+</body>
+</html>
