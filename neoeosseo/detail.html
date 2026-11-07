@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>넣었어 — 청약판</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; display: inline-flex; align-items: center; }
+  .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; color: #737373; text-decoration: none; }
+  .label { font-size: 13px; font-weight: 600; }
+  .muted { font-size: 12px; color: #737373; }
+  .card { border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .row { display: flex; align-items: center; justify-content: space-between; }
+  .cell { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+  .cell.done { background: #171717; }
+  .cell.todo { background: #ffffff; border: 1.5px dashed #a3a3a3; }
+  .cell.na { background: #f5f5f5; }
+  .cell.warn { background: #fffbeb; border: 1.5px solid #f59e0b; }
+</style>
+</head><body><main class="screen"><div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 14px; font-weight: 600;"><span class="num">09:41</span><span style="display: flex; gap: 6px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+  <header style="display: flex; align-items: center; gap: 12px; padding: 8px 20px 12px;">
+    <a href="home.html" style="width: 40px; height: 40px; border-radius: 8px; border: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></a>
+    <div style="display: flex; flex-direction: column;">
+      <span style="font-size: 18px; font-weight: 600;">한빛소재</span>
+      <span class="muted num">11/6~11/7 · 환불 11/11 · 상장 11/18</span>
+    </div>
+  </header>
+  <section style="padding: 0 20px 100px; display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; gap: 8px;">
+      <div style="flex:1; border: 1px solid #e5e5e5; border-radius: 12px; padding: 12px; display:flex; flex-direction:column; gap:2px;"><span class="muted">균등 최소</span><span class="num" style="font-size:16px; font-weight:600;">10주</span></div>
+      <div style="flex:1; border: 1px solid #e5e5e5; border-radius: 12px; padding: 12px; display:flex; flex-direction:column; gap:2px;"><span class="muted">1인 증거금</span><span class="num" style="font-size:16px; font-weight:600;">90,000원</span></div>
+      <div style="flex:1; border: 1px solid #e5e5e5; border-radius: 12px; padding: 12px; display:flex; flex-direction:column; gap:2px;"><span class="muted">수수료</span><span class="num" style="font-size:16px; font-weight:600;">2,000원</span></div>
+    </div>
+
+    <div class="card" style="padding: 16px; gap: 0;">
+      <div style="display: flex; align-items: center; padding-bottom: 10px; border-bottom: 1px solid #e5e5e5;">
+        <span style="width: 70px;" class="muted">가족</span>
+        <span style="flex:1; text-align:center; font-size: 13px; font-weight: 600;">KB증권</span>
+        <span style="flex:1; text-align:center; font-size: 13px; font-weight: 600;">한국투자</span>
+      </div>
+      <div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #f5f5f5;">
+        <span style="width: 70px; font-size: 14px; font-weight: 500;">나</span>
+        <div style="flex:1; display:flex; justify-content:center;"><div class="cell na"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d4d4d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></div></div>
+        <div style="flex:1; display:flex; justify-content:center;"><div class="cell done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div></div>
+      </div>
+      <div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #f5f5f5;">
+        <span style="width: 70px; font-size: 14px; font-weight: 500;">아내</span>
+        <div style="flex:1; display:flex; justify-content:center;"><div class="cell done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div></div>
+        <div style="flex:1; display:flex; justify-content:center;"><div class="cell na"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d4d4d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></div></div>
+      </div>
+      <div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #f5f5f5;">
+        <span style="width: 70px; font-size: 14px; font-weight: 500;">엄마</span>
+        <div style="flex:1; display:flex; justify-content:center;"><div class="cell todo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg></div></div>
+        <div style="flex:1; display:flex; justify-content:center;"><div class="cell na" style="opacity:.5;"><span style="font-size:10px; color:#a3a3a3;">계좌 없음</span></div></div>
+      </div>
+      <div style="display: flex; align-items: center; padding: 10px 0 0;">
+        <span style="width: 70px; font-size: 14px; font-weight: 500;">동생</span>
+        <div style="flex:1; display:flex; justify-content:center;"><div class="cell warn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg></div></div>
+        <div style="flex:1; display:flex; justify-content:center;"><div class="cell warn" style="background:#fef2f2; border-color:#ef4444;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></div></div>
+      </div>
+    </div>
+
+    <div style="border-radius: 12px; background: #fef2f2; border: 1px solid #fecaca; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top: 1px;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+      <div style="display: flex; flex-direction: column; gap: 2px;">
+        <span style="font-size: 14px; font-weight: 600; color: #7f1d1d;">동생은 한 곳만 넣을 수 있어요</span>
+        <span style="font-size: 12px; color: #991b1b; line-height: 17px;">중복청약 금지 — 두 증권사에 넣으면 먼저 넣은 건만 인정되고 수수료만 나가요. KB 하나로 넣기.</span>
+      </div>
+    </div>
+
+    <div class="card" style="padding: 16px; gap: 10px;">
+      <span class="label">청약 기록 (탭 한 번)</span>
+      <div class="row"><span style="font-size: 14px;">동생 · KB증권 · 10주</span><span class="num muted">증거금 90,000원</span></div>
+      <div style="display: flex; gap: 8px;">
+        <button style="flex:1; height: 44px; border-radius: 8px; background: #171717; color: #fafafa; border: none; font-size: 14px; font-weight: 500; font-family: inherit;">넣었어</button>
+        <button style="height: 44px; padding: 0 16px; border-radius: 8px; background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; font-size: 14px; font-weight: 500; font-family: inherit;">이번엔 패스</button>
+      </div>
+      <span class="muted">마감 30분 전(15:30)에 미청약 가족 다시 알려드려요</span>
+    </div>
+  </section>
+  <nav style="position: absolute; left: 0; right: 0; bottom: 0; height: 76px; border-top: 1px solid #e5e5e5; background: #ffffff; display: flex; padding: 10px 0 20px;">
+    <a class="tab" href="home.html" style="color: #737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>이번 주</a>
+    <a class="tab" href="detail.html" style="color: #171717;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>청약판</a>
+    <a class="tab" href="ledger.html" style="color: #737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg>수익 장부</a>
+  </nav>
+</main></body></html>
