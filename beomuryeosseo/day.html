@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>버무렸어 — 김장날</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; }
+  .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; color: #737373; text-decoration: none; }
+  .chip { height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #ffffff; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px; color: #171717; }
+  .chip.on { background: #171717; color: #fafafa; border-color: #171717; }
+  .label { font-size: 13px; font-weight: 600; }
+  .muted { font-size: 12px; color: #737373; }
+  .card { border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .key { height: 52px; border-radius: 10px; background: #f5f5f5; border: none; font-size: 22px; font-weight: 500; display: flex; align-items: center; justify-content: center; color: #171717; font-family: inherit; }
+</style>
+<style>
+ .row{display:flex;align-items:center;justify-content:space-between}
+ .tub{border:1px solid #e5e5e5;border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:12px}
+ .bar{height:6px;border-radius:9999px;background:#f5f5f5;overflow:hidden}
+ .bar>span{display:block;height:100%;border-radius:9999px}
+ .seg{display:flex;background:#f5f5f5;border-radius:8px;padding:3px}
+ .seg span{flex:1;text-align:center;font-size:13px;font-weight:500;padding:6px 0;border-radius:6px;color:#737373}
+ .seg span.on{background:#fff;color:#171717;box-shadow:0 1px 2px rgba(0,0,0,0.05)}
+</style></head>
+<body>
+<main class="screen">
+  <div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 14px; font-weight: 600;"><span class="num">08:12</span><span style="display: flex; gap: 6px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+<header style="display:flex;align-items:center;gap:12px;padding:8px 20px 12px;"><a href="home.html" style="width:40px;height:40px;border-radius:8px;border:1px solid #e5e5e5;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></a>
+<div style="display:flex;flex-direction:column;"><h1 style="font-size:20px;line-height:28px;font-weight:600;">김장날 · 나눔과 정산</h1><span class="muted">11월 8일 · 시골집 · 4가족</span></div></header>
+<section style="padding:0 20px 100px;display:flex;flex-direction:column;gap:16px;">
+<div class="seg"><span>재료</span><span class="on">나눔</span><span>정산</span></div>
+<article class="card" style="padding:16px 20px;gap:10px;"><div class="row"><span class="label">총 김치통</span><span class="num" style="font-size:14px;font-weight:600;">22통 (10L 기준)</span></div>
+<div style="display:flex;height:12px;border-radius:9999px;overflow:hidden;gap:2px;"><span style="flex:8;background:#171717;"></span><span style="flex:7;background:#525252;"></span><span style="flex:4;background:#a3a3a3;"></span><span style="flex:3;background:#d4d4d4;"></span></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:#737373;"><span>부모님 8</span><span>우리집 7</span><span>누나네 4</span><span>막내네 3</span></div></article>
+
+<article class="card" style="padding:4px 20px 8px;gap:0;">
+<div class="row" style="padding:12px 0;"><span class="label">비용 정산</span><span class="muted num">총 412,000원 · 통당 18,727원</span></div>
+<div class="row" style="padding:12px 0;border-top:1px solid #f5f5f5;"><div style="display:flex;align-items:center;gap:10px;"><span style="width:36px;height:36px;border-radius:9999px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;">부</span>
+<div style="display:flex;flex-direction:column;gap:2px;"><span style="font-size:14px;font-weight:600;">부모님 <span class="muted" style="font-weight:400;">배추·고춧가루</span></span><span class="muted num">8통 · 낸 돈 280,000원</span></div></div>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;"><span class="muted num">몫 149,800</span><span class="num" style="font-size:14px;font-weight:600;color:#15803d;">+130,200</span></div></div>
+<div class="row" style="padding:12px 0;border-top:1px solid #f5f5f5;"><div style="display:flex;align-items:center;gap:10px;"><span style="width:36px;height:36px;border-radius:9999px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;">우</span>
+<div style="display:flex;flex-direction:column;gap:2px;"><span style="font-size:14px;font-weight:600;">우리집 <span class="muted" style="font-weight:400;">젓갈·찹쌀·택배</span></span><span class="muted num">7통 · 낸 돈 92,000원</span></div></div>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;"><span class="muted num">몫 131,100</span><span class="num" style="font-size:14px;font-weight:600;color:#dc2626;">−39,100</span></div></div>
+<div class="row" style="padding:12px 0;border-top:1px solid #f5f5f5;"><div style="display:flex;align-items:center;gap:10px;"><span style="width:36px;height:36px;border-radius:9999px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;">누</span>
+<div style="display:flex;flex-direction:column;gap:2px;"><span style="font-size:14px;font-weight:600;">누나네 <span class="muted" style="font-weight:400;">생강·쪽파</span></span><span class="muted num">4통 · 낸 돈 40,000원</span></div></div>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;"><span class="muted num">몫 74,900</span><span class="num" style="font-size:14px;font-weight:600;color:#dc2626;">−34,900</span></div></div>
+<div class="row" style="padding:12px 0;border-top:1px solid #f5f5f5;"><div style="display:flex;align-items:center;gap:10px;"><span style="width:36px;height:36px;border-radius:9999px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;">막</span>
+<div style="display:flex;flex-direction:column;gap:2px;"><span style="font-size:14px;font-weight:600;">막내네 <span class="muted" style="font-weight:400;">—</span></span><span class="muted num">3통 · 낸 돈 0원</span></div></div>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;"><span class="muted num">몫 56,200</span><span class="num" style="font-size:14px;font-weight:600;color:#dc2626;">−56,200</span></div></div>
+</article>
+
+<div style="display:flex;flex-direction:column;gap:6px;"><span class="label">기준</span>
+<div style="display:flex;gap:8px;"><span class="chip on">가져간 통 수</span><span class="chip">가족 수로 똑같이</span><span class="chip">일한 사람 할인</span></div>
+<span class="muted">부모님 몫은 정산에서 빼기 · 꺼짐</span></div>
+
+<div style="display:flex;gap:8px;"><button style="flex:1;height:44px;border-radius:8px;border:1px solid #e5e5e5;background:#fff;font-size:14px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:6px;font-family:inherit;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c2.1 0 2 .9 2 2"/></svg>계좌 문구 복사</button>
+<button style="flex:1;height:44px;border-radius:8px;border:none;background:#171717;color:#fafafa;font-size:14px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:6px;font-family:inherit;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>정산표 이미지</button></div>
+</section><nav style="position:absolute;left:0;right:0;bottom:0;height:76px;border-top:1px solid #e5e5e5;background:#fff;display:flex;padding:10px 0 20px;"><a class="tab" href="home.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>김치통</a><a class="tab" href="day.html" style="color:#171717;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>김장날</a><a class="tab" href="review.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>결산</a></nav>
+</main>
+</body>
+</html>
