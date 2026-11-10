@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>버무렸어 — 김치통</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; }
+  .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; color: #737373; text-decoration: none; }
+  .chip { height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #ffffff; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px; color: #171717; }
+  .chip.on { background: #171717; color: #fafafa; border-color: #171717; }
+  .label { font-size: 13px; font-weight: 600; }
+  .muted { font-size: 12px; color: #737373; }
+  .card { border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .key { height: 52px; border-radius: 10px; background: #f5f5f5; border: none; font-size: 22px; font-weight: 500; display: flex; align-items: center; justify-content: center; color: #171717; font-family: inherit; }
+</style>
+<style>
+ .row{display:flex;align-items:center;justify-content:space-between}
+ .tub{border:1px solid #e5e5e5;border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:12px}
+ .bar{height:6px;border-radius:9999px;background:#f5f5f5;overflow:hidden}
+ .bar>span{display:block;height:100%;border-radius:9999px}
+ .seg{display:flex;background:#f5f5f5;border-radius:8px;padding:3px}
+ .seg span{flex:1;text-align:center;font-size:13px;font-weight:500;padding:6px 0;border-radius:6px;color:#737373}
+ .seg span.on{background:#fff;color:#171717;box-shadow:0 1px 2px rgba(0,0,0,0.05)}
+</style></head>
+<body>
+<main class="screen">
+  <div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 14px; font-weight: 600;"><span class="num">08:12</span><span style="display: flex; gap: 6px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+<header class="row" style="padding:8px 20px 16px;"><div style="display:flex;flex-direction:column;gap:2px;"><span class="muted">2026 김장 11/8 · 오늘 24일째 · 배추 20포기</span><h1 style="font-size:24px;line-height:32px;font-weight:600;letter-spacing:-0.025em;">버무렸어</h1></div>
+<button style="width:40px;height:40px;border-radius:8px;border:none;background:#171717;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg></button></header>
+<section style="padding:0 20px 100px;display:flex;flex-direction:column;gap:16px;">
+<article class="card" style="gap:12px;"><div class="row"><span class="label">우리집 몫 남은 양</span><span class="muted num">7통 중</span></div>
+<div style="display:flex;align-items:baseline;gap:6px;"><span class="num" style="font-size:36px;font-weight:800;letter-spacing:-0.025em;">5</span><span style="font-size:16px;font-weight:600;">통</span><span class="muted" style="margin-left:auto;">이 속도면 <b style="color:#171717;">3월 셋째 주</b>에 바닥</span></div>
+<div style="display:flex;gap:4px;"><span style="flex:1;height:10px;border-radius:3px;background:#171717;"></span><span style="flex:1;height:10px;border-radius:3px;background:#171717;"></span><span style="flex:1;height:10px;border-radius:3px;background:#171717;"></span><span style="flex:1;height:10px;border-radius:3px;background:#171717;"></span><span style="flex:1;height:10px;border-radius:3px;background:#171717;"></span><span style="flex:1;height:10px;border-radius:3px;background:#e5e5e5;"></span><span style="flex:1;height:10px;border-radius:3px;background:#e5e5e5;"></span></div>
+<span class="muted">작년엔 6통이 2월 말에 떨어졌어요 · 올해 +1통</span></article>
+
+<div style="border-radius:12px;background:#fffbeb;border:1px solid #fde68a;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg><div style="display:flex;flex-direction:column;gap:2px;"><span style="font-size:13px;font-weight:600;color:#92400e;">총각김치 통, 이번 주 안에 꺼내 드세요</span><span style="font-size:12px;color:#b45309;">강모드 18일째 · 총각은 배추보다 빨리 시어져요</span></div></div>
+
+<div class="row"><span class="label">먼저 먹을 순서</span><div class="seg" style="width:150px;"><span class="on">순서</span><span>칸별</span></div></div>
+<div class="tub"><div style="width:40px;height:40px;border-radius:10px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;"><div class="row"><span style="font-size:14px;font-weight:600;">총각김치 1</span><span class="badge" style="background:#fef3c7;color:#92400e;">먼저</span></div>
+<span class="muted">개봉 5일째 · 거의 익음 · 김냉 위칸</span><div class="bar"><span style="width:35%;background:#f59e0b;"></span></div></div></div>
+<div class="tub"><div style="width:40px;height:40px;border-radius:10px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;"><div class="row"><span style="font-size:14px;font-weight:600;">배추김치 2</span><span class="badge" style="background:#dcfce7;color:#15803d;">먹는 중</span></div>
+<span class="muted">개봉 12일째 · 맛있게 익음 · 김냉 위칸</span><div class="bar"><span style="width:60%;background:#22c55e;"></span></div></div></div>
+<div class="tub"><div style="width:40px;height:40px;border-radius:10px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;"><div class="row"><span style="font-size:14px;font-weight:600;">배추김치 3</span><span class="badge" style="background:#f5f5f5;color:#171717;">다음</span></div>
+<span class="muted">미개봉 · 숙성 중 · 김냉 아래칸</span><div class="bar"><span style="width:100%;background:#171717;"></span></div></div></div>
+<div class="tub"><div style="width:40px;height:40px;border-radius:10px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;"><div class="row"><span style="font-size:14px;font-weight:600;">배추김치 4·5</span><span class="badge" style="background:#f5f5f5;color:#171717;">2월~</span></div>
+<span class="muted">미개봉 · 장기 보관 · 김냉 아래칸 · 약모드</span><div class="bar"><span style="width:100%;background:#171717;"></span></div></div></div>
+<div class="tub"><div style="width:40px;height:40px;border-radius:10px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px;"><div class="row"><span style="font-size:14px;font-weight:600;">동치미 1</span><span class="badge" style="background:#eff6ff;color:#1d4ed8;">익는 중</span></div>
+<span class="muted">미개봉 · 익는 중 · 베란다</span><div class="bar"><span style="width:100%;background:#3b82f6;"></span></div></div></div>
+<a href="#" class="muted" style="text-align:center;padding:8px;color:#737373;">다 먹은 통 1개 보기</a>
+</section><nav style="position:absolute;left:0;right:0;bottom:0;height:76px;border-top:1px solid #e5e5e5;background:#fff;display:flex;padding:10px 0 20px;"><a class="tab" href="home.html" style="color:#171717;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>김치통</a><a class="tab" href="day.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>김장날</a><a class="tab" href="review.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>결산</a></nav>
+</main>
+</body>
+</html>
