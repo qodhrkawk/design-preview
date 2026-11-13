@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>탔어 — 오늘 탔어</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .row { display: flex; align-items: center; justify-content: space-between; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; }
+  .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; color: #737373; text-decoration: none; }
+  .chip { height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #ffffff; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px; color: #171717; }
+  .chip.on { background: #171717; color: #fafafa; border-color: #171717; }
+  .label { font-size: 13px; font-weight: 600; }
+  .muted { font-size: 12px; color: #737373; }
+  .card { border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .seg { display: flex; background: #f5f5f5; border-radius: 8px; padding: 3px; }
+  .seg span { flex: 1; text-align: center; font-size: 13px; font-weight: 500; padding: 7px 0; border-radius: 6px; color: #737373; }
+  .seg span.on { background: #ffffff; color: #171717; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+  .li { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid #e5e5e5; }
+  .ico { width: 36px; height: 36px; border-radius: 10px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 14px; font-weight: 600;"><span class="num">17:40</span><span style="display: flex; gap: 6px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+<header style="display:flex;align-items:center;gap:12px;padding:8px 20px 12px;"><a href="home.html" style="width:40px;height:40px;border-radius:8px;border:1px solid #e5e5e5;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></a>
+<div style="display:flex;flex-direction:column;"><h1 style="font-size:20px;line-height:28px;font-weight:600;">오늘 탔어</h1><span class="muted">12월 5일 토요일 · 6번째</span></div></header>
+<section style="padding:0 20px 100px;display:flex;flex-direction:column;gap:20px;">
+
+<div style="display:flex;flex-direction:column;gap:10px;"><span class="label">어디서</span>
+<div style="display:flex;gap:8px;flex-wrap:wrap;"><span class="chip on">하이원 (시즌권)</span><span class="chip">휘닉스</span><span class="chip">곤지암</span><span class="chip" style="color:#737373;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>추가</span></div></div>
+
+<div style="display:flex;flex-direction:column;gap:10px;"><span class="label">언제 탔어</span>
+<div class="seg"><span>오전반일</span><span class="on">주간</span><span>야간</span><span>심야</span></div>
+<div class="row" style="padding:12px 14px;border:1px solid #e5e5e5;border-radius:10px;"><span style="font-size:13px;color:#737373;">오늘 정가 (주말 · 주간권)</span><span class="num" style="font-size:16px;font-weight:600;">+107,000원</span></div>
+<span class="muted">시즌권 리조트 정가표 프리셋 · 주중/주말/성수기 자동 적용</span></div>
+
+<div style="display:flex;flex-direction:column;gap:10px;"><div class="row"><span class="label">오늘 쓴 돈</span><span class="muted">선택 · 1회당 실비용에 반영</span></div>
+<article class="card" style="padding:4px 16px;gap:0;">
+<div class="row" style="padding:12px 0;"><span style="display:flex;align-items:center;gap:10px;font-size:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>기름·톨비</span><span class="num" style="font-size:14px;font-weight:500;">38,000원</span></div>
+<div class="row" style="padding:12px 0;border-top:1px solid #e5e5e5;"><span style="display:flex;align-items:center;gap:10px;font-size:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>밥·간식</span><span class="num" style="font-size:14px;font-weight:500;">22,000원</span></div>
+<div class="row" style="padding:12px 0;border-top:1px solid #e5e5e5;"><span style="display:flex;align-items:center;gap:10px;font-size:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>카풀 2명 N빵</span><span class="num" style="font-size:14px;font-weight:500;color:#737373;">기름값 ÷ 3</span></div>
+</article></div>
+
+<div style="display:flex;flex-direction:column;gap:10px;"><span class="label">오늘 컨디션</span>
+<div style="display:flex;gap:8px;flex-wrap:wrap;"><span class="chip on">설질 좋음</span><span class="chip">사람 많음</span><span class="chip">아이스</span><span class="chip">왁싱함</span><span class="chip">강습</span></div></div>
+
+<article style="display:flex;gap:10px;padding:14px;border-radius:12px;background:#f0fdf4;border:1px solid #bbf7d0;align-items:flex-start;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg><span style="font-size:13px;line-height:20px;color:#14532d;">저장하면 본전 게이지 <b>71% → 89%</b>. 1번만 더 타면 본전</span></article>
+
+<button style="height:48px;border-radius:10px;border:none;background:#171717;color:#fafafa;font-size:15px;font-weight:600;font-family:inherit;">탔어 저장</button>
+</section>
+<nav style="position:absolute;left:0;right:0;bottom:0;height:76px;border-top:1px solid #e5e5e5;background:#fff;display:flex;padding:10px 0 20px;"><a class="tab" href="home.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>시즌</a><a class="tab" href="checkin.html" style="color:#171717;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>탔어</a><a class="tab" href="season.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>결산</a></nav>
+</main>
+</body>
+</html>
