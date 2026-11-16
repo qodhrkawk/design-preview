@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>꼈어 — 렌즈함</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .row { display: flex; align-items: center; justify-content: space-between; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; color: #737373; text-decoration: none; }
+  .chip { height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #ffffff; font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; color: #171717; }
+  .chip.on { background: #171717; color: #fafafa; border-color: #171717; }
+  .label { font-size: 13px; font-weight: 600; }
+  .muted { font-size: 12px; color: #737373; }
+  .card { border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .seg { display: flex; background: #f5f5f5; border-radius: 8px; padding: 3px; }
+  .seg span { flex: 1; text-align: center; font-size: 13px; font-weight: 500; padding: 7px 0; border-radius: 6px; color: #737373; }
+  .seg span.on { background: #ffffff; color: #171717; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+  .li { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1px solid #e5e5e5; }
+  .dot { width: 40px; height: 40px; border-radius: 9999px; flex-shrink: 0; border: 1px solid #e5e5e5; }
+  .bar { height: 6px; border-radius: 9999px; background: #f5f5f5; overflow: hidden; display: flex; }
+  .bar span { border-radius: 9999px; }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .input { height: 40px; border: 1px solid #e5e5e5; border-radius: 8px; padding: 0 12px; font-size: 14px; display: flex; align-items: center; justify-content: space-between; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 14px; font-weight: 600;"><span class="num">07:48</span><span style="display: flex; gap: 6px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+<header class="row" style="padding:8px 20px 16px;"><div style="display:flex;flex-direction:column;gap:2px;"><span class="muted">개봉한 렌즈 4쌍 · 11월 16일 (월)</span><h1 style="font-size:24px;line-height:32px;font-weight:600;letter-spacing:-0.025em;">렌즈함</h1></div>
+<a href="wear.html" style="height:40px;padding:0 14px;border-radius:8px;background:#171717;color:#fafafa;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:500;text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>오늘 꼈어</a></header>
+<section style="padding:0 20px 100px;display:flex;flex-direction:column;gap:16px;">
+
+<article class="card" style="gap:12px;background:#fafafa;">
+<div class="row"><span class="label">오늘 낄 거 고르기</span><span class="muted">버릴 날 가까운 순</span></div>
+<div style="display:flex;align-items:center;gap:12px;">
+<span class="dot" style="background:radial-gradient(circle,#0a0a0a 0 28%,#8b6b4a 30% 70%,#e5e5e5 72%);"></span>
+<div style="flex:1;display:flex;flex-direction:column;gap:2px;"><span style="font-size:16px;font-weight:600;">브라운 그레이 (한달)</span><span class="muted">11/22 폐기 · 남은 6일 동안 약속 2번 있음</span></div>
+</div>
+<div style="display:flex;gap:8px;padding:12px;border-radius:10px;background:#fff;border:1px solid #e5e5e5;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px;flex-shrink:0;"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span style="font-size:13px;line-height:20px;">개봉 후 <b>3번밖에 안 꼈지만</b> 한달용은 개봉일 기준. 이번 주 안에 쓰고 버려야 해</span></div>
+</article>
+
+<div class="seg"><span class="on">개봉함 4</span><span>미개봉 7</span><span>버림 23</span></div>
+
+<article class="card" style="padding:4px 20px;gap:0;">
+<div class="li" style="border-top:none;"><span class="dot" style="background:radial-gradient(circle,#0a0a0a 0 28%,#8b6b4a 30% 70%,#e5e5e5 72%);"></span><div style="flex:1;display:flex;flex-direction:column;gap:6px;"><div class="row"><span style="font-size:14px;font-weight:500;">브라운 그레이</span><span class="badge" style="background:#fef3c7;color:#92400e;">D-6</span></div><div class="bar"><span style="width:80%;background:#f59e0b;"></span></div><span class="muted num">한달 · 10/23 개봉 · 3회 착용 · L -3.25 / R -3.75</span></div></div>
+<div class="li"><span class="dot" style="background:radial-gradient(circle,#0a0a0a 0 28%,#3f3f46 30% 70%,#e5e5e5 72%);"></span><div style="flex:1;display:flex;flex-direction:column;gap:6px;"><div class="row"><span style="font-size:14px;font-weight:500;">데일리 블랙링</span><span class="badge" style="background:#f5f5f5;color:#171717;">D-19</span></div><div class="bar"><span style="width:37%;background:#171717;"></span></div><span class="muted num">한달 · 11/05 개봉 · 8회 착용 · 이번 주 착용 많음</span></div></div>
+<div class="li"><span class="dot" style="background:radial-gradient(circle,#0a0a0a 0 28%,#a3a3a3 30% 70%,#e5e5e5 72%);"></span><div style="flex:1;display:flex;flex-direction:column;gap:6px;"><div class="row"><span style="font-size:14px;font-weight:500;">투명 2주 (출근용)</span><span class="badge" style="background:#f5f5f5;color:#171717;">D-9</span></div><div class="bar"><span style="width:36%;background:#171717;"></span></div><span class="muted num">2주 · 11/11 개봉 · 4회 착용</span></div></div>
+<div class="li"><span class="dot" style="background:radial-gradient(circle,#0a0a0a 0 28%,#7c9cbf 30% 70%,#e5e5e5 72%);"></span><div style="flex:1;display:flex;flex-direction:column;gap:6px;"><div class="row"><span style="font-size:14px;font-weight:500;">그레이 블루 (3개월)</span><span class="badge" style="background:#f5f5f5;color:#171717;">D-61</span></div><div class="bar"><span style="width:32%;background:#171717;"></span></div><span class="muted num">3개월 · 09/16 개봉 · 2회 착용 · 행사용</span></div></div>
+</article>
+
+<article class="card" style="padding:4px 20px;gap:0;">
+<div class="row" style="padding:14px 0;"><span class="label">같이 챙길 것</span><span class="muted">개봉일 기준</span></div>
+<div class="li"><div style="flex:1;display:flex;flex-direction:column;gap:2px;"><span style="font-size:14px;font-weight:500;">렌즈통 교체</span><span class="muted">8/20부터 사용 · 3개월마다</span></div><span class="badge" style="background:#fee2e2;color:#b91c1c;">오늘</span></div>
+<div class="li"><div style="flex:1;display:flex;flex-direction:column;gap:2px;"><span style="font-size:14px;font-weight:500;">세척액 (500ml)</span><span class="muted">10/02 개봉 · 개봉 후 90일</span></div><span class="muted num">47일 남음</span></div>
+</article>
+</section>
+<nav style="position:absolute;left:0;right:0;bottom:0;height:76px;border-top:1px solid #e5e5e5;background:#fff;display:flex;padding:10px 0 20px;"><a class="tab" href="home.html" style="color:#171717;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>렌즈함</a><a class="tab" href="wear.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>꼈어</a><a class="tab" href="add.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>재고</a></nav>
+</main>
+</body>
+</html>
