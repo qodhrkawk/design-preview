@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>덜탔어 — 마일리지 페이스</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .row { display: flex; align-items: center; justify-content: space-between; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; color: #737373; text-decoration: none; }
+  .chip { height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #ffffff; font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; color: #171717; }
+  .chip.on { background: #171717; color: #fafafa; border-color: #171717; }
+  .label { font-size: 13px; font-weight: 600; }
+  .muted { font-size: 12px; color: #737373; }
+  .card { border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .li { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1px solid #e5e5e5; }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .input { height: 40px; border: 1px solid #e5e5e5; border-radius: 8px; padding: 0 12px; font-size: 14px; display: flex; align-items: center; justify-content: space-between; }
+  .btn { height: 44px; border-radius: 8px; background: #171717; color: #fafafa; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; }
+  .check { width: 20px; height: 20px; border-radius: 6px; border: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .check.on { background: #171717; border-color: #171717; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 14px; font-weight: 600;"><span class="num">08:12</span><span style="display: flex; gap: 6px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+<header class="row" style="padding:8px 20px 16px;"><div style="display:flex;flex-direction:column;gap:2px;"><span class="muted">아반떼 CN7 · 12가 3456 · 만기 2027.03.14</span><h1 style="font-size:24px;line-height:32px;font-weight:600;letter-spacing:-0.025em;">마일리지 페이스</h1></div>
+<a href="log.html" style="height:40px;padding:0 14px;border-radius:8px;background:#171717;color:#fafafa;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:500;text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>검침</a></header>
+<section style="padding:0 20px 100px;display:flex;flex-direction:column;gap:16px;">
+
+<article class="card" style="gap:16px;">
+<div class="row"><span class="label">이대로 가면 만기 때</span><span class="badge" style="background:#fef3c7;color:#92400e;">구간 경계 주의</span></div>
+<div style="display:flex;align-items:baseline;gap:6px;"><span class="num" style="font-size:36px;line-height:40px;font-weight:800;letter-spacing:-0.025em;">8,240</span><span style="font-size:16px;color:#737373;">km 예상</span></div>
+<div style="display:flex;flex-direction:column;gap:6px;">
+<div style="position:relative;height:10px;border-radius:9999px;background:#f5f5f5;display:flex;overflow:hidden;">
+<span style="width:62%;background:#171717;"></span><span style="width:6%;background:#a3a3a3;"></span></div>
+<div class="row muted num" style="font-size:11px;"><span>0</span><span>3천</span><span>5천</span><span>7천</span><span style="font-weight:600;color:#171717;">8천</span><span>1만</span><span>1.2만</span></div>
+</div>
+<div style="display:flex;gap:8px;padding:12px;border-radius:10px;background:#fafafa;border:1px solid #e5e5e5;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px;flex-shrink:0;"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg><span style="font-size:13px;line-height:20px;">8천km 구간까지 <b>240km 초과</b> 예상. 남은 115일 동안 <b class="num">하루 27km 이하</b>로 타면 환급률 <b>17% → 22%</b></span></div>
+</article>
+
+<article class="card" style="gap:12px;">
+<div class="row"><span class="label">구간을 지키면</span><span class="muted">보험료 82만원 기준</span></div>
+<div class="row"><div style="display:flex;flex-direction:column;gap:2px;"><span style="font-size:14px;font-weight:500;">8천km 이하 · 22%</span><span class="muted">하루 27km 페이스</span></div><span class="num" style="font-size:16px;font-weight:600;">180,400원</span></div>
+<div class="row" style="padding-top:12px;border-top:1px solid #e5e5e5;"><div style="display:flex;flex-direction:column;gap:2px;"><span style="font-size:14px;font-weight:500;color:#737373;">1만km 이하 · 17%</span><span class="muted">지금 페이스 그대로</span></div><span class="num" style="font-size:16px;font-weight:500;color:#737373;">139,400원</span></div>
+<div class="row" style="padding:10px 12px;border-radius:8px;background:#f0fdf4;"><span style="font-size:13px;font-weight:500;color:#166534;">페이스만 지키면 +41,000원</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg></div>
+</article>
+
+<article class="card" style="padding:4px 20px;gap:0;">
+<div class="row" style="padding:14px 0;"><span class="label">월별 주행</span><span class="muted">계기판 검침 기준</span></div>
+<div style="display:flex;align-items:flex-end;gap:10px;height:96px;padding-bottom:8px;">
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="width:100%;height:52px;border-radius:4px;background:#e5e5e5;"></span><span class="muted" style="font-size:11px;">6월</span></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="width:100%;height:60px;border-radius:4px;background:#e5e5e5;"></span><span class="muted" style="font-size:11px;">7월</span></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="width:100%;height:80px;border-radius:4px;background:#f59e0b;"></span><span class="muted" style="font-size:11px;">8월</span></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="width:100%;height:58px;border-radius:4px;background:#e5e5e5;"></span><span class="muted" style="font-size:11px;">9월</span></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="width:100%;height:64px;border-radius:4px;background:#e5e5e5;"></span><span class="muted" style="font-size:11px;">10월</span></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="width:100%;height:40px;border-radius:4px;background:#171717;"></span><span class="muted" style="font-size:11px;color:#171717;font-weight:600;">11월</span></div>
+</div>
+<div class="li"><div style="flex:1;display:flex;flex-direction:column;gap:2px;"><span style="font-size:14px;font-weight:500;">8월 휴가 강릉 왕복</span><span class="muted">이벤트 태그 · 한 번에 +620km</span></div><span class="muted num">912km</span></div>
+</article>
+</section>
+<nav style="position:absolute;left:0;right:0;bottom:0;height:76px;border-top:1px solid #e5e5e5;background:#fff;display:flex;padding:10px 0 20px;">
+<a class="tab" href="home.html" style="color:#171717;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>페이스</a>
+<a class="tab" href="log.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>계기판</a>
+<a class="tab" href="settle.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>정산</a>
+</nav>
+</main>
+</body>
+</html>

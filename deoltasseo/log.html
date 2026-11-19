@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>덜탔어 — 계기판 검침</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .row { display: flex; align-items: center; justify-content: space-between; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; color: #737373; text-decoration: none; }
+  .chip { height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #ffffff; font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; color: #171717; }
+  .chip.on { background: #171717; color: #fafafa; border-color: #171717; }
+  .label { font-size: 13px; font-weight: 600; }
+  .muted { font-size: 12px; color: #737373; }
+  .card { border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .li { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1px solid #e5e5e5; }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .input { height: 40px; border: 1px solid #e5e5e5; border-radius: 8px; padding: 0 12px; font-size: 14px; display: flex; align-items: center; justify-content: space-between; }
+  .btn { height: 44px; border-radius: 8px; background: #171717; color: #fafafa; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; }
+  .check { width: 20px; height: 20px; border-radius: 6px; border: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .check.on { background: #171717; border-color: #171717; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 14px; font-weight: 600;"><span class="num">13:42</span><span style="display: flex; gap: 6px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+<header style="padding:8px 20px 16px;display:flex;flex-direction:column;gap:2px;"><span class="muted">11월 19일 (목) · 지난 검침 10/18</span><h1 style="font-size:24px;line-height:32px;font-weight:600;letter-spacing:-0.025em;">계기판 검침</h1></header>
+<section style="padding:0 20px 100px;display:flex;flex-direction:column;gap:16px;">
+
+<article style="height:200px;border-radius:16px;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative;">
+<span style="font-size:12px;color:#a3a3a3;letter-spacing:0.05em;">ODO</span>
+<span class="num" style="font-size:40px;font-weight:700;color:#fafafa;letter-spacing:0.08em;">046,318</span>
+<span style="font-size:12px;color:#a3a3a3;">km</span>
+<span style="position:absolute;left:12px;top:12px;" class="badge"><span style="background:#22c55e;color:#fff;border-radius:9999px;padding:2px 10px;font-size:12px;">ODO 확인됨</span></span>
+<span style="position:absolute;right:12px;bottom:12px;color:#a3a3a3;font-size:11px;">2026.11.19 13:42 촬영</span>
+</article>
+
+<div class="field"><span class="label">누적 주행거리 (사진 보고 직접 입력)</span><div class="input"><span class="num" style="font-weight:600;">46,318</span><span class="muted">km</span></div><span class="muted">지난 검침 대비 <b class="num" style="color:#171717;">+598km</b> · 하루 평균 19.3km</span></div>
+
+<article class="card" style="gap:12px;">
+<span class="label">보험사 제출 전에 미리 체크</span>
+<div style="display:flex;gap:10px;align-items:center;"><span class="check on"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span style="font-size:14px;">TRIP 아니고 <b>ODO(누적)</b> 숫자</span></div>
+<div style="display:flex;gap:10px;align-items:center;"><span class="check on"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span style="font-size:14px;">시동 켠 상태 · 숫자 선명</span></div>
+<div style="display:flex;gap:10px;align-items:center;"><span class="check"></span><span style="font-size:14px;">전면 번호판 사진 (정산 때만 필요)</span></div>
+</article>
+
+<div style="display:flex;flex-direction:column;gap:8px;"><span class="label">이번 달 특이사항</span>
+<div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="chip">장거리 여행</span><span class="chip on">평소대로</span><span class="chip">차 빌려줌</span><span class="chip">출퇴근 시작</span></div></div>
+
+<a class="btn" href="home.html">검침 저장 · 다음 알림 12/18</a>
+<span class="muted" style="text-align:center;">사진은 이 폰에만 저장돼. 정산 때 증빙으로 그대로 꺼내 써</span>
+</section>
+<nav style="position:absolute;left:0;right:0;bottom:0;height:76px;border-top:1px solid #e5e5e5;background:#fff;display:flex;padding:10px 0 20px;">
+<a class="tab" href="home.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>페이스</a>
+<a class="tab" href="log.html" style="color:#171717;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>계기판</a>
+<a class="tab" href="settle.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>정산</a>
+</nav>
+</main>
+</body>
+</html>
