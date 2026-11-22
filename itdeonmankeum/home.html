@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>있던만큼 — 11월 정산</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .row { display: flex; align-items: center; justify-content: space-between; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; color: #737373; text-decoration: none; }
+  .tab.on { color: #171717; }
+  .chip { height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #ffffff; font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; color: #171717; }
+  .chip.on { background: #171717; color: #fafafa; border-color: #171717; }
+  .label { font-size: 13px; font-weight: 600; }
+  .muted { font-size: 12px; color: #737373; }
+  .card { border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .btn { height: 44px; border-radius: 8px; background: #171717; color: #fafafa; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; }
+  .btn2 { height: 44px; border-radius: 8px; background: #f5f5f5; border: 1px solid #e5e5e5; color: #171717; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; }
+  .av { width: 32px; height: 32px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0; }
+  .a1 { background: #171717; color: #fafafa; } .a2 { background: #dbeafe; color: #1e40af; } .a3 { background: #fef3c7; color: #92400e; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 14px; font-weight: 600;"><span class="num">21:40</span><span style="display: flex; gap: 6px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+<header class="row" style="padding:8px 20px 16px;"><div style="display:flex;flex-direction:column;gap:2px;"><span class="muted">역삼동 셰어 · 3명 · 고지 기간 10.15 – 11.14</span><h1 style="font-size:24px;line-height:32px;font-weight:600;letter-spacing:-0.025em;">11월 정산</h1></div>
+<a href="away.html" style="height:40px;padding:0 14px;border-radius:8px;background:#171717;color:#fafafa;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:500;text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>부재</a></header>
+<section style="padding:0 20px 100px;display:flex;flex-direction:column;gap:16px;">
+
+<article class="card" style="gap:16px;">
+<div class="row"><span class="label">내가 받을 돈</span><span class="badge" style="background:#fef3c7;color:#92400e;">수빈 미입금</span></div>
+<div style="display:flex;align-items:baseline;gap:6px;"><span class="num" style="font-size:36px;line-height:40px;font-weight:800;letter-spacing:-0.025em;">86,595</span><span style="font-size:16px;color:#737373;">원</span></div>
+<div style="display:flex;flex-direction:column;gap:0;">
+<div class="row" style="padding:10px 0;border-top:1px solid #e5e5e5;"><div style="display:flex;align-items:center;gap:10px;"><span class="av a2">민</span><div style="display:flex;flex-direction:column;"><span style="font-size:14px;font-weight:500;">민지 → 나</span><span class="muted">11.20 입금 확인</span></div></div><span style="display:flex;align-items:center;gap:6px;"><span class="num" style="font-size:15px;font-weight:600;color:#737373;text-decoration:line-through;">6,823</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></div>
+<div class="row" style="padding:10px 0;border-top:1px solid #e5e5e5;"><div style="display:flex;align-items:center;gap:10px;"><span class="av a3">수</span><div style="display:flex;flex-direction:column;"><span style="font-size:14px;font-weight:500;">수빈 → 나</span><span class="muted">정산서 보낸 지 3일</span></div></div><span class="num" style="font-size:15px;font-weight:600;">79,772</span></div>
+</div>
+<div style="display:flex;gap:8px;"><a class="btn2" style="flex:1;" href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>살짝 리마인드</a><a class="btn" style="flex:1;" href="bill.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" x2="12" y1="2" y2="15"/></svg>정산서 공유</a></div>
+</article>
+
+<article class="card" style="gap:12px;">
+<div class="row"><span class="label">누가 얼마나 있었나</span><span class="muted">31일 중</span></div>
+<div style="display:flex;flex-direction:column;gap:10px;">
+<div style="display:flex;align-items:center;gap:10px;"><span class="av a1">나</span><div style="flex:1;display:flex;flex-direction:column;gap:6px;"><div class="row"><span style="font-size:14px;font-weight:500;">나</span><span class="num" style="font-size:14px;font-weight:600;">123,405원</span></div><div style="height:6px;border-radius:9999px;background:#f5f5f5;overflow:hidden;"><span style="display:block;width:100%;height:100%;background:#171717;"></span></div><span class="muted num">31일 재실</span></div></div>
+<div style="display:flex;align-items:center;gap:10px;"><span class="av a2">민</span><div style="flex:1;display:flex;flex-direction:column;gap:6px;"><div class="row"><span style="font-size:14px;font-weight:500;">민지</span><span class="num" style="font-size:14px;font-weight:600;">96,823원</span></div><div style="height:6px;border-radius:9999px;background:#f5f5f5;overflow:hidden;"><span style="display:block;width:68%;height:100%;background:#3b82f6;"></span></div><span class="muted num">21일 재실 · 본가 10일</span></div></div>
+<div style="display:flex;align-items:center;gap:10px;"><span class="av a3">수</span><div style="flex:1;display:flex;flex-direction:column;gap:6px;"><div class="row"><span style="font-size:14px;font-weight:500;">수빈</span><span class="num" style="font-size:14px;font-weight:600;">112,772원</span></div><div style="height:6px;border-radius:9999px;background:#f5f5f5;overflow:hidden;"><span style="display:block;width:87%;height:100%;background:#f59e0b;"></span></div><span class="muted num">27일 재실 · 출장 4일</span></div></div>
+</div>
+<div class="row" style="padding:10px 12px;border-radius:8px;background:#f0fdf4;"><span style="font-size:13px;font-weight:500;color:#166534;">1/N이었으면 민지가 14,177원 더 냈을 금액</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg></div>
+</article>
+
+<article class="card" style="padding:4px 20px;gap:0;">
+<div class="row" style="padding:14px 0;"><span class="label">항목별 규칙</span><span class="muted">합계 333,000원</span></div>
+<div class="row" style="padding:12px 0;border-top:1px solid #e5e5e5;"><div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:14px;font-weight:500;">도시가스</span><span style="display:flex;gap:6px;"><span class="badge" style="background:#171717;color:#fafafa;">재실일 비례</span><span class="badge" style="background:#f5f5f5;color:#171717;">나 납부</span></span></div><span class="num" style="font-size:15px;font-weight:600;">126,000</span></div>
+<div class="row" style="padding:12px 0;border-top:1px solid #e5e5e5;"><div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:14px;font-weight:500;">전기</span><span style="display:flex;gap:6px;"><span class="badge" style="background:#171717;color:#fafafa;">재실일 비례</span><span class="badge" style="background:#f5f5f5;color:#171717;">나 납부</span></span></div><span class="num" style="font-size:15px;font-weight:600;">84,000</span></div>
+<div class="row" style="padding:12px 0;border-top:1px solid #e5e5e5;"><div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:14px;font-weight:500;">관리비</span><span style="display:flex;gap:6px;"><span class="badge" style="background:#f5f5f5;color:#171717;border:1px solid #e5e5e5;">균등 1/N</span><span class="badge" style="background:#f5f5f5;color:#171717;">민지 납부</span></span></div><span class="num" style="font-size:15px;font-weight:600;">90,000</span></div>
+<div class="row" style="padding:12px 0;border-top:1px solid #e5e5e5;"><div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:14px;font-weight:500;">인터넷</span><span style="display:flex;gap:6px;"><span class="badge" style="background:#f5f5f5;color:#171717;border:1px solid #e5e5e5;">균등 1/N</span><span class="badge" style="background:#f5f5f5;color:#171717;">수빈 자동이체</span></span></div><span class="num" style="font-size:15px;font-weight:600;">33,000</span></div>
+</article>
+</section>
+<nav style="position:absolute;bottom:0;left:0;right:0;height:84px;border-top:1px solid #e5e5e5;background:#ffffff;display:flex;padding:10px 8px 28px;">
+<a class="tab on" href="home.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>정산</a>
+<a class="tab " href="away.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>재실</a>
+<a class="tab " href="bill.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>고지서</a>
+<a class="tab" href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>집·멤버</a>
+</nav>
+</main>
+</body>
+</html>
