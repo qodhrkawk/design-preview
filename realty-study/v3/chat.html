@@ -1,0 +1,69 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>요청 — 우리집 찾기 v3</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+.wrap{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;padding:30px 10px}.wrap .phone{margin:0}
+.ch-top{display:flex;align-items:center;gap:10px;padding:14px 16px 10px;border-bottom:1px solid var(--bd);background:#fff}
+.boti{width:34px;height:34px;border-radius:11px;background:var(--pri);color:#fff;display:grid;place-items:center}
+.boti .ic{width:18px;height:18px}
+.ch-top b{font-size:15px;font-weight:800;display:block}
+.ch-top .live{font-size:11px;color:var(--ok);font-weight:700;display:flex;align-items:center;gap:4px}
+.ch-top .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#22c55e}
+.msgs{padding:12px 14px 150px;display:flex;flex-direction:column;gap:10px}
+.day{text-align:center;font-size:10.5px;font-weight:700;color:#a3a3a3;margin:4px 0}
+.m{display:flex;gap:7px;max-width:88%;align-items:flex-start}.m>div{min-width:0}
+.m .av{width:26px;height:26px;font-size:10px;flex-shrink:0}
+.m .av.b{background:var(--pri)}
+.m .av.b .ic{width:14px;height:14px}
+.m .nm{font-size:10.5px;font-weight:700;color:var(--mut);margin:0 0 3px 2px}
+.bb{background:#fff;border:1px solid var(--bd);border-radius:4px 14px 14px 14px;padding:9px 11px;font-size:13px;line-height:1.5;font-weight:500}
+.m.me{align-self:flex-end;flex-direction:row-reverse}
+.m.me .bb{background:var(--pri);color:#fff;border-color:var(--pri);border-radius:14px 4px 14px 14px}
+.m.botm .bb{background:#fafaf9}
+.st{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:800;border-radius:5px;padding:1px 6px;margin-top:5px}
+.st .ic{width:10px;height:10px}
+.st.done{background:var(--okb);color:var(--ok)}.st.run{background:var(--blueb);color:var(--blue)}.st.new{background:#f4f4f4;color:#525252}.st.hold{background:var(--warnb);color:var(--warn)}
+.t{font-size:10px;color:#a3a3a3;font-weight:600;align-self:flex-end;white-space:nowrap}
+.res{margin-top:7px;border:1px solid var(--bd);border-radius:10px;background:#fff;padding:8px 10px;font-size:12px}
+.res b{font-weight:800;display:block;font-size:12.5px}
+.res span{color:var(--mut);font-weight:600;font-size:11px}
+.res .lnk{display:flex;align-items:center;gap:3px;color:var(--fg);font-weight:800;font-size:11px;margin-top:5px}
+.res .lnk .ic{width:11px;height:11px}
+.ctx{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:700;background:rgba(255,255,255,.15);border-radius:6px;padding:2px 6px;margin-bottom:5px}
+.ctx .ic{width:11px;height:11px}
+.compose{position:absolute;left:0;right:0;bottom:78px;background:#fff;border-top:1px solid var(--bd);padding:8px 12px 10px}
+.quick{display:flex;gap:6px;overflow:hidden;margin-bottom:8px}
+.quick span{flex-shrink:0;font-size:11.5px;font-weight:700;border:1px solid var(--bd);border-radius:999px;padding:5px 10px;color:#404040}
+.box{display:flex;gap:6px;align-items:center}
+.box .attach{font-size:11px;font-weight:700;color:var(--mut);display:flex;align-items:center;gap:3px;padding:0 4px}
+.box .in{flex:1;height:42px;border-radius:12px;background:#f4f4f4;display:flex;align-items:center;padding:0 12px;font-size:13px;color:#a3a3a3;font-weight:500}
+.box .sd{width:42px;height:42px;border-radius:12px;background:var(--pri);color:#fff;display:grid;place-items:center}
+</style></head><body>
+<div class="wrap">
+<div style="position:relative"><div class="lbl">요청 탭 (감자봇과 대화)</div>
+<div class="phone">
+  <div class="ch-top"><span class="boti"><i data-i="bot"></i></span><div><b>감자봇</b><span class="live">매물 수집 · 분석 · 앱 수정</span></div><div style="margin-left:auto" class="who"><span class="av y">윤</span><span class="av s">소</span></div></div>
+  <div class="msgs">
+    <div class="day">11월 23일 (월)</div>
+
+    <div class="m"><span class="av s">소</span><div><div class="nm">소정</div><div class="bb">체크리스트에 관리비 항목도 넣어줘. 겨울 난방비까지 물어보게</div><span class="st done"><i data-i="check"></i>완료</span></div><span class="t">16:02</span></div>
+    <div class="m botm"><span class="av b"><i data-i="bot"></i></span><div><div class="nm">감자봇</div><div class="bb">'집 내부'에 <b>관리비 (겨울 최대치)</b> 항목 추가했어. 중개사한테 작년 1월 고지서 보여달라고 하면 돼.</div></div><span class="t">16:05</span></div>
+
+    <div class="m me"><div><div class="bb"><span class="ctx"><i data-i="building"></i>철산푸르지오하늘채</span><br>여기 KB 다시 조회하고 최근 실거래도 붙여줘</div></div><span class="t">16:40</span></div>
+    <div class="m botm"><span class="av b"><i data-i="bot"></i></span><div><div class="nm">감자봇</div><div class="bb">KB 일반가 7.35억(11/22), 최근 59㎡ 실거래 3건 7.1~7.4억이야. 지금 7.2억 매물은 KB보다 2% 싸.
+      <div class="res"><b>철산푸르지오하늘채 59㎡</b><span>KB 7.35억 · 실거래 7.1 / 7.25 / 7.4억</span><div class="lnk">매물 보기<i data-i="right"></i></div></div>
+      </div><span class="st done"><i data-i="check"></i>완료</span></div><span class="t">16:42</span></div>
+
+    <div class="m"><span class="av s">소</span><div><div class="nm">소정</div><div class="bb">강동 5호선 라인도 매물에 넣어줘. 길동·굽은다리 쪽</div><span class="st run"><i data-i="loader"></i>처리 중</span></div><span class="t">17:01</span></div>
+  </div>
+
+  <div class="compose">
+    <div class="quick"><span>이 매물 분석해줘</span><span>조건 추가</span><span>임장 일정 잡기</span><span>지역 추가</span></div>
+    <div class="box"><span class="attach"><i data-i="plus"></i></span><div class="in">감자봇에게 요청하기</div><span class="sd"><i data-i="send"></i></span></div>
+  </div>
+  <nav class="tabbar"><a class="tab"><i data-i="building"></i>매물</a><a class="tab"><i data-i="pin"></i>임장</a><a class="tab on"><i data-i="chat"></i>요청</a></nav>
+</div></div>
+</div>
+<script src="assets/icons.js"></script>
+</body></html>

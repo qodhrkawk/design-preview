@@ -1,0 +1,201 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>매물 — 우리집 찾기 v3</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+.wrap{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;padding:30px 10px}
+.wrap .phone{margin:0}
+.cond{margin:4px 0 0}
+.cond-sum{display:flex;align-items:center;justify-content:space-between;margin:10px 2px 0}
+.cond-sum .n{font-size:24px;font-weight:900;letter-spacing:-.03em}
+.cond-sum .n small{font-size:13px;font-weight:700;color:var(--mut);margin-left:3px}
+.cond-sum .d{display:flex;gap:5px}
+.toolbar{display:flex;align-items:center;justify-content:space-between;margin:14px 2px 8px}
+.sort{display:flex;gap:12px}
+.sort b{font-size:12px;font-weight:700;color:#a3a3a3}
+.sort b.on{color:var(--fg)}
+.viewtg{display:flex;gap:2px;background:#ececec;border-radius:8px;padding:2px}
+.viewtg span{width:30px;height:24px;display:grid;place-items:center;border-radius:6px;color:var(--mut)}
+.viewtg span.on{background:#fff;color:var(--fg)}
+/* complex card */
+.cx{padding:13px 14px 4px;margin-bottom:10px}
+.cx-h{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.cx-name{font-size:15.5px;font-weight:800;letter-spacing:-.02em}
+.cx-area{font-size:11.5px;color:var(--mut);font-weight:600;margin-top:2px}
+.cx-from{text-align:right}
+.cx-from small{display:block;font-size:10px;color:var(--mut);font-weight:700}
+.cx-from b{font-size:15px;font-weight:900;letter-spacing:-.02em}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:11px 0 6px;background:#fafafa;border-radius:10px;padding:8px 0}
+.fact{text-align:center;border-right:1px solid #eee}
+.fact:last-child{border:none}
+.fact b{display:block;font-size:13px;font-weight:800;letter-spacing:-.02em}
+.fact span{font-size:10px;color:var(--mut);font-weight:600;display:inline-flex;align-items:center;gap:2px}
+.fact span .ic{width:10px;height:10px}
+.fact.good b{color:var(--ok)}
+/* article rows */
+.art{display:grid;grid-template-columns:1fr auto;gap:2px 8px;padding:10px 0;border-top:1px solid #f1f1f1}
+.art-p{font-size:17px;font-weight:900;letter-spacing:-.03em;display:flex;align-items:center;gap:6px}
+.art-p .kb{font-size:11px;font-weight:700;color:var(--mut)}
+.art-p .kb.lo{color:var(--ok)}.art-p .kb.hi{color:var(--no)}
+.art-m{font-size:11.5px;color:#525252;font-weight:600;grid-column:1}
+.art-t{display:flex;gap:4px;flex-wrap:wrap;grid-column:1;margin-top:3px}
+.art-r{grid-row:1/4;grid-column:2;display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between}
+.save{width:34px;height:34px;border-radius:10px;border:1px solid var(--bd);display:grid;place-items:center;color:#a3a3a3;background:#fff}
+.save.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.save .ic{width:15px;height:15px}
+.verd{font-size:10.5px;font-weight:800;padding:2px 6px;border-radius:6px}
+.verd.ok{background:var(--okb);color:var(--ok)}.verd.tight{background:var(--warnb);color:var(--warn)}.verd.no{background:var(--nob);color:var(--no)}
+.more{font-size:12px;font-weight:700;color:var(--mut);text-align:center;padding:9px 0 9px;border-top:1px solid #f1f1f1;display:flex;align-items:center;justify-content:center;gap:3px}
+.more .ic{width:13px;height:13px}
+.hidden-note{font-size:11px;color:var(--mut);font-weight:600;display:flex;align-items:center;gap:5px;margin:4px 4px 12px;padding:9px 11px;background:#fff;border:1px dashed #d4d4d4;border-radius:10px}
+.hidden-note .ic{width:13px;height:13px}
+.hidden-note b{color:var(--fg)}
+.region{font-size:12px;font-weight:800;color:var(--mut);margin:16px 4px 8px;display:flex;justify-content:space-between}
+/* sheet */
+.sh-t{font-size:17px;font-weight:900;letter-spacing:-.02em}
+.sh-s{font-size:12px;color:var(--mut);font-weight:600;margin:3px 0 14px}
+.cg{font-size:11px;font-weight:800;color:var(--mut);margin:14px 0 6px;display:flex;justify-content:space-between}
+.crow{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #f3f3f3}
+.crow .ci{width:30px;height:30px;border-radius:9px;background:#f4f4f4;display:grid;place-items:center;color:#404040}
+.crow .ci .ic{width:15px;height:15px}
+.crow .ct{flex:1}
+.crow .ct b{font-size:13.5px;font-weight:800;display:block}
+.crow .ct span{font-size:11px;color:var(--mut);font-weight:600}
+.crow .cnt{font-size:11px;font-weight:700;color:var(--mut)}
+.lock{font-size:10px;font-weight:800;color:#a3a3a3;display:flex;align-items:center;gap:3px}
+.tg{width:40px;height:24px;border-radius:12px;background:#d4d4d4;position:relative}
+.tg::after{content:"";position:absolute;width:20px;height:20px;border-radius:50%;background:#fff;top:2px;left:2px;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.tg.on{background:var(--acc)}.tg.on::after{left:18px}
+.from{font-size:10px;font-weight:700;color:var(--acc);background:var(--accb);border-radius:5px;padding:1px 5px;margin-left:4px}
+.sugg{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+</style></head><body>
+<div class="wrap">
+
+<!-- ========== 1. 매물 탭 ========== -->
+<div style="position:relative"><div class="lbl">매물 탭</div>
+<div class="phone">
+  <div class="top">
+    <div class="top-row">
+      <div class="brand"><span class="dot"><i data-i="home"></i></span>우리집 찾기</div>
+      <div class="who"><span class="av y">윤</span><span class="av s">소</span></div>
+    </div>
+    <div class="cond-sum">
+      <div class="n">58<small>곳 · 매물 140</small></div>
+      <div class="d"><span class="tag ok">신규 4</span><span class="tag blue">인하 2</span></div>
+    </div>
+    <div class="chips cond" style="margin-top:8px">
+      <span class="chip" style="background:#fff;border-color:#171717"><i data-i="sliders"></i>조건 7</span>
+      <span class="chip fix">8억 미만</span>
+      <span class="chip fix"><i data-i="brief"></i>여의도 60분</span>
+      <span class="chip fix"><i data-i="car"></i>주차</span>
+      <span class="chip fix">아파트</span>
+      <span class="chip ours">3층 이상</span>
+      <span class="chip ours">세입자 없음</span>
+      <span class="chip ours">방 3+</span>
+    </div>
+  </div>
+  <div class="body">
+    <div class="toolbar">
+      <div class="sort"><b class="on">통근순</b><b>가격순</b><b>남는 돈</b><b>신규</b></div>
+      <div class="viewtg"><span class="on"><i data-i="list"></i></span><span><i data-i="map"></i></span></div>
+    </div>
+
+    <div class="region"><span>광명 · 철산</span><span>여의도 30~40분</span></div>
+    <div class="card cx">
+      <div class="cx-h">
+        <div><div class="cx-name">철산푸르지오하늘채</div><div class="cx-area">광명 철산동 · 2010 · 1,264세대</div></div>
+        <div class="cx-from"><small>59㎡ 최저</small><b>7억 2,000</b></div>
+      </div>
+      <div class="facts">
+        <div class="fact good"><b>35분</b><span><i data-i="brief"></i>여의도</span></div>
+        <div class="fact"><b>6분</b><span><i data-i="walk"></i>철산역</span></div>
+        <div class="fact good"><b>1.26</b><span><i data-i="car"></i>주차</span></div>
+        <div class="fact"><b>3건</b><span>조건 매물</span></div>
+      </div>
+      <div class="art">
+        <div class="art-p">7억 2,000 <span class="kb lo">KB −2.1%</span></div>
+        <div class="art-m">59㎡ · 112동 9/25층 · 남향 · 즉시입주</div>
+        <div class="art-t"><span class="tag ok">신규</span><span class="tag">중개사 3곳</span></div>
+        <div class="art-r"><span class="save"><i data-i="bookmark"></i></span><span class="verd ok">남음 5,150</span></div>
+      </div>
+      <div class="art">
+        <div class="art-p">7억 6,000 <span class="kb">KB +0.8%</span></div>
+        <div class="art-m">59㎡ · 105동 14/25층 · 남동향 · 27년 2월</div>
+        <div class="art-t"><span class="tag blue"><i data-i="down"></i>−2,000</span></div>
+        <div class="art-r"><span class="save"><i data-i="bookmark"></i></span><span class="verd ok">남음 3,200</span></div>
+      </div>
+      <div class="more">1건 더 <i data-i="down2"></i></div>
+    </div>
+
+    <div class="region"><span>석수 · 관악역</span><span>여의도 40~45분</span></div>
+    <div class="card cx">
+      <div class="cx-h">
+        <div><div class="cx-name">석수역푸르지오</div><div class="cx-area">안양 석수동 · 2009 · 542세대</div></div>
+        <div class="cx-from"><small>59㎡ 최저</small><b>7억 5,000</b></div>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>45분</b><span><i data-i="brief"></i>여의도</span></div>
+        <div class="fact good"><b>5분</b><span><i data-i="walk"></i>석수역</span></div>
+        <div class="fact"><b>1.09</b><span><i data-i="car"></i>주차</span></div>
+        <div class="fact"><b>2건</b><span>조건 매물</span></div>
+      </div>
+      <div class="art">
+        <div class="art-p">8억 0,000 <span class="kb">KB +2.6%</span></div>
+        <div class="art-m">59㎡ · 107동 저/15층 · 남향 · 협의</div>
+        <div class="art-t"><span class="tag warn"><i data-i="alert"></i>저층 · 층 확인</span></div>
+        <div class="art-r"><span class="save"><i data-i="bookmark"></i></span><span class="verd tight">남음 675</span></div>
+      </div>
+      <div class="art">
+        <div class="art-p">8억 2,000 <span class="kb hi">KB +5.1%</span></div>
+        <div class="art-m">59㎡ · 108동 중/15층 · 남향</div>
+        <div class="art-t"><span class="tag">신안산선</span></div>
+        <div class="art-r"><span class="save"><i data-i="bookmark"></i></span><span class="verd no">부족 1,509</span></div>
+      </div>
+    </div>
+    <div class="hidden-note"><i data-i="filter"></i>조건 때문에 숨긴 매물 <b>1건</b> — 110동 1층 7억 5,000 (임장 후보) · 보기</div>
+  </div>
+  <nav class="tabbar">
+    <a class="tab on"><i data-i="building"></i>매물</a>
+    <a class="tab"><i data-i="pin"></i>임장</a>
+    <a class="tab"><i data-i="chat"></i>요청<span class="nb">2</span></a>
+  </nav>
+</div></div>
+
+<!-- ========== 2. 조건 편집 시트 ========== -->
+<div style="position:relative"><div class="lbl">조건 편집 시트</div>
+<div class="phone">
+  <div class="top"><div class="top-row"><div class="brand"><span class="dot"><i data-i="home"></i></span>우리집 찾기</div></div></div>
+  <div class="body"></div>
+  <div class="sheet-dim"></div>
+  <div class="sheet" style="top:96px;overflow:hidden">
+    <div class="grab"></div>
+    <div class="sh-t">우리 조건</div>
+    <div class="sh-s">켜고 끄면 매물이 바로 걸러져. 임장에서 추가한 조건엔 출처가 붙어.</div>
+
+    <div class="cg"><span>필수 · 둘이 정한 것</span><span class="lock">고정</span></div>
+    <div class="crow"><span class="ci"><i data-i="wallet"></i></span><div class="ct"><b>8억 미만</b><span>매매 호가 기준</span></div><span class="tg on"></span></div>
+    <div class="crow"><span class="ci"><i data-i="brief"></i></span><div class="ct"><b>여의도 출근 60분 이내</b><span>대중교통 · 5호선 강동 포함</span></div><span class="tg on"></span></div>
+    <div class="crow"><span class="ci"><i data-i="car"></i></span><div class="ct"><b>주차 가능</b><span>세대당 1.0대 이상</span></div><span class="tg on"></span></div>
+    <div class="crow"><span class="ci"><i data-i="building"></i></span><div class="ct"><b>아파트</b><span>주상복합 포함</span></div><span class="tg on"></span></div>
+
+    <div class="cg"><span>임장하면서 추가한 조건</span><span>−82건</span></div>
+    <div class="crow"><span class="ci"><i data-i="layers"></i></span><div class="ct"><b>3층 이상<span class="from">석수푸르지오 임장</span></b><span>'저층' 표기 매물은 경고만</span></div><span class="cnt">−29</span><span class="tg on"></span></div>
+    <div class="crow"><span class="ci"><i data-i="x"></i></span><div class="ct"><b>세입자 없는 집</b><span>세안고 · 전세낀 제외</span></div><span class="cnt">−41</span><span class="tg on"></span></div>
+    <div class="crow"><span class="ci"><i data-i="home"></i></span><div class="ct"><b>방 3개 이상</b><span>&nbsp;</span></div><span class="cnt">−12</span><span class="tg on"></span></div>
+    <div class="crow" style="opacity:.55"><span class="ci"><i data-i="walk"></i></span><div class="ct"><b>역 도보 15분</b><span>꺼둠</span></div><span class="cnt">−18</span><span class="tg"></span></div>
+
+    <div class="cg"><span>자주 쓰는 조건</span></div>
+    <div class="sugg">
+      <span class="chip add"><i data-i="plus"></i>500세대 이상</span>
+      <span class="chip add"><i data-i="plus"></i>2005년 이후</span>
+      <span class="chip add"><i data-i="plus"></i>남향</span>
+      <span class="chip add"><i data-i="plus"></i>계단식</span>
+      <span class="chip add"><i data-i="plus"></i>직접 쓰기</span>
+    </div>
+    <div style="margin-top:16px"><div class="btn">매물 58곳 · 140건 보기</div></div>
+  </div>
+</div></div>
+
+</div>
+<script src="assets/icons.js"></script>
+</body></html>
