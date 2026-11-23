@@ -1,0 +1,134 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>임장 — 우리집 찾기 v3</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+.wrap{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;padding:30px 10px}.wrap .phone{margin:0}
+.pg-t{font-size:24px;font-weight:900;letter-spacing:-.03em;margin:8px 2px 2px}
+.pg-s{font-size:12px;color:var(--mut);font-weight:600;margin:0 2px}
+/* next visit hero */
+.next{background:var(--pri);color:#fff;border-radius:18px;padding:16px;margin-top:14px;position:relative}
+.next .when{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;opacity:.75}
+.next .when .ic{width:13px;height:13px}
+.next .dday{position:absolute;top:14px;right:14px;background:#fff;color:var(--pri);font-size:12px;font-weight:900;border-radius:8px;padding:3px 8px}
+.next .nm{font-size:19px;font-weight:900;letter-spacing:-.02em;margin-top:8px}
+.next .sub{font-size:12px;opacity:.75;font-weight:600;margin-top:2px}
+.next .row{display:flex;gap:6px;margin-top:12px}
+.next .row span{flex:1;background:rgba(255,255,255,.1);border-radius:10px;padding:8px 10px;font-size:11px;font-weight:600;opacity:.95}
+.next .row span b{display:block;font-size:14px;font-weight:900;margin-top:1px}
+.next .go{display:flex;align-items:center;justify-content:center;gap:6px;background:#fff;color:var(--pri);border-radius:12px;height:42px;font-size:13.5px;font-weight:900;margin-top:12px}
+/* list */
+.v{display:flex;gap:11px;padding:12px;margin-bottom:8px;align-items:center}
+.v .date{width:44px;text-align:center;flex-shrink:0}
+.v .date b{display:block;font-size:18px;font-weight:900;letter-spacing:-.03em;line-height:1}
+.v .date span{font-size:10px;color:var(--mut);font-weight:700}
+.v .date.none{color:#a3a3a3}
+.v .mid{flex:1;min-width:0}
+.v .nm{font-size:14.5px;font-weight:800;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.v .ms{font-size:11.5px;color:var(--mut);font-weight:600;margin-top:1px}
+.v .tt{display:flex;gap:4px;margin-top:6px;flex-wrap:wrap}
+.v .pr{text-align:right;flex-shrink:0}
+.v .pr b{font-size:14.5px;font-weight:900;letter-spacing:-.02em;display:block}
+.score{display:flex;gap:3px;align-items:center;justify-content:flex-end;margin-top:4px}
+.score i,.score .sv{font-size:10px;font-weight:800;border-radius:5px;padding:1px 5px;font-style:normal}
+.sv.y{background:#e2e8f0;color:#334155}.sv.s{background:#fce7f3;color:#be185d}
+.v.dim{opacity:.55}
+.add{display:flex;align-items:center;justify-content:center;gap:6px;border:1.5px dashed #d4d4d4;border-radius:14px;height:46px;font-size:13px;font-weight:800;color:var(--mut);margin-top:4px}
+/* add sheet */
+.sh-t{font-size:17px;font-weight:900;letter-spacing:-.02em;margin-bottom:12px}
+.f{margin-bottom:12px}
+.f label{font-size:11px;font-weight:800;color:var(--mut);display:block;margin-bottom:5px}
+.inp{height:44px;border:1px solid var(--bd);border-radius:11px;padding:0 12px;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700;background:#fafafa}
+.inp span{color:var(--mut);font-weight:600}
+.inp .ic{color:var(--mut)}
+.pick{display:flex;gap:8px;align-items:center;border:1.5px solid var(--pri);border-radius:12px;padding:10px 12px;background:#fff}
+.pick b{font-size:13.5px;font-weight:800;display:block}
+.pick span{font-size:11px;color:var(--mut);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ask{background:var(--warnb);border-radius:11px;padding:10px 12px;font-size:11.5px;font-weight:600;color:#78350f;line-height:1.5;margin-bottom:12px}
+.ask b{font-weight:800;display:flex;align-items:center;gap:4px;margin-bottom:2px}
+.ask .ic{width:13px;height:13px}
+</style></head><body>
+<div class="wrap">
+
+<div style="position:relative"><div class="lbl">임장 탭</div>
+<div class="phone">
+  <div class="top"><div class="top-row"><div class="brand"><span class="dot"><i data-i="home"></i></span>우리집 찾기</div><div class="who"><span class="av y">윤</span><span class="av s">소</span></div></div></div>
+  <div class="body">
+    <div class="pg-t">임장</div>
+    <div class="pg-s">예정 1 · 다녀옴 2 · 후보 4</div>
+
+    <div class="next">
+      <div class="when"><i data-i="cal"></i>11월 25일 (수) 오후 2:00</div>
+      <span class="dday">D-2</span>
+      <div class="nm">석수역푸르지오 110동</div>
+      <div class="sub">59㎡ · 1/15층 · 남동향 · 7억 5,000</div>
+      <div class="row">
+        <span>예산<b>남음 4,008</b></span>
+        <span>KB 대비<b>−3.8%</b></span>
+        <span>체크<b>0 / 18</b></span>
+      </div>
+      <div class="go"><i data-i="pin"></i>현장 체크 시작</div>
+    </div>
+
+    <div class="h-sec"><h3>다녀옴</h3><span>둘이 매긴 점수</span></div>
+    <div class="card v">
+      <div class="date"><b>16</b><span>11월</span></div>
+      <div class="mid">
+        <div class="nm">현대 107동</div>
+        <div class="ms">석수동 · 84㎡ · 3/25층</div>
+        <div class="tt"><span class="tag ok"><i data-i="thumbup"></i>계속 후보</span><span class="tag">사진 12</span><span class="tag">메모 5</span></div>
+      </div>
+      <div class="pr"><b>7억 3,000</b><div class="score"><span class="sv y">윤 78</span><span class="sv s">소 71</span></div></div>
+    </div>
+    <div class="card v dim">
+      <div class="date"><b>09</b><span>11월</span></div>
+      <div class="mid">
+        <div class="nm">광명한진타운 103동</div>
+        <div class="ms">광명동 · 59㎡ · 저/25층</div>
+        <div class="tt"><span class="tag no"><i data-i="x"></i>탈락 · 예산 초과</span></div>
+      </div>
+      <div class="pr"><b>8억 8,000</b><div class="score"><span class="sv y">윤 62</span><span class="sv s">소 58</span></div></div>
+    </div>
+
+    <div class="h-sec"><h3>임장 후보</h3><span>매물 탭에서 담은 곳</span></div>
+    <div class="card v">
+      <div class="date none"><b>–</b><span>미정</span></div>
+      <div class="mid"><div class="nm">철산푸르지오하늘채 112동</div><div class="ms">철산동 · 59㎡ · 9/25층</div><div class="tt"><span class="tag ok">신규</span><span class="tag acc">여의도 35분</span></div></div>
+      <div class="pr"><b>7억 2,000</b><div class="score"><span class="verd" style="font-size:10px;font-weight:800;color:var(--ok)">남음 5,150</span></div></div>
+    </div>
+    <div class="card v">
+      <div class="date none"><b>–</b><span>미정</span></div>
+      <div class="mid"><div class="nm">개봉푸르지오 103동</div><div class="ms">개봉동 · 59㎡ · 11/20층</div><div class="tt"><span class="tag acc">여의도 40분</span></div></div>
+      <div class="pr"><b>7억 4,000</b><div class="score"><span style="font-size:10px;font-weight:800;color:var(--ok)">남음 4,400</span></div></div>
+    </div>
+    <div class="add"><i data-i="plus"></i>임장 일정 추가</div>
+  </div>
+  <nav class="tabbar"><a class="tab"><i data-i="building"></i>매물</a><a class="tab on"><i data-i="pin"></i>임장</a><a class="tab"><i data-i="chat"></i>요청</a></nav>
+</div></div>
+
+<div style="position:relative"><div class="lbl">일정 추가 시트</div>
+<div class="phone">
+  <div class="top"><div class="top-row"><div class="brand"><span class="dot"><i data-i="home"></i></span>우리집 찾기</div></div></div>
+  <div class="body"></div>
+  <div class="sheet-dim"></div>
+  <div class="sheet" style="top:170px">
+    <div class="grab"></div>
+    <div class="sh-t">임장 일정 잡기</div>
+    <div class="f"><label>매물</label>
+      <div class="pick"><div style="flex:1"><b>철산푸르지오하늘채 112동</b><span>59㎡ · 9/25층 · 7억 2,000</span></div><i data-i="right"></i></div>
+    </div>
+    <div class="two">
+      <div class="f"><label>날짜</label><div class="inp">11/29 (토)<i data-i="cal"></i></div></div>
+      <div class="f"><label>시간</label><div class="inp">오전 11:00<i data-i="clock"></i></div></div>
+    </div>
+    <div class="f"><label>중개사</label><div class="inp">철산하늘공인 <span>010-····-1234</span></div></div>
+    <div class="f"><label>같이 가는 사람</label><div class="seg"><b>윤재</b><b>소정</b><b class="on">둘 다</b></div></div>
+    <div class="ask"><b><i data-i="phone"></i>전화할 때 물어볼 것</b>잔금 3~4개월 가능? · 중도금 없이 가능? · 실제 층·필로티 여부 · 관리비</div>
+    <div class="btn"><i data-i="check"></i>일정 저장</div>
+  </div>
+</div></div>
+
+</div>
+<script src="assets/icons.js"></script>
+</body></html>
