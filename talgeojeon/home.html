@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>탈거전 — 탈거 임박</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .row { display: flex; align-items: center; justify-content: space-between; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; color: #737373; text-decoration: none; }
+  .chip { height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #ffffff; font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; color: #171717; }
+  .chip.on { background: #171717; color: #fafafa; border-color: #171717; }
+  .label { font-size: 13px; font-weight: 600; }
+  .muted { font-size: 12px; color: #737373; }
+  .card { border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .li { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1px solid #e5e5e5; text-decoration: none; color: inherit; }
+  .btn { height: 44px; border-radius: 8px; background: #171717; color: #fafafa; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; }
+  .btn2 { height: 44px; border-radius: 8px; background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; }
+  .tape { width: 10px; height: 36px; border-radius: 3px; flex-shrink: 0; }
+  .bar { height: 6px; border-radius: 9999px; background: #f5f5f5; overflow: hidden; display: flex; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 14px; font-weight: 600;"><span class="num">18:47</span><span style="display: flex; gap: 6px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+<header class="row" style="padding:8px 20px 16px;"><div style="display:flex;flex-direction:column;gap:2px;"><span class="muted">더클라임 마곡 · 다음 세팅 목 11/26</span><h1 style="font-size:24px;line-height:32px;font-weight:600;letter-spacing:-0.025em;">탈거 전에 깨자</h1></div>
+<a href="project.html" style="height:40px;padding:0 14px;border-radius:8px;background:#171717;color:#fafafa;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:500;text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>문제</a></header>
+<section style="padding:0 20px 100px;display:flex;flex-direction:column;gap:16px;">
+
+<article style="display:flex;gap:10px;padding:14px;border-radius:12px;background:#fffbeb;border:1px solid #fde68a;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg><div style="display:flex;flex-direction:column;gap:2px;"><span style="font-size:14px;font-weight:600;color:#92400e;">B섹터 내일 탈거 — 프로젝트 2개 남음</span><span style="font-size:13px;line-height:20px;color:#92400e;">오늘 가면 마지막 기회. 주황 3번은 2번만 더 붙으면 될 것 같다고 적어뒀어</span></div></article>
+
+<article class="card" style="padding:4px 20px;gap:0;">
+<div class="row" style="padding:14px 0;"><span class="label">오늘 붙을 순서</span><span class="muted">탈거 빠른 순 · 컨디션 소모 고려</span></div>
+<a class="li" href="project.html"><span class="tape" style="background:#f97316;"></span><div style="flex:1;display:flex;flex-direction:column;gap:3px;"><div style="display:flex;gap:6px;align-items:center;"><span style="font-size:15px;font-weight:600;">주황 3번 · 오버행</span><span class="badge" style="background:#fee2e2;color:#991b1b;">D-1</span></div><span class="muted">7세션 · 23트 · 크럭스 왼손 슬로퍼 → 도착은 함</span></div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+<a class="li" href="project.html"><span class="tape" style="background:#3b82f6;"></span><div style="flex:1;display:flex;flex-direction:column;gap:3px;"><div style="display:flex;gap:6px;align-items:center;"><span style="font-size:15px;font-weight:600;">파랑 · 슬랩 코너</span><span class="badge" style="background:#fee2e2;color:#991b1b;">D-1</span></div><span class="muted">3세션 · 9트 · 2번째 볼륨 발 올리기</span></div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+<a class="li" href="project.html"><span class="tape" style="background:#a855f7;"></span><div style="flex:1;display:flex;flex-direction:column;gap:3px;"><div style="display:flex;gap:6px;align-items:center;"><span style="font-size:15px;font-weight:600;">보라 런지</span><span class="badge" style="background:#fef3c7;color:#92400e;">D-8</span></div><span class="muted">2세션 · 6트 · 런지 거리 손 한 뼘 부족</span></div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+<a class="li" href="project.html"><span class="tape" style="background:#171717;"></span><div style="flex:1;display:flex;flex-direction:column;gap:3px;"><div style="display:flex;gap:6px;align-items:center;"><span style="font-size:15px;font-weight:600;">검정 1번 · 크림프</span><span class="badge" style="background:#f5f5f5;color:#171717;">D-15</span></div><span class="muted">1세션 · 3트 · 첫 무브 아직</span></div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+</article>
+
+<article class="card" style="gap:12px;">
+<div class="row"><span class="label">이번 세팅 주기 성적</span><span class="muted">10/29 – 11/26</span></div>
+<div style="display:flex;gap:10px;">
+<div style="flex:1;display:flex;flex-direction:column;gap:2px;padding:12px;border-radius:10px;background:#f0fdf4;"><span class="num" style="font-size:24px;font-weight:700;color:#166534;">5</span><span style="font-size:12px;color:#166534;">탈거 전 완등</span></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:2px;padding:12px;border-radius:10px;background:#f5f5f5;"><span class="num" style="font-size:24px;font-weight:700;">2</span><span class="muted">놓침 (탈거됨)</span></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:2px;padding:12px;border-radius:10px;background:#f5f5f5;"><span class="num" style="font-size:24px;font-weight:700;">71%</span><span class="muted">구출률</span></div>
+</div>
+<span class="muted">놓친 2개 모두 <b style="color:#171717;">탈거 3일 전 이후 첫 시도</b>. 새 세팅 첫 주에 한 번씩 붙어두면 구출률 올라가</span>
+</article>
+
+</section>
+<nav style="position:absolute;left:0;right:0;bottom:0;height:76px;border-top:1px solid #e5e5e5;background:#fff;display:flex;padding:10px 0 20px;">
+<a class="tab" href="home.html" style="color:#171717;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3 2 6"/><path d="m22 6-3-3"/></svg>탈거 임박</a>
+<a class="tab" href="project.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>프로젝트</a>
+<a class="tab" href="sectors.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>섹터</a>
+</nav>
+</main>
+</body>
+</html>

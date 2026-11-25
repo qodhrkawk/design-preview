@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>탈거전 — 섹터 로테이션</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .row { display: flex; align-items: center; justify-content: space-between; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; color: #737373; text-decoration: none; }
+  .chip { height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #ffffff; font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; color: #171717; }
+  .chip.on { background: #171717; color: #fafafa; border-color: #171717; }
+  .label { font-size: 13px; font-weight: 600; }
+  .muted { font-size: 12px; color: #737373; }
+  .card { border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .li { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1px solid #e5e5e5; text-decoration: none; color: inherit; }
+  .btn { height: 44px; border-radius: 8px; background: #171717; color: #fafafa; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; }
+  .btn2 { height: 44px; border-radius: 8px; background: #f5f5f5; color: #171717; border: 1px solid #e5e5e5; font-size: 14px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; }
+  .tape { width: 10px; height: 36px; border-radius: 3px; flex-shrink: 0; }
+  .bar { height: 6px; border-radius: 9999px; background: #f5f5f5; overflow: hidden; display: flex; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <div style="height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 14px; font-weight: 600;"><span class="num">12:05</span><span style="display: flex; gap: 6px; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+<header style="padding:8px 20px 12px;display:flex;flex-direction:column;gap:12px;">
+<div style="display:flex;flex-direction:column;gap:2px;"><span class="muted">암장 공지 보고 한 번만 입력하면 다음 주기 자동</span><h1 style="font-size:24px;line-height:32px;font-weight:600;letter-spacing:-0.025em;">섹터 로테이션</h1></div>
+<div style="display:flex;gap:8px;overflow:hidden;"><span class="chip on">더클라임 마곡</span><span class="chip">서울숲 클라이밍</span><span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>암장</span></div>
+</header>
+<section style="padding:0 20px 100px;display:flex;flex-direction:column;gap:16px;">
+
+<article class="card" style="gap:12px;">
+<div class="row"><span class="label">4주 로테이션 · 매주 목요일</span><span class="muted">A→B→C→D</span></div>
+<div style="display:flex;gap:6px;">
+<div style="flex:1;display:flex;flex-direction:column;gap:4px;align-items:center;padding:10px 0;border-radius:10px;border:2px solid #ef4444;"><span style="font-size:15px;font-weight:700;">B</span><span style="font-size:11px;color:#991b1b;font-weight:600;">내일</span></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:4px;align-items:center;padding:10px 0;border-radius:10px;border:1px solid #e5e5e5;"><span style="font-size:15px;font-weight:700;">C</span><span class="muted" style="font-size:11px;">12/03</span></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:4px;align-items:center;padding:10px 0;border-radius:10px;border:1px solid #e5e5e5;"><span style="font-size:15px;font-weight:700;">D</span><span class="muted" style="font-size:11px;">12/10</span></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:4px;align-items:center;padding:10px 0;border-radius:10px;background:#f0fdf4;border:1px solid #bbf7d0;"><span style="font-size:15px;font-weight:700;">A</span><span style="font-size:11px;color:#166534;">새 세팅</span></div>
+</div>
+</article>
+
+<article class="card" style="padding:4px 20px;gap:0;">
+<div class="row" style="padding:14px 0;"><span class="label">섹터별</span><span class="muted">세팅일 · 탈거 예정 · 내 문제</span></div>
+<div class="li"><div style="width:36px;height:36px;border-radius:8px;background:#fee2e2;color:#991b1b;display:flex;align-items:center;justify-content:center;font-weight:700;">B</div><div style="flex:1;display:flex;flex-direction:column;gap:2px;"><span style="font-size:14px;font-weight:600;">오버행 메인월</span><span class="muted num">10/29 세팅 → 11/26 탈거</span></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;"><span style="font-size:13px;font-weight:600;" class="num">완등 3 · 진행 2</span><span style="font-size:11px;color:#991b1b;">D-1</span></div></div>
+<div class="li"><div style="width:36px;height:36px;border-radius:8px;background:#fef3c7;color:#92400e;display:flex;align-items:center;justify-content:center;font-weight:700;">C</div><div style="flex:1;display:flex;flex-direction:column;gap:2px;"><span style="font-size:14px;font-weight:600;">슬랩 · 코너</span><span class="muted num">11/05 세팅 → 12/03 탈거</span></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;"><span style="font-size:13px;font-weight:600;" class="num">완등 2 · 진행 1</span><span style="font-size:11px;color:#92400e;">D-8</span></div></div>
+<div class="li"><div style="width:36px;height:36px;border-radius:8px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;font-weight:700;">D</div><div style="flex:1;display:flex;flex-direction:column;gap:2px;"><span style="font-size:14px;font-weight:600;">캠퍼스 · 크림프</span><span class="muted num">11/12 세팅 → 12/10 탈거</span></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;"><span style="font-size:13px;font-weight:600;" class="num">완등 0 · 진행 1</span><span class="muted" style="font-size:11px;">D-15</span></div></div>
+<div class="li" style="padding-bottom:16px;"><div style="width:36px;height:36px;border-radius:8px;background:#f0fdf4;color:#166534;display:flex;align-items:center;justify-content:center;font-weight:700;">A</div><div style="flex:1;display:flex;flex-direction:column;gap:2px;"><span style="font-size:14px;font-weight:600;">밸런스 · 볼륨</span><span class="muted num">11/19 세팅 → 12/17 탈거</span></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;"><span style="font-size:13px;font-weight:600;color:#737373;">아직 안 붙음</span><span class="muted" style="font-size:11px;">D-22</span></div></div>
+</article>
+
+<article style="display:flex;gap:10px;padding:14px;border-radius:12px;background:#fafafa;border:1px solid #e5e5e5;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:14px;font-weight:600;">알림</span><span style="font-size:13px;line-height:20px;color:#525252;">탈거 2일 전 저녁 7시 · 새 세팅 첫 주 "한 번 붙어보기" · 세팅 공지 바뀌면 날짜만 밀기</span></div></article>
+
+<a class="btn2" href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>이번 주 세팅 연기됨 · 일정 밀기</a>
+</section>
+<nav style="position:absolute;left:0;right:0;bottom:0;height:76px;border-top:1px solid #e5e5e5;background:#fff;display:flex;padding:10px 0 20px;">
+<a class="tab" href="home.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3 2 6"/><path d="m22 6-3-3"/></svg>탈거 임박</a>
+<a class="tab" href="project.html" style="color:#737373;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>프로젝트</a>
+<a class="tab" href="sectors.html" style="color:#171717;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>섹터</a>
+</nav>
+</main>
+</body>
+</html>
