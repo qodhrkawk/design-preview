@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>안뜬거 — 디자인 시안</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; padding: 32px 16px; }
+  h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.025em; }
+  p { font-size: 14px; color: #737373; margin-top: 4px; }
+  .grid { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-top: 24px; }
+  .item { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .item span { font-size: 13px; font-weight: 500; }
+  iframe { width: 390px; height: 844px; border: 1px solid #e5e5e5; border-radius: 16px; background: #ffffff; }
+</style>
+</head>
+<body>
+  <div style="text-align: center;">
+    <h1>안뜬거 (Antteungeo)</h1>
+    <p>연말정산 간소화에 안 뜨는 공제 증빙함 — 안경·렌즈/교복/기부금/월세/취학전 학원비를 산 순간 기록 + 서류 받았나 추적 + 가족별 한도 + 1월 제출 모드(PDF 대조 → 안 뜬 것만 묶음)</p>
+  </div>
+  <div class="grid">
+    <div class="item"><span>1. 올해 증빙함 (챙길 금액 + 서류 미수령 + 가족별 한도)</span><iframe src="home.html"></iframe></div>
+    <div class="item"><span>2. 방금 샀어 (10초 기록 + 서류 발급 팁)</span><iframe src="add.html"></iframe></div>
+    <div class="item"><span>3. 제출 모드 (간소화 PDF 대조 + 발급 문구 + 묶음 PDF)</span><iframe src="submit.html"></iframe></div>
+  </div>
+</body>
+</html>
+
