@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>안뜬거 — 방금 샀어</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; }
+  .num { font-variant-numeric: tabular-nums; }
+  .row { display: flex; align-items: center; justify-content: space-between; }
+  .label { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+  .muted { font-size: 12px; color: #737373; }
+  .chip { height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #ffffff; font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; color: #171717; flex-shrink: 0; }
+  .chip.on { background: #171717; color: #fafafa; border-color: #171717; }
+  .cat { width: calc(33.333% - 6px); height: 76px; border: 1px solid #e5e5e5; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12px; font-weight: 500; color: #171717; }
+  .cat.on { border: 2px solid #171717; background: #fafafa; }
+  .input { height: 44px; border: 1px solid #e5e5e5; border-radius: 8px; padding: 0 12px; font-size: 15px; display: flex; align-items: center; }
+  .field { padding: 0 20px; margin-top: 20px; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <div style="height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:14px;font-weight:600;"><span class="num">14:00</span><span style="display:flex;gap:6px;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+
+  <header class="row" style="padding:8px 20px 4px;">
+    <a href="home.html" style="width:40px;height:40px;display:flex;align-items:center;color:#171717;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></a>
+    <h1 style="font-size:17px;font-weight:600;">방금 샀어</h1>
+    <span style="width:40px;"></span>
+  </header>
+
+  <div class="field" style="margin-top:12px;">
+    <div class="label">뭐 샀어?</div>
+    <div style="display:flex;flex-wrap:wrap;gap:9px;">
+      <span class="cat on"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="15" r="4"/><circle cx="18" cy="15" r="4"/><path d="M14 15a2 2 0 0 0-2-2 2 2 0 0 0-2 2"/><path d="M2.5 13 5 7c.7-1.3 1.4-2 3-2"/><path d="M21.5 13 19 7c-.7-1.3-1.5-2-3-2"/></svg>안경·렌즈</span>
+      <span class="cat"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>교복·체육복</span>
+      <span class="cat"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>기부금</span>
+      <span class="cat"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>월세</span>
+      <span class="cat"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>취학전 학원</span>
+      <span class="cat"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg>의료기기 등</span>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="label">누구 거?</div>
+    <div style="display:flex;gap:8px;height:36px;">
+      <span class="chip">나</span><span class="chip">배우자</span><span class="chip on">지우 (14)</span><span class="chip">서아 (5)</span>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="row"><div class="label">얼마?</div><span class="muted">지우 안경 남은 한도 500,000</span></div>
+    <div class="input num" style="justify-content:space-between;font-size:20px;font-weight:600;height:52px;"><span>280,000</span><span style="font-size:15px;color:#737373;font-weight:400;">원</span></div>
+  </div>
+
+  <div class="field">
+    <div class="label">어디서? · 언제?</div>
+    <div style="display:flex;gap:8px;">
+      <div class="input" style="flex:1;">밝은눈안경 역삼점</div>
+      <div class="input num" style="width:96px;justify-content:center;">9/14</div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div style="border:1px dashed #a3a3a3;border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px;">
+      <span style="width:44px;height:44px;border-radius:10px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></span>
+      <div style="flex:1;"><div style="font-size:14px;font-weight:500;">영수증 사진 (선택)</div><div class="muted">카드 영수증이어도 OK — 나중에 정식 서류로 교체</div></div>
+    </div>
+  </div>
+
+  <div class="field">
+    <div style="background:#eff6ff;border-radius:12px;padding:14px;display:flex;gap:10px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      <div style="font-size:13px;line-height:19px;color:#1e3a8a;">안경점은 보통 국세청에 자료를 안 내. <b>"시력교정용 수납확인서"</b> 달라고 해야 돼. 지금 매장이면 바로 받아두는 게 제일 편해.</div>
+    </div>
+  </div>
+
+  <div style="padding:24px 20px 32px;margin-top:auto;display:flex;gap:8px;">
+    <a href="home.html" style="flex:1;height:48px;border-radius:8px;background:#f5f5f5;border:1px solid #e5e5e5;color:#171717;font-size:14px;font-weight:500;display:flex;align-items:center;justify-content:center;text-decoration:none;">서류 나중에</a>
+    <a href="home.html" style="flex:1.4;height:48px;border-radius:8px;background:#171717;color:#fafafa;font-size:14px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>서류도 받았어</a>
+  </div>
+</main>
+</body>
+</html>

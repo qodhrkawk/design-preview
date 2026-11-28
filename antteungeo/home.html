@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>안뜬거 — 올해 증빙함</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #f5f5f5; color: #0a0a0a; display: flex; justify-content: center; }
+  .screen { width: 390px; min-height: 844px; background: #ffffff; display: flex; flex-direction: column; position: relative; padding-bottom: 96px; }
+  .num { font-variant-numeric: tabular-nums; }
+  .row { display: flex; align-items: center; justify-content: space-between; }
+  .badge { border-radius: 9999px; padding: 2px 10px; font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; color: #737373; text-decoration: none; }
+  .chip { height: 32px; padding: 0 12px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #ffffff; font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; color: #171717; flex-shrink: 0; }
+  .chip.on { background: #171717; color: #fafafa; border-color: #171717; }
+  .muted { font-size: 12px; color: #737373; }
+  .card { border: 1px solid #e5e5e5; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .li { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1px solid #e5e5e5; text-decoration: none; color: inherit; }
+  .ico { width: 40px; height: 40px; border-radius: 10px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .bar { height: 6px; border-radius: 9999px; background: #f5f5f5; overflow: hidden; display: flex; }
+  .sec { font-size: 13px; font-weight: 600; padding: 0 20px; margin: 24px 0 4px; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <div style="height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:14px;font-weight:600;"><span class="num">14:00</span><span style="display:flex;gap:6px;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/></svg><svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span></div>
+
+  <header class="row" style="padding:8px 20px 16px;">
+    <div>
+      <div class="muted">2026 귀속 · 간소화에 안 뜨는 공제</div>
+      <h1 style="font-size:24px;font-weight:600;letter-spacing:-0.025em;margin-top:2px;">올해 증빙함</h1>
+    </div>
+    <span class="badge" style="background:#f5f5f5;color:#171717;border:1px solid #e5e5e5;">간소화 오픈 D-48</span>
+  </header>
+
+  <section style="padding:0 20px;">
+    <div class="card" style="background:#171717;border-color:#171717;color:#fafafa;">
+      <div class="row">
+        <span style="font-size:13px;color:#a3a3a3;">직접 챙겨야 공제되는 금액</span>
+        <span class="badge" style="background:#262626;color:#fafafa;">7건</span>
+      </div>
+      <div class="num" style="font-size:32px;font-weight:700;letter-spacing:-0.025em;">2,184,000원</div>
+      <div class="bar" style="background:#262626;"><div style="width:64%;background:#22c55e;"></div><div style="width:36%;background:#f59e0b;"></div></div>
+      <div class="row" style="font-size:12px;">
+        <span style="display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:9999px;background:#22c55e;"></span>서류 받음 4건 · 1,398,000원</span>
+        <span style="display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:9999px;background:#f59e0b;"></span>아직 3건</span>
+      </div>
+    </div>
+  </section>
+
+  <div style="display:flex;gap:8px;padding:16px 20px 0;overflow-x:auto;height:48px;flex-shrink:0;">
+    <span class="chip on">전체</span><span class="chip">나</span><span class="chip">배우자</span><span class="chip">지우 (14)</span><span class="chip">서아 (5)</span>
+  </div>
+
+  <div class="sec row" style="padding-right:20px;"><span>서류 아직 안 받음</span><span class="muted">탭하면 발급 문구</span></div>
+  <section style="padding:0 20px;">
+    <a class="li" href="submit.html" style="border-top:none;">
+      <span class="ico" style="background:#fffbeb;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="15" r="4"/><circle cx="18" cy="15" r="4"/><path d="M14 15a2 2 0 0 0-2-2 2 2 0 0 0-2 2"/><path d="M2.5 13 5 7c.7-1.3 1.4-2 3-2"/><path d="M21.5 13 19 7c-.7-1.3-1.5-2-3-2"/></svg></span>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:15px;font-weight:600;">안경 · 지우</div>
+        <div class="muted">밝은눈안경 · 9/14 · 수납확인서 필요</div>
+      </div>
+      <div style="text-align:right;"><div class="num" style="font-size:15px;font-weight:600;">280,000</div><span class="badge" style="background:#fffbeb;color:#b45309;">아직</span></div>
+    </a>
+    <a class="li" href="submit.html">
+      <span class="ico" style="background:#fffbeb;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></span>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:15px;font-weight:600;">교복 · 지우</div>
+        <div class="muted">○○교복 대리점 · 3/2 · 구입 영수증</div>
+      </div>
+      <div style="text-align:right;"><div class="num" style="font-size:15px;font-weight:600;">326,000</div><span class="badge" style="background:#fffbeb;color:#b45309;">아직</span></div>
+    </a>
+    <a class="li" href="submit.html">
+      <span class="ico" style="background:#fffbeb;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:15px;font-weight:600;">기부금 · 나</div>
+        <div class="muted">○○교회 · 1~11월 누적 · 기부금 영수증</div>
+      </div>
+      <div style="text-align:right;"><div class="num" style="font-size:15px;font-weight:600;">160,000</div><span class="badge" style="background:#fffbeb;color:#b45309;">아직</span></div>
+    </a>
+  </section>
+
+  <div class="sec">가족별 한도</div>
+  <section style="padding:8px 20px 0;display:flex;flex-direction:column;gap:14px;">
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <div class="row" style="font-size:13px;"><span style="font-weight:500;">안경·렌즈 · 나</span><span class="num muted"><b style="color:#16a34a;font-weight:600;">500,000</b> / 500,000 · 한도 참</span></div>
+      <div class="bar"><div style="width:100%;background:#22c55e;"></div></div>
+      <div class="muted">이 이상은 영수증 더 안 받아도 돼</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <div class="row" style="font-size:13px;"><span style="font-weight:500;">안경·렌즈 · 지우</span><span class="num muted">280,000 / 500,000</span></div>
+      <div class="bar"><div style="width:56%;background:#171717;"></div></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <div class="row" style="font-size:13px;"><span style="font-weight:500;">교복 · 지우</span><span class="num muted"><b style="color:#16a34a;font-weight:600;">500,000</b> / 500,000 · 초과 26,000</span></div>
+      <div class="bar"><div style="width:100%;background:#22c55e;"></div></div>
+    </div>
+  </section>
+
+  <a href="add.html" style="position:absolute;right:20px;bottom:96px;height:52px;padding:0 20px;border-radius:9999px;background:#171717;color:#fafafa;display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;text-decoration:none;box-shadow:0 10px 15px rgba(0,0,0,0.1),0 4px 6px rgba(0,0,0,0.05);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>방금 샀어</a>
+
+  <nav style="position:absolute;left:0;right:0;bottom:0;height:76px;border-top:1px solid #e5e5e5;background:#fff;display:flex;padding:10px 0 20px;">
+    <a class="tab" href="home.html" style="color:#171717;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>증빙함</a>
+    <a class="tab" href="add.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>기록</a>
+    <a class="tab" href="submit.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>제출 모드</a>
+  </nav>
+</main>
+</body>
+</html>
